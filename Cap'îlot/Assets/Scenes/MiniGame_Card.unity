@@ -1104,7 +1104,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0.74
     randomPositionAmount: 0
     radius:
-      value: 1
+      value: 3
       mode: 0
       spread: 0
       speed:
@@ -5289,7 +5289,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 139472669}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: afd76a39377106f40a49a8a305458559, type: 3}
+  m_Script: {fileID: 11500000, guid: 12ef4a033a7909a46afc09cd5b77aecb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   symbol: Black
@@ -5407,7 +5407,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 140559319}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: afd76a39377106f40a49a8a305458559, type: 3}
+  m_Script: {fileID: 11500000, guid: 12ef4a033a7909a46afc09cd5b77aecb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   symbol: Pink
@@ -5892,10 +5892,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 357935603}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3e7a644f289d30459e403ea42c0e294, type: 3}
+  m_Script: {fileID: 11500000, guid: 32de7487813206041bc7a99ad1f79b53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nbSlots: 16
+  nbSlotsAvailable: 16
   slots: 
   mParticleMemorie: {fileID: 1803716476}
 --- !u!4 &357935605
@@ -6013,7 +6013,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 380823182}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: afd76a39377106f40a49a8a305458559, type: 3}
+  m_Script: {fileID: 11500000, guid: 12ef4a033a7909a46afc09cd5b77aecb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   symbol: Green
@@ -6131,7 +6131,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 493237764}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: afd76a39377106f40a49a8a305458559, type: 3}
+  m_Script: {fileID: 11500000, guid: 12ef4a033a7909a46afc09cd5b77aecb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   symbol: blue
@@ -6435,7 +6435,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 664166434}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: afd76a39377106f40a49a8a305458559, type: 3}
+  m_Script: {fileID: 11500000, guid: 12ef4a033a7909a46afc09cd5b77aecb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   symbol: Pink
@@ -7646,7 +7646,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 915983469}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: afd76a39377106f40a49a8a305458559, type: 3}
+  m_Script: {fileID: 11500000, guid: 12ef4a033a7909a46afc09cd5b77aecb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   symbol: Clay
@@ -7764,7 +7764,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1004782380}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: afd76a39377106f40a49a8a305458559, type: 3}
+  m_Script: {fileID: 11500000, guid: 12ef4a033a7909a46afc09cd5b77aecb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   symbol: Yellow
@@ -8792,7 +8792,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1330019049}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: afd76a39377106f40a49a8a305458559, type: 3}
+  m_Script: {fileID: 11500000, guid: 12ef4a033a7909a46afc09cd5b77aecb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   symbol: Green
@@ -8910,7 +8910,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1337278804}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: afd76a39377106f40a49a8a305458559, type: 3}
+  m_Script: {fileID: 11500000, guid: 12ef4a033a7909a46afc09cd5b77aecb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   symbol: Green
@@ -9875,7 +9875,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0.74
     randomPositionAmount: 0
     radius:
-      value: 1
+      value: 3
       mode: 0
       spread: 0
       speed:
@@ -13959,7 +13959,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1491234807}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: afd76a39377106f40a49a8a305458559, type: 3}
+  m_Script: {fileID: 11500000, guid: 12ef4a033a7909a46afc09cd5b77aecb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   symbol: Black
@@ -14335,7 +14335,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1583066138}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: afd76a39377106f40a49a8a305458559, type: 3}
+  m_Script: {fileID: 11500000, guid: 12ef4a033a7909a46afc09cd5b77aecb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   symbol: Clay
@@ -14486,7 +14486,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1629979946}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: afd76a39377106f40a49a8a305458559, type: 3}
+  m_Script: {fileID: 11500000, guid: 12ef4a033a7909a46afc09cd5b77aecb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   symbol: Green
@@ -14604,7 +14604,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1729464151}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: afd76a39377106f40a49a8a305458559, type: 3}
+  m_Script: {fileID: 11500000, guid: 12ef4a033a7909a46afc09cd5b77aecb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   symbol: Purple
@@ -14843,7 +14843,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1801753999}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: afd76a39377106f40a49a8a305458559, type: 3}
+  m_Script: {fileID: 11500000, guid: 12ef4a033a7909a46afc09cd5b77aecb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   symbol: Yellow
@@ -15342,7 +15342,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2006948101}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: afd76a39377106f40a49a8a305458559, type: 3}
+  m_Script: {fileID: 11500000, guid: 12ef4a033a7909a46afc09cd5b77aecb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   symbol: blue
@@ -15460,7 +15460,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2038835154}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: afd76a39377106f40a49a8a305458559, type: 3}
+  m_Script: {fileID: 11500000, guid: 12ef4a033a7909a46afc09cd5b77aecb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   symbol: Purple
