@@ -16,6 +16,7 @@ public class Movement : MonoBehaviour
     NavMeshAgent agent;
     // Start is called before the first frame update
     SpriteRenderer spriteRenderer;
+    public int clickedNpcId;
     void Start()
     {
         _tools = FindAnyObjectByType<Tools>();
@@ -70,7 +71,12 @@ public class Movement : MonoBehaviour
             {
                 collision.gameObject.GetComponent<Trigger>().IsTrigger();
                 //SceneManager.LoadScene(collision.gameObject.GetComponent<Trigger>().SceneName);
+                if (collision.gameObject.GetComponent<Trigger>().Type == Type.DIALOG)
+                {
+                    clickedNpcId = collision.gameObject.GetComponent<NPC>().npcId;
+                }
             }
+            
         }
 
     }
