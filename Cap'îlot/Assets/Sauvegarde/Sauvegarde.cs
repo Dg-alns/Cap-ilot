@@ -14,6 +14,12 @@ public class Sauvegarde : MonoBehaviour
     [SerializeField] private TMP_Dropdown Output;
     [SerializeField] private TextMeshProUGUI OutputText;
     [SerializeField] private Wheel EmotionWheel;
+    [SerializeField] UnityEngine.UI.Button Hospital;
+    [SerializeField] UnityEngine.UI.Button Food;
+    [SerializeField] UnityEngine.UI.Button Sport;
+    [SerializeField] UnityEngine.UI.Button School;
+    [SerializeField] UnityEngine.UI.Button Relations;
+    [SerializeField] UnityEngine.UI.Button Temptations;
     // Start is called before the first frame update
 
     private void Awake()
