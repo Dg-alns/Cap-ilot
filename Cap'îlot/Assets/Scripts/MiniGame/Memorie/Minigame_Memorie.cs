@@ -1,32 +1,50 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting.Antlr3.Runtime.Misc;
+using Unity.VisualScripting;
 using UnityEngine;
 
-public class Memorie : MonoBehaviour
+public class Minigame_Memorie : MonoBehaviour
 {
     private List<GameObject> mShowingCard = new List<GameObject>();
     private int mScore;
+    private int mWinnigScore;
+    private int nbSlots;
 
-    public int nbSlotsAvailable = 16;
     public List<int> slots = new List<int>();
-    public ParticleMemorie mParticleMemorie;
+    public Particle_Memorie mParticleMemorie;
+    public GameObject VisualWinning;
+
+    public Diabete_Memorie diabete;
 
     // Start is called before the first frame update
     void Awake()
     {
-        for (int i = 0; i < nbSlotsAvailable; i++)
+        nbSlots = 16;
+        mWinnigScore = nbSlots * 100;
+
+        for (int i = 0; i < nbSlots; i++)
         {
             slots.Add(i);
         }
     }
 
-    public bool CheckPair()
+    private bool CheckWin()
+    {
+        Debug.Log("Check WIN : " + mScore);
+        if (mScore == mWinnigScore)
+        {
+            Debug.Log("It's win");
+            VisualWinning.GetComponent<Animator>().SetBool("TEST", true);
+        }
+        return true;
+    }
+
+    private bool CheckPair()
     {
         if (mShowingCard.Count == 2)
         {
-            Card card1 = mShowingCard[0].GetComponent<Card>();
-            Card card2 = mShowingCard[1].GetComponent<Card>();
+            Card_Memorie card1 = mShowingCard[0].GetComponent<Card_Memorie>();
+            Card_Memorie card2 = mShowingCard[1].GetComponent<Card_Memorie>();
 
             if(string.Equals(card1.symbol, card2.symbol))
             {
@@ -45,7 +63,8 @@ public class Memorie : MonoBehaviour
         if(mShowingCard.Count >= 2) 
             return;
 
-        showingCard.GetComponent<Card>().ReverseCard();
+        showingCard.GetComponent<Card_Memorie>().ReverseCard();
+        diabete.mCards.Remove(showingCard.GetComponent<Card_Memorie>());
         mShowingCard.Add(showingCard);
 
         CheckPair();
@@ -55,12 +74,18 @@ public class Memorie : MonoBehaviour
         return mScore;
     }
 
+
+
     IEnumerator ReverseCard()
     {
         Debug.Log("Reverse Card after 1 sec");
         yield return new WaitForSeconds(1.0f);
-        mShowingCard[0].GetComponent<Card>().ReverseCard();
-        mShowingCard[1].GetComponent<Card>().ReverseCard();
+        mShowingCard[0].GetComponent<Card_Memorie>().ReverseCard();
+        mShowingCard[1].GetComponent<Card_Memorie>().ReverseCard();
+
+        diabete.mCards.Add(mShowingCard[0].GetComponent<Card_Memorie>());
+        diabete.mCards.Add(mShowingCard[1].GetComponent<Card_Memorie>());
+
         mShowingCard.Clear();
     }
     IEnumerator AddScore()
@@ -70,6 +95,7 @@ public class Memorie : MonoBehaviour
         mParticleMemorie.PlayParticle(mShowingCard);
         mScore += 200;
         mShowingCard.Clear();
+        CheckWin();
     }
 
 }

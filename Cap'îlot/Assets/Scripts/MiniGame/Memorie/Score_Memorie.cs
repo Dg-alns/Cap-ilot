@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class ScoreMemorie : MonoBehaviour
+public class Score_Memorie : MonoBehaviour
 {
-    public Memorie mMemorie;
+    public Minigame_Memorie mMemorie;
     private TMP_Text mText;
     void Start()
     {

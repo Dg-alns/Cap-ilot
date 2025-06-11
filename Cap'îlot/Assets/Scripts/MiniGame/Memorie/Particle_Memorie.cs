@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ParticleMemorie : MonoBehaviour
+public class Particle_Memorie : MonoBehaviour
 {
     public ParticleSystem[] mParticleSystem;
 
@@ -16,7 +16,6 @@ public class ParticleMemorie : MonoBehaviour
     {
         for(int i = 0; i< mParticleSystem.Length;  i++)
         {
-            Debug.Log(gameObject[i].GetComponent<Transform>().position);
             mParticleSystem[i].gameObject.GetComponent<Transform>().position = gameObject[i].GetComponent<Transform>().position;
             mParticleSystem[i].Play();
         }
