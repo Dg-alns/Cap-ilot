@@ -143,7 +143,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      "Capture d'\xE9cran 2025-06-10 133703_0": 7402046504669226679
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

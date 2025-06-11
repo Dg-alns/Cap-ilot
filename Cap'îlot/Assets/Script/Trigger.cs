@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 
 public enum Type
@@ -11,7 +14,8 @@ public enum Type
 
 public class Trigger : MonoBehaviour
 {
-
+    [SerializeField] GameObject UI;
+    private bool uiOpen;
     public string SceneName;
     public Type Type;
     private void Start()
@@ -23,5 +27,25 @@ public class Trigger : MonoBehaviour
     {
         //collision.gameObject.GetComponent<Movement>().WTF();
 
+    }
+
+    public void IsTrigger()
+    {
+        switch (Type) { 
+        
+        case Type.PORT:
+                if (!uiOpen)
+                {
+                    GameObject ui = Instantiate(UI);
+                    ui.GetComponentInChildren<TextMeshProUGUI>().text = "Souhaitez vous vous rendre vers : " + SceneName;
+                    Button no = ui.GetComponentsInChildren<Button>()[0];
+                    no.onClick.AddListener(() => Destroy(ui));
+                    no.onClick.AddListener(() => uiOpen = false);
+                    Button yes = ui.GetComponentsInChildren<Button>()[1];
+                    yes.onClick.AddListener(() => SceneManager.LoadScene(SceneName));
+                    uiOpen = true;
+                }
+                break;
+        }
     }
 }

@@ -4,21 +4,17 @@ using UnityEngine;
 
 public class CameraClamp : MonoBehaviour
 {
-    // Start is called before the first frame update
     public SpriteRenderer test;
     public GameObject target;
-    void Start()
-    {
-        
-        Debug.Log(GetComponent<Camera>().orthographicSize);
-    }
 
-    // Update is called once per frame
     void Update()
     {
+        float cameraHeight = Camera.main.orthographicSize;
+        
+        float cameraWidth = cameraHeight * Camera.main.aspect;
         transform.position = new Vector3(
-      Mathf.Clamp(target.transform.position.x, 0, 2),
-      Mathf.Clamp(target.transform.position.y, 0, 2),
-      transform.position.z);
+        Mathf.Clamp(target.transform.position.x, test.bounds.min.x + cameraWidth, test.bounds.max.x - cameraWidth),
+        Mathf.Clamp(target.transform.position.y, test.bounds.min.y + cameraHeight, test.bounds.max.y - cameraHeight),
+        transform.position.z);
     }
 }
