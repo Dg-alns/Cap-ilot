@@ -10,7 +10,7 @@ public class CameraClamp : MonoBehaviour
     void Update()
     {
         float cameraHeight = Camera.main.orthographicSize;
-        
+
         float cameraWidth = cameraHeight * Camera.main.aspect;
         transform.position = new Vector3(
         Mathf.Clamp(target.transform.position.x, test.bounds.min.x + cameraWidth, test.bounds.max.x - cameraWidth),

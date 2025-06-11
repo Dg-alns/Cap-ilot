@@ -12,19 +12,20 @@ public class Movement : MonoBehaviour
 {
     //public Animator animator;
     Tools _tools;
-    Vector3 target;
-    NavMeshAgent agent;
+    Vector3 _target;
+    NavMeshAgent _agent;
     // Start is called before the first frame update
-    SpriteRenderer spriteRenderer;
+    SpriteRenderer _spriteRenderer;
     public int clickedNpcId;
+    //[SerializeField] private TouchManager _touchManager;
     void Start()
     {
         _tools = FindAnyObjectByType<Tools>();
-        target = transform.position;
-        agent = GetComponent<NavMeshAgent>();
-        agent.updateRotation = false;
-        agent.updateUpAxis = false;
-        spriteRenderer = GetComponent<SpriteRenderer>();
+        _target = transform.position;
+        _agent = GetComponent<NavMeshAgent>();
+        _agent.updateRotation = false;
+        _agent.updateUpAxis = false;
+        _spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -32,34 +33,39 @@ public class Movement : MonoBehaviour
     {
         if(!_tools.IsPointerOverUIElement())
         {
-            if (Input.GetMouseButton(0)) {
-            target = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            target.z = transform.position.z;
-            
-            }
+            //_target = Camera.main.ScreenToWorldPoint(_touchManager.position);
+            //_target.z = transform.position.z;
 
-           
-            /*if (agent.destination != transform.position) {
+
+
+            /*if (_agent.destination != transform.position) {
                 animator.SetBool("Walking", true);
             }
             else
             {
                 animator.SetBool("Walking", false);
             }*/
-            agent.SetDestination(target);
+            //Debug.Log(_target);
+            //_agent.SetDestination(_target);
         }
-        if (target.x < transform.position.x)//deplacement  a gauche
+        /*if (_target.x < transform.position.x)//deplacement  a gauche
         {
-            spriteRenderer.flipX = true;
+            _spriteRenderer.flipX = true;
         }
         else
         {
-            if (target.x > transform.position.x)
+            if (_target.x > transform.position.x)
             {
-                spriteRenderer.flipX = false;
+                _spriteRenderer.flipX = false;
             }
-        }
+        }*/
 
+    }
+    public void Move(Vector3 position)
+    {
+        Debug.Log(position);
+        position.z = transform.position.z;   
+        _agent.SetDestination(position);
     }
 
     private void OnTriggerStay2D(Collider2D collision)
@@ -67,7 +73,7 @@ public class Movement : MonoBehaviour
 
         if (collision.gameObject.GetComponent<Trigger>())
         {
-            if (agent.remainingDistance < 0.2f)
+            if (_agent.remainingDistance < 0.2f)
             {
                 collision.gameObject.GetComponent<Trigger>().IsTrigger();
                 //SceneManager.LoadScene(collision.gameObject.GetComponent<Trigger>().SceneName);
