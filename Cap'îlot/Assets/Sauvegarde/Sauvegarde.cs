@@ -13,30 +13,23 @@ public class Sauvegarde : MonoBehaviour
     [SerializeField] private TextMeshProUGUI Input;
     [SerializeField] private TMP_Dropdown Output;
     [SerializeField] private TextMeshProUGUI OutputText;
-    private List<string> OutputList;
+    [SerializeField] private Wheel EmotionWheel;
     // Start is called before the first frame update
 
     private void Awake()
     {
         journal = new Journal();
+        journal.Output = Output;
+        journal.EmotionWheel = EmotionWheel;
+        journal.OutputText = OutputText;
         try
         {
             string jsonstring = File.ReadAllText("save.json");
             journal = JsonUtility.FromJson<Journal>(jsonstring);
-            Output.ClearOptions();
-            List<string> keyList = new List<string>();
-            foreach (string key in journal.journal.Keys)
-            {
-                keyList.Add(key);
-            }
-            Output.AddOptions(keyList);
-            OutputList = new List<string>();
-            foreach (TMP_Dropdown.OptionData option in Output.options)
-            {
-                OutputList.Add(journal.journal[option.text]);
-            }
-            OutputText.text = OutputList[Output.value];
-            Output.RefreshShownValue();
+            journal.Output = Output;
+            journal.EmotionWheel = EmotionWheel;
+            journal.OutputText = OutputText;
+            journal.UpdateJournal();
         }
         catch
         {
@@ -44,33 +37,15 @@ public class Sauvegarde : MonoBehaviour
         }
         journal.InputField = Input;
         Output.onValueChanged.AddListener(delegate {
-            DropdownValueChanged(Output);
+            journal.DropdownValueChanged(Output);
         });
     }
     public void Save()
     {
-        Output.ClearOptions();
         journal.Save();
         string jsonString = JsonUtility.ToJson(journal);
         string fileName = "save.json";
         File.WriteAllText(fileName, jsonString);
-        List<string> keyList = new List<string>();
-        foreach (string key in journal.journal.Keys)
-        {
-            keyList.Add(key);
-        }
-        Output.AddOptions(keyList);
-        OutputList = new List<string>();
-        foreach (TMP_Dropdown.OptionData option in Output.options)
-        {
-            OutputList.Add(journal.journal[option.text]);
-        }
-        OutputText.text = OutputList[Output.value];
-        Output.RefreshShownValue();
-    }
-
-    void DropdownValueChanged(TMP_Dropdown change)
-    {
-        OutputText.text = OutputList[Output.value];
+        journal.UpdateJournal();
     }
 }
