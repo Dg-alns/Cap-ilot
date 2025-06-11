@@ -13,6 +13,7 @@ public class Sauvegarde : MonoBehaviour
     [SerializeField] private TextMeshProUGUI Input;
     [SerializeField] private TMP_Dropdown Output;
     [SerializeField] private TextMeshProUGUI OutputText;
+    private List<string> OutputList;
     // Start is called before the first frame update
 
     private void Awake()
@@ -29,8 +30,13 @@ public class Sauvegarde : MonoBehaviour
                 keyList.Add(key);
             }
             Output.AddOptions(keyList);
+            OutputList = new List<string>();
+            foreach (TMP_Dropdown.OptionData option in Output.options)
+            {
+                OutputList.Add(journal.journal[option.text]);
+            }
+            OutputText.text = OutputList[Output.value];
             Output.RefreshShownValue();
-            OutputText.text = journal.journal[Output.captionText.ToString()];
         }
         catch
         {
@@ -54,16 +60,17 @@ public class Sauvegarde : MonoBehaviour
             keyList.Add(key);
         }
         Output.AddOptions(keyList);
-/*        foreach (Dropdown.OptionData option in Output.options)
+        OutputList = new List<string>();
+        foreach (TMP_Dropdown.OptionData option in Output.options)
         {
-            option. = journal.journal[option.text];
-        }*/
+            OutputList.Add(journal.journal[option.text]);
+        }
+        OutputText.text = OutputList[Output.value];
         Output.RefreshShownValue();
     }
 
     void DropdownValueChanged(TMP_Dropdown change)
     {
-        print(Output.captionText.ToString());
-        OutputText.text = journal.journal[Output.captionText.ToString()];
+        OutputText.text = OutputList[Output.value];
     }
 }
