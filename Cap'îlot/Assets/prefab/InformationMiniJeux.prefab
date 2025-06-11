@@ -436,11 +436,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 379775d3b7d0c00458820ec8e2f13d1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Game: {fileID: 0}
+  ObjReference: {fileID: 0}
   text: {fileID: 3704710072429109602}
-  infos: 
-  texture: {fileID: 0}
   img: {fileID: 397290079256698858}
-  Back: {fileID: 5543108494850677602}
+  Back: {fileID: 4871241626289232928}
 --- !u!1 &8508813404663877746
 GameObject:
   m_ObjectHideFlags: 0

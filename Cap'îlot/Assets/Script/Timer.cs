@@ -10,6 +10,9 @@ public class Timer : MonoBehaviour
     float baseSeconds = 1;
     float DTseconds = 1;
 
+    float nSec = 0;
+    float baseNSec = 0;
+
     int SUniter = 0;
     int SDizaine = 0;
     int MUniter = 0;
@@ -17,7 +20,8 @@ public class Timer : MonoBehaviour
     
     void Start()
     {
-        TextTime.text = "00.00";
+        if(TextTime != null) 
+            TextTime.text = "00.00";
     }
 
     bool Elapse1second()
@@ -33,37 +37,43 @@ public class Timer : MonoBehaviour
         return false;
     }
 
-    void UpdateTimer()
+    public void SetNSeconds(int seconds ) { nSec = seconds; baseNSec = seconds; }
+    public void RestartNSeconds( ) { nSec += baseNSec; }
+    public bool ElapseNsecond()
     {
-        SUniter++;
-        if(SUniter >= 10 )
-        {
-            SUniter = 0;
-            SDizaine++;
-        }
+        nSec -= Time.deltaTime;
 
-        if (SDizaine >= 6)
-        {
-            SDizaine = 0;
-            MUniter++;
-        }
+        if(nSec <= 0 )
+            return true;
 
-        if (MUniter >= 10)
-        {
-            MUniter = 0;
-            MDizaine++;
-        }
-
-        TextTime.text = MDizaine.ToString() + MUniter.ToString() + "." + SDizaine.ToString() + SUniter.ToString();
+        return false;
     }
 
-
-    void Update()
+    public void UpdateTimer()
     {
-        if(Elapse1second())
+        if (Elapse1second())
         {
-            UpdateTimer();
-        }
 
+            SUniter++;
+            if (SUniter >= 10)
+            {
+                SUniter = 0;
+                SDizaine++;
+            }
+
+            if (SDizaine >= 6)
+            {
+                SDizaine = 0;
+                MUniter++;
+            }
+
+            if (MUniter >= 10)
+            {
+                MUniter = 0;
+                MDizaine++;
+            }
+
+            TextTime.text = MDizaine.ToString() + MUniter.ToString() + "." + SDizaine.ToString() + SUniter.ToString();
+        }
     }
 }

@@ -1,22 +1,28 @@
 using System.Collections;
 using System.Collections.Generic;
+using NUnit.Framework.Internal;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DetectionObj : MonoBehaviour
 {
-    public ObjCachee game;
+    ObjCachee objCachee;
     public Camera cam;
 
-    public GameObject menu;
+    public Image menu;
 
-    List<Objects> objects;
+    List<GameObject> objects;
     List<TextMeshProUGUI> nameobjs;
+    List<Infos_MiniJeux> infos;
 
     private void Start()
     {
-        objects = game.objs;
-        nameobjs = game.Nameobjs;
+        objCachee = gameObject.GetComponent<ObjCachee>();
+
+        objects = objCachee.objs;
+        nameobjs = objCachee.Nameobjs;
+        infos = objCachee.allinfos;
     }
 
     bool Detection(GameObject obj)
@@ -28,8 +34,20 @@ public class DetectionObj : MonoBehaviour
         bool InY = positionMin.y <= mouse.y && positionMax.y >= mouse.y;
         bool InX = positionMin.x <= mouse.x && positionMax.x >= mouse.x;
 
-        Debug.Log(positionMin.y + " <= " + mouse.y + " && " + positionMax.y +  " >= " + mouse.y);
-        Debug.Log(positionMin.x + " <= " + mouse.x + " && " + positionMax.x +  " >= " + mouse.x);
+        return InY && InX;
+    }
+
+    bool DetectionImg(Image obj)
+    {
+        Vector3 mouse = Input.mousePosition;
+
+        RectTransform rect = obj.GetComponent<RectTransform>();
+        float HalfHeight = (rect.rect.height * obj.transform.localScale.y) / 2f;
+        float HalfWidth = (rect.rect.width * obj.transform.localScale.x) / 2f;
+
+        bool InY = obj.transform.position.y - HalfHeight <= mouse.y && obj.transform.position.y + HalfHeight >= mouse.y;
+        bool InX = obj.transform.position.x - HalfWidth <= mouse.x && obj.transform.position.x + HalfWidth >= mouse.x;
+
         return InY && InX;
     }
 
@@ -40,26 +58,46 @@ public class DetectionObj : MonoBehaviour
 
         for (int i = 0; i < objects.Count; i++)
         {
-            if (objects[i].gameObject.activeSelf == false)
+            if (objects[i].activeSelf == false)
                 continue;
 
-            if (Detection(objects[i].gameObject))
+            if (Detection(objects[i]))
             {
-                objects[i].gameObject.SetActive(false);
+                if(Detection(objCachee.diabetes))
+                    break;
+
+
+                objects[i].SetActive(false);
+                nameobjs[i].fontStyle = FontStyles.Strikethrough;
+
+                Infos_MiniJeux infos = FindInfos(objects[i]);
+
+                infos.gameObject.SetActive(true);
+                gameObject.SetActive(false);
+
+                break;
                 
-                if (objects[i] == objects[i])
-                {
-                    nameobjs[i].fontStyle = FontStyles.Strikethrough;
-                    return;
-                }
                                
             }
         }
     }
 
+    Infos_MiniJeux FindInfos(GameObject obj)
+    {
+        foreach (Infos_MiniJeux inf in infos)
+        {
+            if (inf.ObjReference == obj)
+            {
+                infos.Remove(inf);
+                return inf;
+            }
+        }
+        return null;
+    }
+
     void DetectionMenu()
     {
-        if (Detection(menu))
+        if (DetectionImg(menu))
         {
             Debug.Log("GO MENU");
 
@@ -71,7 +109,7 @@ public class DetectionObj : MonoBehaviour
         if(Input.GetMouseButtonDown(0)) // a changer
         {
             DetectionObject();
-            //DetectionMenu();
+            DetectionMenu();
         }
     }
 }
