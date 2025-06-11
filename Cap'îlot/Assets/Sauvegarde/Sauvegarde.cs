@@ -10,7 +10,10 @@ using UnityEngine.UI;
 public class Sauvegarde : MonoBehaviour
 {
     private Journal journal;
+    private Profile profile;
     [SerializeField] private TextMeshProUGUI Input;
+    [SerializeField] private TextMeshProUGUI InputName;
+    [SerializeField] private TextMeshProUGUI OutputName;
     [SerializeField] private TMP_Dropdown Output;
     [SerializeField] private TextMeshProUGUI OutputText;
     [SerializeField] private Wheel EmotionWheel;
@@ -19,9 +22,22 @@ public class Sauvegarde : MonoBehaviour
     private void Awake()
     {
         journal = new Journal();
+        profile = new Profile();
         journal.Output = Output;
         journal.EmotionWheel = EmotionWheel;
         journal.OutputText = OutputText;
+        profile.Output = OutputName;
+        try
+        {
+            string jsonstring = File.ReadAllText("saveName.json");
+            profile = JsonUtility.FromJson<Profile>(jsonstring);
+            profile.Output = OutputName;
+            profile.UpdateName();
+        }
+        catch
+        {
+
+        }
         try
         {
             string jsonstring = File.ReadAllText("save.json");
@@ -36,6 +52,7 @@ public class Sauvegarde : MonoBehaviour
 
         }
         journal.InputField = Input;
+        profile.Input = InputName;
         Output.onValueChanged.AddListener(delegate {
             journal.DropdownValueChanged(Output);
         });
@@ -43,9 +60,14 @@ public class Sauvegarde : MonoBehaviour
     public void Save()
     {
         journal.Save();
+        profile.Save();
         string jsonString = JsonUtility.ToJson(journal);
         string fileName = "save.json";
         File.WriteAllText(fileName, jsonString);
+        jsonString = JsonUtility.ToJson(profile);
+        fileName = "saveName.json";
+        File.WriteAllText(fileName, jsonString);
         journal.UpdateJournal();
+        profile.UpdateName();
     }
 }
