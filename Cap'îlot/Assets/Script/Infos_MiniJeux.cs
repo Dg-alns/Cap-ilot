@@ -6,6 +6,7 @@ public class Infos_MiniJeux : MonoBehaviour
 {
     public GameObject Game;
     public GameObject ObjReference;
+
     Objects obj;
 
     public TextMeshProUGUI text;
@@ -18,13 +19,10 @@ public class Infos_MiniJeux : MonoBehaviour
     {
         obj = ObjReference.GetComponent<Objects>();
 
-
         if (obj.GetSprite() != null)
             img.sprite = obj.GetSprite();
 
-        text.text = obj.infos;
-
-
+        text.text = obj.str;
     }
 
     bool DetectionImg(Image obj)
@@ -40,14 +38,17 @@ public class Infos_MiniJeux : MonoBehaviour
 
         return InY && InX;
     }
-
-
     void DetectionBack()
     {
         if (DetectionImg(Back))
         {
             gameObject.SetActive(false);
             Game.SetActive(true);
+
+
+            Game.GetComponent<ObjCachee>().AddScore();
+
+
         }
     }
     void Update()

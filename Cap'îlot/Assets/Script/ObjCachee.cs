@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using NUnit.Framework;
 using TMPro;
@@ -5,40 +6,45 @@ using UnityEngine;
 
 public class ObjCachee : MonoBehaviour
 {
-    List<Objects> objs;
-    List<TextMeshProUGUI> Nameobjs;
-    List<Infos_MiniJeux> allinfos;
-
     public Timer timer;
     public GameObject diabetes;
+    public GameObject VisualWinning;
+    private int mScore;
+    private int mWinnigScore;
 
-    public List<Objects> GetAllObjToFind() {  return objs; }
-    public List<TextMeshProUGUI> GetAllText() {  return Nameobjs; }
-    public List<Infos_MiniJeux> GetAllInfos() {  return allinfos; }
+    public int point = 200;
 
-    private void Awake()
+    bool IsWin = false;
+
+    public void SetScore(int score) { mWinnigScore = score; }
+
+    private void Start()
     {
-        objs = Tools.CreateList<Objects>("ToFind");
-        Nameobjs = Tools.CreateList<TextMeshProUGUI>("Bot");
-        allinfos = Tools.CreateList<Infos_MiniJeux>("Canvas (1)");
 
-        foreach(Infos_MiniJeux infos in allinfos)
-        {
-            infos.gameObject.SetActive(false);
-        }
-
-        Assert.AreEqual(objs.Count, Nameobjs.Count);
-
-        for (int i = 0; i < objs.Count; i++)
-        {
-            Nameobjs[i].text = objs[i].name;
-        }
+        VisualWinning.SetActive(false);
     }
 
     void Update()
     {
-        timer.UpdateTimer();
-
-        diabetes.GetComponent<Diabète>().GoToPosition();
+        if(IsWin == false)
+            timer.UpdateTimer();
     }
+
+
+    public void AddScore()
+    {
+        mScore += point;
+        CheckWin();
+    }
+    private bool CheckWin()
+    {
+        if (mScore == mWinnigScore)
+        {
+            IsWin = true;
+            VisualWinning.SetActive(true);
+            VisualWinning.GetComponent<Animator>().SetBool("TEST", true);
+        }
+        return true;
+    }
+
 }

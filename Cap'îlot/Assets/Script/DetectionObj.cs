@@ -1,11 +1,15 @@
 using System.Collections.Generic;
+using System.Dynamic;
+using NUnit.Framework;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+using static UnityEditor.PlayerSettings;
 
 public class DetectionObj : MonoBehaviour
 {
-    ObjCachee objCachee;
+    public ObjCachee objCachee;
     public Camera cam;
 
     public Image menu;
@@ -13,15 +17,29 @@ public class DetectionObj : MonoBehaviour
 
     List<Objects> objects;
     List<TextMeshProUGUI> nameobjs;
-    List<Infos_MiniJeux> infos;
+    List<Infos_MiniJeux> allinfos;
 
-    private void Start()
+    private void Awake()
     {
+        objects = Tools.CreateList<Objects>("ToFind");
+        nameobjs = Tools.CreateList<TextMeshProUGUI>("Bot");
+        allinfos = Tools.CreateList<Infos_MiniJeux>("AllInfo");
+
+
         objCachee = gameObject.GetComponent<ObjCachee>();
 
-        objects = objCachee.GetAllObjToFind();
-        nameobjs = objCachee.GetAllText();
-        infos = objCachee.GetAllInfos();
+        Assert.AreEqual(objects.Count, nameobjs.Count);
+        Assert.AreEqual(objects.Count, allinfos.Count);
+
+        for (int i = 0; i < objects.Count; i++)
+        {
+            nameobjs[i].text = objects[i].name;
+            objects[i].GetComponent<Objects>().SetText(nameobjs[i]);
+            allinfos[i].ObjReference = objects[i].gameObject;
+            allinfos[i].gameObject.SetActive(false);
+        }
+
+        objCachee.SetScore(objects.Count * objCachee.point);
     }
 
     bool Detection(GameObject obj)
@@ -55,7 +73,7 @@ public class DetectionObj : MonoBehaviour
         if (objects.Count <= 0)
             return;
 
-        for (int i = 0; i < objects.Count; i++)
+        for (int i = 0; i<objects.Count; i++)
         {
             if (objects[i].gameObject.activeSelf == false)
                 continue;
@@ -65,7 +83,6 @@ public class DetectionObj : MonoBehaviour
                 if (Detection(objCachee.diabetes))
                     break;
 
-
                 objects[i].gameObject.SetActive(false);
                 nameobjs[i].fontStyle = FontStyles.Strikethrough;
 
@@ -73,6 +90,7 @@ public class DetectionObj : MonoBehaviour
 
                 infos.gameObject.SetActive(true);
                 gameObject.SetActive(false);
+
 
                 break;
 
@@ -83,11 +101,11 @@ public class DetectionObj : MonoBehaviour
 
     Infos_MiniJeux FindInfos(GameObject obj)
     {
-        foreach (Infos_MiniJeux inf in infos)
+        foreach (Infos_MiniJeux inf in allinfos)
         {
             if (inf.ObjReference == obj)
             {
-                infos.Remove(inf);
+                allinfos.Remove(inf);
                 return inf;
             }
         }
@@ -99,7 +117,6 @@ public class DetectionObj : MonoBehaviour
         if (DetectionImg(menu))
         {
             Debug.Log("GO MENU");
-
         }
     }
 
@@ -108,17 +125,16 @@ public class DetectionObj : MonoBehaviour
         if (DetectionImg(insuline))
         {
             StartCoroutine(objCachee.diabetes.GetComponent<Diabète>().DbWithInsuline());
-
         }
     }
 
     void Update()
     {
-        if(Input.GetMouseButtonDown(0)) // a changer
+        if (Input.GetMouseButtonDown(0))
         {
-            DetectionObject();
             DetectionMenu();
             DetectionInsuluine();
+            DetectionObject();
         }
     }
 }

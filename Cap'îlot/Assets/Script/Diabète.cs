@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using NUnit.Framework.Internal;
+using UnityEditor.SearchService;
 using UnityEngine;
 
 public class Diabète : MonoBehaviour
@@ -23,6 +24,8 @@ public class Diabète : MonoBehaviour
 
     Vector3 posDb;
     Vector3 destination;
+
+    public bool clikme = false;
 
     void Start()
     {
@@ -50,7 +53,6 @@ public class Diabète : MonoBehaviour
 
         minY = minYCam + HalfHeight;
         maxY = maxYCam - HalfHeight;
-
     }
 
     bool PointIsInMe(Vector3 point)
@@ -98,6 +100,11 @@ public class Diabète : MonoBehaviour
         }
 
         transform.position = Vector3.MoveTowards(transform.position, destination, speed * Time.deltaTime);
+    }
+
+    private void Update()
+    {
+        GoToPosition();
     }
 
     public IEnumerator DbWithInsuline()
