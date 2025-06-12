@@ -31,13 +31,6 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(!_tools.IsPointerOverUIElement())
-        {
-            //_target = Camera.main.ScreenToWorldPoint(_touchManager.position);
-            //_target.z = transform.position.z;
-
-
-
             /*if (_agent.destination != transform.position) {
                 animator.SetBool("Walking", true);
             }
@@ -47,27 +40,28 @@ public class Movement : MonoBehaviour
             }*/
             //Debug.Log(_target);
             //_agent.SetDestination(_target);
-        }
-        /*if (_target.x < transform.position.x)//deplacement  a gauche
-        {
-            _spriteRenderer.flipX = true;
-        }
-        else
-        {
-            if (_target.x > transform.position.x)
-            {
-                _spriteRenderer.flipX = false;
-            }
-        }*/
 
     }
     public void Move(Vector3 position)
     {
-        Debug.Log(position);
-        position.z = transform.position.z;   
-        _agent.SetDestination(position);
-    }
 
+        if (!_tools.IsPointerOverUIElement())
+        {
+            position.z = transform.position.z;
+            if (position.x < transform.position.x)//deplacement  a gauche
+            {
+                _spriteRenderer.flipX = true;
+            }
+            else
+            {
+                if (position.x > transform.position.x)
+                {
+                    _spriteRenderer.flipX = false;
+                }
+            }
+            _agent.SetDestination(position);
+        }
+    }
     private void OnTriggerStay2D(Collider2D collision)
     {
 

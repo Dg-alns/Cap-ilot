@@ -41,8 +41,11 @@ public class TouchManager : MonoBehaviour
     }
 
     private void TouchPosition(InputAction.CallbackContext context) {
-       position = context.ReadValue<Vector2>();
-       _player.GetComponent<Movement>().Move(Camera.main.ScreenToWorldPoint(position));
-       //Debug.Log(Camera.main.ScreenToWorldPoint(position));
+        Debug.Log("cc");
+
+        position = context.ReadValue<Vector2>();
+        _player.GetComponent<Movement>().Move(Camera.main.ScreenToWorldPoint(position));
+        //Debug.Log(Camera.main.ScreenToWorldPoint(position));
+        
     }
 }
