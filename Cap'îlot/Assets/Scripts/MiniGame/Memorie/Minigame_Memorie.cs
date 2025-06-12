@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Minigame_Memorie : MonoBehaviour
 {
@@ -22,6 +23,8 @@ public class Minigame_Memorie : MonoBehaviour
         nbSlots = 16;
         mWinnigScore = nbSlots * 100;
 
+        VisualWinning.SetActive(false);
+
         for (int i = 0; i < nbSlots; i++)
         {
             slots.Add(i);
@@ -34,6 +37,8 @@ public class Minigame_Memorie : MonoBehaviour
         if (mScore == mWinnigScore)
         {
             Debug.Log("It's win");
+            //FindFirstObjectByType<Button>(FindObjectsInactive.Include).gameObject.SetActive(true);
+            VisualWinning.SetActive(true);
             VisualWinning.GetComponent<Animator>().SetBool("TEST", true);
         }
         return true;
