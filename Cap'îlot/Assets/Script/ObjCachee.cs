@@ -20,7 +20,7 @@ public class ObjCachee : MonoBehaviour
     {
         objs = Tools.CreateList<Objects>("ToFind");
         Nameobjs = Tools.CreateList<TextMeshProUGUI>("Bot");
-        allinfos = Tools.CreateList<Infos_MiniJeux>("Canvas (1)");
+        allinfos = Tools.CreateList<Infos_MiniJeux>("AllInfo");
 
         foreach(Infos_MiniJeux infos in allinfos)
         {
@@ -32,6 +32,7 @@ public class ObjCachee : MonoBehaviour
         for (int i = 0; i < objs.Count; i++)
         {
             Nameobjs[i].text = objs[i].name;
+            objs[i].GetComponent<Objects>().nameobjs = Nameobjs[i];
         }
     }
 

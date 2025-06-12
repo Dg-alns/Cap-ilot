@@ -24,6 +24,8 @@ public class Diabète : MonoBehaviour
     Vector3 posDb;
     Vector3 destination;
 
+    public bool clikme = false;
+
     void Start()
     {
         animator = GetComponent<Animator>();
@@ -97,7 +99,7 @@ public class Diabète : MonoBehaviour
             NewPosition();
         }
 
-        transform.position = Vector3.MoveTowards(transform.position, destination, speed * Time.deltaTime);
+        //transform.position = Vector3.MoveTowards(transform.position, destination, speed * Time.deltaTime);
     }
 
     public IEnumerator DbWithInsuline()
@@ -108,5 +110,11 @@ public class Diabète : MonoBehaviour
         yield return new WaitForSeconds(8 + animator.GetAnimatorTransitionInfo(0).duration);
 
         animator.SetBool("useInsuline", false);
+    }
+
+    private void OnMouseUp()
+    {
+        clikme = true;
+        Debug.Log("db");
     }
 }

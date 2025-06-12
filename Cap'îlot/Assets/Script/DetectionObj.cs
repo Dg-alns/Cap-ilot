@@ -1,39 +1,16 @@
-using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class DetectionObj : MonoBehaviour
 {
-    ObjCachee objCachee;
-    public Camera cam;
+    public ObjCachee objCachee;
 
     public Image menu;
     public Image insuline;
 
-    List<Objects> objects;
-    List<TextMeshProUGUI> nameobjs;
-    List<Infos_MiniJeux> infos;
-
     private void Start()
     {
         objCachee = gameObject.GetComponent<ObjCachee>();
-
-        objects = objCachee.GetAllObjToFind();
-        nameobjs = objCachee.GetAllText();
-        infos = objCachee.GetAllInfos();
-    }
-
-    bool Detection(GameObject obj)
-    {
-        Vector3 mouse = Input.mousePosition;
-        Vector3 positionMin = cam.WorldToScreenPoint(obj.GetComponent<Renderer>().bounds.min);
-        Vector3 positionMax = cam.WorldToScreenPoint(obj.GetComponent<Renderer>().bounds.max);
-
-        bool InY = positionMin.y <= mouse.y && positionMax.y >= mouse.y;
-        bool InX = positionMin.x <= mouse.x && positionMax.x >= mouse.x;
-
-        return InY && InX;
     }
 
     bool DetectionImg(Image obj)
@@ -50,56 +27,11 @@ public class DetectionObj : MonoBehaviour
         return InY && InX;
     }
 
-    void DetectionObject()
-    {
-        if (objects.Count <= 0)
-            return;
-
-        for (int i = 0; i < objects.Count; i++)
-        {
-            if (objects[i].gameObject.activeSelf == false)
-                continue;
-
-            if (Detection(objects[i].gameObject))
-            {
-                if (Detection(objCachee.diabetes))
-                    break;
-
-
-                objects[i].gameObject.SetActive(false);
-                nameobjs[i].fontStyle = FontStyles.Strikethrough;
-
-                Infos_MiniJeux infos = FindInfos(objects[i].gameObject);
-
-                infos.gameObject.SetActive(true);
-                gameObject.SetActive(false);
-
-                break;
-
-
-            }
-        }
-    }
-
-    Infos_MiniJeux FindInfos(GameObject obj)
-    {
-        foreach (Infos_MiniJeux inf in infos)
-        {
-            if (inf.ObjReference == obj)
-            {
-                infos.Remove(inf);
-                return inf;
-            }
-        }
-        return null;
-    }
-
     void DetectionMenu()
     {
         if (DetectionImg(menu))
         {
             Debug.Log("GO MENU");
-
         }
     }
 
@@ -114,9 +46,8 @@ public class DetectionObj : MonoBehaviour
 
     void Update()
     {
-        if(Input.GetMouseButtonDown(0)) // a changer
+        if (Input.GetMouseButtonDown(0))
         {
-            DetectionObject();
             DetectionMenu();
             DetectionInsuluine();
         }

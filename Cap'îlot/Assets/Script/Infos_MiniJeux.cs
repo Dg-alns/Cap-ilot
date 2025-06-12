@@ -22,7 +22,7 @@ public class Infos_MiniJeux : MonoBehaviour
         if (obj.GetSprite() != null)
             img.sprite = obj.GetSprite();
 
-        text.text = obj.infos;
+        text.text = obj.str;
 
 
     }
