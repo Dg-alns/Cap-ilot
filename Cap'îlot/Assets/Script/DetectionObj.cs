@@ -19,7 +19,7 @@ public class DetectionObj : MonoBehaviour
     List<TextMeshProUGUI> nameobjs;
     List<Infos_MiniJeux> allinfos;
 
-    private void Start()
+    private void Awake()
     {
         objects = Tools.CreateList<Objects>("ToFind");
         nameobjs = Tools.CreateList<TextMeshProUGUI>("Bot");
@@ -28,20 +28,18 @@ public class DetectionObj : MonoBehaviour
 
         objCachee = gameObject.GetComponent<ObjCachee>();
 
-        foreach (Infos_MiniJeux infos in allinfos)
-        {
-            infos.gameObject.SetActive(false);
-        }
-
         Assert.AreEqual(objects.Count, nameobjs.Count);
+        Assert.AreEqual(objects.Count, allinfos.Count);
 
         for (int i = 0; i < objects.Count; i++)
         {
             nameobjs[i].text = objects[i].name;
             objects[i].GetComponent<Objects>().SetText(nameobjs[i]);
+            allinfos[i].ObjReference = objects[i].gameObject;
+            allinfos[i].gameObject.SetActive(false);
         }
 
-
+        objCachee.SetScore(objects.Count * objCachee.point);
     }
 
     bool Detection(GameObject obj)
@@ -85,7 +83,6 @@ public class DetectionObj : MonoBehaviour
                 if (Detection(objCachee.diabetes))
                     break;
 
-
                 objects[i].gameObject.SetActive(false);
                 nameobjs[i].fontStyle = FontStyles.Strikethrough;
 
@@ -93,6 +90,7 @@ public class DetectionObj : MonoBehaviour
 
                 infos.gameObject.SetActive(true);
                 gameObject.SetActive(false);
+
 
                 break;
 
@@ -127,7 +125,6 @@ public class DetectionObj : MonoBehaviour
         if (DetectionImg(insuline))
         {
             StartCoroutine(objCachee.diabetes.GetComponent<Diabète>().DbWithInsuline());
-
         }
     }
 
@@ -135,9 +132,9 @@ public class DetectionObj : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            DetectionObject();
             DetectionMenu();
             DetectionInsuluine();
+            DetectionObject();
         }
     }
 }

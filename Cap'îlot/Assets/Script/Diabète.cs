@@ -102,6 +102,11 @@ public class Diabète : MonoBehaviour
         transform.position = Vector3.MoveTowards(transform.position, destination, speed * Time.deltaTime);
     }
 
+    private void Update()
+    {
+        GoToPosition();
+    }
+
     public IEnumerator DbWithInsuline()
     {
         animator.SetBool("useInsuline", true);

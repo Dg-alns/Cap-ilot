@@ -6,6 +6,7 @@ public class Infos_MiniJeux : MonoBehaviour
 {
     public GameObject Game;
     public GameObject ObjReference;
+
     Objects obj;
 
     public TextMeshProUGUI text;
@@ -43,6 +44,11 @@ public class Infos_MiniJeux : MonoBehaviour
         {
             gameObject.SetActive(false);
             Game.SetActive(true);
+
+
+            Game.GetComponent<ObjCachee>().AddScore();
+
+
         }
     }
     void Update()
