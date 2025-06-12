@@ -18,7 +18,7 @@ public class Movement : MonoBehaviour
     SpriteRenderer _spriteRenderer;
     public int clickedNpcId;
 
-    private Vector3 _destination;
+    private Vector3 _lastPosition;
     //[SerializeField] private TouchManager _touchManager;
     void Start()
     {
@@ -27,6 +27,8 @@ public class Movement : MonoBehaviour
         _agent.updateRotation = false;
         _agent.updateUpAxis = false;
         _spriteRenderer = GetComponent<SpriteRenderer>();
+
+        _lastPosition = transform.position;
     }
 
     // Update is called once per frame
@@ -41,18 +43,20 @@ public class Movement : MonoBehaviour
         }*/
         //Debug.Log(_target);
         //_agent.SetDestination(_target);
-        
-        if (_agent.destination.x < transform.position.x)//deplacement  a gauche
+        Vector3 movement = transform.position - _lastPosition;
+
+        if (movement.x < 0)//deplacement  a gauche
         {
             _spriteRenderer.flipX = true;
         }
         else
         {
-            if (_agent.destination.x > transform.position.x)
+            if (movement.x > 0)
             {
                 _spriteRenderer.flipX = false;
             }
         }
+        _lastPosition = transform.position;
 
     }
     public void Move(Vector3 position)
@@ -61,7 +65,6 @@ public class Movement : MonoBehaviour
         if (!_tools.IsPointerOverUIElement())
         {
             position.z = transform.position.z;
-            _destination = position;
             
             _agent.SetDestination(position);
         }
