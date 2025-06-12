@@ -16,6 +16,7 @@ public class Journal
     private List<string> OutputList;
     public SerializableDictionary<string, string> journal;
     public Wheel EmotionWheel { get; set; }
+    public List<string> ThemeList { get; set; }
     // Start is called before the first frame update
     public Journal()
     {
@@ -40,7 +41,12 @@ public class Journal
     }
     public void Save()
     {
-        journal[DateTime.Now.ToString()] = EmotionWheel.ActualEmoji + "\n" + InputField.text;
+        string themeSTR = "Thèmes : ";
+        foreach (string theme in ThemeList)
+        {
+            themeSTR += theme + " ";
+        }
+        journal[DateTime.Now.ToString()] = themeSTR + "\n" + EmotionWheel.ActualEmoji + "\n" + InputField.text;
     }
     public void DropdownValueChanged(TMP_Dropdown change)
     {

@@ -6,23 +6,25 @@ using System.IO;
 using static UnityEngine.Rendering.DebugUI;
 using TMPro;
 using UnityEngine.UI;
+using static UnityEngine.InputManagerEntry;
 
 public class Sauvegarde : MonoBehaviour
 {
     private Journal journal;
     private Profile profile;
-    [SerializeField] private TextMeshProUGUI Input;
-    [SerializeField] private TextMeshProUGUI InputName;
-    [SerializeField] private TextMeshProUGUI OutputName;
-    [SerializeField] private TMP_Dropdown Output;
-    [SerializeField] private TextMeshProUGUI OutputText;
-    [SerializeField] private Wheel EmotionWheel;
+    [SerializeField] TextMeshProUGUI Input;
+    [SerializeField] TextMeshProUGUI InputName;
+    [SerializeField] TextMeshProUGUI OutputName;
+    [SerializeField] TMP_Dropdown Output;
+    [SerializeField] TextMeshProUGUI OutputText;
+    [SerializeField] Wheel EmotionWheel;
     [SerializeField] UnityEngine.UI.Button Hospital;
     [SerializeField] UnityEngine.UI.Button Food;
     [SerializeField] UnityEngine.UI.Button Sport;
     [SerializeField] UnityEngine.UI.Button School;
     [SerializeField] UnityEngine.UI.Button Relations;
     [SerializeField] UnityEngine.UI.Button Temptations;
+    private List<string> Themes = new List<string>();
     // Start is called before the first frame update
 
     private void Awake()
@@ -62,9 +64,29 @@ public class Sauvegarde : MonoBehaviour
         Output.onValueChanged.AddListener(delegate {
             journal.DropdownValueChanged(Output);
         });
+        Hospital.onClick.AddListener(() => { OnClick(Hospital); });
+        Food.onClick.AddListener(() => { OnClick(Food); });
+        Sport.onClick.AddListener(() => { OnClick(Sport); });
+        School.onClick.AddListener(() => { OnClick(School); });
+        Relations.onClick.AddListener(() => { OnClick(Relations); });
+        Temptations.onClick.AddListener(() => { OnClick(Temptations); });
+    }
+
+    public void OnClick(UnityEngine.UI.Button pressed)
+    {
+        string theme = pressed.GetComponentInChildren<TextMeshProUGUI>().text;
+        if (Themes.Contains(theme))
+        {
+            Themes.Remove(theme);
+        }
+        else
+        {
+            Themes.Add(theme);
+        }
     }
     public void Save()
     {
+        journal.ThemeList = Themes;
         journal.Save();
         profile.Save();
         string jsonString = JsonUtility.ToJson(journal);
@@ -75,5 +97,6 @@ public class Sauvegarde : MonoBehaviour
         File.WriteAllText(fileName, jsonString);
         journal.UpdateJournal();
         profile.UpdateName();
+        Themes.Clear();
     }
 }
