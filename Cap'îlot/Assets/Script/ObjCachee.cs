@@ -16,7 +16,6 @@ public class ObjCachee : MonoBehaviour
     public List<TextMeshProUGUI> GetAllText() {  return Nameobjs; }
     public List<Infos_MiniJeux> GetAllInfos() {  return allinfos; }
 
-    //GetComponentsInChildren utiliser pour le regroupement de toute les props use find un parent
     private void Awake()
     {
         objs = Tools.CreateList<Objects>("ToFind");

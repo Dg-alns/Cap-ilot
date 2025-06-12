@@ -9,6 +9,7 @@ public class DetectionObj : MonoBehaviour
     public Camera cam;
 
     public Image menu;
+    public Image insuline;
 
     List<Objects> objects;
     List<TextMeshProUGUI> nameobjs;
@@ -102,12 +103,22 @@ public class DetectionObj : MonoBehaviour
         }
     }
 
+    void DetectionInsuluine()
+    {
+        if (DetectionImg(insuline))
+        {
+            StartCoroutine(objCachee.diabetes.GetComponent<Diabète>().DbWithInsuline());
+
+        }
+    }
+
     void Update()
     {
         if(Input.GetMouseButtonDown(0)) // a changer
         {
             DetectionObject();
             DetectionMenu();
+            DetectionInsuluine();
         }
     }
 }

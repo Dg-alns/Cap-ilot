@@ -8,6 +8,8 @@ public class Diabète : MonoBehaviour
     public Camera cam;
     public Timer timer;
 
+    Animator animator;
+
     float HalfHeight;
     float HalfWidth;
 
@@ -24,6 +26,8 @@ public class Diabète : MonoBehaviour
 
     void Start()
     {
+        animator = GetComponent<Animator>();
+
         HalfHeight = GetComponent<Renderer>().bounds.size.y / 2f;
         HalfWidth = GetComponent<Renderer>().bounds.size.x / 2f;
 
@@ -46,6 +50,7 @@ public class Diabète : MonoBehaviour
 
         minY = minYCam + HalfHeight;
         maxY = maxYCam - HalfHeight;
+
     }
 
     bool PointIsInMe(Vector3 point)
@@ -81,6 +86,7 @@ public class Diabète : MonoBehaviour
         {
             destination = ChoosePosition();
             timer.RestartNSeconds();
+
         }
     }
 
@@ -92,5 +98,15 @@ public class Diabète : MonoBehaviour
         }
 
         transform.position = Vector3.MoveTowards(transform.position, destination, speed * Time.deltaTime);
+    }
+
+    public IEnumerator DbWithInsuline()
+    {
+        animator.SetBool("useInsuline", true);
+        yield return new WaitForSeconds(0.5f);
+
+        yield return new WaitForSeconds(8 + animator.GetAnimatorTransitionInfo(0).duration);
+
+        animator.SetBool("useInsuline", false);
     }
 }
