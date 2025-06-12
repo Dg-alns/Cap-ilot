@@ -15,6 +15,8 @@ public class Timer : MonoBehaviour
     int SDizaine = 0;
     int MUniter = 0;
     int MDizaine = 0;
+
+    public bool stop = false;
     
     void Start()
     {
@@ -47,31 +49,33 @@ public class Timer : MonoBehaviour
         return false;
     }
 
-    public void UpdateTimer()
+    void Update()
     {
-        if (Elapse1second())
-        {
-
-            SUniter++;
-            if (SUniter >= 10)
+        if (stop == false) {
+            if (Elapse1second())
             {
-                SUniter = 0;
-                SDizaine++;
-            }
 
-            if (SDizaine >= 6)
-            {
-                SDizaine = 0;
-                MUniter++;
-            }
+                SUniter++;
+                if (SUniter >= 10)
+                {
+                    SUniter = 0;
+                    SDizaine++;
+                }
 
-            if (MUniter >= 10)
-            {
-                MUniter = 0;
-                MDizaine++;
-            }
+                if (SDizaine >= 6)
+                {
+                    SDizaine = 0;
+                    MUniter++;
+                }
 
-            TextTime.text = MDizaine.ToString() + MUniter.ToString() + "." + SDizaine.ToString() + SUniter.ToString();
+                if (MUniter >= 10)
+                {
+                    MUniter = 0;
+                    MDizaine++;
+                }
+
+                TextTime.text = MDizaine.ToString() + MUniter.ToString() + "." + SDizaine.ToString() + SUniter.ToString();
+            } 
         }
     }
 }

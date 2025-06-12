@@ -75,7 +75,6 @@ public class Card_Memorie : MonoBehaviour
 
     public void SwitchCard(Vector2 _positionTarget)
     {
-        Debug.Log(gameObject.name + " are switching");
         positionTarget = _positionTarget;
         switching = true;
         speedSwitch = Vector2.Distance(transform.position, _positionTarget) / 1.5f;

@@ -76,7 +76,8 @@ public class Diabete_Memorie : MonoBehaviour
 
             isSwitchingTime = true;
 
-            ResetTime();
+            mCurrentTime = 0.0f;
+            //ResetTime();
         }
     }
 
@@ -84,6 +85,7 @@ public class Diabete_Memorie : MonoBehaviour
     {
         mCurrentTime = 0;
         mTargetTime = Random.Range(mLimitSwitchTime[0], mLimitSwitchTime[1]);
+        Debug.Log(mTargetTime);
     }
     private void SwapRandomCards()
     {

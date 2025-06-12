@@ -14,20 +14,11 @@ public class ObjCachee : MonoBehaviour
 
     public int point = 200;
 
-    bool IsWin = false;
-
     public void SetScore(int score) { mWinnigScore = score; }
 
     private void Start()
     {
-
         VisualWinning.SetActive(false);
-    }
-
-    void Update()
-    {
-        if(IsWin == false)
-            timer.UpdateTimer();
     }
 
 
@@ -40,7 +31,7 @@ public class ObjCachee : MonoBehaviour
     {
         if (mScore == mWinnigScore)
         {
-            IsWin = true;
+            timer.stop = true;
             VisualWinning.SetActive(true);
             VisualWinning.GetComponent<Animator>().SetBool("TEST", true);
         }

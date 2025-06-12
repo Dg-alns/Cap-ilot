@@ -43,10 +43,11 @@ public class Infos_MiniJeux : MonoBehaviour
         if (DetectionImg(Back))
         {
             gameObject.SetActive(false);
-            Game.SetActive(true);
 
 
+            Game.GetComponent<ObjCachee>().timer.stop = false;
             Game.GetComponent<ObjCachee>().AddScore();
+
 
 
         }

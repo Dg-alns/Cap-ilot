@@ -7,13 +7,10 @@ using UnityEngine;
 using UnityEngine.UI;
 using static UnityEditor.PlayerSettings;
 
-public class DetectionObj : MonoBehaviour
+public class DetectionObjCachee : DetectionUI
 {
     public ObjCachee objCachee;
     public Camera cam;
-
-    public Image menu;
-    public Image insuline;
 
     List<Objects> objects;
     List<TextMeshProUGUI> nameobjs;
@@ -54,20 +51,6 @@ public class DetectionObj : MonoBehaviour
         return InY && InX;
     }
 
-    bool DetectionImg(Image obj)
-    {
-        Vector3 mouse = Input.mousePosition;
-
-        RectTransform rect = obj.GetComponent<RectTransform>();
-        float HalfHeight = (rect.rect.height * obj.transform.localScale.y) / 2f;
-        float HalfWidth = (rect.rect.width * obj.transform.localScale.x) / 2f;
-
-        bool InY = obj.transform.position.y - HalfHeight <= mouse.y && obj.transform.position.y + HalfHeight >= mouse.y;
-        bool InX = obj.transform.position.x - HalfWidth <= mouse.x && obj.transform.position.x + HalfWidth >= mouse.x;
-
-        return InY && InX;
-    }
-
     void DetectionObject()
     {
         if (objects.Count <= 0)
@@ -83,18 +66,15 @@ public class DetectionObj : MonoBehaviour
                 if (Detection(objCachee.diabetes))
                     break;
 
+                objCachee.timer.stop = true;
+
                 objects[i].gameObject.SetActive(false);
                 nameobjs[i].fontStyle = FontStyles.Strikethrough;
 
                 Infos_MiniJeux infos = FindInfos(objects[i].gameObject);
 
                 infos.gameObject.SetActive(true);
-                gameObject.SetActive(false);
-
-
                 break;
-
-
             }
         }
     }
@@ -112,19 +92,11 @@ public class DetectionObj : MonoBehaviour
         return null;
     }
 
-    void DetectionMenu()
-    {
-        if (DetectionImg(menu))
-        {
-            Debug.Log("GO MENU");
-        }
-    }
-
-    void DetectionInsuluine()
+    public override void DetectionInsuluine()
     {
         if (DetectionImg(insuline))
         {
-            StartCoroutine(objCachee.diabetes.GetComponent<Diabète>().DbWithInsuline());
+            StartCoroutine(diabete.GetComponent<Diabète>().DbWithInsuline());
         }
     }
 
