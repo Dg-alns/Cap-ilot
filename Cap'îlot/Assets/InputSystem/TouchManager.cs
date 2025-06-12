@@ -1,8 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using UnityEngine.InputSystem;
-
+using UnityEngine;
 
 public class TouchManager : MonoBehaviour
 {
@@ -10,9 +7,10 @@ public class TouchManager : MonoBehaviour
 
     private InputAction _touchPositionAction;
     private InputAction _touchPressAction;
+
     [SerializeField] private GameObject _player;
 
-    public Vector2 position;
+    private bool _isTouching = false;
 
     private void Awake()
     {
@@ -24,28 +22,32 @@ public class TouchManager : MonoBehaviour
 
     private void OnEnable()
     {
-        _touchPositionAction.performed += TouchPosition;
-        _touchPressAction.performed += TouchPress;
+        _touchPressAction.performed += OnTouchStarted;
+        _touchPressAction.canceled += OnTouchEnded;
     }
 
     private void OnDisable()
     {
-        _touchPressAction.performed -= TouchPress;
-        _touchPositionAction.performed -= TouchPosition;
+        _touchPressAction.performed -= OnTouchStarted;
+        _touchPressAction.canceled -= OnTouchEnded;
     }
 
-    private void TouchPress(InputAction.CallbackContext context)
+    private void Update()
     {
-        float value = context.ReadValue<float>();
-        Debug.Log(value);
+        if (_isTouching)
+        {
+            Vector2 position = _touchPositionAction.ReadValue<Vector2>();
+            _player.GetComponent<Movement>().Move(Camera.main.ScreenToWorldPoint(position));
+        }
     }
 
-    private void TouchPosition(InputAction.CallbackContext context) {
-        Debug.Log("cc");
+    private void OnTouchStarted(InputAction.CallbackContext context)
+    {
+        _isTouching = true;
+    }
 
-        position = context.ReadValue<Vector2>();
-        _player.GetComponent<Movement>().Move(Camera.main.ScreenToWorldPoint(position));
-        //Debug.Log(Camera.main.ScreenToWorldPoint(position));
-        
+    private void OnTouchEnded(InputAction.CallbackContext context)
+    {
+        _isTouching = false;
     }
 }
