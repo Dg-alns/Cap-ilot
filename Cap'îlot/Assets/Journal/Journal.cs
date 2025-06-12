@@ -10,12 +10,12 @@ using static UnityEditor.Rendering.CameraUI;
 [System.Serializable]
 public class Journal
 {
-    public TextMeshProUGUI InputField;
-    public TMP_Dropdown Output;
-    public TextMeshProUGUI OutputText;
+    public TextMeshProUGUI InputField {  get; set; }
+    public TMP_Dropdown Output {  get; set; }
+    public TextMeshProUGUI OutputText { get; set; }
     private List<string> OutputList;
     public SerializableDictionary<string, string> journal;
-    public Wheel EmotionWheel;
+    public Wheel EmotionWheel { get; set; }
     // Start is called before the first frame update
     public Journal()
     {
