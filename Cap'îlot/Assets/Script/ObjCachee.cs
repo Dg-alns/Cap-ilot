@@ -5,19 +5,32 @@ using UnityEngine;
 
 public class ObjCachee : MonoBehaviour
 {
-    public List<GameObject> objs;
-    public List<TextMeshProUGUI> Nameobjs;
-    public List<Infos_MiniJeux> allinfos;
+    List<Objects> objs;
+    List<TextMeshProUGUI> Nameobjs;
+    List<Infos_MiniJeux> allinfos;
 
     public Timer timer;
     public GameObject diabetes;
 
+    public List<Objects> GetAllObjToFind() {  return objs; }
+    public List<TextMeshProUGUI> GetAllText() {  return Nameobjs; }
+    public List<Infos_MiniJeux> GetAllInfos() {  return allinfos; }
+
     //GetComponentsInChildren utiliser pour le regroupement de toute les props use find un parent
-    void Start()
+    private void Awake()
     {
+        objs = Tools.CreateList<Objects>("ToFind");
+        Nameobjs = Tools.CreateList<TextMeshProUGUI>("Bot");
+        allinfos = Tools.CreateList<Infos_MiniJeux>("Canvas (1)");
+
+        foreach(Infos_MiniJeux infos in allinfos)
+        {
+            infos.gameObject.SetActive(false);
+        }
+
         Assert.AreEqual(objs.Count, Nameobjs.Count);
 
-        for(int i = 0; i < objs.Count; i++)
+        for (int i = 0; i < objs.Count; i++)
         {
             Nameobjs[i].text = objs[i].name;
         }

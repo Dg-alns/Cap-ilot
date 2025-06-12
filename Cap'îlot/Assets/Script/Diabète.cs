@@ -17,7 +17,7 @@ public class Diabète : MonoBehaviour
     float minY;
     float maxY;
 
-    float speed = 10f;
+    float speed = 5f;
 
     Vector3 posDb;
     Vector3 destination;
@@ -30,7 +30,7 @@ public class Diabète : MonoBehaviour
         posDb = transform.position;
         destination = posDb;
 
-        timer.SetNSeconds(2);
+        timer.SetNSeconds(3);
 
         float height = cam.orthographicSize;
         float width = cam.aspect * height;
@@ -50,10 +50,10 @@ public class Diabète : MonoBehaviour
 
     bool PointIsInMe(Vector3 point)
     {
-        bool NotInY = point.y <= posDb.y - HalfHeight || point.y >= posDb.y + HalfHeight;
-        bool NotInX = point.x <= posDb.x - HalfWidth || point.x >= posDb.x + HalfWidth;
+        bool InY = point.y >= posDb.y - HalfHeight && point.y <= posDb.y + HalfHeight;
+        bool InX = point.x >= posDb.x - HalfWidth && point.x <= posDb.x + HalfWidth;
 
-        if( NotInY && NotInX)
+        if( InY && InX)
             return true;
 
 
@@ -70,7 +70,7 @@ public class Diabète : MonoBehaviour
             pos.x = Random.Range(minX, maxX);
             pos.y = Random.Range(minY, maxY);
         }
-        while (PointIsInMe(pos) == false);
+        while (PointIsInMe(pos));
 
         return pos;
     }

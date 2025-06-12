@@ -1,6 +1,4 @@
-using System.Collections;
 using System.Collections.Generic;
-using NUnit.Framework.Internal;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -12,7 +10,7 @@ public class DetectionObj : MonoBehaviour
 
     public Image menu;
 
-    List<GameObject> objects;
+    List<Objects> objects;
     List<TextMeshProUGUI> nameobjs;
     List<Infos_MiniJeux> infos;
 
@@ -20,9 +18,9 @@ public class DetectionObj : MonoBehaviour
     {
         objCachee = gameObject.GetComponent<ObjCachee>();
 
-        objects = objCachee.objs;
-        nameobjs = objCachee.Nameobjs;
-        infos = objCachee.allinfos;
+        objects = objCachee.GetAllObjToFind();
+        nameobjs = objCachee.GetAllText();
+        infos = objCachee.GetAllInfos();
     }
 
     bool Detection(GameObject obj)
@@ -58,26 +56,26 @@ public class DetectionObj : MonoBehaviour
 
         for (int i = 0; i < objects.Count; i++)
         {
-            if (objects[i].activeSelf == false)
+            if (objects[i].gameObject.activeSelf == false)
                 continue;
 
-            if (Detection(objects[i]))
+            if (Detection(objects[i].gameObject))
             {
-                if(Detection(objCachee.diabetes))
+                if (Detection(objCachee.diabetes))
                     break;
 
 
-                objects[i].SetActive(false);
+                objects[i].gameObject.SetActive(false);
                 nameobjs[i].fontStyle = FontStyles.Strikethrough;
 
-                Infos_MiniJeux infos = FindInfos(objects[i]);
+                Infos_MiniJeux infos = FindInfos(objects[i].gameObject);
 
                 infos.gameObject.SetActive(true);
                 gameObject.SetActive(false);
 
                 break;
-                
-                               
+
+
             }
         }
     }

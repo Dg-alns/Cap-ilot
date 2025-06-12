@@ -1,10 +1,15 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Objects : MonoBehaviour
 {
-    public Sprite sprite;
+    Sprite sprite;
     public string infos;
     public bool CanShowInfo = true;
+
+    public Sprite GetSprite() { return sprite; }
+
+    private void Start()
+    {
+        sprite = GetComponent<SpriteRenderer>().sprite;
+    }
 }

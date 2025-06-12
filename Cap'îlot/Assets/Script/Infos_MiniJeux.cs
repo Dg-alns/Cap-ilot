@@ -1,7 +1,4 @@
-using System;
-using System.Xml.Xsl;
 using TMPro;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -22,8 +19,8 @@ public class Infos_MiniJeux : MonoBehaviour
         obj = ObjReference.GetComponent<Objects>();
 
 
-        if (obj.sprite != null)
-            img.sprite = obj.sprite;
+        if (obj.GetSprite() != null)
+            img.sprite = obj.GetSprite();
 
         text.text = obj.infos;
 
@@ -53,8 +50,6 @@ public class Infos_MiniJeux : MonoBehaviour
             Game.SetActive(true);
         }
     }
-
-    // Update is called once per frame
     void Update()
     {
         if(gameObject.activeSelf ==false)
