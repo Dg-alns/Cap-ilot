@@ -64,7 +64,7 @@ public class Card_Memorie : MonoBehaviour
     {
         if (!isActive)
         {
-            mMemorie.AddShowingList(this.gameObject);
+            mMemorie.AddShowingList(gameObject);
         }
     }
     public void ReverseCard()
