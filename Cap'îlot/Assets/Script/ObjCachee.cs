@@ -5,36 +5,8 @@ using UnityEngine;
 
 public class ObjCachee : MonoBehaviour
 {
-    List<Objects> objs;
-    List<TextMeshProUGUI> Nameobjs;
-    List<Infos_MiniJeux> allinfos;
-
     public Timer timer;
     public GameObject diabetes;
-
-    public List<Objects> GetAllObjToFind() {  return objs; }
-    public List<TextMeshProUGUI> GetAllText() {  return Nameobjs; }
-    public List<Infos_MiniJeux> GetAllInfos() {  return allinfos; }
-
-    private void Awake()
-    {
-        objs = Tools.CreateList<Objects>("ToFind");
-        Nameobjs = Tools.CreateList<TextMeshProUGUI>("Bot");
-        allinfos = Tools.CreateList<Infos_MiniJeux>("AllInfo");
-
-        foreach(Infos_MiniJeux infos in allinfos)
-        {
-            infos.gameObject.SetActive(false);
-        }
-
-        Assert.AreEqual(objs.Count, Nameobjs.Count);
-
-        for (int i = 0; i < objs.Count; i++)
-        {
-            Nameobjs[i].text = objs[i].name;
-            objs[i].GetComponent<Objects>().nameobjs = Nameobjs[i];
-        }
-    }
 
     void Update()
     {

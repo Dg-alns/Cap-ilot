@@ -532,6 +532,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objCachee: {fileID: 212153147}
+  cam: {fileID: 271293044}
   menu: {fileID: 1465187891}
   insuline: {fileID: 1151713870}
 --- !u!1 &263284151 stripped
@@ -998,7 +999,6 @@ MonoBehaviour:
   str: 
   CanShowInfo: 1
   prefabInfos: {fileID: 273267646}
-  nameobjs: {fileID: 1191883516}
   db: {fileID: 538572805}
 --- !u!61 &337953386
 BoxCollider2D:
@@ -1377,8 +1377,8 @@ Transform:
   m_GameObject: {fileID: 538572803}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1183.86, y: 14.47, z: 0}
-  m_LocalScale: {x: 0.29839125, y: 0.29839125, z: 0.29839125}
+  m_LocalPosition: {x: 1183.86, y: 14.23, z: 0}
+  m_LocalScale: {x: 0.1833433, y: 0.1833433, z: 0.1833433}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 212153148}
@@ -1623,7 +1623,6 @@ MonoBehaviour:
   str: 
   CanShowInfo: 1
   prefabInfos: {fileID: 349689994}
-  nameobjs: {fileID: 1659746490}
   db: {fileID: 538572805}
 --- !u!61 &557459281
 BoxCollider2D:
@@ -2379,7 +2378,6 @@ MonoBehaviour:
   str: 
   CanShowInfo: 1
   prefabInfos: {fileID: 409287306}
-  nameobjs: {fileID: 1361081115}
   db: {fileID: 538572805}
 --- !u!61 &919301823
 BoxCollider2D:
@@ -2530,7 +2528,6 @@ MonoBehaviour:
   str: 
   CanShowInfo: 1
   prefabInfos: {fileID: 409287306}
-  nameobjs: {fileID: 1361081115}
   db: {fileID: 538572805}
 --- !u!61 &921653620
 BoxCollider2D:
@@ -3384,7 +3381,6 @@ MonoBehaviour:
   str: 
   CanShowInfo: 1
   prefabInfos: {fileID: 1563421242}
-  nameobjs: {fileID: 1248993902}
   db: {fileID: 538572805}
 --- !u!61 &1281959633
 BoxCollider2D:
@@ -3926,7 +3922,6 @@ MonoBehaviour:
   str: 
   CanShowInfo: 1
   prefabInfos: {fileID: 263284151}
-  nameobjs: {fileID: 472942903}
   db: {fileID: 538572805}
 --- !u!61 &1603071660
 BoxCollider2D:
@@ -4304,7 +4299,6 @@ MonoBehaviour:
   str: hhhhhhhhhhhh
   CanShowInfo: 1
   prefabInfos: {fileID: 558463569}
-  nameobjs: {fileID: 1309053235}
   db: {fileID: 538572805}
 --- !u!61 &1842023524
 BoxCollider2D:
@@ -4558,7 +4552,6 @@ MonoBehaviour:
   str: hgrbefcerhrce
   CanShowInfo: 1
   prefabInfos: {fileID: 1742493373}
-  nameobjs: {fileID: 290621510}
   db: {fileID: 538572805}
 --- !u!70 &1884272497
 CapsuleCollider2D:
@@ -4826,7 +4819,6 @@ MonoBehaviour:
   str: 
   CanShowInfo: 1
   prefabInfos: {fileID: 2122116169}
-  nameobjs: {fileID: 564173917}
   db: {fileID: 538572805}
 --- !u!61 &2037685651
 BoxCollider2D:

@@ -18,13 +18,10 @@ public class Infos_MiniJeux : MonoBehaviour
     {
         obj = ObjReference.GetComponent<Objects>();
 
-
         if (obj.GetSprite() != null)
             img.sprite = obj.GetSprite();
 
         text.text = obj.str;
-
-
     }
 
     bool DetectionImg(Image obj)
@@ -40,8 +37,6 @@ public class Infos_MiniJeux : MonoBehaviour
 
         return InY && InX;
     }
-
-
     void DetectionBack()
     {
         if (DetectionImg(Back))
