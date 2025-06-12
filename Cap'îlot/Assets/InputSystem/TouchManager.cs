@@ -11,6 +11,7 @@ public class TouchManager : MonoBehaviour
     private InputAction _touchPositionAction;
     private InputAction _touchPressAction;
     [SerializeField] private GameObject _player;
+    [SerializeField] private GameObject _dialogueBox;
 
     public Vector2 position;
 
@@ -36,8 +37,10 @@ public class TouchManager : MonoBehaviour
 
     private void TouchPress(InputAction.CallbackContext context)
     {
-        float value = context.ReadValue<float>();
-        Debug.Log(value);
+        if (_dialogueBox.GetComponentInChildren<DialogueBox>().dialogStarted)
+        {
+            _dialogueBox.GetComponentInChildren<DialogueBox>().GoToNextDialogueLine();
+        }
     }
 
     private void TouchPosition(InputAction.CallbackContext context) {

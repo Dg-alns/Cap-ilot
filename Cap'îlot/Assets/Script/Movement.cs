@@ -16,8 +16,14 @@ public class Movement : MonoBehaviour
     NavMeshAgent _agent;
     // Start is called before the first frame update
     SpriteRenderer _spriteRenderer;
-    public int clickedNpcId;
+    private int _clickedNpcId;
+    private NPC _clickedNpc;
+    private bool _dialogueStarted;
+    [SerializeField] private GameObject _npcManager;
+    [SerializeField] private GameObject _dialogue;
+
     //[SerializeField] private TouchManager _touchManager;
+
     void Start()
     {
         _tools = FindAnyObjectByType<Tools>();
@@ -63,7 +69,7 @@ public class Movement : MonoBehaviour
     }
     public void Move(Vector3 position)
     {
-        Debug.Log(position);
+        //Debug.Log(position);
         position.z = transform.position.z;   
         _agent.SetDestination(position);
     }
@@ -77,13 +83,20 @@ public class Movement : MonoBehaviour
             {
                 collision.gameObject.GetComponent<Trigger>().IsTrigger();
                 //SceneManager.LoadScene(collision.gameObject.GetComponent<Trigger>().SceneName);
-                if (collision.gameObject.GetComponent<Trigger>().Type == Type.DIALOG)
+                if (collision.gameObject.GetComponent<Trigger>().Type == TriggerType.DIALOG)
                 {
-                    clickedNpcId = collision.gameObject.GetComponent<NPC>().npcId;
+                    NPC clickedNpc = collision.gameObject.GetComponent<NPC>();
+                    if (clickedNpc != null)
+                    {
+                        _clickedNpcId = clickedNpc.npcId;
+                        _clickedNpc = _npcManager.GetComponent<NPCManager>().FindNpcById(_clickedNpcId);
+                        Debug.Log("NPC: " + _clickedNpc.npcName);
+                        _dialogue.GetComponentInChildren<DialogueBox>().GetDialogueLines();
+                        _dialogue.GetComponentInChildren<DialogueBox>().StartDialogue();
+                        _dialogueStarted = _dialogue.GetComponentInChildren<DialogueBox>().dialogStarted;
+                    }
                 }
             }
-            
         }
-
     }
 }

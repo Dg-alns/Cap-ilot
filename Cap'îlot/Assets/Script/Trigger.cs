@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 
-public enum Type
+public enum TriggerType
 {
     PORT,
     DIALOG
@@ -18,7 +18,7 @@ public class Trigger : MonoBehaviour
     [SerializeField] GameObject UI;
     private bool uiOpen;
     public string SceneName;
-    public Type Type;
+    public TriggerType Type;
 
 
     private void Start()
@@ -35,9 +35,10 @@ public class Trigger : MonoBehaviour
 
     public void IsTrigger()
     {
-        switch (Type) { 
-        
-        case Type.PORT:
+        switch (Type)
+        {
+
+            case TriggerType.PORT:
                 if (!uiOpen)
                 {
                     GameObject ui = Instantiate(UI);
@@ -49,6 +50,13 @@ public class Trigger : MonoBehaviour
                     yes.onClick.AddListener(() => SceneManager.LoadScene(SceneName));
                     uiOpen = true;
                 }
+                break;
+            case TriggerType.DIALOG:
+                if (!uiOpen)
+                {
+                    GameObject ui = Instantiate(UI);
+                    uiOpen = true;
+                }     
                 break;
         }
     }
