@@ -5,6 +5,7 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.SceneManagement;
+using UnityEngine.UIElements;
 using static UnityEngine.GridBrushBase;
 
 
@@ -12,16 +13,16 @@ public class Movement : MonoBehaviour
 {
     //public Animator animator;
     Tools _tools;
-    Vector3 _target;
     NavMeshAgent _agent;
     // Start is called before the first frame update
     SpriteRenderer _spriteRenderer;
     public int clickedNpcId;
+
+    private Vector3 _destination;
     //[SerializeField] private TouchManager _touchManager;
     void Start()
     {
         _tools = FindAnyObjectByType<Tools>();
-        _target = transform.position;
         _agent = GetComponent<NavMeshAgent>();
         _agent.updateRotation = false;
         _agent.updateUpAxis = false;
@@ -31,15 +32,27 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-            /*if (_agent.destination != transform.position) {
-                animator.SetBool("Walking", true);
-            }
-            else
+        /*if (_agent.destination != transform.position) {
+            animator.SetBool("Walking", true);
+        }
+        else
+        {
+            animator.SetBool("Walking", false);
+        }*/
+        //Debug.Log(_target);
+        //_agent.SetDestination(_target);
+        
+        if (_agent.destination.x < transform.position.x)//deplacement  a gauche
+        {
+            _spriteRenderer.flipX = true;
+        }
+        else
+        {
+            if (_agent.destination.x > transform.position.x)
             {
-                animator.SetBool("Walking", false);
-            }*/
-            //Debug.Log(_target);
-            //_agent.SetDestination(_target);
+                _spriteRenderer.flipX = false;
+            }
+        }
 
     }
     public void Move(Vector3 position)
@@ -48,17 +61,8 @@ public class Movement : MonoBehaviour
         if (!_tools.IsPointerOverUIElement())
         {
             position.z = transform.position.z;
-            if (position.x < transform.position.x)//deplacement  a gauche
-            {
-                _spriteRenderer.flipX = true;
-            }
-            else
-            {
-                if (position.x > transform.position.x)
-                {
-                    _spriteRenderer.flipX = false;
-                }
-            }
+            _destination = position;
+            
             _agent.SetDestination(position);
         }
     }
