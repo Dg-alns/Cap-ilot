@@ -14,5 +14,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MiniGame_ObjCachee.unity
     guid: b5e2087ded5f5e94f9de42ebd3e03d5b
+  - enabled: 1
+    path: Assets/Scenes/Deplacement - Dorian.unity
+    guid: 8fc2e3c6830c6f243af15ea72967cce7
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0

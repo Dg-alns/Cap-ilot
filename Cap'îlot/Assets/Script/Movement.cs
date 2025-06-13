@@ -78,7 +78,7 @@ public class Movement : MonoBehaviour
             {
                 collision.gameObject.GetComponent<Trigger>().IsTrigger();
                 //SceneManager.LoadScene(collision.gameObject.GetComponent<Trigger>().SceneName);
-                if (collision.gameObject.GetComponent<Trigger>().Type == Type.DIALOG)
+                if (collision.gameObject.GetComponent<Trigger>().Type == TriggerType.DIALOG)
                 {
                     clickedNpcId = collision.gameObject.GetComponent<NPC>().npcId;
                 }
