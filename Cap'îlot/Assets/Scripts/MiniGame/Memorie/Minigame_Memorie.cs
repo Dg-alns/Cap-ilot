@@ -36,7 +36,7 @@ public class Minigame_Memorie : MonoBehaviour
     private bool CheckWin()
     {
         Debug.Log("Check WIN : " + mScore);
-        if (mScore == 200)
+        if (mScore == mWinnigScore)
         {
             Debug.Log("It's win");
             //FindFirstObjectByType<Button>(FindObjectsInactive.Include).gameObject.SetActive(true);

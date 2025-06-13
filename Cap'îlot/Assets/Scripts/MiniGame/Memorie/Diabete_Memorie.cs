@@ -86,6 +86,8 @@ public class Diabete_Memorie : MonoBehaviour
         mCurrentTime = 0;
         mTargetTime = Random.Range(mLimitSwitchTime[0], mLimitSwitchTime[1]);
         Debug.Log(mTargetTime);
+        mLimitSwitchTime[0] = 5.0f;
+        mLimitSwitchTime[1] = 10.0f;
     }
     private void SwapRandomCards()
     {
