@@ -68,10 +68,6 @@ public class Movement : MonoBehaviour
     public void Move(Vector3 position)
     {
         //Debug.Log(position);
-        position.z = transform.position.z;   
-        _agent.SetDestination(position);
-    
-
         if (!_tools.IsPointerOverUIElement())
         {
             position.z = transform.position.z;
