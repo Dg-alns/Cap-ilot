@@ -8,7 +8,14 @@ public class DetectionUI : MonoBehaviour
 
     public GameObject diabete;
 
+    protected Tools _tools;
 
+
+    private void Awake()
+    {
+
+        _tools = FindAnyObjectByType<Tools>();
+    }
     public bool DetectionImg(Image obj)
     {
         Vector3 mouse = Input.mousePosition;
@@ -41,7 +48,7 @@ public class DetectionUI : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && !_tools.IsPointerOverUIElement())
         {
             DetectionMenu();
             DetectionInsuluine();

@@ -16,13 +16,15 @@ public class DetectionObjCachee : DetectionUI
     List<TextMeshProUGUI> nameobjs;
     public Infos_MiniJeux infos;
 
+
+
     private void Awake()
     {
         objects = Tools.CreateList<Objects>("ToFind");
         nameobjs = Tools.CreateList<TextMeshProUGUI>("Bot");
 
-
         objCachee = gameObject.GetComponent<ObjCachee>();
+        _tools = FindAnyObjectByType<Tools>();
 
         Assert.AreEqual(objects.Count, nameobjs.Count);
 
@@ -84,11 +86,12 @@ public class DetectionObjCachee : DetectionUI
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && !_tools.IsPointerOverUIElement())
         {
+            DetectionObject();
             DetectionMenu();
             DetectionInsuluine();
-            DetectionObject();
         }
+        
     }
 }

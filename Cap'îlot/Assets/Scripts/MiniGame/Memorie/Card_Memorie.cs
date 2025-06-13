@@ -17,6 +17,8 @@ public class Card_Memorie : MonoBehaviour
     private Vector2 positionTarget;
     private float distanceEnough;
 
+    private Tools _tools;
+
     private void Start()
     {
         animator = GetComponent<Animator>();
@@ -26,6 +28,9 @@ public class Card_Memorie : MonoBehaviour
         distanceEnough = 0.0f;
 
         GenerateRandomPosition();
+
+
+        _tools = FindAnyObjectByType<Tools>();
     }
 
     private void Update()
@@ -62,7 +67,7 @@ public class Card_Memorie : MonoBehaviour
     }
     void OnMouseUp()
     {
-        if (!isActive)
+        if (!isActive && !_tools.IsPointerOverUIElement())
         {
             mMemorie.AddShowingList(gameObject);
         }
