@@ -17,5 +17,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Deplacement - Dorian.unity
     guid: 8fc2e3c6830c6f243af15ea72967cce7
+  - enabled: 1
+    path: Assets/Scenes/Ile Principale.unity
+    guid: 97a25149eb03d194e9369187da619ba4
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0
