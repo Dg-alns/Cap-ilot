@@ -35,9 +35,10 @@ public class Trigger : MonoBehaviour
 
     public void IsTrigger()
     {
-        switch (Type) { 
-        
-        case TriggerType.PORT:
+
+        switch (Type)
+        {
+            case TriggerType.PORT:
                 if (!uiOpen)
                 {
                     GameObject ui = Instantiate(UI);
@@ -49,6 +50,13 @@ public class Trigger : MonoBehaviour
                     yes.onClick.AddListener(() => SceneManager.LoadScene(SceneName));
                     uiOpen = true;
                 }
+                break;
+            case TriggerType.DIALOG:
+                if (!uiOpen)
+                {
+                    GameObject ui = Instantiate(UI);
+                    uiOpen = true;
+                }     
                 break;
         }
     }
