@@ -1,0 +1,18 @@
+using TMPro;
+using UnityEngine;
+
+public class Objects : MonoBehaviour
+{
+    Sprite sprite;
+    public string str;
+    public bool CanShowInfo = true;
+
+    public Sprite GetSprite() { return sprite; }
+
+    
+
+    private void Awake()
+    {
+        sprite = GetComponent<SpriteRenderer>().sprite;
+    }
+}
