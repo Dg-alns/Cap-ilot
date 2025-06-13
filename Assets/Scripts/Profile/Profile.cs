@@ -19,6 +19,9 @@ public class Profile
     }
     public void Save()
     {
-        Username = Input.text;
+        if (Input.text.Length > 1)
+        {
+            Username = Input.text;
+        }
     }
 }
