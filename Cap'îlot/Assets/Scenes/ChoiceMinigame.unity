@@ -846,7 +846,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea6da5a45e7a76a45b3ae4d6109c514e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  loadingScene: Diego_Scene
+  loadingScene: MiniGame_ObjCachee
 --- !u!114 &1417209731
 MonoBehaviour:
   m_ObjectHideFlags: 0

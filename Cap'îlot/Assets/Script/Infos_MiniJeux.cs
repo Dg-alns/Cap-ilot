@@ -4,26 +4,18 @@ using UnityEngine.UI;
 
 public class Infos_MiniJeux : MonoBehaviour
 {
-    public GameObject Game;
-    public GameObject ObjReference;
-
-    Objects obj;
+    public Timer timer;
 
     public TextMeshProUGUI text;
     public Image img;
 
     public Image Back;
 
-
-    void Start()
+    private void Start()
     {
-        obj = ObjReference.GetComponent<Objects>();
-
-        if (obj.GetSprite() != null)
-            img.sprite = obj.GetSprite();
-
-        text.text = obj.str;
+        gameObject.SetActive(false);
     }
+
 
     bool DetectionImg(Image obj)
     {
@@ -45,13 +37,17 @@ public class Infos_MiniJeux : MonoBehaviour
             gameObject.SetActive(false);
 
 
-            Game.GetComponent<ObjCachee>().timer.stop = false;
-            Game.GetComponent<ObjCachee>().AddScore();
-
-
-
+            timer.stop = false;
         }
     }
+
+    public void AssociateInfo(Objects objects)
+    {
+        text.text = objects.str;
+        if (objects.GetSprite() != null)
+            img.sprite = objects.GetSprite();
+    }
+
     void Update()
     {
         if(gameObject.activeSelf ==false)

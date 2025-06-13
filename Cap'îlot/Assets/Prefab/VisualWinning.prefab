@@ -511,7 +511,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea6da5a45e7a76a45b3ae4d6109c514e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  loadingScene: SampleScene
+  loadingScene: ChoiceMinigame
 --- !u!95 &6655135657913988465
 Animator:
   serializedVersion: 7

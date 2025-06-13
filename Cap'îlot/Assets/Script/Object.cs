@@ -7,13 +7,8 @@ public class Objects : MonoBehaviour
     public string str;
     public bool CanShowInfo = true;
 
-    public GameObject prefabInfos;
-
-    TextMeshProUGUI nameobjs;
-
     public Sprite GetSprite() { return sprite; }
 
-    public void SetText(TextMeshProUGUI text) { nameobjs =  text; }
     
 
     private void Awake()

@@ -9,31 +9,26 @@ using static UnityEditor.PlayerSettings;
 
 public class DetectionObjCachee : DetectionUI
 {
-    public ObjCachee objCachee;
+    ObjCachee objCachee;
     public Camera cam;
 
     List<Objects> objects;
     List<TextMeshProUGUI> nameobjs;
-    List<Infos_MiniJeux> allinfos;
+    public Infos_MiniJeux infos;
 
     private void Awake()
     {
         objects = Tools.CreateList<Objects>("ToFind");
         nameobjs = Tools.CreateList<TextMeshProUGUI>("Bot");
-        allinfos = Tools.CreateList<Infos_MiniJeux>("AllInfo");
 
 
         objCachee = gameObject.GetComponent<ObjCachee>();
 
         Assert.AreEqual(objects.Count, nameobjs.Count);
-        Assert.AreEqual(objects.Count, allinfos.Count);
 
         for (int i = 0; i < objects.Count; i++)
         {
             nameobjs[i].text = objects[i].name;
-            objects[i].GetComponent<Objects>().SetText(nameobjs[i]);
-            allinfos[i].ObjReference = objects[i].gameObject;
-            allinfos[i].gameObject.SetActive(false);
         }
 
         objCachee.SetScore(objects.Count * objCachee.point);
@@ -71,27 +66,14 @@ public class DetectionObjCachee : DetectionUI
                 objects[i].gameObject.SetActive(false);
                 nameobjs[i].fontStyle = FontStyles.Strikethrough;
 
-                Infos_MiniJeux infos = FindInfos(objects[i].gameObject);
-
+                infos.AssociateInfo(objects[i]);
                 infos.gameObject.SetActive(true);
+
+                objCachee.AddScore();
                 break;
             }
         }
     }
-
-    Infos_MiniJeux FindInfos(GameObject obj)
-    {
-        foreach (Infos_MiniJeux inf in allinfos)
-        {
-            if (inf.ObjReference == obj)
-            {
-                allinfos.Remove(inf);
-                return inf;
-            }
-        }
-        return null;
-    }
-
     public override void DetectionInsuluine()
     {
         if (DetectionImg(insuline))

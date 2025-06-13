@@ -17,6 +17,8 @@ public class Minigame_Memorie : MonoBehaviour
 
     public Diabete_Memorie diabete;
 
+    public Infos_MiniJeux infos;
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -34,7 +36,7 @@ public class Minigame_Memorie : MonoBehaviour
     private bool CheckWin()
     {
         Debug.Log("Check WIN : " + mScore);
-        if (mScore == mWinnigScore)
+        if (mScore == 200)
         {
             Debug.Log("It's win");
             //FindFirstObjectByType<Button>(FindObjectsInactive.Include).gameObject.SetActive(true);
@@ -99,7 +101,13 @@ public class Minigame_Memorie : MonoBehaviour
         yield return new WaitForSeconds(0.3f);
         mParticleMemorie.PlayParticle(mShowingCard);
         mScore += 200;
+
+        infos.gameObject.SetActive(true);
+
+        infos.AssociateInfo(mShowingCard[0].GetComponent<Objects>());
+
         mShowingCard.Clear();
+
         CheckWin();
     }
 
