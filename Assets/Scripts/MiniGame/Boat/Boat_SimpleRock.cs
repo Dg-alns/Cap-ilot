@@ -2,23 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Boat_Rock : MonoBehaviour
+public class Boat_SimpleRock : MonoBehaviour
 {
-    private float _heightCam;
-    private float _widthCam;
+    protected float _heightCam;
+    protected float _widthCam;
 
-    private float _heightSprite;
+    public SpriteRenderer rockSprite;
+    protected float _heightSprite;
+    protected float _widthSprite;
 
     [SerializeField] private float _speed = 1.0f;
 
-    private void Start()
+    private void Awake()
     {
         Camera cam = Camera.main;
         _heightCam = 2f * cam.orthographicSize;
         _widthCam = _heightCam * cam.aspect;
 
-        _heightSprite = GetComponent<SpriteRenderer>().bounds.size.y;
-        float _widthSprite = GetComponent<SpriteRenderer>().bounds.size.x;
+        _heightSprite = rockSprite.bounds.size.y;
+        _widthSprite = rockSprite.bounds.size.x;
 
         transform.position = new Vector2(Random.Range(_widthCam / 2 - _widthSprite / 2, -_widthCam / 2 + _widthSprite / 2), transform.position.y);
     }

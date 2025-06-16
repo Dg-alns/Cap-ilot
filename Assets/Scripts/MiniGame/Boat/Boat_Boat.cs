@@ -30,11 +30,11 @@ public class Boat : MonoBehaviour
         {
             if (_widthResolution / 2 < Input.mousePosition.x){
                 float step = _speed * Time.deltaTime;
-                transform.position = Vector2.MoveTowards(transform.position, new Vector2(_width/2 - _widthSprite/2, transform.position.y),step);
+                transform.position = Vector2.MoveTowards(transform.position, new Vector2(_width / 2 - _widthSprite / 4, transform.position.y),step);
             }
             else{
                 float step = _speed * Time.deltaTime;
-                transform.position = Vector2.MoveTowards(transform.position, new Vector2(-_width / 2 + _widthSprite/2, transform.position.y), step);
+                transform.position = Vector2.MoveTowards(transform.position, new Vector2(-_width / 2 + _widthSprite / 4, transform.position.y), step);
             }
         }
     }
