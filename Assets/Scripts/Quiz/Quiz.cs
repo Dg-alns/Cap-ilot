@@ -10,12 +10,11 @@ public class Quiz : MonoBehaviour
 
     [SerializeField] private ScriptableQuestion _questionScriptable;
     [SerializeField] private GameObject _questionUI;
-    [SerializeField] private GameObject _canva;
 
     private List<string> _answers = new List<string>();
     void Start()
     {
-        GameObject uiQuiz = Instantiate(_questionUI,_canva.transform);
+        GameObject uiQuiz = Instantiate(_questionUI);
         uiQuiz.GetComponentInChildren<TextMeshProUGUI>().text = _questionScriptable.question;
 
         _answers.Add(_questionScriptable.wrongAnswer[0]);

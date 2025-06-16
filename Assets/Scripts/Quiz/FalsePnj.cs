@@ -6,14 +6,22 @@ public class FalsePnj : MonoBehaviour
 {
 
     private int id;
-    [SerializeField] QuizManager QuizManager;
+    private List<ScriptableQuestion> _questionList = new List<ScriptableQuestion>();
+    [SerializeField] private QuizManager _quizManager;
 
     // Start is called before the first frame update
     void Start()
     {
-        if (QuizManager.allQuestions != null)
+        if (_quizManager.allQuestions != null)
         {
-            
+            for (int i = 0; i < _quizManager.allQuestions.Count; i++) {
+
+                if (_quizManager.allQuestions[i].pnjId == id)
+                {
+                    _questionList.Add(_quizManager.allQuestions[i]);
+                }
+
+            }
         }
     }
 
@@ -21,5 +29,10 @@ public class FalsePnj : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void AskQuestion()
+    {
+        _quizManager.CreateQuestion(_questionList[0]);
     }
 }

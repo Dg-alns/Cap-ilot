@@ -9,4 +9,5 @@ public class ScriptableQuestion : ScriptableObject
     public string question;
     public string correctAnswer;
     public List<string> wrongAnswer;
+    public int pnjId;
 }
