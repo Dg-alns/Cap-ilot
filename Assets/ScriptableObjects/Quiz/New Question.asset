@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   question: Combien fait 2+2 ?
   correctAnswer: 4
-  wrongQuestion:
+  wrongAnswer:
   - 22
   - 6
   - 3
