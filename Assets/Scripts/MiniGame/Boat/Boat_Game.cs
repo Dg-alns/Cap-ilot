@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Boat_Game : MonoBehaviour
 {
+    public GameObject prefab;
     // Start is called before the first frame update
     void Start()
     {
@@ -13,6 +14,6 @@ public class Boat_Game : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        Instantiate(prefab);
     }
 }
