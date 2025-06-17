@@ -19,3 +19,6 @@ MonoBehaviour:
   - no
   - hum
   pnjId: 0
+  isAnswered: 0
+  afterCorrect: bravo
+  afterWrong: et non

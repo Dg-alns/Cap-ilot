@@ -5,7 +5,7 @@ using UnityEngine;
 public class FalsePnj : MonoBehaviour
 {
 
-    private int id;
+    public  int id;
     private List<ScriptableQuestion> _questionList = new List<ScriptableQuestion>();
     [SerializeField] private QuizManager _quizManager;
 
@@ -16,7 +16,7 @@ public class FalsePnj : MonoBehaviour
         {
             for (int i = 0; i < _quizManager.allQuestions.Count; i++) {
 
-                if (_quizManager.allQuestions[i].pnjId == id)
+                if (_quizManager.allQuestions[i].pnjId == id && !_quizManager.allQuestions[i].isAnswered)
                 {
                     _questionList.Add(_quizManager.allQuestions[i]);
                 }
@@ -33,6 +33,22 @@ public class FalsePnj : MonoBehaviour
 
     public void AskQuestion()
     {
-        _quizManager.CreateQuestion(_questionList[0]);
+        
+        for (int i = 0; i < _questionList.Count; i++)//don't replay if ask again
+        {
+            if (_questionList[i].isAnswered == true)
+            {
+                _questionList.RemoveAt(i);
+            }
+
+        }
+        _quizManager.EndQuiz();
+        if (_questionList.Count>0)
+        {
+            _quizManager.CreateQuestion(_questionList[0]); 
+        }
+            
+        
+        //_questionList.RemoveAt(0);
     }
 }

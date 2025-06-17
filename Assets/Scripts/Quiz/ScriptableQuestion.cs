@@ -10,4 +10,7 @@ public class ScriptableQuestion : ScriptableObject
     public string correctAnswer;
     public List<string> wrongAnswer;
     public int pnjId;
+    public bool isAnswered;
+    public string afterCorrect;
+    public string afterWrong;
 }

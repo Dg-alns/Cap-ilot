@@ -19,3 +19,6 @@ MonoBehaviour:
   - non
   - non
   pnjId: 1
+  isAnswered: 0
+  afterCorrect: c ca
+  afterWrong: c pas ca

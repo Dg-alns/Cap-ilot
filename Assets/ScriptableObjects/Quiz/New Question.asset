@@ -18,3 +18,7 @@ MonoBehaviour:
   - 22
   - 6
   - 3
+  pnjId: 0
+  isAnswered: 0
+  afterCorrect: "Eh oui la bonne r\xE9ponse est 2"
+  afterWrong: "Mince, reviens me voir quand tu auras la bonne r\xE9ponse"
