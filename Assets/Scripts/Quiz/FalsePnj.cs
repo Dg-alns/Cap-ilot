@@ -12,17 +12,7 @@ public class FalsePnj : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (_quizManager.allQuestions != null)
-        {
-            for (int i = 0; i < _quizManager.allQuestions.Count; i++) {
-
-                if (_quizManager.allQuestions[i].pnjId == id && !_quizManager.allQuestions[i].isAnswered)
-                {
-                    _questionList.Add(_quizManager.allQuestions[i]);
-                }
-
-            }
-        }
+        
     }
 
     // Update is called once per frame
@@ -34,7 +24,7 @@ public class FalsePnj : MonoBehaviour
     public void AskQuestion()
     {
         
-        for (int i = 0; i < _questionList.Count; i++)//don't replay if ask again
+        for (int i = _questionList.Count-1; i >= 0; i--)
         {
             if (_questionList[i].isAnswered == true)
             {
@@ -50,5 +40,24 @@ public class FalsePnj : MonoBehaviour
             
         
         //_questionList.RemoveAt(0);
+    }
+
+    //Permets de recommencer le quizz à chaque interaction avec le pnj à mettre dans le start si non souhaité
+    public void FirstQuestion()
+    {
+        if (_quizManager.allQuestions != null)
+        {
+            _questionList.Clear();
+            for (int i = 0; i < _quizManager.allQuestions.Count; i++)
+            {
+                _quizManager.allQuestions[i].isAnswered = false;
+                if (_quizManager.allQuestions[i].pnjId == id )
+                {
+                    _questionList.Add(_quizManager.allQuestions[i]);
+                }
+
+            }
+        }
+        AskQuestion();
     }
 }

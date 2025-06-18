@@ -10,15 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bee7465d0ea7c884391de6a414046683, type: 3}
-  m_Name: New Question
+  m_Name: jsp
   m_EditorClassIdentifier: 
-  question: Combien fait 2+2 ?
-  correctAnswer: 4
+  question: la je sais pas
+  correctAnswer: jsp
   wrongAnswer:
-  - 22
-  - 6
-  - 3
+  - ui
   pnjId: 0
   isAnswered: 0
-  afterCorrect: "Eh oui la bonne r\xE9ponse est 2"
-  afterWrong: "Mince, reviens me voir quand tu auras la bonne r\xE9ponse"
+  afterCorrect: bravo
+  afterWrong: et non

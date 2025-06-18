@@ -10,6 +10,7 @@ public class QuizManager : MonoBehaviour
 
     public List<ScriptableQuestion> allQuestions;
     [SerializeField] private GameObject _questionUI;
+    [SerializeField] private GameObject _answerUI;
     [SerializeField] private GameObject _panelNextQuestion;
     //[SerializeField] private GameObject _canva;
 
@@ -22,9 +23,16 @@ public class QuizManager : MonoBehaviour
         _uiQuiz = Instantiate(_questionUI);
         _uiQuiz.GetComponentInChildren<TextMeshProUGUI>().text = _questionScriptable.question;
 
-        _answers.Add(_questionScriptable.wrongAnswer[0]);
-        _answers.Add(_questionScriptable.wrongAnswer[1]);
-        _answers.Add(_questionScriptable.wrongAnswer[2]);
+
+        for(int i=0; i< _questionScriptable.wrongAnswer.Count; i++)
+        {
+            Instantiate(_answerUI,_uiQuiz.GetComponentInChildren<VerticalLayoutGroup>().transform);
+            _answers.Add(_questionScriptable.wrongAnswer[i]);
+        }
+        /*        _answers.Add(_questionScriptable.wrongAnswer[0]);
+                _answers.Add(_questionScriptable.wrongAnswer[1]);
+                _answers.Add(_questionScriptable.wrongAnswer[2]);*/
+        Instantiate(_answerUI, _uiQuiz.GetComponentInChildren<VerticalLayoutGroup>().transform);
         _answers.Add(_questionScriptable.correctAnswer);
 
         for (int i = 1; i < _uiQuiz.GetComponentsInChildren<TextMeshProUGUI>().Length; i++)
@@ -56,13 +64,30 @@ public class QuizManager : MonoBehaviour
             answerChose.GetComponentInChildren<Image>().color = Color.green;
             _questionScriptable.isAnswered =true;
             _uiQuiz.GetComponentInChildren<TextMeshProUGUI>().text = _questionScriptable.afterCorrect;
-            
+
+            _panelNextQuestion.SetActive(true);
+            for (int i = 0; i < _panelNextQuestion.GetComponentsInChildren<Image>().Length; i++) {
+                if(_panelNextQuestion.GetComponentsInChildren<Image>()[i].name == "NextQuestion")
+                {
+
+                    _panelNextQuestion.GetComponentsInChildren<Image>()[i].transform.SetAsLastSibling();
+                } 
+            }
         }
         else
         {
 
             answerChose.GetComponentInChildren<Image>().color = Color.red;
             _uiQuiz.GetComponentInChildren<TextMeshProUGUI>().text = _questionScriptable.afterWrong;
+            _panelNextQuestion.SetActive(true);
+            for (int i = 0; i < _panelNextQuestion.GetComponentsInChildren<Image>().Length; i++)
+            {
+                if (_panelNextQuestion.GetComponentsInChildren<Image>()[i].name == "Close")
+                {
+
+                    _panelNextQuestion.GetComponentsInChildren<Image>()[i].transform.SetAsLastSibling();
+                }
+            }
         }
 
         for (int i = 0; i < _uiQuiz.GetComponentsInChildren<Button>().Length; i++)
@@ -74,13 +99,12 @@ public class QuizManager : MonoBehaviour
             Destroy(_uiQuiz,1);
         }*/
         //Destroy(_uiQuiz,5.0f);
-        _panelNextQuestion.SetActive(true);
-        _panelNextQuestion.transform.SetAsLastSibling();
+        
     }
 
     public void EndQuiz() {
-        Debug.Log("cc");
-        if(_uiQuiz)
+        _panelNextQuestion.SetActive(false);
+        if (_uiQuiz)
         {
             Destroy(_uiQuiz);
         }
