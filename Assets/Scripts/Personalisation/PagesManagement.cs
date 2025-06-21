@@ -43,6 +43,9 @@ public class PagesManagement : MonoBehaviour
         ChangePages();
 
         personalisation.UpdateGrillPersonalisation();
+
+        GridLayoutGroup gridLayout = gameObject.GetComponent<GridLayoutGroup>();
+        gridLayout.cellSize = new Vector2((Screen.width) / 4f, gridLayout.cellSize.y);
     }
 
     void ChangeColorCurrentPage()

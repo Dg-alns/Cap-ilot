@@ -62,7 +62,6 @@ public class Personalisation : MonoBehaviour
 
         CreateLstAllColor();
         InitColorPosition();
-
     }
 
     void UpdateText()
