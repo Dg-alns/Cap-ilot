@@ -48,15 +48,29 @@ public  class Tools : MonoBehaviour
         return lRaycastResults;
     }
 
-        static public List<T> CreateList<T>(string nameGameObject)
+    static public List<T> CreateList<T>(string nameParentOfTheList)
     {
-        GameObject go = GameObject.Find(nameGameObject);
+        GameObject parent = GameObject.Find(nameParentOfTheList);
 
-        T[] allChild = go.GetComponentsInChildren<T>();
+        T[] allChild = parent.GetComponentsInChildren<T>();
 
         List<T> objs = new List<T>(allChild);
 
+        return objs;
+    }
 
+    static public List<GameObject> CreateGameObjectList<T>(string nameParentOfTheList) where T : Component
+    {
+        GameObject parent = GameObject.Find(nameParentOfTheList);
+
+        T[] allChild = parent.GetComponentsInChildren<T>();
+
+        List<GameObject> objs = new List<GameObject>();
+
+        for(int i = 0; i < allChild.Length; i++)
+        {
+            objs.Add(allChild[i].gameObject);
+        }
         return objs;
     }
 }
