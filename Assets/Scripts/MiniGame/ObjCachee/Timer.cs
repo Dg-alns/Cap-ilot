@@ -39,6 +39,7 @@ public class Timer : MonoBehaviour
 
     public void SetNSeconds(int seconds ) { nSec = seconds; baseNSec = seconds; }
     public void RestartNSeconds( ) { nSec += baseNSec; }
+    public void ResetNSecconds( ) { nSec = baseNSec; }
     public void RestartTimer()
     {
         baseSeconds = 1;
