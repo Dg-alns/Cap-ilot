@@ -39,6 +39,30 @@ public class Timer : MonoBehaviour
 
     public void SetNSeconds(int seconds ) { nSec = seconds; baseNSec = seconds; }
     public void RestartNSeconds( ) { nSec += baseNSec; }
+    public void RestartTimer()
+    {
+        baseSeconds = 1;
+        DTseconds = 1;
+
+        nSec = 0;
+        baseNSec = 0;
+
+        SUniter = 0;
+        SDizaine = 0;
+        MUniter = 0;
+        MDizaine = 0;
+
+        stop = false;
+        TextTime.text = MDizaine.ToString() + MUniter.ToString() + "." + SDizaine.ToString() + SUniter.ToString();
+
+    }
+    public int GetSecond()
+    {
+        return  SUniter +
+                SDizaine * 10 +
+                MUniter * 60 +
+                MDizaine * 600;
+    }
     public bool ElapseNsecond()
     {
         nSec -= Time.deltaTime;
