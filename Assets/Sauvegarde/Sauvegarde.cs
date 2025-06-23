@@ -7,6 +7,7 @@ using static UnityEngine.Rendering.DebugUI;
 using TMPro;
 using UnityEngine.UI;
 using static UnityEngine.InputManagerEntry;
+using UnityEditor.UIElements;
 
 public class Sauvegarde : MonoBehaviour
 {
@@ -37,23 +38,17 @@ public class Sauvegarde : MonoBehaviour
         profile.Output = OutputName;
         try
         {
-            string jsonstring = File.ReadAllText("saveName.json");
-            profile = JsonUtility.FromJson<Profile>(jsonstring);
-            profile.Output = OutputName;
-            profile.UpdateName();
-        }
-        catch
-        {
-
-        }
-        try
-        {
             string jsonstring = File.ReadAllText("save.json");
-            journal = JsonUtility.FromJson<Journal>(jsonstring);
+            Saving save = new Saving(journal, profile);
+            save = JsonUtility.FromJson<Saving>(jsonstring);
+            journal = save.journal;
+            profile = save.profile;
             journal.Output = Output;
             journal.EmotionWheel = EmotionWheel;
             journal.OutputText = OutputText;
             journal.UpdateJournal();
+            profile.Output = OutputName;
+            profile.UpdateName();
         }
         catch
         {
@@ -86,17 +81,28 @@ public class Sauvegarde : MonoBehaviour
     }
     public void Save()
     {
+        Saving save = new Saving(journal, profile);
         journal.ThemeList = Themes;
         journal.Save();
         profile.Save();
-        string jsonString = JsonUtility.ToJson(journal);
+        string jsonString = JsonUtility.ToJson(save);
         string fileName = "save.json";
-        File.WriteAllText(fileName, jsonString);
-        jsonString = JsonUtility.ToJson(profile);
-        fileName = "saveName.json";
         File.WriteAllText(fileName, jsonString);
         journal.UpdateJournal();
         profile.UpdateName();
         Themes.Clear();
     }
+}
+
+[System.Serializable]
+public class Saving
+{
+    public Journal journal;
+    public Profile profile;
+    public Saving(Journal journal, Profile profile) 
+    { 
+        this.journal = journal;
+        this.profile = profile;
+    }
+
 }
