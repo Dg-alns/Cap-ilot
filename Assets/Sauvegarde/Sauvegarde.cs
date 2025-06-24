@@ -42,9 +42,9 @@ public class Sauvegarde : MonoBehaviour
             string jsonstring = File.ReadAllText("save.json");
             Saving save = new Saving(journal, profile);
             save = JsonUtility.FromJson<Saving>(jsonstring);
-            if (SceneManager.GetActiveScene() != SceneManager.GetSceneByName("Enzo"))
+            if (SceneManager.GetActiveScene() != SceneManager.GetSceneByName("Journal"))
             {
-                SceneManager.LoadScene("Enzo");
+                SceneManager.LoadScene("Journal");
             }
             journal = save.journal;
             profile = save.profile;
@@ -68,6 +68,10 @@ public class Sauvegarde : MonoBehaviour
         }
         catch
         {
+            if (SceneManager.GetActiveScene() != SceneManager.GetSceneByName("Profile"))
+            {
+                SceneManager.LoadScene("Profile");
+            }
             profile.Input = InputName;
             profile.Jour = Jour;
             profile.Mois = Mois;
@@ -99,9 +103,9 @@ public class Sauvegarde : MonoBehaviour
         journal.UpdateJournal();
         profile.UpdateProfile();
         Themes.Clear();
-        if (SceneManager.GetActiveScene() != SceneManager.GetSceneByName("Enzo"))
+        if (SceneManager.GetActiveScene() != SceneManager.GetSceneByName("Journal"))
         {
-            SceneManager.LoadScene("Enzo");
+            SceneManager.LoadScene("Journal");
         }
     }
 }

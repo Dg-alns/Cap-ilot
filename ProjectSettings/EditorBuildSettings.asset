@@ -29,5 +29,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Other/Enzo.unity
     guid: 02ac8eb3dad3b7d4984b501b7817650d
+  - enabled: 1
+    path: Assets/Scenes/Other/Profile.unity
+    guid: a4b7cea5f6043684d8c6433658056108
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0
