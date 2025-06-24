@@ -42,6 +42,7 @@ public class PagesManagement : MonoBehaviour
         CurrentPage = allNamepages[0];
         ChangePages();
 
+        personalisation.LoadSecondPArt();
         personalisation.UpdateGrillPersonalisation();
 
         GridLayoutGroup gridLayout = gameObject.GetComponent<GridLayoutGroup>();

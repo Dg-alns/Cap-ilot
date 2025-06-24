@@ -26,7 +26,7 @@ public class SearchScriptObj : MonoBehaviour
     static public List< PersoPlayerData> ThighSObj = new List<PersoPlayerData>();
     static public List<PersoPlayerData> LegSObj = new List<PersoPlayerData>();
 
-    void Start()
+    void Awake()
     {
         LoadCategory("Assets/Art/personalisation/ScriptObj/Arm/Arm", ArmSObj);
         LoadCategory("Assets/Art/personalisation/ScriptObj/Arm/Hand", HandSObj);

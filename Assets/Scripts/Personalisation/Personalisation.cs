@@ -57,8 +57,11 @@ public class Personalisation : MonoBehaviour
 
         sizeGrid = listOfGridPersonalisation.Count;
 
+    }
+
+    public void LoadSecondPArt()
+    {
         ChangeOfAnyPart();
-        UpdateText();
 
         CreateLstAllColor();
         InitColorPosition();
@@ -149,7 +152,9 @@ public class Personalisation : MonoBehaviour
                 continue;
             }
 
-            listOfGridPersonalisation[i].GetComponent<Image>().sprite = GetLsitScriptObj(Playerpart.DetectionOfPart(pagesManagement.CurrentPage))[i + offset].sprite;
+
+            Sprite kk = GetLsitScriptObj(Playerpart.DetectionOfPart(pagesManagement.CurrentPage))[i + offset].sprite;
+            listOfGridPersonalisation[i].GetComponent<Image>().sprite = kk;
 
             if (GetLsitScriptObj(Playerpart.DetectionOfPart(pagesManagement.CurrentPage))[i + offset].isDebloquer)
                 listOfGridPersonalisation[i].GetComponent<Image>().color = Color.white;
@@ -244,7 +249,6 @@ public class Personalisation : MonoBehaviour
         int nbAccessoires = GetLsitScriptObj(Playerpart.DetectionOfPart(pagesManagement.CurrentPage)).Count;
 
         int nbLst = 0;
-
         while (true)
         {
             if (nbAccessoires <= 0)
