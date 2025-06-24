@@ -26,5 +26,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Island/Phare.unity
     guid: 62eabe07a908c63479f16b4b17fd9654
+  - enabled: 1
+    path: Assets/Scenes/Other/Enzo.unity
+    guid: 02ac8eb3dad3b7d4984b501b7817650d
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0
