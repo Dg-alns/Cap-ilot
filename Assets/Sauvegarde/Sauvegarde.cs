@@ -42,7 +42,10 @@ public class Sauvegarde : MonoBehaviour
             string jsonstring = File.ReadAllText("save.json");
             Saving save = new Saving(journal, profile);
             save = JsonUtility.FromJson<Saving>(jsonstring);
-            //SceneManager.LoadScene("Enzo");
+            if (SceneManager.GetActiveScene() != SceneManager.GetSceneByName("Enzo"))
+            {
+                SceneManager.LoadScene("Enzo");
+            }
             journal = save.journal;
             profile = save.profile;
             journal.Output = Output;
@@ -93,10 +96,13 @@ public class Sauvegarde : MonoBehaviour
         string jsonString = JsonUtility.ToJson(save);
         string fileName = "save.json";
         File.WriteAllText(fileName, jsonString);
-        //SceneManager.LoadScene("Enzo");
         journal.UpdateJournal();
         profile.UpdateProfile();
         Themes.Clear();
+        if (SceneManager.GetActiveScene() != SceneManager.GetSceneByName("Enzo"))
+        {
+            SceneManager.LoadScene("Enzo");
+        }
     }
 }
 
