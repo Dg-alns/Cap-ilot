@@ -1,6 +1,14 @@
 using TMPro;
 using UnityEngine;
 
+struct TIME
+{
+    public int SecondesUniter;
+    public int SecondesDizaine;
+    public int MinuteUniter;
+    public int MinuteDizaine;
+}
+
 public class Timer : MonoBehaviour
 {
     public TextMeshProUGUI TextTime;
@@ -10,11 +18,7 @@ public class Timer : MonoBehaviour
 
     float nSec = 0;
     float baseNSec = 0;
-
-    int SUniter = 0;
-    int SDizaine = 0;
-    int MUniter = 0;
-    int MDizaine = 0;
+    TIME time;
 
     public bool stop = false;
     
@@ -37,7 +41,7 @@ public class Timer : MonoBehaviour
         return false;
     }
 
-    public void SetNSeconds(int seconds ) { nSec = seconds; baseNSec = seconds; }
+    public void SetNSeconds(float seconds ) { nSec = seconds; baseNSec = seconds; }
     public void RestartNSeconds( ) { nSec += baseNSec; }
     public void ResetNSecconds( ) { nSec = baseNSec; }
     public void RestartTimer()
@@ -48,22 +52,23 @@ public class Timer : MonoBehaviour
         nSec = 0;
         baseNSec = 0;
 
-        SUniter = 0;
-        SDizaine = 0;
-        MUniter = 0;
-        MDizaine = 0;
+        time.SecondesUniter = 0;
+        time.SecondesDizaine = 0;
+        time.MinuteUniter = 0;
+        time.MinuteDizaine = 0;
 
         stop = false;
-        TextTime.text = MDizaine.ToString() + MUniter.ToString() + "." + SDizaine.ToString() + SUniter.ToString();
+        TextTime.text = $"{time.MinuteDizaine}{time.MinuteUniter}.{time.SecondesDizaine}{time.SecondesUniter}";
 
     }
-    public int GetSecond()
+
+    TIME GetTime() { return time; }
+
+    public float GetTimeInSecondes()
     {
-        return  SUniter +
-                SDizaine * 10 +
-                MUniter * 60 +
-                MDizaine * 600;
+        return time.MinuteDizaine * 600 + time.MinuteUniter * 60 + time.SecondesDizaine * 10 + time.SecondesUniter;
     }
+
     public bool ElapseNsecond()
     {
         nSec -= Time.deltaTime;
@@ -80,26 +85,26 @@ public class Timer : MonoBehaviour
             if (Elapse1second())
             {
 
-                SUniter++;
-                if (SUniter >= 10)
+                time.SecondesUniter++;
+                if (time.SecondesUniter >= 10)
                 {
-                    SUniter = 0;
-                    SDizaine++;
+                    time.SecondesUniter = 0;
+                    time.SecondesDizaine++;
                 }
 
-                if (SDizaine >= 6)
+                if (time.SecondesDizaine >= 6)
                 {
-                    SDizaine = 0;
-                    MUniter++;
+                    time.SecondesDizaine = 0;
+                    time.MinuteUniter++;
                 }
 
-                if (MUniter >= 10)
+                if (time.MinuteUniter >= 10)
                 {
-                    MUniter = 0;
-                    MDizaine++;
+                    time.MinuteUniter = 0;
+                    time.MinuteDizaine++;
                 }
 
-                TextTime.text = MDizaine.ToString() + MUniter.ToString() + "." + SDizaine.ToString() + SUniter.ToString();
+                TextTime.text = $"{time.MinuteDizaine}{time.MinuteUniter}.{time.SecondesDizaine}{time.SecondesUniter}";
             } 
         }
     }

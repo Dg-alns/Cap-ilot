@@ -15,4 +15,9 @@ public class Piste : MonoBehaviour
         transform.position = Vector3.MoveTowards(transform.position, destination, speed * Time.deltaTime);
 
     }
+
+    public void RestDestination()
+    {
+        destination = new Vector3(transform.position.x, transform.position.y, transform.position.z);
+    }
 }

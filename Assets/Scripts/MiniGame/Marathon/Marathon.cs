@@ -1,10 +1,14 @@
 using System.Collections;
-using Unity.VisualScripting;
 using UnityEngine;
+
+
+// TODO Diego Ajout Timer lors du lancement du marathon
+
 
 public class Marathon : MonoBehaviour
 {
     public PisteManagement pisteManagement;
+    public GestionEndurance gestionEndurance;
     public Timer timer;
 
     float baseSpeed;
@@ -19,7 +23,7 @@ public class Marathon : MonoBehaviour
 
         MaxSpeed = currentSpeed * 2.5f;
 
-        timer.SetNSeconds(3);
+        timer.SetNSeconds(1f);
 
         StartCoroutine(CanDownSpeed());
     }
@@ -48,9 +52,45 @@ public class Marathon : MonoBehaviour
 
     private void Update()
     {
+        if (pisteManagement.Finish)
+        {
+            timer.stop = true;
+            return;
+        }
+
+        if(gestionEndurance.restartEndurance)
+        {
+
+            currentSpeed = baseSpeed;
+            pisteManagement.currentSpeed = currentSpeed;
+            pisteManagement.UpdateSpeed(currentSpeed);
+            gestionEndurance.restartEndurance = false;
+        }
+
+
+        if (gestionEndurance.HaveNoneEndurance)
+        {
+            if (currentSpeed != 0)
+            {
+                currentSpeed = 0;
+                pisteManagement.currentSpeed = currentSpeed;
+                pisteManagement.UpdateSpeed(currentSpeed);
+            }
+
+            return;
+        }
+
         if (Input.GetMouseButtonDown(0))
         {
+            if (gestionEndurance.tackeRavito)
+            {
+                gestionEndurance.tackeRavito = false;
+                return;
+            }
+
             UpSpeed();
+            gestionEndurance.UseEndurance();
+
         }
     }
 

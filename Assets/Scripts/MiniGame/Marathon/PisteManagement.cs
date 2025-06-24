@@ -1,12 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class PisteManagement : MonoBehaviour
 {
     public GameObject RefPiste;
     public GameObject RefRavitoLeft;
     public GameObject RefRavitoRight;
+    public GameObject RefArrivée;
+
+    public GameObject player;
+    public Score score;
 
 
     public Camera cam;
@@ -19,19 +24,58 @@ public class PisteManagement : MonoBehaviour
     public int nbPisteBlock = 10;
 
     public float baseSpeed;
-    public float currentSpeed;
+    public float currentSpeed;   
+    
+    public bool Finish = false;
 
 
-    GameObject InitNewPist()
+    private void Awake()
     {
-        GameObject newPist = Instantiate(RefPiste);
+        LastPisteCreated = CurrentPist[0];
+        baseSpeed = PisteCreated.GetComponent<Piste>().speed;
+        currentSpeed = baseSpeed;
+    }
+
+    private void Update()
+    {
+        if (Finish)
+        {
+            if(player.transform.position != PisteCreated.GetComponent<Arrivée>().GetFinalPos())
+                player.transform.position = Vector3.MoveTowards(player.transform.position, PisteCreated.GetComponent<Arrivée>().GetFinalPos(), 2 * Time.deltaTime);
+
+            else
+                score.LauchScore();
+            
+
+            return;
+        }
+        
+        if(PisteCreated.name.Contains("Arrivée"))
+        {
+            if(PisteCreated.GetComponent<Arrivée>().ToucheTheLine())
+            {
+                StopMovementPist();
+                Finish = true;
+                return;
+            }
+        }
+
+        DestroyPiste();
+
+        if (nbPisteBlock >= 0)
+            CreatePiste();
+    }
+
+    GameObject InitNewPiste(GameObject reference)
+    {
+        GameObject newPist = Instantiate(reference);
 
         newPist.transform.position = PisteCreated.transform.position;
         newPist.transform.localScale = PisteCreated.transform.localScale;
         newPist.transform.rotation = PisteCreated.transform.rotation;
 
 
-        newPist.transform.position = new Vector3(newPist.transform.position.x, newPist.transform.position.y + newPist.transform.position.y * 2 , newPist.transform.position.z);
+        newPist.transform.position = new Vector3(newPist.transform.position.x, newPist.transform.position.y + newPist.transform.position.y * 2, newPist.transform.position.z);
         newPist.GetComponent<Piste>().speed = currentSpeed;
         CurrentPist.Add(newPist);
         return newPist;
@@ -57,7 +101,7 @@ public class PisteManagement : MonoBehaviour
         newPist.transform.rotation = PisteCreated.transform.rotation;
 
 
-        newPist.transform.position = new Vector3(newPist.transform.position.x, newPist.transform.position.y + newPist.transform.position.y * 2 , newPist.transform.position.z);
+        newPist.transform.position = new Vector3(newPist.transform.position.x, newPist.transform.position.y + newPist.transform.position.y * 2, newPist.transform.position.z);
 
         newPist.GetComponent<Piste>().speed = currentSpeed;
 
@@ -67,12 +111,27 @@ public class PisteManagement : MonoBehaviour
 
     GameObject CreateNewBlock()
     {
-        int nb = Random.Range(1, 10);
+        if (nbPisteBlock <= 0)
+        {
+            nbPisteBlock--;
+            return InitNewPiste(RefArrivée);
+        }
+
+        int nb;
+        
+        if(PisteCreated.GetComponentInChildren<Ravitalement>() != null)
+        {
+            nbPisteBlock--;
+            return InitNewPiste(RefPiste);
+        }
+        else
+            nb = Random.Range(1, 10);
+
 
         if (nb <= 7)
         {
             nbPisteBlock--;
-            return InitNewPist();
+            return InitNewPiste(RefPiste);
         }
 
         return InitNewRavito();
@@ -80,12 +139,16 @@ public class PisteManagement : MonoBehaviour
 
     void DestroyPiste()
     {
+        if (LastPisteCreated == null)
+            return;           
 
         if (LastPisteCreated.transform.position == LastPisteCreated.GetComponent<Piste>().destination)
         {
             CurrentPist.Remove(LastPisteCreated);
             Destroy(LastPisteCreated);
-            LastPisteCreated = CurrentPist[0];
+
+            if (CurrentPist.Count > 0)
+                LastPisteCreated = CurrentPist[0];
         }
     }
 
@@ -107,20 +170,12 @@ public class PisteManagement : MonoBehaviour
         }
     }
 
-
-    private void Awake()
+    public void StopMovementPist()
     {
-        LastPisteCreated = CurrentPist[0];
-        baseSpeed = PisteCreated.GetComponent<Piste>().speed;
-        currentSpeed = baseSpeed;
-    }
-
-    private void Update()
-    {
-        DestroyPiste();
-
-        if (nbPisteBlock > 0)
-            CreatePiste();
+        foreach (GameObject item in CurrentPist)
+        {
+            item.GetComponent<Piste>().RestDestination();
+        }
     }
 
 }
