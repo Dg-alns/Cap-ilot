@@ -7,7 +7,7 @@ public class Piste : MonoBehaviour
 
     private void Start()
     {
-        destination = new Vector3(transform.position.x, -15, 0);
+        destination = new Vector3(transform.position.x, transform.position.y, transform.position.z);
     }
 
     void Update()
@@ -19,5 +19,10 @@ public class Piste : MonoBehaviour
     public void RestDestination()
     {
         destination = new Vector3(transform.position.x, transform.position.y, transform.position.z);
+    }
+
+    public void StartDestination()
+    {
+        destination = new Vector3(transform.position.x, -15, 0);
     }
 }

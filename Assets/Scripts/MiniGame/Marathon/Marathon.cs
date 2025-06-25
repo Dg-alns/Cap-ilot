@@ -11,6 +11,8 @@ public class Marathon : MonoBehaviour
     public GestionEndurance gestionEndurance;
     public Timer timer;
 
+    public Animator startingLight;
+
     float baseSpeed;
     float currentSpeed;
     float MaxSpeed;
@@ -52,6 +54,21 @@ public class Marathon : MonoBehaviour
 
     private void Update()
     {
+        if (startingLight.GetBool("GoLight"))
+        {
+            pisteManagement.StopMovementPist();
+            timer.stop = true;
+            return;
+        }
+
+        if(startingLight.GetBool("GoHide"))
+        {
+            pisteManagement.StartMovementPist();
+            timer.stop = false;
+            startingLight.gameObject.SetActive(false);
+        }
+
+
         if (pisteManagement.Finish)
         {
             timer.stop = true;

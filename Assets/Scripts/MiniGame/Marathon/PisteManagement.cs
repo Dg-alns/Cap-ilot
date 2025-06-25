@@ -1,7 +1,13 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SocialPlatforms.Impl;
+
+
+enum TypeBLock
+{
+    Piste,
+    Ravito,
+    Arrivée
+}
 
 public class PisteManagement : MonoBehaviour
 {
@@ -16,7 +22,7 @@ public class PisteManagement : MonoBehaviour
 
     public Camera cam;
 
-    public GameObject PisteCreated;
+    GameObject PisteCreated;
     GameObject LastPisteCreated;
 
     public List<GameObject> CurrentPist;
@@ -28,12 +34,18 @@ public class PisteManagement : MonoBehaviour
     
     public bool Finish = false;
 
+    List<TypeBLock> patternPiste = new List<TypeBLock>();
+    int idx = 0;
+
 
     private void Awake()
     {
         LastPisteCreated = CurrentPist[0];
+        PisteCreated = CurrentPist[1];
         baseSpeed = PisteCreated.GetComponent<Piste>().speed;
         currentSpeed = baseSpeed;
+
+        CreationPattern();
     }
 
     private void Update()
@@ -59,11 +71,23 @@ public class PisteManagement : MonoBehaviour
                 return;
             }
         }
+       
 
-        DestroyPiste();
-
-        if (nbPisteBlock >= 0)
+        if (idx <= patternPiste.Count)
+        {
             CreatePiste();
+
+            if (PisteCreated != null && PisteCreated != CurrentPist[1])
+            {
+                if (PisteCreated.GetComponent<Piste>().destination == PisteCreated.transform.position)
+                    PisteCreated.GetComponent<Piste>().StartDestination();
+
+
+                DestroyPiste();
+            }
+
+
+        }
     }
 
     GameObject InitNewPiste(GameObject reference)
@@ -78,6 +102,7 @@ public class PisteManagement : MonoBehaviour
         newPist.transform.position = new Vector3(newPist.transform.position.x, newPist.transform.position.y + newPist.transform.position.y * 2, newPist.transform.position.z);
         newPist.GetComponent<Piste>().speed = currentSpeed;
         CurrentPist.Add(newPist);
+        idx++;
         return newPist;
     }
 
@@ -106,35 +131,25 @@ public class PisteManagement : MonoBehaviour
         newPist.GetComponent<Piste>().speed = currentSpeed;
 
         CurrentPist.Add(newPist);
+        idx++;
         return newPist;
     }
 
     GameObject CreateNewBlock()
     {
-        if (nbPisteBlock <= 0)
+        switch (patternPiste[idx])
         {
-            nbPisteBlock--;
-            return InitNewPiste(RefArrivée);
+            case TypeBLock.Piste:
+                return InitNewPiste(RefPiste);
+
+            case TypeBLock.Ravito:
+                return InitNewRavito();
+
+            case TypeBLock.Arrivée:
+                return InitNewPiste(RefArrivée);
         }
 
-        int nb;
-        
-        if(PisteCreated.GetComponentInChildren<Ravitalement>() != null)
-        {
-            nbPisteBlock--;
-            return InitNewPiste(RefPiste);
-        }
-        else
-            nb = Random.Range(1, 10);
-
-
-        if (nb <= 7)
-        {
-            nbPisteBlock--;
-            return InitNewPiste(RefPiste);
-        }
-
-        return InitNewRavito();
+        return null;
     }
 
     void DestroyPiste()
@@ -176,6 +191,56 @@ public class PisteManagement : MonoBehaviour
         {
             item.GetComponent<Piste>().RestDestination();
         }
+    }
+
+    public void StartMovementPist()
+    {
+        foreach (GameObject item in CurrentPist)
+        {
+            item.GetComponent<Piste>().StartDestination();
+        }
+    }
+
+
+    void CreationPattern()
+    {
+        int i = 0;
+        while (i < nbPisteBlock)
+        {
+            int rangePist = Random.Range(2, 5);
+
+            if (nbPisteBlock - i <= 6)
+            {
+                Debug.Log(i);
+                Debug.Log(rangePist);
+                for (int j = 0; j < rangePist; j++)
+                {
+                    patternPiste.Add(TypeBLock.Piste);
+                    i++;
+                }
+                
+                patternPiste.Add(TypeBLock.Ravito);
+
+                for (int k = 0; k < nbPisteBlock - i; k++)
+                {
+                    patternPiste.Add(TypeBLock.Piste);
+                }
+
+                break;
+            }
+
+            while (rangePist > 0)
+            {
+                patternPiste.Add(TypeBLock.Piste);
+                i++;
+                rangePist--;
+            }
+
+            patternPiste.Add(TypeBLock.Ravito);
+
+        }
+
+        patternPiste.Add(TypeBLock.Arrivée);
     }
 
 }

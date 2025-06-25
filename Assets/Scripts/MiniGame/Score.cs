@@ -36,7 +36,6 @@ public class Score : MonoBehaviour
 
     private void Start()
     {
-
         gameObject.SetActive(false);
         win.SetActive(false);
     }
