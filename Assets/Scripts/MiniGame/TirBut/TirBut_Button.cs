@@ -14,12 +14,13 @@ public enum StateButton
 }
 public class TirBut_Button : MonoBehaviour
 {
+    // List different color associate to the button
     private readonly IReadOnlyDictionary<StateButton,Color> _colorMap = new Dictionary<StateButton, Color>()
     {
-        {StateButton.None , new Color(1,1,1,0.7f) },
-        {StateButton.Selected , new Color(0.5f,1,0.5f,0.9f) },
-        {StateButton.NoSelected , new Color(0.56f,0.56f,0.56f,0.65f) },
-        {StateButton.Error , new Color(1,0.19f,0.19f,0.8f) },
+        {StateButton.None ,         new Color(1,1,1,0.7f) },                // White
+        {StateButton.Selected ,     new Color(0.5f,1,0.5f,0.9f) },          // Green
+        {StateButton.NoSelected ,   new Color(0.56f,0.56f,0.56f,0.65f) },   // Grey
+        {StateButton.Error ,        new Color(1,0.19f,0.19f,0.8f) },        // Red
     }; 
 
     [SerializeField] private StateButton _stateButton;
@@ -31,12 +32,6 @@ public class TirBut_Button : MonoBehaviour
     {
         _button = GetComponent<Image>();
         SwapState(StateButton.None);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     public void SwapState(StateButton newState)

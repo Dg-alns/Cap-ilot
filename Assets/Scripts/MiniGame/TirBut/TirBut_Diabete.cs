@@ -26,7 +26,7 @@ public class TirBut_Diabete : MonoBehaviour
         }
     }
 
-
+    // Play a random keeper animation of the diabete 
     public void PlayDiabete()
     {
         _AnimationIndex = Random.Range(0, 6);
@@ -34,6 +34,7 @@ public class TirBut_Diabete : MonoBehaviour
         _Animator.SetInteger("SaveGrid", _AnimationIndex);
     }
 
+    // Reset the diabete out of the goal
     public void ResetAnimation()
     {
         _isSave = false;

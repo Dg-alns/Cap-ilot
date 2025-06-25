@@ -16,18 +16,16 @@ public class TirBut_ButtonManager : MonoBehaviour
         _activeButton = null;
     }
 
-    void Update()
-    {
-        
-    }
-
     public void SetActiveButton(TirBut_Button button)
     {
+        // If the button is already Selected then put all of them in disable
         if (button.GetStateButton() == StateButton.Selected)
         {
-            DisableButton();
+            SetDisableButton();
             return;
         }
+
+        // Put every buttons to NoSelected then the button select to Selected  
         foreach(TirBut_Button b  in _buttons)
         {
             b.SwapState(StateButton.NoSelected);
@@ -35,7 +33,9 @@ public class TirBut_ButtonManager : MonoBehaviour
         _activeButton = button;
         _activeButton.ActiveButton();
     }
-    public void DisableButton()
+
+    // Change state buttons to None (Grey Color)
+    public void SetDisableButton()
     {
         foreach (TirBut_Button b in _buttons)
         {
@@ -43,6 +43,8 @@ public class TirBut_ButtonManager : MonoBehaviour
         }
         _activeButton = null;
     }
+
+    // Change state buttons to Error (Red Color)
     public void SetErrorButtons()
     {
         foreach (TirBut_Button b in _buttons)

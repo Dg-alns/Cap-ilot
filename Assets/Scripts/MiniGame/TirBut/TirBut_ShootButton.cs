@@ -19,29 +19,22 @@ public class TirBut_ShootButton : MonoBehaviour
         _ButtonInterface = GameObject.Find("ButtonInterface");
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void TryShoot()
     {
+        // If there is no position select
         if (_targetManager.GetActiveButton() == null)
         {
             _targetManager.SetErrorButtons();
             return;
         }
-
-        if (_Ball.IsShooting()) return;
-        // SHOOT
-        Debug.Log("Boom !");
+        // Else Shoot to the choice position 
         _Ball.Shoot(GetTargetPosition());
+
         _Diabete.PlayDiabete();
-        _targetManager.DisableButton();
+
+        _targetManager.SetDisableButton();
         _ButtonInterface.SetActive(false);
         return;
-
     }
     int GetTargetPosition()
     {

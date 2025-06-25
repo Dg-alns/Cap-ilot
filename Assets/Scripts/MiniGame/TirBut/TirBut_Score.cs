@@ -12,12 +12,13 @@ enum ScoreState
 }
 public class TirBut_Score : MonoBehaviour
 {
+    // List different color associate to the score
     private readonly IReadOnlyDictionary<ScoreState, Color> _colorMap = new Dictionary<ScoreState, Color>()
     {
-        {ScoreState.None ,      new Color(0.415f,0.415f,0.415f,1f) },
-        {ScoreState.Shooting ,  new Color(0.415f,0.415f,0.784f,1f) },
-        {ScoreState.Win ,       new Color(0.415f,0.764f,0.415f,1f) },
-        {ScoreState.Lose ,      new Color(0.764f,0.415f,0.415f,1f) },
+        {ScoreState.None ,      new Color(0.415f,0.415f,0.415f,1f) }, // LightGrey
+        {ScoreState.Shooting ,  new Color(0.415f,0.415f,0.784f,1f) }, // Blue
+        {ScoreState.Win ,       new Color(0.415f,0.764f,0.415f,1f) }, // Green
+        {ScoreState.Lose ,      new Color(0.764f,0.415f,0.415f,1f) }, // Red
     };
 
     private int nbShoot = 0;
@@ -25,12 +26,17 @@ public class TirBut_Score : MonoBehaviour
     private List<Image> images;
 
     public int score = 0;
-    // Start is called before the first frame update
+
+    public bool end = false;
+
+    [SerializeField] private VisualWinning _visualWinning; 
+
     void Start()
     {
         scoreStates = new List<ScoreState>() { ScoreState.Shooting, ScoreState.None, ScoreState.None, ScoreState.None, ScoreState.None, };
         images = new List<Image>(GetComponentsInChildren<Image>());
         images[nbShoot].color = _colorMap[ScoreState.Shooting];
+        _visualWinning.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -39,7 +45,8 @@ public class TirBut_Score : MonoBehaviour
         
     }
     public void AddScore(bool goal)
-    {
+    {   
+        // Change color (and add score)
         if (goal)
         {
             scoreStates[nbShoot] = ScoreState.Win;
@@ -51,10 +58,25 @@ public class TirBut_Score : MonoBehaviour
         }
         images[nbShoot].color = _colorMap[scoreStates[nbShoot]];
 
+        // Check if it's the end
         nbShoot++;
-        if(nbShoot >= images.Count) return;
+        if(nbShoot >= images.Count)
+        {
+            EndGame();
+            return;
+        }
 
+        // Change the color to the next one
         scoreStates[nbShoot] = ScoreState.Shooting;
         images[nbShoot].color = _colorMap[scoreStates[nbShoot]];
+    }
+
+    private void EndGame()
+    {
+        // Active the visual winning
+        end = true;
+        _visualWinning.gameObject.SetActive(true);
+        _visualWinning.GetComponent<Animator>().SetBool("TEST", true);
+
     }
 }
