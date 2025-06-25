@@ -21,13 +21,18 @@ public class TirBut_Ball : MonoBehaviour
 
     [SerializeField] private Vector2 _targetPos;
 
-    [SerializeField] private float speed = 1.0f;
+    [SerializeField] private float speed = 10.0f;
+    [SerializeField] private float speedDeviation = 20.0f;
+
+    private bool _deviation = false;
 
     private float _time;
 
     GameObject _ButtonInterface;
 
     [SerializeField] TirBut_Score _Score;
+
+    [SerializeField] TirBut_Diabete _Diabete;
 
 
 
@@ -54,7 +59,7 @@ public class TirBut_Ball : MonoBehaviour
     {
         if (_shooting) 
         { 
-            float step = speed * Time.deltaTime;
+            float step = _deviation ? speedDeviation * Time.deltaTime : speed * Time.deltaTime;
             transform.position = Vector2.MoveTowards(transform.position, _targetPos, step);
 
             float coef1 = Vector2.Distance(_standingPos, _targetPos);
@@ -62,22 +67,28 @@ public class TirBut_Ball : MonoBehaviour
 
             float coef = coef2 / coef1;
 
-            transform.localScale = coef * (_standingScale - _scoreScale) + _scoreScale;
-            Debug.Log(transform.localScale);
+            transform.localScale = _deviation ? transform.localScale : coef * (_standingScale - _scoreScale) + _scoreScale;
             if (coef2 < 0.01f)
             {
                 _time += Time.deltaTime ;
                 if(_time >= 1.5f)
                 {
-                    _time = 0 ;
-                    transform.localScale = _standingScale;
-                    transform.localPosition = _standingPos;
-                    _shooting = false;
-                    _ButtonInterface.SetActive(true);
-                    _Score.AddScore(true);
+                    _Score.AddScore(!_deviation);
+                    ResetValue();
                 }
             }
         }
+    }
+
+    private void ResetValue()
+    {
+        _time = 0;
+        transform.localScale = _standingScale;
+        transform.localPosition = _standingPos;
+        _shooting = false;
+        _deviation = false;
+        _ButtonInterface.SetActive(true);
+        _Diabete.ResetAnimation();
     }
 
     public void Shoot(int indexPosition)
@@ -86,4 +97,17 @@ public class TirBut_Ball : MonoBehaviour
         _shooting = true;
     }
     public bool IsShooting() { return _shooting; }
+
+    public bool CheckSavable()
+    {
+        Debug.Log("Test : " + Mathf.Abs(transform.localScale.x - _saveScale.x));
+
+        if (transform.localScale.x <= _saveScale.x)
+        {
+            _deviation = true;
+            _targetPos = new Vector2(Random.Range(-5.0f,5.0f),10.0f);
+            return true;
+        }
+        return false;
+    }
 }

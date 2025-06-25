@@ -9,6 +9,9 @@ public class TirBut_ShootButton : MonoBehaviour
 
     [SerializeField] private TirBut_Ball _Ball;
 
+    [SerializeField] private TirBut_Diabete _Diabete;
+
+
     GameObject _ButtonInterface;
     // Start is called before the first frame update
     void Start()
@@ -34,6 +37,7 @@ public class TirBut_ShootButton : MonoBehaviour
         // SHOOT
         Debug.Log("Boom !");
         _Ball.Shoot(GetTargetPosition());
+        _Diabete.PlayDiabete();
         _targetManager.DisableButton();
         _ButtonInterface.SetActive(false);
         return;
