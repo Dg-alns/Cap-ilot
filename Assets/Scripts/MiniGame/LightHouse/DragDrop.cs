@@ -42,7 +42,6 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
     }
     public void OnEndDrag(PointerEventData eventData)
     {
-        Debug.Log("Stop");
         _cg.blocksRaycasts = true;
 
         foreach (var item in _manager.lighthouse.Keys.ToList())
@@ -50,7 +49,6 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
             if (item == this)
             {
                 return;
-                //_manager.lighthouse.Remove(item);
             }
         }
         _rt.SetParent(_canva.GetComponentInChildren<HorizontalLayoutGroup>().transform);
