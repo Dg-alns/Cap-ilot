@@ -154,7 +154,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8216132225265697911, guid: 2203dee7641698a4e94a6ab51907d6e9, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8216132225265697911, guid: 2203dee7641698a4e94a6ab51907d6e9, type: 3}
       propertyPath: m_AnchorMin.x
@@ -162,7 +162,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8216132225265697911, guid: 2203dee7641698a4e94a6ab51907d6e9, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8216132225265697911, guid: 2203dee7641698a4e94a6ab51907d6e9, type: 3}
       propertyPath: m_SizeDelta.x
@@ -206,7 +206,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8216132225265697911, guid: 2203dee7641698a4e94a6ab51907d6e9, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -443
+      value: 353
       objectReference: {fileID: 0}
     - target: {fileID: 8216132225265697911, guid: 2203dee7641698a4e94a6ab51907d6e9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -614,7 +614,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6948143364551900396, guid: 984dc07e5d892c0419432c23c52c8d17, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 15
+      value: 194
       objectReference: {fileID: 0}
     - target: {fileID: 6948143364551900396, guid: 984dc07e5d892c0419432c23c52c8d17, type: 3}
       propertyPath: m_LocalPosition.z
@@ -777,10 +777,11 @@ MonoBehaviour:
   CurrentPist:
   - {fileID: 45572287}
   - {fileID: 2024837798}
-  nbPisteBlock: 10
+  nbPisteBlock: 5
   baseSpeed: 0
   currentSpeed: 0
   Finish: 0
+  patternPiste: 
 --- !u!114 &884936012 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 569796693142497412, guid: 869b14e2855a9f7479f4d1a7cd490d84, type: 3}

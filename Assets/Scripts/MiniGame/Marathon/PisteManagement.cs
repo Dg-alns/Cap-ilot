@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-enum TypeBLock
+public enum TypeBLock
 {
     Piste,
     Ravito,
@@ -11,6 +11,7 @@ enum TypeBLock
 
 public class PisteManagement : MonoBehaviour
 {
+    [Header ("Prefab Block")]
     public GameObject RefPiste;
     public GameObject RefRavitoLeft;
     public GameObject RefRavitoRight;
@@ -27,15 +28,16 @@ public class PisteManagement : MonoBehaviour
 
     public List<GameObject> CurrentPist;
 
-    public int nbPisteBlock = 10;
+    public int nbPisteBlock;
 
     public float baseSpeed;
     public float currentSpeed;   
     
     public bool Finish = false;
 
-    List<TypeBLock> patternPiste = new List<TypeBLock>();
+    public List<TypeBLock> patternPiste = new List<TypeBLock>();
     int idx = 0;
+    int NbBlockDontShow;
 
 
     private void Awake()
@@ -52,11 +54,14 @@ public class PisteManagement : MonoBehaviour
     {
         if (Finish)
         {
-            if(player.transform.position != PisteCreated.GetComponent<Arrivée>().GetFinalPos())
+            if (player.transform.position != PisteCreated.GetComponent<Arrivée>().GetFinalPos())
+            {
                 player.transform.position = Vector3.MoveTowards(player.transform.position, PisteCreated.GetComponent<Arrivée>().GetFinalPos(), 2 * Time.deltaTime);
-
+            }
             else
+            {
                 score.LauchScore();
+            }
             
 
             return;
@@ -64,30 +69,34 @@ public class PisteManagement : MonoBehaviour
         
         if(PisteCreated.name.Contains("Arrivée"))
         {
-            if(PisteCreated.GetComponent<Arrivée>().ToucheTheLine())
+            if (PisteCreated.GetComponent<Arrivée>().ToucheTheLine())
             {
                 StopMovementPist();
                 Finish = true;
                 return;
             }
         }
-       
 
-        if (idx <= patternPiste.Count)
+        if (NbBlockDontShow != 0)
         {
             CreatePiste();
 
             if (PisteCreated != null && PisteCreated != CurrentPist[1])
             {
                 if (PisteCreated.GetComponent<Piste>().destination == PisteCreated.transform.position)
+                {
                     PisteCreated.GetComponent<Piste>().StartDestination();
+                    idx++;
+                    NbBlockDontShow--;
+                }
 
 
                 DestroyPiste();
             }
-
-
         }
+
+
+        
     }
 
     GameObject InitNewPiste(GameObject reference)
@@ -102,7 +111,6 @@ public class PisteManagement : MonoBehaviour
         newPist.transform.position = new Vector3(newPist.transform.position.x, newPist.transform.position.y + newPist.transform.position.y * 2, newPist.transform.position.z);
         newPist.GetComponent<Piste>().speed = currentSpeed;
         CurrentPist.Add(newPist);
-        idx++;
         return newPist;
     }
 
@@ -131,7 +139,6 @@ public class PisteManagement : MonoBehaviour
         newPist.GetComponent<Piste>().speed = currentSpeed;
 
         CurrentPist.Add(newPist);
-        idx++;
         return newPist;
     }
 
@@ -211,8 +218,6 @@ public class PisteManagement : MonoBehaviour
 
             if (nbPisteBlock - i <= 6)
             {
-                Debug.Log(i);
-                Debug.Log(rangePist);
                 for (int j = 0; j < rangePist; j++)
                 {
                     patternPiste.Add(TypeBLock.Piste);
@@ -225,7 +230,6 @@ public class PisteManagement : MonoBehaviour
                 {
                     patternPiste.Add(TypeBLock.Piste);
                 }
-
                 break;
             }
 
@@ -241,6 +245,8 @@ public class PisteManagement : MonoBehaviour
         }
 
         patternPiste.Add(TypeBLock.Arrivée);
+
+        NbBlockDontShow = patternPiste.Count;
     }
 
 }

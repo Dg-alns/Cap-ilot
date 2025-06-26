@@ -1,29 +1,23 @@
 using System.Collections.Generic;
-using System.Dynamic;
 using NUnit.Framework;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.UI;
-using static UnityEditor.PlayerSettings;
 
 public class DetectionObjCachee : DetectionUI
 {
-    ObjCachee objCachee;
     public Camera cam;
+    public Timer timer;
+    public Score score;
 
     List<Objects> objects;
     List<TextMeshProUGUI> nameobjs;
     public Infos_MiniJeux infos;
-
-
 
     private void Awake()
     {
         objects = Tools.CreateList<Objects>("ToFind");
         nameobjs = Tools.CreateList<TextMeshProUGUI>("Bot");
 
-        objCachee = gameObject.GetComponent<ObjCachee>();
         _tools = FindAnyObjectByType<Tools>();
 
         Assert.AreEqual(objects.Count, nameobjs.Count);
@@ -32,8 +26,6 @@ public class DetectionObjCachee : DetectionUI
         {
             nameobjs[i].text = objects[i].name;
         }
-
-        objCachee.SetScore(objects.Count * objCachee.point);
     }
 
     bool Detection(GameObject obj)
@@ -48,6 +40,17 @@ public class DetectionObjCachee : DetectionUI
         return InY && InX;
     }
 
+    bool FindActiveGameObject()
+    {
+        for(int i = 0; i < objects.Count;i++)
+        {
+            if (objects[i].gameObject.activeSelf)
+                return true;
+        }
+
+        return false;
+    }
+
     void DetectionObject()
     {
         if (objects.Count <= 0)
@@ -60,18 +63,16 @@ public class DetectionObjCachee : DetectionUI
 
             if (Detection(objects[i].gameObject))
             {
-                if (Detection(objCachee.diabetes))
+                if (Detection(diabete))
                     break;
 
-                objCachee.timer.stop = true;
+                timer.stop = true;
 
                 objects[i].gameObject.SetActive(false);
                 nameobjs[i].fontStyle = FontStyles.Strikethrough;
 
                 infos.AssociateInfo(objects[i]);
                 infos.gameObject.SetActive(true);
-
-                objCachee.AddScore();
                 break;
             }
         }
@@ -86,6 +87,14 @@ public class DetectionObjCachee : DetectionUI
 
     void Update()
     {
+        if (FindActiveGameObject() == false)
+        {
+            if(infos.gameObject.activeSelf == false)
+                score.LauchScore();
+
+            return;
+        }
+
         if (Input.GetMouseButtonDown(0) && !_tools.IsPointerOverUIElement())
         {
             DetectionObject();

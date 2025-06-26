@@ -1,10 +1,6 @@
 using System.Collections;
 using UnityEngine;
 
-
-// TODO Diego Ajout Timer lors du lancement du marathon
-
-
 public class Marathon : MonoBehaviour
 {
     public PisteManagement pisteManagement;

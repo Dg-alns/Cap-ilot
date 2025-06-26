@@ -53,7 +53,7 @@ public class Infos_MiniJeux : MonoBehaviour
         if(gameObject.activeSelf ==false)
             { return; }
 
-        if (Input.GetMouseButtonDown(0)) // a changer
+        if (Input.GetMouseButtonDown(0))
         {
             DetectionBack();
         }
