@@ -8,7 +8,10 @@ public class LighthouseGameManager : MonoBehaviour
     public Dictionary<DragDrop,int> lighthouse = new Dictionary<DragDrop, int>();
     public int _part = 5;
 
-    private bool _win;
+    [SerializeField] private GameObject _visualWinning;
+    [SerializeField] private GameObject _scrollRect;
+
+    //private bool _win;
     void Start()
     {
 
@@ -39,8 +42,13 @@ public class LighthouseGameManager : MonoBehaviour
                 }
             }    */
 
-            _win =true;
+            //_win =true;
             Debug.Log("normalement c gagné");
+            _visualWinning.SetActive(true);
+            _visualWinning.GetComponent<RectTransform>().SetAsLastSibling();
+            _visualWinning.GetComponent<Animator>().SetBool("TEST",true);
+
+            _scrollRect.SetActive(false);
         }
     }
 }

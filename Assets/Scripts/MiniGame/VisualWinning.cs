@@ -11,4 +11,9 @@ public class VisualWinning : MonoBehaviour
     {
         SceneManager.LoadScene(loadingScene);
     }
+
+    public void HideUI()
+    {
+        GetComponent<Animator>().SetBool("TEST",false);
+    }
 }
