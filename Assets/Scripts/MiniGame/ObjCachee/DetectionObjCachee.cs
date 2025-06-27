@@ -26,6 +26,10 @@ public class DetectionObjCachee : DetectionUI
         {
             nameobjs[i].text = objects[i].name;
         }
+
+
+        timer.stop = true;
+
     }
 
     bool Detection(GameObject obj)
@@ -77,12 +81,10 @@ public class DetectionObjCachee : DetectionUI
             }
         }
     }
-    public override void DetectionInsuluine()
+    public override void DetectionInsuline()
     {
-        if (DetectionImg(insuline))
-        {
-            StartCoroutine(diabete.GetComponent<Diabète>().DbWithInsuline());
-        }
+        StartCoroutine(diabete.GetComponent<Diabète>().DbWithInsuline());
+        
     }
 
     void Update()
@@ -98,8 +100,6 @@ public class DetectionObjCachee : DetectionUI
         if (Input.GetMouseButtonDown(0) && !_tools.IsPointerOverUIElement())
         {
             DetectionObject();
-            DetectionMenu();
-            DetectionInsuluine();
         }
         
     }

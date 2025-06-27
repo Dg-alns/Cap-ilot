@@ -1,8 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
-using System.Threading;
-using UnityEditor.SearchService;
-using UnityEditorInternal;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -37,27 +33,6 @@ public class NextSceneDestination : ScriptableObject
         return _sceneName;
     }
 
-    public IEnumerator NextScene(string scene)
-    {
-        SetNextSceneDestination(scene);
-        SetCurrentScene(SceneManager.GetActiveScene().name);
-
-        AsyncOperation operation =  SceneManager.LoadSceneAsync(_sceneName);
-        //operation.allowSceneActivation = false;
-        while (operation.isDone == false)
-        {
-            yield return null;
-        }
-        //SceneManager.LoadScene(_sceneName);
-    }
-
-    public void eee(string scene)
-    {
-        SetNextSceneDestination(scene);
-        SetCurrentScene(SceneManager.GetActiveScene().name);
-        SceneManager.LoadScene(_sceneName);
-    }
-
     public void LoadPreviousScene()
     {
         SceneManager.LoadScene(_CurrentsceneName);
@@ -66,6 +41,56 @@ public class NextSceneDestination : ScriptableObject
     public void LoadNewIle()
     {
         SceneManager.LoadScene(_ileNamePort);
+    }
+
+
+
+
+
+    public IEnumerator NextScene(string scene)
+    {
+        yield return null;
+        SetNextSceneDestination(scene);
+        SetCurrentScene(SceneManager.GetActiveScene().name);
+
+        AsyncOperation operation = SceneManager.LoadSceneAsync(_sceneName);
+        operation.allowSceneActivation = false;
+
+
+        while (!operation.isDone)
+        {
+            if (operation.progress >= 0.9f)
+            {
+                yield return new WaitForSeconds(1);
+                operation.allowSceneActivation = true;
+            }
+        }
+        yield return null;
+    }
+
+
+
+
+    public IEnumerator MiniGameBoat(string scene)
+    {
+        yield return null;
+        SetIlePort(scene);
+        SetNextSceneDestination("MiniGame_Boat");
+        SetCurrentScene(SceneManager.GetActiveScene().name);
+
+        AsyncOperation operation = SceneManager.LoadSceneAsync(_sceneName);
+        operation.allowSceneActivation = false;
+
+
+        while (!operation.isDone)
+        {
+            if (operation.progress >= 0.9f)
+            {
+                yield return new WaitForSeconds(1);
+                operation.allowSceneActivation = true;
+            }
+        }
+        yield return null;
     }
 
 }
