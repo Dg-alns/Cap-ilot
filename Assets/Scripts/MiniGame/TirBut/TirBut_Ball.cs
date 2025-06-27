@@ -24,7 +24,7 @@ public class TirBut_Ball : MonoBehaviour
     // Scale for score
     private Vector2 _scoreScale;
 
-    private Vector2 _targetPos;
+    public Vector2 _targetPos;
 
     private float speed = 10.0f;
     private float speedDeviation = 20.0f;
