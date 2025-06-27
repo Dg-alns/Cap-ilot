@@ -37,13 +37,14 @@ public class TouchManager : MonoBehaviour
     {
         if (_isTouching)
         {
+            
             Vector2 position = _touchPositionAction.ReadValue<Vector2>();
             _player.GetComponent<Movement>().Move(Camera.main.ScreenToWorldPoint(position));
         }
-        if (_dialogueBox.GetComponentInChildren<DialogueBox>().dialogStarted)
+        /*if (_dialogueBox.GetComponentInChildren<DialogueBox>().dialogStarted)
         {
             _dialogueBox.GetComponentInChildren<DialogueBox>().GoToNextDialogueLine();
-        }
+        }*/
     }
 
     private void OnTouchStarted(InputAction.CallbackContext context)
