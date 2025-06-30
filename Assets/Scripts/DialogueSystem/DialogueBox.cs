@@ -20,7 +20,12 @@ public class DialogueBox : MonoBehaviour
 
     private void Awake()
     {
-        npcManager = FindNPCManagerInActiveScene();
+        //npcManager = FindNPCManagerInActiveScene();
+        npcManager = Object.FindFirstObjectByType<NPCManager>(FindObjectsInactive.Include);
+        if (npcManager == null)
+        {
+            Debug.Log("ERROR : NPC Manager not found");
+        }
         AssignTextAreas();
         dialogueGroup = GetComponent<CanvasGroup>();
     }
@@ -46,7 +51,13 @@ public class DialogueBox : MonoBehaviour
     public void GetDialogueLines()
     {
         _lineList = new List<string>();
+        if (npcManager.dialogueNpc == null)
+        {
+            Debug.Log(npcManager);
+            Debug.LogError("ERROR : Dialogue NPC not found");
+        }
         _lineList = npcManager.dialogueNpc.dialogueLines;
+        //Debug.Log(npcManager.dialogueNpc.name);
     }
 
     public void DisplayNpcName()
