@@ -7,13 +7,11 @@ using UnityEngine.UI;
 public class Minigame_Memorie : MonoBehaviour
 {
     private List<GameObject> mShowingCard = new List<GameObject>();
-    private int mScore;
-    private int mWinnigScore;
     private int nbSlots;
 
     public List<int> slots = new List<int>();
     public Particle_Memorie mParticleMemorie;
-    public GameObject VisualWinning;
+    public Score score;
 
     public Diabete_Memorie diabete;
 
@@ -23,9 +21,7 @@ public class Minigame_Memorie : MonoBehaviour
     void Awake()
     {
         nbSlots = 16;
-        mWinnigScore = nbSlots * 100;
-
-        VisualWinning.SetActive(false);
+        score.mWinnigScore = nbSlots * 100;
 
         for (int i = 0; i < nbSlots; i++)
         {
@@ -33,17 +29,12 @@ public class Minigame_Memorie : MonoBehaviour
         }
     }
 
-    private bool CheckWin()
+    private void CheckWin()
     {
-        Debug.Log("Check WIN : " + mScore);
-        if (mScore == mWinnigScore)
+        if (score.mCurrentScore >= score.mWinnigScore)
         {
-            Debug.Log("It's win");
-            //FindFirstObjectByType<Button>(FindObjectsInactive.Include).gameObject.SetActive(true);
-            VisualWinning.SetActive(true);
-            VisualWinning.GetComponent<Animator>().SetBool("TEST", true);
+            score.LauchScore();
         }
-        return true;
     }
 
     private bool CheckPair()
@@ -78,7 +69,7 @@ public class Minigame_Memorie : MonoBehaviour
     }
 
     public int Score() { 
-        return mScore;
+        return score.mCurrentScore;
     }
 
 
@@ -100,15 +91,20 @@ public class Minigame_Memorie : MonoBehaviour
         Debug.Log("Add Score after 1 sec");
         yield return new WaitForSeconds(0.3f);
         mParticleMemorie.PlayParticle(mShowingCard);
-        mScore += 200;
+        score.AddScore();
 
+        yield return new WaitForSeconds(0.3f);
         infos.gameObject.SetActive(true);
 
         infos.AssociateInfo(mShowingCard[0].GetComponent<Objects>());
 
         mShowingCard.Clear();
+    }
 
-        CheckWin();
+    private void Update()
+    {
+        if (infos.gameObject.activeSelf == false)
+            CheckWin();
     }
 
 }

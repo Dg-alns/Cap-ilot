@@ -22,8 +22,6 @@ public class Boat_Boat : MonoBehaviour
 
     private Animator _animator;
 
-    public Timer timer;
-
     private float _timeInvincibility = 1.0f;
     private float _currentInvincibility = -1.0f;
 
@@ -96,7 +94,7 @@ public class Boat_Boat : MonoBehaviour
         transform.position = Vector2.MoveTowards(transform.position, target, step);
         if(Vector2.Distance(transform.position, target) < 0.01f)
         {
-            SceneManager.LoadScene(_destination.GetNextSceneDestination());
+            _destination.LoadNewIle();
         }
     }
     

@@ -1,7 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
-using NUnit.Framework.Internal;
-using UnityEditor.SearchService;
 using UnityEngine;
 
 public class Diabète : MonoBehaviour
@@ -20,7 +17,8 @@ public class Diabète : MonoBehaviour
     float minY;
     float maxY;
 
-    float speed = 5f;
+    public float Basespeed = 5f;
+    public float Currentspeed = 0f;
 
     Vector3 posDb;
     Vector3 destination;
@@ -99,7 +97,7 @@ public class Diabète : MonoBehaviour
             NewPosition();
         }
 
-        transform.position = Vector3.MoveTowards(transform.position, destination, speed * Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position, destination, Currentspeed * Time.deltaTime);
     }
 
     private void Update()

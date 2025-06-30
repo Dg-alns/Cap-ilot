@@ -1,8 +1,10 @@
 
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 
 public  class Tools : MonoBehaviour
 {
@@ -69,6 +71,9 @@ public  class Tools : MonoBehaviour
 
         for(int i = 0; i < allChild.Length; i++)
         {
+            if(allChild[i].gameObject == parent)
+                continue;
+
             objs.Add(allChild[i].gameObject);
         }
         return objs;
