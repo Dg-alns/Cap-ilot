@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timer: {fileID: 0}
-  diabete: {fileID: 0}
+  GameObjectToStart: {fileID: 0}
   canvas: {fileID: 6002702812800973025}
 --- !u!1 &2578583838070624513
 GameObject:
@@ -171,7 +171,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 540794382405874316}
         m_TargetAssemblyTypeName: InformationOfTheGame, Assembly-CSharp
-        m_MethodName: 
+        m_MethodName: StartClassique
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

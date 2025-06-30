@@ -81,11 +81,6 @@ public class DetectionObjCachee : DetectionUI
             }
         }
     }
-    public override void DetectionInsuline()
-    {
-        StartCoroutine(diabete.GetComponent<Diabète>().DbWithInsuline());
-        
-    }
 
     void Update()
     {

@@ -16,6 +16,7 @@ public class Diabete_Memorie : MonoBehaviour
     public List<Card_Memorie> mCards;
 
     private float[] mLimitSwitchTime;
+    private bool NotActive = true;
 
     private void Start()
     {
@@ -40,6 +41,8 @@ public class Diabete_Memorie : MonoBehaviour
 
     void Update()
     {
+        if (NotActive)
+            return;
         
         if(animator.GetBool("FindingPair")) return;
 
@@ -86,8 +89,6 @@ public class Diabete_Memorie : MonoBehaviour
         mCurrentTime = 0;
         mTargetTime = Random.Range(mLimitSwitchTime[0], mLimitSwitchTime[1]);
         Debug.Log(mTargetTime);
-        mLimitSwitchTime[0] = 5.0f;
-        mLimitSwitchTime[1] = 10.0f;
     }
     private void SwapRandomCards()
     {
@@ -111,9 +112,8 @@ public class Diabete_Memorie : MonoBehaviour
     {
         animator.SetBool("DiabeteTime", !animator.GetBool("DiabeteTime"));
     }
-    public void ActiveInsuline()
+    public void ActiveDiabète()
     {
-        mLimitSwitchTime[0] = 12.0f;
-        mLimitSwitchTime[1] = 17.0f;
+        NotActive = true;
     }
 }

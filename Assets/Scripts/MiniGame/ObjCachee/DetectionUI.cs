@@ -4,7 +4,6 @@ using UnityEngine.UI;
 public class DetectionUI : MonoBehaviour
 {
     public Image menu;
-    public Image insuline;
 
     public GameObject diabete;
 
@@ -20,12 +19,6 @@ public class DetectionUI : MonoBehaviour
     public void DetectionMenu()
     {
         Debug.Log("GO MENU");
-        
-    }
-
-    virtual public void DetectionInsuline()
-    {
-        diabete.GetComponent<Diabete_Memorie>().ActiveInsuline();
         
     }
 

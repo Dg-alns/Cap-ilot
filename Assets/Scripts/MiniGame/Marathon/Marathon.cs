@@ -7,6 +7,7 @@ public class Marathon : MonoBehaviour
     public GestionEndurance gestionEndurance;
     public Timer timer;
 
+    public GameObject InfoBeforeGame;
     public Animator startingLight;
 
     float baseSpeed;
@@ -22,8 +23,12 @@ public class Marathon : MonoBehaviour
         MaxSpeed = currentSpeed * 2.5f;
 
         timer.SetNSeconds(1f);
+    }
 
+    public void ToStart()
+    {
         StartCoroutine(CanDownSpeed());
+        startingLight.gameObject.GetComponent<StartingLight>().LauchLight();
     }
 
     void UpSpeed()
@@ -50,6 +55,10 @@ public class Marathon : MonoBehaviour
 
     private void Update()
     {
+        if(InfoBeforeGame.activeSelf)
+            return;
+
+
         if (startingLight.GetBool("GoLight"))
         {
             pisteManagement.StopMovementPist();

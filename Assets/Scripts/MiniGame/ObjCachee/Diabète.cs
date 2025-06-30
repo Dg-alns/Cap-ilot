@@ -104,16 +104,4 @@ public class Diabète : MonoBehaviour
     {
         GoToPosition();
     }
-
-    public IEnumerator DbWithInsuline()
-    {
-        Debug.Log("Go TRUE");
-        animator.SetBool("useInsuline", true);
-
-        yield return new WaitForSeconds(0.5f);
-        yield return new WaitForSeconds(8 + animator.GetAnimatorTransitionInfo(0).duration);
-
-        Debug.Log("Go FALSE");
-        animator.SetBool("useInsuline", false);
-    }
 }

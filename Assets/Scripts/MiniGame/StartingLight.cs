@@ -8,7 +8,7 @@ public class StartingLight : MonoBehaviour
         animator = GetComponent<Animator>();
     }
 
-    void LauchLight()
+    public void LauchLight()
     {
         animator.SetBool("GoLight", true);
     }
