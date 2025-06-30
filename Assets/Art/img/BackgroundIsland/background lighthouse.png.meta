@@ -143,7 +143,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      background lighthouse_0: 2984561477134953481
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

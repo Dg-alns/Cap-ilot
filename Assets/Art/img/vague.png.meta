@@ -167,7 +167,9 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      vague_0: 1354182902136665671
+      vague_1: 3737515841932745439
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
