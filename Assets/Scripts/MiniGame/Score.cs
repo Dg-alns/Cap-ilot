@@ -24,6 +24,11 @@ public class Score : MonoBehaviour
         mCurrentScore += mPoint;
     }
 
+    public void SetScore(int score)
+    {
+        mCurrentScore = score;
+    }
+
     private void Start()
     {
         gameObject.SetActive(false);

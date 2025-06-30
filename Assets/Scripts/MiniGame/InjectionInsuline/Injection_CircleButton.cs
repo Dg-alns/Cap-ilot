@@ -4,42 +4,49 @@ using UnityEngine;
 
 public class Injection_CircleButton : MonoBehaviour
 {
-    [SerializeField] private float _scaleTarget = 2.0f;
+    [SerializeField] private float _scaleTarget = 1.6f;
     [SerializeField] private GameObject _circle;
     [SerializeField] private GameObject _parent;
 
-
-    //private void OnMouseDown()
-    //{
-    //    Debug.Log("lalalal");
-    //    ClickCircle();
-    //}
-
     public void ClickCircle()
     {
-
         float stopScale = _circle.GetComponent<RectTransform>().localScale.x;
 
-        float average = stopScale - _scaleTarget;
-        
-        if (Mathf.Abs(average) < 0.5f)
+        float average = Mathf.Abs(stopScale - _scaleTarget);
+
+
+        if (average < 0.5f)
         {
-            Debug.Log("Parfait : " + (stopScale - _scaleTarget));
-            Destroy(_parent);
-            return;
-        }
-        
-        if (Mathf.Abs(average) <= 3.0f)
-        {
-            Debug.Log("Bien : " + (stopScale - _scaleTarget));
+            Debug.Log("Parfait : " + average);
+
+            // score : 700 -> 1000
+            float sup = (1.0f-average / 0.5f) * 300;
+            int score = (int) (sup + 1.0f) + 700;
+            Debug.Log("Score : " + score + " sup : " + sup);
 
             Destroy(_parent);
             return;
         }
         
-        if (Mathf.Abs(average) > 3.0f)
+        if (average <= 3.0f)
         {
-            Debug.Log("RATE : " + (stopScale - _scaleTarget));
+            Debug.Log("Bien : " + average);
+
+            // score : 400 -> 699
+            float sup = 1.0f - (average - 0.5f) / 2.5f * 299;
+            int score = (int) (sup+ 1.0f) + 400;
+
+            Destroy(_parent);
+            return;
+        }
+        
+        if (average > 3.0f)
+        {
+            Debug.Log("RATE : " + average);
+
+            // score : 0 -> 150
+            int score = (int)(1.0f - (average - 3f) / 10f * 150);
+
             Destroy(_parent);
             return;
         }
