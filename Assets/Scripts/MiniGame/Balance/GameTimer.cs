@@ -1,12 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
+using TMPro;
+
+
+
 
 public class GameTimer : MonoBehaviour
 {
-    public float totalTime = 90f; 
-    public Text timerText;
+    public float totalTime = 90f;
+    public TextMeshProUGUI timerText;
     public GameObject winScreen;
     public ScoreManager scoreManager;
 
@@ -25,7 +28,7 @@ public class GameTimer : MonoBehaviour
 
         timeLeft -= Time.deltaTime;
         int secondsLeft = Mathf.CeilToInt(timeLeft);
-        timerText.text = secondsLeft.ToString() + "s";
+        timerText.text = secondsLeft.ToString();
 
         if (timeLeft <= 0)
         {

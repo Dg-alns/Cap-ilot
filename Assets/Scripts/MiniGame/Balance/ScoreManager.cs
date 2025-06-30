@@ -1,38 +1,46 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
+using TMPro;
 
 public class ScoreManager : MonoBehaviour
 {
     public static ScoreManager instance;
-    int score = 0;
-    public Text scoreText;
+
+    public int score = 0;
+    public TextMeshProUGUI scoreText;
 
     void Awake()
     {
-        instance = this;
+        if (instance == null)
+            instance = this;
+        else
+            Destroy(gameObject);
+    }
+
+    void Start()
+    {
+        UpdateScoreDisplay();
     }
 
     public void AddPoint()
     {
         score++;
-        UpdateUI();
+        UpdateScoreDisplay();
     }
 
     public void LosePoint()
     {
-        score--;
-        UpdateUI();
+        score = Mathf.Max(0, score - 1);
+        UpdateScoreDisplay();
     }
 
-    void UpdateUI()
+    void UpdateScoreDisplay()
     {
-        scoreText.text = "Score: " + score;
+        if (scoreText != null)
+            scoreText.text = score.ToString();
     }
+
     public int GetScore()
-    {
-        return score;
-    }
-
+        { return score; }
 }

@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine;
 
 public class Disk : MonoBehaviour
 {
@@ -12,12 +12,12 @@ public class Disk : MonoBehaviour
         if (other.CompareTag(colorTag + "Box"))
         {
             ScoreManager.instance.AddPoint();
+            Destroy(gameObject);
         }
         else if (other.CompareTag("RedBox") || other.CompareTag("BlueBox"))
         {
             ScoreManager.instance.LosePoint();
+            Destroy(gameObject);
         }
-
-        Destroy(gameObject);
     }
 }
