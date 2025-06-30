@@ -359,7 +359,17 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      ombre_phare_transparant_0: -7224034128044004472
+      ombre_phare_transparant_1: -3187276415997637654
+      ombre_phare_transparant_2: 3476149615827193854
+      ombre_phare_transparant_3: 8472788810090415883
+      ombre_phare_transparant_4: 2204757999661667342
+      ombre_phare_transparant_5: 8136922959486310567
+      ombre_phare_transparant_6: -2303549274172953002
+      ombre_phare_transparant_7: -1211691077679566811
+      ombre_phare_transparant_8: -5511514346870524079
+      ombre_phare_transparant_9: 7085824558067003944
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

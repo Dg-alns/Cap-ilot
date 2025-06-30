@@ -32,5 +32,11 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MiniGames/MiniGame_Marathon.unity
     guid: 592450dd54bd05945bd174722dfec9c3
+  - enabled: 1
+    path: Assets/Scenes/Other/Sound.unity
+    guid: bb7cea7e083719a44974c26e723d22c1
+  - enabled: 1
+    path: Assets/Scenes/Other/Sound 1.unity
+    guid: 4351678b093ac084f87852bdbd268d00
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0
