@@ -143,7 +143,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      map_port_agrandie_sans_accessoires_0: 9143029574716675044
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
