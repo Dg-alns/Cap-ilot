@@ -29,7 +29,6 @@ public class InjectionMinigame : MonoBehaviour
         _spawnTiming = new List<float>();
         GameObject circle = GameObject.Find("Reference_W_Circle");
         _defaultCircleSize = circle.GetComponent<RectTransform>().rect.width * circle.GetComponent<RectTransform>().localScale.x;
-        Debug.Log(_defaultCircleSize);
     }
     private void Update()
     {
@@ -47,7 +46,6 @@ public class InjectionMinigame : MonoBehaviour
 
         if (!IsRemaingCircle() && !_body.IsFinish())
         {
-            Debug.Log("lala");
             StartCoroutine(SwapBodyPart());
             return;
         }
@@ -109,8 +107,9 @@ public class InjectionMinigame : MonoBehaviour
         }
         else
         {
-            //_score.SetScore(_gameScore);
-            //_score.LauchScore();
+            Debug.Log(_gameScore);
+            _score.SetScore(_gameScore);
+            _score.LauchScore();
         }
         _swappingTime = false;
     }
