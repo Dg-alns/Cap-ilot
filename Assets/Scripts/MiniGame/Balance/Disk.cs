@@ -19,5 +19,9 @@ public class Disk : MonoBehaviour
             ScoreManager.instance.LosePoint();
             Destroy(gameObject);
         }
+        else if (other.CompareTag("delete"))
+        {
+            Destroy(gameObject);
+        }
     }
 }
