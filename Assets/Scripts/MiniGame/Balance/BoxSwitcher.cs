@@ -6,9 +6,11 @@ public class BoxSwitcher : MonoBehaviour
 {
     public Transform redBox;
     public Transform blueBox;
+    public Transform delete;
 
     private Vector3 redOriginalPos;
     private Vector3 blueOriginalPos;
+    private Vector3 deleteOriginalPos;
 
     private bool isSwitched = false;
 
@@ -16,6 +18,7 @@ public class BoxSwitcher : MonoBehaviour
     {
         redOriginalPos = redBox.position;
         blueOriginalPos = blueBox.position;
+        deleteOriginalPos = delete.position;
         StartCoroutine(SwitchBoxesRoutine());
     }
 
@@ -23,7 +26,7 @@ public class BoxSwitcher : MonoBehaviour
     {
         while (true)
         {
-            float waitTime = Random.Range(8f, 15f);
+            float waitTime = Random.Range(12f, 16f);
             yield return new WaitForSeconds(waitTime);
             SwitchBoxes();
         }
@@ -31,13 +34,22 @@ public class BoxSwitcher : MonoBehaviour
 
     void SwitchBoxes()
     {
-        Vector3 temp = redBox.position;
-        redBox.position = blueBox.position;
-        blueBox.position = temp;
+        List<Vector3> positions = new List<Vector3> { redOriginalPos, blueOriginalPos, deleteOriginalPos };
 
-        isSwitched = !isSwitched;
+        // On mélange ces positions
+        for (int i = 0; i < positions.Count; i++)
+        {
+            Vector3 temp = positions[i];
+            int randIndex = Random.Range(i, positions.Count);
+            positions[i] = positions[randIndex];
+            positions[randIndex] = temp;
+        }
 
-        redBox.tag = isSwitched ? "BlueBox" : "RedBox";
-        blueBox.tag = isSwitched ? "RedBox" : "BlueBox";
+        redBox.position = positions[0];
+        blueBox.position = positions[1];
+        delete.position = positions[2];
+
+        Debug.Log("Boxes switched !");
     }
+
 }
