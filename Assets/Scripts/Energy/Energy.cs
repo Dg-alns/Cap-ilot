@@ -11,11 +11,11 @@ public class Energy : MonoBehaviour
     [SerializeField] private int _energy;
     private int _maxEnergy;
 
-    private int _restoreDuration = 5;
+    private int _restoreDuration;
 
-    [SerializeField] private DateTime _currentTime;    
-    [SerializeField] private DateTime _energyUsedMoment;
-    [SerializeField] private TimeSpan _energyDT;
+    private DateTime _currentTime;    
+    private DateTime _nextEnergyTime;
+    private TimeSpan _energyDT;
 
     [SerializeField] private TextMeshProUGUI _textNbEnergy;
     [SerializeField] private TextMeshProUGUI _textRemainingTime;
@@ -25,10 +25,24 @@ public class Energy : MonoBehaviour
     void Start()
     { 
         _maxEnergy = 5;
-        _energy = 5;
-        //_energy = PlayerPrefs.HasKey("EnergyInStock") ? PlayerPrefs.GetInt("EnergyInStock") : _maxEnergy ;
-        _energyUsedMoment = DateTime.MinValue;
-        Debug.Log(_energyUsedMoment.ToString());
+        _currentTime = DateTime.Now;
+        _restoreDuration = 900;
+
+
+        // If you have played before -> Load Data
+        if (PlayerPrefs.HasKey("CurrentEnergy"))
+        {
+            _energy = PlayerPrefs.GetInt("CurrentEnergy");
+            _nextEnergyTime = StringToDate(PlayerPrefs.GetString("NextEnergyTime"));
+        }
+        // If you have never played before -> Create Data
+        else
+        {
+            _energy = 5;
+            _nextEnergyTime = DateTime.MinValue;
+            PlayerPrefs.SetInt("CurrentEnergy",5);
+            PlayerPrefs.SetString("NextEnergyTime",DateTime.MinValue.ToString());
+        }
     }
 
     // Update is called once per frame
@@ -36,40 +50,42 @@ public class Energy : MonoBehaviour
     {
         UpdateEnergyTime();
         UpdateVisualEnergy();
+        Save();
     }
 
+    // Update that make you restore your energy when you used some
     private void UpdateEnergyTime()
     {
         _currentTime = DateTime.Now;
 
-        if (_energy == _maxEnergy)
+        if (_energy >= _maxEnergy)
         {
-            Debug.Log("Full");
-            _textNbEnergy.text = "FULL";
+            _textRemainingTime.text = "";
             return;
         }
-
-        _energyDT = _energyUsedMoment - _currentTime;
-        string timeValue = String.Format("{0:D2}:{1:D1}", _energyDT.Minutes, _energyDT.Seconds);
+        // Get the DeltaTime
+        _energyDT = _nextEnergyTime - _currentTime;
+        string timeValue = String.Format("{0:D2}:{1:D2}", _energyDT.Minutes, _energyDT.Seconds);
         _textRemainingTime.text = timeValue;
-
-        Debug.Log(_energyDT.ToString());
 
         if (_energyDT.Seconds <= 0)
         {
             _energy++;
+            // If you still don't have full energy
             if (_energy < _maxEnergy)
             {
                 RestartRestorationTime();
             }
-            else 
+            // If you have full energy 
+            else
             {
-                _energyUsedMoment = DateTime.MinValue;
+                _nextEnergyTime = DateTime.MinValue;
             }
             _textRemainingTime.text = "";
         }
     }
 
+    // Update the energy bar and text
     private void UpdateVisualEnergy()
     {
         _textNbEnergy.text = _energy.ToString() + " / " + _maxEnergy.ToString();
@@ -78,13 +94,29 @@ public class Energy : MonoBehaviour
         _energySlider.value = _energy;
     }
 
+    // Save data in the PlayerPrefs
+    private void Save()
+    {
+        PlayerPrefs.SetInt("CurrentEnergy", _energy);
+        PlayerPrefs.SetString("NextEnergyTime", _nextEnergyTime.ToString());
+    }
+    
+    // Return a DateTime with a string
+    private DateTime StringToDate(string str)
+    {
+        if(String.IsNullOrEmpty(str)) 
+            return DateTime.MinValue;
+
+        return DateTime.Parse(str);
+    }
+
+    // If you have more than 0 energy you can use 1
     public void UseEnergy() 
     {
         if (_energy > 0)
         {
             _energy -= 1;
-            Debug.Log(_energy);
-            if(_energyUsedMoment == DateTime.MinValue)
+            if(_nextEnergyTime == DateTime.MinValue)
             {
                 StartRestorationTime(); 
             }
@@ -93,13 +125,27 @@ public class Energy : MonoBehaviour
         //return false;
     }
 
+    public void AddEnergy()
+    {
+        _energy += 1;
+        if (_energy >= _maxEnergy)
+        {
+            _energy = _maxEnergy;
+            _nextEnergyTime = DateTime.MinValue;
+        }
+    }
+
+    // Start the _nextEnergyTime with Date.Now value + the restoration duration
     void StartRestorationTime()
     {
-        _energyUsedMoment = DateTime.Now;
-        _energyUsedMoment = _energyUsedMoment.AddSeconds(_restoreDuration);
+        _nextEnergyTime = _currentTime;
+        _nextEnergyTime = _nextEnergyTime.AddSeconds(_restoreDuration);
     }
+    // Restart the _nextEnergyTime with the restoration duration
     void RestartRestorationTime()
     {
-        _energyUsedMoment = _energyUsedMoment.AddSeconds(_restoreDuration);
+        _nextEnergyTime = _nextEnergyTime.AddSeconds(_restoreDuration);
     }
+
+
 }
