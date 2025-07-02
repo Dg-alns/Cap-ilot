@@ -13,12 +13,312 @@ MonoBehaviour:
   m_Name: Le Diabete
   m_EditorClassIdentifier: 
   _title: "Le diab\xE8te qu'est ce que c'est ?"
-  _content: 'a
-
-    bc
-
-    c
-
-    v
-
-    azerty'
+  _link: https://fr.wikipedia.org/wiki/Diab%C3%A8te_sucr%C3%A9
+  _content: "Le diab\xE8te sucr\xE9 (ou diab\xE8te par abus de langage) est une maladie
+    li\xE9e \xE0 une d\xE9faillance des m\xE9canismes biologiques de r\xE9gulation
+    de la glyc\xE9mie (concentration de glucose dans le sang) menant \xE0 une hyperglyc\xE9mie
+    chronique.\r\n\r\nCette maladie se manifeste par des sympt\xF4mes propres au
+    diab\xE8te (syndrome polyuropolydipsique) et par des l\xE9sions d'organes tels
+    la r\xE9tine, les reins ou les art\xE8res coronaires, l\xE9sions dues \xE0 la
+    toxicit\xE9 de l'ac\xE9tone produite lors d'une d\xE9gradation rapide des graisses
+    arrivant en cas de d\xE9faillance de l'insuline menant \xE0 une hyperglyc\xE9mie
+    majeure.\r\n\r\nIl y a trois types principaux de diab\xE8te sucr\xE9 :\r\n\r\nle
+    diab\xE8te de type 1 ;\r\nle diab\xE8te de type 2 ;\r\nle diab\xE8te gestationnel.\r\n\xC9tymologie\r\nLe
+    terme latin diabetes mellitus est utilis\xE9 par la classification internationale
+    des maladies[1], et dans divers pays. L'adjectif latin mellitus signifie \xAB
+    sucr\xE9 comme le miel \xBB[2].\r\n\r\nLe mot diab\xE8te vient du grec ancien
+    \u03B4\u03B9\u03B1\u03B2\u03AE\u03C4\u03B7\u03C2 / diab\u1E17t\u0113s, \xAB diab\xE8te
+    \xBB, lui-m\xEAme tir\xE9 du verbe grec \u03B4\u03B9\u03B1\u03B2\u03B1\u03AF\u03BD\u03C9
+    / diaba\xEDn\u014D, \xAB traverser, franchir \xBB[3]. Les m\xE9decins grecs anciens,
+    tels Ar\xE9t\xE9e de Cappadoce[4] et Oribase, avaient observ\xE9 ce syndrome
+    diab\xE9tique : les malades semblaient uriner aussit\xF4t ce qu'ils venaient
+    de boire, comme s'ils \xE9taient \xAB travers\xE9s par l'eau \xBB sans pouvoir
+    la retenir. Puis ils maigrissaient, malgr\xE9 une nourriture abondante, et mouraient
+    en quelques semaines ou moins.\r\n\r\nHistoire\r\nLes m\xE9decins \xE9gyptiens
+    avaient d\xE9j\xE0 d\xE9couvert cette maladie \xE0 l'\xE9poque d'Amenhotep III
+    entre le xve si\xE8cle et le xvie si\xE8cle avant notre \xE8re (date variable
+    selon les \xE9gyptologues)[5],[6]. La maladie est d\xE9crite \xE0 la section
+    Vases d'eau du corps, dans le Papyrus Ebers conserv\xE9 \xE0 Leipzig, r\xE9dig\xE9
+    sous le r\xE8gne d'Amenhotep III (ou Am\xE9nophis III en grec), o\xF9 se trouvent
+    toutes les sources de la m\xE9decine \xE9gyptienne[7]. Les m\xE9decins grecs
+    de l'\xE9cole d'Hippocrate de Cos ont donn\xE9 son nom au diab\xE8te (nom tir\xE9
+    du grec ancien \u03B4\u03B9\u03B1\u03B2\u03B1\u03AF\u03BD\u03C9 / diaba\xEDn\u014D,
+    \xAB traverser, franchir \xBB), et ont ensuite observ\xE9 vers le iiie si\xE8cle
+    av. J.-C. ou le iie si\xE8cle av. J.-C. (selon les sources), \xAB que les malades
+    \xE9taient frapp\xE9s d'une soif continuelle, et qu'ils semblaient uriner aussit\xF4t
+    ce qu'ils venaient de boire, comme s'ils \xE9taient \xAB travers\xE9s par l'eau
+    \xBB sans pouvoir la retenir[8]. \xBB C'est Praxagoras de Cos (384-322 av. J.-C.)
+    disciple d'Hippocrate, qui \xE9voqua pour la premi\xE8re fois la nocivit\xE9
+    des humeurs sucr\xE9es[9]. Dans certains cas les urines n'avaient pas de go\xFBt
+    (diab\xE8te insipide), dans d'autres, les urines \xE9taient sucr\xE9es (diab\xE8te
+    sucr\xE9 ou hyperglyc\xE9mie)[10],[11]. Au viie si\xE8cle ap. J.-C., les Chinois
+    faisaient part de leurs observations et de leurs interpr\xE9tations concernant
+    les urines sucr\xE9es et proposaient un traitement proche des m\xE9thodes modernes
+    qui recommandent aux diab\xE9tiques de s'abstenir de consommer de l'alcool et
+    de l'amidon[12].\r\n\r\nDe nombreux timbres ont c\xE9l\xE9br\xE9 certaines \xE9tapes
+    majeures de l\u2019histoire du diab\xE8te et de la diab\xE9tologie, qu'il s'agisse
+    de l'Antiquit\xE9, de l'\xE8re pr\xE9-insulinique ou de la d\xE9couverte de l\u2019insuline
+    par le groupe de chercheurs de Toronto (Canada). L'histoire du diab\xE8te sous
+    l\u2019angle de la philat\xE9lie a notamment mis l'honneur Ar\xE9t\xE9e de Cappadoce,
+    Avicenne, Ma\xEFmonide, Paracelse, Claude Bernard, Oskar Minkowski, Nicolae Constantin
+    Paulescu, Frederick Banting, Charles Best[13].\r\n\r\nPhysiopathologie\r\nArticle
+    d\xE9taill\xE9 : R\xE9gulation de la glyc\xE9mie.\r\n\r\nGraphique montrant l'\xE9volution
+    des taux sanguins de glucose et d'insuline durant la journ\xE9e.\r\nLa r\xE9gulation
+    de la glyc\xE9mie par l'organisme est en grande partie li\xE9e \xE0 la capacit\xE9
+    des cellules \xE0 absorber le glucose, faisant ainsi baisser sa concentration
+    dans le sang. L'insuline est une hormone s\xE9cr\xE9t\xE9e par le pancr\xE9as,
+    dont la fonction est d'augmenter l'entr\xE9e de glucose dans les cellules en
+    cas d'hyperglyc\xE9mie (d'o\xF9 son action hypoglyc\xE9miante).\r\n\r\nLa polyurie-polydipsie
+    (litt\xE9ralement, \xAB beaucoup uriner et soif intense \xBB) est une cons\xE9quence
+    de l'hyperglyc\xE9mie (augmentation du taux de sucre sanguin). Les reins ne peuvent
+    r\xE9cup\xE9rer tout le glucose filtr\xE9, qui passe dans les urines et par osmose
+    appelle l'eau de l'urine primaire et provoque une perte d'eau importante dans
+    les urines, ce qui entra\xEEne une d\xE9shydratation et une soif permanente.
+    Les malades boivent donc parce qu'ils urinent trop et non l'inverse.\r\n\r\nDiab\xE8te
+    et h\xE9r\xE9dit\xE9\r\nLe risque de transmission du diab\xE8te n'est pas le
+    m\xEAme dans le type 1 ou le type 2. Il est g\xE9n\xE9ralement consid\xE9r\xE9
+    comme un risque assez important : il est de 5 % dans le diab\xE8te insulino-d\xE9pendant
+    (type 1). Dans le diab\xE8te insulino-r\xE9sistant (type 2), ce risque s'\xE9l\xE8ve
+    \xE0 30 % si un seul parent est atteint, et \xE0 50 % si les deux parents sont
+    diab\xE9tiques.\r\n\r\nPr\xE9sentation commune\r\nLe diab\xE8te se caract\xE9rise
+    par :\r\n\r\nune \xE9mission d'urine excessive (polyurie) entra\xEEnant une soif
+    intense (polydipsie), soit un syndrome diab\xE8te proprement dit ;\r\nun app\xE9tit
+    anormalement augment\xE9 (polyphagie). Il a aussi pour cons\xE9quence un amaigrissement
+    malgr\xE9 une prise de nourriture abondante ;\r\nparfois une acidoc\xE9tose diab\xE9tique
+    avec dyspn\xE9e de Kussmaul.\r\nD'autres sympt\xF4mes peuvent appara\xEEtre,
+    tels qu'une perte de poids, une fatigue et des troubles de la vision, ou encore
+    une irritabilit\xE9.\r\n\r\nLes analyses de sang et d'urine montrent :\r\n\r\nune
+    glyc\xE9mie (taux de sucre dans le sang) sup\xE9rieure \xE0 1,26 g/l \xE0 jeun
+    ou 7 mmol (la valeur normale \xE9tant comprise de 0,8 et 1,10 g/l, de 1,10 \xE0
+    1,25, il est plut\xF4t question d'intol\xE9rance au glucose) ;\r\nparfois une
+    ac\xE9tonurie (pr\xE9sence d'ac\xE9tone dans les urines, le seuil de passage
+    de l'ac\xE9tone dans les urines est une glyc\xE9mie de 2,5 g/l) accompagn\xE9e
+    d'une haleine de \xAB pomme reinette \xBB caract\xE9ristique ;\r\nune pr\xE9sence
+    de sucre dans les urines (glycosurie, le seuil du passage de sucre dans les urines
+    est de 1,8 gramme) ;\r\nClassification\r\nPlusieurs d\xE9faillances existent
+    et caract\xE9risent des formes de diab\xE8te diff\xE9rentes. Les sympt\xF4mes
+    et les complications peuvent \xEAtre variables selon le ou les m\xE9canismes
+    d\xE9faillants (Tima et Aissal, A).\r\n\r\nDiab\xE8te de type 1\r\nArticle d\xE9taill\xE9
+    : Diab\xE8te de type 1.\r\nEn France, cette forme de diab\xE8te repr\xE9sente
+    pr\xE8s de 6 % des cas de diab\xE8te[14]. Autrefois appel\xE9 diab\xE8te insulino-d\xE9pendant
+    (ou encore diab\xE8te juv\xE9nile), ce diab\xE8te appara\xEEt le plus souvent
+    de mani\xE8re brutale. C'est la cause la plus fr\xE9quente de diab\xE8te chez
+    l'enfant, mais il peut survenir \xE0 tous les \xE2ges.\r\n\r\nSa forme la plus
+    fr\xE9quente est la cons\xE9quence d'une maladie auto-immune, c'est-\xE0-dire
+    la destruction de cellules b\xEAta des \xEElots de Langerhans du pancr\xE9as
+    (qui synth\xE9tisent l'insuline) par le syst\xE8me immunitaire, ce dont t\xE9moigne
+    la pr\xE9sence d'anticorps dans le sang. Leur destruction a pour cons\xE9quence
+    une absence d'insuline dans le sang. Le diab\xE8te de type 1 est le plus souvent
+    un diab\xE8te insulinod\xE9pendant.\r\n\r\nLes diab\xE9tiques de type 1 doivent
+    s'injecter de l'insuline plusieurs fois par jour tout au long de leur vie et
+    manger de mani\xE8re \xE9quilibr\xE9e. Cet \xE9quilibre glyc\xE9mique \xE9tant
+    pr\xE9caire, traitement et alimentation varient au jour le jour en fonction des
+    circonstances : activit\xE9s, \xE9motions, horaires, maladies intercurrentes,
+    etc. Le diab\xE9tique se doit donc d'\xEAtre autonome dans la gestion de sa maladie.\r\n\r\nDiab\xE8te
+    de type 2\r\nArticle d\xE9taill\xE9 : Diab\xE8te de type 2.\r\n\r\nDessin repr\xE9sentant
+    une personne atteinte de diab\xE8te en train de s'habiller. Une pompe \xE0 insuline
+    et un moniteur de glucose sont visibles sur son ventre. Des pompes \xE0 insulines
+    utilis\xE9es sont visibles dans sa poubelle.\r\nCette forme de diab\xE8te repr\xE9sente
+    90 % des cas de diab\xE8te[15]. Autrefois appel\xE9 diab\xE8te non insulinod\xE9pendant
+    (ou diab\xE8te de l'\xE2ge m\xFBr), ce diab\xE8te survient classiquement chez
+    l'adulte de plus de quarante ans pr\xE9sentant, dans 80 % des cas, une ob\xE9sit\xE9
+    ou du moins un exc\xE8s pond\xE9ral, et avec souvent des ant\xE9c\xE9dents familiaux
+    de diab\xE8te de type 2. Chez la femme, cela a parfois \xE9t\xE9 pr\xE9c\xE9d\xE9
+    de diab\xE8te gestationnel (diab\xE8te transitoire pendant les grossesses), ou
+    plus souvent de gros b\xE9b\xE9s.\r\n\r\nAu d\xE9but de la maladie, la production
+    d'insuline par le pancr\xE9as est normale (voire excessive). Mais, les cellules
+    de l'organisme charg\xE9es de capter et d'utiliser le glucose deviennent insensibles
+    \xE0 l'insuline, d'o\xF9 une augmentation de la glyc\xE9mie. Le diab\xE8te de
+    type 2 est le plus souvent non insulinod\xE9pendant, mais un traitement par insuline
+    peut \xEAtre n\xE9cessaire pour la ma\xEEtrise de l'\xE9quilibre glyc\xE9mique.\r\n\r\nLe
+    diab\xE8te de type 2 s'associe souvent \xE0 d'autres facteurs de risque cardiovasculaire,
+    comme l'hypertension art\xE9rielle, la r\xE9partition andro\xEFde des graisses,
+    l'hypertriglyc\xE9rid\xE9mie et la baisse du taux du cholest\xE9rol-HDL, le syndrome
+    m\xE9tabolique. Son incidence augmente, en cons\xE9quence des modifications du
+    mode de vie (s\xE9dentarit\xE9, alimentation hypercalorique, hyperlipidique).
+    Jusqu'\xE0 r\xE9cemment, ce diab\xE8te touchait essentiellement des adultes,
+    \xE0 partir de la trentaine, mais en raison de l'augmentation du taux d'ob\xE9sit\xE9
+    juv\xE9nile, il touche maintenant de plus en plus d'adolescents, voire d'enfants.\r\n\r\nLe
+    diab\xE8te de type 2, ou diab\xE8te de la maturit\xE9, s'observe le plus souvent
+    chez des individus en surpoids ou ob\xE8ses, aussi appel\xE9 \xAB syndrome dysm\xE9tabolique
+    \xBB avec risque de st\xE9atose h\xE9patique (surcharge graisseuse du foie).
+    On dit plus souvent que ce diab\xE8te est un diab\xE8te \xE2g\xE9.\r\n\r\nDiab\xE8te
+    gestationnel\r\nArticle d\xE9taill\xE9 : Diab\xE8te gestationnel.\r\nLe diab\xE8te
+    gestationnel est un diab\xE8te qui appara\xEEt pour la premi\xE8re fois chez
+    certaines femmes au cours de la grossesse. Il est caract\xE9ris\xE9 par une intol\xE9rance
+    au glucose due \xE0 la production d'hormones placentaires, provoquant une insulinor\xE9sistance
+    qui entra\xEEne une hyperglyc\xE9mie. Le diab\xE8te gestationnel peut \xEAtre
+    isol\xE9 (il ne survient que pendant les grossesses) ; celui-ci dispara\xEEt
+    g\xE9n\xE9ralement apr\xE8s l'accouchement, cependant il augmente les risques
+    pour la m\xE8re de d\xE9velopper durant les ann\xE9es qui suivent un diab\xE8te
+    de type 2[16] ou peut \xEAtre la premi\xE8re manifestation d'un diab\xE8te de
+    type 1.\r\n\r\nAutres types sp\xE9cifiques\r\nIl existe de nombreuses autres
+    causes de diab\xE8te sucr\xE9, relativement rares. On peut citer[17] :\r\n\r\nles
+    anomalies de fonction des cellules b\xEAta d'origine g\xE9n\xE9tique :\r\nMODY
+    \u2014 maturity-onset diabetes of the young \u2014 de d\xE9but habituellement
+    pr\xE9coce (avant 25 ans en g\xE9n\xE9ral), et non insulinod\xE9pendant, avec
+    transmission de type autosomique dominant, pouvant concerner les g\xE8nes HNF4
+    (hepatocyte nuclear factor 4) alpha pour MODY 1, glucokinase (hexokinase h\xE9patique)
+    pour MODY 2, HNF1 alpha pour MODY 3, ou plus rarement IPF (insuline promotor
+    factor)-1, HNF-1 beta, neuroD1,\r\nle diab\xE8te LADA \u2013 Latent Autoimmune
+    Diabetes in Adults \u2013 un diab\xE8te de nature auto-immune d'\xE9volution
+    lente qui appara\xEEt g\xE9n\xE9ralement chez des adultes \xE2g\xE9s de plus
+    de trente ans, souvent de poids normal et en bonne sant\xE9. Comme le pancr\xE9as
+    produit encore parfois de l'insuline au moment du diagnostic de diab\xE8te, il
+    arrive que le patient re\xE7oive, \xE0 tort, un diagnostic de diab\xE8te de type
+    2, surtout s'il est \xE2g\xE9 de plus de 40 ans et/ou en surpoids. Il devient
+    cependant insulinod\xE9pendant lorsque la maladie \xE9volue et un diab\xE8te
+    LADA est alors constat\xE9, parfois lors d'une hospitalisation pour acidoc\xE9tose
+    diab\xE9tique[18]\r\nle diab\xE8te n\xE9onatal (avant six mois) transitoire ou
+    permanent,\r\nles mutations de l'ADN mitochondrial, associ\xE9es \xE0 une surdit\xE9
+    de perception et caract\xE9ris\xE9es par une h\xE9r\xE9dit\xE9 maternelle (syndrome
+    de Ballinger-Wallace) ;\r\nles anomalies de l'action de l'insuline d'origine
+    g\xE9n\xE9tique : r\xE9sistance \xE0 l'insuline type A, lepr\xE9chaunisme, syndrome
+    de Rabson-Mendenhall, diab\xE8te lipoatrophique (lipodystrophie cong\xE9nitale
+    de Berardinelli-Seip, caract\xE9ris\xE9 par la disparition du tissu adipeux,
+    avec insulino-r\xE9sistance majeure, hyperlipid\xE9mie et st\xE9atose h\xE9patique)
+    ;\r\nles maladies du pancr\xE9as exocrine : pancr\xE9atite chronique, traumatisme
+    et chirurgie du pancr\xE9as, cancer du pancr\xE9as, mucoviscidose, h\xE9mochromatose
+    ;\r\nles maladies endocriniennes : acrom\xE9galie, syndrome de Cushing, glucagonome,
+    ph\xE9ochromocytome, hyperthyro\xEFdie, ad\xE9nome de Conn ;\r\nles diab\xE8tes
+    induits par un m\xE9dicament ou une substance : Vacor (un raticide), pentamidine,
+    acide nicotinique, cortico\xEFdes, l\xE9vothyroxine, diazoxide, b\xEAtabloquants,
+    thiazidiques, ph\xE9nyto\xEFne, interf\xE9ron gamma ;\r\ndes infections : rub\xE9ole
+    cong\xE9nitale, cytom\xE9galovirus ;\r\ndes formes rares de diab\xE8te auto-immun
+    : syndrome de l'homme raide, la pr\xE9sence d'anticorps anti-r\xE9cepteur de
+    l'insuline ;\r\nd'autres syndromes g\xE9n\xE9tiques parfois associ\xE9s \xE0
+    un diab\xE8te : la trisomie 21, le syndrome de Klinefelter, le syndrome de Turner,
+    le syndrome de Wolfram, l'ataxie de Friedreich, la maladie de Huntington, le
+    syndrome de Laurence-Moon, la dystrophie myotonique de Steinert, la porphyrie[r\xE9f.
+    n\xE9cessaire], le syndrome de Prader-Willi.\r\nD'autres causes sont parfois
+    cit\xE9es : les antipsychotiques[r\xE9f. n\xE9cessaire] et les immunosuppresseurs
+    de la famille des inhibiteurs de la calcineurine[r\xE9f. n\xE9cessaire], la cirrhose[r\xE9f.
+    n\xE9cessaire] (quelle qu'en soit la cause, mais plus particuli\xE8rement dans
+    le contexte de l'infection par le virus de l'h\xE9patite C).\r\n\r\nComplications\r\nLe
+    diab\xE8te peut \xEAtre responsable de complications m\xE9taboliques aig\xFCes
+    caract\xE9ris\xE9es par un taux de sucre sanguin (glyc\xE9mie) \xE9lev\xE9, et
+    un coma de type acidoc\xE9tosique ou hyperosmolaire.\r\n\r\nLes atteintes des
+    gros vaisseaux (macroangiopathie) sont dues \xE0 l'ath\xE9roscl\xE9rose. Chez
+    les patients atteints de diab\xE8te, on retrouve souvent de l'angine de poitrine,
+    voire des infarctus du myocarde passant parfois inaper\xE7us, des accidents vasculaires
+    c\xE9r\xE9braux comme des accidents isch\xE9miques et de l'art\xE9riopathie oblit\xE9rante
+    des membres inf\xE9rieurs. Il est conseill\xE9 aux diab\xE9tiques de faire un
+    \xE9lectrocardiogramme une fois par an.\r\n\r\nLes complications des petits vaisseaux
+    (microangiopathie) touchent :\r\n\r\nles yeux : par la r\xE9tinopathie diab\xE9tique
+    isch\xE9mique (sans formation de n\xE9ovaisseaux) ou h\xE9morragique (avec formation
+    de n\xE9ovaisseaux) pouvant entra\xEEner c\xE9cit\xE9, microan\xE9vrisme, \u0153d\xE8me
+    maculaire. Il est conseill\xE9 aux diab\xE9tiques de faire un fond d'\u0153il
+    une fois par an ;\r\nle r\xE9seau nerveux : la neuropathie diab\xE9tique est
+    un trouble de la sensibilit\xE9 \xE9picritique et profonde parfois accompagn\xE9
+    de douleurs neuropathiques principalement au niveau des membres inf\xE9rieurs,
+    ces troubles de la sensibilit\xE9 peuvent entra\xEEner un retard de prise en
+    charge de plaies du pied. L'ost\xE9oarthropathie diab\xE9tique nerveuse (OD)
+    des chevilles et des pieds a pris le nom de \xAB pied de Charcot \xBB[19]. Le
+    diab\xE9tique ne se rend pas compte qu'il a une blessure par l'absence de stimuli
+    douloureux, il laisse \xE9voluer une blessure pouvant entra\xEEner une escarre,
+    voire un authentique mal perforant plantaire. Les diab\xE9tiques testent annuellement
+    leur sensibilit\xE9 distale avec un monofilament[20] ;\r\nles reins : la n\xE9phropathie
+    diab\xE9tique pouvant \xE9voluer jusqu'\xE0 l'insuffisance r\xE9nale. Diff\xE9rentes
+    l\xE9sions peuvent atteindre le rein diab\xE9tique, surtout les n\xE9phropathies
+    glom\xE9rulaires et les n\xE9phropathies vasculaires ;\r\nle plan cutan\xE9omuqueux
+    : des difficult\xE9s de cicatrisation des plaies sous forme d'ulc\xE8res sont
+    per\xE7ues, ces derniers sont courants chez les diab\xE9tiques atteints d'art\xE9riopathie
+    oblit\xE9rante des membres inf\xE9rieurs (mal perforant plantaire).\r\nSur le
+    plan immunitaire, le milieu sucr\xE9 profite \xE0 beaucoup d'agents infectieux
+    telles les candidoses par une atteinte de l'immunit\xE9 cellulaire. Il est associ\xE9
+    \xE0 la maladie parodontale[21],[22].\r\n\r\nEnfin, la grossesse d'une femme
+    diab\xE9tique doit faire l'objet d'un suivi m\xE9dical particulier, de fa\xE7on
+    \xE0 limiter les risques de malformations f\u0153tales.\r\n\r\nAu fil des innovations
+    th\xE9rapeutiques et des progr\xE8s r\xE9alis\xE9s en termes d\u2019esp\xE9rance
+    de vie des patients vivant avec un diab\xE8te de type 1 (DT1) et de type 2 (DT2),
+    la nature des complications associ\xE9es \xE0 la maladie diab\xE9tique est en
+    train de changer. Au cours du si\xE8cle dernier, les hospitalisations associ\xE9es
+    au diab\xE8te \xE9taient principalement en rapport avec les urgences hyperglyc\xE9miques,
+    non-hyperglyc\xE9miques et vasculaires. Un nouveau profil de complications a
+    \xE9merg\xE9 depuis. Non traditionnellement associ\xE9es \xE0 la maladie diab\xE9tique,
+    ces nouvelles complications concernent notamment le foie (st\xE9atose m\xE9tabolique
+    non alcoolique), le cerveau (d\xE9pression et trouble anxieux, risque de d\xE9mence
+    et troubles cognitifs) ainsi que d\u2019autres organes (surrisque de plusieurs
+    types de cancer, complications infectieuses, syndrome d\u2019apn\xE9e du sommeil,
+    handicap fonctionnel touchant les membres inf\xE9rieurs). Ces complications sont
+    autant de d\xE9fis \xE0 relever en mati\xE8re de sant\xE9 publique[23].\r\n\r\n\xC9pid\xE9miologie\r\nPr\xE9valence
+    (mesure de l'\xE9tat de sant\xE9 d'une population \xE0 un moment donn\xE9)\r\nLe
+    diab\xE8te, sans \xEAtre v\xE9ritablement class\xE9 dans les maladies \xE9mergentes,
+    est une maladie chronique et invalidante qui se d\xE9veloppe de mani\xE8re \xE9pid\xE9mique
+    depuis quelques d\xE9cennies, et dont la pr\xE9valence augmente fortement et
+    rapidement dans tous les pays, surtout avec le mode de vie, l'urbanisation et
+    ses cons\xE9quences[24], laissant supposer qu'outre une composante g\xE9n\xE9tique,
+    cette maladie a un ou plusieurs facteurs environnementaux.\r\n\r\nLa maladie
+    s'est d'abord d\xE9velopp\xE9e dans les pays riches ou dits \xAB d\xE9velopp\xE9s
+    en rapport avec la s\xE9dentarit\xE9 et l'alimentation \xBB, mais de nombreux
+    indices indiquent qu'elle se d\xE9veloppe rapidement dans les pays pauvres (la
+    malnutrition, l'ignorance, les infections).\r\n\r\nLa pr\xE9valence \xE9tait
+    en 2003 la plus \xE9lev\xE9e en Am\xE9rique du Nord (7,9 % de la population nord-am\xE9ricaine)
+    et en Europe (7,8 % de la r\xE9gion Europe), au Maroc environ 5 %. La pr\xE9valence
+    est croissante en Asie du Sud-Est, elle pourrait d'ici vingt ans devenir la zone
+    o\xF9 le risque de diab\xE8te serait le plus \xE9lev\xE9 (13,2 % de la population
+    y est d\xE9j\xE0 victime d'intol\xE9rance au glucose (IGT)).\r\n\r\nL'Organisation
+    mondiale de la sant\xE9 \xE9voque une v\xE9ritable \xE9pid\xE9mie avec un nombre
+    de cas estim\xE9s pass\xE9 de 30 millions en 1985 \xE0 135 millions en 1995,
+    dix ans plus tard et 177 millions en 2000, puis 194 millions en 2003[25]. L'OMS
+    s'attend \xE0 un nombre de diab\xE9tiques d'environ 300 millions d'ici \xE0 2025
+    (330 selon la f\xE9d\xE9ration mondiale du diab\xE8te qui estime qu'en 2003,
+    il y a 194 millions de diab\xE9tiques dans le monde, c'est-\xE0-dire 5,1 % des
+    adultes en moyenne, et qu'ils seront 6,3 %, d\u2019ici 2025).\r\n\r\nChine\r\nEn
+    2012, le taux de diab\xE8te estim\xE9 chez les jeunes Chinois de 7 \xE0 18 ans
+    est 4 fois sup\xE9rieur \xE0 celui observ\xE9 chez les jeunes Am\xE9ricains.
+    Ainsi, 1/3 des enfants chinois de moins de 17 ans pr\xE9sente au moins un facteur
+    de risque cardiovasculaire.\r\n\r\nCeci s'explique par les changements nutritionnels
+    qui ont accompagn\xE9 l\u2019essor \xE9conomique du pays et ont entra\xEEn\xE9
+    une v\xE9ritable \xE9pid\xE9mie d\u2019ob\xE9sit\xE9. \xC0 signaler que la quasi-totalit\xE9
+    des cas sont des diab\xE8tes de type 2, le type 1 \xE9tant une forme de diab\xE8te
+    quasiment inexistante en Chine[26],[27].\r\n\r\nEurope\r\nEn Europe, le diab\xE8te
+    repr\xE9sente en moyenne 2 % de la mortalit\xE9. Il peut d\xE9passer le taux
+    de 50 morts par 100 000 habitants, ou \xEAtre inf\xE9rieur \xE0 10 morts pour
+    100 000 habitants.\r\n\r\nParmi les r\xE9gions europ\xE9ennes les plus touch\xE9es,
+    on compte des r\xE9gions ultrap\xE9riph\xE9riques du Portugal, Chypre, des r\xE9gions
+    tch\xE8ques et des r\xE9gions ultrap\xE9riph\xE9riques fran\xE7aises. Inversement
+    les r\xE9gions les moins touch\xE9es par le diab\xE8te se trouvent en Roumanie,
+    au Royaume-Uni et en Finlande[28].\r\n\r\nFrance\r\nEn France, la pr\xE9valence
+    du diab\xE8te est mieux suivie depuis 1998 gr\xE2ce \xE0 des enqu\xEAtes sp\xE9cifiques
+    : 2,5 millions de personnes en 2008 y seraient atteintes de diab\xE8te de type
+    2 (pr\xE9valence de 3,5 %). La pr\xE9valence est pass\xE9e de 2,7 \xE0 3,6 %
+    de 2000 \xE0 2005 (augmentation moyenne annuelle de 5,7 %). 500 000 \xE0 800
+    000 Fran\xE7ais vivraient sans savoir encore qu'ils sont diab\xE9tiques.\r\n\r\nLes
+    disparit\xE9s d'\xE2ge et disparit\xE9s g\xE9ographiques sont fortes : la maladie
+    est diagnostiqu\xE9e \xE0 l'\xE2ge moyen de 64,8 ans. Les 75 ans et plus sont
+    les plus touch\xE9s (13,4 %) juste devant les 65-74 ans (13,3 %). Un cinqui\xE8me
+    de la population \xE2g\xE9e de plus de 75 ans est diab\xE9tique. Les r\xE9gions
+    d'outre-mer sont les plus touch\xE9es avec 7,8 % des R\xE9unionnais, 7,3 % des
+    Guadeloup\xE9ens, 6,8 % des Martiniquais. En m\xE9tropole, les diab\xE9tiques
+    sont plus nombreux dans le quart nord-est du pays et notamment en Seine-Saint-Denis
+    (5,1 % de la population), l'ouest \xE9tant moins touch\xE9 [14]. C'est en Alsace,
+    peut-\xEAtre \xE0 cause de l'alimentation, que le nombre de diab\xE9tiques est
+    le plus \xE9lev\xE9 (avec une pr\xE9valence de 6,5 %[29]).\r\n\r\nL\u2019\xE9tude
+    Entred (\xC9chantillon national t\xE9moin repr\xE9sentatif des personnes diab\xE9tiques),
+    publi\xE9e en novembre 2022, d\xE9crit les caract\xE9ristiques et l\u2019\xE9tat
+    de sant\xE9 des personnes recevant un traitement m\xE9dicamenteux pour un diab\xE8te
+    en France m\xE9tropolitaine. Parmi les 3\u202F166 r\xE9pondants, 2 714 (environ
+    94 % ont \xE9t\xE9 class\xE9es comme souffrant d\u2019un diab\xE8te de type 2
+    (DT2), 412 (environ 5 %) comme ayant un diab\xE8te de type 1 (DT1). Les personnes
+    avec un DT2 \xE9taient principalement des hommes (environ 55 %), d\u2019\xE2ge
+    moyen 67 ans, n\xE9es en France dans environ 76 % des cas et n\xE9es dans un
+    pays du Maghreb dans 11,1% des cas. Il ressort que 57 % des personnes vivant
+    avec un DT1 \xE9taient des hommes, \xE2g\xE9s en moyenne de 47 ans et n\xE9s
+    en France dans plus de 82 % des cas[30]. Il appara\xEEt que les adultes DT1 ont
+    un niveau socio\xE9conomique plus \xE9lev\xE9 que les DT2[30].\r\n\r\nBelgique\r\nLa
+    F\xE9d\xE9ration internationale du diab\xE8te estime que, en Belgique, une personne
+    sur douze est atteinte de diab\xE8te (7,8 %) (statistiques de 2007). Dans vingt
+    ans, ce chiffre devrait atteindre 1 sur 10.\r\n\r\nIncidence\r\nLe diab\xE8te
+    est devenu la quatri\xE8me ou cinqui\xE8me cause de mortalit\xE9 dans la plupart
+    des pays d\xE9velopp\xE9s. Il a d'abord touch\xE9 essentiellement des pays riches
+    ou d\xE9velopp\xE9s, mais s'\xE9tend maintenant dans les pays pauvres ou nouvellement
+    industrialis\xE9s. Son incidence est difficile \xE0 mesurer, notamment dans les
+    pays pauvres et ce, par manque d'\xE9tudes sp\xE9cifiques. L'OMS estime[24] que
+    vers l'an 2000, quatre millions de personnes en mourraient par an dans le monde,
+    ce qui correspond \xE0 un taux de l\xE9talit\xE9 de 9 % environ.\r\n\r\nLes complications
+    oculaires et cardiovasculaires de cette maladie qui surviennent souvent chez
+    des gens jeunes ou encore en activit\xE9 poussent les services de sant\xE9 et
+    organismes de s\xE9curit\xE9 sociale \xE0 d\xE9penser de plus en plus pour lutter
+    contre le diab\xE8te dont les causes restent incomprises. Le nombre de cas continue
+    n\xE9anmoins d'augmenter."

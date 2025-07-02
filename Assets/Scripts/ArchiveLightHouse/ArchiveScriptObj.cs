@@ -8,6 +8,7 @@ public class ArchiveScriptObj : ScriptableObject
 {
     
     public string _title;
+    public string _link;
     [TextAreaAttribute]
     public string _content;
 }
