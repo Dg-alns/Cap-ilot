@@ -12,8 +12,6 @@ public class BoxSwitcher : MonoBehaviour
     private Vector3 blueOriginalPos;
     private Vector3 deleteOriginalPos;
 
-    private bool isSwitched = false;
-
     void Start()
     {
         redOriginalPos = redBox.position;

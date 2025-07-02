@@ -1,37 +1,30 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class Disk : MonoBehaviour
 {
-    public string colorTag;
+    public string colorTag; // "Red" ou "Blue"
+    public string alimentTag; // ex : "Pomme", "Poulet" ou "" pour potion
 
-    void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag(colorTag + "Box"))
+        if (other.CompareTag("RedBox"))
         {
-            ScoreManager.instance.AddPoint();
-
-            if (colorTag == "Red")
-            {
-                GameController.instance.AddRed();
-                Destroy(gameObject);
-            }   
-            else if (colorTag == "Blue")
-            {
-                GameController.instance.AddBlue();
-                Destroy(gameObject);
-            }
+            bool correct = (colorTag == "Red");
+            if (correct == true)
+                GameController.instance.AddDiskToBox("Red");
+            GameController.instance.AddDiskToScore(colorTag, alimentTag, correct);
+            Destroy(gameObject);
+        }
+        else if (other.CompareTag("BlueBox"))
+        {
+            bool correct = (colorTag == "Blue");
+            if (correct == true)
+                GameController.instance.AddDiskToBox("Blue");
+            GameController.instance.AddDiskToScore(colorTag, alimentTag, correct);
+            Destroy(gameObject);
         }
         else if (other.CompareTag("delete"))
         {
-            Destroy(gameObject);
-        }
-
-        else if (other.CompareTag("RedBox") || other.CompareTag("BlueBox"))
-        {
-            ScoreManager.instance.LosePoint();
             Destroy(gameObject);
         }
     }

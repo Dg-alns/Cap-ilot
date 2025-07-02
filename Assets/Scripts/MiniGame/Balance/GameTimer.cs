@@ -11,7 +11,6 @@ public class GameTimer : MonoBehaviour
     public float totalTime = 90f;
     public TextMeshProUGUI timerText;
     public GameObject winScreen;
-    public ScoreManager scoreManager;
 
     private float timeLeft;
     private bool isRunning = true;
@@ -40,7 +39,7 @@ public class GameTimer : MonoBehaviour
     {
         isRunning = false;
 
-        if (scoreManager.GetScore() >= 30)
+        if (timeLeft == 0)
         {
             winScreen.SetActive(true);
         }

@@ -111,6 +111,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   colorTag: Red
+  alimentTag: Cookie
 --- !u!1 &6357181610248148442
 GameObject:
   m_ObjectHideFlags: 0
