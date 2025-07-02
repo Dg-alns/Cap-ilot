@@ -5,6 +5,8 @@ public class LoadNexScene : MonoBehaviour
     [SerializeField] private NextSceneDestination _NextSceneData;
     public Animator animator;
 
+    bool isLauch = false;
+
     public void LoadNextScene(string scene)
     {
         animator.SetTrigger("Transition");
@@ -25,7 +27,11 @@ public class LoadNexScene : MonoBehaviour
 
     public void LoadIle()
     {
-        animator.SetTrigger("Transition");
-        StartCoroutine(_NextSceneData.NextScene(_NextSceneData.GetSceneIle()));
+        if(isLauch == false)
+        {
+            animator.SetTrigger("Transition");
+            StartCoroutine(_NextSceneData.NewIle());
+            isLauch = true;
+        }
     }
 }

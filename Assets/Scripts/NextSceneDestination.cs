@@ -85,23 +85,23 @@ public class NextSceneDestination : ScriptableObject
         yield return null;
     }
 
-    //public IEnumerator NewIle()
-    //{
-    //    yield return null;
+    public IEnumerator NewIle()
+    {
+        yield return null;
 
-    //    AsyncOperation operation = SceneManager.LoadSceneAsync(_ileNamePort);
-    //    operation.allowSceneActivation = false;
+        AsyncOperation operation = SceneManager.LoadSceneAsync(_ileNamePort);
+        operation.allowSceneActivation = false;
 
 
-    //    while (!operation.isDone)
-    //    {
-    //        if (operation.progress >= 0.9f)
-    //        {
-    //            yield return new WaitForSeconds(1);
-    //            operation.allowSceneActivation = true;
-    //        }
-    //    }
-    //    yield return null;
-    //}
+        while (!operation.isDone)
+        {
+            if (operation.progress >= 0.9f)
+            {
+                yield return new WaitForSeconds(1);
+                operation.allowSceneActivation = true;
+            }
+        }
+        yield return null;
+    }
 
 }
