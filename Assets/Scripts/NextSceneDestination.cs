@@ -70,25 +70,6 @@ public class NextSceneDestination : ScriptableObject
         SetNextSceneDestination("MiniGame_Boat");
         SetCurrentScene(SceneManager.GetActiveScene().name);
 
-        AsyncOperation operation = SceneManager.LoadSceneAsync(_ileNamePort);
-        operation.allowSceneActivation = false;
-
-
-        while (!operation.isDone)
-        {
-            if (operation.progress >= 0.9f)
-            {
-                yield return new WaitForSeconds(1);
-                operation.allowSceneActivation = true;
-            }
-        }
-        yield return null;
-    }
-
-    public IEnumerator NewIle()
-    {
-        yield return null;
-
         AsyncOperation operation = SceneManager.LoadSceneAsync(_sceneName);
         operation.allowSceneActivation = false;
 
@@ -103,5 +84,24 @@ public class NextSceneDestination : ScriptableObject
         }
         yield return null;
     }
+
+    //public IEnumerator NewIle()
+    //{
+    //    yield return null;
+
+    //    AsyncOperation operation = SceneManager.LoadSceneAsync(_ileNamePort);
+    //    operation.allowSceneActivation = false;
+
+
+    //    while (!operation.isDone)
+    //    {
+    //        if (operation.progress >= 0.9f)
+    //        {
+    //            yield return new WaitForSeconds(1);
+    //            operation.allowSceneActivation = true;
+    //        }
+    //    }
+    //    yield return null;
+    //}
 
 }

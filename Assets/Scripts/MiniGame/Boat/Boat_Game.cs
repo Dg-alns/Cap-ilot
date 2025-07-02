@@ -18,7 +18,6 @@ public class Boat_Game : MonoBehaviour
 
     private bool _gameFinish = false;
     private bool _gameStart = false;
-    private bool _CoroutineStart = false;
 
     private Transform _rocks;
 

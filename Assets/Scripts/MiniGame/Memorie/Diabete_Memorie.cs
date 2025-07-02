@@ -43,7 +43,8 @@ public class Diabete_Memorie : MonoBehaviour
     {
         if (NotActive)
             return;
-        
+
+
         if(animator.GetBool("FindingPair")) return;
 
         // Increase the time
@@ -114,6 +115,6 @@ public class Diabete_Memorie : MonoBehaviour
     }
     public void ActiveDiabète()
     {
-        NotActive = true;
+        NotActive = false;
     }
 }
