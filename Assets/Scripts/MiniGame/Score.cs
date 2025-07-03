@@ -58,7 +58,7 @@ public class Score : MonoBehaviour
             timer.stop = true;
             MiniGamePoint = timer.GetTimeInSecondes();
         }
-        
+
         MiniGamePoint += mCurrentScore;
         Debug.Log(MiniGamePoint);
         animator = GetComponent<Animator>();
@@ -92,6 +92,7 @@ public class Score : MonoBehaviour
 
             return;
         }
+
 
         if (MiniGamePoint < MinBronze)
             animator.SetBool("0", true);

@@ -46,4 +46,9 @@ public class InformationOfTheGame : MonoBehaviour
         gameObject.SetActive(false);
         GameObjectToStart.GetComponent<Boat_Game>().StartGame();
     }
+    public void StartInjecInsu()
+    {
+        gameObject.SetActive(false);
+        GameObjectToStart.SetActive(true);
+    }
 }

@@ -110,6 +110,11 @@ public class Energy : MonoBehaviour
         return DateTime.Parse(str);
     }
 
+    public bool HaveEnergy()
+    {
+        return _energy > 0;
+    }
+
     // If you have more than 0 energy you can use 1
     public void UseEnergy() 
     {
@@ -120,9 +125,7 @@ public class Energy : MonoBehaviour
             {
                 StartRestorationTime(); 
             }
-            //return true;
         }
-        //return false;
     }
 
     public void AddEnergy()

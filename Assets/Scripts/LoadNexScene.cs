@@ -3,14 +3,35 @@ using UnityEngine;
 public class LoadNexScene : MonoBehaviour
 {
     [SerializeField] private NextSceneDestination _NextSceneData;
+
+    [SerializeField] private Energy _energy;
+
     public Animator animator;
 
-    bool isLauch = false;
 
     public void LoadNextScene(string scene)
     {
-        animator.SetTrigger("Transition");
-        StartCoroutine(_NextSceneData.NextScene(scene));
+        
+        if (_NextSceneData.isLauch == false)
+        {
+            _NextSceneData.isLauch = true;
+            animator.SetTrigger("Transition");
+            StartCoroutine(_NextSceneData.NextScene(scene));
+        }
+    }
+
+    public void LoadMiniGame(string scene)
+    {
+        if (_NextSceneData.isLauch == false)
+        {
+            _NextSceneData.isLauch = true;
+            if (_energy.HaveEnergy())
+            {
+                _energy.UseEnergy();
+                animator.SetTrigger("Transition");
+                StartCoroutine(_NextSceneData.NextScene(scene));
+            }
+        }
     }
 
     public void LoadPreviousScene()
@@ -27,11 +48,11 @@ public class LoadNexScene : MonoBehaviour
 
     public void LoadIle()
     {
-        if(isLauch == false)
+        if(_NextSceneData.isLauch == false)
         {
             animator.SetTrigger("Transition");
             StartCoroutine(_NextSceneData.NewIle());
-            isLauch = true;
+            _NextSceneData.isLauch = true;
         }
     }
 }

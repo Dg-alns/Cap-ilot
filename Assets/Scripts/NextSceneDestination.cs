@@ -10,6 +10,8 @@ public class NextSceneDestination : ScriptableObject
     [SerializeField] private string _CurrentsceneName = "";
     private string _ileNamePort = "";
 
+    public bool isLauch = false;
+
     void SetNextSceneDestination(string sceneName)
     {
         _sceneName = sceneName;
@@ -57,6 +59,7 @@ public class NextSceneDestination : ScriptableObject
             if (operation.progress >= 0.9f)
             {
                 yield return new WaitForSeconds(1);
+                isLauch = false;
                 operation.allowSceneActivation = true;
             }
         }
@@ -79,6 +82,7 @@ public class NextSceneDestination : ScriptableObject
             if (operation.progress >= 0.9f)
             {
                 yield return new WaitForSeconds(1);
+                isLauch = false;
                 operation.allowSceneActivation = true;
             }
         }
@@ -98,6 +102,7 @@ public class NextSceneDestination : ScriptableObject
             if (operation.progress >= 0.9f)
             {
                 yield return new WaitForSeconds(1);
+                isLauch = false;
                 operation.allowSceneActivation = true;
             }
         }
