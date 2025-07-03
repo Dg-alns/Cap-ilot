@@ -44,6 +44,7 @@ public class LighthouseGameManager : MonoBehaviour
 
             //_win =true;
             Debug.Log("normalement c gagné");
+            PlayerPrefs.SetInt("LightHouseRepaired", 1);
             _visualWinning.SetActive(true);
             _visualWinning.GetComponent<RectTransform>().SetAsLastSibling();
             _visualWinning.GetComponent<Animator>().SetBool("TEST",true);

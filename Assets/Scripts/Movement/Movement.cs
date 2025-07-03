@@ -17,12 +17,16 @@ public class Movement : MonoBehaviour
     // Start is called before the first frame update
     SpriteRenderer _spriteRenderer;
     private Vector3 _lastPosition;
+    private bool _isRight = true;
 
     private int _clickedNpcId;
     private NPC _clickedNpc;
     private bool _dialogueStarted;
     [SerializeField] private GameObject _npcManager;
     [SerializeField] private GameObject _dialogue;
+
+    [Header("Animation")]
+    [SerializeField] private Animator _diabeteAnimator;
 
     //[SerializeField] private TouchManager _touchManager;
 
@@ -40,28 +44,38 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        /*if (_agent.destination != transform.position) {
-            animator.SetBool("Walking", true);
-        }
-        else
+        if(_diabeteAnimator != null)
         {
-            animator.SetBool("Walking", false);
-        }*/
+            if (_agent.destination != transform.position)
+            {
+                _diabeteAnimator.SetBool("Walking", true);
+            }
+            else
+            {
+                _diabeteAnimator.SetBool("Walking", false);
+            }
+        }
         //Debug.Log(_target);
         //_agent.SetDestination(_target);
         Vector3 movement = transform.position - _lastPosition;
 
-        if (movement.x < 0)//deplacement  a gauche
+        if (movement.x < 0 && _isRight)//deplacement  a gauche
         {
-            _spriteRenderer.flipX = true;
+            transform.eulerAngles = new Vector3(0,180,0);  
+            //transform.Rotate(new Vector3(0, 0, 0));
+            _isRight = false;
+            //_spriteRenderer.flipX = true;
         }
         else
         {
-            if (movement.x > 0)
+            if (movement.x > 0 && !_isRight)
             {
-                _spriteRenderer.flipX = false;
+                transform.eulerAngles = new Vector3(0, 0, 0);
+                _isRight = true;
+                //_spriteRenderer.flipX = false;
             }
         }
+        
         _lastPosition = transform.position;
 
     }

@@ -7,6 +7,8 @@ public class LightHouse : MonoBehaviour
     // Start is called before the first frame update
     private Tools m_csTools;
     [SerializeField] private GameObject _UIArchives;
+
+    public bool isRepaired;
     void Start()
     {
         m_csTools = FindAnyObjectByType<Tools>();
@@ -23,7 +25,14 @@ public class LightHouse : MonoBehaviour
         {
             if (Input.GetMouseButtonUp(0))
             {
-                _UIArchives.SetActive(true);
+                if (PlayerPrefs.HasKey("LightHouseRepaired") && PlayerPrefs.GetInt("LightHouseRepaired") ==1)
+                {
+                    _UIArchives.SetActive(true);
+                }
+                else
+                {
+                    GetComponent<LoadNexScene>().LoadNextScene("MiniGame_LightHouse");
+                }
             }
         }
     }

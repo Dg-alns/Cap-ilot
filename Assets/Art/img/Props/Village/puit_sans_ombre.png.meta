@@ -1,0 +1,5167 @@
+fileFormatVersion: 2
+guid: 6e25147708b50894db1f3c638d8cf937
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 3847144324455697817
+    second: puit_sans_ombre_0
+  - first:
+      213: -233989690164970710
+    second: puit_sans_ombre_1
+  - first:
+      213: -7233581946095156111
+    second: puit_sans_ombre_2
+  - first:
+      213: 2168904060904806209
+    second: puit_sans_ombre_3
+  - first:
+      213: 4713323188132278468
+    second: puit_sans_ombre_4
+  - first:
+      213: 3124773063794779751
+    second: puit_sans_ombre_5
+  - first:
+      213: 1906194139041547192
+    second: puit_sans_ombre_6
+  - first:
+      213: -5530513453605417438
+    second: puit_sans_ombre_7
+  - first:
+      213: 9149902128333688952
+    second: puit_sans_ombre_8
+  - first:
+      213: 2172453234009028349
+    second: puit_sans_ombre_9
+  - first:
+      213: -7112725539359092900
+    second: puit_sans_ombre_10
+  - first:
+      213: 6166038020805905433
+    second: puit_sans_ombre_11
+  - first:
+      213: -5059218584169856561
+    second: puit_sans_ombre_12
+  - first:
+      213: -1433057809611963064
+    second: puit_sans_ombre_13
+  - first:
+      213: 3966038457136817204
+    second: puit_sans_ombre_14
+  - first:
+      213: -7340749414026346992
+    second: puit_sans_ombre_15
+  - first:
+      213: -1774111612591859685
+    second: puit_sans_ombre_16
+  - first:
+      213: -7885164264481704265
+    second: puit_sans_ombre_17
+  - first:
+      213: -8489677203557266060
+    second: puit_sans_ombre_18
+  - first:
+      213: -7526966147522682981
+    second: puit_sans_ombre_19
+  - first:
+      213: 1045183432350323094
+    second: puit_sans_ombre_20
+  - first:
+      213: -1512028498167233979
+    second: puit_sans_ombre_21
+  - first:
+      213: -1341752241451052992
+    second: puit_sans_ombre_22
+  - first:
+      213: -1170536766804707680
+    second: puit_sans_ombre_23
+  - first:
+      213: 6252437523902708651
+    second: puit_sans_ombre_24
+  - first:
+      213: 8144973499436395452
+    second: puit_sans_ombre_25
+  - first:
+      213: -2058662149091886654
+    second: puit_sans_ombre_26
+  - first:
+      213: 4019290218903637773
+    second: puit_sans_ombre_27
+  - first:
+      213: -2610690843958416810
+    second: puit_sans_ombre_28
+  - first:
+      213: 5084646404855524237
+    second: puit_sans_ombre_29
+  - first:
+      213: 3818629547056522831
+    second: puit_sans_ombre_30
+  - first:
+      213: 11972942796782377
+    second: puit_sans_ombre_31
+  - first:
+      213: 8772570796147515409
+    second: puit_sans_ombre_32
+  - first:
+      213: -1864647047555670246
+    second: puit_sans_ombre_33
+  - first:
+      213: 5173174379639834222
+    second: puit_sans_ombre_34
+  - first:
+      213: -1721228050659679297
+    second: puit_sans_ombre_35
+  - first:
+      213: -281051334656138861
+    second: puit_sans_ombre_36
+  - first:
+      213: 7280315238018254979
+    second: puit_sans_ombre_37
+  - first:
+      213: -3658369729107077279
+    second: puit_sans_ombre_38
+  - first:
+      213: -6493187433304714149
+    second: puit_sans_ombre_39
+  - first:
+      213: 268866967393394938
+    second: puit_sans_ombre_40
+  - first:
+      213: 972284703348525481
+    second: puit_sans_ombre_41
+  - first:
+      213: 6511620418911787765
+    second: puit_sans_ombre_42
+  - first:
+      213: 4627029656279969200
+    second: puit_sans_ombre_43
+  - first:
+      213: 7207511248318454590
+    second: puit_sans_ombre_44
+  - first:
+      213: 7157816034194174784
+    second: puit_sans_ombre_45
+  - first:
+      213: -495043043885429728
+    second: puit_sans_ombre_46
+  - first:
+      213: 6821620435393821781
+    second: puit_sans_ombre_47
+  - first:
+      213: -6413877045192057146
+    second: puit_sans_ombre_48
+  - first:
+      213: 854764146853738219
+    second: puit_sans_ombre_49
+  - first:
+      213: -8393084512689627746
+    second: puit_sans_ombre_50
+  - first:
+      213: 4563829029111575398
+    second: puit_sans_ombre_51
+  - first:
+      213: -9162366206370637143
+    second: puit_sans_ombre_52
+  - first:
+      213: 345641440708816458
+    second: puit_sans_ombre_53
+  - first:
+      213: 4031482009679997600
+    second: puit_sans_ombre_54
+  - first:
+      213: 1025098075231849470
+    second: puit_sans_ombre_55
+  - first:
+      213: -6509447017890754488
+    second: puit_sans_ombre_56
+  - first:
+      213: -7967421161355099315
+    second: puit_sans_ombre_57
+  - first:
+      213: 6903294186243587174
+    second: puit_sans_ombre_58
+  - first:
+      213: 695060737421073567
+    second: puit_sans_ombre_59
+  - first:
+      213: 5339375899533271267
+    second: puit_sans_ombre_60
+  - first:
+      213: 7284309856216577291
+    second: puit_sans_ombre_61
+  - first:
+      213: 1159374771419996176
+    second: puit_sans_ombre_62
+  - first:
+      213: -349689792837990502
+    second: puit_sans_ombre_63
+  - first:
+      213: -8704643920007105430
+    second: puit_sans_ombre_64
+  - first:
+      213: -8690964736017922117
+    second: puit_sans_ombre_65
+  - first:
+      213: 5553567962160374037
+    second: puit_sans_ombre_66
+  - first:
+      213: 8328912103442382210
+    second: puit_sans_ombre_67
+  - first:
+      213: 4646728538153595456
+    second: puit_sans_ombre_68
+  - first:
+      213: -9183048570645250829
+    second: puit_sans_ombre_69
+  - first:
+      213: -1957460698228915691
+    second: puit_sans_ombre_70
+  - first:
+      213: 332934142796226065
+    second: puit_sans_ombre_71
+  - first:
+      213: -5812711890794826195
+    second: puit_sans_ombre_72
+  - first:
+      213: 6186895030816074673
+    second: puit_sans_ombre_73
+  - first:
+      213: 7864899009152319435
+    second: puit_sans_ombre_74
+  - first:
+      213: -6588674387291209428
+    second: puit_sans_ombre_75
+  - first:
+      213: -2074009214258809940
+    second: puit_sans_ombre_76
+  - first:
+      213: 4141570505363943666
+    second: puit_sans_ombre_77
+  - first:
+      213: -5553304121512727190
+    second: puit_sans_ombre_78
+  - first:
+      213: 6351848730544426475
+    second: puit_sans_ombre_79
+  - first:
+      213: 3773366483200009201
+    second: puit_sans_ombre_80
+  - first:
+      213: -5028780127675478971
+    second: puit_sans_ombre_81
+  - first:
+      213: -539445019032989898
+    second: puit_sans_ombre_82
+  - first:
+      213: 3603700005103418841
+    second: puit_sans_ombre_83
+  - first:
+      213: -4191286742970054888
+    second: puit_sans_ombre_84
+  - first:
+      213: 1813188238509035925
+    second: puit_sans_ombre_85
+  - first:
+      213: 7823722377393016698
+    second: puit_sans_ombre_86
+  - first:
+      213: 8943621266161140237
+    second: puit_sans_ombre_87
+  - first:
+      213: -5643162658996235970
+    second: puit_sans_ombre_88
+  - first:
+      213: -7517675069289586386
+    second: puit_sans_ombre_89
+  - first:
+      213: 3851471391770099929
+    second: puit_sans_ombre_90
+  - first:
+      213: -5188918477253600436
+    second: puit_sans_ombre_91
+  - first:
+      213: 6277748481718516849
+    second: puit_sans_ombre_92
+  - first:
+      213: -2785128694061610680
+    second: puit_sans_ombre_93
+  - first:
+      213: -6157788638082371489
+    second: puit_sans_ombre_94
+  - first:
+      213: 6053180307658290114
+    second: puit_sans_ombre_95
+  - first:
+      213: 5921510269766662799
+    second: puit_sans_ombre_96
+  - first:
+      213: -4164986052176057221
+    second: puit_sans_ombre_97
+  - first:
+      213: 2935919408117783059
+    second: puit_sans_ombre_98
+  - first:
+      213: -1235990224971143063
+    second: puit_sans_ombre_99
+  - first:
+      213: -415769963330996002
+    second: puit_sans_ombre_100
+  - first:
+      213: -4187892887878303995
+    second: puit_sans_ombre_101
+  - first:
+      213: -1407549600908439985
+    second: puit_sans_ombre_102
+  - first:
+      213: -6225650589930555561
+    second: puit_sans_ombre_103
+  - first:
+      213: 8842856912384328851
+    second: puit_sans_ombre_104
+  - first:
+      213: 1548852478411938011
+    second: puit_sans_ombre_105
+  - first:
+      213: -3489354848592688186
+    second: puit_sans_ombre_106
+  - first:
+      213: -213267639968568194
+    second: puit_sans_ombre_107
+  - first:
+      213: 1796496301025218707
+    second: puit_sans_ombre_108
+  - first:
+      213: 6805946995972414439
+    second: puit_sans_ombre_109
+  - first:
+      213: -8092759272374840003
+    second: puit_sans_ombre_110
+  - first:
+      213: -4447675233996677117
+    second: puit_sans_ombre_111
+  - first:
+      213: 3879755238171317134
+    second: puit_sans_ombre_112
+  - first:
+      213: 4437285280592199770
+    second: puit_sans_ombre_113
+  - first:
+      213: 6709732382936232353
+    second: puit_sans_ombre_114
+  - first:
+      213: -2732530588730172533
+    second: puit_sans_ombre_115
+  - first:
+      213: -4151220746452495856
+    second: puit_sans_ombre_116
+  - first:
+      213: 4628171911363110690
+    second: puit_sans_ombre_117
+  - first:
+      213: -3415564071438987398
+    second: puit_sans_ombre_118
+  - first:
+      213: 1708972880327614314
+    second: puit_sans_ombre_119
+  - first:
+      213: 5979992339285399094
+    second: puit_sans_ombre_120
+  - first:
+      213: 4820390476374527600
+    second: puit_sans_ombre_121
+  - first:
+      213: 8192177999592688666
+    second: puit_sans_ombre_122
+  - first:
+      213: -5129254050687476812
+    second: puit_sans_ombre_123
+  - first:
+      213: 4309431222338940720
+    second: puit_sans_ombre_124
+  - first:
+      213: -8787605985082374800
+    second: puit_sans_ombre_125
+  - first:
+      213: -4690903515071352531
+    second: puit_sans_ombre_126
+  - first:
+      213: -5254576899615211921
+    second: puit_sans_ombre_127
+  - first:
+      213: -1855223274331891164
+    second: puit_sans_ombre_128
+  - first:
+      213: 1805079695507151049
+    second: puit_sans_ombre_129
+  - first:
+      213: 1361879440119601781
+    second: puit_sans_ombre_130
+  - first:
+      213: -4979140280305026856
+    second: puit_sans_ombre_131
+  - first:
+      213: -4658234170514279162
+    second: puit_sans_ombre_132
+  - first:
+      213: 226028654677152099
+    second: puit_sans_ombre_133
+  - first:
+      213: 5597834159025709223
+    second: puit_sans_ombre_134
+  - first:
+      213: -3681352606406850083
+    second: puit_sans_ombre_135
+  - first:
+      213: 2919054427101214455
+    second: puit_sans_ombre_136
+  - first:
+      213: -3367164534839967866
+    second: puit_sans_ombre_137
+  - first:
+      213: -8650545697736240794
+    second: puit_sans_ombre_138
+  - first:
+      213: 324806193022866441
+    second: puit_sans_ombre_139
+  - first:
+      213: -5442815347851640675
+    second: puit_sans_ombre_140
+  - first:
+      213: 5148917102910696356
+    second: puit_sans_ombre_141
+  - first:
+      213: -6833829848780097246
+    second: puit_sans_ombre_142
+  - first:
+      213: 187656764194754981
+    second: puit_sans_ombre_143
+  - first:
+      213: 4201644230041096615
+    second: puit_sans_ombre_144
+  - first:
+      213: 2812748227565875903
+    second: puit_sans_ombre_145
+  - first:
+      213: -7597806776564078574
+    second: puit_sans_ombre_146
+  - first:
+      213: -444563318027324499
+    second: puit_sans_ombre_147
+  - first:
+      213: -8751263077174646285
+    second: puit_sans_ombre_148
+  - first:
+      213: -7243693596924060317
+    second: puit_sans_ombre_149
+  - first:
+      213: 4425732125079414365
+    second: puit_sans_ombre_150
+  - first:
+      213: 661581407388878093
+    second: puit_sans_ombre_151
+  - first:
+      213: 7832407035770089858
+    second: puit_sans_ombre_152
+  - first:
+      213: 761440471962749403
+    second: puit_sans_ombre_153
+  - first:
+      213: -2500921549363624242
+    second: puit_sans_ombre_154
+  - first:
+      213: 1978504132072701781
+    second: puit_sans_ombre_155
+  - first:
+      213: -421867477107720267
+    second: puit_sans_ombre_156
+  - first:
+      213: 5518406294351425980
+    second: puit_sans_ombre_157
+  - first:
+      213: -8184962253593038390
+    second: puit_sans_ombre_158
+  - first:
+      213: -4434289666600901645
+    second: puit_sans_ombre_159
+  - first:
+      213: 4791233303505967863
+    second: puit_sans_ombre_160
+  - first:
+      213: -1347865343504746423
+    second: puit_sans_ombre_161
+  - first:
+      213: -8875220134410292610
+    second: puit_sans_ombre_162
+  - first:
+      213: -6823863270160446330
+    second: puit_sans_ombre_163
+  - first:
+      213: 7722570014312495648
+    second: puit_sans_ombre_164
+  - first:
+      213: -790326965683427327
+    second: puit_sans_ombre_165
+  - first:
+      213: -1747628021942596894
+    second: puit_sans_ombre_166
+  - first:
+      213: -4125593046387408902
+    second: puit_sans_ombre_167
+  - first:
+      213: 1715874855341590453
+    second: puit_sans_ombre_168
+  - first:
+      213: 629869332985561297
+    second: puit_sans_ombre_169
+  - first:
+      213: -1782406798798670964
+    second: puit_sans_ombre_170
+  - first:
+      213: -5388095139787865010
+    second: puit_sans_ombre_171
+  - first:
+      213: -7425956896941640182
+    second: puit_sans_ombre_172
+  - first:
+      213: 2435146612210052130
+    second: puit_sans_ombre_173
+  - first:
+      213: 1592763815670801628
+    second: puit_sans_ombre_174
+  - first:
+      213: -8539023784157809564
+    second: puit_sans_ombre_175
+  - first:
+      213: 60611717540877549
+    second: puit_sans_ombre_176
+  - first:
+      213: -4466002782096378534
+    second: puit_sans_ombre_177
+  - first:
+      213: -5623737327497011740
+    second: puit_sans_ombre_178
+  - first:
+      213: 540098136830722881
+    second: puit_sans_ombre_179
+  - first:
+      213: -3272169197805999515
+    second: puit_sans_ombre_180
+  - first:
+      213: -2679942618632718897
+    second: puit_sans_ombre_181
+  - first:
+      213: -3476169822193987564
+    second: puit_sans_ombre_182
+  - first:
+      213: -6950196950248722217
+    second: puit_sans_ombre_183
+  - first:
+      213: -428546097915350728
+    second: puit_sans_ombre_184
+  - first:
+      213: -8519089204337405289
+    second: puit_sans_ombre_185
+  - first:
+      213: 7587174199093705691
+    second: puit_sans_ombre_186
+  - first:
+      213: 2592927688891876304
+    second: puit_sans_ombre_187
+  - first:
+      213: 3996656045717923077
+    second: puit_sans_ombre_188
+  - first:
+      213: -7624627209551361160
+    second: puit_sans_ombre_189
+  - first:
+      213: 7148031798706189786
+    second: puit_sans_ombre_190
+  - first:
+      213: -6270735139164388875
+    second: puit_sans_ombre_191
+  - first:
+      213: 7261364540804017643
+    second: puit_sans_ombre_192
+  - first:
+      213: -2310640227230568378
+    second: puit_sans_ombre_193
+  - first:
+      213: 2558793743382957253
+    second: puit_sans_ombre_194
+  - first:
+      213: 3884193732075320115
+    second: puit_sans_ombre_195
+  - first:
+      213: 7301144768440293884
+    second: puit_sans_ombre_196
+  - first:
+      213: -7859367734389155771
+    second: puit_sans_ombre_197
+  - first:
+      213: -1647687463081677945
+    second: puit_sans_ombre_198
+  - first:
+      213: 6845549721956640920
+    second: puit_sans_ombre_199
+  - first:
+      213: 8769856003438111535
+    second: puit_sans_ombre_200
+  - first:
+      213: 183189873147078620
+    second: puit_sans_ombre_201
+  - first:
+      213: -7254742894216863954
+    second: puit_sans_ombre_202
+  - first:
+      213: 8220549894967378574
+    second: puit_sans_ombre_203
+  - first:
+      213: -632059025201677663
+    second: puit_sans_ombre_204
+  - first:
+      213: 7027914818120629803
+    second: puit_sans_ombre_205
+  - first:
+      213: 4934629048480477915
+    second: puit_sans_ombre_206
+  - first:
+      213: -1629874721614803604
+    second: puit_sans_ombre_207
+  - first:
+      213: 2889362056911729210
+    second: puit_sans_ombre_208
+  - first:
+      213: -797261216474377503
+    second: puit_sans_ombre_209
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: puit_sans_ombre_0
+      rect:
+        serializedVersion: 2
+        x: 2193
+        y: 2649
+        width: 453
+        height: 588
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 99d87da416dc36530800000000000000
+      internalID: 3847144324455697817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_1
+      rect:
+        serializedVersion: 2
+        x: 2630
+        y: 3090
+        width: 120
+        height: 147
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a2bfc94dd93b0ccf0800000000000000
+      internalID: -233989690164970710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_2
+      rect:
+        serializedVersion: 2
+        x: 2743
+        y: 3090
+        width: 100
+        height: 146
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 174c1519b872d9b90800000000000000
+      internalID: -7233581946095156111
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_3
+      rect:
+        serializedVersion: 2
+        x: 2831
+        y: 3170
+        width: 30
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 147122680ce791e10800000000000000
+      internalID: 2168904060904806209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_4
+      rect:
+        serializedVersion: 2
+        x: 2861
+        y: 3176
+        width: 95
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c07c34a776196140800000000000000
+      internalID: 4713323188132278468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_5
+      rect:
+        serializedVersion: 2
+        x: 2956
+        y: 3193
+        width: 23
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7666237bb8c6d5b20800000000000000
+      internalID: 3124773063794779751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_6
+      rect:
+        serializedVersion: 2
+        x: 2977
+        y: 3179
+        width: 71
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b3c0825879247a10800000000000000
+      internalID: 1906194139041547192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_7
+      rect:
+        serializedVersion: 2
+        x: 3045
+        y: 3185
+        width: 57
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22e845cd05baf33b0800000000000000
+      internalID: -5530513453605417438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_8
+      rect:
+        serializedVersion: 2
+        x: 3045
+        y: 3211
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8709be8e18bfafe70800000000000000
+      internalID: 9149902128333688952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_9
+      rect:
+        serializedVersion: 2
+        x: 3092
+        y: 3163
+        width: 77
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df6b148c4ba162e10800000000000000
+      internalID: 2172453234009028349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_10
+      rect:
+        serializedVersion: 2
+        x: 3168
+        y: 2686
+        width: 259
+        height: 547
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c5f07a98ec58a4d90800000000000000
+      internalID: -7112725539359092900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_11
+      rect:
+        serializedVersion: 2
+        x: 2936
+        y: 3193
+        width: 12
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 91c40bd29ea229550800000000000000
+      internalID: 6166038020805905433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_12
+      rect:
+        serializedVersion: 2
+        x: 2981
+        y: 3189
+        width: 14
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fc14089a08b0ac9b0800000000000000
+      internalID: -5059218584169856561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_13
+      rect:
+        serializedVersion: 2
+        x: 2992
+        y: 3197
+        width: 12
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 845ca7bc381cc1ce0800000000000000
+      internalID: -1433057809611963064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_14
+      rect:
+        serializedVersion: 2
+        x: 2998
+        y: 3195
+        width: 10
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 434ad2bb6f23a0730800000000000000
+      internalID: 3966038457136817204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_15
+      rect:
+        serializedVersion: 2
+        x: 3042
+        y: 3184
+        width: 30
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 01e7dc70d4b602a90800000000000000
+      internalID: -7340749414026346992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_16
+      rect:
+        serializedVersion: 2
+        x: 3056
+        y: 3192
+        width: 23
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b18119353e61167e0800000000000000
+      internalID: -1774111612591859685
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_17
+      rect:
+        serializedVersion: 2
+        x: 3103
+        y: 3192
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b6b6fbf0e4429290800000000000000
+      internalID: -7885164264481704265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_18
+      rect:
+        serializedVersion: 2
+        x: 2860
+        y: 3183
+        width: 12
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47dcc38409b9e2a80800000000000000
+      internalID: -8489677203557266060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_19
+      rect:
+        serializedVersion: 2
+        x: 2913
+        y: 3188
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b9f158c1b28da8790800000000000000
+      internalID: -7526966147522682981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_20
+      rect:
+        serializedVersion: 2
+        x: 2923
+        y: 3190
+        width: 10
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6915d5a4bcc318e00800000000000000
+      internalID: 1045183432350323094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_21
+      rect:
+        serializedVersion: 2
+        x: 2929
+        y: 3183
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 542897c8712340be0800000000000000
+      internalID: -1512028498167233979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_22
+      rect:
+        serializedVersion: 2
+        x: 2940
+        y: 3182
+        width: 18
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 040d9bff173216de0800000000000000
+      internalID: -1341752241451052992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_23
+      rect:
+        serializedVersion: 2
+        x: 2958
+        y: 3182
+        width: 28
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a6321a230b61cfe0800000000000000
+      internalID: -1170536766804707680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_24
+      rect:
+        serializedVersion: 2
+        x: 2973
+        y: 3189
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bab3b881dce15c650800000000000000
+      internalID: 6252437523902708651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_25
+      rect:
+        serializedVersion: 2
+        x: 2982
+        y: 3184
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cbb60ea6e32c80170800000000000000
+      internalID: 8144973499436395452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_26
+      rect:
+        serializedVersion: 2
+        x: 2987
+        y: 3182
+        width: 26
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c9f5d2cea92e63e0800000000000000
+      internalID: -2058662149091886654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_27
+      rect:
+        serializedVersion: 2
+        x: 3007
+        y: 3185
+        width: 10
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d0f04f2b82367c730800000000000000
+      internalID: 4019290218903637773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_28
+      rect:
+        serializedVersion: 2
+        x: 3026
+        y: 3184
+        width: 17
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 65a6e7b6286f4cbd0800000000000000
+      internalID: -2610690843958416810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_29
+      rect:
+        serializedVersion: 2
+        x: 3073
+        y: 3188
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d8b61e137fa409640800000000000000
+      internalID: 5084646404855524237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_30
+      rect:
+        serializedVersion: 2
+        x: 3114
+        y: 3184
+        width: 18
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f466d11575f7ef430800000000000000
+      internalID: 3818629547056522831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_31
+      rect:
+        serializedVersion: 2
+        x: 3209
+        y: 3185
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 92b715af3598a2000800000000000000
+      internalID: 11972942796782377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_32
+      rect:
+        serializedVersion: 2
+        x: 2635
+        y: 3170
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 110a657f8ae6eb970800000000000000
+      internalID: 8772570796147515409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_33
+      rect:
+        serializedVersion: 2
+        x: 2640
+        y: 3173
+        width: 13
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a1f96fab3617f16e0800000000000000
+      internalID: -1864647047555670246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_34
+      rect:
+        serializedVersion: 2
+        x: 2679
+        y: 3168
+        width: 13
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e66859b80becac740800000000000000
+      internalID: 5173174379639834222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_35
+      rect:
+        serializedVersion: 2
+        x: 2773
+        y: 3175
+        width: 19
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb3edf61538fc18e0800000000000000
+      internalID: -1721228050659679297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_36
+      rect:
+        serializedVersion: 2
+        x: 2794
+        y: 3172
+        width: 11
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 391eb2adc41891cf0800000000000000
+      internalID: -281051334656138861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_37
+      rect:
+        serializedVersion: 2
+        x: 2854
+        y: 3169
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38801fed220e80560800000000000000
+      internalID: 7280315238018254979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_38
+      rect:
+        serializedVersion: 2
+        x: 2858
+        y: 3164
+        width: 14
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 167d78f3d1cda3dc0800000000000000
+      internalID: -3658369729107077279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_39
+      rect:
+        serializedVersion: 2
+        x: 2876
+        y: 3138
+        width: 36
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b5497d98e6093e5a0800000000000000
+      internalID: -6493187433304714149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_40
+      rect:
+        serializedVersion: 2
+        x: 2900
+        y: 3170
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af0e15315153bb300800000000000000
+      internalID: 268866967393394938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_41
+      rect:
+        serializedVersion: 2
+        x: 2904
+        y: 3155
+        width: 23
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a982ab49cf3e7d00800000000000000
+      internalID: 972284703348525481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_42
+      rect:
+        serializedVersion: 2
+        x: 2914
+        y: 3169
+        width: 14
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5fada6d554ced5a50800000000000000
+      internalID: 6511620418911787765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_43
+      rect:
+        serializedVersion: 2
+        x: 2922
+        y: 3149
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0bde3c315f2863040800000000000000
+      internalID: 4627029656279969200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_44
+      rect:
+        serializedVersion: 2
+        x: 2924
+        y: 3165
+        width: 21
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e3b57a61b49360460800000000000000
+      internalID: 7207511248318454590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_45
+      rect:
+        serializedVersion: 2
+        x: 2958
+        y: 3168
+        width: 23
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0433db562cba55360800000000000000
+      internalID: 7157816034194174784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_46
+      rect:
+        serializedVersion: 2
+        x: 2978
+        y: 3151
+        width: 34
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 02c4ea479f04129f0800000000000000
+      internalID: -495043043885429728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_47
+      rect:
+        serializedVersion: 2
+        x: 2995
+        y: 3139
+        width: 49
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 55cb13cb4a34bae50800000000000000
+      internalID: 6821620435393821781
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_48
+      rect:
+        serializedVersion: 2
+        x: 3025
+        y: 3127
+        width: 72
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ce9b404fc45df6a0800000000000000
+      internalID: -6413877045192057146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_49
+      rect:
+        serializedVersion: 2
+        x: 3087
+        y: 3168
+        width: 15
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be6f4fb767bbcdb00800000000000000
+      internalID: 854764146853738219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_50
+      rect:
+        serializedVersion: 2
+        x: 3097
+        y: 3165
+        width: 16
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e9d5d4baa16c58b80800000000000000
+      internalID: -8393084512689627746
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_51
+      rect:
+        serializedVersion: 2
+        x: 3099
+        y: 3176
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 663bfcf525af55f30800000000000000
+      internalID: 4563829029111575398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_52
+      rect:
+        serializedVersion: 2
+        x: 3117
+        y: 3175
+        width: 13
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9aa1c37ca7cb8d080800000000000000
+      internalID: -9162366206370637143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_53
+      rect:
+        serializedVersion: 2
+        x: 3120
+        y: 3171
+        width: 18
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a4e6a1d1f07fbc400800000000000000
+      internalID: 345641440708816458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_54
+      rect:
+        serializedVersion: 2
+        x: 3134
+        y: 3165
+        width: 14
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0aaaa513783b2f730800000000000000
+      internalID: 4031482009679997600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_55
+      rect:
+        serializedVersion: 2
+        x: 3181
+        y: 3170
+        width: 15
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: efb812aa441e93e00800000000000000
+      internalID: 1025098075231849470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_56
+      rect:
+        serializedVersion: 2
+        x: 3196
+        y: 3170
+        width: 23
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 840556efc6cc9a5a0800000000000000
+      internalID: -6509447017890754488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_57
+      rect:
+        serializedVersion: 2
+        x: 3196
+        y: 3171
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d43cf7dbaa80e6190800000000000000
+      internalID: -7967421161355099315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_58
+      rect:
+        serializedVersion: 2
+        x: 2620
+        y: 3151
+        width: 7
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 66c7117bc7d6dcf50800000000000000
+      internalID: 6903294186243587174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_59
+      rect:
+        serializedVersion: 2
+        x: 2629
+        y: 3158
+        width: 12
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f9cdd4fde0a55a900800000000000000
+      internalID: 695060737421073567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_60
+      rect:
+        serializedVersion: 2
+        x: 2638
+        y: 3163
+        width: 13
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e066f56716491a40800000000000000
+      internalID: 5339375899533271267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_61
+      rect:
+        serializedVersion: 2
+        x: 2640
+        y: 3155
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b057aa56831171560800000000000000
+      internalID: 7284309856216577291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_62
+      rect:
+        serializedVersion: 2
+        x: 2653
+        y: 3154
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 010e904463de61010800000000000000
+      internalID: 1159374771419996176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_63
+      rect:
+        serializedVersion: 2
+        x: 2657
+        y: 3159
+        width: 28
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a97cf447cf6a52bf0800000000000000
+      internalID: -349689792837990502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_64
+      rect:
+        serializedVersion: 2
+        x: 2669
+        y: 3157
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a6476b35974e23780800000000000000
+      internalID: -8704643920007105430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_65
+      rect:
+        serializedVersion: 2
+        x: 2681
+        y: 3161
+        width: 13
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb7843a8e9d736780800000000000000
+      internalID: -8690964736017922117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_66
+      rect:
+        serializedVersion: 2
+        x: 2688
+        y: 3164
+        width: 14
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5112f8433ac321d40800000000000000
+      internalID: 5553567962160374037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_67
+      rect:
+        serializedVersion: 2
+        x: 2699
+        y: 3168
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 28d722bfd6d369370800000000000000
+      internalID: 8328912103442382210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_68
+      rect:
+        serializedVersion: 2
+        x: 2736
+        y: 3151
+        width: 11
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 042b05c6cfe7c7040800000000000000
+      internalID: 4646728538153595456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_69
+      rect:
+        serializedVersion: 2
+        x: 2773
+        y: 3155
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3fcf7879af14f8080800000000000000
+      internalID: -9183048570645250829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_70
+      rect:
+        serializedVersion: 2
+        x: 2806
+        y: 3159
+        width: 12
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5120744bdd3b5d4e0800000000000000
+      internalID: -1957460698228915691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_71
+      rect:
+        serializedVersion: 2
+        x: 2821
+        y: 3144
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 11ed7f2c6d1de9400800000000000000
+      internalID: 332934142796226065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_72
+      rect:
+        serializedVersion: 2
+        x: 2835
+        y: 3161
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d263c771559155fa0800000000000000
+      internalID: -5812711890794826195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_73
+      rect:
+        serializedVersion: 2
+        x: 2838
+        y: 3136
+        width: 32
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1bbeb6e30444cd550800000000000000
+      internalID: 6186895030816074673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_74
+      rect:
+        serializedVersion: 2
+        x: 2864
+        y: 3143
+        width: 15
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bcf78d29afbb52d60800000000000000
+      internalID: 7864899009152319435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_75
+      rect:
+        serializedVersion: 2
+        x: 2866
+        y: 3154
+        width: 17
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c210bc49d835094a0800000000000000
+      internalID: -6588674387291209428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_76
+      rect:
+        serializedVersion: 2
+        x: 2876
+        y: 3144
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca37733bb93a733e0800000000000000
+      internalID: -2074009214258809940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_77
+      rect:
+        serializedVersion: 2
+        x: 2887
+        y: 3165
+        width: 10
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f0f3708e60d97930800000000000000
+      internalID: 4141570505363943666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_78
+      rect:
+        serializedVersion: 2
+        x: 2906
+        y: 3137
+        width: 27
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a6d658bf253bee2b0800000000000000
+      internalID: -5553304121512727190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_79
+      rect:
+        serializedVersion: 2
+        x: 2913
+        y: 3154
+        width: 11
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bedcd1354cc462850800000000000000
+      internalID: 6351848730544426475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_80
+      rect:
+        serializedVersion: 2
+        x: 2933
+        y: 3148
+        width: 10
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f3608603d0bd5430800000000000000
+      internalID: 3773366483200009201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_81
+      rect:
+        serializedVersion: 2
+        x: 2942
+        y: 3149
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 54c0c541e1f263ab0800000000000000
+      internalID: -5028780127675478971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_82
+      rect:
+        serializedVersion: 2
+        x: 2949
+        y: 3150
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 63f4fa00d918388f0800000000000000
+      internalID: -539445019032989898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_83
+      rect:
+        serializedVersion: 2
+        x: 2956
+        y: 3147
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9dd3349bf0ae20230800000000000000
+      internalID: 3603700005103418841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_84
+      rect:
+        serializedVersion: 2
+        x: 2966
+        y: 3164
+        width: 19
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8174775e9ee85d5c0800000000000000
+      internalID: -4191286742970054888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_85
+      rect:
+        serializedVersion: 2
+        x: 2970
+        y: 3138
+        width: 16
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5915f33a81db92910800000000000000
+      internalID: 1813188238509035925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_86
+      rect:
+        serializedVersion: 2
+        x: 2980
+        y: 3146
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a7f09c5ec02739c60800000000000000
+      internalID: 7823722377393016698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_87
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 3151
+        width: 11
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d020a2ff7202e1c70800000000000000
+      internalID: 8943621266161140237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_88
+      rect:
+        serializedVersion: 2
+        x: 3002
+        y: 3145
+        width: 23
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e31d7ccd5757fa1b0800000000000000
+      internalID: -5643162658996235970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_89
+      rect:
+        serializedVersion: 2
+        x: 3073
+        y: 3149
+        width: 32
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e212f26da5adba790800000000000000
+      internalID: -7517675069289586386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_90
+      rect:
+        serializedVersion: 2
+        x: 3181
+        y: 3154
+        width: 34
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d0490923dc237530800000000000000
+      internalID: 3851471391770099929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_91
+      rect:
+        serializedVersion: 2
+        x: 3200
+        y: 3166
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c4b96d213224df7b0800000000000000
+      internalID: -5188918477253600436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_92
+      rect:
+        serializedVersion: 2
+        x: 3201
+        y: 3146
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 17c7412bbfa0f1750800000000000000
+      internalID: 6277748481718516849
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_93
+      rect:
+        serializedVersion: 2
+        x: 2610
+        y: 3145
+        width: 10
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 849c5b0853c3959d0800000000000000
+      internalID: -2785128694061610680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_94
+      rect:
+        serializedVersion: 2
+        x: 2687
+        y: 3137
+        width: 14
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f50f929ebd32b8aa0800000000000000
+      internalID: -6157788638082371489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_95
+      rect:
+        serializedVersion: 2
+        x: 2740
+        y: 3145
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c3bc5f2b67310450800000000000000
+      internalID: 6053180307658290114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_96
+      rect:
+        serializedVersion: 2
+        x: 2838
+        y: 3143
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f8af443873e6d2250800000000000000
+      internalID: 5921510269766662799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_97
+      rect:
+        serializedVersion: 2
+        x: 2869
+        y: 3133
+        width: 13
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7ce699a04ff236c0800000000000000
+      internalID: -4164986052176057221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_98
+      rect:
+        serializedVersion: 2
+        x: 2906
+        y: 3142
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 31a1902852b7eb820800000000000000
+      internalID: 2935919408117783059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_99
+      rect:
+        serializedVersion: 2
+        x: 2933
+        y: 3138
+        width: 15
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9686dbe5071e8dee0800000000000000
+      internalID: -1235990224971143063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_100
+      rect:
+        serializedVersion: 2
+        x: 2947
+        y: 3136
+        width: 14
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed8f063db63ea3af0800000000000000
+      internalID: -415769963330996002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_101
+      rect:
+        serializedVersion: 2
+        x: 2960
+        y: 3132
+        width: 14
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 50ff0ac5b9d91e5c0800000000000000
+      internalID: -4187892887878303995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_102
+      rect:
+        serializedVersion: 2
+        x: 2968
+        y: 3143
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f4e0c127811677ce0800000000000000
+      internalID: -1407549600908439985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_103
+      rect:
+        serializedVersion: 2
+        x: 2980
+        y: 3139
+        width: 18
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 757fc7bf5cb0a99a0800000000000000
+      internalID: -6225650589930555561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_104
+      rect:
+        serializedVersion: 2
+        x: 2994
+        y: 3124
+        width: 29
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3948646a28328ba70800000000000000
+      internalID: 8842856912384328851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_105
+      rect:
+        serializedVersion: 2
+        x: 3006
+        y: 3143
+        width: 11
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd81a397f11ae7510800000000000000
+      internalID: 1548852478411938011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_106
+      rect:
+        serializedVersion: 2
+        x: 3020
+        y: 3130
+        width: 17
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6cb885aa042539fc0800000000000000
+      internalID: -3489354848592688186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_107
+      rect:
+        serializedVersion: 2
+        x: 3033
+        y: 3133
+        width: 25
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e7c669d16325a0df0800000000000000
+      internalID: -213267639968568194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_108
+      rect:
+        serializedVersion: 2
+        x: 3196
+        y: 3136
+        width: 15
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 39059e61edf6ee810800000000000000
+      internalID: 1796496301025218707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_109
+      rect:
+        serializedVersion: 2
+        x: 3240
+        y: 3145
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7eb921fbbb4937e50800000000000000
+      internalID: 6805946995972414439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_110
+      rect:
+        serializedVersion: 2
+        x: 2598
+        y: 3133
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d35595da15eb0bf80800000000000000
+      internalID: -8092759272374840003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_111
+      rect:
+        serializedVersion: 2
+        x: 2684
+        y: 3120
+        width: 16
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 300635180fea642c0800000000000000
+      internalID: -4447675233996677117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_112
+      rect:
+        serializedVersion: 2
+        x: 2713
+        y: 3132
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e8399a255d8a7d530800000000000000
+      internalID: 3879755238171317134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_113
+      rect:
+        serializedVersion: 2
+        x: 2726
+        y: 3128
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a5084c4f377649d30800000000000000
+      internalID: 4437285280592199770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_114
+      rect:
+        serializedVersion: 2
+        x: 2769
+        y: 3131
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a179d67d02cd1d50800000000000000
+      internalID: 6709732382936232353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_115
+      rect:
+        serializedVersion: 2
+        x: 2782
+        y: 3130
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b8b59d838e9141ad0800000000000000
+      internalID: -2732530588730172533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_116
+      rect:
+        serializedVersion: 2
+        x: 2805
+        y: 3132
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0129777a9b6e366c0800000000000000
+      internalID: -4151220746452495856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_117
+      rect:
+        serializedVersion: 2
+        x: 2820
+        y: 3127
+        width: 16
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2272d3015d19a3040800000000000000
+      internalID: 4628171911363110690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_118
+      rect:
+        serializedVersion: 2
+        x: 2834
+        y: 3127
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a7fca4ec29a7990d0800000000000000
+      internalID: -3415564071438987398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_119
+      rect:
+        serializedVersion: 2
+        x: 2844
+        y: 3132
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a6f14b6b7cd77b710800000000000000
+      internalID: 1708972880327614314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_120
+      rect:
+        serializedVersion: 2
+        x: 2845
+        y: 3120
+        width: 12
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 636d9a669533df250800000000000000
+      internalID: 5979992339285399094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_121
+      rect:
+        serializedVersion: 2
+        x: 2855
+        y: 3127
+        width: 10
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 07ecaf6499775e240800000000000000
+      internalID: 4820390476374527600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_122
+      rect:
+        serializedVersion: 2
+        x: 2858
+        y: 3132
+        width: 11
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a1c0e729c7670b170800000000000000
+      internalID: 8192177999592688666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_123
+      rect:
+        serializedVersion: 2
+        x: 2864
+        y: 3117
+        width: 19
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4bb1a0aed9a31d8b0800000000000000
+      internalID: -5129254050687476812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_124
+      rect:
+        serializedVersion: 2
+        x: 2873
+        y: 3132
+        width: 13
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03f6d774ddc2ecb30800000000000000
+      internalID: 4309431222338940720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_125
+      rect:
+        serializedVersion: 2
+        x: 2879
+        y: 3124
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 07581115ae62c0680800000000000000
+      internalID: -8787605985082374800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_126
+      rect:
+        serializedVersion: 2
+        x: 2886
+        y: 3131
+        width: 11
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d217a844b1096eeb0800000000000000
+      internalID: -4690903515071352531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_127
+      rect:
+        serializedVersion: 2
+        x: 2889
+        y: 3086
+        width: 53
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f6e3675562ef317b0800000000000000
+      internalID: -5254576899615211921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_128
+      rect:
+        serializedVersion: 2
+        x: 2893
+        y: 3126
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 42a196ae24ce046e0800000000000000
+      internalID: -1855223274331891164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_129
+      rect:
+        serializedVersion: 2
+        x: 2894
+        y: 3131
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c859f95b6eec0910800000000000000
+      internalID: 1805079695507151049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_130
+      rect:
+        serializedVersion: 2
+        x: 2935
+        y: 3132
+        width: 12
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 57a9c3f922e56e210800000000000000
+      internalID: 1361879440119601781
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_131
+      rect:
+        serializedVersion: 2
+        x: 2945
+        y: 3130
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d87491bb4a86eab0800000000000000
+      internalID: -4979140280305026856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_132
+      rect:
+        serializedVersion: 2
+        x: 2949
+        y: 3128
+        width: 11
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 605f8e9c3b0aa5fb0800000000000000
+      internalID: -4658234170514279162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_133
+      rect:
+        serializedVersion: 2
+        x: 2951
+        y: 3133
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 36157172dd3032300800000000000000
+      internalID: 226028654677152099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_134
+      rect:
+        serializedVersion: 2
+        x: 2953
+        y: 3127
+        width: 13
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a0664052808fad40800000000000000
+      internalID: 5597834159025709223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_135
+      rect:
+        serializedVersion: 2
+        x: 2965
+        y: 3127
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd949222f4539ecc0800000000000000
+      internalID: -3681352606406850083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_136
+      rect:
+        serializedVersion: 2
+        x: 2970
+        y: 3119
+        width: 16
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f6366f1980928820800000000000000
+      internalID: 2919054427101214455
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_137
+      rect:
+        serializedVersion: 2
+        x: 2982
+        y: 3132
+        width: 14
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 68ff19012bd6541d0800000000000000
+      internalID: -3367164534839967866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_138
+      rect:
+        serializedVersion: 2
+        x: 2984
+        y: 3127
+        width: 10
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 661d52d358613f780800000000000000
+      internalID: -8650545697736240794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_139
+      rect:
+        serializedVersion: 2
+        x: 2986
+        y: 3114
+        width: 29
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 90499fbf281f18400800000000000000
+      internalID: 324806193022866441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_140
+      rect:
+        serializedVersion: 2
+        x: 3036
+        y: 3127
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d904245474c3774b0800000000000000
+      internalID: -5442815347851640675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_141
+      rect:
+        serializedVersion: 2
+        x: 3041
+        y: 3127
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4abece033d0a47740800000000000000
+      internalID: 5148917102910696356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_142
+      rect:
+        serializedVersion: 2
+        x: 3049
+        y: 3130
+        width: 17
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2293000b5fb5921a0800000000000000
+      internalID: -6833829848780097246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_143
+      rect:
+        serializedVersion: 2
+        x: 3054
+        y: 3125
+        width: 10
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a1178135d0ba9200800000000000000
+      internalID: 187656764194754981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_144
+      rect:
+        serializedVersion: 2
+        x: 3062
+        y: 3089
+        width: 61
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a15b2c7a2d3f4a30800000000000000
+      internalID: 4201644230041096615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_145
+      rect:
+        serializedVersion: 2
+        x: 3077
+        y: 3130
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb27ca24c93e80720800000000000000
+      internalID: 2812748227565875903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_146
+      rect:
+        serializedVersion: 2
+        x: 3200
+        y: 3120
+        width: 7
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 218a7daddfa2f8690800000000000000
+      internalID: -7597806776564078574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_147
+      rect:
+        serializedVersion: 2
+        x: 2621
+        y: 3118
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da3ffc4840894d9f0800000000000000
+      internalID: -444563318027324499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_148
+      rect:
+        serializedVersion: 2
+        x: 2699
+        y: 3117
+        width: 20
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f96305f8944d8680800000000000000
+      internalID: -8751263077174646285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_149
+      rect:
+        serializedVersion: 2
+        x: 2733
+        y: 3120
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 36dd1956d0b397b90800000000000000
+      internalID: -7243693596924060317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_150
+      rect:
+        serializedVersion: 2
+        x: 2744
+        y: 3121
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d56a4625beb5b6d30800000000000000
+      internalID: 4425732125079414365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_151
+      rect:
+        serializedVersion: 2
+        x: 2749
+        y: 3117
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d05ca69e8c86e2900800000000000000
+      internalID: 661581407388878093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_152
+      rect:
+        serializedVersion: 2
+        x: 2768
+        y: 3125
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 281b85f73bc42bc60800000000000000
+      internalID: 7832407035770089858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_153
+      rect:
+        serializedVersion: 2
+        x: 2781
+        y: 3119
+        width: 13
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd902f0331e219a00800000000000000
+      internalID: 761440471962749403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_154
+      rect:
+        serializedVersion: 2
+        x: 2789
+        y: 3121
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec6cf0fe911fa4dd0800000000000000
+      internalID: -2500921549363624242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_155
+      rect:
+        serializedVersion: 2
+        x: 2797
+        y: 3117
+        width: 13
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 55ff5da860f057b10800000000000000
+      internalID: 1978504132072701781
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_156
+      rect:
+        serializedVersion: 2
+        x: 2800
+        y: 3122
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5bf34b4c3c9352af0800000000000000
+      internalID: -421867477107720267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_157
+      rect:
+        serializedVersion: 2
+        x: 2808
+        y: 3120
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb1b8157941559c40800000000000000
+      internalID: 5518406294351425980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_158
+      rect:
+        serializedVersion: 2
+        x: 2815
+        y: 3122
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac13b96323c296e80800000000000000
+      internalID: -8184962253593038390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_159
+      rect:
+        serializedVersion: 2
+        x: 2828
+        y: 3111
+        width: 19
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f36117ca0d3672c0800000000000000
+      internalID: -4434289666600901645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_160
+      rect:
+        serializedVersion: 2
+        x: 2857
+        y: 3123
+        width: 11
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7fa9e73fd41ed7240800000000000000
+      internalID: 4791233303505967863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_161
+      rect:
+        serializedVersion: 2
+        x: 2866
+        y: 3122
+        width: 11
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 948f6538c9b6b4de0800000000000000
+      internalID: -1347865343504746423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_162
+      rect:
+        serializedVersion: 2
+        x: 2878
+        y: 3117
+        width: 11
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e7274198f42e4d480800000000000000
+      internalID: -8875220134410292610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_163
+      rect:
+        serializedVersion: 2
+        x: 2884
+        y: 3111
+        width: 15
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 68c404a9284cc41a0800000000000000
+      internalID: -6823863270160446330
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_164
+      rect:
+        serializedVersion: 2
+        x: 2900
+        y: 3125
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 02afd2813841c2b60800000000000000
+      internalID: 7722570014312495648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_165
+      rect:
+        serializedVersion: 2
+        x: 2928
+        y: 3114
+        width: 11
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 108e602efc13805f0800000000000000
+      internalID: -790326965683427327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_166
+      rect:
+        serializedVersion: 2
+        x: 2937
+        y: 3120
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2eac798c29d2fb7e0800000000000000
+      internalID: -1747628021942596894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_167
+      rect:
+        serializedVersion: 2
+        x: 2941
+        y: 3112
+        width: 16
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: affb14e8bf2feb6c0800000000000000
+      internalID: -4125593046387408902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_168
+      rect:
+        serializedVersion: 2
+        x: 2952
+        y: 3113
+        width: 23
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b709aff61300d710800000000000000
+      internalID: 1715874855341590453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_169
+      rect:
+        serializedVersion: 2
+        x: 3016
+        y: 3111
+        width: 17
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1d0448732debdb800800000000000000
+      internalID: 629869332985561297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_170
+      rect:
+        serializedVersion: 2
+        x: 3019
+        y: 3120
+        width: 14
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c833d58c57e9347e0800000000000000
+      internalID: -1782406798798670964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_171
+      rect:
+        serializedVersion: 2
+        x: 3021
+        y: 3125
+        width: 13
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e448fe88404a935b0800000000000000
+      internalID: -5388095139787865010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_172
+      rect:
+        serializedVersion: 2
+        x: 3032
+        y: 3111
+        width: 21
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a067e60fb83b1f890800000000000000
+      internalID: -7425956896941640182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_173
+      rect:
+        serializedVersion: 2
+        x: 3048
+        y: 3121
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22ca6cc11f06bc120800000000000000
+      internalID: 2435146612210052130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_174
+      rect:
+        serializedVersion: 2
+        x: 3051
+        y: 3119
+        width: 13
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd467246042aa1610800000000000000
+      internalID: 1592763815670801628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_175
+      rect:
+        serializedVersion: 2
+        x: 3059
+        y: 3120
+        width: 13
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 46479a82c1b4f7980800000000000000
+      internalID: -8539023784157809564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_176
+      rect:
+        serializedVersion: 2
+        x: 3203
+        y: 3117
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de41045390657d000800000000000000
+      internalID: 60611717540877549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_177
+      rect:
+        serializedVersion: 2
+        x: 2598
+        y: 3117
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a553d3fa1229502c0800000000000000
+      internalID: -4466002782096378534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_178
+      rect:
+        serializedVersion: 2
+        x: 2621
+        y: 3112
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ed9f6c42b874f1b0800000000000000
+      internalID: -5623737327497011740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_179
+      rect:
+        serializedVersion: 2
+        x: 2652
+        y: 3117
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 14345a5d460de7700800000000000000
+      internalID: 540098136830722881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_180
+      rect:
+        serializedVersion: 2
+        x: 2725
+        y: 3117
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 56a6cc7837be692d0800000000000000
+      internalID: -3272169197805999515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_181
+      rect:
+        serializedVersion: 2
+        x: 2841
+        y: 3114
+        width: 14
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fc577f5236eeecad0800000000000000
+      internalID: -2679942618632718897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_182
+      rect:
+        serializedVersion: 2
+        x: 2841
+        y: 3104
+        width: 17
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 410d139d6f922cfc0800000000000000
+      internalID: -3476169822193987564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_183
+      rect:
+        serializedVersion: 2
+        x: 2851
+        y: 3091
+        width: 38
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7d0fb6d82b0fb8f90800000000000000
+      internalID: -6950196950248722217
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_184
+      rect:
+        serializedVersion: 2
+        x: 2854
+        y: 3117
+        width: 11
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 83130ef289f7d0af0800000000000000
+      internalID: -428546097915350728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_185
+      rect:
+        serializedVersion: 2
+        x: 2872
+        y: 3111
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7929a95318d16c980800000000000000
+      internalID: -8519089204337405289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_186
+      rect:
+        serializedVersion: 2
+        x: 2878
+        y: 3112
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bdb3df94cbe0b4960800000000000000
+      internalID: 7587174199093705691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_187
+      rect:
+        serializedVersion: 2
+        x: 2958
+        y: 3111
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d3cca0cefdebf320800000000000000
+      internalID: 2592927688891876304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_188
+      rect:
+        serializedVersion: 2
+        x: 2972
+        y: 3114
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5052f669f79f67730800000000000000
+      internalID: 3996656045717923077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_189
+      rect:
+        serializedVersion: 2
+        x: 2977
+        y: 3113
+        width: 14
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 87bc9ed23f1ef2690800000000000000
+      internalID: -7624627209551361160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_190
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 3111
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad5341d8c09e23360800000000000000
+      internalID: 7148031798706189786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_191
+      rect:
+        serializedVersion: 2
+        x: 3004
+        y: 3102
+        width: 19
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f10c8d5d9fd9f8a0800000000000000
+      internalID: -6270735139164388875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_192
+      rect:
+        serializedVersion: 2
+        x: 3030
+        y: 3108
+        width: 16
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bedad37d39c85c460800000000000000
+      internalID: 7261364540804017643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_193
+      rect:
+        serializedVersion: 2
+        x: 3041
+        y: 3090
+        width: 23
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 640b134a4f4feefd0800000000000000
+      internalID: -2310640227230568378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_194
+      rect:
+        serializedVersion: 2
+        x: 3059
+        y: 3111
+        width: 12
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5cc45df3a59a28320800000000000000
+      internalID: 2558793743382957253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_195
+      rect:
+        serializedVersion: 2
+        x: 2586
+        y: 3101
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 333f527be9d67e530800000000000000
+      internalID: 3884193732075320115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_196
+      rect:
+        serializedVersion: 2
+        x: 2592
+        y: 3101
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf9d598db70e25560800000000000000
+      internalID: 7301144768440293884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_197
+      rect:
+        serializedVersion: 2
+        x: 2682
+        y: 3102
+        width: 21
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5485190bfaaede290800000000000000
+      internalID: -7859367734389155771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_198
+      rect:
+        serializedVersion: 2
+        x: 2921
+        y: 3100
+        width: 10
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 78be62e6bfc3229e0800000000000000
+      internalID: -1647687463081677945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_199
+      rect:
+        serializedVersion: 2
+        x: 2938
+        y: 3090
+        width: 48
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 898ef7de337400f50800000000000000
+      internalID: 6845549721956640920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_200
+      rect:
+        serializedVersion: 2
+        x: 2979
+        y: 3094
+        width: 25
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f2b61480299c4b970800000000000000
+      internalID: 8769856003438111535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_201
+      rect:
+        serializedVersion: 2
+        x: 3021
+        y: 3106
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd761631832da8200800000000000000
+      internalID: 183189873147078620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_202
+      rect:
+        serializedVersion: 2
+        x: 3039
+        y: 3107
+        width: 11
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e2f1a6566c9f15b90800000000000000
+      internalID: -7254742894216863954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_203
+      rect:
+        serializedVersion: 2
+        x: 2580
+        y: 3098
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e82c7eb3392451270800000000000000
+      internalID: 8220549894967378574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_204
+      rect:
+        serializedVersion: 2
+        x: 3005
+        y: 3090
+        width: 31
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1aa36c55aa97a37f0800000000000000
+      internalID: -632059025201677663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_205
+      rect:
+        serializedVersion: 2
+        x: 3038
+        y: 3098
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b2eb8c5aa4b288160800000000000000
+      internalID: 7027914818120629803
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_206
+      rect:
+        serializedVersion: 2
+        x: 2483
+        y: 2443
+        width: 839
+        height: 642
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd2b00d89f25b7440800000000000000
+      internalID: 4934629048480477915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_207
+      rect:
+        serializedVersion: 2
+        x: 3216
+        y: 3079
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c6dc2cd73958169e0800000000000000
+      internalID: -1629874721614803604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_208
+      rect:
+        serializedVersion: 2
+        x: 2509
+        y: 3022
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a3237b57b73191820800000000000000
+      internalID: 2889362056911729210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puit_sans_ombre_209
+      rect:
+        serializedVersion: 2
+        x: 2491
+        y: 2901
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e259dec52f8fe4f0800000000000000
+      internalID: -797261216474377503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable: {}
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
