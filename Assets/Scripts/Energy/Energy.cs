@@ -7,11 +7,10 @@ using UnityEngine.UI;
 
 public class Energy : MonoBehaviour
 {
-
     [SerializeField] private int _energy;
     private int _maxEnergy;
 
-    private int _restoreDuration;
+    [SerializeField] private int _restoreDuration = 900;
 
     private DateTime _currentTime;    
     private DateTime _nextEnergyTime;
@@ -26,8 +25,6 @@ public class Energy : MonoBehaviour
     { 
         _maxEnergy = 5;
         _currentTime = DateTime.Now;
-        _restoreDuration = 900;
-
 
         // If you have played before -> Load Data
         if (PlayerPrefs.HasKey("CurrentEnergy"))
@@ -48,21 +45,24 @@ public class Energy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        _currentTime = DateTime.Now;
+
         UpdateEnergyTime();
+
         UpdateVisualEnergy();
+
         Save();
     }
 
     // Update that make you restore your energy when you used some
     private void UpdateEnergyTime()
     {
-        _currentTime = DateTime.Now;
-
         if (_energy >= _maxEnergy)
         {
             _textRemainingTime.text = "";
             return;
         }
+
         // Get the DeltaTime
         _energyDT = _nextEnergyTime - _currentTime;
         string timeValue = String.Format("{0:D2}:{1:D2}", _energyDT.Minutes, _energyDT.Seconds);
@@ -131,6 +131,15 @@ public class Energy : MonoBehaviour
         if (_energy >= _maxEnergy)
         {
             _energy = _maxEnergy;
+            _nextEnergyTime = DateTime.MinValue;
+        }
+    }
+
+    public void ForceAddEnergy()
+    {
+        _energy += 1;
+        if (_energy >= _maxEnergy)
+        {
             _nextEnergyTime = DateTime.MinValue;
         }
     }
