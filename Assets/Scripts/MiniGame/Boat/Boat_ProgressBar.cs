@@ -10,6 +10,8 @@ public class Boat_ProgressBar : MonoBehaviour
 
     [SerializeField] private float _progressTime;
 
+    private bool _isRunning = false;
+
     private void Start()
     {
         _progressBar = GetComponent<Image>();
@@ -17,6 +19,9 @@ public class Boat_ProgressBar : MonoBehaviour
     }
     private void Update()
     {
+        if (_isRunning == false)
+            return;
+
         _progressTime += Time.deltaTime;
 
         _progressBar.fillAmount = _progressTime/_targetTime;
@@ -30,5 +35,10 @@ public class Boat_ProgressBar : MonoBehaviour
     {
         _progressTime += time;
         if(_progressTime < 0.0f) _progressTime = 0.0f;
+    }
+
+    public void Run()
+    {
+        _isRunning = true;
     }
 }

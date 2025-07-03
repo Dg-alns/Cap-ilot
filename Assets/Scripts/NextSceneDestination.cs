@@ -30,22 +30,17 @@ public class NextSceneDestination : ScriptableObject
     }
     public string GetPreviousScene()
     {
-        return _sceneName;
+        return _CurrentsceneName;
     }
-
-    public void LoadPreviousScene()
+    public string GetSceneIle()
     {
-        SceneManager.LoadScene(_CurrentsceneName);
+        return _ileNamePort;
     }
 
     public void LoadNewIle()
     {
         SceneManager.LoadScene(_ileNamePort);
     }
-
-
-
-
 
     public IEnumerator NextScene(string scene)
     {
@@ -68,9 +63,6 @@ public class NextSceneDestination : ScriptableObject
         yield return null;
     }
 
-
-
-
     public IEnumerator MiniGameBoat(string scene)
     {
         yield return null;
@@ -79,6 +71,25 @@ public class NextSceneDestination : ScriptableObject
         SetCurrentScene(SceneManager.GetActiveScene().name);
 
         AsyncOperation operation = SceneManager.LoadSceneAsync(_sceneName);
+        operation.allowSceneActivation = false;
+
+
+        while (!operation.isDone)
+        {
+            if (operation.progress >= 0.9f)
+            {
+                yield return new WaitForSeconds(1);
+                operation.allowSceneActivation = true;
+            }
+        }
+        yield return null;
+    }
+
+    public IEnumerator NewIle()
+    {
+        yield return null;
+
+        AsyncOperation operation = SceneManager.LoadSceneAsync(_ileNamePort);
         operation.allowSceneActivation = false;
 
 

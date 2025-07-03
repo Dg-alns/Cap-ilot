@@ -25,18 +25,17 @@ public class TirBut_Score : MonoBehaviour
     private List<ScoreState> scoreStates;
     private List<Image> images;
 
-    public int score = 0;
+    //public int score = 0;
 
     public bool end = false;
 
-    [SerializeField] private VisualWinning _visualWinning; 
+    [SerializeField] private Score score; 
 
     void Start()
     {
         scoreStates = new List<ScoreState>() { ScoreState.Shooting, ScoreState.None, ScoreState.None, ScoreState.None, ScoreState.None, };
         images = new List<Image>(GetComponentsInChildren<Image>());
         images[nbShoot].color = _colorMap[ScoreState.Shooting];
-        _visualWinning.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -50,7 +49,7 @@ public class TirBut_Score : MonoBehaviour
         if (goal)
         {
             scoreStates[nbShoot] = ScoreState.Win;
-            score++;
+            score.AddScore();
         }
         else 
         {
@@ -75,8 +74,7 @@ public class TirBut_Score : MonoBehaviour
     {
         // Active the visual winning
         end = true;
-        _visualWinning.gameObject.SetActive(true);
-        _visualWinning.GetComponent<Animator>().SetBool("TEST", true);
+        score.LauchScore();
 
     }
 }
