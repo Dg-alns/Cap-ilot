@@ -8,6 +8,10 @@ public class LoadNexScene : MonoBehaviour
 
     public Animator animator;
 
+    private void Start()
+    {
+        _NextSceneData.isLauch = false;
+    }
 
     public void LoadNextScene(string scene)
     {

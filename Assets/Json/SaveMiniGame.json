@@ -1,0 +1,12 @@
+{
+  "MiniGame_ObjCachee": {
+    "_nbStar": 3,
+    "_bestScore": 3,
+    "_showInfo": false
+  },
+  "MiniGame_Marathon": {
+    "_nbStar": 3,
+    "_bestScore": 15,
+    "_showInfo": true
+  }
+}

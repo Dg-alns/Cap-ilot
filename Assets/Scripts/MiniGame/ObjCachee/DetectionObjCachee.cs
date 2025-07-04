@@ -2,12 +2,15 @@ using System.Collections.Generic;
 using NUnit.Framework;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class DetectionObjCachee : DetectionUI
 {
     public Camera cam;
     public Timer timer;
     public Score score;
+    public Sauvegarde_Minigame minigame;
 
     List<Objects> objects;
     List<TextMeshProUGUI> nameobjs;
@@ -70,13 +73,14 @@ public class DetectionObjCachee : DetectionUI
                 if (Detection(diabete))
                     break;
 
-                timer.stop = true;
 
                 objects[i].gameObject.SetActive(false);
                 nameobjs[i].fontStyle = FontStyles.Strikethrough;
-
-                infos.AssociateInfo(objects[i]);
-                infos.gameObject.SetActive(true);
+                if (minigame.GetCanShowInfo(SceneManager.GetActiveScene().name) == true)
+                {
+                    timer.stop = true;
+                    infos.AssociateInfo(objects[i]);
+                    infos.gameObject.SetActive(true); }
                 break;
             }
         }
@@ -98,4 +102,5 @@ public class DetectionObjCachee : DetectionUI
         }
         
     }
+
 }

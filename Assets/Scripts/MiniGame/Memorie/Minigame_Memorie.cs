@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Minigame_Memorie : MonoBehaviour
@@ -13,6 +14,7 @@ public class Minigame_Memorie : MonoBehaviour
     public Particle_Memorie mParticleMemorie;
     public Score score;
 
+    public Sauvegarde_Minigame minigame;
     public Diabete_Memorie diabete;
 
     public Infos_MiniJeux infos;
@@ -94,9 +96,13 @@ public class Minigame_Memorie : MonoBehaviour
         score.AddScore();
 
         yield return new WaitForSeconds(0.3f);
-        infos.gameObject.SetActive(true);
 
-        infos.AssociateInfo(mShowingCard[0].GetComponent<Objects>());
+        if (minigame.GetCanShowInfo(SceneManager.GetActiveScene().name) == true)
+        {
+            infos.gameObject.SetActive(true);
+
+            infos.AssociateInfo(mShowingCard[0].GetComponent<Objects>());
+        }
 
         mShowingCard.Clear();
     }

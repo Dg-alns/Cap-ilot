@@ -5,15 +5,19 @@ public class Score : MonoBehaviour
 {
     public Timer timer;
     public GameObject win;
+    public Sauvegarde_Minigame save;
     public float MinBronze;
     public float MinArgent;
     public float MinOr;
 
-    float MiniGamePoint = 0;
+    public int MiniGamePoint = 0;
 
     public int mPoint = 200;
     public int mCurrentScore;
     public int mWinnigScore;
+
+
+    public int nbStars;
 
     bool animLoad = false;
 
@@ -29,7 +33,7 @@ public class Score : MonoBehaviour
         mCurrentScore = score;
     }
 
-    private void Start()
+    private void Awake()
     {
         gameObject.SetActive(false);
         win.SetActive(false);
@@ -64,6 +68,8 @@ public class Score : MonoBehaviour
         animator = GetComponent<Animator>();
 
         GetMedailles(animator);
+
+        save.SaveMiniGame();
         animLoad = true;
     }
 
@@ -79,32 +85,49 @@ public class Score : MonoBehaviour
         if (timer != null)
         {
             if (MiniGamePoint > MinBronze)
+            {
                 animator.SetBool("0", true);
+                nbStars = 0;
+            }
 
-            else if (MiniGamePoint <= MinBronze && MiniGamePoint > MinArgent)
+            else if (MiniGamePoint <= MinBronze && MiniGamePoint > MinArgent){
                 animator.SetBool("1", true);
+                nbStars = 1;
+            }
 
-            else if (MiniGamePoint <= MinArgent && MiniGamePoint > MinOr)
+            else if (MiniGamePoint <= MinArgent && MiniGamePoint > MinOr){
                 animator.SetBool("2", true);
+                nbStars = 2;
+            }
 
-            else if (MiniGamePoint <= MinOr)
+            else if (MiniGamePoint <= MinOr){
                 animator.SetBool("3", true);
+                nbStars = 3;
+            }
 
             return;
         }
 
 
-        if (MiniGamePoint < MinBronze)
+        if (MiniGamePoint < MinBronze){
             animator.SetBool("0", true);
+            nbStars = 0;
+        }
 
-        else if (MiniGamePoint >= MinBronze && MiniGamePoint < MinArgent)
+        else if (MiniGamePoint >= MinBronze && MiniGamePoint < MinArgent){
             animator.SetBool("1", true);
+            nbStars = 1;
+        }
 
-        else if (MiniGamePoint >= MinArgent && MiniGamePoint < MinOr)
+        else if (MiniGamePoint >= MinArgent && MiniGamePoint < MinOr){
             animator.SetBool("2", true);
+            nbStars = 2;
+        }
 
-        else if (MiniGamePoint >= MinOr)
+        else if (MiniGamePoint >= MinOr){
             animator.SetBool("3", true);
+            nbStars = 3;
+        }
 
 
     }

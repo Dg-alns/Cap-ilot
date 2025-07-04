@@ -232,6 +232,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 316655700}
+  - component: {fileID: 316655701}
   m_Layer: 0
   m_Name: === Game ===
   m_TagString: Untagged
@@ -256,6 +257,19 @@ Transform:
   - {fileID: 1152427271}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &316655701
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 316655699}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68d6c26bbc56f394d8e0aa5e563b0e67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  score: {fileID: 1152427273}
 --- !u!1 &358867897
 GameObject:
   m_ObjectHideFlags: 0
@@ -475,6 +489,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1324019609}
     m_Modifications:
+    - target: {fileID: 540794382405874316, guid: b54b2990353f95c41bbdb5a13dd67270, type: 3}
+      propertyPath: score
+      value: 
+      objectReference: {fileID: 1152427273}
     - target: {fileID: 540794382405874316, guid: b54b2990353f95c41bbdb5a13dd67270, type: 3}
       propertyPath: GameObjectToStart
       value: 
@@ -1863,6 +1881,10 @@ PrefabInstance:
       propertyPath: win
       value: 
       objectReference: {fileID: 564172965}
+    - target: {fileID: 569796693142497412, guid: 869b14e2855a9f7479f4d1a7cd490d84, type: 3}
+      propertyPath: save
+      value: 
+      objectReference: {fileID: 316655701}
     - target: {fileID: 569796693142497412, guid: 869b14e2855a9f7479f4d1a7cd490d84, type: 3}
       propertyPath: MinOr
       value: 11000

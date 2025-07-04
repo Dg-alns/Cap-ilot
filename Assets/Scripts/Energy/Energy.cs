@@ -10,7 +10,7 @@ public class Energy : MonoBehaviour
     [SerializeField] private int _energy;
     private int _maxEnergy;
 
-    [SerializeField] private int _restoreDuration = 900;
+    [SerializeField] private int _restoreDuration;
 
     private DateTime _currentTime;    
     private DateTime _nextEnergyTime;
@@ -71,10 +71,14 @@ public class Energy : MonoBehaviour
         if (_energyDT.Seconds <= 0)
         {
             _energy++;
+            Debug.Log(_nextEnergyTime);
             // If you still don't have full energy
             if (_energy < _maxEnergy)
             {
+
+                Debug.Log("Je le restart");
                 RestartRestorationTime();
+                Debug.Log(_nextEnergyTime);
             }
             // If you have full energy 
             else
@@ -120,11 +124,16 @@ public class Energy : MonoBehaviour
     {
         if (_energy > 0)
         {
+            Debug.Log("Can Use Energy");
             _energy -= 1;
             if(_nextEnergyTime == DateTime.MinValue)
             {
                 StartRestorationTime(); 
             }
+        }
+        else
+        {
+            Debug.Log("Can't Use Energy");
         }
     }
 
