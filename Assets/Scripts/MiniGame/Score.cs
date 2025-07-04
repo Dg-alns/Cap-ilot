@@ -12,7 +12,7 @@ public class Score : MonoBehaviour
 
     public int MiniGamePoint = 0;
 
-    public int mPoint = 200;
+    public int mPoint = 1;
     public int mCurrentScore;
     public int mWinnigScore;
 
@@ -69,7 +69,7 @@ public class Score : MonoBehaviour
 
         GetMedailles(animator);
 
-        save.SaveMiniGame();
+        save.SaveMiniGame(timer);
         animLoad = true;
     }
 

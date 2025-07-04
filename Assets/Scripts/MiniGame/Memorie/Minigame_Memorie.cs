@@ -23,7 +23,6 @@ public class Minigame_Memorie : MonoBehaviour
     void Awake()
     {
         nbSlots = 16;
-        score.mWinnigScore = nbSlots * 100;
 
         for (int i = 0; i < nbSlots; i++)
         {
@@ -33,8 +32,9 @@ public class Minigame_Memorie : MonoBehaviour
 
     private void CheckWin()
     {
-        if (score.mCurrentScore >= score.mWinnigScore)
+        if (diabete.mCards.Count <= 0)
         {
+            score.timer.RestartTimer();
             score.LauchScore();
         }
     }
@@ -43,6 +43,7 @@ public class Minigame_Memorie : MonoBehaviour
     {
         if (mShowingCard.Count == 2)
         {
+            score.AddScore();
             Card_Memorie card1 = mShowingCard[0].GetComponent<Card_Memorie>();
             Card_Memorie card2 = mShowingCard[1].GetComponent<Card_Memorie>();
 
@@ -70,7 +71,7 @@ public class Minigame_Memorie : MonoBehaviour
         CheckPair();
     }
 
-    public int Score() { 
+    public int GetNbAction() { 
         return score.mCurrentScore;
     }
 
@@ -93,7 +94,6 @@ public class Minigame_Memorie : MonoBehaviour
         Debug.Log("Add Score after 1 sec");
         yield return new WaitForSeconds(0.3f);
         mParticleMemorie.PlayParticle(mShowingCard);
-        score.AddScore();
 
         yield return new WaitForSeconds(0.3f);
 

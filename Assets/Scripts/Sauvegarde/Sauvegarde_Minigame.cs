@@ -97,15 +97,14 @@ public class Sauvegarde_Minigame : MonoBehaviour
         return null;
     }
 
-    public void SaveMiniGame()
+    public void SaveMiniGame(bool reverse)
     {
         string sceneName = SceneManager.GetActiveScene().name;
         Debug.Log(sceneName);
         if (_statMinigame.ContainsKey(sceneName))
         {
             Debug.Log("LLALA");
-            _statMinigame[sceneName].CheckNewScore(score, true);
-            //_statMinigame[sceneName].CheckNewInfo(_state);
+            _statMinigame[sceneName].CheckNewScore(score, reverse);
         }
         else{
             _statMinigame[sceneName] = new TemplateSaveMinigame(score.nbStars, score.MiniGamePoint, _state);

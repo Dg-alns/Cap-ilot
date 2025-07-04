@@ -1065,6 +1065,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1672859834}
     m_Modifications:
     - target: {fileID: 540794382405874316, guid: b54b2990353f95c41bbdb5a13dd67270, type: 3}
+      propertyPath: score
+      value: 
+      objectReference: {fileID: 801354800}
+    - target: {fileID: 540794382405874316, guid: b54b2990353f95c41bbdb5a13dd67270, type: 3}
       propertyPath: GameObjectToStart
       value: 
       objectReference: {fileID: 801354801}
@@ -1407,15 +1411,19 @@ PrefabInstance:
       objectReference: {fileID: 326379954}
     - target: {fileID: 569796693142497412, guid: 869b14e2855a9f7479f4d1a7cd490d84, type: 3}
       propertyPath: MinOr
-      value: 1000
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 569796693142497412, guid: 869b14e2855a9f7479f4d1a7cd490d84, type: 3}
+      propertyPath: mPoint
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 569796693142497412, guid: 869b14e2855a9f7479f4d1a7cd490d84, type: 3}
       propertyPath: MinArgent
-      value: 600
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 569796693142497412, guid: 869b14e2855a9f7479f4d1a7cd490d84, type: 3}
       propertyPath: MinBronze
-      value: 200
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7800387475093608305, guid: 869b14e2855a9f7479f4d1a7cd490d84, type: 3}
       propertyPath: m_Name

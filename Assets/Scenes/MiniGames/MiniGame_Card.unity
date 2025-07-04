@@ -6114,11 +6114,11 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1282899875}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 1}
-  m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -203, y: -112}
-  m_SizeDelta: {x: 900, y: 200}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: 0, y: -29}
+  m_SizeDelta: {x: 0, y: 200}
+  m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &349111423
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6217,7 +6217,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: -241.38354, y: -61.62978, z: -236.24783, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -6521,7 +6521,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -65, y: -106.309044}
+  m_AnchoredPosition: {x: -750, y: -52}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &387690343
@@ -17222,6 +17222,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7406985062434453740, guid: f323e2a0579031e44bc45b6411ecfc50, type: 3}
+      propertyPath: m_fontColor.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7406985062434453740, guid: f323e2a0579031e44bc45b6411ecfc50, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 16777215
+      objectReference: {fileID: 0}
     - target: {fileID: 7490675289413963546, guid: f323e2a0579031e44bc45b6411ecfc50, type: 3}
       propertyPath: m_LocalPosition.x
       value: -415
@@ -17261,6 +17269,14 @@ PrefabInstance:
     - target: {fileID: 7490675289413963546, guid: f323e2a0579031e44bc45b6411ecfc50, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8681884293884610902, guid: f323e2a0579031e44bc45b6411ecfc50, type: 3}
+      propertyPath: m_fontColor.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8681884293884610902, guid: f323e2a0579031e44bc45b6411ecfc50, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 16777215
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -17325,19 +17341,23 @@ PrefabInstance:
       objectReference: {fileID: 1775387003}
     - target: {fileID: 569796693142497412, guid: 869b14e2855a9f7479f4d1a7cd490d84, type: 3}
       propertyPath: MinOr
-      value: 30
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 569796693142497412, guid: 869b14e2855a9f7479f4d1a7cd490d84, type: 3}
       propertyPath: timer
       value: 
       objectReference: {fileID: 221784599}
     - target: {fileID: 569796693142497412, guid: 869b14e2855a9f7479f4d1a7cd490d84, type: 3}
+      propertyPath: mPoint
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 569796693142497412, guid: 869b14e2855a9f7479f4d1a7cd490d84, type: 3}
       propertyPath: MinArgent
-      value: 60
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 569796693142497412, guid: 869b14e2855a9f7479f4d1a7cd490d84, type: 3}
       propertyPath: MinBronze
-      value: 90
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 7800387475093608305, guid: 869b14e2855a9f7479f4d1a7cd490d84, type: 3}
       propertyPath: m_Name
