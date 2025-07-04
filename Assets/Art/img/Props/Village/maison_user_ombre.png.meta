@@ -191,7 +191,10 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      maison_user_ombre_0: 7161139148067560541
+      maison_user_ombre_1: 539619992912619485
+      maison_user_ombre_2: 6102426110836560561
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

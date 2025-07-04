@@ -39,6 +39,19 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
     public void OnDrag(PointerEventData eventData)
     {
         _rt.anchoredPosition += eventData.delta/ _canva.scaleFactor;
+
+
+        switch (floor)
+        {
+
+            case 0:
+                _rt.sizeDelta = new Vector2(165.1635f, 138.6663f);
+                break;
+            case 1:
+                _rt.sizeDelta = new Vector2(151.5106f, 178.0784f);
+                break;
+        }
+
     }
     public void OnEndDrag(PointerEventData eventData)
     {

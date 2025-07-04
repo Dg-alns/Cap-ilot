@@ -167,7 +167,9 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      diabetes_run2_0: 3670545863855154616
+      diabetes_run2_1: 8296324512369575800
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
