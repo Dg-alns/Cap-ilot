@@ -94,13 +94,17 @@ public class Movement : MonoBehaviour
                         //Debug.Log("NPC: " + _clickedNpc.npcName);
                         if (_clickedNpc != null)
                         {
+                            //Debug.Log(_dialogue);
+                            _dialogue.GetComponentInChildren<DialogueBox>().FindNPCManagerInActiveScene();
+                            _dialogue.GetComponentInChildren<DialogueBox>().AssignTextAreas();
+                            //Debug.Log(_dialogue.GetComponentInChildren<DialogueBox>().npcManager);
                             _dialogue.GetComponentInChildren<DialogueBox>().GetDialogueLines();
                             _dialogue.GetComponentInChildren<DialogueBox>().StartDialogue();
                             _dialogueStarted = _dialogue.GetComponentInChildren<DialogueBox>().dialogStarted;
                         }
                         else
                         {
-                           // Debug.Log("ERROR : NPC not found");
+                            Debug.Log("ERROR : NPC not found");
                         }
                     }
                 }

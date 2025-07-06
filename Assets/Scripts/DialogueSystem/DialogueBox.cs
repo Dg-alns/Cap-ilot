@@ -20,29 +20,29 @@ public class DialogueBox : MonoBehaviour
 
     private void Awake()
     {
-        //npcManager = FindNPCManagerInActiveScene();
+        FindNPCManagerInActiveScene();
+        AssignTextAreas();
+        dialogueGroup = GetComponent<CanvasGroup>();
+    }
+
+    public void FindNPCManagerInActiveScene()
+    {
         npcManager = Object.FindFirstObjectByType<NPCManager>(FindObjectsInactive.Include);
         if (npcManager == null)
         {
             Debug.Log("ERROR : NPC Manager not found");
         }
-        AssignTextAreas();
-        dialogueGroup = GetComponent<CanvasGroup>();
-    }
-
-    NPCManager FindNPCManagerInActiveScene()
-    {
-        List<NPCManager> found = new List<NPCManager>();
-        SceneManager.GetActiveScene().GetRootGameObjects()
-            .ToList()
-            .ForEach(obj => obj.GetComponentsInChildren(true, found)); // true = inclut désactivés
-
-        return found.FirstOrDefault();
+        else
+        {
+            Debug.Log("SUCCESS : NPC Manager found");
+        }
     }
 
     public void AssignTextAreas()
     {
         _textAreas = GetComponentsInChildren<TMP_Text>();
+        //Debug.Log(_textAreas);
+        //Debug.Log(_textAreas.Length);
 
         _dialogueText = _textAreas[0];
         _dialogueNpcName = _textAreas[1];
@@ -53,15 +53,19 @@ public class DialogueBox : MonoBehaviour
         _lineList = new List<string>();
         if (npcManager.dialogueNpc == null)
         {
-            Debug.Log(npcManager);
+            //Debug.Log("NPC Manager = " + npcManager);
             Debug.LogError("ERROR : Dialogue NPC not found");
         }
         _lineList = npcManager.dialogueNpc.dialogueLines;
-        //Debug.Log(npcManager.dialogueNpc.name);
+        //Debug.Log(npcManager);
     }
 
     public void DisplayNpcName()
     {
+        //Debug.Log(npcManager);
+        //Debug.Log(npcManager.dialogueNpc);
+        //Debug.Log(npcManager.dialogueNpc.npcName);
+        //Debug.Log(_dialogueNpcName);
         _dialogueNpcName.SetText(npcManager.dialogueNpc.npcName);
     }
 
@@ -78,7 +82,10 @@ public class DialogueBox : MonoBehaviour
 
     public void GoToNextDialogueLine()
     {
-        _dialogueText.SetText(_lineList[_lineIndex++]);
+        //if (_lineList[_lineIndex + 1] != null)
+        //{
+        //    _dialogueText.SetText(_lineList[_lineIndex++]);
+        //}
     }
 
     public bool IsDialogueFinished()
