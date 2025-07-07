@@ -50,9 +50,9 @@ public class NPCManager : MonoBehaviour
         {
             if (npc.npcId == id)
             {
-                Debug.Log("Clicked ID : " + npc.npcId);
-                Debug.Log(id);
-                Debug.Log(npc.name);
+                //Debug.Log("Clicked ID : " + npc.npcId);
+                //Debug.Log(id);
+                //Debug.Log(npc.name);
                 dialogueNpc = npc;
                 return dialogueNpc;
             }

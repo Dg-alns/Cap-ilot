@@ -90,17 +90,17 @@ public class Movement : MonoBehaviour
                     if (clickedNpc != null)
                     {
                         _clickedNpcId = clickedNpc.npcId;
-                        _clickedNpc = _npcManager.GetComponent<NPCManager>().FindNpcById(_clickedNpcId);
+                        //_clickedNpc = _npcManager.GetComponent<NPCManager>().FindNpcById(_clickedNpcId);
                         //Debug.Log("NPC: " + _clickedNpc.npcName);
                         if (_clickedNpc != null)
                         {
                             //Debug.Log(_dialogue);
-                            _dialogue.GetComponentInChildren<DialogueBox>().FindNPCManagerInActiveScene();
-                            _dialogue.GetComponentInChildren<DialogueBox>().AssignTextAreas();
+                            //_dialogue.GetComponentInChildren<DialogueBox>().FindNPCManagerInActiveScene();
+                            //_dialogue.GetComponentInChildren<DialogueBox>().AssignTextAreas();
                             //Debug.Log(_dialogue.GetComponentInChildren<DialogueBox>().npcManager);
-                            _dialogue.GetComponentInChildren<DialogueBox>().GetDialogueLines();
-                            _dialogue.GetComponentInChildren<DialogueBox>().StartDialogue();
-                            _dialogueStarted = _dialogue.GetComponentInChildren<DialogueBox>().dialogStarted;
+                            //_dialogue.GetComponentInChildren<DialogueBox>().GetDialogueLines();
+                            //_dialogue.GetComponentInChildren<DialogueBox>().StartDialogue();
+                            //_dialogueStarted = _dialogue.GetComponentInChildren<DialogueBox>().dialogStarted;
                         }
                         else
                         {

@@ -20,8 +20,8 @@ public class DialogueBox : MonoBehaviour
 
     private void Awake()
     {
-        FindNPCManagerInActiveScene();
-        AssignTextAreas();
+        /*FindNPCManagerInActiveScene();
+        AssignTextAreas();*/
         dialogueGroup = GetComponent<CanvasGroup>();
     }
 
@@ -41,8 +41,6 @@ public class DialogueBox : MonoBehaviour
     public void AssignTextAreas()
     {
         _textAreas = GetComponentsInChildren<TMP_Text>();
-        //Debug.Log(_textAreas);
-        //Debug.Log(_textAreas.Length);
 
         _dialogueText = _textAreas[0];
         _dialogueNpcName = _textAreas[1];
@@ -75,6 +73,7 @@ public class DialogueBox : MonoBehaviour
         {
             _lineIndex = 0;
             DisplayNpcName();
+            Debug.Log("SPEAK : " + _lineList[_lineIndex]);
             _dialogueText.SetText(_lineList[_lineIndex]);
             dialogStarted = true;
         }
