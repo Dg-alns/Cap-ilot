@@ -33,7 +33,6 @@ public class TirBut_Diabete : MonoBehaviour
     public void PlayDiabete()
     {
         _AnimationIndex = Random.Range(0,6);
-        Debug.Log(_AnimationIndex);
         _Animator.SetInteger("SaveGrid", _AnimationIndex);
     }
 
