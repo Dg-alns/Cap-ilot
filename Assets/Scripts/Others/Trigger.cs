@@ -55,9 +55,18 @@ public class Trigger : MonoBehaviour
                 if (!uiOpen)
                 {
                     GameObject ui = Instantiate(UI);
+
+                    ui.GetComponentInChildren<DialogueBox>().dialogStarted = false;
+                    ui.GetComponentInChildren<DialogueBox>().lineList.Clear();
+                    ui.GetComponentInChildren<DialogueBox>().FindNPCManagerInActiveScene();
+                    ui.GetComponentInChildren<DialogueBox>().AssignTextAreas();
+                    ui.GetComponentInChildren<DialogueBox>().GetDialogueLines();
+                    ui.GetComponentInChildren<DialogueBox>().StartDialogue();
+
                     uiOpen = true;
                 }     
                 break;
         }
     }
+
 }

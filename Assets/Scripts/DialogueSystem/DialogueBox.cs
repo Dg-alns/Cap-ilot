@@ -10,16 +10,17 @@ public class DialogueBox : MonoBehaviour
 {
     public NPCManager npcManager;
     public CanvasGroup dialogueGroup;
-    public bool dialogStarted;
+    public bool dialogStarted = false;
 
     private TMP_Text[] _textAreas;
     private int _lineIndex;
     private TMP_Text _dialogueText;
     private TMP_Text _dialogueNpcName;
-    private List<string> _lineList;
+    public List<string> lineList;
 
     private void Awake()
     {
+        dialogStarted = false;
         /*FindNPCManagerInActiveScene();
         AssignTextAreas();*/
         dialogueGroup = GetComponent<CanvasGroup>();
@@ -31,10 +32,6 @@ public class DialogueBox : MonoBehaviour
         if (npcManager == null)
         {
             Debug.Log("ERROR : NPC Manager not found");
-        }
-        else
-        {
-            Debug.Log("SUCCESS : NPC Manager found");
         }
     }
 
@@ -48,22 +45,16 @@ public class DialogueBox : MonoBehaviour
 
     public void GetDialogueLines()
     {
-        _lineList = new List<string>();
+        lineList = new List<string>();
         if (npcManager.dialogueNpc == null)
         {
-            //Debug.Log("NPC Manager = " + npcManager);
             Debug.LogError("ERROR : Dialogue NPC not found");
         }
-        _lineList = npcManager.dialogueNpc.dialogueLines;
-        //Debug.Log(npcManager);
+        lineList = npcManager.dialogueNpc.dialogueLines;
     }
 
     public void DisplayNpcName()
     {
-        //Debug.Log(npcManager);
-        //Debug.Log(npcManager.dialogueNpc);
-        //Debug.Log(npcManager.dialogueNpc.npcName);
-        //Debug.Log(_dialogueNpcName);
         _dialogueNpcName.SetText(npcManager.dialogueNpc.npcName);
     }
 
@@ -73,25 +64,21 @@ public class DialogueBox : MonoBehaviour
         {
             _lineIndex = 0;
             DisplayNpcName();
-            Debug.Log("SPEAK : " + _lineList[_lineIndex]);
-            _dialogueText.SetText(_lineList[_lineIndex]);
+            _dialogueText.SetText(lineList[_lineIndex]);
             dialogStarted = true;
         }
     }
 
     public void GoToNextDialogueLine()
     {
-        //if (_lineList[_lineIndex + 1] != null)
-        //{
-        //    _dialogueText.SetText(_lineList[_lineIndex++]);
-        //}
+            _dialogueText.SetText(lineList[_lineIndex++]);
     }
 
     public bool IsDialogueFinished()
     {
         if (dialogStarted)
         {
-            if (_lineList.Count == _lineIndex)
+            if (lineList.Count == _lineIndex)
             {
                 return true;
             }

@@ -75,7 +75,7 @@ public class Movement : MonoBehaviour
             _agent.SetDestination(position);
         }
     }
-    private void OnTriggerStay2D(Collider2D collision)
+/*    private void OnTriggerStay2D(Collider2D collision)
     {
 
         if (collision.gameObject.GetComponent<Trigger>())
@@ -83,30 +83,36 @@ public class Movement : MonoBehaviour
             if (_agent.remainingDistance < 0.2f)
             {
                 collision.gameObject.GetComponent<Trigger>().IsTrigger();
-                //SceneManager.LoadScene(collision.gameObject.GetComponent<Trigger>().SceneName);
+            }
+        }
+    }*/
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.gameObject.GetComponent<Trigger>())
+        {
+            if (_agent.remainingDistance < 0.2f)
+            { 
                 if (collision.gameObject.GetComponent<Trigger>().Type == TriggerType.DIALOG)
                 {
                     NPC clickedNpc = collision.gameObject.GetComponent<NPC>();
                     if (clickedNpc != null)
                     {
                         _clickedNpcId = clickedNpc.npcId;
-                        //_clickedNpc = _npcManager.GetComponent<NPCManager>().FindNpcById(_clickedNpcId);
-                        //Debug.Log("NPC: " + _clickedNpc.npcName);
+                        _clickedNpc = _npcManager.GetComponent<NPCManager>().FindNpcById(_clickedNpcId);
                         if (_clickedNpc != null)
                         {
-                            //Debug.Log(_dialogue);
-                            //_dialogue.GetComponentInChildren<DialogueBox>().FindNPCManagerInActiveScene();
-                            //_dialogue.GetComponentInChildren<DialogueBox>().AssignTextAreas();
-                            //Debug.Log(_dialogue.GetComponentInChildren<DialogueBox>().npcManager);
-                            //_dialogue.GetComponentInChildren<DialogueBox>().GetDialogueLines();
-                            //_dialogue.GetComponentInChildren<DialogueBox>().StartDialogue();
-                            //_dialogueStarted = _dialogue.GetComponentInChildren<DialogueBox>().dialogStarted;
+                            collision.gameObject.GetComponent<Trigger>().IsTrigger();
                         }
                         else
                         {
                             Debug.Log("ERROR : NPC not found");
                         }
                     }
+                }
+                else if (collision.gameObject.GetComponent<Trigger>().Type == TriggerType.PORT)
+                {
+                    collision.gameObject.GetComponent<Trigger>().IsTrigger();
                 }
             }
         }

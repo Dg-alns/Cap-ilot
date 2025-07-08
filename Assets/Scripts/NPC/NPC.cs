@@ -7,5 +7,5 @@ public class NPC : MonoBehaviour
     public int npcId;
     public string npcName;
     [TextArea]
-    public List<string> dialogueLines;
+    public List<string> dialogueLines = new List<string>();
 }
