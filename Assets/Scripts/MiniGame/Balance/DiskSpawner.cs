@@ -4,8 +4,8 @@ using UnityEngine;
 public class DiskSpawner : MonoBehaviour
 {
     [Header("Prefabs")]
-    public GameObject bluePotionPrefab; // prefab bleu
-    public GameObject[] redFoodPrefabs; // prefabs rouges dans le même ordre que GameController.alimentTypes
+    public GameObject bluePotionPrefab; 
+    public GameObject[] redFoodPrefabs; 
 
     [Header("Spawn")]
     public float spawnInterval = 3f;
@@ -34,7 +34,6 @@ public class DiskSpawner : MonoBehaviour
         commandeToSpawn = GameController.instance.GetCommandeList();
         alimentsIndicesToSpawn.Clear();
 
-        // Convertir noms aliments en indices de redFoodPrefabs
         for (int i = 0; i < commandeToSpawn.Count; i++)
         {
             string aliment = commandeToSpawn[i];
@@ -46,10 +45,9 @@ public class DiskSpawner : MonoBehaviour
 
     void SpawnDisk()
     {
-        int rand = Random.Range(0, 3); // 0,1,2
+        int rand = Random.Range(0, 3);
         if (rand == 0)
         {
-            // Spawn potion bleue
             Instantiate(bluePotionPrefab, transform.position, Quaternion.identity);
         }
         else
@@ -63,7 +61,6 @@ public class DiskSpawner : MonoBehaviour
             }
             else
             {
-                // Aléatoire pur après épuisement
                 spawnIndex = Random.Range(0, redFoodPrefabs.Length);
             }
             Instantiate(redFoodPrefabs[spawnIndex], transform.position, Quaternion.identity);

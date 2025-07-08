@@ -4,16 +4,16 @@ using UnityEngine.UI;
 public class UIManager : MonoBehaviour
 {
     [Header("Timer UI")]
-    public Text timerText;  // Texte pour afficher le timer (ex: "90")
+    public Text timerText; 
 
     [Header("Commande UI")]
     public Text commandeText; // Texte pour afficher la commande (ex: "4 Pommes\n3 Poulets\n3 Cookies")
 
     [Header("Score UI")]
-    public Text scoreText; // Affichage score
+    public Text scoreText; 
 
     [Header("Vies UI")]
-    public Text livesText; // Affichage vies restantes
+    public Text livesText;
 
     [Header("Panels de fin")]
     public GameObject winPanel;
@@ -24,8 +24,8 @@ public class UIManager : MonoBehaviour
     public Image star2;
     public Image star3;
 
-    public Sprite starEmptySprite; // Sprite étoile vide
-    public Sprite starFullSprite;  // Sprite étoile pleine
+    public Sprite starEmptySprite; 
+    public Sprite starFullSprite;  
 
     void Start()
     {

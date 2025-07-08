@@ -17,16 +17,16 @@ public class GameController : MonoBehaviour
     public TextMeshProUGUI timerText;
     public GameObject victoryPanel;
     public GameObject defeatPanel;
-    public Image[] stars; // 3 étoiles
+    public Image[] stars;
 
     [Header("Gameplay")]
     public int lives = 3;
-    public float gameDuration = 60f; // Durée en secondes
+    public float gameDuration = 60f;
     private float timer;
     private bool gameOver = false;
 
-    public int redCount = 0;  // nombre d’aliments dans la RedBox
-    public int blueCount = 0; // nombre d’insuline dans la BlueBox
+    public int redCount = 0; 
+    public int blueCount = 0; 
 
     private Dictionary<string, int> commandeCounts = new Dictionary<string, int>();
     private Dictionary<string, int> redCnt = new Dictionary<string, int>();
@@ -68,11 +68,10 @@ public class GameController : MonoBehaviour
         commandeList.Clear();
         commandeCounts.Clear();
 
-        // Initialise compteur
         foreach (string aliment in alimentTypes)
         {
             commandeCounts[aliment] = 0;
-            redCnt[aliment] = 0; // reset aussi compteur de redCount
+            redCnt[aliment] = 0;
         }
 
         int total = 0;
@@ -138,7 +137,6 @@ public class GameController : MonoBehaviour
         gameOver = true;
         bool commandeRespectee = true;
 
-        // Vérifie si commande respectée
         foreach (var aliment in alimentTypes)
         {
             if (!redCnt.ContainsKey(aliment) || redCnt[aliment] != commandeCounts[aliment])
@@ -180,7 +178,6 @@ public class GameController : MonoBehaviour
         defeatPanel.SetActive(true);
     }
 
-    // Méthode utile pour DiskSpawner
     public List<string> GetCommandeList()
     {
         return new List<string>(commandeList);

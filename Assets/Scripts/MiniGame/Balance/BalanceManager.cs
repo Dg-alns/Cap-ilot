@@ -28,10 +28,8 @@ public class BalanceBar : MonoBehaviour
         Quaternion targetRotation = Quaternion.Euler(0f, 0f, -targetAngle);
         bar.transform.rotation = Quaternion.Lerp(bar.transform.rotation, targetRotation, Time.deltaTime * rotationSpeed);
 
-        // Déplacement vertical des poids
         float yOffset = targetAngle * poidYOffsetMultiplier;
 
-        // Le poidCookie monte quand l’angle est négatif (barre penche vers insuline)
         Vector3 cookieTargetPos = poidCookieStartPos + new Vector3(0f, yOffset, 0f);
         Vector3 insulinTargetPos = poidInsulineStartPos - new Vector3(0f, yOffset, 0f);
 
