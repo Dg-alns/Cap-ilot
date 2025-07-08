@@ -6,7 +6,7 @@ public class LighthouseGameManager : MonoBehaviour
 {
     // Start is called before the first frame update
     public Dictionary<DragDrop,int> lighthouse = new Dictionary<DragDrop, int>();
-    public int _part = 5;
+    public int _part;
 
     [SerializeField] private GameObject _visualWinning;
     [SerializeField] private GameObject _scrollRect;

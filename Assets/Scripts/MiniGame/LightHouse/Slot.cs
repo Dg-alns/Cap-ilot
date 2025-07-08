@@ -10,11 +10,12 @@ public class Slot : MonoBehaviour, IDropHandler
     public void OnDrop(PointerEventData eventData)
     {
         Debug.Log("drop");
-        if(eventData.pointerDrag != null && eventData.pointerDrag.GetComponent<DragDrop>())
+        if(eventData.pointerDrag != null && eventData.pointerDrag.GetComponent<DragDrop>() && GetComponentsInChildren<RectTransform>().Length <= 1)
         {
             eventData.pointerDrag.GetComponent<RectTransform>().position = GetComponent<RectTransform>().position;
             eventData.pointerDrag.GetComponent<CanvasGroup>().blocksRaycasts = false;
             _manager.lighthouse.Add(eventData.pointerDrag.GetComponent<DragDrop>(),slot);
+            eventData.pointerDrag.GetComponent<RectTransform>().SetParent(transform);
             _manager.Check();
         }
     }
