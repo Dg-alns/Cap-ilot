@@ -9,11 +9,13 @@ using UnityEngine.UI;
 using static UnityEngine.InputManagerEntry;
 using UnityEditor.UIElements;
 using UnityEngine.SceneManagement;
+using Unity.VisualScripting;
 
 public class Sauvegarde : MonoBehaviour
 {
     private Journal journal;
     private Profile profile;
+    private QuestManager questManager;
     [SerializeField] TextMeshProUGUI Input;
     [SerializeField] TMP_Dropdown Output;
     [SerializeField] TextMeshProUGUI OutputText;
@@ -37,10 +39,11 @@ public class Sauvegarde : MonoBehaviour
     {
         journal = new Journal();
         profile = new Profile();
+        questManager = new QuestManager();
         try
         {
             string jsonstring = File.ReadAllText("save.json");
-            Saving save = new Saving(journal, profile);
+            Saving save = new Saving(journal, profile, questManager);
             save = JsonUtility.FromJson<Saving>(jsonstring);
             if (SceneManager.GetActiveScene() != SceneManager.GetSceneByName("Journal"))
             {
@@ -79,6 +82,18 @@ public class Sauvegarde : MonoBehaviour
         }
     }
 
+    public void Update()
+    {
+        Saving save = new Saving(journal, profile, questManager);
+        for(int i = 0; i < questManager.quests.Count; i++)
+        {
+            if (questManager.quests[i].CheckCondition(save))
+            {
+                questManager.statusDict[i] = true;
+            }
+        }
+    }
+
     public void OnClick(UnityEngine.UI.Button pressed)
     {
         string theme = pressed.GetComponentInChildren<TextMeshProUGUI>().text;
@@ -96,7 +111,7 @@ public class Sauvegarde : MonoBehaviour
         profile.Save();
         journal.ThemeList = Themes;
         journal.Save();
-        Saving save = new Saving(journal, profile);
+        Saving save = new Saving(journal, profile, questManager);
         string jsonString = JsonUtility.ToJson(save);
         string fileName = "save.json";
         File.WriteAllText(fileName, jsonString);
@@ -115,10 +130,12 @@ public class Saving
 {
     public Journal journal;
     public Profile profile;
-    public Saving(Journal journal, Profile profile) 
+    public QuestManager questManager;
+    public Saving(Journal journal, Profile profile, QuestManager questManager) 
     { 
         this.journal = journal;
         this.profile = profile;
+        this.questManager = questManager;
     }
 
 }
