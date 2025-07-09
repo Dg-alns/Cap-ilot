@@ -26,8 +26,9 @@ public class Boat_Boat : MonoBehaviour
     private float _currentInvincibility = -1.0f;
 
     [SerializeField] private float _speed = 1;
-    [SerializeField] private NextSceneDestination _destination;
+    //[SerializeField] private NextSceneDestination _destination;
     [SerializeField] private Boat_ProgressBar _progressBar;
+    [SerializeField] private LoadNexScene _loadNexScene;
 
     // Start is called before the first frame update
     void Start()
@@ -86,16 +87,19 @@ public class Boat_Boat : MonoBehaviour
         _animator.SetInteger("direction", (int)animationBoatState);
     }
 
-    public void WinningForward()
+    public void Winning()
     {
-        float step = _speed * Time.deltaTime * 2;
-        Vector2 target = new Vector2(transform.position.x, _heightCam / 1.8f);
+        //float step = _speed * Time.deltaTime * 2;
+        //Vector2 target = new Vector2(transform.position.x, _heightCam / 1.8f);
 
-        transform.position = Vector2.MoveTowards(transform.position, target, step);
-        if(Vector2.Distance(transform.position, target) < 0.01f)
-        {
-            _destination.LoadNewIle();
-        }
+        //transform.position = Vector2.MoveTowards(transform.position, target, step);
+
+
+        _loadNexScene.LoadIle();
+        //if(Vector2.Distance(transform.position, target) < 0.01f)
+        //{
+        //    _destination.LoadNewIle();
+        //}
     }
     
     private void OnTriggerEnter2D(Collider2D collision)

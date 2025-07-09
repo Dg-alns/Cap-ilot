@@ -9,7 +9,7 @@ public class Injection_Circle : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _speed = 2.5f;
+        _speed = 4f;
     }
 
     // Update is called once per frame

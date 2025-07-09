@@ -1,45 +1,125 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class InjectionMinigame : MonoBehaviour
 {
     [SerializeField] private GameObject _prefab;
 
+    [SerializeField] private Score _score;
+
+    [SerializeField] private TextMeshProUGUI _textScore;
+
     [SerializeField] private List<float> _spawnTiming;
 
     private float _time;
 
-    [SerializeField] private int _nbSpawn;
+    [SerializeField] private Injection_Body _body;
+
+    [SerializeField] private Transform _partentTimingCircle;
+
+    private bool _swappingTime = false;
+
+    private float _defaultCircleSize;
+
+    private int _gameScore;
+
 
     private void Start()
     {
         _time = 0;
-        _nbSpawn = 20;
+        _gameScore = 0;
+        string visualScore = String.Format("{0:D5}", _gameScore);
+        _textScore.text = "Score : " + visualScore;
         _spawnTiming = new List<float>();
-        _spawnTiming.Add(Random.Range(0.0f, 1.5f));
-
-        for (int i = 1; i < _nbSpawn; i++)
-        {
-            _spawnTiming.Add(Random.Range(_spawnTiming[i-1] + 1.0f , _spawnTiming[i-1] + 2.5f));
-        }
+        GameObject circle = GameObject.Find("Reference_W_Circle");
+        _defaultCircleSize = circle.GetComponent<RectTransform>().rect.width * circle.GetComponent<RectTransform>().localScale.x;
     }
     private void Update()
     {
+        if (_swappingTime) return;
+
         if (_spawnTiming.Count > 0)
         {
             _time += Time.deltaTime;
             if (_spawnTiming[0] < _time)
             {
-                //Debug.Log("_spawnTiming[0] : " + _spawnTiming[0]);
-                //Debug.Log("_time : " + _time);
-                GameObject timingCircle = GameObject.Instantiate(_prefab, transform);
-                //timingCircle.transform.position = new Vector2(Random.Range(-(Camera.main.orthographicSize * Camera.main.aspect)/2, (Camera.main.orthographicSize * Camera.main.aspect)/2), Random.Range(-Camera.main.orthographicSize/2, Camera.main.orthographicSize/2));
-                timingCircle.transform.position = new Vector2(Random.Range(0, Screen.width), Random.Range(0, Screen.height));
-                timingCircle.transform.SetAsFirstSibling();
-                _spawnTiming.RemoveAt(0);
+                CreateRandomTimingCircle();
             }
+            return;
         }
+
+        if (!IsRemaingCircle() && !_body.IsFinish())
+        {
+            StartCoroutine(SwapBodyPart());
+            return;
+        }
+
     }
 
+    public void GenerateFuturCircle(int nbCircle = 3)
+    {
+        _spawnTiming.Clear();
+
+        _spawnTiming.Add(UnityEngine.Random.Range(0.5f, 1.5f));
+
+        for (int i = 1; i < nbCircle; i++)
+        {
+            _spawnTiming.Add(UnityEngine.Random.Range(_spawnTiming[i - 1] + 1.0f, _spawnTiming[i - 1] + 1.5f));
+        }
+        _time = 0;
+    }
+
+    public void CreateRandomTimingCircle()
+    {
+        // Create an instance of the TimingCircle prefab
+        GameObject timingCircle = GameObject.Instantiate(_prefab, _partentTimingCircle);
+
+        // Set a random position
+        timingCircle.transform.position = new Vector2(UnityEngine.Random.Range(_defaultCircleSize, Screen.width - _defaultCircleSize), UnityEngine.Random.Range(_defaultCircleSize, Screen.height - _defaultCircleSize));
+        
+        // Put the instance behind the other create before
+        timingCircle.transform.SetAsFirstSibling();
+
+        // Remove the creation time of the list
+        _spawnTiming.RemoveAt(0);
+    }
+
+    public bool IsRemaingCircle()
+    {
+        return _partentTimingCircle.childCount > 0;
+    }
+
+    public void AddScore(int score)
+    {
+        _gameScore += score;
+        string visualScore = String.Format("{0:D5}", _gameScore);
+        _textScore.text = "Score : " + visualScore;
+    }
+
+    IEnumerator SwapBodyPart()
+    {
+        _swappingTime = true;
+        yield return new WaitForSeconds(1);
+        _body.ReturnToIdle();
+
+        yield return new WaitForSeconds(3);
+        _body.NextBodyPart();
+
+        yield return new WaitForSeconds(1);
+
+        if(!_body.IsFinish())
+        {
+            GenerateFuturCircle();
+        }
+        else
+        {
+            Debug.Log(_gameScore);
+            _score.SetScore(_gameScore);
+            _score.LauchScore();
+        }
+        _swappingTime = false;
+    }
 }

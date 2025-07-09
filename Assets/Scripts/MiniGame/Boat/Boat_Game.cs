@@ -17,6 +17,7 @@ public class Boat_Game : MonoBehaviour
     [SerializeField] private Boat_ProgressBar _timer;
 
     private bool _gameFinish = false;
+    private bool _gameStart = false;
 
     private Transform _rocks;
 
@@ -31,10 +32,14 @@ public class Boat_Game : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (_gameStart == false)
+            return;
+
+
         // After 20 second without any hit
         if (_gameFinish)
         {
-            _boat.WinningForward();
+            _boat.Winning();            
             return;
         }
 
@@ -58,6 +63,12 @@ public class Boat_Game : MonoBehaviour
             int r = Random.Range(0, prefab.Count);
             Instantiate(prefab[r],_rocks);
         }
+    }
+
+    public void StartGame()
+    {
+        _gameStart = true;
+        _timer.Run();
     }
 
 }

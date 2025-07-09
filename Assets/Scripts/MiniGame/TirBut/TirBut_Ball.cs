@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
 public class TirBut_Ball : MonoBehaviour
 {
     // List of shoot position 
@@ -39,6 +38,7 @@ public class TirBut_Ball : MonoBehaviour
 
     [SerializeField] TirBut_Diabete _Diabete;
 
+    private Animator _animator;
 
 
     // Start is called before the first frame update
@@ -49,14 +49,16 @@ public class TirBut_Ball : MonoBehaviour
         _standingPos =   new Vector2 (0, -6.4f);
         transform.position = _standingPos;
 
-        _standingScale = new Vector2(2.2f, 2.2f);
+        _standingScale = new Vector2(0.8f, 0.8f);
         transform.localScale = _standingScale;
-        _saveScale =     new Vector2(0.18f, 0.18f);
+        _saveScale =     new Vector2(0.10f, 0.10f);
         _scoreScale =    new Vector2(0.08f, 0.08f);
 
         //_targetPos =     Vector2.zero;
         _targetPos = new Vector2(-1.66f, 2.4f);
         _ButtonInterface = GameObject.Find("ButtonInterface");
+
+        _animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -78,6 +80,7 @@ public class TirBut_Ball : MonoBehaviour
             // if you are close enough to score wait 1.5sec to Add score
             if (coef2 < 0.01f)
             {
+                ResetAnimation();
                 _time += Time.deltaTime ;
                 if(_time >= 1.5f)
                 {
@@ -108,9 +111,19 @@ public class TirBut_Ball : MonoBehaviour
         _ButtonInterface.SetActive(true);
     }
 
+    private void ResetAnimation()
+    {
+        _animator.SetInteger("Rotation", -1);
+        _animator.SetBool("EndRotation",true);
+    }
+
     public void Shoot(int indexPosition)
     {
         // Set the target to a goal position
+        Debug.Log("rotation : " + indexPosition % 3);
+        _animator.SetInteger("Rotation", indexPosition % 3);
+        _animator.SetBool("EndRotation", false);
+
         _targetPos = _shootPosition[indexPosition];
         _shooting = true;
     }
@@ -123,6 +136,7 @@ public class TirBut_Ball : MonoBehaviour
         {
             _deviation = true;
             _targetPos = new Vector2(Random.Range(-5.0f,5.0f),10.0f);
+            _animator.SetTrigger("Saved");
             return true;
         }
         return false;

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Minigame_Memorie : MonoBehaviour
@@ -13,6 +14,7 @@ public class Minigame_Memorie : MonoBehaviour
     public Particle_Memorie mParticleMemorie;
     public Score score;
 
+    public Sauvegarde_Minigame minigame;
     public Diabete_Memorie diabete;
 
     public Infos_MiniJeux infos;
@@ -21,7 +23,6 @@ public class Minigame_Memorie : MonoBehaviour
     void Awake()
     {
         nbSlots = 16;
-        score.mWinnigScore = nbSlots * 100;
 
         for (int i = 0; i < nbSlots; i++)
         {
@@ -31,8 +32,9 @@ public class Minigame_Memorie : MonoBehaviour
 
     private void CheckWin()
     {
-        if (score.mCurrentScore >= score.mWinnigScore)
+        if (diabete.mCards.Count <= 0)
         {
+            score.timer.RestartTimer();
             score.LauchScore();
         }
     }
@@ -41,6 +43,7 @@ public class Minigame_Memorie : MonoBehaviour
     {
         if (mShowingCard.Count == 2)
         {
+            score.AddScore();
             Card_Memorie card1 = mShowingCard[0].GetComponent<Card_Memorie>();
             Card_Memorie card2 = mShowingCard[1].GetComponent<Card_Memorie>();
 
@@ -68,7 +71,7 @@ public class Minigame_Memorie : MonoBehaviour
         CheckPair();
     }
 
-    public int Score() { 
+    public int GetNbAction() { 
         return score.mCurrentScore;
     }
 
@@ -91,12 +94,15 @@ public class Minigame_Memorie : MonoBehaviour
         Debug.Log("Add Score after 1 sec");
         yield return new WaitForSeconds(0.3f);
         mParticleMemorie.PlayParticle(mShowingCard);
-        score.AddScore();
 
         yield return new WaitForSeconds(0.3f);
-        infos.gameObject.SetActive(true);
 
-        infos.AssociateInfo(mShowingCard[0].GetComponent<Objects>());
+        if (minigame.GetCanShowInfo(SceneManager.GetActiveScene().name) == true)
+        {
+            infos.gameObject.SetActive(true);
+
+            infos.AssociateInfo(mShowingCard[0].GetComponent<Objects>());
+        }
 
         mShowingCard.Clear();
     }
@@ -106,5 +112,7 @@ public class Minigame_Memorie : MonoBehaviour
         if (infos.gameObject.activeSelf == false)
             CheckWin();
     }
+
+    
 
 }

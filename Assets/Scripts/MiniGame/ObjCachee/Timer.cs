@@ -64,7 +64,7 @@ public class Timer : MonoBehaviour
 
     TIME GetTime() { return time; }
 
-    public float GetTimeInSecondes()
+    public int GetTimeInSecondes()
     {
         return time.MinuteDizaine * 600 + time.MinuteUniter * 60 + time.SecondesDizaine * 10 + time.SecondesUniter;
     }

@@ -147,7 +147,6 @@ GameObject:
   - component: {fileID: 5773872666783284362}
   - component: {fileID: 3880051945634194719}
   - component: {fileID: 4482680967628559862}
-  - component: {fileID: 935105003379137430}
   m_Layer: 5
   m_Name: Panel
   m_TagString: Untagged
@@ -212,19 +211,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &935105003379137430
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2038184654961948508}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea6da5a45e7a76a45b3ae4d6109c514e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  loadingScene: SampleScene
 --- !u!1 &3189900910389279336
 GameObject:
   m_ObjectHideFlags: 0
@@ -374,6 +360,7 @@ GameObject:
   - component: {fileID: 8448643651995469775}
   - component: {fileID: 949689272873824573}
   - component: {fileID: 6655135657913988465}
+  - component: {fileID: 6004648455336758171}
   m_Layer: 5
   m_Name: VisualWinning
   m_TagString: Untagged
@@ -486,8 +473,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11400000, guid: 4f9d2ebe370453d43b934f62e2c5b6fc, type: 2}
-        m_TargetAssemblyTypeName: NextSceneDestination, Assembly-CSharp
+      - m_Target: {fileID: 6004648455336758171}
+        m_TargetAssemblyTypeName: LoadNexScene, Assembly-CSharp
         m_MethodName: LoadPreviousScene
         m_Mode: 1
         m_Arguments:
@@ -520,6 +507,20 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &6004648455336758171
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4001108551965703337}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c494cd52d0f7644d8b2ac1986045269, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _NextSceneData: {fileID: 11400000, guid: 4f9d2ebe370453d43b934f62e2c5b6fc, type: 2}
+  animator: {fileID: 0}
 --- !u!1 &4740283100989275063
 GameObject:
   m_ObjectHideFlags: 0
