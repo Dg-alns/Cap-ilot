@@ -143,7 +143,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      fraise_0: 6842022643447635020
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
