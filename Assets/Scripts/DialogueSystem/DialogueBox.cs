@@ -10,29 +10,29 @@ public class DialogueBox : MonoBehaviour
 {
     public NPCManager npcManager;
     public CanvasGroup dialogueGroup;
-    public bool dialogStarted;
+    public bool dialogStarted = false;
 
     private TMP_Text[] _textAreas;
     private int _lineIndex;
     private TMP_Text _dialogueText;
     private TMP_Text _dialogueNpcName;
-    private List<string> _lineList;
+    public List<string> lineList;
 
     private void Awake()
     {
-        npcManager = FindNPCManagerInActiveScene();
-        AssignTextAreas();
+        dialogStarted = false;
+        /*FindNPCManagerInActiveScene();
+        AssignTextAreas();*/
         dialogueGroup = GetComponent<CanvasGroup>();
     }
 
-    NPCManager FindNPCManagerInActiveScene()
+    public void FindNPCManagerInActiveScene()
     {
-        List<NPCManager> found = new List<NPCManager>();
-        SceneManager.GetActiveScene().GetRootGameObjects()
-            .ToList()
-            .ForEach(obj => obj.GetComponentsInChildren(true, found)); // true = inclut désactivés
-
-        return found.FirstOrDefault();
+        npcManager = Object.FindFirstObjectByType<NPCManager>(FindObjectsInactive.Include);
+        if (npcManager == null)
+        {
+            Debug.Log("ERROR : NPC Manager not found");
+        }
     }
 
     public void AssignTextAreas()
@@ -45,8 +45,12 @@ public class DialogueBox : MonoBehaviour
 
     public void GetDialogueLines()
     {
-        _lineList = new List<string>();
-        _lineList = npcManager.dialogueNpc.dialogueLines;
+        lineList = new List<string>();
+        if (npcManager.dialogueNpc == null)
+        {
+            Debug.LogError("ERROR : Dialogue NPC not found");
+        }
+        lineList = npcManager.dialogueNpc.dialogueLines;
     }
 
     public void DisplayNpcName()
@@ -60,21 +64,21 @@ public class DialogueBox : MonoBehaviour
         {
             _lineIndex = 0;
             DisplayNpcName();
-            _dialogueText.SetText(_lineList[_lineIndex]);
+            _dialogueText.SetText(lineList[_lineIndex]);
             dialogStarted = true;
         }
     }
 
     public void GoToNextDialogueLine()
     {
-        _dialogueText.SetText(_lineList[_lineIndex++]);
+            _dialogueText.SetText(lineList[_lineIndex++]);
     }
 
     public bool IsDialogueFinished()
     {
         if (dialogStarted)
         {
-            if (_lineList.Count == _lineIndex)
+            if (lineList.Count == _lineIndex)
             {
                 return true;
             }

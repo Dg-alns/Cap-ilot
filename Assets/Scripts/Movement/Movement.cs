@@ -89,7 +89,7 @@ public class Movement : MonoBehaviour
             _agent.SetDestination(position);
         }
     }
-    private void OnTriggerStay2D(Collider2D collision)
+/*    private void OnTriggerStay2D(Collider2D collision)
     {
 
         if (collision.gameObject.GetComponent<Trigger>())
@@ -97,7 +97,16 @@ public class Movement : MonoBehaviour
             if (_agent.remainingDistance < 0.2f)
             {
                 collision.gameObject.GetComponent<Trigger>().IsTrigger();
-                //SceneManager.LoadScene(collision.gameObject.GetComponent<Trigger>().SceneName);
+            }
+        }
+    }*/
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.gameObject.GetComponent<Trigger>())
+        {
+            if (_agent.remainingDistance < 0.2f)
+            { 
                 if (collision.gameObject.GetComponent<Trigger>().Type == TriggerType.DIALOG)
                 {
                     NPC clickedNpc = collision.gameObject.GetComponent<NPC>();
@@ -105,11 +114,19 @@ public class Movement : MonoBehaviour
                     {
                         _clickedNpcId = clickedNpc.npcId;
                         _clickedNpc = _npcManager.GetComponent<NPCManager>().FindNpcById(_clickedNpcId);
-                        Debug.Log("NPC: " + _clickedNpc.npcName);
-                        _dialogue.GetComponentInChildren<DialogueBox>().GetDialogueLines();
-                        _dialogue.GetComponentInChildren<DialogueBox>().StartDialogue();
-                        _dialogueStarted = _dialogue.GetComponentInChildren<DialogueBox>().dialogStarted;
+                        if (_clickedNpc != null)
+                        {
+                            collision.gameObject.GetComponent<Trigger>().IsTrigger();
+                        }
+                        else
+                        {
+                            Debug.Log("ERROR : NPC not found");
+                        }
                     }
+                }
+                else if (collision.gameObject.GetComponent<Trigger>().Type == TriggerType.PORT)
+                {
+                    collision.gameObject.GetComponent<Trigger>().IsTrigger();
                 }
             }
         }
