@@ -870,11 +870,11 @@ PlayerSettings:
   captureStartupLogs: {}
   activeInputHandler: 2
   windowsGamepadBackendHint: 0
-  cloudProjectId: f103a33f-229f-4991-9a68-a31e43c0e48b
+  cloudProjectId: bc0f4c16-0e85-4631-9e9a-63ac8c449642
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
   projectName: "Cap'\xEElot"
-  organizationId: dg_26
+  organizationId: dorian1310
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   hmiLoadingImage: {fileID: 0}
