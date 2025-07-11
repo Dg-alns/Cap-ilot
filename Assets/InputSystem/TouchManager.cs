@@ -41,9 +41,13 @@ public class TouchManager : MonoBehaviour
             Vector2 position = _touchPositionAction.ReadValue<Vector2>();
             _player.GetComponent<Movement>().Move(Camera.main.ScreenToWorldPoint(position));
 
-            if (_dialogueBox.GetComponentInChildren<DialogueBox>().dialogStarted)
+            if (_player.GetComponent<Movement>().dialogueNpc != null)
             {
-                _dialogueBox.GetComponentInChildren<DialogueBox>().GoToNextDialogueLine();
+                if (_player.GetComponent<Movement>().dialogueNpc.GetComponent<Trigger>().activeUI.GetComponentInChildren<DialogueBox>().dialogStarted)
+                {
+                    Debug.Log("skip dialogue");
+                    _player.GetComponent<Movement>().dialogueNpc.GetComponent<Trigger>().activeUI.GetComponentInChildren<DialogueBox>().GoToNextDialogueLine();
+                }
             }
         }
     }

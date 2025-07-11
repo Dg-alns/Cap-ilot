@@ -143,7 +143,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Pomme mc png_0: 4440117289889811390
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -28,6 +28,8 @@ public class Movement : MonoBehaviour
     [Header("Animation")]
     [SerializeField] private Animator _diabeteAnimator;
 
+    public GameObject dialogueNpc;
+
     //[SerializeField] private TouchManager _touchManager;
 
     void Start()
@@ -109,14 +111,17 @@ public class Movement : MonoBehaviour
             { 
                 if (collision.gameObject.GetComponent<Trigger>().Type == TriggerType.DIALOG)
                 {
-                    NPC clickedNpc = collision.gameObject.GetComponent<NPC>();
+                    dialogueNpc = collision.gameObject;
+                    NPC clickedNpc = dialogueNpc.GetComponent<NPC>();
                     if (clickedNpc != null)
                     {
                         _clickedNpcId = clickedNpc.npcId;
                         _clickedNpc = _npcManager.GetComponent<NPCManager>().FindNpcById(_clickedNpcId);
                         if (_clickedNpc != null)
                         {
-                            collision.gameObject.GetComponent<Trigger>().IsTrigger();
+                            dialogueNpc.GetComponent<Trigger>().IsTrigger();
+                            GameObject activeDialogueUI = dialogueNpc.GetComponent<Trigger>().activeUI;
+                            _dialogueStarted = activeDialogueUI.GetComponentInChildren<DialogueBox>().dialogStarted;
                         }
                         else
                         {

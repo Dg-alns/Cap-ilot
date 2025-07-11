@@ -19,6 +19,7 @@ public class Trigger : MonoBehaviour
     private bool uiOpen;
     public string SceneName;
     public TriggerType Type;
+    public GameObject activeUI;
 
 
     private void Start()
@@ -54,14 +55,14 @@ public class Trigger : MonoBehaviour
             case TriggerType.DIALOG:
                 if (!uiOpen)
                 {
-                    GameObject ui = Instantiate(UI);
+                    activeUI = Instantiate(UI);
 
-                    ui.GetComponentInChildren<DialogueBox>().dialogStarted = false;
-                    ui.GetComponentInChildren<DialogueBox>().lineList.Clear();
-                    ui.GetComponentInChildren<DialogueBox>().FindNPCManagerInActiveScene();
-                    ui.GetComponentInChildren<DialogueBox>().AssignTextAreas();
-                    ui.GetComponentInChildren<DialogueBox>().GetDialogueLines();
-                    ui.GetComponentInChildren<DialogueBox>().StartDialogue();
+                    activeUI.GetComponentInChildren<DialogueBox>().dialogStarted = false;
+                    activeUI.GetComponentInChildren<DialogueBox>().lineList.Clear();
+                    activeUI.GetComponentInChildren<DialogueBox>().FindNPCManagerInActiveScene();
+                    activeUI.GetComponentInChildren<DialogueBox>().AssignTextAreas();
+                    activeUI.GetComponentInChildren<DialogueBox>().GetDialogueLines();
+                    activeUI.GetComponentInChildren<DialogueBox>().StartDialogue();
 
                     uiOpen = true;
                 }     
