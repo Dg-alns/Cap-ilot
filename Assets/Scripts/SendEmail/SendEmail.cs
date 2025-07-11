@@ -82,7 +82,7 @@ public class SendEmail : MonoBehaviour
 
         _mailMessage.Attachments.Add(new Attachment(Application.dataPath + "/Art/img/db.png"));
         //Debug.Log(mailContent);
-        //_smtpClient.Send(_mailMessage);
+        _smtpClient.Send(_mailMessage);
         Debug.Log("Message Send");
     }
 
