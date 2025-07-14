@@ -16,7 +16,7 @@ public class ActionOfPLayer : MonoBehaviour
     Animator animator;
     ACTION action = ACTION.Idle;
 
-    void Start()
+    void Awake()
     {
         animator = GetComponent<Animator>();
     }

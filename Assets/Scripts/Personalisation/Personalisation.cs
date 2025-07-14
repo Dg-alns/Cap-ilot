@@ -3,7 +3,6 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-// TODO Diego pas de différzence actuellemnt entre left et right sur la personalisation alos que les part font la diff
 public class Personalisation : MonoBehaviour
 {
     //public SearchScriptObj search;

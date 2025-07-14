@@ -15,7 +15,8 @@ public class SwipeManager : MonoBehaviour //TODO Diego a adapter pour mobile
     Vector2 LastposMous = Vector2.zero;
 
     public int directionOfSwipe = 0;
-    //bool moveValidate = false;
+
+    public bool canSwipe = false;
 
     public void Swip(DIRECTION directionOfSwipeExpect)
     {
@@ -44,11 +45,11 @@ public class SwipeManager : MonoBehaviour //TODO Diego a adapter pour mobile
             if (LastposMous.x < InitialposMous.x)
             {
                 Debug.Log("Left");
-                directionOfSwipe = 1;
+                directionOfSwipe = -1;
                 return;
             }
             Debug.Log("Right");
-            directionOfSwipe = -1;
+            directionOfSwipe = 1;
             return;
         }
 
@@ -63,35 +64,20 @@ public class SwipeManager : MonoBehaviour //TODO Diego a adapter pour mobile
             Debug.Log("Bot");
             directionOfSwipe = -1;
             return;
-        }
-
-        //    case DIRECTION.Top:
-        //        if (LastposMous.y > InitialposMous.y)
-        //        {
-        //            Debug.Log("Top");
-        //            directionOfSwipe = DIRECTION.Top;
-        //            //moveValidate = true;
-        //            return true;
-        //        }
-        //        return false;
-
-        //    case DIRECTION.Bottom:
-        //        if (LastposMous.y < InitialposMous.y)
-        //        {
-        //            Debug.Log("Bot");
-        //            directionOfSwipe = DIRECTION.Bottom;
-        //            //moveValidate = true;
-        //            return true;
-        //        }
-        //        return false;
-        //    default:
-        //        return false;
-        //}
+        }  
     }
 
 
     void Update()
     {
+        if(canSwipe ==false) return;
+
         Swip(DIRECTION.X);
+    }
+
+    public void ChangeStateOfCanSwipe(bool state)
+    {
+        canSwipe = state;
+        directionOfSwipe = 0;
     }
 }

@@ -1,48 +1,64 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DiabèteBoxe : MonoBehaviour
 {
     public GameObject WarningLeft;
     public GameObject WarningRight;
 
+    public RectTransform GardeLeft;
+    public RectTransform GardeRight;
+
+    RectTransform RectTransform;
     Animator animator;
-    void Start()
+
+    int WarnigActif = -1;
+    void Awake()
     {
         WarningLeft.SetActive(false);
         WarningRight.SetActive(false);
 
         animator = GetComponent<Animator>();
+        RectTransform = GetComponent<RectTransform>();
     }
 
     public Animator GetAnimator() { return animator; }
 
-    // Update is called once per frame
-    void Update()
+    public int ChooseActionDiabete()
     {
-        
+        return Random.Range(1, 3);
     }
 
-    public int ChooseEsquive()
+    public void LaucheAnimationDetectorAttaque(int nb)
     {
-        int taux = Random.Range(0, 2);
+        WarnigActif = nb;
 
-        //switch(taux)
-        //{
-        //    case 0:
-        //        return 1;
-        //        //Animator.SetInteger("Esquive", 1);
-        //    case 1:
-        //        return 2;
-        //        //Animator.SetInteger("Esquive", 2);
-
-        //}
-        return taux;
+        switch(nb)
+        {
+            case 1:
+                WarningLeft.SetActive(true);
+                break;
+            case 2:
+                WarningRight.SetActive(true);
+                break;
+        }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    public void ResetWarning()
     {
-        Debug.Log("Colission");
+        switch (WarnigActif)
+        {
+            case 1:
+                WarningLeft.SetActive(false);
+                break;
+            case 2:
+                WarningRight.SetActive(false);
+                break;
+        }
+
+        WarnigActif = -1;
     }
+
 }

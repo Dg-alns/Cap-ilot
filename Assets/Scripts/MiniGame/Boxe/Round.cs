@@ -12,7 +12,7 @@ public enum ROUND
 public enum TEXTofROUND
 {
     Start,
-    //Garde,
+    Garde,
     Attaque,
     Fin
 }
@@ -25,8 +25,11 @@ public class Round : MonoBehaviour
     public TextMeshProUGUI textRound;
     public int NumberOfRound;
     public TEXTofROUND StateOfRound;
+    public SwipeManager swipeManager;
 
     int CurrentRound = 1;
+    int nbPhase = 3;
+    int CurrentPhase = 0;
 
     void Start()
     {
@@ -42,9 +45,9 @@ public class Round : MonoBehaviour
             case TEXTofROUND.Start:
                 textRound.text = $"Début du Round {CurrentRound} / {NumberOfRound}";
                 break;
-            //case TEXTofROUND.Garde:
-            //    textRound.text = "En Garde";
-            //    break;
+            case TEXTofROUND.Garde:
+                textRound.text = "En Garde";
+                break;
             case TEXTofROUND.Attaque:
                 textRound.text = "Attaque";
                 break;
@@ -52,8 +55,12 @@ public class Round : MonoBehaviour
                 textRound.text = $"Fin du Round {CurrentRound} / {NumberOfRound}";
                 break;
         }
+        // Timer nSeconde comparer a l'anim du text ??
 
         SwitchOfRound();
+
+
+        ChangeSwipe();
     }
 
     void SwitchOfRound()
@@ -61,16 +68,16 @@ public class Round : MonoBehaviour
         switch (StateOfRound)
         {
             case TEXTofROUND.Start:
-                //StateOfRound = TEXTofROUND.Garde;
-                StateOfRound = TEXTofROUND.Attaque;
+                StateOfRound = TEXTofROUND.Garde;
+                //StateOfRound = TEXTofROUND.Attaque;
                 break;
-            //case TEXTofROUND.Garde:
-                //    StateOfRound = TEXTofROUND.Attaque;
-                //animator.SetBool("Continue", false);
-                //    break;
+            case TEXTofROUND.Garde:
+                //StateOfRound = TEXTofROUND.Attaque;
+                animator.SetBool("Continue", false);
+                break;
             case TEXTofROUND.Attaque:
                 //StateOfRound = TEXTofROUND.Fin;
-                CurrentRound++;
+                //CurrentRound++;
                 animator.SetBool("Continue", false);
                 break;
             case TEXTofROUND.Fin:
@@ -79,29 +86,49 @@ public class Round : MonoBehaviour
         }
     }
 
-    //public void NextRound()
-    //{
-    //    if(CurrentRound <= NumberOfRound)
-    //    {
-    //        switch(round)
-    //        {
-    //            case ROUND.Defense:
-    //                round = ROUND.Attaque;
-    //                //animator.SetInteger()
-    //                break;
-    //            case ROUND.Attaque:
-    //                round = ROUND.Defense;
-    //                CurrentRound++;
-    //                //
-    //                break;
-    //        }
+    public void NextPhase()
+    {
+        if (CurrentRound >= NumberOfRound)
+            return;
 
-    //        // Lauch Animation Round
-    //    }
-    //    else
-    //    {
-    //        // Lauch Animation Stars ??
-    //    }
-    //}
 
+        if (CurrentPhase <= nbPhase)
+        {
+            switch (StateOfRound)
+            {
+                case TEXTofROUND.Garde:
+                    CurrentPhase++;
+                    if (CurrentPhase >= nbPhase)
+                    {
+                        Debug.Log(CurrentPhase);
+                        CurrentRound++;
+                        CurrentPhase = 0;
+                        //StateOfRound = ROUND.Attaque;
+                    }
+                    break;
+            
+                case TEXTofROUND.Attaque:
+                    CurrentPhase++;
+                    if (CurrentPhase >= nbPhase)
+                    {
+                        Debug.Log(CurrentPhase);
+                        CurrentRound++;
+                        CurrentPhase = 0;
+                        //StateOfRound = ROUND.Fin;
+                    }
+                    break;
+            }
+        }
+    }
+
+
+    public void ChangeSwipe()
+    {
+        bool state = false;
+
+        if(StateOfRound == TEXTofROUND.Attaque || StateOfRound == TEXTofROUND.Garde)
+            state = true;
+
+        swipeManager.ChangeStateOfCanSwipe(state);
+    }
 }
