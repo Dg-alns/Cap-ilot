@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 7f88c3c467285f642b1e47751208600a
+guid: 790fc82e545e8214889a67c82ef2ba67
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 9143868440440847147
-    second: gear_0
+      213: -357421434760999972
+    second: Mouse_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,22 +113,22 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: gear_0
+      name: Mouse_0
       rect:
         serializedVersion: 2
-        x: 5
-        y: 0
-        width: 502
-        height: 512
+        x: 106
+        y: 47
+        width: 310
+        height: 420
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b2bb16976eb85ee70800000000000000
-      internalID: 9143868440440847147
+      spriteID: cdbc5f9491f2a0bf0800000000000000
+      internalID: -357421434760999972
       vertices: []
       indices: 
       edges: []
@@ -136,7 +136,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: a52ebcfc8fd79eb4ba4e28a7eb6d5425
     internalID: 0
     vertices: []
     indices: 
@@ -144,7 +144,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      gear_0: 9143868440440847147
+      Mouse_0: -357421434760999972
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

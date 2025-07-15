@@ -1,10 +1,19 @@
 fileFormatVersion: 2
-guid: 7f88c3c467285f642b1e47751208600a
+guid: bca16315c919bde4bafadc9a96bb3f90
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 9143868440440847147
-    second: gear_0
+      213: 1451313871752186337
+    second: MouseClick_0
+  - first:
+      213: 4648846469849582973
+    second: MouseClick_1
+  - first:
+      213: -6080420654979418810
+    second: MouseClick_2
+  - first:
+      213: -6821648768135622784
+    second: MouseClick_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,22 +122,22 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: gear_0
+      name: MouseClick_3
       rect:
         serializedVersion: 2
-        x: 5
-        y: 0
-        width: 502
-        height: 512
+        x: 106
+        y: 47
+        width: 310
+        height: 420
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b2bb16976eb85ee70800000000000000
-      internalID: 9143868440440847147
+      spriteID: 08f8bc88692a451a0800000000000000
+      internalID: -6821648768135622784
       vertices: []
       indices: 
       edges: []
@@ -136,7 +145,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 184eea03fce2c5643bcfd7ee18c1d7ff
     internalID: 0
     vertices: []
     indices: 
@@ -144,7 +153,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      gear_0: 9143868440440847147
+      MouseClick_3: -6821648768135622784
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

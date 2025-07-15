@@ -1,4 +1,7 @@
-﻿using System.IO;
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
 using System.Net;
 using System.Net.Mail;
 using System.Net.Security;
@@ -60,24 +63,38 @@ public class SendEmail : MonoBehaviour
         Saving save = JsonUtility.FromJson<Saving>(jsonstring);
 
         string mailContent = File.ReadAllText(Application.dataPath + "/index.html");
-        foreach (var k in save.journal.journal.Keys)
-        {
 
-            Debug.Log(k.ToString());
-        }
         mailContent = mailContent.Replace("#NomPatient#", save.profile.Username);
 
-        // Remplacer les ## par les mots clés du journal, les émotions et le thème
-        mailContent = mailContent.Replace("#ListeMot1#", save.journal.journal.Keys.ToString());
-        mailContent = mailContent.Replace("#ListeMot2#", "AAHHH");
-        mailContent = mailContent.Replace("#ListeMot3#", "BBBBH");
-        mailContent = mailContent.Replace("#ListeMot4#", "CCCCH");
-        mailContent = mailContent.Replace("#ListeMot5#", "Je sais ça ne veut rien dire");
-        mailContent = mailContent.Replace("#ListeMot6#", "mais je suis heureux");
-        mailContent = mailContent.Replace("#ListeMot7#", "enfin je crois");
+
+        List<string> dayName = new List<string>();
+        List<ContentJournal> contentJournal = new List<ContentJournal>();
+
+        int count = 0;
+
+
+        foreach(var k in save.journal.journal.Keys.Reverse())
+        {
+            dayName.Add(StringToDate(k).ToLongDateString());
+            contentJournal.Add(ContentJournal.ConvertValueToContentJournal(save.journal.journal[k]));
+            count++;
+            if (count == 7)
+            {
+                dayName.Reverse();
+                contentJournal.Reverse();
+                break;
+            }
+        }
+
+        for (int i = 0; i < 7; i++)
+        {
+            mailContent = mailContent.Replace("#Jour" + (i + 1).ToString() + "#", dayName[i]);
+            mailContent = mailContent.Replace("#ListeMot" + (i + 1).ToString() + "#", contentJournal[i].content);
+        }
 
         // Récupérer la Date par la Key du journal
-        _mailMessage.Subject = "Cap'îlot → Compte rendu " + save.profile.Username + " Date : " + "- 900 av.J.C.";
+        //_mailMessage.Subject = "Cap'îlot → Compte rendu de " + save.profile.Username + " Semaine du : " + DateTime.Now.ToLongDateString();
+        _mailMessage.Subject = "Cap'îlot → Compte rendu de " + save.profile.Username;
         _mailMessage.Body = mailContent;
 
         _mailMessage.Attachments.Add(new Attachment(Application.dataPath + "/Art/img/db.png"));
@@ -101,5 +118,35 @@ public class SendEmail : MonoBehaviour
         _mailMessage.Body = _inputContent.text;
 
         _smtpClient.Send(_mailMessage);
+    }
+    
+    // Return a DateTime with a string
+    private DateTime StringToDate(string str)
+    {
+        if (String.IsNullOrEmpty(str))
+            return DateTime.MinValue;
+
+        return DateTime.Parse(str);
+    }
+
+    
+
+    public class ContentJournal
+    {
+        public string theme;
+        public string emotion;
+        public string content;
+        public static ContentJournal ConvertValueToContentJournal(string saveValue)
+        {
+            if (String.IsNullOrEmpty(saveValue))
+                return null;
+
+            string[] separator = saveValue.Split("\n");
+            ContentJournal CJ = new ContentJournal();
+            CJ.theme = separator[0];
+            CJ.emotion = separator[1];
+            CJ.content = separator[2];
+            return CJ;
+        }
     }
 }

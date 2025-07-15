@@ -1222,7 +1222,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _inputSubject: {fileID: 1433864766}
   _inputContent: {fileID: 674513404}
-  _receiver: capilotgc@gmail.com
+  _receiver: dalonso@gaming.tech
 --- !u!1 &1433864764
 GameObject:
   m_ObjectHideFlags: 0
