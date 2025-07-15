@@ -60,6 +60,7 @@ public class Trigger : MonoBehaviour
                     activeUI.GetComponentInChildren<DialogueBox>().dialogStarted = false;
                     activeUI.GetComponentInChildren<DialogueBox>().lineList.Clear();
                     activeUI.GetComponentInChildren<DialogueBox>().FindNPCManagerInActiveScene();
+                    activeUI.GetComponentInChildren<DialogueBox>().FindTouchManagerInActiveScene();
                     activeUI.GetComponentInChildren<DialogueBox>().AssignTextAreas();
                     activeUI.GetComponentInChildren<DialogueBox>().GetDialogueLines();
                     activeUI.GetComponentInChildren<DialogueBox>().StartDialogue();
@@ -69,5 +70,4 @@ public class Trigger : MonoBehaviour
                 break;
         }
     }
-
 }

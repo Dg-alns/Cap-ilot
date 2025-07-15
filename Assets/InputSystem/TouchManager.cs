@@ -13,6 +13,8 @@ public class TouchManager : MonoBehaviour
 
     private bool _isTouching = false;
 
+    public bool DialogueLineSkiped = false;
+
     private void Awake()
     {
         _playerInput = GetComponent<PlayerInput>();
@@ -37,15 +39,14 @@ public class TouchManager : MonoBehaviour
     {
         if (_isTouching)
         {
-            
             Vector2 position = _touchPositionAction.ReadValue<Vector2>();
             _player.GetComponent<Movement>().Move(Camera.main.ScreenToWorldPoint(position));
 
-            if (_player.GetComponent<Movement>().dialogueNpc != null)
+            if (_player.GetComponent<Movement>().dialogueNpc != null && _player.GetComponent<Movement>().activeDialogueUI != null)
             {
                 if (_player.GetComponent<Movement>().dialogueNpc.GetComponent<Trigger>().activeUI.GetComponentInChildren<DialogueBox>().dialogStarted)
                 {
-                    Debug.Log("skip dialogue");
+                    //Debug.Log("skip dialogue");
                     _player.GetComponent<Movement>().dialogueNpc.GetComponent<Trigger>().activeUI.GetComponentInChildren<DialogueBox>().GoToNextDialogueLine();
                 }
             }
@@ -59,6 +60,7 @@ public class TouchManager : MonoBehaviour
 
     private void OnTouchEnded(InputAction.CallbackContext context)
     {
+        DialogueLineSkiped = false;
         _isTouching = false;
     }
 }

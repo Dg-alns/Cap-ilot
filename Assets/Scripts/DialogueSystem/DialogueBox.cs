@@ -9,6 +9,7 @@ using System.Linq;
 public class DialogueBox : MonoBehaviour
 {
     public NPCManager npcManager;
+    public TouchManager touchManager;
     public CanvasGroup dialogueGroup;
     public bool dialogStarted = false;
 
@@ -32,6 +33,14 @@ public class DialogueBox : MonoBehaviour
         if (npcManager == null)
         {
             Debug.Log("ERROR : NPC Manager not found");
+        }
+    }
+    public void FindTouchManagerInActiveScene()
+    {
+        touchManager = Object.FindFirstObjectByType<TouchManager>(FindObjectsInactive.Include);
+        if (touchManager == null)
+        {
+            Debug.Log("ERROR : Touch Manager not found");
         }
     }
 
@@ -71,7 +80,16 @@ public class DialogueBox : MonoBehaviour
 
     public void GoToNextDialogueLine()
     {
+        if (!IsDialogueFinished() && !touchManager.DialogueLineSkiped)
+        {
             _dialogueText.SetText(lineList[_lineIndex++]);
+            touchManager.DialogueLineSkiped = true;
+        }
+        else if (IsDialogueFinished())
+        {
+            Debug.Log("dialogue end");
+            EndDialogue();
+        }
     }
 
     public bool IsDialogueFinished()
@@ -88,5 +106,10 @@ public class DialogueBox : MonoBehaviour
             }
         }
         return false;
+    }
+
+    public void EndDialogue()
+    {
+        Destroy(npcManager.dialogueNpc.GetComponent<Trigger>().activeUI);
     }
 }

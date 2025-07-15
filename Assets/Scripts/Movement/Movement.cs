@@ -29,6 +29,7 @@ public class Movement : MonoBehaviour
     [SerializeField] private Animator _diabeteAnimator;
 
     public GameObject dialogueNpc;
+    public GameObject activeDialogueUI;
 
     //[SerializeField] private TouchManager _touchManager;
 
@@ -120,8 +121,11 @@ public class Movement : MonoBehaviour
                         if (_clickedNpc != null)
                         {
                             dialogueNpc.GetComponent<Trigger>().IsTrigger();
-                            GameObject activeDialogueUI = dialogueNpc.GetComponent<Trigger>().activeUI;
-                            _dialogueStarted = activeDialogueUI.GetComponentInChildren<DialogueBox>().dialogStarted;
+                            activeDialogueUI = dialogueNpc.GetComponent<Trigger>().activeUI;
+                            if (activeDialogueUI != null)
+                            {
+                                _dialogueStarted = activeDialogueUI.GetComponentInChildren<DialogueBox>().dialogStarted;
+                            }
                         }
                         else
                         {
