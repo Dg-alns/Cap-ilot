@@ -10,6 +10,7 @@ using static UnityEngine.InputManagerEntry;
 using UnityEditor.UIElements;
 using UnityEngine.SceneManagement;
 using Unity.VisualScripting;
+using static QuestManager;
 
 public class Sauvegarde : MonoBehaviour
 {
@@ -85,11 +86,11 @@ public class Sauvegarde : MonoBehaviour
     public void Update()
     {
         Saving save = new Saving(journal, profile, questManager);
-        for(int i = 0; i < questManager.quests.Count; i++)
+        foreach (Quest quest in questManager.quests)
         {
-            if (questManager.quests[i].CheckCondition(save))
+            if (quest.CheckCondition(save))
             {
-                questManager.statusDict[i] = true;
+                questManager.statusDict[quest.id] = true;
             }
         }
     }
