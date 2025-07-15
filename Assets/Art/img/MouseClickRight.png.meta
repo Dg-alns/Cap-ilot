@@ -1,10 +1,19 @@
 fileFormatVersion: 2
-guid: 6974f47e1e986834099e339d628ebafe
+guid: dea5f15b300eb794e9bb899d40ef8d73
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 238693779902295092
-    second: Cadena_0
+      213: 7998099714703279681
+    second: MouseClickRight_0
+  - first:
+      213: 6719455906866753984
+    second: MouseClickRight_1
+  - first:
+      213: -2592789009489447395
+    second: MouseClickRight_2
+  - first:
+      213: 487931181003944250
+    second: MouseClickRight_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,22 +122,22 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Cadena_0
+      name: MouseClickRight_3
       rect:
         serializedVersion: 2
-        x: 78
-        y: 43
-        width: 192
-        height: 263
+        x: 106
+        y: 47
+        width: 310
+        height: 420
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 43ceb296ab2005300800000000000000
-      internalID: 238693779902295092
+      spriteID: a31b39ee2da75c600800000000000000
+      internalID: 487931181003944250
       vertices: []
       indices: 
       edges: []
@@ -136,7 +145,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 28106dde0a7754f4bae84216095dd03b
     internalID: 0
     vertices: []
     indices: 
@@ -144,7 +153,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Cadena_0: 238693779902295092
+      MouseClickRight_3: 487931181003944250
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
