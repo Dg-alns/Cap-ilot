@@ -130,4 +130,10 @@ public class InformationOfTheGame : MonoBehaviour
         gameObject.SetActive(false);
         GameObjectToStart.SetActive(true);
     }
+
+    public void StartBoxe()
+    {
+        gameObject.SetActive(false);
+        GameObjectToStart.GetComponent<BoxeGame>().StartBoxe();
+    }
 }

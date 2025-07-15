@@ -12,6 +12,8 @@ public class Personalisation : MonoBehaviour
 
     public TextMeshProUGUI PageOfAccesoires;
 
+    public Sprite cadena;
+
     int nbMaxpagesOfCurrentLst;
     int currentpages;
 
@@ -151,14 +153,15 @@ public class Personalisation : MonoBehaviour
                 continue;
             }
 
-
             Sprite kk = GetLsitScriptObj(Playerpart.DetectionOfPart(pagesManagement.CurrentPage))[i + offset].sprite;
             listOfGridPersonalisation[i].GetComponent<Image>().sprite = kk;
 
             if (GetLsitScriptObj(Playerpart.DetectionOfPart(pagesManagement.CurrentPage))[i + offset].isDebloquer)
+            {
                 listOfGridPersonalisation[i].GetComponent<Image>().color = Color.white;
+            }
             else
-                listOfGridPersonalisation[i].GetComponent<Image>().color = Color.grey;
+                listOfGridPersonalisation[i].GetComponent<Image>().sprite = cadena;
         }
     }
 

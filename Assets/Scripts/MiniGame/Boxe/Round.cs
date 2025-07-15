@@ -3,12 +3,6 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public enum ROUND
-{
-    Defense,
-    Attaque
-}
-
 public enum TEXTofROUND
 {
     Start,
@@ -19,7 +13,6 @@ public enum TEXTofROUND
 
 public class Round : MonoBehaviour
 {
-    //ROUND round = ROUND.Defense;
     Animator animator;
 
     public TextMeshProUGUI textRound;
@@ -28,17 +21,18 @@ public class Round : MonoBehaviour
     public SwipeManager swipeManager;
 
     int CurrentRound = 1;
-    int nbPhase = 3;
+    int nbPhase = 1;
     int CurrentPhase = 0;
 
-    void Start()
+    public void StartRound()
     {
+        gameObject.SetActive(true);
         animator = GetComponent<Animator>();
+        UpdateTextOfRound();
         animator.SetBool("Continue", true);
-        SwitchTextOfRound();
     }
 
-    void SwitchTextOfRound()
+    void UpdateTextOfRound()
     {
         switch (StateOfRound)
         {
@@ -55,12 +49,6 @@ public class Round : MonoBehaviour
                 textRound.text = $"Fin du Round {CurrentRound} / {NumberOfRound}";
                 break;
         }
-        // Timer nSeconde comparer a l'anim du text ??
-
-        SwitchOfRound();
-
-
-        ChangeSwipe();
     }
 
     void SwitchOfRound()
@@ -69,26 +57,29 @@ public class Round : MonoBehaviour
         {
             case TEXTofROUND.Start:
                 StateOfRound = TEXTofROUND.Garde;
-                //StateOfRound = TEXTofROUND.Attaque;
+                animator.SetBool("Continue", true);
                 break;
             case TEXTofROUND.Garde:
-                //StateOfRound = TEXTofROUND.Attaque;
-                animator.SetBool("Continue", false);
+                StateOfRound = TEXTofROUND.Attaque;
                 break;
             case TEXTofROUND.Attaque:
-                //StateOfRound = TEXTofROUND.Fin;
-                //CurrentRound++;
-                animator.SetBool("Continue", false);
+                StateOfRound = TEXTofROUND.Fin;
                 break;
             case TEXTofROUND.Fin:
+                CurrentRound++;
+
+                if(HaveFinishAllRound())
+                    gameObject.SetActive(false);
+
                 StateOfRound = TEXTofROUND.Start;
+                animator.SetBool("Continue", true);
                 break;
         }
     }
 
-    public void NextPhase()
+    public void NextPhase(Timer timer)
     {
-        if (CurrentRound >= NumberOfRound)
+        if (CurrentRound > NumberOfRound)
             return;
 
 
@@ -100,10 +91,8 @@ public class Round : MonoBehaviour
                     CurrentPhase++;
                     if (CurrentPhase >= nbPhase)
                     {
-                        Debug.Log(CurrentPhase);
-                        CurrentRound++;
-                        CurrentPhase = 0;
-                        //StateOfRound = ROUND.Attaque;
+                        timer.ResetNSecconds();
+                        UpdateNextPhase();
                     }
                     break;
             
@@ -111,16 +100,21 @@ public class Round : MonoBehaviour
                     CurrentPhase++;
                     if (CurrentPhase >= nbPhase)
                     {
-                        Debug.Log(CurrentPhase);
-                        CurrentRound++;
-                        CurrentPhase = 0;
-                        //StateOfRound = ROUND.Fin;
+                        UpdateNextPhase();
                     }
                     break;
             }
         }
     }
 
+    void UpdateNextPhase()
+    {
+        CurrentPhase = 0;
+        SwitchOfRound();
+        UpdateTextOfRound();
+        ChangeSwipe();
+        animator.SetBool("Continue", true);
+    }
 
     public void ChangeSwipe()
     {
@@ -130,5 +124,24 @@ public class Round : MonoBehaviour
             state = true;
 
         swipeManager.ChangeStateOfCanSwipe(state);
+    }
+
+
+    public void ChangeState()
+    {
+        animator.SetBool("Continue", false);
+
+        if (StateOfRound != TEXTofROUND.Attaque && StateOfRound != TEXTofROUND.Garde)
+        {
+            SwitchOfRound();
+
+            UpdateTextOfRound();
+        }
+
+    }
+
+    public bool HaveFinishAllRound()
+    {
+        return CurrentRound > NumberOfRound;
     }
 }

@@ -44,11 +44,10 @@ public class SwipeManager : MonoBehaviour //TODO Diego a adapter pour mobile
         {
             if (LastposMous.x < InitialposMous.x)
             {
-                Debug.Log("Left");
                 directionOfSwipe = -1;
                 return;
             }
-            Debug.Log("Right");
+
             directionOfSwipe = 1;
             return;
         }
@@ -57,11 +56,10 @@ public class SwipeManager : MonoBehaviour //TODO Diego a adapter pour mobile
         {
             if (LastposMous.y > InitialposMous.y)
             {
-                Debug.Log("Top");
                 directionOfSwipe = 1;
                 return;
             }
-            Debug.Log("Bot");
+
             directionOfSwipe = -1;
             return;
         }  
@@ -73,6 +71,11 @@ public class SwipeManager : MonoBehaviour //TODO Diego a adapter pour mobile
         if(canSwipe ==false) return;
 
         Swip(DIRECTION.X);
+    }
+
+    public void StopCanSwipe()
+    {
+        canSwipe = false;
     }
 
     public void ChangeStateOfCanSwipe(bool state)
