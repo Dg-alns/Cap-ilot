@@ -53,5 +53,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Island/Village.unity
     guid: 31746957dfed6b84399d208e08b8ce9d
+    path: Assets/Scenes/Other/Journal.unity
+    guid: 02ac8eb3dad3b7d4984b501b7817650d
+  - enabled: 1
+    path: Assets/Scenes/Other/Profile.unity
+    guid: a4b7cea5f6043684d8c6433658056108
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0

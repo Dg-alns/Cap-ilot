@@ -24,29 +24,41 @@ public class Journal
     }
     public void UpdateJournal()
     {
-        Output.ClearOptions();
-        List<string> keyList = new List<string>();
-        foreach (string key in journal.Keys)
+        if (Output != null)
         {
-            keyList.Add(key);
+            if (journal.Keys.Count > 0)
+            {
+                Output.ClearOptions();
+                List<string> keyList = new List<string>();
+                foreach (string key in journal.Keys)
+                {
+                    keyList.Add(key);
+                }
+                Output.AddOptions(keyList);
+                OutputList = new List<string>();
+                foreach (TMP_Dropdown.OptionData option in Output.options)
+                {
+                    OutputList.Add(journal[option.text]);
+                }
+                OutputText.text = OutputList[0];
+                Output.RefreshShownValue();
+            }
         }
-        Output.AddOptions(keyList);
-        OutputList = new List<string>();
-        foreach (TMP_Dropdown.OptionData option in Output.options)
-        {
-            OutputList.Add(journal[option.text]);
-        }
-        OutputText.text = OutputList[0];
-        Output.RefreshShownValue();
     }
     public void Save()
     {
-        string themeSTR = "Thèmes : ";
-        foreach (string theme in ThemeList)
+        if (InputField != null)
         {
-            themeSTR += theme + " ";
+            if (InputField.text != null)
+            {
+                string themeSTR = "Thèmes : ";
+                foreach (string theme in ThemeList)
+                {
+                    themeSTR += theme + " ";
+                }
+                journal[DateTime.Today.ToString("d")] = themeSTR + "\n" + EmotionWheel.ActualEmoji + "\n" + InputField.text;
+            }
         }
-        journal[DateTime.Now.ToString()] = themeSTR + "\n" + EmotionWheel.ActualEmoji + "\n" + InputField.text;
     }
     public void DropdownValueChanged(TMP_Dropdown change)
     {
