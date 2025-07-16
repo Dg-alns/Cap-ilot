@@ -61,11 +61,12 @@ public class ChatTextVivox : MonoBehaviour
 
     void OnChannelJoined(string channelName)
     {
-        //FetchMessages = FetchHistory(true);
+        FetchMessages = FetchHistory(true);
     }
 
-   /* private async Task FetchHistory(bool scrollToBottom = false)
+    private async Task FetchHistory(bool scrollToBottom = false)
     {
+        Debug.Log("oh!");
         try
         {
             var chatHistoryOptions = new ChatHistoryQueryOptions()
@@ -92,7 +93,7 @@ public class ChatTextVivox : MonoBehaviour
         {
             Debug.LogError($"Tried to fetch chat history and failed with error: {e.Message}");
         }
-    }*/
+    }
 
     void OnDirectedMessageReceived(VivoxMessage message)
     {

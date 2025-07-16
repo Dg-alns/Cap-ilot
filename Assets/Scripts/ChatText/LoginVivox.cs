@@ -13,7 +13,6 @@ public class LoginVivox : MonoBehaviour
     void Start()
     {
         LoginToVivox();
-        Debug.Log(VivoxService.Instance);
         VivoxService.Instance.LoggedIn += OnUserLoggedIn;
     }
 
@@ -37,7 +36,7 @@ public class LoginVivox : MonoBehaviour
     async void LoginToVivox()
     {
 
-        await VivoxVoiceManager.Instance.InitializeAsync("TEST");
+        await VivoxVoiceManager.Instance.InitializeAsync(username);
         var loginOptions = new LoginOptions()
         {
             DisplayName = username,
