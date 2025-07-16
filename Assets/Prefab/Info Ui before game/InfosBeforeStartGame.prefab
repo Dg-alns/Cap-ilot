@@ -261,6 +261,7 @@ MonoBehaviour:
   score: {fileID: 0}
   canvas: {fileID: 6002702812800973025}
   myScore: {fileID: 3978222305392043587}
+  toggle: {fileID: 0}
   Bronze: {fileID: 1021355571091503264}
   Argent: {fileID: 7383604480120159198}
   Or: {fileID: 8575766426609738235}
@@ -373,7 +374,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 2, y: 384}
+  m_AnchoredPosition: {x: 2, y: 428}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7548171451161199439

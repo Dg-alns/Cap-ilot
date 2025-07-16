@@ -81,6 +81,8 @@ public class Timer : MonoBehaviour
 
     void Update()
     {
+        if(TextTime != null)
+
         if (stop == false) {
             if (Elapse1second())
             {
