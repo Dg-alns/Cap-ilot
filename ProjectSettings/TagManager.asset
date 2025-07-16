@@ -6,6 +6,11 @@ TagManager:
   tags:
   - Boat_Rock
   - TirBut_Ball
+  - Red
+  - Blue
+  - RedBox
+  - BlueBox
+  - delete
   layers:
   - Default
   - TransparentFX
