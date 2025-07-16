@@ -66,7 +66,6 @@ public class ChatTextVivox : MonoBehaviour
 
     private async Task FetchHistory(bool scrollToBottom = false)
     {
-        Debug.Log("oh!");
         try
         {
             var chatHistoryOptions = new ChatHistoryQueryOptions()
