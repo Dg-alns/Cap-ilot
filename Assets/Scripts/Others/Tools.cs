@@ -97,20 +97,20 @@ public  class Tools : MonoBehaviour
         return objs;
     }
 
-    static public Dictionary<SPAWN, Vector2> CreateDictOffNameAndSpawn(string nameParentOfTheList)
+    static public Dictionary<int, Vector2> CreateDictOffNameAndSpawn(string nameParentOfTheList)
     {
         GameObject parent = GameObject.Find(nameParentOfTheList);
 
         Spawn[] allChild = parent.GetComponentsInChildren<Spawn>();
 
-        Dictionary<SPAWN, Vector2> objs = new Dictionary<SPAWN, Vector2>();
+        Dictionary<int, Vector2> objs = new Dictionary<int, Vector2>();
 
         for (int i = 0; i < allChild.Length; i++)
         {
             if (allChild[i].gameObject == parent)
                 continue;
 
-            objs[allChild[i].spaw] = allChild[i].gameObject.transform.position;
+            objs[((int)allChild[i].spaw)] = allChild[i].gameObject.transform.position;
         }
         return objs;
     }

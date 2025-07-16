@@ -18,6 +18,7 @@ public class Trigger : MonoBehaviour
     [SerializeField] GameObject UI;
     private bool uiOpen;
     public string SceneName;
+    public LoadNexScene nexScene;
     public TriggerType Type;
     public GameObject activeUI;
 
@@ -48,7 +49,7 @@ public class Trigger : MonoBehaviour
                     no.onClick.AddListener(() => Destroy(ui));
                     no.onClick.AddListener(() => uiOpen = false);
                     Button yes = ui.GetComponentsInChildren<Button>()[1];
-                    yes.onClick.AddListener(() => SceneManager.LoadScene(SceneName));
+                    yes.onClick.AddListener(() => nexScene.LoadNextScene(SceneName));      
                     uiOpen = true;
                 }
                 break;

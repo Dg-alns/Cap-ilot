@@ -143,7 +143,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      cuistot 2_0: 6077818848559738526
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,33 +1,39 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 // TODO Diego stocker la pos du player avant minigame dans 2 PlayerPref X Y + string Nom de la scene
+// Save Player.transform.position
 
 public class SpawnManagement : MonoBehaviour
 {
     public GameObject Player;
 
-    LoadNexScene loadNexScene;
+    public LoadNexScene loadNexScene;
 
-    Dictionary<SPAWN, Vector2> dict = new Dictionary<SPAWN, Vector2>();
+    Dictionary<int, Vector2> dict = new Dictionary<int, Vector2>();
 
     void Start()
     {
-        loadNexScene = GetComponent<LoadNexScene>();
-
         dict = DetectAllSpawnPrefab();
 
-        if(loadNexScene.GetPreviousSceneName().Contains("Accueil") /*Detection Position playerPref detected*/)
+        if (loadNexScene.GetPreviousSceneName().Contains("Accueil") /*Detection Position playerPref detected*/)
         {
-            Player.transform.position = new Vector3(dict[SPAWN.FirstStartGame].x, dict[SPAWN.FirstStartGame].y, 0);
-            Debug.Log(Player.transform.position);
+            Player.transform.position = dict[((int)SPAWN.FirstStartGame)];
+            Player.transform.rotation = new(0, 0, 0, 1);
+            Player.SetActive(true);
+
+            return;
         }
+        
+
+        Player.transform.position = dict[Spawn.GetSpaw(loadNexScene.GetPreviousSceneName())];
+        Player.SetActive(true);
 
     }
 
-
-    Dictionary<SPAWN, Vector2> DetectAllSpawnPrefab()
+    Dictionary<int, Vector2> DetectAllSpawnPrefab()
     {
         return Tools.CreateDictOffNameAndSpawn(gameObject.name);
     }
