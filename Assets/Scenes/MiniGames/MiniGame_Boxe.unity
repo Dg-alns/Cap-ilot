@@ -1636,6 +1636,54 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 873602248636811274, guid: 9660eda2c9fadef4aac96f071e70209b, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.22939049
+      objectReference: {fileID: 0}
+    - target: {fileID: 873602248636811274, guid: 9660eda2c9fadef4aac96f071e70209b, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.39894
+      objectReference: {fileID: 0}
+    - target: {fileID: 873602248636811274, guid: 9660eda2c9fadef4aac96f071e70209b, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.39894
+      objectReference: {fileID: 0}
+    - target: {fileID: 873602248636811274, guid: 9660eda2c9fadef4aac96f071e70209b, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.000016388005
+      objectReference: {fileID: 0}
+    - target: {fileID: 2647567985889095439, guid: 9660eda2c9fadef4aac96f071e70209b, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -8121614498443605999, guid: ee68ea96b602020488f57922db1c5797, type: 3}
+    - target: {fileID: 3038638665638207520, guid: 9660eda2c9fadef4aac96f071e70209b, type: 3}
+      propertyPath: m_Name
+      value: Background
+      objectReference: {fileID: 0}
+    - target: {fileID: 4035540862114034802, guid: 9660eda2c9fadef4aac96f071e70209b, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.26427788
+      objectReference: {fileID: 0}
+    - target: {fileID: 4035540862114034802, guid: 9660eda2c9fadef4aac96f071e70209b, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.39891
+      objectReference: {fileID: 0}
+    - target: {fileID: 4035540862114034802, guid: 9660eda2c9fadef4aac96f071e70209b, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.39891
+      objectReference: {fileID: 0}
+    - target: {fileID: 4035540862114034802, guid: 9660eda2c9fadef4aac96f071e70209b, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.000016388
+      objectReference: {fileID: 0}
+    - target: {fileID: 4235991913380803064, guid: 9660eda2c9fadef4aac96f071e70209b, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -357421434760999972, guid: 3d4fe48b95bd88442b1ef18ac76b4943, type: 3}
+    - target: {fileID: 4670868934969535812, guid: 9660eda2c9fadef4aac96f071e70209b, type: 3}
+      propertyPath: m_Name
+      value: Gant
+      objectReference: {fileID: 0}
     - target: {fileID: 5205784762678672972, guid: 9660eda2c9fadef4aac96f071e70209b, type: 3}
       propertyPath: m_text
       value: "Swiper (gauche, droite) pour attaquer le diab\xE8te et tenter de lui
@@ -1649,6 +1697,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Info Left
       objectReference: {fileID: 0}
+    - target: {fileID: 8112016024582665122, guid: 9660eda2c9fadef4aac96f071e70209b, type: 3}
+      propertyPath: m_Name
+      value: Attaque
+      objectReference: {fileID: 0}
+    - target: {fileID: 8270246166317747164, guid: 9660eda2c9fadef4aac96f071e70209b, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 62c09f03681af0145b17900eed7d9816, type: 2}
     - target: {fileID: 8989733306929025586, guid: 9660eda2c9fadef4aac96f071e70209b, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1728,6 +1784,10 @@ PrefabInstance:
     - target: {fileID: 8989733306929025586, guid: 9660eda2c9fadef4aac96f071e70209b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9129631549374961336, guid: 9660eda2c9fadef4aac96f071e70209b, type: 3}
+      propertyPath: m_Name
+      value: Mouse
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
