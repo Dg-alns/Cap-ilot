@@ -13,13 +13,20 @@ public class LoginVivox : MonoBehaviour
     void Start()
     {
         LoginToVivox();
-
+        Debug.Log(VivoxService.Instance);
         VivoxService.Instance.LoggedIn += OnUserLoggedIn;
     }
 
     async void OnUserLoggedIn()
     {
         await JoinLobbyChannel();
+    }
+
+    async void LogoutOfVivoxServiceAsync()
+    {
+
+        await VivoxService.Instance.LogoutAsync();
+        AuthenticationService.Instance.SignOut();
     }
 
     Task JoinLobbyChannel()
@@ -36,6 +43,7 @@ public class LoginVivox : MonoBehaviour
             DisplayName = username,
             ParticipantUpdateFrequency = ParticipantPropertyUpdateFrequency.FivePerSecond
         };
+       
         await VivoxService.Instance.LoginAsync(loginOptions);
     }
 
