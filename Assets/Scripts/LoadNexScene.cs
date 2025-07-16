@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LoadNexScene : MonoBehaviour
 {
@@ -59,4 +60,6 @@ public class LoadNexScene : MonoBehaviour
             _NextSceneData.isLauch = true;
         }
     }
+
+    public string GetPreviousSceneName() { return _NextSceneData.GetPreviousScene(); }
 }

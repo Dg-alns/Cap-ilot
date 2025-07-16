@@ -93,7 +93,9 @@ public class NextSceneDestination : ScriptableObject
     {
         yield return null;
 
-        AsyncOperation operation = SceneManager.LoadSceneAsync(_ileNamePort);
+        SetNextSceneDestination(_ileNamePort);
+        SetCurrentScene(SceneManager.GetActiveScene().name);
+        AsyncOperation operation = SceneManager.LoadSceneAsync(_sceneName);
         operation.allowSceneActivation = false;
 
 

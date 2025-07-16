@@ -89,17 +89,7 @@ public class Boat_Boat : MonoBehaviour
 
     public void Winning()
     {
-        //float step = _speed * Time.deltaTime * 2;
-        //Vector2 target = new Vector2(transform.position.x, _heightCam / 1.8f);
-
-        //transform.position = Vector2.MoveTowards(transform.position, target, step);
-
-
         _loadNexScene.LoadIle();
-        //if(Vector2.Distance(transform.position, target) < 0.01f)
-        //{
-        //    _destination.LoadNewIle();
-        //}
     }
     
     private void OnTriggerEnter2D(Collider2D collision)

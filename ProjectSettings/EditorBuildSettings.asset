@@ -21,10 +21,10 @@ EditorBuildSettings:
     path: Assets/Scenes/MiniGames/MiniGame_Boat.unity
     guid: fcb1a94a63309624a95fec1728cbee69
   - enabled: 1
-    path: Assets/Scenes/Island/Deplacement - Dorian.unity
+    path: Assets/Scenes/Island/Archipel.unity
     guid: 8fc2e3c6830c6f243af15ea72967cce7
   - enabled: 1
-    path: Assets/Scenes/Island/Ile Principale.unity
+    path: Assets/Scenes/Island/Port Ile Principale.unity
     guid: 97a25149eb03d194e9369187da619ba4
   - enabled: 1
     path: Assets/Scenes/Island/Phare.unity
@@ -53,8 +53,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Island/Village.unity
     guid: 31746957dfed6b84399d208e08b8ce9d
-    path: Assets/Scenes/Other/Journal.unity
-    guid: 02ac8eb3dad3b7d4984b501b7817650d
   - enabled: 1
     path: Assets/Scenes/Other/Profile.unity
     guid: a4b7cea5f6043684d8c6433658056108

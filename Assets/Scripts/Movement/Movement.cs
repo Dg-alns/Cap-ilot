@@ -47,17 +47,21 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(_diabeteAnimator != null)
-        {
-            if (_agent.destination != transform.position)
-            {
-                _diabeteAnimator.SetBool("Walking", true);
-            }
-            else
-            {
-                _diabeteAnimator.SetBool("Walking", false);
-            }
-        }
+        // Animation Diabete
+        //if(_diabeteAnimator != null)
+        //{
+        //    if (_agent.destination != transform.position)
+        //    {
+        //        _diabeteAnimator.SetBool("Walking", true);
+        //    }
+        //    else
+        //    {
+        //        _diabeteAnimator.SetBool("Walking", false);
+        //    }
+        //}
+
+
+
         //Debug.Log(_target);
         //_agent.SetDestination(_target);
         Vector3 movement = transform.position - _lastPosition;

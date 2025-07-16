@@ -78,4 +78,41 @@ public  class Tools : MonoBehaviour
         }
         return objs;
     }
+
+    static public List<string> CreateListOffName(string nameParentOfTheList)
+    {
+        GameObject parent = GameObject.Find(nameParentOfTheList);
+
+        Transform[] allChild = parent.GetComponentsInChildren<Transform>();
+
+        List<string> objs = new List<string>();
+
+        for (int i = 0; i < allChild.Length; i++)
+        {
+            if (allChild[i].gameObject == parent)
+                continue;
+
+            objs.Add(allChild[i].gameObject.name);
+        }
+        return objs;
+    }
+
+    static public Dictionary<SPAWN, Vector2> CreateDictOffNameAndSpawn(string nameParentOfTheList)
+    {
+        GameObject parent = GameObject.Find(nameParentOfTheList);
+
+        Spawn[] allChild = parent.GetComponentsInChildren<Spawn>();
+
+        Dictionary<SPAWN, Vector2> objs = new Dictionary<SPAWN, Vector2>();
+
+        for (int i = 0; i < allChild.Length; i++)
+        {
+            if (allChild[i].gameObject == parent)
+                continue;
+
+            objs[allChild[i].spaw] = allChild[i].gameObject.transform.position;
+        }
+        return objs;
+    }
+
 }
