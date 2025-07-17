@@ -6,8 +6,8 @@ using System.IO;
 using static UnityEngine.Rendering.DebugUI;
 using TMPro;
 using UnityEngine.UI;
-using static UnityEngine.InputManagerEntry;
-using UnityEditor.UIElements;
+//using static UnityEngine.InputManagerEntry;
+//using UnityEditor.UIElements;
 
 public class Sauvegarde : MonoBehaviour
 {

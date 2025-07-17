@@ -18,7 +18,7 @@ public class DetectionObjCachee : DetectionUI
 
     private void Awake()
     {
-        objects = Tools.CreateList<Objects>("ToFind");
+        /*objects = Tools.CreateList<Objects>("ToFind");
         nameobjs = Tools.CreateList<TextMeshProUGUI>("Bot");
 
         _tools = FindAnyObjectByType<Tools>();
@@ -31,7 +31,7 @@ public class DetectionObjCachee : DetectionUI
         }
 
 
-        timer.stop = true;
+        timer.stop = true;*/
 
     }
 

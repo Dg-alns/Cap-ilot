@@ -48,7 +48,7 @@ public class SearchScriptObj : MonoBehaviour
 
     void LoadCategory(string Path, List<PersoPlayerData> lst)
     {
-        lst.Clear();
+       /* lst.Clear();
         string[] guids = AssetDatabase.FindAssets("t:ScriptableObject", new[] { Path });
 
         foreach (string guid in guids)
@@ -60,6 +60,6 @@ public class SearchScriptObj : MonoBehaviour
             {
                 lst.Add(asset);
             }
-        }
+        }*/
     }
 }
