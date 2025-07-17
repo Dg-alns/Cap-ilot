@@ -1,16 +1,13 @@
-using System.Collections;
 using System.Collections.Generic;
-using System.Xml.Linq;
 using Dan.Main;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class LeaderBoart_Injection : MonoBehaviour
 {
-
     [SerializeField] private List<TextMeshProUGUI> _names;
     [SerializeField] private List<TextMeshProUGUI> _points;
+    [SerializeField] private TextMeshProUGUI _nameLeaderboard;
 
     [SerializeField] private TMP_InputField _inputFieldName;
     [SerializeField] private TMP_InputField _inputFieldScore;
@@ -33,6 +30,16 @@ public class LeaderBoart_Injection : MonoBehaviour
                 _points[i].text = msg[i].Score.ToString();
             }
         }));
+        for (int i = _names.Count - 1; i >= 0; i--)
+        {
+            if (string.IsNullOrEmpty(_names[i].text))
+            {
+                _names[i].text = "--- | ---";
+                _points[i].text = "--- | ---";
+                continue;
+            }
+            break;
+        }
     }
 
     public void SetLeaderboardEntry()
@@ -43,4 +50,12 @@ public class LeaderBoart_Injection : MonoBehaviour
         }));
     }
 
+    public string GetNameLeaderBoard(string publicKey)
+    {
+        switch (publicKey)
+        {
+            case "09af4957d862953d2f6c4cfe207c202aa761cdb476e9ba4431f28b802bdc7d7b": return "Test Scene LeaderBoard";
+            default: return "Pas de leaderboard"; 
+        }
+    }
 }
