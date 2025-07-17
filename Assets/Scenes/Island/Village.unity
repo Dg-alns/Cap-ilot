@@ -210,6 +210,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dc7ab4232cc66f947ac7f1114b4df43b, type: 3}
+--- !u!114 &467469637 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7370319303204381800, guid: dc7ab4232cc66f947ac7f1114b4df43b, type: 3}
+  m_PrefabInstance: {fileID: 467469636}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c494cd52d0f7644d8b2ac1986045269, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &622135359
 GameObject:
   m_ObjectHideFlags: 0
@@ -333,8 +344,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddad58b9af837ee44b8c51486d4d8de7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player: {fileID: 2042357520}
-  loadNexScene: {fileID: 1176027501}
+  loadNexScene: {fileID: 467469637}
+  PersoToPosition: {fileID: 2042357520}
+  Test: 1
 --- !u!1 &935857475
 GameObject:
   m_ObjectHideFlags: 0
@@ -1011,6 +1023,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8728174674127034684, guid: 29ae1de120ecad9418ddf494741bca3a, type: 3}
+      propertyPath: nexScene
+      value: 
+      objectReference: {fileID: 467469637}
+    - target: {fileID: 8728174674127034684, guid: 29ae1de120ecad9418ddf494741bca3a, type: 3}
       propertyPath: SceneName
       value: Port Ile Principale
       objectReference: {fileID: 0}
@@ -1019,17 +1035,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 29ae1de120ecad9418ddf494741bca3a, type: 3}
---- !u!114 &1176027501 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: -31334991667796447, guid: 29ae1de120ecad9418ddf494741bca3a, type: 3}
-  m_PrefabInstance: {fileID: 1176027500}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c494cd52d0f7644d8b2ac1986045269, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1186701939
 GameObject:
   m_ObjectHideFlags: 0
@@ -1901,7 +1906,7 @@ GameObject:
   - component: {fileID: 2042357526}
   - component: {fileID: 2042357525}
   m_Layer: 0
-  m_Name: avatar_generique_0
+  m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

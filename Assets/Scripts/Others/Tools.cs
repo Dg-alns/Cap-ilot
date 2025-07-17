@@ -97,7 +97,7 @@ public  class Tools : MonoBehaviour
         return objs;
     }
 
-    static public Dictionary<int, Vector2> CreateDictOffNameAndSpawn(string nameParentOfTheList)
+    static public Dictionary<int, Vector2> CreateDictOffSpawn(string nameParentOfTheList)
     {
         GameObject parent = GameObject.Find(nameParentOfTheList);
 

@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -9,14 +10,41 @@ public class LoadNexScene : MonoBehaviour
 
     public Animator animator;
 
+    [Header ("\nNot Mandatory")]
+    [Header ("ForSavePosition")]
+    public GameObject Player;
+
     private void Start()
     {
         _NextSceneData.isLauch = false;
     }
 
+    public void StartGame()
+    {        
+        if (_NextSceneData.isLauch == false)
+        {
+            _NextSceneData.isLauch = true;
+            animator.SetTrigger("Transition");
+
+            DeletPos();
+
+            string scene = PlayerPrefs.HasKey("SceneName") ? PlayerPrefs.GetString("SceneName") : "Port Ile Principale";
+            StartCoroutine(_NextSceneData.NextScene(scene));
+        }
+    }
+
+    public void LoadBoat(string scene)
+    {        
+        if (_NextSceneData.isLauch == false)
+        {
+            _NextSceneData.isLauch = true;
+            animator.SetTrigger("Transition");
+            StartCoroutine(_NextSceneData.NextScene(scene));
+        }
+    }
+
     public void LoadNextScene(string scene)
-    {
-        
+    {        
         if (_NextSceneData.isLauch == false)
         {
             _NextSceneData.isLauch = true;
@@ -32,6 +60,7 @@ public class LoadNexScene : MonoBehaviour
             _NextSceneData.isLauch = true;
             if (_energy.HaveEnergy())
             {
+                SavePos();
                 _energy.UseEnergy();
                 animator.SetTrigger("Transition");
                 StartCoroutine(_NextSceneData.NextScene(scene));
@@ -62,4 +91,22 @@ public class LoadNexScene : MonoBehaviour
     }
 
     public string GetPreviousSceneName() { return _NextSceneData.GetPreviousScene(); }
+
+
+    private void SavePos()
+    {
+        PlayerPrefs.SetFloat("PosX", Player.transform.position.x);
+        PlayerPrefs.SetFloat("PosY", Player.transform.position.y);
+        PlayerPrefs.SetFloat("RotateY", Player.transform.rotation.y);
+        PlayerPrefs.SetString("SceneName", SceneManager.GetActiveScene().name);
+    }
+
+    private void DeletPos()
+    {
+        PlayerPrefs.DeleteKey("PosX");
+        PlayerPrefs.DeleteKey("PosY");
+        PlayerPrefs.DeleteKey("RotateY");
+        PlayerPrefs.DeleteKey("SceneName");
+    }
+
 }

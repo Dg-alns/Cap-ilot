@@ -8,11 +8,4 @@ public class Objects : MonoBehaviour
     public bool CanShowInfo = true;
 
     public Sprite GetSprite() { return sprite; }
-
-    
-
-    private void Awake()
-    {
-        //sprite = GetComponent<SpriteRenderer>().sprite;
-    }
 }
