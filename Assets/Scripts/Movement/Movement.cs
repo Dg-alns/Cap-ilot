@@ -17,7 +17,6 @@ public class Movement : MonoBehaviour
     // Start is called before the first frame update
     SpriteRenderer _spriteRenderer;
     private Vector3 _lastPosition;
-    private Vector3 _StartPosition;
     private bool _isRight = true;
 
     private int _clickedNpcId;
@@ -32,6 +31,8 @@ public class Movement : MonoBehaviour
     public GameObject dialogueNpc;
     public GameObject activeDialogueUI;
 
+    bool candebarque = false;
+
     //[SerializeField] private TouchManager _touchManager;
 
     void Start()
@@ -43,7 +44,6 @@ public class Movement : MonoBehaviour
         _spriteRenderer = GetComponent<SpriteRenderer>();
 
         _lastPosition = transform.position;
-        _StartPosition = transform.position;
     }
 
     // Update is called once per frame
@@ -112,7 +112,7 @@ public class Movement : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (Vector3.Distance(_StartPosition, _lastPosition) < 0.1f)
+        if (candebarque == false)
             return;
 
         if (collision.gameObject.GetComponent<Trigger>())
@@ -149,5 +149,10 @@ public class Movement : MonoBehaviour
                 }
             }
         }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        candebarque = true;
     }
 }
