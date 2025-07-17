@@ -29,38 +29,35 @@ public class SearchScriptObj : MonoBehaviour
 
     void Awake()
     {
-        LoadCategory("Assets/Art/personalisation/ScriptObj/Arm/Arm", ArmSObj);
-        LoadCategory("Assets/Art/personalisation/ScriptObj/Arm/Hand", HandSObj);
-        LoadCategory("Assets/Art/personalisation/ScriptObj/Arm/Shoulder", ShoulderSObj);
+        //LoadCategory("ScriptObj/Arm/Arm", ArmSObj);
+        //LoadCategory("ScriptObj/Arm/Hand", HandSObj);
+        //LoadCategory("ScriptObj/Arm/Shoulder", ShoulderSObj);
 
-        LoadCategory("Assets/Art/personalisation/ScriptObj/Chest", ChestSObj);
+        LoadCategory("ScriptObj/Chest", ChestSObj);
 
-        //LoadCategory("Assets/Art/personalisation/ScriptObj/Face/EyeBrows", EyesSObj); 
-        LoadCategory("Assets/Art/personalisation/ScriptObj/Face/Eyes", EyesSObj); 
-        LoadCategory("Assets/Art/personalisation/ScriptObj/Face/Hair", HairSObj);
-        LoadCategory("Assets/Art/personalisation/ScriptObj/Face/Mouse", MouseSObj);
-        LoadCategory("Assets/Art/personalisation/ScriptObj/Face/Nose", NoseSObj);
+        ////LoadCategory("ScriptObj/Face/EyeBrows", EyesSObj); 
+        //LoadCategory("ScriptObj/Face/Eyes", EyesSObj); 
+        //LoadCategory("ScriptObj/Face/Hair", HairSObj);
+        //LoadCategory("ScriptObj/Face/Mouse", MouseSObj);
+        //LoadCategory("ScriptObj/Face/Nose", NoseSObj);
 
-        LoadCategory("Assets/Art/personalisation/ScriptObj/Leg/Foot", FootSObj);
-        LoadCategory("Assets/Art/personalisation/ScriptObj/Leg/Thigh", ThighSObj);
-        LoadCategory("Assets/Art/personalisation/ScriptObj/Leg/Leg", LegSObj);
+        //LoadCategory("ScriptObj/Leg/Foot", FootSObj);
+        //LoadCategory("ScriptObj/Leg/Thigh", ThighSObj);
+        //LoadCategory("ScriptObj/Leg/Leg", LegSObj);
 
     }
 
     void LoadCategory(string Path, List<PersoPlayerData> lst)
     {
         lst.Clear();
-        string[] guids = AssetDatabase.FindAssets("t:ScriptableObject", new[] { Path });
+        PersoPlayerData[] alldataPerso = Resources.LoadAll<PersoPlayerData>(Path);
 
-        foreach (string guid in guids)
+        for (int i = 0; i < alldataPerso.Length; i++) 
         {
-            string path = AssetDatabase.GUIDToAssetPath(guid);
-            PersoPlayerData asset = AssetDatabase.LoadAssetAtPath<PersoPlayerData>(path);
+            if (alldataPerso[i].isDebloquer == false)
+                Debug.Log(i);
 
-            if (asset != null)
-            {
-                lst.Add(asset);
-            }
+            lst.Add(alldataPerso[i]);           
         }
     }
 }

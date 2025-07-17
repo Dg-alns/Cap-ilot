@@ -153,8 +153,8 @@ public class Personalisation : MonoBehaviour
                 continue;
             }
 
-            Sprite kk = GetLsitScriptObj(Playerpart.DetectionOfPart(pagesManagement.CurrentPage))[i + offset].sprite;
-            listOfGridPersonalisation[i].GetComponent<Image>().sprite = kk;
+            Sprite sprite = GetLsitScriptObj(Playerpart.DetectionOfPart(pagesManagement.CurrentPage))[i + offset].sprite;
+            listOfGridPersonalisation[i].GetComponent<Image>().sprite = sprite;
 
             if (GetLsitScriptObj(Playerpart.DetectionOfPart(pagesManagement.CurrentPage))[i + offset].isDebloquer)
             {
@@ -167,12 +167,13 @@ public class Personalisation : MonoBehaviour
 
     public void ChangePerso(GameObject gameObject)
     {
+        int offset = OffsetOfidxLst();
         if (gameObject.GetComponent<Image>().sprite != null)
         {
             for (int i = 0; i < listOfGridPersonalisation.Count; i++) {
                 if (gameObject.name.Contains((i+1).ToString()))
                 {
-                    if (GetLsitScriptObj(Playerpart.DetectionOfPart(pagesManagement.CurrentPage))[i].isDebloquer)
+                    if (GetLsitScriptObj(Playerpart.DetectionOfPart(pagesManagement.CurrentPage))[i + offset].isDebloquer)
                     {
                         GameObject go = Playerpart.GetPartOfPlayer(pagesManagement.CurrentPage);
 

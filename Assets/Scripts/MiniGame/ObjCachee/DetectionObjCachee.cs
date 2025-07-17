@@ -30,9 +30,7 @@ public class DetectionObjCachee : DetectionUI
             nameobjs[i].text = objects[i].name;
         }
 
-
         timer.stop = true;
-
     }
 
     bool Detection(GameObject obj)
