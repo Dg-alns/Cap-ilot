@@ -1,4 +1,6 @@
+using System;
 using System.Threading.Tasks;
+using TMPro;
 using Unity.Services.Authentication;
 using Unity.Services.Vivox;
 using UnityEngine;
@@ -8,7 +10,8 @@ using UnityEngine.UI;
 public class LoginVivox : MonoBehaviour
 {
 
-    public string username;
+    public string username = "dorian";
+    public TextMeshProUGUI textMeshProUGUI;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,7 +21,9 @@ public class LoginVivox : MonoBehaviour
 
     async void OnUserLoggedIn()
     {
+        Debug.Log("OnUserLoggedIn triggered"); // <- VOIS-TU CECI DANS LOGCAT ?
         await JoinLobbyChannel();
+        Debug.Log("Joined channel"); // <- EST-CE QUE TU LA VOIS ?
     }
 
     async void LogoutOfVivoxServiceAsync()
@@ -30,7 +35,19 @@ public class LoginVivox : MonoBehaviour
 
     Task JoinLobbyChannel()
     {
-        return VivoxService.Instance.JoinGroupChannelAsync(VivoxVoiceManager.LobbyChannelName, ChatCapability.TextOnly);
+        try
+        {
+            return VivoxService.Instance.JoinGroupChannelAsync(
+                VivoxVoiceManager.LobbyChannelName,
+                ChatCapability.TextOnly
+            );
+        }
+        catch (Exception ex)
+        {
+            Debug.LogError($"JoinLobbyChannel failed: {ex.Message}");
+            return Task.CompletedTask;
+        }
+        //return VivoxService.Instance.JoinGroupChannelAsync(VivoxVoiceManager.LobbyChannelName, ChatCapability.TextOnly);
     }
 
     async void LoginToVivox()
@@ -40,7 +57,7 @@ public class LoginVivox : MonoBehaviour
         var loginOptions = new LoginOptions()
         {
             DisplayName = username,
-            ParticipantUpdateFrequency = ParticipantPropertyUpdateFrequency.FivePerSecond
+            ParticipantUpdateFrequency = ParticipantPropertyUpdateFrequency.TenPerSecond,
         };
        
         await VivoxService.Instance.LoginAsync(loginOptions);
@@ -49,5 +66,10 @@ public class LoginVivox : MonoBehaviour
     void OnDestroy()
     {
         VivoxService.Instance.LoggedIn -= OnUserLoggedIn;
+    }
+
+    public void ShowUsername()
+    {
+        textMeshProUGUI.text = username;
     }
 }

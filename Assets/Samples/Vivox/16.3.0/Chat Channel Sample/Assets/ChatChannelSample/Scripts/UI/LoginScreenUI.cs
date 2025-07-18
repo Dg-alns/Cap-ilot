@@ -163,7 +163,7 @@ public class LoginScreenUI : MonoBehaviour
         var loginOptions = new LoginOptions()
         {
             DisplayName = DisplayNameInput.text,
-            ParticipantUpdateFrequency = ParticipantPropertyUpdateFrequency.FivePerSecond
+            ParticipantUpdateFrequency = ParticipantPropertyUpdateFrequency.TenPerSecond
         };
         await VivoxService.Instance.LoginAsync(loginOptions);
     }

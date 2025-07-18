@@ -10,6 +10,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using UnityEngine.Android;
 
 
 public class ChatTextVivox : MonoBehaviour
@@ -24,12 +25,19 @@ public class ChatTextVivox : MonoBehaviour
 
     ScrollRect m_TextChatScrollRect;
     public TMP_InputField MessageInputField;
-
+    
     private Task FetchMessages = null;
     private DateTime? oldestMessage = null;
 
     private void Start()
     {
+
+#if UNITY_ANDROID
+        if (!Permission.HasUserAuthorizedPermission(Permission.Microphone))
+        {
+            Permission.RequestUserPermission(Permission.Microphone);
+        }
+#endif
         VivoxService.Instance.ChannelJoined += OnChannelJoined;
         VivoxService.Instance.DirectedMessageReceived += OnDirectedMessageReceived;
         VivoxService.Instance.ChannelMessageReceived += OnChannelMessageReceived;
@@ -48,6 +56,71 @@ public class ChatTextVivox : MonoBehaviour
         MessageInputField.onEndEdit.RemoveAllListeners();
         m_TextChatScrollRect.onValueChanged.RemoveAllListeners();
     }
+
+/*#if (UNITY_ANDROID && !UNITY_EDITOR) || __ANDROID__
+    bool IsAndroid12AndUp()
+    {
+        // android12VersionCode is hardcoded because it might not be available in all versions of Android SDK
+        const int android12VersionCode = 31;
+        AndroidJavaClass buildVersionClass = new AndroidJavaClass("android.os.Build$VERSION");
+        int buildSdkVersion = buildVersionClass.GetStatic<int>("SDK_INT");
+
+        return buildSdkVersion >= android12VersionCode;
+    }
+
+    string GetBluetoothConnectPermissionCode()
+    {
+        if (IsAndroid12AndUp())
+        {
+            // UnityEngine.Android.Permission does not contain the BLUETOOTH_CONNECT permission, fetch it from Android
+            AndroidJavaClass manifestPermissionClass = new AndroidJavaClass("android.Manifest$permission");
+            string permissionCode = manifestPermissionClass.GetStatic<string>("BLUETOOTH_CONNECT");
+
+            return permissionCode;
+        }
+
+        return "";
+    }
+#endif
+
+    bool IsMicPermissionGranted()
+    {
+        bool isGranted = Permission.HasUserAuthorizedPermission(Permission.Microphone);
+#if (UNITY_ANDROID && !UNITY_EDITOR) || __ANDROID__
+        if (IsAndroid12AndUp())
+        {
+            // On Android 12 and up, we also need to ask for the BLUETOOTH_CONNECT permission for all features to work
+            isGranted &= Permission.HasUserAuthorizedPermission(GetBluetoothConnectPermissionCode());
+        }
+#endif
+        return isGranted;
+    }
+
+    void AskForPermissions()
+    {
+        string permissionCode = Permission.Microphone;
+
+#if (UNITY_ANDROID && !UNITY_EDITOR) || __ANDROID__
+        if (m_PermissionAskedCount == 1 && IsAndroid12AndUp())
+        {
+            permissionCode = GetBluetoothConnectPermissionCode();
+        }
+#endif
+        m_PermissionAskedCount++;
+        Permission.RequestUserPermission(permissionCode);
+    }
+
+    bool IsPermissionsDenied()
+    {
+#if (UNITY_ANDROID && !UNITY_EDITOR) || __ANDROID__
+        // On Android 12 and up, we also need to ask for the BLUETOOTH_CONNECT permission
+        if (IsAndroid12AndUp())
+        {
+            return m_PermissionAskedCount == 2;
+        }
+#endif
+        return m_PermissionAskedCount == 1;
+    }*/
 
     private void ScrollRectChange(Vector2 vector)
     {
@@ -138,15 +211,32 @@ public class ChatTextVivox : MonoBehaviour
 
     public void SendMessage()
     {
+        if (!VivoxService.Instance.IsLoggedIn)
+        {
+            Debug.LogWarning("User not logged in yet.");
+            return;
+        }
+
         if (string.IsNullOrEmpty(MessageInputField.text))
         {
             return;
         }
 
-        Debug.Log(VivoxService.Instance);
-        Debug.Log(VivoxVoiceManager.LobbyChannelName);
-        Debug.Log(MessageInputField.text);
-        VivoxService.Instance.SendChannelTextMessageAsync(VivoxVoiceManager.LobbyChannelName, MessageInputField.text);
+        VivoxService.Instance.SendChannelTextMessageAsync(
+            VivoxVoiceManager.LobbyChannelName,
+            MessageInputField.text
+        ).ContinueWith(task =>
+        {
+            if (task.Exception != null)
+            {
+                Debug.LogError("Message send failed: " + task.Exception.Message);
+            }
+            else
+            {
+                Debug.Log("Message sent successfully");
+            }
+        });
+
         ClearTextField();
     }
 
