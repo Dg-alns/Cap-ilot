@@ -15,9 +15,14 @@ public class PlayerSpriteManager : MonoBehaviour
 
     public GameObject Diabete;
 
+    bool discoverDiabete = false;
+
     private void Start()
     {
-        if (HaveDateEnter() == false) // Upgrade pour check tout
+        if(discoverDiabete == false)
+            Diabete.SetActive(false);
+
+        if (HaveDateEnter() == false)
             return;
 
 
