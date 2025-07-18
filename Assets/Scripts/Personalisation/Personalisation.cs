@@ -153,6 +153,9 @@ public class Personalisation : MonoBehaviour
 
             case PartOfBody.Bas:
                 return ScriptsBas;
+
+            case PartOfBody.Shoes:
+                return ScriptsShoes;
         }
 
         return null;

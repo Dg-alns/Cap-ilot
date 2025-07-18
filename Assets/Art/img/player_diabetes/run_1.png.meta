@@ -1,13 +1,13 @@
 fileFormatVersion: 2
-guid: 54d2a5689fb10df49b47ce107904b359
+guid: bd4c0335d77d8fd47856478cab6a2499
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1996130282235745821
-    second: diabetes_run_0
+      213: -2026416148943288999
+    second: run_1_0
   - first:
-      213: 4784804180760334682
-    second: diabetes_run_1
+      213: -7329262604147811714
+    second: run_1_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -116,13 +116,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: diabetes_run_0
+      name: run_1_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 830
-        width: 110
-        height: 108
+        y: 40
+        width: 7
+        height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -130,20 +130,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d16df0e6aeda3bb10800000000000000
-      internalID: 1996130282235745821
+      spriteID: 955ce1bbf39b0e3e0800000000000000
+      internalID: -2026416148943288999
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: diabetes_run_1
+      name: run_1_1
       rect:
         serializedVersion: 2
-        x: 61
+        x: 2
         y: 0
-        width: 2294
-        height: 2314
+        width: 116
+        height: 116
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -151,8 +151,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a51160a2d0a076240800000000000000
-      internalID: 4784804180760334682
+      spriteID: e7a173e5e7a394a90800000000000000
+      internalID: -7329262604147811714
       vertices: []
       indices: 
       edges: []
@@ -167,9 +167,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      diabetes_run_0: 1996130282235745821
-      diabetes_run_1: 4784804180760334682
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

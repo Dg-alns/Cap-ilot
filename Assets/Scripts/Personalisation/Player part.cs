@@ -63,6 +63,7 @@ public class Playerpart : MonoBehaviour
 
     void Awake()
     {
+        AllParOfPlayer.Clear();
         SpriteRenderer[] e = GetComponentsInChildren<SpriteRenderer>();
 
         for (int i = 0; i < e.Length; i++)

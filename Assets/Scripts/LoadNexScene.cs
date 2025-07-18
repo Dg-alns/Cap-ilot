@@ -26,10 +26,22 @@ public class LoadNexScene : MonoBehaviour
         {
             _NextSceneData.isLauch = true;
             animator.SetTrigger("Transition");
-
             //DeletPos();
 
-            string scene = PlayerPrefs.HasKey("SceneName") ? PlayerPrefs.GetString("SceneName") : "Port Ile Principale";
+            string scene = PlayerPrefs.HasKey("SceneName") ? PlayerPrefs.GetString("SceneName") : "Personalisation";
+            StartCoroutine(_NextSceneData.NextScene(scene));
+        }
+    }
+
+    public void NextScenePersonalisation(PlayerSpriteManager playerSpriteManager)
+    {
+        if (_NextSceneData.isLauch == false)
+        {
+            _NextSceneData.isLauch = true;
+            animator.SetTrigger("Transition");
+
+            playerSpriteManager.SavePersonalisation();
+            string scene = _NextSceneData.GetPreviousScene().Length > 1 ? _NextSceneData.GetPreviousScene() : "Port Ile Principale";
             StartCoroutine(_NextSceneData.NextScene(scene));
         }
     }
@@ -42,7 +54,7 @@ public class LoadNexScene : MonoBehaviour
             {
                 _NextSceneData.isLauch = true;
                 animator.SetTrigger("Transition");
-                StartCoroutine(_NextSceneData.NextScene("Archipel"));
+                StartCoroutine(_NextSceneData.SwitchScene("Archipel"));
             }
             else
             {
@@ -57,7 +69,7 @@ public class LoadNexScene : MonoBehaviour
         {
             _NextSceneData.isLauch = true;
             animator.SetTrigger("Transition");
-            StartCoroutine(_NextSceneData.NextScene(scene));
+            StartCoroutine(_NextSceneData.SwitchScene(scene));
         }
     }
 
@@ -71,7 +83,7 @@ public class LoadNexScene : MonoBehaviour
                 SavePos();
                 _energy.UseEnergy();
                 animator.SetTrigger("Transition");
-                StartCoroutine(_NextSceneData.NextScene(scene));
+                StartCoroutine(_NextSceneData.SwitchScene(scene));
             }
         }
     }
@@ -79,7 +91,7 @@ public class LoadNexScene : MonoBehaviour
     public void LoadPreviousScene()
     {
         animator.SetTrigger("Transition");
-        StartCoroutine(_NextSceneData.NextScene(_NextSceneData.GetPreviousScene()));
+        StartCoroutine(_NextSceneData.SwitchScene(_NextSceneData.GetPreviousScene()));
     }
 
     public void LoadNewIle(string scene)

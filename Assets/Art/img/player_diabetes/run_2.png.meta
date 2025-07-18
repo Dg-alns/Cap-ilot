@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: f1a2b805433b0d947ae1b5f1c5225f40
+guid: 69fac6d5ea095ad4497594fdcc4fccdb
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3670545863855154616
-    second: diabetes_run2_0
-  - first:
-      213: 8296324512369575800
-    second: diabetes_run2_1
+      213: 1142697403063345136
+    second: run_2_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -116,34 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: diabetes_run2_0
+      name: run_2_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 942
-        width: 176
-        height: 221
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 8b5adda040660f230800000000000000
-      internalID: 3670545863855154616
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: diabetes_run2_1
-      rect:
-        serializedVersion: 2
-        x: 2
         y: 0
-        width: 1908
-        height: 2289
+        width: 96
+        height: 114
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -151,8 +127,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 877872d2037722370800000000000000
-      internalID: 8296324512369575800
+      spriteID: 0ff1a5bdb3dabdf00800000000000000
+      internalID: 1142697403063345136
       vertices: []
       indices: 
       edges: []
@@ -167,9 +143,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      diabetes_run2_0: 3670545863855154616
-      diabetes_run2_1: 8296324512369575800
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

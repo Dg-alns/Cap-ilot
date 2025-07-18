@@ -51,6 +51,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Other/Sound.unity
     guid: bb7cea7e083719a44974c26e723d22c1
   - enabled: 1
+    path: Assets/Scenes/Other/Personalisation.unity
+    guid: f60d0fb0264137948afbb1883061dfef
+  - enabled: 1
     path: Assets/Scenes/Other/Sound 1.unity
     guid: 4351678b093ac084f87852bdbd268d00
   - enabled: 1

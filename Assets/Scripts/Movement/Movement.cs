@@ -52,18 +52,18 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Animation Diabete //Todo changer le sprite animation
-        //if(_diabeteAnimator != null)
-        //{
-        //    if (_agent.destination != transform.position)
-        //    {
-        //        _diabeteAnimator.SetBool("Walking", true);
-        //    }
-        //    else
-        //    {
-        //        _diabeteAnimator.SetBool("Walking", false);
-        //    }
-        //}
+        // Animation Diabete
+        if (_diabeteAnimator != null)
+        {
+            if (_agent.destination != transform.position)
+            {
+                _diabeteAnimator.SetBool("Walking", true);
+            }
+            else
+            {
+                _diabeteAnimator.SetBool("Walking", false);
+            }
+        }
 
 
 

@@ -13,9 +13,11 @@ public class PlayerSpriteManager : MonoBehaviour
     public GameObject Bas;
     public GameObject Chaussure;
 
+    public GameObject Diabete;
+
     private void Start()
     {
-        if (playerData.Corps == null)
+        if (HaveDateEnter() == false) // Upgrade pour check tout
             return;
 
 
@@ -35,5 +37,15 @@ public class PlayerSpriteManager : MonoBehaviour
         playerData.Haut = Haut.GetComponent<SpriteRenderer>().sprite;
         playerData.Bas = Bas.GetComponent<SpriteRenderer>().sprite;
         playerData.Chaussure = Chaussure.GetComponent<SpriteRenderer>().sprite;
+    }
+
+    bool HaveDateEnter()
+    {
+        return playerData.Corps != null ||
+                playerData.Cheveux != null ||
+                playerData.AccessoirTete != null ||
+                playerData.Haut != null ||
+                playerData.Bas != null ||
+                playerData.Chaussure != null;
     }
 }
