@@ -19,8 +19,11 @@ public class PlayerSpriteManager : MonoBehaviour
 
     private void Start()
     {
-        if(discoverDiabete == false)
-            Diabete.SetActive(false);
+        if (Diabete != null)
+        {
+            if (discoverDiabete)
+                Diabete.SetActive(true);
+        }
 
         if (HaveDateEnter() == false)
             return;
