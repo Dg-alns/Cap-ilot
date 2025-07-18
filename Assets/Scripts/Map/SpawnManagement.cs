@@ -72,8 +72,11 @@ public class SpawnManagement : MonoBehaviour
         SavePos();
         PersoToPosition.SetActive(true);
 
-        if(port.isDiscover == false)
-            port.isDiscover = true;
+        if (port != null)
+        {
+            if (port.isDiscover == false)
+                port.isDiscover = true;
+        }
 
     }
 

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerSpriteManager : MonoBehaviour
 {
@@ -24,6 +25,9 @@ public class PlayerSpriteManager : MonoBehaviour
             if (discoverDiabete)
                 Diabete.SetActive(true);
         }
+
+        if (SceneManager.GetActiveScene().name != "Personalisation")
+            return;
 
         if (HaveDateEnter() == false)
             return;

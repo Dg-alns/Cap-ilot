@@ -11,8 +11,9 @@ public class LoadNexScene : MonoBehaviour
 
     public Animator animator;
 
-    [Header ("\nNot Mandatory")]
-    [Header ("ForSavePosition")]
+    [Header ("\nJust for Scene Accueil")]
+    [SerializeField] private Tools tools;
+    [Header ("Not Mandatory\nForSavePosition")]
     public GameObject Player;
 
     private void Start()
@@ -26,8 +27,8 @@ public class LoadNexScene : MonoBehaviour
         {
             _NextSceneData.isLauch = true;
             animator.SetTrigger("Transition");
-            DeletPos();
-
+            //DeletPos();
+            tools.DontDestroyTools();
             string scene = PlayerPrefs.HasKey("SceneName") ? PlayerPrefs.GetString("SceneName") : "Personalisation";
             StartCoroutine(_NextSceneData.NextScene(scene));
         }

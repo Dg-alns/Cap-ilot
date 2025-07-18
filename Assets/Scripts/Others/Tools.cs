@@ -13,7 +13,6 @@ public  class Tools : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        DontDestroyOnLoad(gameObject);
         m_iUILayer = LayerMask.NameToLayer("UI");
     }
 
@@ -21,6 +20,11 @@ public  class Tools : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void DontDestroyTools()
+    {
+        DontDestroyOnLoad(gameObject);
     }
 
     public bool IsPointerOverUIElement()
