@@ -14,3 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   IleName: Port Hopital
   isDiscover: 0
+  CanGoToIle: 0
+  ile: 2

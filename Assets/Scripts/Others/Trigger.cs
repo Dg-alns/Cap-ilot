@@ -27,7 +27,6 @@ public class Trigger : MonoBehaviour
 
     private void Start()
     {
-        
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -46,13 +45,14 @@ public class Trigger : MonoBehaviour
                 {
                     GameObject ui = Instantiate(UI);
                     string spePort = InPort ? "embarquez" : "débarquez";
-                    string scene = InPort ? "Archipel" : SceneName;
+                    string scene = InPort ? "Archipel" : GetComponent<AccesToPort>().port.IleName;
+
                     ui.GetComponentInChildren<TextMeshProUGUI>().text = $"Souhaitez vous {spePort} ?";
                     Button no = ui.GetComponentsInChildren<Button>()[0];
                     no.onClick.AddListener(() => Destroy(ui));
                     no.onClick.AddListener(() => uiOpen = false);
                     Button yes = ui.GetComponentsInChildren<Button>()[1];
-                    yes.onClick.AddListener(() => nexScene.LoadBoat(scene));      
+                    yes.onClick.AddListener(() => nexScene.LoadBoat(GetComponent<AccesToPort>()));
                     uiOpen = true;
                 }
                 break;

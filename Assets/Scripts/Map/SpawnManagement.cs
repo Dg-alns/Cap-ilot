@@ -9,6 +9,7 @@ using UnityEngine.SceneManagement;
 public class SpawnManagement : MonoBehaviour
 {
     public LoadNexScene loadNexScene;
+    public Port port;
 
     [Header ("\nGameObject off Player or Pnj to position")]
     public GameObject PersoToPosition;
@@ -48,7 +49,7 @@ public class SpawnManagement : MonoBehaviour
 
 
         // Player
-        if (SceneManager.GetActiveScene().name == PlayerPrefs.GetString("SceneName")) {
+        if (SceneManager.GetActiveScene().name == PlayerPrefs.GetString("SceneName") && loadNexScene.GetBoatSpawn() == false) {
             PositionPLayer();
             return;
         }
@@ -70,6 +71,9 @@ public class SpawnManagement : MonoBehaviour
         PersoToPosition.transform.rotation = new(0, 0, 0, 1);
         SavePos();
         PersoToPosition.SetActive(true);
+
+        if(port.isDiscover == false)
+            port.isDiscover = true;
 
     }
 

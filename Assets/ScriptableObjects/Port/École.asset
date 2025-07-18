@@ -12,5 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eade2558c54894347b08987d5eff3daa, type: 3}
   m_Name: "\xC9cole"
   m_EditorClassIdentifier: 
-  IleName: 
+  IleName: Port Ecole
   isDiscover: 0
+  CanGoToIle: 1
+  ile: 5

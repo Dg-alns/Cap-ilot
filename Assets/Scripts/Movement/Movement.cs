@@ -44,6 +44,9 @@ public class Movement : MonoBehaviour
         _spriteRenderer = GetComponent<SpriteRenderer>();
 
         _lastPosition = transform.position;
+
+        if (SceneManager.GetActiveScene().name != "Archipel")
+            candebarque = true;
     }
 
     // Update is called once per frame

@@ -12,5 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eade2558c54894347b08987d5eff3daa, type: 3}
   m_Name: Relation
   m_EditorClassIdentifier: 
-  IleName: 
+  IleName: Port Relation
   isDiscover: 0
+  CanGoToIle: 0
+  ile: 6

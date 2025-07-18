@@ -1,4 +1,5 @@
 using System;
+using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -26,20 +27,27 @@ public class LoadNexScene : MonoBehaviour
             _NextSceneData.isLauch = true;
             animator.SetTrigger("Transition");
 
-            DeletPos();
+            //DeletPos();
 
             string scene = PlayerPrefs.HasKey("SceneName") ? PlayerPrefs.GetString("SceneName") : "Port Ile Principale";
             StartCoroutine(_NextSceneData.NextScene(scene));
         }
     }
 
-    public void LoadBoat(string scene)
-    {        
+    public void LoadBoat(AccesToPort accesToPort)
+    {
         if (_NextSceneData.isLauch == false)
         {
-            _NextSceneData.isLauch = true;
-            animator.SetTrigger("Transition");
-            StartCoroutine(_NextSceneData.NextScene(scene));
+            if (accesToPort == null)
+            {
+                _NextSceneData.isLauch = true;
+                animator.SetTrigger("Transition");
+                StartCoroutine(_NextSceneData.NextScene("Archipel"));
+            }
+            else
+            {
+                accesToPort.LoadScene();
+            }
         }
     }
 
@@ -109,4 +117,9 @@ public class LoadNexScene : MonoBehaviour
         PlayerPrefs.DeleteKey("SceneName");
     }
 
+
+    public bool GetBoatSpawn()
+    {
+        return _NextSceneData.GetPreviousScene() == "Archipel" || _NextSceneData.GetPreviousScene() ==  "MiniGame_Boat";
+    }
 }
