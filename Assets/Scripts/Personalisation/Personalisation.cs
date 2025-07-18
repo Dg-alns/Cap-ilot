@@ -1,5 +1,7 @@
 using System.Collections.Generic;
+using NUnit.Framework;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -27,25 +29,25 @@ public class Personalisation : MonoBehaviour
 
 
     // Arm
-    List<PersoPlayerData> ScriptsArm = SearchScriptObj.ArmSObj;
+    List<PersoPlayerData> ScriptsHaut = SearchScriptObj.HautSObj;
     List<PersoPlayerData> ScriptsHand = SearchScriptObj.HandSObj;
     List<PersoPlayerData> ScriptsShoulder = SearchScriptObj.ShoulderSObj;
 
 
-    List<PersoPlayerData> ScriptsChest = SearchScriptObj.ChestSObj;
+    List<PersoPlayerData> ScriptsChest = SearchScriptObj.CorpsSObj;
 
     // Face
     //List<ScriptableObject> ScriptsEyebrows = SearchScriptObj.EyebrowsSObj;
-    List<PersoPlayerData> ScriptsEyes = SearchScriptObj.EyesSObj;
+    List<PersoPlayerData> ScriptsAccTete = SearchScriptObj.AccTeteSObj;
     List<PersoPlayerData> ScriptsHair = SearchScriptObj.HairSObj;
     List<PersoPlayerData> ScriptsMouse = SearchScriptObj.MouseSObj;
     List<PersoPlayerData> ScriptsNose = SearchScriptObj.NoseSObj;
 
 
     //Leg
-    List<PersoPlayerData> ScriptsFoot = SearchScriptObj.FootSObj;
+    List<PersoPlayerData> ScriptsShoes = SearchScriptObj.ShoesSObj;
     List<PersoPlayerData> ScriptsThigh = SearchScriptObj.ThighSObj;
-    List<PersoPlayerData> ScriptsLeg = SearchScriptObj.LegSObj;
+    List<PersoPlayerData> ScriptsBas = SearchScriptObj.BasSObj;
 
 
     int sizeGrid;
@@ -74,9 +76,68 @@ public class Personalisation : MonoBehaviour
     }
 
 
+    //List<PersoPlayerData> GetLsitScriptObj(PartOfBody part)
+    //{
+    //    switch(part)
+    //    {
+    //        case PartOfBody.Hair:
+    //            return ScriptsHair;
+
+    //        case PartOfBody.Chest:
+    //            return ScriptsChest;
+
+    //        case PartOfBody.Eyes:
+    //            return ScriptsEyes;
+
+    //        case PartOfBody.Mouse:
+    //            return ScriptsMouse;
+
+    //        case PartOfBody.Nose:
+    //            return ScriptsNose;
+
+    //        case PartOfBody.L_Arm:
+    //            return ScriptsArm;
+
+    //        case PartOfBody.R_Arm:
+    //            return ScriptsArm;
+
+    //        case PartOfBody.L_Foot:
+    //            return ScriptsFoot;
+
+    //        case PartOfBody.R_Foot:
+    //            return ScriptsFoot;
+
+    //        case PartOfBody.L_Thigh:
+    //            return ScriptsThigh;
+
+    //        case PartOfBody.R_Thigh:
+    //            return ScriptsThigh;
+
+    //        case PartOfBody.L_Hand:
+    //            return ScriptsHand;
+
+    //        case PartOfBody.R_Hand:
+    //            return ScriptsHand;
+
+    //        case PartOfBody.L_Leg:
+    //            return ScriptsLeg;
+
+    //        case PartOfBody.R_Leg:
+    //            return ScriptsLeg;
+
+    //        case PartOfBody.L_Shoulder:
+    //            return ScriptsShoulder;
+
+    //        case PartOfBody.R_Shoulder:
+    //            return ScriptsShoulder;
+    //    }
+
+    //    return null;
+    //}
+
     List<PersoPlayerData> GetLsitScriptObj(PartOfBody part)
     {
-        switch(part)
+        switch (part)
         {
             case PartOfBody.Hair:
                 return ScriptsHair;
@@ -84,50 +145,14 @@ public class Personalisation : MonoBehaviour
             case PartOfBody.Chest:
                 return ScriptsChest;
 
-            case PartOfBody.Eyes:
-                return ScriptsEyes;
+            case PartOfBody.AccTete:
+                return ScriptsAccTete;
 
-            case PartOfBody.Mouse:
-                return ScriptsMouse;
+            case PartOfBody.Haut:
+                return ScriptsHaut;
 
-            case PartOfBody.Nose:
-                return ScriptsNose;
-
-            case PartOfBody.L_Arm:
-                return ScriptsArm;
-
-            case PartOfBody.R_Arm:
-                return ScriptsArm;
-
-            case PartOfBody.L_Foot:
-                return ScriptsFoot;
-
-            case PartOfBody.R_Foot:
-                return ScriptsFoot;
-
-            case PartOfBody.L_Thigh:
-                return ScriptsThigh;
-
-            case PartOfBody.R_Thigh:
-                return ScriptsThigh;
-
-            case PartOfBody.L_Hand:
-                return ScriptsHand;
-
-            case PartOfBody.R_Hand:
-                return ScriptsHand;
-
-            case PartOfBody.L_Leg:
-                return ScriptsLeg;
-
-            case PartOfBody.R_Leg:
-                return ScriptsLeg;
-
-            case PartOfBody.L_Shoulder:
-                return ScriptsShoulder;
-
-            case PartOfBody.R_Shoulder:
-                return ScriptsShoulder;
+            case PartOfBody.Bas:
+                return ScriptsBas;
         }
 
         return null;
