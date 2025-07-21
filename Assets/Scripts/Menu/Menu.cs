@@ -18,7 +18,7 @@ public class Menu : MonoBehaviour
     private void Start()
     {
         _Animator = GetComponent<Animator>();
-        if (!SceneManager.GetActiveScene().name.Contains("Menu"))
+        if (!SceneManager.GetActiveScene().name.Contains("MiniGame"))
         {
             _buttonQuitMinigame.SetActive(false);
         }
