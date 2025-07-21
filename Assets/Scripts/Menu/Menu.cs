@@ -18,6 +18,8 @@ public class Menu : MonoBehaviour
     private void Start()
     {
         _Animator = GetComponent<Animator>();
+
+        // Unactive the button "Quit minigame" if we are'n in a minigame
         if (!SceneManager.GetActiveScene().name.Contains("MiniGame"))
         {
             _buttonQuitMinigame.SetActive(false);
@@ -30,11 +32,9 @@ public class Menu : MonoBehaviour
         {
             case true: 
                 Resume(); 
-                //Time.timeScale = 1.0f; 
                 break;
             case false: 
                 Pause();
-                //StartCoroutine(OneSecondTimeScale());
                 break;
         }
     }
@@ -50,6 +50,7 @@ public class Menu : MonoBehaviour
         _Animator.SetBool("IsPause", isGamedPause);
     }
     
+    // Swap Between the Menu Side and the LeaderBoard Side
     public void MenuSide()
     {
         isMenuSide = true;
@@ -60,11 +61,4 @@ public class Menu : MonoBehaviour
         isMenuSide = false;
         _Animator.SetBool("IsMenuSide", isMenuSide);
     }
-
-    public IEnumerator OneSecondTimeScale()
-    {
-        yield return new WaitForSeconds(1);
-        Time.timeScale = 0.0f;
-    }
-
 }

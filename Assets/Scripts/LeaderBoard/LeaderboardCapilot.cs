@@ -33,6 +33,8 @@ public class LeaderboardCapilot : MonoBehaviour
 
     [SerializeField] private TMP_Dropdown _Dropdown;
 
+
+    // Public Key associate to the minigame
     public Dictionary<EnumMinigame, string> keyValuePairs = new Dictionary<EnumMinigame, string>() {
         {EnumMinigame.Balance,"09af4957d862953d2f6c4cfe207c202aa761cdb476e9ba4431f28b802bdc7d7b" },
         {EnumMinigame.Boxe,"ef7e955364af8a5a81ed07a0802a4193422dfcfcee3ac6d37ed7659d583d3603" },
@@ -43,7 +45,7 @@ public class LeaderboardCapilot : MonoBehaviour
         {EnumMinigame.ObjCache,"53b131a9609c397fc867166b60b58892974598df8cf4986c8797f69c213cb93d" },
     };
 
-
+    // Default Key
     private string _publicKey = "09af4957d862953d2f6c4cfe207c202aa761cdb476e9ba4431f28b802bdc7d7b";
 
     private void Start()
@@ -54,7 +56,10 @@ public class LeaderboardCapilot : MonoBehaviour
 
     public void GetLeaderBoard(string publicKey)
     {
+        // First Reset the leaderboard Text (names + points)  
         ResetTextLeaderboard();
+
+        // Get and assign the leaderboard associate with the key
         LeaderboardCreator.GetLeaderboard(publicKey, ((msg) =>
         {
             int loopLenght = (_names.Count < msg.Length) ? _names.Count : msg.Length;
@@ -68,6 +73,7 @@ public class LeaderboardCapilot : MonoBehaviour
         }));
     }
 
+    // Set in the leaderboard a score (if it's lower than the previous one, nothing change apart the nickname of the player
     public void SetLeaderboardEntry()
     {
         LeaderboardCreator.UploadNewEntry(_publicKey, _inputFieldName.text, int.Parse(_inputFieldScore.text), ((msg) =>
@@ -76,6 +82,7 @@ public class LeaderboardCapilot : MonoBehaviour
         }));
     }
 
+    // Get the new public key associate with the dropdown in the menu leaderboard
     public void ChangePublicKeyLeaderBoard()
     {
         Debug.Log(_Dropdown.value);
@@ -85,18 +92,7 @@ public class LeaderboardCapilot : MonoBehaviour
         GetLeaderBoard(_publicKey);
     }
 
-    void StartLoading()
-    {
-        _names[0].GetComponentInParent<Transform>().gameObject.SetActive(false);
-        _LoadingText.gameObject.SetActive(true);
-    }
-    void EndLoading()
-    {
-        _names[0].GetComponentInParent<Transform>().gameObject.SetActive(true);
-        _LoadingText.gameObject.SetActive(false);
-    }
-
-
+    // Reset the Text of the leaderboard (names + points)
     private void ResetTextLeaderboard()
     {
         for (int i = 0; i < _names.Count; i++)
