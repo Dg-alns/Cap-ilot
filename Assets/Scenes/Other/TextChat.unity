@@ -428,7 +428,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &406365436
 RectTransform:
   m_ObjectHideFlags: 0
@@ -544,6 +544,18 @@ MonoBehaviour:
       - m_Target: {fileID: 2043471804}
         m_TargetAssemblyTypeName: LoginVivox, Assembly-CSharp
         m_MethodName: ShowUsername
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1388418224}
+        m_TargetAssemblyTypeName: ChatTextVivox, Assembly-CSharp
+        m_MethodName: History
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1833,7 +1845,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1047581735}
   m_HandleRect: {fileID: 1047581733}
   m_Direction: 2
-  m_Value: 1
+  m_Value: 0
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -1932,8 +1944,6 @@ MonoBehaviour:
   ChatContentObj: {fileID: 1553762276}
   MessageObject: {fileID: 1165456221039373771, guid: d23945110153eed41b49ec81317d0adf, type: 3}
   MessageInputField: {fileID: 439998703}
-  texttest: {fileID: 1069828207}
-  checktest: {fileID: 1112781048}
 --- !u!114 &1388418225
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2578,6 +2588,45 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   username: dorian
   textMeshProUGUI: {fileID: 1112781048}
+  UnityEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1388418223}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 439998701}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1125294238}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!224 &2055456890 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1301540690875526038, guid: d23945110153eed41b49ec81317d0adf, type: 3}

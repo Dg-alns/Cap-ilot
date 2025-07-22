@@ -38,15 +38,38 @@ public class ChatTextVivox : MonoBehaviour
             Permission.RequestUserPermission(Permission.Microphone);
         }
 #endif
-        VivoxService.Instance.ChannelJoined += OnChannelJoined;
+
+        StartCoroutine(WaitForVivoxInitThenSubscribe());
+
+        /*VivoxService.Instance.ChannelJoined += OnChannelJoined;
         VivoxService.Instance.DirectedMessageReceived += OnDirectedMessageReceived;
         VivoxService.Instance.ChannelMessageReceived += OnChannelMessageReceived;
         //VivoxService.Instance.ChannelMessageEdited += OnChannelMessageEdited;
         //VivoxService.Instance.ChannelMessageDeleted += OnChannelMessageDeleted;
 
         m_TextChatScrollRect = GetComponent<ScrollRect>();
+        m_TextChatScrollRect.onValueChanged.AddListener(ScrollRectChange);*/
+    }
+
+    private IEnumerator WaitForVivoxInitThenSubscribe()
+    {
+        // Attend que Vivox soit prêt
+        while (!VivoxService.Instance.IsLoggedIn)
+        {
+            Debug.Log("Waiting for Vivox to initialize...");
+            yield return null;
+        }
+
+        Debug.Log("Vivox ready, setting up ChatTextVivox");
+
+        VivoxService.Instance.ChannelJoined += OnChannelJoined;
+        VivoxService.Instance.DirectedMessageReceived += OnDirectedMessageReceived;
+        VivoxService.Instance.ChannelMessageReceived += OnChannelMessageReceived;
+
+        m_TextChatScrollRect = GetComponent<ScrollRect>();
         m_TextChatScrollRect.onValueChanged.AddListener(ScrollRectChange);
     }
+
     void OnDestroy()
     {
         VivoxService.Instance.ChannelJoined -= OnChannelJoined;
@@ -135,6 +158,13 @@ public class ChatTextVivox : MonoBehaviour
     void OnChannelJoined(string channelName)
     {
         FetchMessages = FetchHistory(true);
+    }
+    public void History()
+    {
+        if(VivoxService.Instance.IsLoggedIn){
+
+            FetchMessages = FetchHistory(false);
+        }
     }
 
     private async Task FetchHistory(bool scrollToBottom = false)

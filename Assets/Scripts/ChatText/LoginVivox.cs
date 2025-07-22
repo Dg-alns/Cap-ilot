@@ -4,6 +4,7 @@ using TMPro;
 using Unity.Services.Authentication;
 using Unity.Services.Vivox;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
@@ -12,18 +13,30 @@ public class LoginVivox : MonoBehaviour
 
     public string username = "dorian";
     public TextMeshProUGUI textMeshProUGUI;
+    public UnityEvent UnityEvent;
     // Start is called before the first frame update
     void Start()
     {
+        Debug.Log("AH");
         LoginToVivox();
         VivoxService.Instance.LoggedIn += OnUserLoggedIn;
+        VivoxService.Instance.LoggedOut += LogoutOfVivoxServiceAsync;
+
+
     }
 
+    void Update()
+    {
+        if (VivoxService.Instance.IsLoggedIn)
+        {
+            UnityEvent.Invoke();
+        }
+    }
     async void OnUserLoggedIn()
     {
-        Debug.Log("OnUserLoggedIn triggered"); // <- VOIS-TU CECI DANS LOGCAT ?
+        Debug.Log("OnUserLoggedIn triggered"); 
         await JoinLobbyChannel();
-        Debug.Log("Joined channel"); // <- EST-CE QUE TU LA VOIS ?
+        Debug.Log("Joined channel"); 
     }
 
     async void LogoutOfVivoxServiceAsync()
@@ -53,6 +66,12 @@ public class LoginVivox : MonoBehaviour
     async void LoginToVivox()
     {
 
+        if (!Unity.Services.Core.UnityServices.State.Equals(Unity.Services.Core.ServicesInitializationState.Initialized))
+        {
+            await Unity.Services.Core.UnityServices.InitializeAsync();
+        }
+
+
         await VivoxVoiceManager.Instance.InitializeAsync(username);
         var loginOptions = new LoginOptions()
         {
@@ -66,6 +85,7 @@ public class LoginVivox : MonoBehaviour
     void OnDestroy()
     {
         VivoxService.Instance.LoggedIn -= OnUserLoggedIn;
+        VivoxService.Instance.LoggedOut -= LogoutOfVivoxServiceAsync;
     }
 
     public void ShowUsername()
