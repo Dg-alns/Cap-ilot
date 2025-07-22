@@ -1,0 +1,241 @@
+fileFormatVersion: 2
+guid: 1f8020296df19d64ca5e729874ab59c6
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -560142172474009553
+    second: Yeux_0
+  - first:
+      213: -8608996465141568069
+    second: Yeux_1
+  - first:
+      213: -8339112091012348391
+    second: Yeux_2
+  - first:
+      213: -1902636764875324244
+    second: Yeux_3
+  - first:
+      213: -3311438099579519996
+    second: Yeux_4
+  - first:
+      213: 4399185137968204593
+    second: Yeux_5
+  - first:
+      213: 7778962007594801537
+    second: Yeux_6
+  - first:
+      213: -688058695095063322
+    second: Yeux_7
+  - first:
+      213: 1347158593311609132
+    second: Yeux_8
+  - first:
+      213: -3477421645766982935
+    second: Yeux_9
+  - first:
+      213: 7685897759492943590
+    second: Yeux_10
+  - first:
+      213: -7758146170216386759
+    second: Yeux_11
+  - first:
+      213: -2492521661811894325
+    second: Yeux_12
+  - first:
+      213: 7828145304025892752
+    second: Yeux_13
+  - first:
+      213: -1988965261109322655
+    second: Yeux_14
+  - first:
+      213: -6268067202212686113
+    second: Yeux_15
+  - first:
+      213: -1223307581801197923
+    second: Yeux_16
+  - first:
+      213: -3266521739433338233
+    second: Yeux_17
+  - first:
+      213: 225183663689124493
+    second: Yeux_18
+  - first:
+      213: 5279244461623188707
+    second: Yeux_19
+  - first:
+      213: -1353015359082081411
+    second: Yeux_20
+  - first:
+      213: -4113509260666265826
+    second: Yeux_21
+  - first:
+      213: -7372463154092678126
+    second: Yeux_22
+  - first:
+      213: -5265901944737739192
+    second: Yeux_23
+  - first:
+      213: -3014435681309680424
+    second: Yeux_24
+  - first:
+      213: -8437450403746808440
+    second: Yeux_25
+  - first:
+      213: -5958089748753838393
+    second: Yeux_26
+  - first:
+      213: -6319445807656701133
+    second: Yeux_27
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Yeux_1
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 450
+        width: 800
+        height: 900
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bbda4aec353b68880800000000000000
+      internalID: -8608996465141568069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Yeux_2
+      rect:
+        serializedVersion: 2
+        x: 1414
+        y: 450
+        width: 700
+        height: 920
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9164b095cb5854c80800000000000000
+      internalID: -8339112091012348391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: c78f6f95841f7004f8b67c577047f855
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Yeux_0: -1978326562
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

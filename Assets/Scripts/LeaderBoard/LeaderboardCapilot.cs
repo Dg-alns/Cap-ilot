@@ -4,13 +4,6 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-// TODO Cédric
-// X) faire le responsive du leaderboard
-// ?) Ajouter un text "Chargement du leaderboard..." tout en enlevant le précédent leaderboard
-// 3) Vérifier ce qui se passe lorsqu'on à pas internet pour avoir le leaderboard active
-// ?) Rajouter le meilleur score du joueur en bas du leaderboard
-//
-
 public enum EnumMinigame
 {
     Balance = 0,
