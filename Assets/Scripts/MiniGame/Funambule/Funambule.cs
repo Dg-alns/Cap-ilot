@@ -7,7 +7,7 @@ public class Funambule : MonoBehaviour
     [Header("Body Part")]
     [SerializeField] private Transform _playerFootPoint;
     [SerializeField] private Transform _playerHeatPoint;
-
+    private float _currentDistanceForWin;
     private Vector3 _playerFootPosition;
 
     //Decrease Speed Game
@@ -39,12 +39,18 @@ public class Funambule : MonoBehaviour
     private int[] _directionEyeRotation = new int[2];
     private float _animationDurationEye = 0.5f;
 
+    [Header("Score")]
+    [SerializeField] private Score _score;
+
     Vector2 startPosition;
     float totalDistance;
     float initialScale = 1.0f;
     float endScale = 2.1f;
     float _dt;
     float zRotation;
+
+    bool isStart = false;
+    bool isWin = false;
 
     // Start is called before the first frame update
     void Start()
@@ -55,13 +61,16 @@ public class Funambule : MonoBehaviour
         startPosition = _platformPoint.transform.position;
         _maxSpeedGame = (Mathf.Abs(_playerFootPoint.position.y) + Mathf.Abs(_platformPoint.position.y)) / 30.0f;
         //Debug.Log("Speed : " + _speedGame);
-        totalDistance = Vector2.Distance(_playerFootPoint.position, _platformPoint.position);
         _playerFootPosition = _playerFootPoint.position;
+        totalDistance = Vector2.Distance(_playerFootPosition, _platformPoint.position);
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (isWin || !isStart)
+            return;
+
         _dt = Time.deltaTime;
 
         // Apply the falling time
@@ -88,6 +97,8 @@ public class Funambule : MonoBehaviour
 
         // Check and apply if you will fall
         CheckOverDegres();
+
+        CheckWin();
     }
 
     public void EyeMethode()
@@ -147,6 +158,15 @@ public class Funambule : MonoBehaviour
 
     public void MovePlatform(float direction = 1.0f)
     {
+        if (direction < 0) 
+        {
+            _currentDistanceForWin = Mathf.Abs(Vector2.Distance(_playerFootPosition, _platformPoint.position));
+            if (_currentDistanceForWin >= totalDistance)
+            {
+                return;
+            }
+        }
+
         float step = direction * _speedGame * _dt;
         Vector2 newPos = Vector2.MoveTowards(_platformPoint.position, _playerFootPosition, step);
         _platformPoint.position = newPos;
@@ -156,7 +176,8 @@ public class Funambule : MonoBehaviour
         float newScale = initialScale + (endScale - initialScale) * pourcent;
 
         _platformPoint.localScale = new Vector2(newScale, newScale);
-        // Debug.Log(pourcent + "%");
+
+        _currentDistanceForWin = Mathf.Abs(Vector2.Distance(_playerFootPosition, _platformPoint.position));
     }
 
     public void AutoBascule()
@@ -213,5 +234,25 @@ public class Funambule : MonoBehaviour
             _playerFootPoint.transform.rotation = new Quaternion(0.0f, 0.0f, 0.0f, 1.0f);
             _playerFootPoint.GetComponent<Animator>().SetBool("IsFalling", _isFalling);
         }
+    }
+
+    public void CheckWin()
+    {
+        if(_currentDistanceForWin <= 0.01f) // 0.01f => distance enough to win
+        {
+            if (_isEyeOpen)
+            {
+                SwitchEye();
+                _activeEye = -1;
+            }
+
+            isWin = true;
+            _score.LauchScore();
+        }
+    }
+
+    public void StartGame() 
+    { 
+        isStart = true;
     }
 }

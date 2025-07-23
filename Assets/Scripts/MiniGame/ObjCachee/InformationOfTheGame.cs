@@ -136,4 +136,10 @@ public class InformationOfTheGame : MonoBehaviour
         gameObject.SetActive(false);
         GameObjectToStart.GetComponent<BoxeGame>().StartBoxe();
     }
+    public void StartFunambule()
+    {
+        gameObject.SetActive(false);
+        GameObjectToStart.GetComponent<Funambule>().StartGame(); 
+        timer.stop = false;
+    }
 }
