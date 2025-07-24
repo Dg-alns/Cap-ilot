@@ -2173,6 +2173,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: VisualWinning
       objectReference: {fileID: 0}
+    - target: {fileID: 6004648455336758171, guid: 2203dee7641698a4e94a6ab51907d6e9, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 1961154207}
     - target: {fileID: 8216132225265697911, guid: 2203dee7641698a4e94a6ab51907d6e9, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -3091,6 +3095,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dc7ab4232cc66f947ac7f1114b4df43b, type: 3}
+--- !u!95 &1961154207 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 1615133480540432209, guid: dc7ab4232cc66f947ac7f1114b4df43b, type: 3}
+  m_PrefabInstance: {fileID: 1961154206}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1977840874
 GameObject:
   m_ObjectHideFlags: 0

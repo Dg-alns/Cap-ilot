@@ -108,14 +108,17 @@ public class Funambule : MonoBehaviour
         {
             if (_timeEye <= _animationDurationEye) 
             {
+                // The eye apply a rotation proportionnal to his scale
                 _playerFootPoint.transform.Rotate(new Vector3(0.0f, 0.0f, (_timeEye / _animationDurationEye) * _directionEyeRotation[_activeEye] * _eyeStrengh * _dt));
             }
             else
             {
+                // The eye apply the basic rotation 
                 _playerFootPoint.transform.Rotate(new Vector3(0.0f, 0.0f, _directionEyeRotation[_activeEye] * _eyeStrengh * _dt));
             }
             if(_eyeDuration <= _timeEye)
             {
+                // Close the eye
                 SwitchEye();
                 _activeEye = -1;
             }
@@ -124,6 +127,7 @@ public class Funambule : MonoBehaviour
         {
             if(_eyeTimeAppear <= _timeEye)
             {
+                // Open the eye
                 _activeEye = Random.Range(0, 2);
                 SwitchEye();
             }
@@ -139,15 +143,16 @@ public class Funambule : MonoBehaviour
 
     public void ChangeSpeedByRotation()
     {
+        // Get Degres rotation
         zRotation = _playerFootPoint.eulerAngles.z <= 180f ? _playerFootPoint.eulerAngles.z : _playerFootPoint.eulerAngles.z - 360f;
-        //Debug.Log(zRotation);
-
-
+        
+        // Apply the basic speed the player still strait
         if (Mathf.Abs(zRotation) <= _walkMinZRotation)
         {
             _speedGame = _maxSpeedGame;
             return;
         }
+        // Apply a slow/stop speed went the player is in rotation over the limit
         if (Mathf.Abs(zRotation) <= _walkLimitZRotation)
         {
             _speedGame = _maxSpeedGame * (1-((Mathf.Abs(zRotation) - _walkMinZRotation) / (_walkLimitZRotation - _walkMinZRotation)));
@@ -158,6 +163,7 @@ public class Funambule : MonoBehaviour
 
     public void MovePlatform(float direction = 1.0f)
     {
+        // Check don't go before the start
         if (direction < 0) 
         {
             _currentDistanceForWin = Mathf.Abs(Vector2.Distance(_playerFootPosition, _platformPoint.position));
@@ -167,14 +173,14 @@ public class Funambule : MonoBehaviour
             }
         }
 
+        // Move the platform
         float step = direction * _speedGame * _dt;
         Vector2 newPos = Vector2.MoveTowards(_platformPoint.position, _playerFootPosition, step);
         _platformPoint.position = newPos;
 
+        // Change the scale with the remaining distance
         float pourcent = (_platformPoint.position.y - startPosition.y) / (_playerFootPosition.y - startPosition.y);
-
         float newScale = initialScale + (endScale - initialScale) * pourcent;
-
         _platformPoint.localScale = new Vector2(newScale, newScale);
 
         _currentDistanceForWin = Mathf.Abs(Vector2.Distance(_playerFootPosition, _platformPoint.position));
@@ -182,6 +188,7 @@ public class Funambule : MonoBehaviour
 
     public void AutoBascule()
     {
+        // Auto rotate the player when he is not strait
         float distanceXFootHead = _playerFootPoint.transform.position.x - _playerHeatPoint.transform.position.x;
         _playerFootPoint.transform.Rotate(new Vector3(0.0f, 0.0f, distanceXFootHead * _autoBasculeStrengh * _dt));
     }
@@ -190,14 +197,14 @@ public class Funambule : MonoBehaviour
         // If you press the screen
         if (Input.GetMouseButton(0))
         {
-            // Move right
+            // click right => rotate left
             if (Screen.width / 2 < Input.mousePosition.x)
             {
                 float step = _rotationSpeed * _dt;
                 _playerFootPoint.transform.Rotate(new Vector3(0.0f, 0.0f, step));
 
             }
-            // Move left
+            // click left => rotate right
             else
             {
                 float step = _rotationSpeed * _dt;
@@ -210,10 +217,13 @@ public class Funambule : MonoBehaviour
 
     public void CheckOverDegres()
     {
+        // Check loose
         if (_loosingZRotation <= Mathf.Abs(zRotation) )
         {
             _isFalling = true;
             _timeEye = 0.0f;
+
+            // Close the potential eye
             if (_isEyeOpen)
             {
                 SwitchEye();
@@ -225,8 +235,12 @@ public class Funambule : MonoBehaviour
     public void ApplyFalling()
     {
         _fallingTimeCurrent += _dt;
+
+        // Make move the platform backward
         _speedGame = _maxSpeedGame;
         MovePlatform(-1f);
+
+        // Reset the player on the wire
         if (_fallingTimeCurrent >= _fallingTimeDuration) 
         {
             _fallingTimeCurrent = 0.0f;
@@ -240,6 +254,7 @@ public class Funambule : MonoBehaviour
     {
         if(_currentDistanceForWin <= 0.01f) // 0.01f => distance enough to win
         {
+            // Close the potential eye
             if (_isEyeOpen)
             {
                 SwitchEye();

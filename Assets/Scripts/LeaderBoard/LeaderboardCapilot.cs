@@ -13,6 +13,7 @@ public enum EnumMinigame
     TirBut,
     Injection, 
     ObjCache,
+    Funambule,
 }
 
 public class LeaderboardCapilot : MonoBehaviour
@@ -36,6 +37,7 @@ public class LeaderboardCapilot : MonoBehaviour
         {EnumMinigame.TirBut,"86b3eb466ec9926735c291d7d1f4ee53221cad564def1311d42ea6f505f0d87f" },
         {EnumMinigame.Injection,"b725e776c9160cde2a443e0397a47173824e7d4ad6480ed015418dc9fb712c99" },
         {EnumMinigame.ObjCache,"53b131a9609c397fc867166b60b58892974598df8cf4986c8797f69c213cb93d" },
+        {EnumMinigame.Funambule,"01d02aa91f5c606511acc626dbb4eaa24fb4f7076eca2823e1fc4e077d3cbfc2" },
     };
 
     // Default Key
