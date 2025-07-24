@@ -143,7 +143,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      infirmiere_0: -2576019142445250160
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
