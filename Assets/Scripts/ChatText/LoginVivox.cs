@@ -70,7 +70,7 @@ public class LoginVivox : MonoBehaviour
             return Task.CompletedTask; /*VivoxService.Instance.JoinGroupChannelAsync(
                 VivoxVoiceManager.LobbyChannelName,
                 ChatCapability.TextOnly
-            );*/
+            );*///normalement on join ici mais ne fonctionne pas en build android (join dans chattextvivox a la place)
         }
         catch (Exception ex)
         {

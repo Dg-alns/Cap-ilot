@@ -59,7 +59,7 @@ public class ChatTextVivox : MonoBehaviour
         VivoxService.Instance.JoinGroupChannelAsync(
                 VivoxVoiceManager.LobbyChannelName,
                 ChatCapability.TextOnly
-            );
+            );//fait en sorte que l'on join ici a la place, ca fonctionne donc c bien
         VivoxService.Instance.ChannelJoined += OnChannelJoined;
         VivoxService.Instance.DirectedMessageReceived += OnDirectedMessageReceived;
         VivoxService.Instance.ChannelMessageReceived += OnChannelMessageReceived;
