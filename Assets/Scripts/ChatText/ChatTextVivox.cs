@@ -32,12 +32,7 @@ public class ChatTextVivox : MonoBehaviour
     private void Start()
     {
 
-#if UNITY_ANDROID
-        if (!Permission.HasUserAuthorizedPermission(Permission.Microphone))
-        {
-            Permission.RequestUserPermission(Permission.Microphone);
-        }
-#endif
+
 
         StartCoroutine(WaitForVivoxInitThenSubscribe());
 
@@ -61,7 +56,10 @@ public class ChatTextVivox : MonoBehaviour
         }
 
         Debug.Log("Vivox ready, setting up ChatTextVivox");
-
+        VivoxService.Instance.JoinGroupChannelAsync(
+                VivoxVoiceManager.LobbyChannelName,
+                ChatCapability.TextOnly
+            );
         VivoxService.Instance.ChannelJoined += OnChannelJoined;
         VivoxService.Instance.DirectedMessageReceived += OnDirectedMessageReceived;
         VivoxService.Instance.ChannelMessageReceived += OnChannelMessageReceived;
@@ -79,71 +77,6 @@ public class ChatTextVivox : MonoBehaviour
         MessageInputField.onEndEdit.RemoveAllListeners();
         m_TextChatScrollRect.onValueChanged.RemoveAllListeners();
     }
-
-/*#if (UNITY_ANDROID && !UNITY_EDITOR) || __ANDROID__
-    bool IsAndroid12AndUp()
-    {
-        // android12VersionCode is hardcoded because it might not be available in all versions of Android SDK
-        const int android12VersionCode = 31;
-        AndroidJavaClass buildVersionClass = new AndroidJavaClass("android.os.Build$VERSION");
-        int buildSdkVersion = buildVersionClass.GetStatic<int>("SDK_INT");
-
-        return buildSdkVersion >= android12VersionCode;
-    }
-
-    string GetBluetoothConnectPermissionCode()
-    {
-        if (IsAndroid12AndUp())
-        {
-            // UnityEngine.Android.Permission does not contain the BLUETOOTH_CONNECT permission, fetch it from Android
-            AndroidJavaClass manifestPermissionClass = new AndroidJavaClass("android.Manifest$permission");
-            string permissionCode = manifestPermissionClass.GetStatic<string>("BLUETOOTH_CONNECT");
-
-            return permissionCode;
-        }
-
-        return "";
-    }
-#endif
-
-    bool IsMicPermissionGranted()
-    {
-        bool isGranted = Permission.HasUserAuthorizedPermission(Permission.Microphone);
-#if (UNITY_ANDROID && !UNITY_EDITOR) || __ANDROID__
-        if (IsAndroid12AndUp())
-        {
-            // On Android 12 and up, we also need to ask for the BLUETOOTH_CONNECT permission for all features to work
-            isGranted &= Permission.HasUserAuthorizedPermission(GetBluetoothConnectPermissionCode());
-        }
-#endif
-        return isGranted;
-    }
-
-    void AskForPermissions()
-    {
-        string permissionCode = Permission.Microphone;
-
-#if (UNITY_ANDROID && !UNITY_EDITOR) || __ANDROID__
-        if (m_PermissionAskedCount == 1 && IsAndroid12AndUp())
-        {
-            permissionCode = GetBluetoothConnectPermissionCode();
-        }
-#endif
-        m_PermissionAskedCount++;
-        Permission.RequestUserPermission(permissionCode);
-    }
-
-    bool IsPermissionsDenied()
-    {
-#if (UNITY_ANDROID && !UNITY_EDITOR) || __ANDROID__
-        // On Android 12 and up, we also need to ask for the BLUETOOTH_CONNECT permission
-        if (IsAndroid12AndUp())
-        {
-            return m_PermissionAskedCount == 2;
-        }
-#endif
-        return m_PermissionAskedCount == 1;
-    }*/
 
     private void ScrollRectChange(Vector2 vector)
     {
@@ -277,80 +210,4 @@ public class ChatTextVivox : MonoBehaviour
         MessageInputField.ActivateInputField();
     }
 
-    /*
-        async void InitializeAsync()
-        {
-            await UnityServices.InitializeAsync();
-            await AuthenticationService.Instance.SignInAnonymouslyAsync();
-
-            await VivoxService.Instance.InitializeAsync();
-        }
-
-        public async void LoginToVivoxAsync()
-        {
-            LoginOptions options = new LoginOptions();
-            options.DisplayName = "TEST";// UserDisplayName;
-            options.EnableTTS = true;
-            await VivoxService.Instance.LoginAsync(options);
-        }
-
-        public async void JoinEchoChannelAsync()
-        {
-            string channelToJoin = "Lobby";
-            await VivoxService.Instance.JoinEchoChannelAsync(channelToJoin, ChatCapability.TextAndAudio);
-        }
-
-        public async void LeaveEchoChannelAsync()
-        {
-            string channelToLeave = "Lobby";
-            await VivoxService.Instance.LeaveChannelAsync(channelToLeave);
-        }
-
-        public async void LogoutOfVivoxAsync()
-        {
-            await VivoxService.Instance.LogoutAsync();
-        }
-
-        private void BindSessionEvents(bool doBind)
-        {
-            if (doBind)
-            {
-                VivoxService.Instance.ParticipantAddedToChannel += onParticipantAddedToChannel;
-                VivoxService.Instance.ParticipantRemovedFromChannel += onParticipantRemovedFromChannel;
-            }
-            else
-            {
-                VivoxService.Instance.ParticipantAddedToChannel -= onParticipantAddedToChannel;
-                VivoxService.Instance.ParticipantRemovedFromChannel -= onParticipantRemovedFromChannel;
-            }
-        }
-
-        private void onParticipantAddedToChannel(VivoxParticipant participant)
-        {
-            ///RosterItem is a class intended to store the participant object, and reflect events relating to it into the game's UI.
-            ///It is a sample of one way to use these events, and is detailed just below this snippet.
-            RosterItem newRosterItem = new RosterItem();
-            newRosterItem.SetupRosterItem(participant);
-            rosterList.Add(newRosterItem);
-        }
-
-        private void onParticipantRemovedFromChannel(VivoxParticipant participant)
-        {
-            RosterItem rosterItemToRemove = rosterList.FirstOrDefault<RosterItem>(p => p.Participant.PlayerId == participant.PlayerId);//FirstOrDefault(p => p.Participant.PlayerId == participant.PlayerId);
-            rosterList.Remove(rosterItemToRemove);
-        }
-
-        private async void SendMessageAsync(string channelName, string message)
-        {
-            await VivoxService.Instance.SendChannelTextMessageAsync(channelName, message);
-        }
-
-
-        private void onChannelMessageReceived(VivoxMessage message)
-        {
-            string messageText = message.MessageText;
-            string senderID = message.SenderPlayerId;
-            string senderDisplayName = message.SenderDisplayName;
-            string messageChannel = message.ChannelName;
-        }*/
 }

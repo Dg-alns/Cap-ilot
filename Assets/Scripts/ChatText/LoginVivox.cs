@@ -8,6 +8,8 @@ using UnityEngine.Events;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
+using UnityEngine.Android;
+
 public class LoginVivox : MonoBehaviour
 {
 
@@ -15,9 +17,15 @@ public class LoginVivox : MonoBehaviour
     public TextMeshProUGUI textMeshProUGUI;
     public UnityEvent UnityEvent;
     // Start is called before the first frame update
+    bool invoke =false;
     void Start()
     {
-        Debug.Log("AH");
+#if UNITY_ANDROID
+        if (!Permission.HasUserAuthorizedPermission(Permission.Microphone))
+        {
+            Permission.RequestUserPermission(Permission.Microphone);
+        }
+#endif
         LoginToVivox();
         VivoxService.Instance.LoggedIn += OnUserLoggedIn;
         VivoxService.Instance.LoggedOut += LogoutOfVivoxServiceAsync;
@@ -27,16 +35,24 @@ public class LoginVivox : MonoBehaviour
 
     void Update()
     {
-        if (VivoxService.Instance.IsLoggedIn)
+        if (VivoxService.Instance.IsLoggedIn && !invoke)
         {
             UnityEvent.Invoke();
+            invoke = true;
         }
     }
     async void OnUserLoggedIn()
     {
-        Debug.Log("OnUserLoggedIn triggered"); 
-        await JoinLobbyChannel();
-        Debug.Log("Joined channel"); 
+        Debug.Log("OnUserLoggedIn triggered");
+        try
+        {
+            await JoinLobbyChannel();
+            Debug.Log("Successfully joined the lobby channel.");
+        }
+        catch (Exception e)
+        {
+            Debug.LogError($"Failed to join channel: {e.Message}");
+        }
     }
 
     async void LogoutOfVivoxServiceAsync()
@@ -50,10 +66,11 @@ public class LoginVivox : MonoBehaviour
     {
         try
         {
-            return VivoxService.Instance.JoinGroupChannelAsync(
+            Debug.Log($"Attempting to join channel: {VivoxVoiceManager.LobbyChannelName}");
+            return Task.CompletedTask; /*VivoxService.Instance.JoinGroupChannelAsync(
                 VivoxVoiceManager.LobbyChannelName,
                 ChatCapability.TextOnly
-            );
+            );*/
         }
         catch (Exception ex)
         {
@@ -72,14 +89,27 @@ public class LoginVivox : MonoBehaviour
         }
 
 
+        /*await VivoxVoiceManager.Instance.InitializeAsync(username);
+        var loginOptions = new LoginOptions()
+        {
+            DisplayName = username,
+            ParticipantUpdateFrequency = ParticipantPropertyUpdateFrequency.TenPerSecond,
+        };*/
+
+        // Initialiser Vivox correctement
+        Debug.Log("Initializing Vivox...");
         await VivoxVoiceManager.Instance.InitializeAsync(username);
+        Debug.Log("Vivox initialized successfully");
+
+        // Login
         var loginOptions = new LoginOptions()
         {
             DisplayName = username,
             ParticipantUpdateFrequency = ParticipantPropertyUpdateFrequency.TenPerSecond,
         };
-       
+
         await VivoxService.Instance.LoginAsync(loginOptions);
+        Debug.Log("Vivox login successful");
     }
 
     void OnDestroy()
