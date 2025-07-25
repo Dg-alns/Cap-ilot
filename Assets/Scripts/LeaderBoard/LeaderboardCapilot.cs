@@ -46,7 +46,6 @@ public class LeaderboardCapilot : MonoBehaviour
     private void Start()
     {
         GetLeaderBoard(_publicKey);
-        _LoadingText.gameObject.SetActive(false);
     }
 
     public void GetLeaderBoard(string publicKey)
