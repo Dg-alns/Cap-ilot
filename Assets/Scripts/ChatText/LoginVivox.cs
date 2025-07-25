@@ -14,7 +14,7 @@ public class LoginVivox : MonoBehaviour
 {
 
     public string username = "dorian";
-    public TextMeshProUGUI textMeshProUGUI;
+    //public TextMeshProUGUI textMeshProUGUI;
     public UnityEvent UnityEvent;
     // Start is called before the first frame update
     bool invoke =false;
@@ -120,6 +120,6 @@ public class LoginVivox : MonoBehaviour
 
     public void ShowUsername()
     {
-        textMeshProUGUI.text = username;
+        //textMeshProUGUI.text = username;
     }
 }
