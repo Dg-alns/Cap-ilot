@@ -26,6 +26,7 @@ public class LoginVivox : MonoBehaviour
             Permission.RequestUserPermission(Permission.Microphone);
         }
 #endif
+
         LoginToVivox();
         VivoxService.Instance.LoggedIn += OnUserLoggedIn;
         VivoxService.Instance.LoggedOut += LogoutOfVivoxServiceAsync;
