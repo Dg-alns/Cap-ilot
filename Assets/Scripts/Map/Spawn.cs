@@ -1,6 +1,4 @@
-using System.Collections;
 using System.Collections.Generic;
-using NUnit.Framework;
 using UnityEngine;
 
 public enum SPAWN
@@ -27,11 +25,6 @@ public class Spawn : MonoBehaviour
     public SPAWN spaw = SPAWN.None;
 
     static List<string> AllSpawnList = new List<string>(System.Enum.GetNames(typeof(SPAWN)));
-
-    private void Start()
-    {
-        Assert.True(spaw != SPAWN.None);
-    }
 
     public static int GetSpaw(string name)
     {

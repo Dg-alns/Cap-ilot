@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using NUnit.Framework;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -22,8 +21,6 @@ public class DetectionObjCachee : DetectionUI
         nameobjs = Tools.CreateList<TextMeshProUGUI>("Bot");
 
         _tools = FindAnyObjectByType<Tools>();
-
-        Assert.AreEqual(objects.Count, nameobjs.Count);
 
         for (int i = 0; i < objects.Count; i++)
         {
