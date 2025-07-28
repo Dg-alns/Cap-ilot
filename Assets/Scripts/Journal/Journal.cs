@@ -1,6 +1,9 @@
 using System;
 using System.Collections.Generic;
 using TMPro;
+using UnityEngine;
+using UnityEngine.UI;
+//using static UnityEditor.Rendering.CameraUI;
 
 [System.Serializable]
 public class Journal
@@ -46,7 +49,7 @@ public class Journal
         {
             if (InputField.text != null)
             {
-                string themeSTR = "Thèmes : ";
+                string themeSTR = "Thï¿½mes : ";
                 foreach (string theme in ThemeList)
                 {
                     themeSTR += theme + " ";

@@ -4,6 +4,9 @@ using System.IO;
 using TMPro;
 using UnityEngine.SceneManagement;
 //using static QuestManager;
+using UnityEngine.UI;
+//using static UnityEngine.InputManagerEntry;
+//using UnityEditor.UIElements;
 
 public class Sauvegarde : MonoBehaviour
 {
