@@ -1,0 +1,236 @@
+fileFormatVersion: 2
+guid: b1172bdd865f4ba49a18e7adc7d1dca6
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5936698215358568704
+    second: rochers_0
+  - first:
+      213: -478098932267545489
+    second: rochers_1
+  - first:
+      213: -8057842099371902911
+    second: rochers_2
+  - first:
+      213: -1187665937713548390
+    second: rochers_3
+  - first:
+      213: -104459281256645291
+    second: rochers_4
+  - first:
+      213: 5680203474573847832
+    second: rochers_5
+  - first:
+      213: 2381010326903244850
+    second: rochers_6
+  - first:
+      213: -2817517331005034465
+    second: rochers_7
+  - first:
+      213: 5566863960948376613
+    second: rochers_8
+  - first:
+      213: 267515008413059933
+    second: rochers_9
+  - first:
+      213: 6724445978766171839
+    second: rochers_10
+  - first:
+      213: -8600923971748553007
+    second: rochers_11
+  - first:
+      213: -3428177551961191014
+    second: rochers_12
+  - first:
+      213: 1810435624543454072
+    second: rochers_13
+  - first:
+      213: -4251311860229085145
+    second: rochers_14
+  - first:
+      213: -4221904929578750744
+    second: rochers_15
+  - first:
+      213: 1373688978706260213
+    second: rochers_16
+  - first:
+      213: -62202092416104941
+    second: rochers_17
+  - first:
+      213: -4305808421711024984
+    second: rochers_18
+  - first:
+      213: 6032684446926935502
+    second: rochers_19
+  - first:
+      213: 8150252500650606604
+    second: rochers_20
+  - first:
+      213: 7468235906298720939
+    second: rochers_21
+  - first:
+      213: 8069353329498321499
+    second: rochers_22
+  - first:
+      213: 2131128175669504992
+    second: rochers_23
+  - first:
+      213: 8008845873606261696
+    second: rochers_24
+  - first:
+      213: 6709273192573095031
+    second: rochers_25
+  - first:
+      213: 3550384078670203115
+    second: rochers_26
+  - first:
+      213: 1282812222330327314
+    second: rochers_27
+  - first:
+      213: -8116130816132840839
+    second: rochers_28
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: rochers_1
+      rect:
+        serializedVersion: 2
+        x: 410
+        y: 145
+        width: 319
+        height: 265
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f6c03bedd837d59f0800000000000000
+      internalID: -478098932267545489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 6c01bb32578773243a15616e9ec65ca0
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      rochers_29: 338770324
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

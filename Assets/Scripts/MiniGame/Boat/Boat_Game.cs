@@ -19,6 +19,8 @@ public class Boat_Game : MonoBehaviour
     private bool _gameFinish = false;
     private bool _gameStart = false;
 
+    [SerializeField] List<BoatMer> _mer;
+
     private Transform _rocks;
 
     // Start is called before the first frame update
@@ -50,6 +52,10 @@ public class Boat_Game : MonoBehaviour
             if(_rocks.childCount == 0)
             {
                 _boat.SetAnime(AnimationBoatState.Win);
+                foreach(BoatMer mer in _mer)
+                {
+                    mer.ChangeForWinSpeed();
+                }
                 _gameFinish = true;
             }
             return;
@@ -69,6 +75,11 @@ public class Boat_Game : MonoBehaviour
     {
         _gameStart = true;
         _timer.Run();
+    }
+
+    public bool IsGameStart()
+    {
+        return _gameStart;
     }
 
 }
