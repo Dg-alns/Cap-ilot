@@ -140,6 +140,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2558349360539431620}
+  - component: {fileID: 7370319303204381800}
   m_Layer: 0
   m_Name: TransitionBeetweenScene
   m_TagString: Untagged
@@ -163,6 +164,22 @@ Transform:
   - {fileID: 3945791450062141349}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7370319303204381800
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3795855530519641241}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c494cd52d0f7644d8b2ac1986045269, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _NextSceneData: {fileID: 11400000, guid: 4f9d2ebe370453d43b934f62e2c5b6fc, type: 2}
+  _energy: {fileID: 0}
+  animator: {fileID: 1615133480540432209}
+  Player: {fileID: 0}
 --- !u!1 &8204005204693374001
 GameObject:
   m_ObjectHideFlags: 0
@@ -220,7 +237,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_VertexColorAlwaysGammaSpace: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 999

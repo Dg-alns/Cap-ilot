@@ -289,16 +289,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: TransitionBeetweenScene
       objectReference: {fileID: 0}
+    - target: {fileID: 7370319303204381800, guid: dc7ab4232cc66f947ac7f1114b4df43b, type: 3}
+      propertyPath: tools
+      value: 
+      objectReference: {fileID: 505807004}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dc7ab4232cc66f947ac7f1114b4df43b, type: 3}
---- !u!95 &243786421 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 1615133480540432209, guid: dc7ab4232cc66f947ac7f1114b4df43b, type: 3}
+--- !u!114 &243786421 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7370319303204381800, guid: dc7ab4232cc66f947ac7f1114b4df43b, type: 3}
   m_PrefabInstance: {fileID: 243786420}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c494cd52d0f7644d8b2ac1986045269, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &408809043
 GameObject:
   m_ObjectHideFlags: 0
@@ -435,6 +445,50 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 408809043}
   m_CullTransparentMesh: 1
+--- !u!1 &505807003
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 505807005}
+  - component: {fileID: 505807004}
+  m_Layer: 0
+  m_Name: Tools
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &505807004
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 505807003}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d983e861a1fcf84eacdcf296b4b2f8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &505807005
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 505807003}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 708.1332, y: 1150.5828, z: -5.4332404}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &630573814
 GameObject:
   m_ObjectHideFlags: 0
@@ -853,7 +907,6 @@ GameObject:
   - component: {fileID: 858209843}
   - component: {fileID: 858209842}
   - component: {fileID: 858209841}
-  - component: {fileID: 858209844}
   m_Layer: 0
   m_Name: ButtonScene
   m_TagString: Untagged
@@ -924,16 +977,16 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 858209844}
+      - m_Target: {fileID: 243786421}
         m_TargetAssemblyTypeName: LoadNexScene, Assembly-CSharp
-        m_MethodName: LoadNextScene
-        m_Mode: 5
+        m_MethodName: StartGame
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Ile Principale
+          m_StringArgument: Port Ile Principale
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &858209842
@@ -974,21 +1027,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 858209839}
   m_CullTransparentMesh: 1
---- !u!114 &858209844
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 858209839}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c494cd52d0f7644d8b2ac1986045269, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _NextSceneData: {fileID: 11400000, guid: 4f9d2ebe370453d43b934f62e2c5b6fc, type: 2}
-  _energy: {fileID: 0}
-  animator: {fileID: 243786421}
 --- !u!1 &973224549
 GameObject:
   m_ObjectHideFlags: 0
@@ -1734,3 +1772,4 @@ SceneRoots:
   - {fileID: 795549162}
   - {fileID: 1800173774}
   - {fileID: 1537792064}
+  - {fileID: 505807005}
