@@ -79,7 +79,8 @@ public class LoadNexScene : MonoBehaviour
             _NextSceneData.isLauch = true;
             if (_energy.HaveEnergy())
             {
-                SavePos();
+                if(Player)
+                    SavePos();
                 _energy.UseEnergy();
                 animator.SetTrigger("Transition");
                 StartCoroutine(_NextSceneData.SwitchScene(scene));

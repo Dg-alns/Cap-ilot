@@ -41,9 +41,11 @@ public class Boat_Boat : MonoBehaviour
     [SerializeField] private LoadNexScene _loadNexScene;
     //[SerializeField] private NextSceneDestination _destination;
 
+    private Tools _tools;
     // Start is called before the first frame update
     void Start()
     {
+        _tools = FindAnyObjectByType<Tools>();
         Camera cam = Camera.main;
         _heightCam = 2f * cam.orthographicSize;
         _widthCam = _heightCam * cam.aspect;
@@ -79,8 +81,9 @@ public class Boat_Boat : MonoBehaviour
         }
 
         // If you press the screen
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButton(0) && !_tools.IsPointerOverUIElement())
         {
+            Debug.Log(_tools.IsPointerOverUIElement());
             // Move right
             if (_widthResolution / 2 < Input.mousePosition.x){
                 float step = _speed * Time.deltaTime;

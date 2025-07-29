@@ -10,7 +10,7 @@ public class Boat_ProgressBar : MonoBehaviour
 
     [SerializeField] private float _progressTime;
 
-    private bool _isRunning = false;
+    public bool isRunning = false;
 
     private void Start()
     {
@@ -19,7 +19,7 @@ public class Boat_ProgressBar : MonoBehaviour
     }
     private void Update()
     {
-        if (_isRunning == false)
+        if (isRunning == false)
             return;
 
         _progressTime += Time.deltaTime;
@@ -39,6 +39,6 @@ public class Boat_ProgressBar : MonoBehaviour
 
     public void Run()
     {
-        _isRunning = true;
+        isRunning = true;
     }
 }

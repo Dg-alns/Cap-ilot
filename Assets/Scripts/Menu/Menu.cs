@@ -13,7 +13,10 @@ public class Menu : MonoBehaviour
 
     Animator _Animator;
 
+    [Header("Value for minigame")]
     [SerializeField] private GameObject _buttonQuitMinigame;
+    [SerializeField] private LoadNexScene _NextScene;
+    [SerializeField] private Minigame _minigame;
 
     private void Start()
     {
@@ -43,11 +46,20 @@ public class Menu : MonoBehaviour
     {
         isGamedPause = true;
         _Animator.SetBool("IsPause",isGamedPause);
+        if (_minigame)
+        {
+            _minigame.PauseMinigame();
+        }
     }
     public void Resume()
     {
         isGamedPause = false;
         _Animator.SetBool("IsPause", isGamedPause);
+
+        if (_minigame)
+        {
+            _minigame.ResumeMinigame();
+        }
     }
     
     // Swap Between the Menu Side and the LeaderBoard Side
@@ -61,4 +73,14 @@ public class Menu : MonoBehaviour
         isMenuSide = false;
         _Animator.SetBool("IsMenuSide", isMenuSide);
     }
+    
+    public void LeaveMinigame()
+    {
+        if (_NextScene)
+        {
+            _NextScene.LoadPreviousScene();
+            return;
+        }
+        Debug.LogWarning("NextScene is not Initiate in the menu");
+    } 
 }

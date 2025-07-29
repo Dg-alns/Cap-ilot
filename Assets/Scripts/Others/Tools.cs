@@ -14,6 +14,7 @@ public  class Tools : MonoBehaviour
     void Start()
     {
         m_iUILayer = LayerMask.NameToLayer("UI");
+        DontDestroyOnLoad(gameObject);
     }
 
     // Update is called once per frame

@@ -9,6 +9,9 @@ public class BoatMer : MonoBehaviour
     [SerializeField] private float _speed = 1.0f;
 
     private float _yMerOutGamePosition = -24.0f;
+
+    public bool isPause = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +21,8 @@ public class BoatMer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (isPause)
+            return;
 
         transform.position = Vector2.MoveTowards(transform.position, new Vector2(0, _yMerOutGamePosition - 1), _speed * Time.deltaTime);
 
