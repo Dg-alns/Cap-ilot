@@ -39,6 +39,7 @@ public class PisteManagement : MonoBehaviour
     int idx = 0;
     int NbBlockDontShow;
 
+    public bool isPause = false;
 
     private void Awake()
     {
@@ -52,6 +53,9 @@ public class PisteManagement : MonoBehaviour
 
     private void Update()
     {
+        if (isPause)
+            return;
+
         if (Finish)
         {
             if (player.transform.position != PisteCreated.GetComponent<Arrivée>().GetFinalPos())
@@ -248,5 +252,20 @@ public class PisteManagement : MonoBehaviour
 
         NbBlockDontShow = patternPiste.Count;
     }
-
+    public void Pause()
+    {
+        isPause = true;
+        foreach (GameObject piste in CurrentPist)
+        {
+            piste.GetComponent<Piste>().isPause = true;
+        }
+    }
+    public void Resume()
+    {
+        isPause = false;
+        foreach (GameObject piste in CurrentPist)
+        {
+            piste.GetComponent<Piste>().isPause = false;
+        }
+    }
 }

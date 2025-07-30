@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class InjectionMinigame : MonoBehaviour
+public class InjectionMinigame : Minigame
 {
     [SerializeField] private GameObject _prefab;
 
@@ -24,7 +24,11 @@ public class InjectionMinigame : MonoBehaviour
 
     private float _defaultCircleSize;
 
+    private float _heightMenuButton = -(50 + 150); // Y position + height
+
     private int _gameScore;
+
+    private bool isPause = false;
 
 
     private void Start()
@@ -39,6 +43,8 @@ public class InjectionMinigame : MonoBehaviour
     }
     private void Update()
     {
+        if (isPause) return;
+
         if (_swappingTime) return;
 
         if (_spawnTiming.Count > 0)
@@ -78,7 +84,7 @@ public class InjectionMinigame : MonoBehaviour
         GameObject timingCircle = GameObject.Instantiate(_prefab, _partentTimingCircle);
 
         // Set a random position
-        timingCircle.transform.position = new Vector2(UnityEngine.Random.Range(_defaultCircleSize, Screen.width - _defaultCircleSize), UnityEngine.Random.Range(_defaultCircleSize, Screen.height - _defaultCircleSize));
+        timingCircle.transform.position = new Vector2(UnityEngine.Random.Range(_defaultCircleSize, Screen.width - _defaultCircleSize), UnityEngine.Random.Range(_defaultCircleSize, Screen.height - _defaultCircleSize - _heightMenuButton));
         
         // Put the instance behind the other create before
         timingCircle.transform.SetAsFirstSibling();
@@ -121,5 +127,28 @@ public class InjectionMinigame : MonoBehaviour
             _score.LauchScore();
         }
         _swappingTime = false;
+    }
+    public override void PauseMinigame()
+    {
+        isPause = true;
+        if(IsRemaingCircle())
+        {
+            foreach(Injection_Circle circle in _partentTimingCircle.GetComponentsInChildren<Injection_Circle>())
+            {
+                circle.Pause();
+            }
+        }
+    }
+
+    public override void ResumeMinigame()
+    {
+        isPause = false;
+        if (IsRemaingCircle())
+        {
+            foreach (Injection_Circle circle in _partentTimingCircle.GetComponentsInChildren<Injection_Circle>())
+            {
+                circle.Resume();
+            }
+        }
     }
 }
