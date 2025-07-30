@@ -16,7 +16,7 @@ public class NextSceneDestination : ScriptableObject
     {
         _sceneName = sceneName;
     }
-    void SetCurrentScene(string sceneName)
+    public void SetCurrentScene(string sceneName)
     {
         _CurrentsceneName = sceneName;
     }

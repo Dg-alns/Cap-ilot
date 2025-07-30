@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _sceneName: 
   _CurrentsceneName: 
-  isLauch: 1
+  isLauch: 0

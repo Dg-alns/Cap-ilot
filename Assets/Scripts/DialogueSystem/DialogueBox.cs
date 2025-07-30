@@ -13,10 +13,10 @@ public class DialogueBox : MonoBehaviour
     public CanvasGroup dialogueGroup;
     public bool dialogStarted = false;
 
-    private TMP_Text[] _textAreas;
-    private int _lineIndex;
-    private TMP_Text _dialogueText;
-    private TMP_Text _dialogueNpcName;
+    protected TMP_Text[] _textAreas;
+    protected int _lineIndex;
+    protected TMP_Text _dialogueText;
+    protected TMP_Text _dialogueNpcName;
     public List<string> lineList;
 
     private void Awake()
@@ -52,14 +52,14 @@ public class DialogueBox : MonoBehaviour
         _dialogueNpcName = _textAreas[1];
     }
 
-    public void GetDialogueLines()
+    public virtual void GetDialogueLines()
     {
         lineList = new List<string>();
         if (npcManager.dialogueNpc == null)
         {
             Debug.LogError("ERROR : Dialogue NPC not found");
         }
-        lineList = npcManager.dialogueNpc.dialogueLines;
+        lineList = npcManager.dialogueNpc.GetLstDialogue();
     }
 
     public void DisplayNpcName()
@@ -82,8 +82,17 @@ public class DialogueBox : MonoBehaviour
     {
         if (!IsDialogueFinished() && !touchManager.DialogueLineSkiped)
         {
-            _dialogueText.SetText(lineList[_lineIndex++]);
-            touchManager.DialogueLineSkiped = true;
+            if (_lineIndex + 1 > lineList.Count)
+            {
+                Debug.Log("dialogue end");
+                EndDialogue();
+            }
+            else
+            {
+
+                _dialogueText.SetText(lineList[_lineIndex++]);
+                touchManager.DialogueLineSkiped = true;
+            }
         }
         else if (IsDialogueFinished())
         {
@@ -96,7 +105,7 @@ public class DialogueBox : MonoBehaviour
     {
         if (dialogStarted)
         {
-            if (lineList.Count == _lineIndex)
+            if (lineList.Count < _lineIndex)
             {
                 return true;
             }
@@ -108,8 +117,10 @@ public class DialogueBox : MonoBehaviour
         return false;
     }
 
-    public void EndDialogue()
+    public virtual void EndDialogue()
     {
         Destroy(npcManager.dialogueNpc.GetComponent<Trigger>().activeUI);
+        npcManager.dialogueNpc.GetComponent<Trigger>().activeUI = null;
+        npcManager.dialogueNpc.GetComponent<Trigger>().uiOpen = false;
     }
 }

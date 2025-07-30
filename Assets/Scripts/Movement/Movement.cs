@@ -122,7 +122,7 @@ public class Movement : MonoBehaviour
         {
             if (_agent.remainingDistance < 0.2f)
             { 
-                if (collision.gameObject.GetComponent<Trigger>().Type == TriggerType.DIALOG)
+                if (collision.gameObject.GetComponent<Trigger>().Type == TriggerType.DIALOG || collision.gameObject.GetComponent<Trigger>().Type == TriggerType.MINIGAME)
                 {
                     dialogueNpc = collision.gameObject;
                     NPC clickedNpc = dialogueNpc.GetComponent<NPC>();
@@ -130,6 +130,7 @@ public class Movement : MonoBehaviour
                     {
                         _clickedNpcId = clickedNpc.npcId;
                         _clickedNpc = _npcManager.GetComponent<NPCManager>().FindNpcById(_clickedNpcId);
+
                         if (_clickedNpc != null)
                         {
                             dialogueNpc.GetComponent<Trigger>().IsTrigger();
