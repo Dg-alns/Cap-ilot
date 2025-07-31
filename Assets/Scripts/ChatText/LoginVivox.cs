@@ -6,11 +6,12 @@ using UnityEngine;
 using UnityEngine.Events;
 using System.IO;
 using UnityEngine.Android;
+using TMPro;
 
 public class LoginVivox : MonoBehaviour
 {
 
-    //public TextMeshProUGUI textMeshProUGUI;
+    public TextMeshProUGUI textMeshProUGUI;
     public UnityEvent UnityEvent;
     // Start is called before the first frame update
     bool invoke =false;

@@ -10,10 +10,11 @@ public class MessageObject : MonoBehaviour
     public TMP_Text MessageText;
     private VivoxMessage m_vivoxMessage;
 
+    private bool _show;
     // Start is called before the first frame update
     void Start()
     {
-        
+        GetComponentsInChildren<Button>()[0].onClick.AddListener(Showbutton);
     }
 
     // Update is called once per frame
@@ -45,5 +46,32 @@ public class MessageObject : MonoBehaviour
                 : string.Format($"<color=green>{message.SenderDisplayName} </color>: {message.MessageText}\n<color=#5A5A5A><size=30>{editedText}{message.ReceivedTime}</size></color>"); // Channel Message
         }
 
+    }
+
+    private void Showbutton()
+    {
+        if (!m_vivoxMessage.FromSelf)
+        {
+            
+            if (_show)
+            {
+                
+                GetComponentsInChildren<Button>(true)[1].onClick.RemoveAllListeners();
+                GetComponentsInChildren<Button>(true)[1].gameObject.SetActive(false);
+                _show = false;
+            }
+            else
+            {
+                GetComponentsInChildren<Button>(true)[1].gameObject.SetActive(true);
+                GetComponentsInChildren<Button>(true)[1].onClick.AddListener(ClearAll);
+                _show = true;
+            }
+            FindAnyObjectByType<ChatTextVivox>().playerId = m_vivoxMessage.SenderPlayerId;
+        }
+    }
+
+    private void ClearAll()
+    {
+        FindAnyObjectByType<ChatTextVivox>().ClearMessageObjectPool();
     }
 }

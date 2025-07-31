@@ -23,6 +23,9 @@ public class ChatTextVivox : MonoBehaviour
     public GameObject ChatContentObj;
     public GameObject MessageObject;
 
+    public string playerId;
+    private string _channelName;
+
     ScrollRect m_TextChatScrollRect;
     public TMP_InputField MessageInputField;
     
@@ -35,7 +38,6 @@ public class ChatTextVivox : MonoBehaviour
 
 
         StartCoroutine(WaitForVivoxInitThenSubscribe());
-
         /*VivoxService.Instance.ChannelJoined += OnChannelJoined;
         VivoxService.Instance.DirectedMessageReceived += OnDirectedMessageReceived;
         VivoxService.Instance.ChannelMessageReceived += OnChannelMessageReceived;
@@ -55,9 +57,10 @@ public class ChatTextVivox : MonoBehaviour
             yield return null;
         }
 
+        _channelName = VivoxVoiceManager.LobbyChannelName;
         Debug.Log("Vivox ready, setting up ChatTextVivox");
         VivoxService.Instance.JoinGroupChannelAsync(
-                VivoxVoiceManager.LobbyChannelName,
+                _channelName,
                 ChatCapability.TextOnly
             );//fait en sorte que l'on join ici a la place, ca fonctionne donc c bien
         VivoxService.Instance.ChannelJoined += OnChannelJoined;
@@ -76,6 +79,24 @@ public class ChatTextVivox : MonoBehaviour
 
         MessageInputField.onEndEdit.RemoveAllListeners();
         m_TextChatScrollRect.onValueChanged.RemoveAllListeners();
+    }
+
+
+    public void ClearMessageObjectPool()
+    {
+        foreach (KeyValuePair<string, MessageObject> keyValuePair in m_MessageObjPool)
+        {
+            Destroy(keyValuePair.Value.gameObject);
+        }
+        m_MessageObjPool.Clear();
+        VivoxService.Instance.LeaveAllChannelsAsync();
+        _channelName = "paquerrette";
+        VivoxService.Instance.JoinGroupChannelAsync(
+                _channelName,
+                ChatCapability.TextOnly
+        );
+
+        //FetchMessages = FetchHistory(true);
     }
 
     private void ScrollRectChange(Vector2 vector)
@@ -109,8 +130,8 @@ public class ChatTextVivox : MonoBehaviour
                 TimeEnd = oldestMessage
             };
             var historyMessages =
-                await VivoxService.Instance.GetChannelTextMessageHistoryAsync(VivoxVoiceManager.LobbyChannelName, 10,
-                    chatHistoryOptions);
+                await VivoxService.Instance.GetChannelTextMessageHistoryAsync(_channelName, 20,
+                    null);
             var reversedMessages = historyMessages.Reverse();
             foreach (var historyMessage in reversedMessages)
             {
@@ -184,9 +205,8 @@ public class ChatTextVivox : MonoBehaviour
         {
             return;
         }
-
         VivoxService.Instance.SendChannelTextMessageAsync(
-            VivoxVoiceManager.LobbyChannelName,
+            _channelName,
             MessageInputField.text
         ).ContinueWith(task =>
         {
@@ -201,6 +221,17 @@ public class ChatTextVivox : MonoBehaviour
         });
 
         ClearTextField();
+    }
+
+    public void SendMessageAsync()
+    {
+        if (string.IsNullOrEmpty(MessageInputField.text))
+        {
+            return;
+        }
+
+        VivoxService.Instance.SendDirectTextMessageAsync(playerId, MessageInputField.text);
+        MessageInputField.text = string.Empty;
     }
 
     void ClearTextField()
