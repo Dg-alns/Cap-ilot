@@ -29,11 +29,9 @@ public class DialogueMiniGameBox : DialogueBox
 
         npc = npcManager.dialogueNpc as MiniGameNPC;
 
-        Debug.Log(npc.idxMiniGameSet);
-
         activeButton = false;
 
-        //PlayerPrefs.DeleteKey(npc.GetNamePlayerPrefsNPC());
+        PlayerPrefs.DeleteKey(npc.GetNamePlayerPrefsNPC());
 
         if(PlayerPrefs.HasKey(npc.GetNamePlayerPrefsNPC()) == false)
             PlayerPrefs.SetInt(npc.GetNamePlayerPrefsNPC(), 0);
@@ -77,9 +75,14 @@ public class DialogueMiniGameBox : DialogueBox
     {
         if (buttonStart.activeSelf == false)
         {
-            DestroiUI();
+            //DestroiUI();
+            npcManager.dialogueNpc.NextSet();
+            GetDialogueLines();
+
+            _lineIndex = 0;
+            _dialogueText.SetText(lineList[_lineIndex]);
+            dialogStarted = true;
         }
-        npcManager.dialogueNpc.NextSet();
     }
 
     public void DestroiUI()

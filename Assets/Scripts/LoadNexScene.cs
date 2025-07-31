@@ -11,7 +11,7 @@ public class LoadNexScene : MonoBehaviour
 
     [Header ("\nJust for Scene Accueil")]
     [SerializeField] private Tools tools;
-    [Header ("Not Mandatory\nForSavePosition")]
+    [Header ("\n\nForSavePosition")]
     public GameObject Player;
 
     private void Start()
@@ -25,7 +25,7 @@ public class LoadNexScene : MonoBehaviour
         {
             _NextSceneData.isLauch = true;
             animator.SetTrigger("Transition");
-            DeletPos();
+            //DeletPos();
             tools.DontDestroyTools();
             string scene = PlayerPrefs.HasKey("SceneName") ? PlayerPrefs.GetString("SceneName") : "Personalisation";
             StartCoroutine(_NextSceneData.NextScene(scene));
@@ -79,6 +79,7 @@ public class LoadNexScene : MonoBehaviour
             _NextSceneData.isLauch = true;
             if (_energy.HaveEnergy())
             {
+                Debug.Log("SavePos");
                 SavePos();
                 _energy.UseEnergy();
                 animator.SetTrigger("Transition");
@@ -114,10 +115,10 @@ public class LoadNexScene : MonoBehaviour
 
     private void SavePos()
     {
-        //Debug.Log("SavePos");
-        //Debug.Log(Player.transform.position.x);
-        //Debug.Log(Player.transform.position.y);
-        //Debug.Log(SceneManager.GetActiveScene().name);
+        Debug.Log("SavePos");
+        Debug.Log(Player.transform.position.x);
+        Debug.Log(Player.transform.position.y);
+        Debug.Log(SceneManager.GetActiveScene().name);
 
         PlayerPrefs.SetFloat("PosX", Player.transform.position.x);
         PlayerPrefs.SetFloat("PosY", Player.transform.position.y);

@@ -23,7 +23,7 @@ public class NPC : MonoBehaviour
     {
         NPCPLayerPrefsName = npcId.ToString() + npcName;
 
-        PlayerPrefs.SetInt(NPCPLayerPrefsName, 0);
+        //PlayerPrefs.SetInt(NPCPLayerPrefsName, 0);
 
         if (PlayerPrefs.HasKey(NPCPLayerPrefsName))
         {
@@ -34,6 +34,7 @@ public class NPC : MonoBehaviour
     }
 
     public List<string> GetLstDialogue() { return dialogueSet[idxOffSetDialogue].dialogueLines; }
+   
     public void NextSet() 
     {
         if (idxOffSetDialogue + 1 <= dialogueSet.Count -1)
@@ -53,6 +54,11 @@ public class NPC : MonoBehaviour
     public void UpInfoPLayerPrefs()
     {
         PlayerPrefs.SetInt(NPCPLayerPrefsName, (PlayerPrefs.GetInt(NPCPLayerPrefsName) + 1));
+    }
+
+    public void SetPLayerPrefs(int value)
+    {
+        PlayerPrefs.SetInt(NPCPLayerPrefsName, value);
     }
 
     public string GetNamePlayerPrefsNPC() { return NPCPLayerPrefsName; }

@@ -63,6 +63,7 @@ public class SpawnManagement : MonoBehaviour
             return;
         }
 
+
         dict = DetectAllSpawnPrefab();
 
         if (FindPLayerPrefsPosPLayer() == false)
@@ -96,6 +97,10 @@ public class SpawnManagement : MonoBehaviour
 
     void PositionPLayer()
     {
+        Debug.Log("SEtPos");
+        Debug.Log(PlayerPrefs.GetFloat("PosX"));
+        Debug.Log(PlayerPrefs.GetFloat("PosY"));
+
         PersoToPosition.transform.position = new(PlayerPrefs.GetFloat("PosX"), PlayerPrefs.GetFloat("PosY"), 0);
         PersoToPosition.transform.rotation = new(0, PlayerPrefs.GetFloat("RotateY"), 0, 1);
         PersoToPosition.SetActive(true);
