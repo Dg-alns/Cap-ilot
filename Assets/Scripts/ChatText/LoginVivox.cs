@@ -56,12 +56,8 @@ public class LoginVivox : MonoBehaviour
         }
     }
 
-    public void logOut()
-    {
-        VivoxService.Instance.LogoutAsync();
-    }
 
-    async void LogoutOfVivoxServiceAsync()
+    public async void LogoutOfVivoxServiceAsync()
     {
         await VivoxService.Instance.LogoutAsync();
         AuthenticationService.Instance.SignOut();
@@ -108,7 +104,7 @@ public class LoginVivox : MonoBehaviour
 
         Debug.Log("Initializing Vivox...");
 
-        save.profile.Username = save.profile.Username.Remove(save.profile.Username.Length-1);
+        save.profile.Username = save.profile.Username.Remove(save.profile.Username.Length - 1);
         await VivoxVoiceManager.Instance.InitializeAsync(save.profile.Username);
         Debug.Log("Vivox initialized successfully");
 

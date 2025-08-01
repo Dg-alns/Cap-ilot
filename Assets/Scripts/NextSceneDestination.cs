@@ -49,7 +49,7 @@ public class NextSceneDestination : ScriptableObject
         yield return null;
         if (FindAnyObjectByType<LoginVivox>())
         {
-            FindAnyObjectByType<LoginVivox>().logOut();
+            FindAnyObjectByType<LoginVivox>().LogoutOfVivoxServiceAsync();
         }
         SetNextSceneDestination(scene);
         SetCurrentScene(SceneManager.GetActiveScene().name);
