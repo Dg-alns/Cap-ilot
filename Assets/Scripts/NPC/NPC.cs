@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public class IntListWrapper
+public class AllDialogueSet
 {
     [TextArea]
     public List<string> dialogueLines;
@@ -15,7 +15,7 @@ public class NPC : MonoBehaviour
     public string npcName;
     public int idxOffSetDialogue = 0;
 
-    public List<IntListWrapper> dialogueSet = new List<IntListWrapper>();
+    public List<AllDialogueSet> dialogueSet = new List<AllDialogueSet>();
 
     string NPCPLayerPrefsName;
 
@@ -23,7 +23,7 @@ public class NPC : MonoBehaviour
     {
         NPCPLayerPrefsName = npcId.ToString() + npcName;
 
-        //PlayerPrefs.SetInt(NPCPLayerPrefsName, 0);
+        PlayerPrefs.SetInt(NPCPLayerPrefsName, 0);
 
         if (PlayerPrefs.HasKey(NPCPLayerPrefsName))
         {

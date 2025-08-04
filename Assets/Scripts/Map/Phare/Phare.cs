@@ -4,15 +4,18 @@ using UnityEngine;
 
 public class Phare : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public GameObject phare;
+    public GameObject TopPhare;
+    public Sprite phareClean;
+
     void Start()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        if (PlayerPrefs.HasKey("ReparationPhare"))
+        {
+            if (PlayerPrefs.GetInt("ReparationPhare") == 1) {
+                phare.GetComponent<SpriteRenderer>().sprite = phareClean;
+                TopPhare.SetActive(false);
+            }
+        }
     }
 }

@@ -1,0 +1,1807 @@
+fileFormatVersion: 2
+guid: 84427e52b965b5b4da78ec7954e5214e
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6444221449505153567
+    second: phare_ruine_0
+  - first:
+      213: -978336404814865000
+    second: phare_ruine_1
+  - first:
+      213: 3048272235087336176
+    second: phare_ruine_2
+  - first:
+      213: -2892762805926333348
+    second: phare_ruine_3
+  - first:
+      213: 3278906659940670716
+    second: phare_ruine_4
+  - first:
+      213: -5387954370713464063
+    second: phare_ruine_5
+  - first:
+      213: 5388730419333661216
+    second: phare_ruine_6
+  - first:
+      213: -3471662586065094595
+    second: phare_ruine_7
+  - first:
+      213: 8471998557113147194
+    second: phare_ruine_8
+  - first:
+      213: -5273613334430215448
+    second: phare_ruine_9
+  - first:
+      213: 4946989475933008983
+    second: phare_ruine_10
+  - first:
+      213: 6886416937796600303
+    second: phare_ruine_11
+  - first:
+      213: 5277813215784191738
+    second: phare_ruine_12
+  - first:
+      213: -8365127105711806020
+    second: phare_ruine_13
+  - first:
+      213: -3140814573435948495
+    second: phare_ruine_14
+  - first:
+      213: -714449326976842120
+    second: phare_ruine_15
+  - first:
+      213: 3287397636474385911
+    second: phare_ruine_16
+  - first:
+      213: -7981681316258032070
+    second: phare_ruine_17
+  - first:
+      213: -7047503399756744067
+    second: phare_ruine_18
+  - first:
+      213: -7120763845458161297
+    second: phare_ruine_19
+  - first:
+      213: 5664331868928708192
+    second: phare_ruine_20
+  - first:
+      213: 8438563041657489732
+    second: phare_ruine_21
+  - first:
+      213: -3796014701968148589
+    second: phare_ruine_22
+  - first:
+      213: 407879688912863785
+    second: phare_ruine_23
+  - first:
+      213: -1705207284121012650
+    second: phare_ruine_24
+  - first:
+      213: 5553037541705936954
+    second: phare_ruine_25
+  - first:
+      213: -8212807146600413818
+    second: phare_ruine_26
+  - first:
+      213: 1566687011572652611
+    second: phare_ruine_27
+  - first:
+      213: 8478466241816567586
+    second: phare_ruine_28
+  - first:
+      213: 3155356082170829503
+    second: phare_ruine_29
+  - first:
+      213: 7799758013527770532
+    second: phare_ruine_30
+  - first:
+      213: 8598157965049847848
+    second: phare_ruine_31
+  - first:
+      213: 94148987037561735
+    second: phare_ruine_32
+  - first:
+      213: -2936253136805062980
+    second: phare_ruine_33
+  - first:
+      213: -8564352647811777159
+    second: phare_ruine_34
+  - first:
+      213: -1800262768392144049
+    second: phare_ruine_35
+  - first:
+      213: 3829806376935910956
+    second: phare_ruine_36
+  - first:
+      213: -8212445316131522237
+    second: phare_ruine_37
+  - first:
+      213: -8626108847636706231
+    second: phare_ruine_38
+  - first:
+      213: 852544120961270499
+    second: phare_ruine_39
+  - first:
+      213: 3526965151648572041
+    second: phare_ruine_40
+  - first:
+      213: 3821824795923327763
+    second: phare_ruine_41
+  - first:
+      213: -5735101594525053217
+    second: phare_ruine_42
+  - first:
+      213: -5414170971609258689
+    second: phare_ruine_43
+  - first:
+      213: 9152157368786290716
+    second: phare_ruine_44
+  - first:
+      213: -1139089475345301958
+    second: phare_ruine_45
+  - first:
+      213: -5174946014901276910
+    second: phare_ruine_46
+  - first:
+      213: 1185849348301319704
+    second: phare_ruine_47
+  - first:
+      213: 1445379804543971209
+    second: phare_ruine_48
+  - first:
+      213: -9080184808595553684
+    second: phare_ruine_49
+  - first:
+      213: -7637377448293981138
+    second: phare_ruine_50
+  - first:
+      213: 6870411200501992325
+    second: phare_ruine_51
+  - first:
+      213: 5908400679325607013
+    second: phare_ruine_52
+  - first:
+      213: -3528268867690184773
+    second: phare_ruine_53
+  - first:
+      213: -2342217412330889923
+    second: phare_ruine_54
+  - first:
+      213: 7898676674754674545
+    second: phare_ruine_55
+  - first:
+      213: -549139360371306745
+    second: phare_ruine_56
+  - first:
+      213: 8582156311837023355
+    second: phare_ruine_57
+  - first:
+      213: -4499786382808858238
+    second: phare_ruine_58
+  - first:
+      213: 6237158450226299456
+    second: phare_ruine_59
+  - first:
+      213: -3116441981470160249
+    second: phare_ruine_60
+  - first:
+      213: 4136332356448697345
+    second: phare_ruine_61
+  - first:
+      213: 6063806055456936734
+    second: phare_ruine_62
+  - first:
+      213: 1007886589804262789
+    second: phare_ruine_63
+  - first:
+      213: 3618086108998933288
+    second: phare_ruine_64
+  - first:
+      213: -5898735513621928240
+    second: phare_ruine_65
+  - first:
+      213: -5744414383713535744
+    second: phare_ruine_66
+  - first:
+      213: -6576894438771565389
+    second: phare_ruine_67
+  - first:
+      213: -3575507668753689038
+    second: phare_ruine_68
+  - first:
+      213: 4528197998325725322
+    second: phare_ruine_69
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: phare_ruine_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3924
+        width: 1403
+        height: 1147
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1edda401cb68196a0800000000000000
+      internalID: -6444221449505153567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phare_ruine_1
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 5051
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 89d5d2829304c62f0800000000000000
+      internalID: -978336404814865000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phare_ruine_2
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 4614
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f211178273ad4a20800000000000000
+      internalID: 3048272235087336176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phare_ruine_3
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 4619
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c547c45fd87dad7d0800000000000000
+      internalID: -2892762805926333348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phare_ruine_4
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 4613
+        width: 28
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cfc1d6d1c34018d20800000000000000
+      internalID: 3278906659940670716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phare_ruine_5
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 4610
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1035c93eb042a35b0800000000000000
+      internalID: -5387954370713464063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phare_ruine_6
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 4599
+        width: 10
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 02289b204cd98ca40800000000000000
+      internalID: 5388730419333661216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phare_ruine_7
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 4594
+        width: 13
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d387399854d22dfc0800000000000000
+      internalID: -3471662586065094595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phare_ruine_8
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 4583
+        width: 10
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a3fd9561dc5929570800000000000000
+      internalID: 8471998557113147194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phare_ruine_9
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 4572
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e21686fc9c50d6b0800000000000000
+      internalID: -5273613334430215448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phare_ruine_10
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 4566
+        width: 19
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7543594d7bc37a440800000000000000
+      internalID: 4946989475933008983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phare_ruine_11
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 4556
+        width: 15
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe1899818b7719f50800000000000000
+      internalID: 6886416937796600303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phare_ruine_12
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 4547
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af6cdad182f8e3940800000000000000
+      internalID: 5277813215784191738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phare_ruine_13
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 4548
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb96e0bb73919eb80800000000000000
+      internalID: -8365127105711806020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phare_ruine_14
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 4533
+        width: 17
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 132faf449c59964d0800000000000000
+      internalID: -3140814573435948495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phare_ruine_15
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 4516
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 87647875f14c516f0800000000000000
+      internalID: -714449326976842120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phare_ruine_16
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 4524
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f5b385abbe2f9d20800000000000000
+      internalID: 3287397636474385911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phare_ruine_17
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 4519
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a365112b12f5b3190800000000000000
+      internalID: -7981681316258032070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phare_ruine_18
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 4506
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d7a34284ffc323e90800000000000000
+      internalID: -7047503399756744067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phare_ruine_19
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 4512
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f61950e8207fd2d90800000000000000
+      internalID: -7120763845458161297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phare_ruine_20
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 4504
+        width: 11
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 06e8b69e2dfbb9e40800000000000000
+      internalID: 5664331868928708192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phare_ruine_21
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 4504
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4490cb0806ccb1570800000000000000
+      internalID: 8438563041657489732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phare_ruine_22
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 4500
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 397370f9db8d15bc0800000000000000
+      internalID: -3796014701968148589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phare_ruine_23
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 4491
+        width: 13
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9228fb08a6419a500800000000000000
+      internalID: 407879688912863785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phare_ruine_24
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 4483
+        width: 10
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 656fe897203e558e0800000000000000
+      internalID: -1705207284121012650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phare_ruine_25
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 4464
+        width: 14
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a307ac1193a501d40800000000000000
+      internalID: 5553037541705936954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phare_ruine_26
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 4468
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 685c71ad96f360e80800000000000000
+      internalID: -8212807146600413818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phare_ruine_27
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 4436
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 34a910f498dfdb510800000000000000
+      internalID: 1566687011572652611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phare_ruine_28
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 4441
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22f1e97402099a570800000000000000
+      internalID: 8478466241816567586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phare_ruine_29
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 4416
+        width: 10
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fba19a193a31acb20800000000000000
+      internalID: 3155356082170829503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phare_ruine_30
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 4406
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a54452a69e4e3c60800000000000000
+      internalID: 7799758013527770532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phare_ruine_31
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 4399
+        width: 18
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 820ed7d3d1bc25770800000000000000
+      internalID: 8598157965049847848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phare_ruine_32
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 4404
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7833650410c7e4100800000000000000
+      internalID: 94148987037561735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phare_ruine_33
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 4395
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb69b1a34555047d0800000000000000
+      internalID: -2936253136805062980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phare_ruine_34
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 4384
+        width: 10
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 97db00884ae452980800000000000000
+      internalID: -8564352647811777159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phare_ruine_35
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 4379
+        width: 13
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f4bff93ec8e2407e0800000000000000
+      internalID: -1800262768392144049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phare_ruine_36
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 4353
+        width: 17
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c2e6acfcb94362530800000000000000
+      internalID: 3829806376935910956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phare_ruine_37
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 3931
+        width: 35
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 349f8a21f78870e80800000000000000
+      internalID: -8212445316131522237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phare_ruine_38
+      rect:
+        serializedVersion: 2
+        x: 538
+        y: 3939
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94c82c6c4b7e94880800000000000000
+      internalID: -8626108847636706231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phare_ruine_39
+      rect:
+        serializedVersion: 2
+        x: 541
+        y: 3942
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e28e3d6c58d4db00800000000000000
+      internalID: 852544120961270499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phare_ruine_40
+      rect:
+        serializedVersion: 2
+        x: 546
+        y: 3934
+        width: 20
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 982e1376e1c42f030800000000000000
+      internalID: 3526965151648572041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phare_ruine_41
+      rect:
+        serializedVersion: 2
+        x: 562
+        y: 3940
+        width: 10
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 31b2aca2769d90530800000000000000
+      internalID: 3821824795923327763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phare_ruine_42
+      rect:
+        serializedVersion: 2
+        x: 570
+        y: 3937
+        width: 13
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fdece835c73d860b0800000000000000
+      internalID: -5735101594525053217
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phare_ruine_43
+      rect:
+        serializedVersion: 2
+        x: 1426
+        y: 0
+        width: 1583
+        height: 4025
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f35aff3df200dd4b0800000000000000
+      internalID: -5414170971609258689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phare_ruine_44
+      rect:
+        serializedVersion: 2
+        x: 545
+        y: 3934
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c180bfef2aef20f70800000000000000
+      internalID: 9152157368786290716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phare_ruine_45
+      rect:
+        serializedVersion: 2
+        x: 548
+        y: 3929
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a3e38a648242130f0800000000000000
+      internalID: -1139089475345301958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phare_ruine_46
+      rect:
+        serializedVersion: 2
+        x: 1458
+        y: 3485
+        width: 10
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 21f6cf97406ee28b0800000000000000
+      internalID: -5174946014901276910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phare_ruine_47
+      rect:
+        serializedVersion: 2
+        x: 1502
+        y: 3399
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 81ee0aa03bbf47010800000000000000
+      internalID: 1185849348301319704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phare_ruine_48
+      rect:
+        serializedVersion: 2
+        x: 1503
+        y: 3405
+        width: 39
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 98fed5736450f0410800000000000000
+      internalID: 1445379804543971209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phare_ruine_49
+      rect:
+        serializedVersion: 2
+        x: 1515
+        y: 3401
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c6283c48604bcf180800000000000000
+      internalID: -9080184808595553684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phare_ruine_50
+      rect:
+        serializedVersion: 2
+        x: 1488
+        y: 3354
+        width: 18
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e24abd2eca5920690800000000000000
+      internalID: -7637377448293981138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phare_ruine_51
+      rect:
+        serializedVersion: 2
+        x: 1507
+        y: 3395
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 58b49caf59a985f50800000000000000
+      internalID: 6870411200501992325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phare_ruine_52
+      rect:
+        serializedVersion: 2
+        x: 1509
+        y: 3392
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 56421e12d1bdef150800000000000000
+      internalID: 5908400679325607013
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phare_ruine_53
+      rect:
+        serializedVersion: 2
+        x: 1504
+        y: 3387
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bbfb14d8822190fc0800000000000000
+      internalID: -3528268867690184773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phare_ruine_54
+      rect:
+        serializedVersion: 2
+        x: 1506
+        y: 3378
+        width: 17
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d3d584f4ca5ce7fd0800000000000000
+      internalID: -2342217412330889923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phare_ruine_55
+      rect:
+        serializedVersion: 2
+        x: 1507
+        y: 3371
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 17f7a62369cbd9d60800000000000000
+      internalID: 7898676674754674545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phare_ruine_56
+      rect:
+        serializedVersion: 2
+        x: 1515
+        y: 3362
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 70f02e449a01168f0800000000000000
+      internalID: -549139360371306745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phare_ruine_57
+      rect:
+        serializedVersion: 2
+        x: 1528
+        y: 3346
+        width: 17
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7c1ce502b1f91770800000000000000
+      internalID: 8582156311837023355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phare_ruine_58
+      rect:
+        serializedVersion: 2
+        x: 1493
+        y: 3344
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 281c98f202c8d81c0800000000000000
+      internalID: -4499786382808858238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phare_ruine_59
+      rect:
+        serializedVersion: 2
+        x: 1493
+        y: 3293
+        width: 24
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 04280998096de8650800000000000000
+      internalID: 6237158450226299456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phare_ruine_60
+      rect:
+        serializedVersion: 2
+        x: 1508
+        y: 3336
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 78a4b5b878c20c4d0800000000000000
+      internalID: -3116441981470160249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phare_ruine_61
+      rect:
+        serializedVersion: 2
+        x: 1513
+        y: 3330
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 10c341bec54376930800000000000000
+      internalID: 4136332356448697345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phare_ruine_62
+      rect:
+        serializedVersion: 2
+        x: 1514
+        y: 3289
+        width: 28
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e139f52ea77f62450800000000000000
+      internalID: 6063806055456936734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phare_ruine_63
+      rect:
+        serializedVersion: 2
+        x: 1457
+        y: 3165
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 585b92f638bbcfd00800000000000000
+      internalID: 1007886589804262789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phare_ruine_64
+      rect:
+        serializedVersion: 2
+        x: 1508
+        y: 557
+        width: 22
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 82b18ad8526063230800000000000000
+      internalID: 3618086108998933288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phare_ruine_65
+      rect:
+        serializedVersion: 2
+        x: 1522
+        y: 607
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d6659e9d4b732ea0800000000000000
+      internalID: -5898735513621928240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phare_ruine_66
+      rect:
+        serializedVersion: 2
+        x: 1511
+        y: 552
+        width: 14
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0093c10ad8db740b0800000000000000
+      internalID: -5744414383713535744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phare_ruine_67
+      rect:
+        serializedVersion: 2
+        x: 1518
+        y: 549
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3bc57c39a5d2ab4a0800000000000000
+      internalID: -6576894438771565389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phare_ruine_68
+      rect:
+        serializedVersion: 2
+        x: 1514
+        y: 539
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 236504818be316ec0800000000000000
+      internalID: -3575507668753689038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phare_ruine_69
+      rect:
+        serializedVersion: 2
+        x: 1516
+        y: 526
+        width: 12
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a88f6da861467de30800000000000000
+      internalID: 4528197998325725322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable: {}
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
