@@ -28,7 +28,6 @@ public class DownBarManager : MonoBehaviour
 
     private float currentOffSetPage = 0;
     private float offSet_Page = 1800f; // Height for a page
-    private float hidePagePosition = -1266f - 900f; // 1266 -> half size screen | 900 -> half offset_Page
 
 
     // Start is called before the first frame update

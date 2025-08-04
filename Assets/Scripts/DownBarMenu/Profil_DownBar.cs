@@ -4,7 +4,7 @@ using System.IO;
 using TMPro;
 using UnityEngine;
 
-public class JournalDownBar : MonoBehaviour
+public class Profil_DownBar : MonoBehaviour
 {
     [SerializeField] private Sauvegarde_Minigame sauvegarde_Minigame;
 
