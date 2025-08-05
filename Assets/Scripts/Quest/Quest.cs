@@ -8,7 +8,6 @@ public class QuestManager
 {
     public List<Quest> quests;
     public SerializableDictionary<int, bool> statusDict;
-    private Saving SaveData { get; set; }
     public QuestManager()
     {
         quests = new List<Quest>();

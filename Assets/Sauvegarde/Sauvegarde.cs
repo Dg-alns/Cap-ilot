@@ -10,9 +10,9 @@ using UnityEngine.UI;
 
 public class Sauvegarde : MonoBehaviour
 {
-    private Journal journal;
-    private Profile profile;
-    private QuestManager questManager;
+    public Journal journal;
+    public Profile profile;
+    public QuestManager questManager;
     [SerializeField] TextMeshProUGUI Input;
     [SerializeField] TMP_Dropdown Output;
     [SerializeField] TextMeshProUGUI OutputText;
@@ -30,6 +30,7 @@ public class Sauvegarde : MonoBehaviour
     [SerializeField] TMP_Dropdown Mois;
     [SerializeField] TMP_Dropdown Annee;
     [SerializeField] TextMeshProUGUI OutputDate;
+    public Dictionary<string, TemplateSaveMinigame> StatMinigame;
     // Start is called before the first frame update
 
     private void Awake()
@@ -37,52 +38,59 @@ public class Sauvegarde : MonoBehaviour
         journal = new Journal();
         profile = new Profile();
         questManager = new QuestManager();
+        StatMinigame = new Dictionary<string, TemplateSaveMinigame>();
         try
         {
-            string jsonstring = File.ReadAllText("save.json");
-            Saving save = new Saving(journal, profile, questManager);
-            save = JsonUtility.FromJson<Saving>(jsonstring);
-            if (SceneManager.GetActiveScene() != SceneManager.GetSceneByName("Journal"))
+            Saving save = JSON_Manager.LoadData<Saving>(Application.dataPath + "/Json/Save.json");
+            if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("Profile"))
             {
                 SceneManager.LoadScene("Journal");
             }
             journal = save.journal;
             profile = save.profile;
             questManager = save.questManager;
-            journal.Output = Output;
-            journal.EmotionWheel = EmotionWheel;
-            journal.OutputText = OutputText;
-            journal.UpdateJournal();
-            profile.Output = OutputName;
-            profile.OutputDate = OutputDate;
-            profile.UpdateProfile();
-            journal.InputField = Input;
-            Output.onValueChanged.AddListener(delegate {
-                journal.DropdownValueChanged(Output);
-            });
-            Hospital.onClick.AddListener(() => { OnClick(Hospital); });
-            Food.onClick.AddListener(() => { OnClick(Food); });
-            Sport.onClick.AddListener(() => { OnClick(Sport); });
-            School.onClick.AddListener(() => { OnClick(School); });
-            Relations.onClick.AddListener(() => { OnClick(Relations); });
-            Temptations.onClick.AddListener(() => { OnClick(Temptations); });
+            StatMinigame = save.statMinigame;
+            if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("Journal"))
+            {
+                journal.Output = Output;
+                journal.EmotionWheel = EmotionWheel;
+                journal.OutputText = OutputText;
+                journal.UpdateJournal();
+                profile.Output = OutputName;
+                profile.OutputDate = OutputDate;
+                profile.UpdateProfile();
+                journal.InputField = Input;
+                Output.onValueChanged.AddListener(delegate
+                {
+                    journal.DropdownValueChanged(Output);
+                });
+                Hospital.onClick.AddListener(() => { OnClick(Hospital); });
+                Food.onClick.AddListener(() => { OnClick(Food); });
+                Sport.onClick.AddListener(() => { OnClick(Sport); });
+                School.onClick.AddListener(() => { OnClick(School); });
+                Relations.onClick.AddListener(() => { OnClick(Relations); });
+                Temptations.onClick.AddListener(() => { OnClick(Temptations); });
+            }
         }
         catch
         {
-            if (SceneManager.GetActiveScene() != SceneManager.GetSceneByName("Profile"))
+            if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("Journal"))
             {
                 SceneManager.LoadScene("Profile");
             }
-            profile.Input = InputName;
-            profile.Jour = Jour;
-            profile.Mois = Mois;
-            profile.Annee = Annee;
+            if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("Profile"))
+            {
+                profile.Input = InputName;
+                profile.Jour = Jour;
+                profile.Mois = Mois;
+                profile.Annee = Annee;
+            }
         }
     }
 
     public void Update()
     {
-        Saving save = new Saving(journal, profile, questManager);
+        Saving save = new Saving(journal, profile, questManager, StatMinigame);
         foreach (Quest quest in questManager.quests)
         {
             if (questManager.statusDict[quest.id] == false)
@@ -91,18 +99,11 @@ public class Sauvegarde : MonoBehaviour
                 {
                     questManager.statusDict[quest.id] = true;
                     Save(save);
-                    StartCoroutine(Destruct(questManager.quests[quest.id].reward.GO));
+                    Destroy(quest.reward.GO, 3);
                 }
             }
         }
     }
-
-    IEnumerator Destruct(GameObject GO)
-    {
-        yield return new WaitForSeconds(3f);
-        Destroy(GO);
-    }
-
     public void OnClick(UnityEngine.UI.Button pressed)
     {
         string theme = pressed.GetComponentInChildren<TextMeshProUGUI>().text;
@@ -120,14 +121,12 @@ public class Sauvegarde : MonoBehaviour
         profile.Save();
         journal.ThemeList = Themes;
         journal.Save();
-        Saving save = new Saving(journal, profile, questManager);
-        string jsonString = JsonUtility.ToJson(save);
-        string fileName = "save.json";
-        File.WriteAllText(fileName, jsonString);
+        Saving save = new Saving(journal, profile, questManager, StatMinigame);
+        JSON_Manager.SaveData<Saving>(Application.dataPath + "/Json/Save.json", save);
         journal.UpdateJournal();
         profile.UpdateProfile();
         Themes.Clear();
-        if (SceneManager.GetActiveScene() != SceneManager.GetSceneByName("Journal"))
+        if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("Profile"))
         {
             SceneManager.LoadScene("Journal");
         }
@@ -135,16 +134,11 @@ public class Sauvegarde : MonoBehaviour
 
     public void Save (Saving save)
     {
-        string jsonString = JsonUtility.ToJson(save);
-        string fileName = "save.json";
-        File.WriteAllText(fileName, jsonString);
-        journal.UpdateJournal();
-        profile.UpdateProfile();
-        Themes.Clear();
-        if (SceneManager.GetActiveScene() != SceneManager.GetSceneByName("Journal"))
-        {
-            SceneManager.LoadScene("Journal");
-        }
+        journal = save.journal;
+        profile = save.profile;
+        questManager = save.questManager;
+        StatMinigame = save.statMinigame;
+        JSON_Manager.SaveData<Saving>(Application.dataPath + "/Json/Save.json", save);
     }
 }
 
@@ -154,11 +148,13 @@ public class Saving
     public Journal journal;
     public Profile profile;
     public QuestManager questManager;
-    public Saving(Journal journal, Profile profile, QuestManager questManager) 
-    { 
+    public Dictionary<string, TemplateSaveMinigame> statMinigame;
+    public Saving(Journal journal, Profile profile, QuestManager questManager, Dictionary<string, TemplateSaveMinigame> statMinigame)
+    {
         this.journal = journal;
         this.profile = profile;
         this.questManager = questManager;
+        this.statMinigame = statMinigame;
     }
 
 }
