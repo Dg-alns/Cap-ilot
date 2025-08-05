@@ -48,6 +48,7 @@ public class Sauvegarde : MonoBehaviour
             }
             journal = save.journal;
             profile = save.profile;
+            questManager = save.questManager;
             journal.Output = Output;
             journal.EmotionWheel = EmotionWheel;
             journal.OutputText = OutputText;
@@ -84,11 +85,22 @@ public class Sauvegarde : MonoBehaviour
         Saving save = new Saving(journal, profile, questManager);
         foreach (Quest quest in questManager.quests)
         {
-            if (quest.CheckCondition(save))
+            if (questManager.statusDict[quest.id] == false)
             {
-                questManager.statusDict[quest.id] = true;
+                if (quest.CheckCondition(save))
+                {
+                    questManager.statusDict[quest.id] = true;
+                    Save(save);
+                    StartCoroutine(Destruct(questManager.quests[quest.id].reward.GO));
+                }
             }
         }
+    }
+
+    IEnumerator Destruct(GameObject GO)
+    {
+        yield return new WaitForSeconds(3f);
+        Destroy(GO);
     }
 
     public void OnClick(UnityEngine.UI.Button pressed)
@@ -109,6 +121,20 @@ public class Sauvegarde : MonoBehaviour
         journal.ThemeList = Themes;
         journal.Save();
         Saving save = new Saving(journal, profile, questManager);
+        string jsonString = JsonUtility.ToJson(save);
+        string fileName = "save.json";
+        File.WriteAllText(fileName, jsonString);
+        journal.UpdateJournal();
+        profile.UpdateProfile();
+        Themes.Clear();
+        if (SceneManager.GetActiveScene() != SceneManager.GetSceneByName("Journal"))
+        {
+            SceneManager.LoadScene("Journal");
+        }
+    }
+
+    public void Save (Saving save)
+    {
         string jsonString = JsonUtility.ToJson(save);
         string fileName = "save.json";
         File.WriteAllText(fileName, jsonString);

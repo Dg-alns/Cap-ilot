@@ -13,7 +13,7 @@ public class QuestManager
     {
         quests = new List<Quest>();
         statusDict = new SerializableDictionary<int, bool>();
-        quests.Add(new ExampleQuest(0));
+        quests.Add(new ExampleQuest(0, new ExampleReward(null, "test")));
         //add all quests
         foreach (Quest quest in quests)
         {
@@ -41,11 +41,12 @@ public class Quest
 {
     public bool status;
     public int id;
-    //système de reward à ajouters
-    public Quest(int id)
+    public Reward reward;
+    public Quest(int id, Reward reward)
     {
         status = false;
         this.id = id;
+        this.reward = reward;
     }
     virtual public bool CheckCondition(Saving Data)
     {
@@ -55,7 +56,7 @@ public class Quest
 
 public class ExampleQuest : Quest
 {
-    public ExampleQuest(int id) : base(id)
+    public ExampleQuest(int id, Reward reward) : base(id, reward)
     {
     }
     override public bool CheckCondition(Saving Data)
@@ -63,6 +64,7 @@ public class ExampleQuest : Quest
         if (Data.profile.Username != "")
         {
             status = true;
+            reward.Obtain(Data);
             return true;
         }
         return false;
