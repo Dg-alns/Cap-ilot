@@ -1300,7 +1300,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3533778895081850958, guid: 5d819704cbaeede43a069f1453b0afcc, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: Ile Principale
+      value: Port Ile Principale
       objectReference: {fileID: 0}
     - target: {fileID: 3947513506827638774, guid: 5d819704cbaeede43a069f1453b0afcc, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1612,7 +1612,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3533778895081850958, guid: 5d819704cbaeede43a069f1453b0afcc, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: MiniGame_ObjCachee
+      value: MiniGame_Funambule
       objectReference: {fileID: 0}
     - target: {fileID: 3947513506827638774, guid: 5d819704cbaeede43a069f1453b0afcc, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1680,11 +1680,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8152058626344841590, guid: 5d819704cbaeede43a069f1453b0afcc, type: 3}
       propertyPath: m_Color.b
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8152058626344841590, guid: 5d819704cbaeede43a069f1453b0afcc, type: 3}
       propertyPath: m_Color.g
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8152058626344841590, guid: 5d819704cbaeede43a069f1453b0afcc, type: 3}
       propertyPath: m_Color.r
@@ -1852,7 +1852,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3533778895081850958, guid: 5d819704cbaeede43a069f1453b0afcc, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: MiniGame_ObjCachee
+      value: MiniGame_Balance
       objectReference: {fileID: 0}
     - target: {fileID: 3947513506827638774, guid: 5d819704cbaeede43a069f1453b0afcc, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1920,11 +1920,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8152058626344841590, guid: 5d819704cbaeede43a069f1453b0afcc, type: 3}
       propertyPath: m_Color.b
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8152058626344841590, guid: 5d819704cbaeede43a069f1453b0afcc, type: 3}
       propertyPath: m_Color.g
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8152058626344841590, guid: 5d819704cbaeede43a069f1453b0afcc, type: 3}
       propertyPath: m_Color.r

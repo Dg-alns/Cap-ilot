@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using NUnit.Framework;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -23,16 +22,12 @@ public class DetectionObjCachee : DetectionUI
 
         _tools = FindAnyObjectByType<Tools>();
 
-        Assert.AreEqual(objects.Count, nameobjs.Count);
-
         for (int i = 0; i < objects.Count; i++)
         {
             nameobjs[i].text = objects[i].name;
         }
 
-
         timer.stop = true;
-
     }
 
     bool Detection(GameObject obj)

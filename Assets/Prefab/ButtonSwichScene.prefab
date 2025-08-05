@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 595956867960057913}
   - component: {fileID: 8152058626344841590}
   - component: {fileID: 3533778895081850958}
-  - component: {fileID: 5925930139142616838}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -122,7 +121,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5925930139142616838}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: LoadNexScene, Assembly-CSharp
         m_MethodName: LoadNextScene
         m_Mode: 5
@@ -134,20 +133,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &5925930139142616838
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1753714565165336845}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c494cd52d0f7644d8b2ac1986045269, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _NextSceneData: {fileID: 11400000, guid: 4f9d2ebe370453d43b934f62e2c5b6fc, type: 2}
-  animator: {fileID: 0}
 --- !u!1 &5948950602274626283
 GameObject:
   m_ObjectHideFlags: 0

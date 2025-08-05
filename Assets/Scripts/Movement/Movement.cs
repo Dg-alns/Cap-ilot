@@ -31,6 +31,8 @@ public class Movement : MonoBehaviour
     public GameObject dialogueNpc;
     public GameObject activeDialogueUI;
 
+    bool candebarque = false;
+
     //[SerializeField] private TouchManager _touchManager;
 
     void Start()
@@ -42,12 +44,16 @@ public class Movement : MonoBehaviour
         _spriteRenderer = GetComponent<SpriteRenderer>();
 
         _lastPosition = transform.position;
+
+        if (SceneManager.GetActiveScene().name != "Archipel")
+            candebarque = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(_diabeteAnimator != null)
+        // Animation Diabete
+        if (_diabeteAnimator != null)
         {
             if (_agent.destination != transform.position)
             {
@@ -58,6 +64,9 @@ public class Movement : MonoBehaviour
                 _diabeteAnimator.SetBool("Walking", false);
             }
         }
+
+
+
         //Debug.Log(_target);
         //_agent.SetDestination(_target);
         Vector3 movement = transform.position - _lastPosition;
@@ -106,6 +115,9 @@ public class Movement : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
+        if (candebarque == false)
+            return;
+
         if (collision.gameObject.GetComponent<Trigger>())
         {
             if (_agent.remainingDistance < 0.2f)
@@ -133,11 +145,17 @@ public class Movement : MonoBehaviour
                         }
                     }
                 }
-                else if (collision.gameObject.GetComponent<Trigger>().Type == TriggerType.PORT)
+                else if (collision.gameObject.GetComponent<Trigger>().Type == TriggerType.PORT || collision.gameObject.GetComponent<Trigger>().Type == TriggerType.PANCARTE)
                 {
-                    collision.gameObject.GetComponent<Trigger>().IsTrigger();
+                   collision.gameObject.GetComponent<Trigger>().IsTrigger();
+                    
                 }
             }
         }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        candebarque = true;
     }
 }

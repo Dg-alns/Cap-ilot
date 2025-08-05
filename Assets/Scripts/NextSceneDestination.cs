@@ -44,11 +44,32 @@ public class NextSceneDestination : ScriptableObject
         SceneManager.LoadScene(_ileNamePort);
     }
 
-    public IEnumerator NextScene(string scene)
+    public IEnumerator SwitchScene(string scene)
     {
         yield return null;
         SetNextSceneDestination(scene);
         SetCurrentScene(SceneManager.GetActiveScene().name);
+
+        AsyncOperation operation = SceneManager.LoadSceneAsync(_sceneName);
+        operation.allowSceneActivation = false;
+
+
+        while (!operation.isDone)
+        {
+            if (operation.progress >= 0.9f)
+            {
+                yield return new WaitForSeconds(1);
+                isLauch = false;
+                operation.allowSceneActivation = true;
+            }
+        }
+        yield return null;
+    }
+
+    public IEnumerator NextScene(string scene) //todo
+    {
+        yield return null;
+        SetNextSceneDestination(scene);
 
         AsyncOperation operation = SceneManager.LoadSceneAsync(_sceneName);
         operation.allowSceneActivation = false;
@@ -93,7 +114,9 @@ public class NextSceneDestination : ScriptableObject
     {
         yield return null;
 
-        AsyncOperation operation = SceneManager.LoadSceneAsync(_ileNamePort);
+        SetNextSceneDestination(_ileNamePort);
+        SetCurrentScene(SceneManager.GetActiveScene().name);
+        AsyncOperation operation = SceneManager.LoadSceneAsync(_sceneName);
         operation.allowSceneActivation = false;
 
 
