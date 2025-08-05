@@ -25,7 +25,9 @@ public class LoadNexScene : MonoBehaviour
         {
             _NextSceneData.isLauch = true;
             animator.SetTrigger("Transition");
-            DeletPos();
+            //PlayerPrefs.DeleteAll();
+            //DeletPos();
+
             tools.DontDestroyTools();
             string scene = PlayerPrefs.HasKey("SceneName") ? PlayerPrefs.GetString("SceneName") : "Personalisation";
             StartCoroutine(_NextSceneData.NextScene(scene));
@@ -38,8 +40,11 @@ public class LoadNexScene : MonoBehaviour
         {
             playerSpriteManager.SavePersonalisation();
             _NextSceneData.isLauch = true;
+
             animator.SetTrigger("Transition");
             _NextSceneData.SetCurrentScene("");//TODO enlever
+
+
             string scene = _NextSceneData.GetPreviousScene().Length > 1 ? _NextSceneData.GetPreviousScene() : "Port Ile Principale";
             StartCoroutine(_NextSceneData.NextScene(scene));
         }
@@ -115,11 +120,6 @@ public class LoadNexScene : MonoBehaviour
 
     private void SavePos()
     {
-        Debug.Log("SavePos");
-        Debug.Log(Player.transform.position.x);
-        Debug.Log(Player.transform.position.y);
-        Debug.Log(SceneManager.GetActiveScene().name);
-
         PlayerPrefs.SetFloat("PosX", Player.transform.position.x);
         PlayerPrefs.SetFloat("PosY", Player.transform.position.y);
         PlayerPrefs.SetFloat("RotateY", Player.transform.rotation.y);

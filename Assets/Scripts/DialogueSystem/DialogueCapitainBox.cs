@@ -26,6 +26,7 @@ public class DialogueCapitainBox : DialogueBox
             capitain.portIlePrincipale.ActivePhare(); ;
 
             capitain.gameObject.SetActive(false);
+            QuestManager.NextQuest();
         }
 
         capitain.portIlePrincipale.ActivePancartePhare();

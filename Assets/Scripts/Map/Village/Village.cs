@@ -14,8 +14,27 @@ public class Village : MonoBehaviour
 
     void Start()
     {
-        // TODO ajout des condition quete pour l'activation des pnj et diabete
+        if(QuestManager.GetPlayerPref() > QuestManager.GetQUESTS(QUESTS.DemandeCapitaine))
+        {
+            diabete.SetActive(true);
+        }
 
+        if(QuestManager.GetPlayerPref() > QuestManager.GetQUESTS(QUESTS.A_Ressource))
+        {
+            Alimentation.SetActive(true);
+        }
+        if(QuestManager.GetPlayerPref() > QuestManager.GetQUESTS(QUESTS.S_Ressource))
+        {
+            Sport.SetActive(true);
+        }
+        if(QuestManager.GetPlayerPref() > QuestManager.GetQUESTS(QUESTS.E_Ressource))
+        {
+            Ecole.SetActive(true);
+        }
+        if(QuestManager.GetPlayerPref() > QuestManager.GetQUESTS(QUESTS.R_Ressoucre))
+        {
+            Relation.SetActive(true);
+        }
 
 
         if (Sport.activeSelf)

@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PortIlePrincipale : MonoBehaviour
 {
+    public GameObject diabete;
+
     public GameObject PancarteVillage;
     public GameObject PancartePhare;
     public GameObject Bateau;
@@ -33,6 +35,25 @@ public class PortIlePrincipale : MonoBehaviour
 
     private void Start()
     {
-        //Detection village et bateau avec les quête TODO diego
+        if (QuestManager.GetPlayerPref() > QuestManager.GetQUESTS(QUESTS.DemandeCapitaine))
+        {
+            diabete.SetActive(true);
+        }
+
+        if (QuestManager.GetPlayerPref() >= QuestManager.GetQUESTS(QUESTS.ReparationPhare))
+        {
+            ActivePhare();
+        }
+        if (QuestManager.GetPlayerPref() >= QuestManager.GetQUESTS(QUESTS.Maison))
+        {
+            ActiveVillage();
+        }
+
+        if (QuestManager.GetPlayerPref() >= QuestManager.GetQUESTS(QUESTS.Hopital))
+        {
+            ActiveBateau();
+        }
+
+
     }
 }

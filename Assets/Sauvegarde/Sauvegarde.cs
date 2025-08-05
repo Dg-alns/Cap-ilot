@@ -3,6 +3,7 @@ using UnityEngine;
 using System.IO;
 using TMPro;
 using UnityEngine.SceneManagement;
+using System.Collections;
 //using static QuestManager;
 using UnityEngine.UI;
 //using static UnityEngine.InputManagerEntry;

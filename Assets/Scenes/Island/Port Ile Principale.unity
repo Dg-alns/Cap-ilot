@@ -926,7 +926,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7660051009266230268, guid: 29ae1de120ecad9418ddf494741bca3a, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8557331510602295511, guid: 29ae1de120ecad9418ddf494741bca3a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2651,7 +2651,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -3556,6 +3556,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cf91eaf3fbc48a408c201476355dd50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  diabete: {fileID: 1733921147442767752}
   PancarteVillage: {fileID: 803037724}
   PancartePhare: {fileID: 1431527672}
   Bateau: {fileID: 1932334225}
@@ -3615,6 +3616,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4304060261653511169, guid: db719d02bdc5ceb4b8cd5e6ef99e4c86, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6346876332556961359, guid: db719d02bdc5ceb4b8cd5e6ef99e4c86, type: 3}
       propertyPath: m_Name
       value: Player
@@ -3628,6 +3633,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: db719d02bdc5ceb4b8cd5e6ef99e4c86, type: 3}
+--- !u!1 &1733921147442767752 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4304060261653511169, guid: db719d02bdc5ceb4b8cd5e6ef99e4c86, type: 3}
+  m_PrefabInstance: {fileID: 1733921147442767751}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

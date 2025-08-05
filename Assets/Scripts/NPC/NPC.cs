@@ -23,7 +23,7 @@ public class NPC : MonoBehaviour
     {
         NPCPLayerPrefsName = npcId.ToString() + npcName;
 
-        PlayerPrefs.SetInt(NPCPLayerPrefsName, 0);
+        //PlayerPrefs.SetInt(NPCPLayerPrefsName, 0);
 
         if (PlayerPrefs.HasKey(NPCPLayerPrefsName))
         {

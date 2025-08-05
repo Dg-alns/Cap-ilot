@@ -3,38 +3,98 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
 
+public enum QUESTS
+{
+    None,
+    ReparationPhare,
+    Maison,
+    DemandeCapitaine,
+    Hopital,
+    Phare,
+    Alimentation,
+    A_Ressource,
+    Ecole,
+    E_Ressource,
+    Sport,
+    S_Ressource,
+    Relation,
+    R_Ressoucre
+}
+
 [System.Serializable]
 public class QuestManager
 {
     public List<Quest> quests;
     public SerializableDictionary<int, bool> statusDict;
     private Saving SaveData { get; set; }
+
+    static string namePlayerPrefQuest = "PlayerPrefsQuest";
+    int CurrentQuest;
+
     public QuestManager()
     {
         quests = new List<Quest>();
         statusDict = new SerializableDictionary<int, bool>();
-        quests.Add(new ExampleQuest(0, new ExampleReward(null, "test")));
+
+        InitQuest(QUESTS.None);
+        InitQuest(QUESTS.ReparationPhare);
+        InitQuest(QUESTS.Maison);
+        InitQuest(QUESTS.DemandeCapitaine);
+        InitQuest(QUESTS.Hopital);
+        InitQuest(QUESTS.Phare);
+        InitQuest(QUESTS.Alimentation);
+        InitQuest(QUESTS.A_Ressource);
+        InitQuest(QUESTS.Ecole);
+        InitQuest(QUESTS.E_Ressource);
+        InitQuest(QUESTS.Sport);
+        InitQuest(QUESTS.S_Ressource);
+        InitQuest(QUESTS.Relation);
+        InitQuest(QUESTS.R_Ressoucre);
+
+
         //add all quests
         foreach (Quest quest in quests)
         {
             if (!statusDict.ContainsKey(quest.id))
             {
                 statusDict[quest.id] = quest.status;
+                NextQuest();
             }
             else
             {
+                int tmpId = quest.id;
                 while (true)
                 {
-                    quest.id++;
-                    if (!statusDict.ContainsKey(quest.id))
+
+                    if (!statusDict.ContainsKey(tmpId))
                     {
-                        statusDict[quest.id] = quest.status;
+                        statusDict[tmpId] = quest.status;
+                        NextQuest();
                         break;
                     }
+                    tmpId++;
+
+                    if (tmpId > statusDict.Count)
+                        break;
                 }
             }
         }
     }
+
+    public static void NextQuest()
+    {
+        PlayerPrefs.SetInt(namePlayerPrefQuest, PlayerPrefs.GetInt(namePlayerPrefQuest) + 1);
+        Debug.Log("Nm Quest  ==  " + namePlayerPrefQuest);
+    }
+
+    void InitQuest(QUESTS quest, Sprite sprite = null)
+    {
+        quests.Add(new ExampleQuest((int)quest, new ExampleReward(sprite, quest.ToString())));
+    }
+
+    public static int GetPlayerPref() { return PlayerPrefs.GetInt(namePlayerPrefQuest); }
+
+    public static int GetQUESTS(QUESTS quest) { return (int)quest; }
 }
 
 public class Quest

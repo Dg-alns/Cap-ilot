@@ -3287,6 +3287,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6346876332556961359, guid: db719d02bdc5ceb4b8cd5e6ef99e4c86, type: 3}
   m_PrefabInstance: {fileID: 1314983409}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1314983411 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4304060261653511169, guid: db719d02bdc5ceb4b8cd5e6ef99e4c86, type: 3}
+  m_PrefabInstance: {fileID: 1314983409}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1337701040
 GameObject:
   m_ObjectHideFlags: 0
@@ -3414,8 +3419,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de1351dab61c43a49b74aff292fa9769, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  diabete: {fileID: 1314983411}
   phare: {fileID: 746550520}
-  TopPhare: {fileID: 0}
+  TopPhare: {fileID: 1226478366}
   phareClean: {fileID: 3211125702643728294, guid: 996da48264f5d0d47b121a697779f607, type: 3}
 --- !u!1 &1361216311
 GameObject:
@@ -4111,6 +4117,8 @@ MonoBehaviour:
   sceneDestination: {fileID: 11400000, guid: 4f9d2ebe370453d43b934f62e2c5b6fc, type: 2}
   dialogueCapitain: {fileID: 745674850}
   MiniGameCapitain: {fileID: 836755963}
+  Hopital: {fileID: 11400000, guid: 45f7f7505f83cdb408cc61b4af66995a, type: 2}
+  Alimentation: {fileID: 11400000, guid: 0943cd8cdb8415a44966467f5564256c, type: 2}
 --- !u!4 &1817012203
 Transform:
   m_ObjectHideFlags: 0

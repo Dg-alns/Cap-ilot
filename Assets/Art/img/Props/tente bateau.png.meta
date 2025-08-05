@@ -431,7 +431,20 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      tente bateau_0: 2061468390308562883
+      tente bateau_1: -3062325299786439832
+      tente bateau_10: 8869160499931062758
+      tente bateau_11: 7797772688658853517
+      tente bateau_12: -6811077131567602142
+      tente bateau_2: 2894271120514583261
+      tente bateau_3: -6525100221732268120
+      tente bateau_4: -1294031172556996302
+      tente bateau_5: 6360551616279843438
+      tente bateau_6: -3909376257887374869
+      tente bateau_7: 47868735797289353
+      tente bateau_8: 6235937137580781338
+      tente bateau_9: 2132064266470652574
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

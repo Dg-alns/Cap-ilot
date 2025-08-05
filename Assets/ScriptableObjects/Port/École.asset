@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   IleName: Port Ecole
   isDiscover: 0
-  CanGoToIle: 1
+  CanGoToIle: 0
   ile: 5

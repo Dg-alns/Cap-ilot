@@ -11,19 +11,19 @@ public class CapitainPhare : MonoBehaviour
 
     int FinishPhare = 0;
 
-    // Start is called before the first frame update
-    void Start()
+    public Port Hopital;
+    public Port Alimentation;
+    void Awake()
     {
-        if (PlayerPrefs.HasKey("ReparationPhare"))
+        if (PlayerPrefs.HasKey("ReparationPhare") == false)
         {
             PlayerPrefs.SetInt("ReparationPhare", 0);
             FinishPhare = PlayerPrefs.GetInt("ReparationPhare");
         }
         else
-        {
-            PlayerPrefs.SetInt("ReparationPhare", 0);
             FinishPhare = PlayerPrefs.GetInt("ReparationPhare");
-        }
+        
+        
 
         if (sceneDestination.GetPreviousScene().Contains("MiniGame_LightHouse"))
         {
@@ -32,6 +32,7 @@ public class CapitainPhare : MonoBehaviour
         }
 
         ActiveCapitain();
+        ActiveSetOffDialogue();
     }
 
     void ActiveCapitain()
@@ -42,12 +43,33 @@ public class CapitainPhare : MonoBehaviour
         }
         else if(PlayerPrefs.GetInt("ReparationPhare") == 1)
         {
+            if (QuestManager.GetPlayerPref() == QuestManager.GetQUESTS(QUESTS.ReparationPhare))
+            {
+                QuestManager.NextQuest();
+            }
+
             dialogueCapitain.SetActive(true);
         }
     }
 
     void ActiveSetOffDialogue()
     {
-        //Condition avec les quetes todo Diego
+        if (dialogueCapitain == null)
+            return;
+
+        if(QuestManager.GetPlayerPref() == QuestManager.GetQUESTS(QUESTS.DemandeCapitaine))
+        {
+            dialogueCapitain.GetComponent<NPC>().idxOffSetDialogue = 1;
+            Hopital.CanGoToIle = true;
+        }
+        if(QuestManager.GetPlayerPref() == QuestManager.GetQUESTS(QUESTS.Phare))
+        {
+            dialogueCapitain.GetComponent<NPC>().idxOffSetDialogue = 2;
+            Alimentation.CanGoToIle = true;
+        }
+        if(QuestManager.GetPlayerPref() > QuestManager.GetQUESTS(QUESTS.Phare))
+        {
+            dialogueCapitain.GetComponent<NPC>().idxOffSetDialogue = 3;
+        }
     }
 }

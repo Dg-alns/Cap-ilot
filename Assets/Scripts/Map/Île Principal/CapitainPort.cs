@@ -20,16 +20,22 @@ public class CapitainPort : MonoBehaviour
 
     private void Start()
     {
-        Debug.Log(PlayerPrefs.GetInt(dialogue.GetNamePlayerPrefsNPC()));
-        if (PlayerPrefs.HasKey(dialogue.GetNamePlayerPrefsNPC()))
-        {
-            if (PlayerPrefs.GetInt(dialogue.GetNamePlayerPrefsNPC()) > 1)
-            {
 
-                portIlePrincipale.ActivePhare();
-                gameObject.SetActive(false);
-            }
+        if (QuestManager.GetPlayerPref() >= QuestManager.GetQUESTS(QUESTS.ReparationPhare))
+        {
+            gameObject.SetActive(false);
         }
+
+
+        //    if (PlayerPrefs.HasKey(dialogue.GetNamePlayerPrefsNPC()))
+        //{
+        //    if (PlayerPrefs.GetInt(dialogue.GetNamePlayerPrefsNPC()) > 1)
+        //    {
+
+        //        portIlePrincipale.ActivePhare();
+        //        gameObject.SetActive(false);
+        //    }
+        //}
 
         canTP = false;
 
@@ -41,7 +47,6 @@ public class CapitainPort : MonoBehaviour
         {
             if (PlayerPrefs.GetInt(dialogue.GetNamePlayerPrefsNPC()) == 1)
             {
-                //TPtoDestination();
                 portIlePrincipale.ActivePancartePhare();
             }
         }
