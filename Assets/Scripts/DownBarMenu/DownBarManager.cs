@@ -9,6 +9,7 @@ enum PAGE_MARK
     JOURNAL = 0,
     GAME,
     PROFIL,
+    CALENDRIER,
 }
 
 public class DownBarManager : MonoBehaviour
@@ -84,7 +85,6 @@ public class DownBarManager : MonoBehaviour
 
     public void ChangeActivePage(int page)
     {
-        Debug.Log(page);
         _activePageMark = (PAGE_MARK)page;
         //if(_activePageMark == PAGE_MARK.GAME)
         //{

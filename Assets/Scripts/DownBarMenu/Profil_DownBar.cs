@@ -26,5 +26,7 @@ public class Profil_DownBar : MonoBehaviour
         _Nickname.text = save.profile.Username;
 
         _NbStars.text = sauvegarde_Minigame.GetTotalStars().ToString();
+
+        _NbJournal.text = save.GetCompletedJournal().ToString();
     }
 }
