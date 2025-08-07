@@ -9,6 +9,8 @@ public class Journal_DownBar : MonoBehaviour
 {
     private List<string> listTheme;
 
+    [SerializeField] private Calendrier_DownBar calendrier;
+
     [Header("Emotion")]
     [SerializeField] private EmotionWheel emotionWheel;
 
@@ -77,12 +79,13 @@ public class Journal_DownBar : MonoBehaviour
         if (string.IsNullOrEmpty(newTheme)) return;
         if (listTheme.Contains(newTheme)) return;
 
+        newTheme = newTheme.Replace("\n", " ");
+
         listTheme.Add(newTheme);
         dropdown_Theme.ClearOptions();
         dropdown_Theme.AddOptions(listTheme);
         inputField_Theme.text = "";
         dropdown_Theme.value = listTheme.Count - 1;
-
     }
 
     public void SaveJournal()
@@ -99,7 +102,11 @@ public class Journal_DownBar : MonoBehaviour
             + "Emotion : " + emotion + "\n"
             + "Content : " + content);
 
-        save.journal.journal[DateTime.Today.ToString("d")] = theme + "\n" + emotion + "\n" + content;
+        string totalContent = theme + "\n" + emotion + "\n" + content;
+
+        calendrier.IsAddingJournalContent(totalContent);
+
+        save.journal.journal[DateTime.Today.ToString("d")] = totalContent;
 
         string jsonString = JsonUtility.ToJson(save);
         string fileName = "save.json";

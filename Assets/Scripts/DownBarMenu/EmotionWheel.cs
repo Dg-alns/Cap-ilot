@@ -57,7 +57,7 @@ public class EmotionWheel : MonoBehaviour
     {
         for( int i = 0;i < imageList.Count;i++)
         {
-            if (emotionList[i].name == emotionName)
+            if (emotionList[i].emoji == emotionName)
             {
                 return i;
             }
