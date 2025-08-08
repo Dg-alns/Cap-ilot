@@ -99,19 +99,19 @@ public class LoginVivox : MonoBehaviour
 
         // Initialiser Vivox correctement
 
-        string jsonstring = File.ReadAllText("save.json");
+/*        string jsonstring = File.ReadAllText("save.json");
         Saving save = JsonUtility.FromJson<Saving>(jsonstring);
 
         Debug.Log("Initializing Vivox...");
 
-        save.profile.Username = save.profile.Username.Remove(save.profile.Username.Length - 1);
-        await VivoxVoiceManager.Instance.InitializeAsync(save.profile.Username);
+        save.profile.Username = save.profile.Username.Remove(save.profile.Username.Length - 1);*/
+        await VivoxVoiceManager.Instance.InitializeAsync("Dorian");
         Debug.Log("Vivox initialized successfully");
 
         // Login
         var loginOptions = new LoginOptions()
         {
-            DisplayName = save.profile.Username,
+            DisplayName = "Dorian",
             ParticipantUpdateFrequency = ParticipantPropertyUpdateFrequency.TenPerSecond,
         };
 

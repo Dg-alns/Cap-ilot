@@ -40,7 +40,7 @@ public class LoadNexScene : MonoBehaviour
             animator.SetTrigger("Transition");
 
             playerSpriteManager.SavePersonalisation();
-            string scene = _NextSceneData.GetPreviousScene().Length > 1 ? _NextSceneData.GetPreviousScene() : "Profile";
+            string scene = "Port Ile Principale";
             StartCoroutine(_NextSceneData.NextScene(scene));
         }
     }

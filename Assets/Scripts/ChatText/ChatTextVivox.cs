@@ -11,6 +11,7 @@ using UnityEngine.Events;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using UnityEngine.Android;
+using Unity.Services.Authentication;
 
 
 public class ChatTextVivox : MonoBehaviour
@@ -23,8 +24,8 @@ public class ChatTextVivox : MonoBehaviour
     public GameObject ChatContentObj;
     public GameObject MessageObject;
 
-    public string playerId;
-    private string _channelName;
+    //public string playerId;
+    static private string _channelName;
 
     ScrollRect m_TextChatScrollRect;
     public TMP_InputField MessageInputField;
@@ -82,15 +83,15 @@ public class ChatTextVivox : MonoBehaviour
     }
 
 
-    public void ClearMessageObjectPool()
+    public void ClearMessageObjectPool(string PlayerID)
     {
-        foreach (KeyValuePair<string, MessageObject> keyValuePair in m_MessageObjPool)
+        /*foreach (KeyValuePair<string, MessageObject> keyValuePair in m_MessageObjPool)
         {
             Destroy(keyValuePair.Value.gameObject);
         }
-        m_MessageObjPool.Clear();
+        m_MessageObjPool.Clear();*/
         VivoxService.Instance.LeaveAllChannelsAsync();
-        _channelName = "paquerrette";
+        _channelName = GetPrivateChannelName(PlayerID, AuthenticationService.Instance.PlayerId);
         VivoxService.Instance.JoinGroupChannelAsync(
                 _channelName,
                 ChatCapability.TextOnly
@@ -111,6 +112,11 @@ public class ChatTextVivox : MonoBehaviour
 
     void OnChannelJoined(string channelName)
     {
+        foreach (KeyValuePair<string, MessageObject> keyValuePair in m_MessageObjPool)
+        {
+            Destroy(keyValuePair.Value.gameObject);
+        }
+        m_MessageObjPool.Clear();
         FetchMessages = FetchHistory(true);
     }
     public void History()
@@ -125,6 +131,7 @@ public class ChatTextVivox : MonoBehaviour
     {
         try
         {
+            Debug.Log(_channelName);
             var chatHistoryOptions = new ChatHistoryQueryOptions()
             {
                 TimeEnd = oldestMessage
@@ -223,16 +230,16 @@ public class ChatTextVivox : MonoBehaviour
         ClearTextField();
     }
 
-    public void SendMessageAsync()
+/*    public void SendMessageAsync()
     {
         if (string.IsNullOrEmpty(MessageInputField.text))
         {
             return;
         }
-
+        Debug.Log(playerId);
         VivoxService.Instance.SendDirectTextMessageAsync(playerId, MessageInputField.text);
         MessageInputField.text = string.Empty;
-    }
+    }*/
 
     void ClearTextField()
     {
@@ -240,5 +247,14 @@ public class ChatTextVivox : MonoBehaviour
         MessageInputField.Select();
         MessageInputField.ActivateInputField();
     }
+
+    public static string GetPrivateChannelName(string playerId1, string playerId2)
+    {
+        var sorted = new List<string> { playerId1, playerId2 };
+        sorted.Sort(); // Assure un ordre stable
+        _channelName = $"private_{sorted[0]}_{sorted[1]}";
+        return $"private_{sorted[0]}_{sorted[1]}";
+    }
+
 
 }

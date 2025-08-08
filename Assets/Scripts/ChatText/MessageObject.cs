@@ -66,12 +66,11 @@ public class MessageObject : MonoBehaviour
                 GetComponentsInChildren<Button>(true)[1].onClick.AddListener(ClearAll);
                 _show = true;
             }
-            FindAnyObjectByType<ChatTextVivox>().playerId = m_vivoxMessage.SenderPlayerId;
         }
     }
 
     private void ClearAll()
     {
-        FindAnyObjectByType<ChatTextVivox>().ClearMessageObjectPool();
+        FindAnyObjectByType<ChatTextVivox>().ClearMessageObjectPool(m_vivoxMessage.SenderPlayerId);
     }
 }
