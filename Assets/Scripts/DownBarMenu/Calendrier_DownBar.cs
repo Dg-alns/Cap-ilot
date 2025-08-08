@@ -30,6 +30,7 @@ public class Calendrier_DownBar : MonoBehaviour
 
     private List<List<Image>> calenderRow;
 
+    // calender box
     [Header("Rows")]
     [SerializeField] List<Image> Row1;
     [SerializeField] List<Image> Row2;
@@ -47,12 +48,16 @@ public class Calendrier_DownBar : MonoBehaviour
     [SerializeField] TextMeshProUGUI emotionText;
 
     private DateTime TodayDateTime;
+
+    // calenderDateTime change to show different page of the calender
     private DateTime calenderDateTime;
+
     private string month_year;
 
     private int firstMonthDay;
     private int DaysInMonth;
 
+    // Create an Warning in the console
     private Saving save;
 
     // Start is called before the first frame update
@@ -72,6 +77,7 @@ public class Calendrier_DownBar : MonoBehaviour
         UpdateCalender();
     }
 
+    // Initiate an ordered dictionary for local data by Year - Month - Day -> JournalContent
     private void OrderSave()
     {
         foreach (var item in save.journal.journal)
@@ -93,6 +99,7 @@ public class Calendrier_DownBar : MonoBehaviour
         }
     }
 
+    // Update calender basic fonction
     void UpdateCalender()
     {
         ChangeShowingDate();
@@ -106,9 +113,17 @@ public class Calendrier_DownBar : MonoBehaviour
         TryShowSavedJournal();
     }
 
+    // Change the text "Month - Year" by the calender time
+    void ChangeShowingDate()
+    {
+        string[] datenow = calenderDateTime.ToLongDateString().Split(" ");
+        month_year = datenow[2] + " - " + datenow[3];
+        textMonthYear.text = month_year;
+    }
+
+    // Reset all calender case in white
     private void ResetCalenderCase()
     {
-        // Reset all Case in white
         foreach (var Row in calenderRow)
         {
             foreach (var calenderCase in Row)
@@ -119,39 +134,7 @@ public class Calendrier_DownBar : MonoBehaviour
         }
     }
 
-    private void TryShowSavedJournal()
-    {
-        string[] date = calenderDateTime.ToString("d").Split("/");
-        string day = date[0];
-        string month = date[1];
-        string year = date[2];
-
-        if (!OrderedJournal.ContainsKey(year))
-            return;
-
-
-        if (!OrderedJournal[year].ContainsKey(month))
-            return;
-
-        foreach(var item in OrderedJournal[year][month])
-        {
-
-            int today = int.Parse(item.Key);
-
-            int num = today + firstMonthDay - 1 - 1;
-
-            calenderRow[num / 7][(num) % 7].color = Color.green;
-            calenderRow[num / 7][(num) % 7].GetComponent<Button>().onClick.AddListener(() => { OnClickCaseCalender(item.Value); });
-        }
-    }
-
-    void ChangeShowingDate()
-    {
-        string[] datenow = calenderDateTime.ToLongDateString().Split(" ");
-        month_year = datenow[2] + " - " + datenow[3];
-        textMonthYear.text = month_year;
-    }
-
+    // Put in grey the case no in the month calender  
     void UpdateCaseCalender()
     {
         // Get information of the month (first day, nb day, last day)
@@ -171,7 +154,9 @@ public class Calendrier_DownBar : MonoBehaviour
             calenderRow[0][i].color = condition ? colorActiveCalender[false] : colorActiveCalender[true];
         }
 
+        // Change the color of the fifth and sixth row 
         day = lastDay.ToLongDateString().Split(" ")[0];
+        // Check if there if there is white case in the sixth row or not
         if (jour_value[day] <= 2 && jour_value[startOfMonth.ToLongDateString().Split(" ")[0]] >= 6)
         {
             for (int i = 0; i < 7; i++)
@@ -189,17 +174,22 @@ public class Calendrier_DownBar : MonoBehaviour
         }
     }
 
+    // Add an halo in the current day case
     private void TryPlaceCurrentDay()
     {
-        if(TodayDateTime.Month != calenderDateTime.Month)
+        // Check if it's the good calender month 
+        if(TodayDateTime.Month != calenderDateTime.Month || TodayDateTime.Year != calenderDateTime.Year)
         {
             currentDay.gameObject.SetActive(false);
             return;
         }
         currentDay.gameObject.SetActive(true);
 
-        int day = TodayDateTime.Day; 
+        int day = TodayDateTime.Day;
 
+        // - 1 - 1 ?
+        // first "-1"  : to fix the "firstMonthDay" in a index list format|
+        // second "-1" : to fix the "day" in a index list format
         int num = day + firstMonthDay - 1 - 1; 
 
         Vector3 positionCurrentDay = calenderRow[num/7][(num)%7].transform.position;
@@ -207,6 +197,34 @@ public class Calendrier_DownBar : MonoBehaviour
         currentDay.transform.position = positionCurrentDay;
     }
 
+    // Put in green the days with journal data and AddListener to show previous journal
+    private void TryShowSavedJournal()
+    {
+        // calenderDateTime data to split in Year - Month - Day
+        string[] date = calenderDateTime.ToString("d").Split("/");
+        string day = date[0];
+        string month = date[1];
+        string year = date[2];
+
+        // Check if existing data in the year and in the month
+        if (!OrderedJournal.ContainsKey(year))
+            return;
+        if (!OrderedJournal[year].ContainsKey(month))
+            return;
+
+        // Put in green and addlistener the cases
+        foreach (var item in OrderedJournal[year][month])
+        {
+            int today = int.Parse(item.Key);
+
+            int num = today + firstMonthDay - 1 - 1;
+
+            calenderRow[num / 7][(num) % 7].color = Color.green;
+            calenderRow[num / 7][(num) % 7].GetComponent<Button>().onClick.AddListener(() => { OnClickCaseCalender(item.Value); });
+        }
+    }
+
+    // Add 1 or -1 month to the calender to change the month (Associate to a button)
     public void ChangeCalenderDate(int addMonth)
     {
         calenderDateTime = calenderDateTime.AddMonths(addMonth);
@@ -214,6 +232,7 @@ public class Calendrier_DownBar : MonoBehaviour
         UpdateCalender();
     }
    
+    // Reset the calender from today
     public void Calender_GoForToday()
     {
         calenderDateTime = DateTime.Now;
@@ -221,8 +240,10 @@ public class Calendrier_DownBar : MonoBehaviour
         UpdateCalender();
     }
 
+    // Action to a green button with journal data saved
     public void OnClickCaseCalender(string journalContentSaved)
     {
+        // Split data value 
         string[] data = journalContentSaved.Split("\n");
 
         string theme = data[0];
@@ -234,11 +255,13 @@ public class Calendrier_DownBar : MonoBehaviour
             content += data[i] + "\n";
         }
 
+        // Assocate data value
         themeText.text = "Thème : " + theme;
         emotionText.text = emotion;
         contentText.text = content;
     }
 
+    // When the player save a journal, add total content in the Ordered dictionary data
     public void IsAddingJournalContent(string totalContent)
     {
         TodayDateTime = DateTime.Today;
@@ -248,6 +271,7 @@ public class Calendrier_DownBar : MonoBehaviour
         string month = date[1];
         string year = date[2];
 
+        // Add in the Dictionaty (by checking if year, month and day already existe)
         if (!OrderedJournal.ContainsKey(year))
             OrderedJournal.Add(year, new Dictionary<string, Dictionary<string, string>>());
 

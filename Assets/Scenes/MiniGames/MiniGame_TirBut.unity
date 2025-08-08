@@ -1658,6 +1658,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d7c32b09755ccc34389e7bf4c273fa30, type: 3}
+--- !u!114 &621332569 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5715205644518215092, guid: d7c32b09755ccc34389e7bf4c273fa30, type: 3}
+  m_PrefabInstance: {fileID: 621332568}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7243f79486b9cb48a1a0735d01d7ac8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &663053770
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1964,6 +1975,10 @@ PrefabInstance:
       propertyPath: MinBronze
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 569796693142497412, guid: 869b14e2855a9f7479f4d1a7cd490d84, type: 3}
+      propertyPath: leaderboardCapilot
+      value: 
+      objectReference: {fileID: 621332569}
     - target: {fileID: 7800387475093608305, guid: 869b14e2855a9f7479f4d1a7cd490d84, type: 3}
       propertyPath: m_Name
       value: Score

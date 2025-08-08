@@ -782,6 +782,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 2755227396927673209, guid: d7c32b09755ccc34389e7bf4c273fa30, type: 3}
   m_PrefabInstance: {fileID: 562023247}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &562023249 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5715205644518215092, guid: d7c32b09755ccc34389e7bf4c273fa30, type: 3}
+  m_PrefabInstance: {fileID: 562023247}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7243f79486b9cb48a1a0735d01d7ac8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &564172965 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4001108551965703337, guid: 2203dee7641698a4e94a6ab51907d6e9, type: 3}
@@ -1872,6 +1883,10 @@ PrefabInstance:
       propertyPath: MinBronze
       value: 5000
       objectReference: {fileID: 0}
+    - target: {fileID: 569796693142497412, guid: 869b14e2855a9f7479f4d1a7cd490d84, type: 3}
+      propertyPath: leaderboardCapilot
+      value: 
+      objectReference: {fileID: 562023249}
     - target: {fileID: 7800387475093608305, guid: 869b14e2855a9f7479f4d1a7cd490d84, type: 3}
       propertyPath: m_Name
       value: Score

@@ -29,12 +29,13 @@ public class Journal_DownBar : MonoBehaviour
     {
         listTheme = new List<string>() { "- Thèmes", "Hopital", "Sport", "Ecole", "Alimentation", "Relation", "Tentation" };
         
-        // If someone write something, we have to reload it the same day
-        
         string jsonstring = File.ReadAllText("save.json");
         save = JsonUtility.FromJson<Saving>(jsonstring);
+
+        // If the player write something one day, we have to reload it the same day
         if (save.journal.journal.ContainsKey(DateTime.Today.ToString("d")))
         {
+            // Get Saved journal data
             string[] data = save.journal.journal[DateTime.Today.ToString("d")].Split("\n");
 
             string theme = data[0];
@@ -45,24 +46,27 @@ public class Journal_DownBar : MonoBehaviour
                 content += data[i] + "\n";
             }
 
+            // Try find theme and if not, add it in the list
             int index = listTheme.FindIndex(x => x.Equals(theme));
-
             int value = index;
             if(index < 0){
                 listTheme.Add(theme); 
                 value = listTheme.Count-1;
             }
 
+            // Associate Themes to the dropdown
             dropdown_Theme.AddOptions(listTheme);
-
             dropdown_Theme.value = value;
 
+            // Simulate the emotion click by the button num
             emotionWheel.OnClick(emotionWheel.GetNumeroEmotion(emotion));
+
+            // Associate the content
             inputField_Journal.text = content;
             return;
         }
 
-
+        // Initiate listTheme in the dropdown
         dropdown_Theme.AddOptions(listTheme);
     }
 
@@ -76,11 +80,13 @@ public class Journal_DownBar : MonoBehaviour
     {
         string newTheme = inputField_Theme.text;
 
+        // Check if there a theme and a theme different to the other
         if (string.IsNullOrEmpty(newTheme)) return;
         if (listTheme.Contains(newTheme)) return;
 
         newTheme = newTheme.Replace("\n", " ");
 
+        // Add the theme in the dropdown
         listTheme.Add(newTheme);
         dropdown_Theme.ClearOptions();
         dropdown_Theme.AddOptions(listTheme);
@@ -90,10 +96,12 @@ public class Journal_DownBar : MonoBehaviour
 
     public void SaveJournal()
     {
+        // Get value
         int valueDropdown = dropdown_Theme.value;
         string content = inputField_Journal.text;
         string emotion = emotionWheel.ActualEmoji;
 
+        // Check if there is empty one
         if (!CanSaveJournal(valueDropdown, emotion, content)) return;
 
         string theme = dropdown_Theme.options[valueDropdown].text;
@@ -102,15 +110,16 @@ public class Journal_DownBar : MonoBehaviour
             + "Emotion : " + emotion + "\n"
             + "Content : " + content);
 
+        // Combine data
         string totalContent = theme + "\n" + emotion + "\n" + content;
 
+        // Add save in local Calender data
         calendrier.IsAddingJournalContent(totalContent);
 
+        // Save DATA in JSON
         save.journal.journal[DateTime.Today.ToString("d")] = totalContent;
-
         string jsonString = JsonUtility.ToJson(save);
         string fileName = "save.json";
-
         File.WriteAllText(fileName, jsonString);
 
         Debug.Log("Sauvegarde effectuer !");
