@@ -25,8 +25,8 @@ public class LoadNexScene : MonoBehaviour
         {
             _NextSceneData.isLauch = true;
             animator.SetTrigger("Transition");
-            PlayerPrefs.DeleteAll();
-            //DeletPos();
+            //PlayerPrefs.DeleteAll();
+            DeletPos();
 
             tools.DontDestroyTools();
             string scene = PlayerPrefs.HasKey("SceneName") ? PlayerPrefs.GetString("SceneName") : "Personalisation";
