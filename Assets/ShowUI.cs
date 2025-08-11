@@ -1,8 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using Unity.Services.Vivox;
 using UnityEngine;
-using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class ShowUI : MonoBehaviour

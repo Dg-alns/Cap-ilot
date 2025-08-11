@@ -2586,8 +2586,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14377b2ba00711f46b64110cc03ace1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  username: dorian
-  textMeshProUGUI: {fileID: 1112781048}
+  textMeshProUGUI: {fileID: 1069828207}
   UnityEvent:
     m_PersistentCalls:
       m_Calls:
