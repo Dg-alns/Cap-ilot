@@ -21,6 +21,9 @@ public class Score : MonoBehaviour
 
     bool animLoad = false;
 
+    [Header("Leaderboard")]
+    [SerializeField] private LeaderboardCapilot leaderboardCapilot;
+
     Animator animator;
 
     public void AddScore()
@@ -68,6 +71,11 @@ public class Score : MonoBehaviour
         animator = GetComponent<Animator>();
 
         GetMedailles(animator);
+
+        if (leaderboardCapilot != null)
+            leaderboardCapilot.AddScoreInLeaderboard(MiniGamePoint);
+        else
+            Debug.LogWarning("There is no leaderboard attached to the score component");
 
         save.SaveMiniGame(timer);
         animLoad = true;

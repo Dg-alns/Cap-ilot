@@ -4,7 +4,7 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Boat_Game : MonoBehaviour
+public class Boat_Game : Minigame
 {
     public List<GameObject> prefab;
 
@@ -18,6 +18,8 @@ public class Boat_Game : MonoBehaviour
 
     private bool _gameFinish = false;
     private bool _gameStart = false;
+
+    [SerializeField] List<BoatMer> _mer;
 
     private Transform _rocks;
 
@@ -50,6 +52,10 @@ public class Boat_Game : MonoBehaviour
             if(_rocks.childCount == 0)
             {
                 _boat.SetAnime(AnimationBoatState.Win);
+                foreach(BoatMer mer in _mer)
+                {
+                    mer.ChangeForWinSpeed();
+                }
                 _gameFinish = true;
             }
             return;
@@ -71,4 +77,38 @@ public class Boat_Game : MonoBehaviour
         _timer.Run();
     }
 
+    public bool IsGameStart()
+    {
+        return _gameStart;
+    }
+
+    public override void PauseMinigame()
+    {
+        _timer.isRunning = false;
+        _gameStart = false;
+        foreach(BoatMer mer in _mer)
+        {
+            mer.isPause = true;
+        }
+        foreach (Boat_SimpleRock rock in _rocks.GetComponentsInChildren<Boat_SimpleRock>())
+        {
+            rock.isPause = true;
+        }
+
+
+    }
+
+    public override void ResumeMinigame()
+    {
+        _timer.isRunning = true;
+        _gameStart = true;
+        foreach (BoatMer mer in _mer)
+        {
+            mer.isPause = false;
+        }
+        foreach (Boat_SimpleRock rock in _rocks.GetComponentsInChildren<Boat_SimpleRock>())
+        {
+            rock.isPause = false;
+        }
+    }
 }

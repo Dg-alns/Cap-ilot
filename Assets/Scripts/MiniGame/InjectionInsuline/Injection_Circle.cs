@@ -23,4 +23,13 @@ public class Injection_Circle : MonoBehaviour
             Destroy(_parent);
         }
     }
+
+    public void Pause()
+    {
+        _speed = 0f;
+    }
+    public void Resume()
+    {
+        _speed = 4f;
+    }
 }

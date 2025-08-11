@@ -1,20 +1,17 @@
 using System;
 using System.Threading.Tasks;
-using TMPro;
 using Unity.Services.Authentication;
 using Unity.Services.Vivox;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.EventSystems;
-using UnityEngine.UI;
-
+using System.IO;
 using UnityEngine.Android;
+using TMPro;
 
 public class LoginVivox : MonoBehaviour
 {
 
-    public string username = "dorian";
-    //public TextMeshProUGUI textMeshProUGUI;
+    public TextMeshProUGUI textMeshProUGUI;
     public UnityEvent UnityEvent;
     // Start is called before the first frame update
     bool invoke =false;
@@ -27,10 +24,13 @@ public class LoginVivox : MonoBehaviour
         }
 #endif
 
+
         LoginToVivox();
         VivoxService.Instance.LoggedIn += OnUserLoggedIn;
         VivoxService.Instance.LoggedOut += LogoutOfVivoxServiceAsync;
 
+
+        //LogoutOfVivoxServiceAsync();
 
     }
 
@@ -56,9 +56,9 @@ public class LoginVivox : MonoBehaviour
         }
     }
 
-    async void LogoutOfVivoxServiceAsync()
-    {
 
+    public async void LogoutOfVivoxServiceAsync()
+    {
         await VivoxService.Instance.LogoutAsync();
         AuthenticationService.Instance.SignOut();
     }
@@ -98,14 +98,20 @@ public class LoginVivox : MonoBehaviour
         };*/
 
         // Initialiser Vivox correctement
+
+/*        string jsonstring = File.ReadAllText("save.json");
+        Saving save = JsonUtility.FromJson<Saving>(jsonstring);
+
         Debug.Log("Initializing Vivox...");
-        await VivoxVoiceManager.Instance.InitializeAsync(username);
+
+        save.profile.Username = save.profile.Username.Remove(save.profile.Username.Length - 1);*/
+        await VivoxVoiceManager.Instance.InitializeAsync("Dorian");
         Debug.Log("Vivox initialized successfully");
 
         // Login
         var loginOptions = new LoginOptions()
         {
-            DisplayName = username,
+            DisplayName = "Dorian",
             ParticipantUpdateFrequency = ParticipantPropertyUpdateFrequency.TenPerSecond,
         };
 

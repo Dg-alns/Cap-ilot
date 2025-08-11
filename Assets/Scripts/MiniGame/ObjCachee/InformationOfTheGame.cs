@@ -104,7 +104,7 @@ public class InformationOfTheGame : MonoBehaviour
 
     public void StartGameMemory(GameObject save)
     {
-        GameObjectToStart.GetComponent<Diabete_Memorie>().ActiveDiabète();
+        GameObjectToStart.GetComponent<Diabete_Memorie>().ActiveDiabete();
         if (toggle == null)
             save.GetComponent<Sauvegarde_Minigame>().SetCanShowInfo(false);
 

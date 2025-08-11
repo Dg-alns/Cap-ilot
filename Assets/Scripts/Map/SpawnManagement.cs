@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-// TODO Diego stocker la pos du player avant minigame dans 2 PlayerPref X Y + string Nom de la scene
-// Save Player.transform.position
 
 public class SpawnManagement : MonoBehaviour
 {
@@ -14,7 +12,8 @@ public class SpawnManagement : MonoBehaviour
     [Header ("\nGameObject off Player or Pnj to position")]
     public GameObject PersoToPosition;
 
-    public int Test = 1;
+    [Header ("\nFor Capitain")]
+    public CapitainPort capitain;
 
     Dictionary<int, Vector2> dict = new Dictionary<int, Vector2>();
 
@@ -26,23 +25,30 @@ public class SpawnManagement : MonoBehaviour
             List<GameObject> lstGameObjectPositionCapitain = new List<GameObject>();
             lstGameObjectPositionCapitain = Tools.CreateGameObjectList<Transform>(gameObject.name);
 
-            if(/*DetectionSetOffDialogue*/ Test == 1) //Todo Diego Modif
-            {
-                GameObject go = new GameObject();
+            GameObject go = new GameObject();
 
-                for(int i = 0; i < lstGameObjectPositionCapitain.Count; i++)
+            for(int i = 0; i < lstGameObjectPositionCapitain.Count; i++)
+            {
+                if (capitain.GetDialogue().idxOffSetDialogue <= 0)
                 {
-                    if( lstGameObjectPositionCapitain[i].name.Equals("StartOfGame"))
+                    if (lstGameObjectPositionCapitain[i].name.Equals("StartOfGame"))
+                    {
                         go = lstGameObjectPositionCapitain[i];
+                    }
                 }
+                else if (capitain.GetDialogue().idxOffSetDialogue > 0)
+                {
+                    if (lstGameObjectPositionCapitain[i].name.Equals("TutoPancarte"))
+                    {
+                        go = lstGameObjectPositionCapitain[i];
+                    }
+                }
+            }
 
-                PersoToPosition.transform.position = new(go.transform.position.x, go.transform.position.y, 0);
-                PersoToPosition.SetActive(true);
-            }
-            else
-            {
-                Debug.Log("ee");
-            }
+
+            PersoToPosition.transform.position = new(go.transform.position.x, go.transform.position.y, 0);
+            PersoToPosition.SetActive(true);
+            
 
             return;
         }
@@ -50,9 +56,11 @@ public class SpawnManagement : MonoBehaviour
 
         // Player
         if (SceneManager.GetActiveScene().name == PlayerPrefs.GetString("SceneName") && loadNexScene.GetBoatSpawn() == false) {
+
             PositionPLayer();
             return;
         }
+
 
         dict = DetectAllSpawnPrefab();
 
@@ -105,5 +113,19 @@ public class SpawnManagement : MonoBehaviour
         PlayerPrefs.SetFloat("PosY", PersoToPosition.transform.position.y);
         PlayerPrefs.SetFloat("RotateY", PersoToPosition.transform.rotation.y);
         PlayerPrefs.SetString("SceneName", SceneManager.GetActiveScene().name);
+    }
+
+    public Vector3 GetPosSpeCapitain(string nameSpawn)
+    {
+        List<GameObject> lstGameObjectPositionCapitain = new List<GameObject>();
+        lstGameObjectPositionCapitain = Tools.CreateGameObjectList<Transform>(gameObject.name);
+
+        for (int i = 0; i < lstGameObjectPositionCapitain.Count; i++)
+        {
+            if (lstGameObjectPositionCapitain[i].name.Equals(nameSpawn))
+                return lstGameObjectPositionCapitain[i].transform.position;
+        }
+
+        return Vector3.zero;
     }
 }

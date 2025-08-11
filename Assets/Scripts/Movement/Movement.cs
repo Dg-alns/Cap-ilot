@@ -53,15 +53,19 @@ public class Movement : MonoBehaviour
     void Update()
     {
         // Animation Diabete
-        if (_diabeteAnimator != null)
+        if (_diabeteAnimator.gameObject.activeSelf)
         {
-            if (_agent.destination != transform.position)
+
+            if (_diabeteAnimator != null)
             {
-                _diabeteAnimator.SetBool("Walking", true);
-            }
-            else
-            {
-                _diabeteAnimator.SetBool("Walking", false);
+                if (_agent.destination != transform.position)
+                {
+                    _diabeteAnimator.SetBool("Walking", true);
+                }
+                else
+                {
+                    _diabeteAnimator.SetBool("Walking", false);
+                }
             }
         }
 
@@ -122,7 +126,7 @@ public class Movement : MonoBehaviour
         {
             if (_agent.remainingDistance < 0.2f)
             { 
-                if (collision.gameObject.GetComponent<Trigger>().Type == TriggerType.DIALOG)
+                if (collision.gameObject.GetComponent<Trigger>().Type == TriggerType.DIALOG || collision.gameObject.GetComponent<Trigger>().Type == TriggerType.MINIGAME)
                 {
                     dialogueNpc = collision.gameObject;
                     NPC clickedNpc = dialogueNpc.GetComponent<NPC>();
@@ -130,6 +134,7 @@ public class Movement : MonoBehaviour
                     {
                         _clickedNpcId = clickedNpc.npcId;
                         _clickedNpc = _npcManager.GetComponent<NPCManager>().FindNpcById(_clickedNpcId);
+
                         if (_clickedNpc != null)
                         {
                             dialogueNpc.GetComponent<Trigger>().IsTrigger();

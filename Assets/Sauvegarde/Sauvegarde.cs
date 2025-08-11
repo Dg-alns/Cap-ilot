@@ -3,6 +3,7 @@ using UnityEngine;
 using System.IO;
 using TMPro;
 using UnityEngine.SceneManagement;
+using System.Collections;
 //using static QuestManager;
 using UnityEngine.UI;
 //using static UnityEngine.InputManagerEntry;
@@ -156,5 +157,8 @@ public class Saving
         this.questManager = questManager;
         this.statMinigame = statMinigame;
     }
-
+    public int GetCompletedJournal()
+    {
+        return journal.journal.Count;
+    }
 }

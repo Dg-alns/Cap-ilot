@@ -49,6 +49,9 @@ public class ExampleReward : Reward
 
     public override void Obtain(Saving Data)
     {
+        if (sprite == null)
+            return;
+
         base.Obtain(Data);
         Data.profile.Username += " *";
     }

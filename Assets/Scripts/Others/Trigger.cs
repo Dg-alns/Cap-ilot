@@ -11,19 +11,23 @@ public enum TriggerType
 {
     PORT,
     PANCARTE,
-    DIALOG
+    DIALOG,
+    MINIGAME
 }
 
 public class Trigger : MonoBehaviour
 {
     [SerializeField] GameObject UI;
-    private bool uiOpen;
+    public bool uiOpen;
     public string SceneName;
     public LoadNexScene nexScene;
     public TriggerType Type;
     public GameObject activeUI;
 
     public bool InPort = true;
+
+    [Header ("Use for Capitain in port")]
+    public CapitainPort capitainPort;
 
     private void Start()
     {
@@ -70,17 +74,55 @@ public class Trigger : MonoBehaviour
                 }
                 break;
             case TriggerType.DIALOG:
+                if (gameObject.name.Contains("Capitain"))
+                {
+                    if (!uiOpen)
+                    {
+                        activeUI = Instantiate(UI);
+
+                        activeUI.GetComponentInChildren<DialogueCapitainBox>().dialogStarted = false;
+                        activeUI.GetComponentInChildren<DialogueCapitainBox>().lineList.Clear();
+                        activeUI.GetComponentInChildren<DialogueCapitainBox>().InitCapitain(capitainPort);
+                        activeUI.GetComponentInChildren<DialogueCapitainBox>().FindNPCManagerInActiveScene();
+                        activeUI.GetComponentInChildren<DialogueCapitainBox>().FindTouchManagerInActiveScene();
+                        activeUI.GetComponentInChildren<DialogueCapitainBox>().AssignTextAreas();
+                        activeUI.GetComponentInChildren<DialogueCapitainBox>().GetDialogueLines();
+                        activeUI.GetComponentInChildren<DialogueCapitainBox>().StartDialogue();
+
+                        uiOpen = true;
+                    }
+                }
+                else
+                {
+                    if (!uiOpen)
+                    {
+                        activeUI = Instantiate(UI);
+
+                        activeUI.GetComponentInChildren<DialogueBox>().dialogStarted = false;
+                        activeUI.GetComponentInChildren<DialogueBox>().lineList.Clear();
+                        activeUI.GetComponentInChildren<DialogueBox>().FindNPCManagerInActiveScene();
+                        activeUI.GetComponentInChildren<DialogueBox>().FindTouchManagerInActiveScene();
+                        activeUI.GetComponentInChildren<DialogueBox>().AssignTextAreas();
+                        activeUI.GetComponentInChildren<DialogueBox>().GetDialogueLines();
+                        activeUI.GetComponentInChildren<DialogueBox>().StartDialogue();
+
+                        uiOpen = true;
+                    }
+                }
+                break;
+            case TriggerType.MINIGAME:
                 if (!uiOpen)
                 {
                     activeUI = Instantiate(UI);
 
-                    activeUI.GetComponentInChildren<DialogueBox>().dialogStarted = false;
-                    activeUI.GetComponentInChildren<DialogueBox>().lineList.Clear();
-                    activeUI.GetComponentInChildren<DialogueBox>().FindNPCManagerInActiveScene();
-                    activeUI.GetComponentInChildren<DialogueBox>().FindTouchManagerInActiveScene();
-                    activeUI.GetComponentInChildren<DialogueBox>().AssignTextAreas();
-                    activeUI.GetComponentInChildren<DialogueBox>().GetDialogueLines();
-                    activeUI.GetComponentInChildren<DialogueBox>().StartDialogue();
+                    activeUI.GetComponentInChildren<DialogueMiniGameBox>().dialogStarted = false;
+                    activeUI.GetComponentInChildren<DialogueMiniGameBox>().lineList.Clear();
+                    activeUI.GetComponentInChildren<DialogueMiniGameBox>().FindNPCManagerInActiveScene();
+                    activeUI.GetComponentInChildren<DialogueMiniGameBox>().Init();
+                    activeUI.GetComponentInChildren<DialogueMiniGameBox>().FindTouchManagerInActiveScene();
+                    activeUI.GetComponentInChildren<DialogueMiniGameBox>().AssignTextAreas();
+                    activeUI.GetComponentInChildren<DialogueMiniGameBox>().GetDialogueLines();
+                    activeUI.GetComponentInChildren<DialogueMiniGameBox>().StartDialogue();
 
                     uiOpen = true;
                 }     

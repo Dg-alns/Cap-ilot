@@ -11,7 +11,7 @@ public class LoadNexScene : MonoBehaviour
 
     [Header ("\nJust for Scene Accueil")]
     [SerializeField] private Tools tools;
-    [Header ("Not Mandatory\nForSavePosition")]
+    [Header ("\n\nForSavePosition")]
     public GameObject Player;
 
     private void Start()
@@ -25,21 +25,26 @@ public class LoadNexScene : MonoBehaviour
         {
             _NextSceneData.isLauch = true;
             animator.SetTrigger("Transition");
+            //PlayerPrefs.DeleteAll();
             DeletPos();
+
             tools.DontDestroyTools();
             string scene = PlayerPrefs.HasKey("SceneName") ? PlayerPrefs.GetString("SceneName") : "Personalisation";
             StartCoroutine(_NextSceneData.NextScene(scene));
         }
     }
 
-    public void NextScenePersonalisation(PlayerSpriteManager playerSpriteManager)
+    public void NextSceneAfterPersonalisation(PlayerSpriteManager playerSpriteManager)
     {
         if (_NextSceneData.isLauch == false)
         {
-            _NextSceneData.isLauch = true;
-            animator.SetTrigger("Transition");
-
             playerSpriteManager.SavePersonalisation();
+            _NextSceneData.isLauch = true;
+
+            animator.SetTrigger("Transition");
+            //_NextSceneData.SetCurrentScene("");//TODO enlever
+
+
             string scene = _NextSceneData.GetPreviousScene().Length > 1 ? _NextSceneData.GetPreviousScene() : "Port Ile Principale";
             StartCoroutine(_NextSceneData.NextScene(scene));
         }
@@ -62,6 +67,17 @@ public class LoadNexScene : MonoBehaviour
         }
     }
 
+    public void LoadPersonalisationScene()
+    {        
+        if (_NextSceneData.isLauch == false)
+        {
+            SavePos();
+            _NextSceneData.isLauch = true;
+            animator.SetTrigger("Transition");
+            StartCoroutine(_NextSceneData.SwitchScene("Personalisation"));
+        }
+    }
+
     public void LoadNextScene(string scene)
     {        
         if (_NextSceneData.isLauch == false)
@@ -79,6 +95,7 @@ public class LoadNexScene : MonoBehaviour
             _NextSceneData.isLauch = true;
             if (_energy.HaveEnergy())
             {
+                Debug.Log("SavePos");
                 SavePos();
                 _energy.UseEnergy();
                 animator.SetTrigger("Transition");

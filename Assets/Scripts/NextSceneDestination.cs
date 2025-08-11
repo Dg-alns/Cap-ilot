@@ -16,7 +16,7 @@ public class NextSceneDestination : ScriptableObject
     {
         _sceneName = sceneName;
     }
-    void SetCurrentScene(string sceneName)
+    public void SetCurrentScene(string sceneName)
     {
         _CurrentsceneName = sceneName;
     }
@@ -47,6 +47,10 @@ public class NextSceneDestination : ScriptableObject
     public IEnumerator SwitchScene(string scene)
     {
         yield return null;
+        if (FindAnyObjectByType<LoginVivox>())
+        {
+            FindAnyObjectByType<LoginVivox>().LogoutOfVivoxServiceAsync();
+        }
         SetNextSceneDestination(scene);
         SetCurrentScene(SceneManager.GetActiveScene().name);
 

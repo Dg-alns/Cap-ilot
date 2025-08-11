@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -66,6 +67,16 @@ public class Sauvegarde_Minigame : MonoBehaviour
         if(_statMinigame.ContainsKey(sceneName))
             return _statMinigame[sceneName]._nbStar;
         return 0;
+    }
+
+    public int GetTotalStars()
+    {
+        int total = 0;
+        foreach(KeyValuePair<string,TemplateSaveMinigame> s in _statMinigame)
+        {
+            total += s.Value._nbStar;
+        }
+        return total;
     }
 
     public bool GetCanShowInfo(string sceneName)

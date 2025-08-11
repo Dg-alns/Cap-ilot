@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Funambule : MonoBehaviour
+public class Funambule : Minigame
 {
     [Header("Body Part")]
     [SerializeField] private Transform _playerFootPoint;
@@ -52,6 +52,8 @@ public class Funambule : MonoBehaviour
     bool isStart = false;
     bool isWin = false;
 
+    private Tools _tools;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -63,6 +65,8 @@ public class Funambule : MonoBehaviour
         //Debug.Log("Speed : " + _speedGame);
         _playerFootPosition = _playerFootPoint.position;
         totalDistance = Vector2.Distance(_playerFootPosition, _platformPoint.position);
+
+        _tools = FindAnyObjectByType<Tools>();
     }
 
     // Update is called once per frame
@@ -195,7 +199,7 @@ public class Funambule : MonoBehaviour
 
     public void ClickSideRotation() {
         // If you press the screen
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButton(0) && !_tools.IsPointerOverUIElement())
         {
             // click right => rotate left
             if (Screen.width / 2 < Input.mousePosition.x)
@@ -269,5 +273,16 @@ public class Funambule : MonoBehaviour
     public void StartGame() 
     { 
         isStart = true;
+    }
+    public override void PauseMinigame()
+    {
+        isStart = false;
+        _score.timer.stop = true;
+    }
+
+    public override void ResumeMinigame()
+    {
+        isStart = true;
+        _score.timer.stop = false;
     }
 }

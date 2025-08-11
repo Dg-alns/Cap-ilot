@@ -1,7 +1,9 @@
 using System.Collections.Generic;
+using System.IO;
 using Dan.Main;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public enum EnumMinigame
@@ -27,6 +29,18 @@ public class LeaderboardCapilot : MonoBehaviour
 
     [SerializeField] private TMP_Dropdown _Dropdown;
 
+    private string _username;
+
+    public Dictionary<string, EnumMinigame> nameScene_EnumMinigame = new Dictionary<string, EnumMinigame>() {
+        { "MiniGame_Balance",EnumMinigame.Balance},
+        { "MiniGame_Boxe",EnumMinigame.Boxe},
+        { "MiniGame_Card",EnumMinigame.Memory},
+        { "MiniGame_Marathon",EnumMinigame.Marathon},
+        { "MiniGame_TirBut",EnumMinigame.TirBut},
+        { "MiniGame_InjectionInsuline",EnumMinigame.Injection},
+        { "MiniGame_ObjCachee",EnumMinigame.ObjCache},
+        { "MiniGame_Funambule",EnumMinigame.Funambule},
+    };
 
     // Public Key associate to the minigame
     public Dictionary<EnumMinigame, string> keyValuePairs = new Dictionary<EnumMinigame, string>() {
@@ -45,6 +59,11 @@ public class LeaderboardCapilot : MonoBehaviour
 
     private void Start()
     {
+        string jsonstring = File.ReadAllText("save.json");
+        Saving save = JsonUtility.FromJson<Saving>(jsonstring);
+
+        _username = save.profile.Username;
+
         GetLeaderBoard(_publicKey);
     }
 
@@ -67,10 +86,20 @@ public class LeaderboardCapilot : MonoBehaviour
         }));
     }
 
-    // Set in the leaderboard a score (if it's lower than the previous one, nothing change apart the nickname of the player
+    // Set in the leaderboard a score (if it's lower than the previous one, nothing change apart the nickname of the player)
     public void SetLeaderboardEntry()
     {
         LeaderboardCreator.UploadNewEntry(_publicKey, _inputFieldName.text, int.Parse(_inputFieldScore.text), ((msg) =>
+        {
+            GetLeaderBoard(_publicKey);
+        }));
+    }
+
+    // Set in the leaderboard a score (if it's lower than the previous one, nothing change apart the nickname of the player)
+    public void AddScoreInLeaderboard(int score)
+    {
+        string gameKey = keyValuePairs[nameScene_EnumMinigame[SceneManager.GetActiveScene().name]];
+        LeaderboardCreator.UploadNewEntry(gameKey, _username, score, ((msg) =>
         {
             GetLeaderBoard(_publicKey);
         }));
