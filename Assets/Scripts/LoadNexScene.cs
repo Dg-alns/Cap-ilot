@@ -25,8 +25,9 @@ public class LoadNexScene : MonoBehaviour
         {
             _NextSceneData.isLauch = true;
             animator.SetTrigger("Transition");
+            Debug.Log("All DELet");
             //PlayerPrefs.DeleteAll();
-            DeletPos();
+            //DeletPos();
 
             tools.DontDestroyTools();
             string scene = PlayerPrefs.HasKey("SceneName") ? PlayerPrefs.GetString("SceneName") : "Personalisation";
@@ -106,6 +107,9 @@ public class LoadNexScene : MonoBehaviour
 
     public void LoadPreviousScene()
     {
+        PlayerPrefs.SetInt("ReparationPhare", 1);
+        
+
         animator.SetTrigger("Transition");
         StartCoroutine(_NextSceneData.SwitchScene(_NextSceneData.GetPreviousScene()));
     }

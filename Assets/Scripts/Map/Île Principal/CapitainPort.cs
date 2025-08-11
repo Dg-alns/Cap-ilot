@@ -20,7 +20,6 @@ public class CapitainPort : MonoBehaviour
 
     private void Start()
     {
-
         if (QuestManager.GetPlayerPref() >= QuestManager.GetQUESTS(QUESTS.ReparationPhare))
         {
             gameObject.SetActive(false);
@@ -28,8 +27,7 @@ public class CapitainPort : MonoBehaviour
 
         canTP = false;
 
-        if (destination != spawnManagement.GetPosSpeCapitain("TutoPancarte"))
-            destination = spawnManagement.GetPosSpeCapitain("TutoPancarte");
+        destination = spawnManagement.GetPosSpeCapitain("TutoPancarte");
 
         if (PlayerPrefs.HasKey(dialogue.GetNamePlayerPrefsNPC()))
         {

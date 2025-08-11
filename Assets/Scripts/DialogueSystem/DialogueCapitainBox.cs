@@ -5,6 +5,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Linq;
+using static UnityEngine.Rendering.DebugUI;
 
 public class DialogueCapitainBox : DialogueBox
 {
@@ -17,7 +18,7 @@ public class DialogueCapitainBox : DialogueBox
         npcManager.dialogueNpc.GetComponent<Trigger>().activeUI = null;
         npcManager.dialogueNpc.GetComponent<Trigger>().uiOpen = false;
 
-        npcManager.dialogueNpc.NextSetForCapitain();
+        npcManager.dialogueNpc.UpInfoPLayerPrefs();
 
 
         if (npcManager.dialogueNpc.idxOffSetDialogue > npcManager.dialogueNpc.dialogueSet.Count - 1)

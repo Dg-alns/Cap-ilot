@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Rendering;
 
@@ -29,7 +30,6 @@ public class QuestManager
     private Saving SaveData { get; set; }
 
     static string namePlayerPrefQuest = "PlayerPrefsQuest";
-    int CurrentQuest;
 
     public QuestManager()
     {
@@ -58,7 +58,6 @@ public class QuestManager
             if (!statusDict.ContainsKey(quest.id))
             {
                 statusDict[quest.id] = quest.status;
-                NextQuest();
             }
             else
             {
@@ -69,7 +68,6 @@ public class QuestManager
                     if (!statusDict.ContainsKey(tmpId))
                     {
                         statusDict[tmpId] = quest.status;
-                        NextQuest();
                         break;
                     }
                     tmpId++;
@@ -92,7 +90,16 @@ public class QuestManager
         quests.Add(new ExampleQuest((int)quest, new ExampleReward(sprite, quest.ToString())));
     }
 
-    public static int GetPlayerPref() { return PlayerPrefs.GetInt(namePlayerPrefQuest); }
+    public static int GetPlayerPref() 
+    {
+        if (PlayerPrefs.HasKey(namePlayerPrefQuest) == false)
+        {
+            Debug.Log("re");
+            PlayerPrefs.SetInt(namePlayerPrefQuest, 0);
+        }
+
+        return PlayerPrefs.GetInt(namePlayerPrefQuest); 
+    }
 
     public static int GetQUESTS(QUESTS quest) { return (int)quest; }
 }

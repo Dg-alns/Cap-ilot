@@ -9,8 +9,6 @@ public class CapitainPhare : MonoBehaviour
     public GameObject dialogueCapitain;
     public GameObject MiniGameCapitain;
 
-    int FinishPhare = 0;
-
     public Port Hopital;
     public Port Alimentation;
     void Awake()
@@ -18,17 +16,6 @@ public class CapitainPhare : MonoBehaviour
         if (PlayerPrefs.HasKey("ReparationPhare") == false)
         {
             PlayerPrefs.SetInt("ReparationPhare", 0);
-            FinishPhare = PlayerPrefs.GetInt("ReparationPhare");
-        }
-        else
-            FinishPhare = PlayerPrefs.GetInt("ReparationPhare");
-        
-        
-
-        if (sceneDestination.GetPreviousScene().Contains("MiniGame_LightHouse"))
-        {
-            PlayerPrefs.SetInt("ReparationPhare", 1);
-            FinishPhare = PlayerPrefs.GetInt("ReparationPhare");
         }
 
         ActiveCapitain();

@@ -12,47 +12,12 @@ public class SpawnManagement : MonoBehaviour
     [Header ("\nGameObject off Player or Pnj to position")]
     public GameObject PersoToPosition;
 
-    [Header ("\nFor Capitain")]
-    public CapitainPort capitain;
-
     Dictionary<int, Vector2> dict = new Dictionary<int, Vector2>();
 
     void Start()
     {
-        // Capitain
-        if (PersoToPosition.name.Equals("Capitain"))
-        {
-            List<GameObject> lstGameObjectPositionCapitain = new List<GameObject>();
-            lstGameObjectPositionCapitain = Tools.CreateGameObjectList<Transform>(gameObject.name);
-
-            GameObject go = new GameObject();
-
-            for(int i = 0; i < lstGameObjectPositionCapitain.Count; i++)
-            {
-                if (capitain.GetDialogue().idxOffSetDialogue <= 0)
-                {
-                    if (lstGameObjectPositionCapitain[i].name.Equals("StartOfGame"))
-                    {
-                        go = lstGameObjectPositionCapitain[i];
-                    }
-                }
-                else if (capitain.GetDialogue().idxOffSetDialogue > 0)
-                {
-                    if (lstGameObjectPositionCapitain[i].name.Equals("TutoPancarte"))
-                    {
-                        go = lstGameObjectPositionCapitain[i];
-                    }
-                }
-            }
-
-
-            PersoToPosition.transform.position = new(go.transform.position.x, go.transform.position.y, 0);
-            PersoToPosition.SetActive(true);
-            
-
+        if (PersoToPosition == null)
             return;
-        }
-
 
         // Player
         if (SceneManager.GetActiveScene().name == PlayerPrefs.GetString("SceneName") && loadNexScene.GetBoatSpawn() == false) {
