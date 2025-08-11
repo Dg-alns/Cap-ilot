@@ -25,7 +25,7 @@ public class LoadNexScene : MonoBehaviour
         {
             _NextSceneData.isLauch = true;
             animator.SetTrigger("Transition");
-            //PlayerPrefs.DeleteAll();
+            PlayerPrefs.DeleteAll();
             //DeletPos();
 
             tools.DontDestroyTools();
@@ -34,7 +34,7 @@ public class LoadNexScene : MonoBehaviour
         }
     }
 
-    public void NextScenePersonalisation(PlayerSpriteManager playerSpriteManager)
+    public void NextSceneAfterPersonalisation(PlayerSpriteManager playerSpriteManager)
     {
         if (_NextSceneData.isLauch == false)
         {
@@ -42,7 +42,7 @@ public class LoadNexScene : MonoBehaviour
             _NextSceneData.isLauch = true;
 
             animator.SetTrigger("Transition");
-            _NextSceneData.SetCurrentScene("");//TODO enlever
+            //_NextSceneData.SetCurrentScene("");//TODO enlever
 
 
             string scene = _NextSceneData.GetPreviousScene().Length > 1 ? _NextSceneData.GetPreviousScene() : "Port Ile Principale";
@@ -64,6 +64,17 @@ public class LoadNexScene : MonoBehaviour
             {
                 accesToPort.LoadScene();
             }
+        }
+    }
+
+    public void LoadPersonalisationScene()
+    {        
+        if (_NextSceneData.isLauch == false)
+        {
+            SavePos();
+            _NextSceneData.isLauch = true;
+            animator.SetTrigger("Transition");
+            StartCoroutine(_NextSceneData.SwitchScene("Personalisation"));
         }
     }
 

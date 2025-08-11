@@ -8,18 +8,24 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Other/Accueil.unity
     guid: 7807e7f99bd15bb4fac9659b13f68cc3
-  - enabled: 1
-    path: Assets/Scenes/MiniGames/ChoiceMinigame.unity
-    guid: 8c9cfa26abfee488c85f1582747f6a02
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/MiniGames/MiniGame_Card.unity
     guid: b8e11cff4af2fac4888f900e84efb980
   - enabled: 1
+    path: Assets/Scenes/Island/Port Alimentation.unity
+    guid: 690b2b56a49e65541b3f9fe14bae218f
+  - enabled: 1
+    path: Assets/Scenes/Island/Port Hopital.unity
+    guid: 21529e20f1810464d999f72bda75b4e1
+  - enabled: 1
+    path: Assets/Scenes/Island/Port Relation.unity
+    guid: a9d5348facee019428e82589b00b99eb
+  - enabled: 1
+    path: Assets/Scenes/Island/Port Sport.unity
+    guid: d5172046986a43f4e91d66d71d184264
+  - enabled: 0
     path: Assets/Scenes/MiniGames/MiniGame_ObjCachee.unity
     guid: b5e2087ded5f5e94f9de42ebd3e03d5b
-  - enabled: 1
-    path: Assets/Scenes/MiniGames/MiniGame_LightHouse.unity
-    guid: 523fa7b703eff2643b30be7ccdbfe128
   - enabled: 1
     path: Assets/Scenes/MiniGames/MiniGame_Boat.unity
     guid: fcb1a94a63309624a95fec1728cbee69
@@ -35,28 +41,25 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Island/Phare.unity
     guid: 62eabe07a908c63479f16b4b17fd9654
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/MiniGames/MiniGame_InjectionInsuline.unity
     guid: 51da8a482f203314da57d0a9e48465e9
-  - enabled: 1
-    path: Assets/Scenes/MiniGames/MiniGame_LightHouse.unity
-    guid: 523fa7b703eff2643b30be7ccdbfe128
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/MiniGames/MiniGame_TirBut.unity
     guid: 43b427b253dc1754b832f03d228ff792
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Other/Quiz.unity
     guid: 7baf6c94986a728489ce3172c06b8c03
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/MiniGames/MiniGame_Marathon.unity
     guid: 592450dd54bd05945bd174722dfec9c3
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Other/Sound.unity
     guid: bb7cea7e083719a44974c26e723d22c1
   - enabled: 1
     path: Assets/Scenes/Other/Personalisation.unity
     guid: f60d0fb0264137948afbb1883061dfef
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Other/Sound 1.unity
     guid: 4351678b093ac084f87852bdbd268d00
   - enabled: 1
@@ -65,5 +68,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Other/Profile.unity
     guid: a4b7cea5f6043684d8c6433658056108
+  - enabled: 1
+    path: Assets/Scenes/MiniGames/MiniGame_LightHouse.unity
+    guid: 523fa7b703eff2643b30be7ccdbfe128
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0

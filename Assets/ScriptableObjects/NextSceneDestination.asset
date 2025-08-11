@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: NextSceneDestination
   m_EditorClassIdentifier: 
   _sceneName: Port Ile Principale
-  _CurrentsceneName: Phare
+  _CurrentsceneName: Port Ile Principale
   isLauch: 0

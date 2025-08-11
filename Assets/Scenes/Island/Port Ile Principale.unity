@@ -815,7 +815,7 @@ GameObject:
   m_Component:
   - component: {fileID: 715547520}
   - component: {fileID: 715547522}
-  - component: {fileID: 715547521}
+  - component: {fileID: 715547523}
   m_Layer: 0
   m_Name: Tente
   m_TagString: Untagged
@@ -831,29 +831,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 715547519}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.9634762, z: -0, w: 0.26779398}
-  m_LocalPosition: {x: 13.85, y: 2.07, z: 0}
-  m_LocalScale: {x: 0.3612279, y: 0.3612279, z: 0.3612279}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: 14.29, y: 1.97, z: 0}
+  m_LocalScale: {x: 0.26262617, y: 0.35490024, z: 0.35490024}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 978040961}
-  m_LocalEulerAnglesHint: {x: 0, y: 148.934, z: 0}
---- !u!114 &715547521
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 715547519}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_OverrideArea: 1
-  m_Area: 1
-  m_IgnoreFromBuild: 0
-  m_AffectedAgents: ffffffff
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!212 &715547522
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -908,6 +892,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &715547523
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 715547519}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1001 &803037722
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1303,7 +1303,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1031964054
 Transform:
   m_ObjectHideFlags: 0
@@ -1313,8 +1313,8 @@ Transform:
   m_GameObject: {fileID: 1031964053}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 11.3795, y: -6.1791, z: 0.15993859}
-  m_LocalScale: {x: 7.1115227, y: 8.391681, z: 1}
+  m_LocalPosition: {x: 11.7859, y: -4.4916, z: 0.15993859}
+  m_LocalScale: {x: 6.0035477, y: 4.9947286, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1249628589}
@@ -1604,7 +1604,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1377959912
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2880,24 +2880,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8185881588264402033, guid: d400b78d53980d349bec9c8c27796ef6, type: 3}
       propertyPath: 'dialogueSet.Array.data[0].dialogueLines.Array.data[0]'
-      value: Bonjour je suis le Capitain
+      value: Bonjour, je suis le Capitaine.
       objectReference: {fileID: 0}
     - target: {fileID: 8185881588264402033, guid: d400b78d53980d349bec9c8c27796ef6, type: 3}
       propertyPath: 'dialogueSet.Array.data[0].dialogueLines.Array.data[1]'
-      value: "Tu vient d'arriver sur mon \xEEle"
+      value: "Tu viens de rencontrer une grosse temp\xEAte, voici mon \xEEle."
       objectReference: {fileID: 0}
     - target: {fileID: 8185881588264402033, guid: d400b78d53980d349bec9c8c27796ef6, type: 3}
       propertyPath: 'dialogueSet.Array.data[0].dialogueLines.Array.data[2]'
-      value: "D\xE9couvre le port et vient me voir d\xE8s que tu serat pret pour
-        que je te fasse visiter mon phare"
+      value: "D\xE9couvre le port et viens me voir d\xE8s que tu seras pr\xEAt pour
+        que je te fasse visiter mon phare."
       objectReference: {fileID: 0}
     - target: {fileID: 8185881588264402033, guid: d400b78d53980d349bec9c8c27796ef6, type: 3}
       propertyPath: 'dialogueSet.Array.data[1].dialogueLines.Array.data[0]'
-      value: "Cette pancarte indique o\xF9 te rendre"
+      value: "Cette pancarte indique o\xF9 tu peux te rendre au phare."
       objectReference: {fileID: 0}
     - target: {fileID: 8185881588264402033, guid: d400b78d53980d349bec9c8c27796ef6, type: 3}
       propertyPath: 'dialogueSet.Array.data[1].dialogueLines.Array.data[1]'
-      value: Suis moi vers le phare
+      value: Suis-moi.
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3029,8 +3029,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1913456855}
         m_TargetAssemblyTypeName: LoadNexScene, Assembly-CSharp
-        m_MethodName: LoadNextScene
-        m_Mode: 5
+        m_MethodName: LoadPersonalisationScene
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -3266,7 +3266,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2072452065}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
+  m_LocalRotation: {x: -0.7069834, y: -0, z: -0, w: 0.70723015}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3556,7 +3556,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cf91eaf3fbc48a408c201476355dd50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  diabete: {fileID: 1733921147442767752}
   PancarteVillage: {fileID: 803037724}
   PancartePhare: {fileID: 1431527672}
   Bateau: {fileID: 1932334225}
@@ -3633,11 +3632,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: db719d02bdc5ceb4b8cd5e6ef99e4c86, type: 3}
---- !u!1 &1733921147442767752 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4304060261653511169, guid: db719d02bdc5ceb4b8cd5e6ef99e4c86, type: 3}
-  m_PrefabInstance: {fileID: 1733921147442767751}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

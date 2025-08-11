@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class PortIlePrincipale : MonoBehaviour
 {
-    public GameObject diabete;
-
     public GameObject PancarteVillage;
     public GameObject PancartePhare;
     public GameObject Bateau;
@@ -35,11 +33,6 @@ public class PortIlePrincipale : MonoBehaviour
 
     private void Start()
     {
-        if (QuestManager.GetPlayerPref() > QuestManager.GetQUESTS(QUESTS.DemandeCapitaine))
-        {
-            diabete.SetActive(true);
-        }
-
         if (QuestManager.GetPlayerPref() >= QuestManager.GetQUESTS(QUESTS.ReparationPhare))
         {
             ActivePhare();
@@ -53,7 +46,5 @@ public class PortIlePrincipale : MonoBehaviour
         {
             ActiveBateau();
         }
-
-
     }
 }

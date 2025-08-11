@@ -16,29 +16,33 @@ public class PlayerSpriteManager : MonoBehaviour
 
     public GameObject Diabete;
 
-    bool discoverDiabete = false;
-
     private void Start()
     {
         if (Diabete != null)
         {
-            if (discoverDiabete)
+            if (QuestManager.GetPlayerPref() > QuestManager.GetQUESTS(QUESTS.Maison))
                 Diabete.SetActive(true);
         }
 
-        if (SceneManager.GetActiveScene().name != "Personalisation")
-            return;
+        if (SceneManager.GetActiveScene().name == "Personalisation")
+        {
+            if (HaveDateEnter() == false)
+                return;
 
-        if (HaveDateEnter() == false)
-            return;
+            Corps.GetComponent<SpriteRenderer>().sprite = playerData.Corps;
+            Cheveux.GetComponent<SpriteRenderer>().sprite = playerData.Cheveux;
+            AccessoirTete.GetComponent<SpriteRenderer>().sprite = playerData.AccessoirTete;
+            Haut.GetComponent<SpriteRenderer>().sprite = playerData.Haut;
+            Bas.GetComponent<SpriteRenderer>().sprite = playerData.Bas;
+            Chaussure.GetComponent<SpriteRenderer>().sprite = playerData.Chaussure;
 
-
-        Corps.GetComponent<SpriteRenderer>().sprite = playerData.Corps;
-        Cheveux.GetComponent<SpriteRenderer>().sprite = playerData.Cheveux;
-        AccessoirTete.GetComponent<SpriteRenderer>().sprite = playerData.AccessoirTete;
-        Haut.GetComponent<SpriteRenderer>().sprite = playerData.Haut;
-        Bas.GetComponent<SpriteRenderer>().sprite = playerData.Bas;
-        Chaussure.GetComponent<SpriteRenderer>().sprite = playerData.Chaussure;
+            Corps.GetComponent<SpriteRenderer>().color = playerData.Color_Corps;
+            Cheveux.GetComponent<SpriteRenderer>().color = playerData.Color_Cheveux;
+            AccessoirTete.GetComponent<SpriteRenderer>().color = playerData.Color_AccessoirTete;
+            Haut.GetComponent<SpriteRenderer>().color = playerData.Color_Haut;
+            Bas.GetComponent<SpriteRenderer>().color = playerData.Color_Bas;
+            Chaussure.GetComponent<SpriteRenderer>().color = playerData.Color_Chaussure;
+        }
     }
 
     public void SavePersonalisation()
@@ -49,6 +53,13 @@ public class PlayerSpriteManager : MonoBehaviour
         playerData.Haut = Haut.GetComponent<SpriteRenderer>().sprite;
         playerData.Bas = Bas.GetComponent<SpriteRenderer>().sprite;
         playerData.Chaussure = Chaussure.GetComponent<SpriteRenderer>().sprite;
+
+        playerData.Color_Corps = Corps.GetComponent<SpriteRenderer>().color;
+        playerData.Color_Cheveux = Cheveux.GetComponent<SpriteRenderer>().color;
+        playerData.Color_AccessoirTete = AccessoirTete.GetComponent<SpriteRenderer>().color;
+        playerData.Color_Haut = Haut.GetComponent<SpriteRenderer>().color;
+        playerData.Color_Bas = Bas.GetComponent<SpriteRenderer>().color;
+        playerData.Color_Chaussure = Chaussure.GetComponent<SpriteRenderer>().color;
     }
 
     bool HaveDateEnter()

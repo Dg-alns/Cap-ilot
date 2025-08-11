@@ -12,9 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cec2244cd6ec2a4fa5800a1f230f918, type: 3}
   m_Name: Player
   m_EditorClassIdentifier: 
-  Corps: {fileID: 21300000, guid: 5610271362c08b240b4e1abf9a5b612b, type: 3}
+  Corps: {fileID: 0}
   Cheveux: {fileID: 0}
-  AccessoirTete: {fileID: 21300000, guid: d4bf428fda550604d80ef0882e63eb2e, type: 3}
-  Haut: {fileID: 21300000, guid: f2a43cbfdd2068e43a90a55526056f39, type: 3}
-  Bas: {fileID: 21300000, guid: aed574444b0ae1244ac27a5e60b0fae1, type: 3}
-  Chaussure: {fileID: 21300000, guid: b435523ab9e85c14d8a2edef64d71be9, type: 3}
+  AccessoirTete: {fileID: 0}
+  Haut: {fileID: 0}
+  Bas: {fileID: 0}
+  Chaussure: {fileID: 0}
+  Color_Corps: {r: 1, g: 1, b: 1, a: 1}
+  Color_Cheveux: {r: 1, g: 1, b: 1, a: 1}
+  Color_AccessoirTete: {r: 1, g: 1, b: 1, a: 1}
+  Color_Haut: {r: 1, g: 1, b: 1, a: 1}
+  Color_Bas: {r: 1, g: 1, b: 1, a: 1}
+  Color_Chaussure: {r: 1, g: 1, b: 1, a: 1}

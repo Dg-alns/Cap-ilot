@@ -29,10 +29,10 @@ public class LightHouse : MonoBehaviour
                 {
                     _UIArchives.SetActive(true);
                 }
-                else
-                {
-                    GetComponent<LoadNexScene>().LoadNextScene("MiniGame_LightHouse");
-                }
+                //else
+                //{
+                //    GetComponent<LoadNexScene>().LoadNextScene("MiniGame_LightHouse");
+                //}
             }
         }
     }

@@ -521,7 +521,7 @@ PrefabInstance:
       objectReference: {fileID: 470672813}
     - target: {fileID: 2266050242156400121, guid: a5fc9c6e1f68deb41b1415fdc98dccc3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: NextScenePersonalisation
+      value: NextSceneAfterPersonalisation
       objectReference: {fileID: 0}
     - target: {fileID: 2266050242156400121, guid: a5fc9c6e1f68deb41b1415fdc98dccc3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName

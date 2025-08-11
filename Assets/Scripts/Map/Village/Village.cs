@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class Village : MonoBehaviour
 {
-    public GameObject diabete;
-
     public GameObject Ecole;
     public GameObject Sport;
     public GameObject Alimentation;
@@ -14,11 +12,6 @@ public class Village : MonoBehaviour
 
     void Start()
     {
-        if(QuestManager.GetPlayerPref() > QuestManager.GetQUESTS(QUESTS.DemandeCapitaine))
-        {
-            diabete.SetActive(true);
-        }
-
         if(QuestManager.GetPlayerPref() > QuestManager.GetQUESTS(QUESTS.A_Ressource))
         {
             Alimentation.SetActive(true);
