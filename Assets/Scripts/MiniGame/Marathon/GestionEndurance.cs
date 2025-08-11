@@ -17,6 +17,8 @@ public class GestionEndurance : MonoBehaviour
     float TargetTime = 1;
     float CurrentTime;
 
+    public bool isPause = false;
+
     void Start()
     {
         endurance = GetComponent<Image>();
@@ -26,6 +28,8 @@ public class GestionEndurance : MonoBehaviour
 
     void Update()
     {
+        if (isPause)
+            return;
         CurrentTime += Time.deltaTime;
         if (CurrentTime >= TargetTime)
         {

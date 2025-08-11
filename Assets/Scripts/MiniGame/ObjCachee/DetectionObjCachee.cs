@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class DetectionObjCachee : DetectionUI
+public class DetectionObjCachee : Minigame
 {
     public Camera cam;
     public Timer timer;
@@ -14,6 +14,10 @@ public class DetectionObjCachee : DetectionUI
     List<Objects> objects;
     List<TextMeshProUGUI> nameobjs;
     public Infos_MiniJeux infos;
+
+    public GameObject diabete;
+
+    private Tools _tools;
 
     private void Awake()
     {
@@ -96,6 +100,15 @@ public class DetectionObjCachee : DetectionUI
             DetectionObject();
         }
         
+    }
+    public override void PauseMinigame()
+    {
+        timer.stop = true;
+    }
+
+    public override void ResumeMinigame()
+    {
+        timer.stop = false;
     }
 
 }

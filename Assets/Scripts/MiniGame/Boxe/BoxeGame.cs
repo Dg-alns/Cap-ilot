@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-public class BoxeGame : MonoBehaviour
+public class BoxeGame : Minigame
 {
     SwipeManager SwipeManager;
     Timer timer;
@@ -207,5 +207,17 @@ public class BoxeGame : MonoBehaviour
         Round.NextPhase(timer);
         SwipeManager.ChangeStateOfCanSwipe(true);
         onDefense = false;
+    }
+
+    public override void PauseMinigame()
+    {
+        StartGame = false;
+        timer.stop = true;
+    }
+
+    public override void ResumeMinigame()
+    {
+        StartGame = true;
+        timer.stop = false;
     }
 }

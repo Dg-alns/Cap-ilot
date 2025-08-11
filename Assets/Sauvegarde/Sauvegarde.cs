@@ -161,5 +161,8 @@ public class Saving
         this.profile = profile;
         this.questManager = questManager;
     }
-
+    public int GetCompletedJournal()
+    {
+        return journal.journal.Count;
+    }
 }

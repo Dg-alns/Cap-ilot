@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class Minigame_Memorie : MonoBehaviour
+public class Minigame_Memorie : Minigame
 {
     private List<GameObject> mShowingCard = new List<GameObject>();
     private int nbSlots;
@@ -113,6 +113,14 @@ public class Minigame_Memorie : MonoBehaviour
             CheckWin();
     }
 
-    
+    public override void PauseMinigame()
+    {
+        diabete.DiseableDiabete();
+    }
+
+    public override void ResumeMinigame()
+    {
+        diabete.ActiveDiabete();
+    }
 
 }

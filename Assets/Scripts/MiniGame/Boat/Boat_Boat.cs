@@ -1,3 +1,4 @@
+using NUnit.Framework.Constraints;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,26 +14,38 @@ public enum AnimationBoatState
 }
 public class Boat_Boat : MonoBehaviour
 {
+    [Header("MiniGame")]
+
+    public Boat_Game boat_Game;
+
+    [Header("Camera and Size value")]
     private float _widthCam;
     private float _heightCam;
-
     private float _widthResolution;
-
     private float _widthSprite;
 
+    [Header("Animation")]
     private Animator _animator;
 
+    [Header("Boat Data")]
+    [SerializeField] private float _speed = 1;
     private float _timeInvincibility = 1.0f;
     private float _currentInvincibility = -1.0f;
+    private float _winAnimationTime = 2.0f;
+    private float _currentWinAnimationTime = 0.0f;
 
-    [SerializeField] private float _speed = 1;
-    //[SerializeField] private NextSceneDestination _destination;
+    [Header("ProgressBar")]
     [SerializeField] private Boat_ProgressBar _progressBar;
-    [SerializeField] private LoadNexScene _loadNexScene;
 
+    [Header("NextScene")]
+    [SerializeField] private LoadNexScene _loadNexScene;
+    //[SerializeField] private NextSceneDestination _destination;
+
+    private Tools _tools;
     // Start is called before the first frame update
     void Start()
     {
+        _tools = FindAnyObjectByType<Tools>();
         Camera cam = Camera.main;
         _heightCam = 2f * cam.orthographicSize;
         _widthCam = _heightCam * cam.aspect;
@@ -46,8 +59,15 @@ public class Boat_Boat : MonoBehaviour
     // Update is called once per frame
     void LateUpdate()
     {
+        if (!boat_Game.IsGameStart()) return;
+
         // If you win => do nothing
-        if (_animator.GetInteger("direction") == (int)AnimationBoatState.Win) return;
+        if (_animator.GetInteger("direction") == (int)AnimationBoatState.Win)
+        {
+            float winSpeed = _speed * 2;
+            transform.position = Vector2.MoveTowards(transform.position, new Vector2(transform.position.x, transform.position.y + 1), winSpeed * Time.deltaTime);
+            return;
+        };
 
         // If you are invincible
         if (_currentInvincibility >= 0.0f) 
@@ -61,8 +81,9 @@ public class Boat_Boat : MonoBehaviour
         }
 
         // If you press the screen
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButton(0) && !_tools.IsPointerOverUIElement())
         {
+            Debug.Log(_tools.IsPointerOverUIElement());
             // Move right
             if (_widthResolution / 2 < Input.mousePosition.x){
                 float step = _speed * Time.deltaTime;
@@ -89,7 +110,11 @@ public class Boat_Boat : MonoBehaviour
 
     public void Winning()
     {
-        _loadNexScene.LoadIle();
+        _currentWinAnimationTime += Time.deltaTime;
+        if(_currentWinAnimationTime > _winAnimationTime)
+        {
+            _loadNexScene.LoadIle();
+        }
     }
     
     private void OnTriggerEnter2D(Collider2D collision)

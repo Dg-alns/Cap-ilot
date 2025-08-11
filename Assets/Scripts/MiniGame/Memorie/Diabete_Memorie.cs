@@ -16,7 +16,7 @@ public class Diabete_Memorie : MonoBehaviour
     public List<Card_Memorie> mCards;
 
     private float[] mLimitSwitchTime;
-    private bool NotActive = true;
+    private bool isActive = false;
 
     private void Start()
     {
@@ -41,7 +41,7 @@ public class Diabete_Memorie : MonoBehaviour
 
     void Update()
     {
-        if (NotActive)
+        if (!isActive)
             return;
 
 
@@ -113,8 +113,12 @@ public class Diabete_Memorie : MonoBehaviour
     {
         animator.SetBool("DiabeteTime", !animator.GetBool("DiabeteTime"));
     }
-    public void ActiveDiabète()
+    public void ActiveDiabete()
     {
-        NotActive = false;
+        isActive = true;
+    }
+    public void DiseableDiabete()
+    {
+        isActive = false;
     }
 }

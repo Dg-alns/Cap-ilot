@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-public class Marathon : MonoBehaviour
+public class Marathon : Minigame
 {
     public PisteManagement pisteManagement;
     public GestionEndurance gestionEndurance;
@@ -15,6 +15,11 @@ public class Marathon : MonoBehaviour
     float MaxSpeed;
 
     float patClik = 0.4f;
+
+    bool isPause = false;
+
+    Tools _tools;
+
     private void Start()
     {
         baseSpeed = pisteManagement.baseSpeed;
@@ -23,6 +28,7 @@ public class Marathon : MonoBehaviour
         MaxSpeed = currentSpeed * 2.5f;
 
         timer.SetNSeconds(1f);
+        _tools = FindAnyObjectByType<Tools>();
     }
 
     public void ToStart()
@@ -58,6 +64,8 @@ public class Marathon : MonoBehaviour
         if(InfoBeforeGame.activeSelf)
             return;
 
+        if (isPause)
+            return;
 
         if (startingLight.GetBool("GoLight"))
         {
@@ -102,7 +110,7 @@ public class Marathon : MonoBehaviour
             return;
         }
 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && !_tools.IsPointerOverUIElement())
         {
             if (gestionEndurance.tackeRavito)
             {
@@ -127,7 +135,20 @@ public class Marathon : MonoBehaviour
             }
             yield return null;
         }
-        
+    }
+    public override void PauseMinigame()
+    {
+        isPause = true;
+        timer.stop = true;
+        pisteManagement.Pause();
+        gestionEndurance.isPause = true;
+    }
 
+    public override void ResumeMinigame()
+    {
+        isPause = false;
+        timer.stop = false;
+        pisteManagement.Resume();
+        gestionEndurance.isPause= false;
     }
 }
