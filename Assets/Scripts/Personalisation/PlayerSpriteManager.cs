@@ -20,7 +20,7 @@ public class PlayerSpriteManager : MonoBehaviour
     {
         if (Diabete != null)
         {
-            if (QuestManager.GetPlayerPref() > QuestManager.GetQUESTS(QUESTS.Maison))
+            if (QuestManager.GetPlayerPref() >= QuestManager.GetQUESTS(QUESTS.DemandeCapitaine))
                 Diabete.SetActive(true);
         }
 
@@ -43,6 +43,19 @@ public class PlayerSpriteManager : MonoBehaviour
             Bas.GetComponent<SpriteRenderer>().color = playerData.Color_Bas;
             Chaussure.GetComponent<SpriteRenderer>().color = playerData.Color_Chaussure;
         }
+    }
+
+    private void Update()
+    {
+        if (Diabete == null)
+            return;
+
+        if (Diabete.activeSelf)
+            return;
+
+        if (QuestManager.GetPlayerPref() >= QuestManager.GetQUESTS(QUESTS.DemandeCapitaine))
+            Diabete.SetActive(true);
+
     }
 
     public void SavePersonalisation()

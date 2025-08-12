@@ -122,5 +122,11 @@ public class DialogueBox : MonoBehaviour
         Destroy(npcManager.dialogueNpc.GetComponent<Trigger>().activeUI);
         npcManager.dialogueNpc.GetComponent<Trigger>().activeUI = null;
         npcManager.dialogueNpc.GetComponent<Trigger>().uiOpen = false;
+
+        if (npcManager.dialogueNpc.npcName.Equals("Diabete"))
+        {
+            QuestManager.NextQuest();
+            npcManager.dialogueNpc.gameObject.GetComponent<BoxCollider2D>().enabled = false;
+        }
     }
 }

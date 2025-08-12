@@ -14,8 +14,13 @@ public class SpawnManagement : MonoBehaviour
 
     Dictionary<int, Vector2> dict = new Dictionary<int, Vector2>();
 
+    static string namePLayerPrefs = "SpawnManagementPrefs";
+
     void Start()
     {
+        if(PlayerPrefs.HasKey(namePLayerPrefs) == false) 
+            PlayerPrefs.SetInt(namePLayerPrefs, 0);
+
         if (PersoToPosition == null)
             return;
 
@@ -29,8 +34,12 @@ public class SpawnManagement : MonoBehaviour
 
         dict = DetectAllSpawnPrefab();
 
-        if (FindPLayerPrefsPosPLayer() == false)
+
+        if (FindPLayerPrefsPosPLayer() == false || PlayerPrefs.GetInt(namePLayerPrefs) == 1)
         {
+            if (PlayerPrefs.GetInt(namePLayerPrefs) == 1)
+                PlayerPrefs.SetInt(namePLayerPrefs, 0);
+
             PersoToPosition.transform.position = dict[((int)SPAWN.FirstStartGame)];
             PersoToPosition.transform.rotation = new(0, 0, 0, 1);
             SavePos();
@@ -92,5 +101,11 @@ public class SpawnManagement : MonoBehaviour
         }
 
         return Vector3.zero;
+    }
+
+
+    public static void SetFirstInScene(int value)
+    {
+        PlayerPrefs.SetInt(namePLayerPrefs, value);
     }
 }

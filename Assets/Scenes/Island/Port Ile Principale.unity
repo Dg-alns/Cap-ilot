@@ -3364,7 +3364,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1932334225}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 260065e78f7380141a49338d753ea81a, type: 3}
   m_Name: 
@@ -3547,6 +3547,10 @@ PrefabInstance:
     - target: {fileID: 7762493841648834075, guid: d400b78d53980d349bec9c8c27796ef6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8185881588264402033, guid: d400b78d53980d349bec9c8c27796ef6, type: 3}
+      propertyPath: npcId
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8185881588264402033, guid: d400b78d53980d349bec9c8c27796ef6, type: 3}
       propertyPath: npcName
@@ -4249,6 +4253,8 @@ MonoBehaviour:
   PancarteVillage: {fileID: 803037724}
   PancartePhare: {fileID: 1431527672}
   Bateau: {fileID: 1932334225}
+  Hopital: {fileID: 11400000, guid: 45f7f7505f83cdb408cc61b4af66995a, type: 2}
+  Alimentation: {fileID: 11400000, guid: 0943cd8cdb8415a44966467f5564256c, type: 2}
 --- !u!1001 &1733921147442767751
 PrefabInstance:
   m_ObjectHideFlags: 0

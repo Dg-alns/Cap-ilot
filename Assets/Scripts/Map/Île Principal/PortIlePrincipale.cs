@@ -8,6 +8,9 @@ public class PortIlePrincipale : MonoBehaviour
     public GameObject PancartePhare;
     public GameObject Bateau;
 
+    public Port Hopital;
+    public Port Alimentation;
+
     public void ActivePancartePhare()
     {
         PancartePhare.SetActive(true);
@@ -28,7 +31,7 @@ public class PortIlePrincipale : MonoBehaviour
 
     public void ActiveBateau()
     {
-        Bateau.GetComponent<Trigger>().enabled = true;
+        Bateau.GetComponent<BoxCollider2D>().isTrigger = true;
     }
 
     private void Start()
@@ -45,6 +48,16 @@ public class PortIlePrincipale : MonoBehaviour
         if (QuestManager.GetPlayerPref() >= QuestManager.GetQUESTS(QUESTS.Hopital))
         {
             ActiveBateau();
+        }
+
+
+        if (QuestManager.GetPlayerPref() == QuestManager.GetQUESTS(QUESTS.Hopital))
+        {
+            Hopital.CanGoToIle = true;
+        }
+        if (QuestManager.GetPlayerPref() > QuestManager.GetQUESTS(QUESTS.Phare))
+        {
+            Alimentation.CanGoToIle = true;
         }
     }
 }

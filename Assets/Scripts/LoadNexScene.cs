@@ -26,9 +26,9 @@ public class LoadNexScene : MonoBehaviour
             _NextSceneData.isLauch = true;
             animator.SetTrigger("Transition");
             Debug.Log("All DELet");
-            //PlayerPrefs.DeleteAll();
+            PlayerPrefs.DeleteAll();
             //DeletPos();
-
+            QuestManager.SetQuest(QUESTS.Hopital);
             tools.DontDestroyTools();
             string scene = PlayerPrefs.HasKey("SceneName") ? PlayerPrefs.GetString("SceneName") : "Personalisation";
             StartCoroutine(_NextSceneData.NextScene(scene));
@@ -43,7 +43,7 @@ public class LoadNexScene : MonoBehaviour
             _NextSceneData.isLauch = true;
 
             animator.SetTrigger("Transition");
-            //_NextSceneData.SetCurrentScene("");//TODO enlever
+            _NextSceneData.SetCurrentScene("");//TODO enlever
 
 
             string scene = _NextSceneData.GetPreviousScene().Length > 1 ? _NextSceneData.GetPreviousScene() : "Port Ile Principale";
@@ -107,7 +107,11 @@ public class LoadNexScene : MonoBehaviour
 
     public void LoadPreviousScene()
     {
-        PlayerPrefs.SetInt("ReparationPhare", 1);
+        if (_NextSceneData.GetNextSceneDestination().Equals("MiniGame_LightHouse"))
+        {
+            PlayerPrefs.SetInt("ReparationPhare", 1);
+            QuestManager.NextQuest(); // TODO UPdate
+        }
         
 
         animator.SetTrigger("Transition");

@@ -13,7 +13,7 @@ public class Phare : MonoBehaviour
     {
         if (PlayerPrefs.HasKey("ReparationPhare"))
         {
-            if (PlayerPrefs.GetInt("ReparationPhare") == 1) {
+            if (PlayerPrefs.GetInt("ReparationPhare") == 1 || QuestManager.GetPlayerPref() >= QuestManager.GetQUESTS(QUESTS.Maison)) {
                 phare.GetComponent<SpriteRenderer>().sprite = phareClean;
                 TopPhare.SetActive(false);
             }

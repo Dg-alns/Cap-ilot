@@ -102,6 +102,11 @@ public class QuestManager
     }
 
     public static int GetQUESTS(QUESTS quest) { return (int)quest; }
+    public static void SetQuest(QUESTS quest) //TODO for debug game
+    {
+
+        PlayerPrefs.SetInt(namePlayerPrefQuest, (int)quest);
+    }
 }
 
 public class Quest
