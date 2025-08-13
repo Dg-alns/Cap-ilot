@@ -53,11 +53,11 @@ public class PortIlePrincipale : MonoBehaviour
 
         if (QuestManager.GetPlayerPref() == QuestManager.GetQUESTS(QUESTS.Hopital))
         {
-            Hopital.CanGoToIle = true;
+            Hopital.CanGotoIle();
         }
         if (QuestManager.GetPlayerPref() > QuestManager.GetQUESTS(QUESTS.Phare))
         {
-            Alimentation.CanGoToIle = true;
+            Alimentation.CanGotoIle();
         }
     }
 }

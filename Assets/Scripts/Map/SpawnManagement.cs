@@ -56,8 +56,8 @@ public class SpawnManagement : MonoBehaviour
 
         if (port != null)
         {
-            if (port.isDiscover == false)
-                port.isDiscover = true;
+            if (port.GetIsDiscover() == false)
+                port.IsDiscover();
         }
 
     }

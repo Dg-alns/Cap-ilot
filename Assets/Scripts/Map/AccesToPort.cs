@@ -9,7 +9,7 @@ public class AccesToPort : MonoBehaviour
    
     public void LoadScene()
     {
-        if (port.isDiscover)
+        if (port.GetIsDiscover())
             loadNexScene.LoadNextScene(port.IleName);
         else
             loadNexScene.LoadNewIle(port.IleName);

@@ -112,6 +112,15 @@ public class LoadNexScene : MonoBehaviour
             PlayerPrefs.SetInt("ReparationPhare", 1);
             QuestManager.NextQuest(); // TODO UPdate
         }
+
+        if (_NextSceneData.GetNextSceneDestination().Equals("MiniGame_ObjCachee"))
+            Chambre.SetStateChambre(1);
+
+        if (_NextSceneData.GetNextSceneDestination().Equals("MiniGame_InjectionInsuline") && Couloir.GetStateCouloir() != 1)
+        {
+            Couloir.SetStateCouloir(1);
+            QuestManager.NextQuest();
+        }
         
 
         animator.SetTrigger("Transition");
