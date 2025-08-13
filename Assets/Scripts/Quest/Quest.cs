@@ -58,7 +58,6 @@ public class QuestManager
             if (!statusDict.ContainsKey(quest.id))
             {
                 statusDict[quest.id] = quest.status;
-                NextQuest();
             }
             else
             {
@@ -69,7 +68,6 @@ public class QuestManager
                     if (!statusDict.ContainsKey(tmpId))
                     {
                         statusDict[tmpId] = quest.status;
-                        NextQuest();
                         break;
                     }
                     tmpId++;

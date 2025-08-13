@@ -41,7 +41,6 @@ public class TouchManager : MonoBehaviour
         {
             Vector2 position = _touchPositionAction.ReadValue<Vector2>();
             _player.GetComponent<Movement>().Move(Camera.main.ScreenToWorldPoint(position));
-
             if (_player.GetComponent<Movement>().dialogueNpc != null && _player.GetComponent<Movement>().activeDialogueUI != null)
             {
                 if (_player.GetComponent<Movement>().dialogueNpc.GetComponent<Trigger>().activeUI.GetComponentInChildren<DialogueBox>().dialogStarted)

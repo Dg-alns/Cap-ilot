@@ -96,7 +96,8 @@ public class LoadNexScene : MonoBehaviour
             if (_energy.HaveEnergy())
             {
                 Debug.Log("SavePos");
-                SavePos();
+                if(Player)
+                    SavePos();
                 _energy.UseEnergy();
                 animator.SetTrigger("Transition");
                 StartCoroutine(_NextSceneData.SwitchScene(scene));

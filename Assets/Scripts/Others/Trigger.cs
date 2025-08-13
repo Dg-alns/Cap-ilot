@@ -17,7 +17,7 @@ public enum TriggerType
 
 public class Trigger : MonoBehaviour
 {
-    [SerializeField] GameObject UI;
+    [SerializeField] public GameObject UI;
     public bool uiOpen;
     public string SceneName;
     public LoadNexScene nexScene;

@@ -19,6 +19,7 @@ public class Sauvegarde_Minigame : MonoBehaviour
         _jsonPath = Application.dataPath + "/Json/Save.json";
         //_statMinigame = JsonUtility.FromJson<Dictionary<string, TemplateSaveMinigame>>(_jsonPath);
         _statMinigame = Sauvegarde.StatMinigame;
+        Debug.Log("Nombre de stat : " + _statMinigame.Count);
         /*try
         {
             _statMinigame = JSON_Manager.LoadData<Dictionary<string, TemplateSaveMinigame>>(_jsonPath);
@@ -72,6 +73,7 @@ public class Sauvegarde_Minigame : MonoBehaviour
     public int GetTotalStars()
     {
         int total = 0;
+        Debug.Log(_statMinigame);
         foreach(KeyValuePair<string,TemplateSaveMinigame> s in _statMinigame)
         {
             total += s.Value._nbStar;

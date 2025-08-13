@@ -103,14 +103,17 @@ public class DialogueBox : MonoBehaviour
 
     public bool IsDialogueFinished()
     {
+        //Debug.Log("dialogStarted : " + dialogStarted);
         if (dialogStarted)
         {
             if (lineList.Count < _lineIndex)
             {
+                Debug.Log("dialogFinish : " + lineList.Count + " " +_lineIndex);
                 return true;
             }
             else
             {
+                //Debug.Log("dialogFinish : " + lineList.Count + " " + _lineIndex);
                 return false;
             }
         }

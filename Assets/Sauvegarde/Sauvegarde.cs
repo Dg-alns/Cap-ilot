@@ -42,7 +42,10 @@ public class Sauvegarde : MonoBehaviour
         StatMinigame = new Dictionary<string, TemplateSaveMinigame>();
         try
         {
+            Debug.Log("Catch1");
             Saving save = JSON_Manager.LoadData<Saving>(Application.dataPath + "/Json/Save.json");
+            Debug.Log("Catch2");
+
             if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("Profile"))
             {
                 SceneManager.LoadScene("Journal");

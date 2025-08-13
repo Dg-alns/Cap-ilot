@@ -9,7 +9,7 @@ public class NPCManager : MonoBehaviour
     private List<NPC> _allNpc;
     public NPC dialogueNpc;
     
-    public void Start()
+    public void Awake()
     {
         _allNpc = new List<NPC>();
 
@@ -48,6 +48,7 @@ public class NPCManager : MonoBehaviour
     {
         foreach (var npc in _allNpc)
         {
+            Debug.Log("Recherche de type : " + npc.npcId);
             if (npc.npcId == id)
             {
                 //Debug.Log("Clicked ID : " + npc.npcId);

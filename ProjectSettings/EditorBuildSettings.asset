@@ -23,7 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Island/Port Sport.unity
     guid: d5172046986a43f4e91d66d71d184264
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/MiniGames/MiniGame_ObjCachee.unity
     guid: b5e2087ded5f5e94f9de42ebd3e03d5b
   - enabled: 1

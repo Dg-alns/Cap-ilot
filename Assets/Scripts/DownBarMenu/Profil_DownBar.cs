@@ -21,6 +21,7 @@ public class Profil_DownBar : MonoBehaviour
 
     private void Start()
     {
+        
         string jsonstring = File.ReadAllText("save.json");
         Saving save = JsonUtility.FromJson<Saving>(jsonstring);
 
@@ -29,5 +30,6 @@ public class Profil_DownBar : MonoBehaviour
         _NbStars.text = sauvegarde_Minigame.GetTotalStars().ToString();
 
         _NbJournal.text = save.GetCompletedJournal().ToString();
+        
     }
 }

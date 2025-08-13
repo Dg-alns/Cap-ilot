@@ -19,7 +19,7 @@ public class NPC : MonoBehaviour
 
     string NPCPLayerPrefsName;
 
-    private void Start()
+    private void Awake()
     {
         NPCPLayerPrefsName = npcId.ToString() + npcName;
 
@@ -58,7 +58,13 @@ public class NPC : MonoBehaviour
 
     public void SetPLayerPrefs(int value)
     {
+        Debug.Log("Name : " + NPCPLayerPrefsName);
         PlayerPrefs.SetInt(NPCPLayerPrefsName, value);
+    }
+
+    public int GetPlayerPrefs()
+    {
+        return PlayerPrefs.GetInt(NPCPLayerPrefsName);
     }
 
     public string GetNamePlayerPrefsNPC() { return NPCPLayerPrefsName; }
