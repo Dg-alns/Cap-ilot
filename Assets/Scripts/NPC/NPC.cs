@@ -14,7 +14,7 @@ public class NPC : MonoBehaviour
 {
     public int npcId;
     public string npcName;
-    public int idxOffSetDialogue = 0;
+    public int idxOffSetDialogue;
 
     public List<AllDialogueSet> dialogueSet = new List<AllDialogueSet>();
 
@@ -23,7 +23,6 @@ public class NPC : MonoBehaviour
     private void Awake()
     {
         NPCPLayerPrefsName = npcId.ToString() + npcName;
-        //PlayerPrefs.SetInt(NPCPLayerPrefsName, 0);
 
         if (PlayerPrefs.HasKey(NPCPLayerPrefsName))
         {

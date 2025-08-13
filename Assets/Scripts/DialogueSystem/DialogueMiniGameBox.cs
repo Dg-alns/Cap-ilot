@@ -45,7 +45,7 @@ public class DialogueMiniGameBox : DialogueBox
 
     void ActiveButton()
     {
-        if(npc.idxMiniGameSet == npc.idxOffSetDialogue || PlayerPrefs.GetInt(npc.GetNamePlayerPrefsNPC()) != 0)
+        if(npc.idxMiniGameSet == npc.idxOffSetDialogue)
         {
             activeButton = true;
             buttonStart.SetActive(true);

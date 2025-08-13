@@ -509,7 +509,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _player: {fileID: 1423705738}
-  _dialogueBox: {fileID: 0}
   DialogueLineSkiped: 0
 --- !u!114 &622135361
 MonoBehaviour:
@@ -1069,7 +1068,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6542426946905713955, guid: 194deb3502166994b9337affa1cc0ffc, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2044,8 +2043,6 @@ MonoBehaviour:
   sceneDestination: {fileID: 11400000, guid: 4f9d2ebe370453d43b934f62e2c5b6fc, type: 2}
   dialogueCapitain: {fileID: 745674850}
   MiniGameCapitain: {fileID: 836755963}
-  Hopital: {fileID: 11400000, guid: 45f7f7505f83cdb408cc61b4af66995a, type: 2}
-  Alimentation: {fileID: 11400000, guid: 0943cd8cdb8415a44966467f5564256c, type: 2}
 --- !u!4 &1817012203
 Transform:
   m_ObjectHideFlags: 0

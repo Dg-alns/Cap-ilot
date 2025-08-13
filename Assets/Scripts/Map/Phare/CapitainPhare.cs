@@ -15,7 +15,7 @@ public class CapitainPhare : MonoBehaviour
             PlayerPrefs.SetInt("ReparationPhare", 0);
         }
 
-        ActiveCapitain();
+        //ActiveCapitain();
         ActiveSetOffDialogue();
     }
 

@@ -143,7 +143,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      fond_maison_user_0: -8834206965457521493
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

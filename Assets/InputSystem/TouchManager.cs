@@ -9,7 +9,7 @@ public class TouchManager : MonoBehaviour
     private InputAction _touchPressAction;
 
     [SerializeField] private GameObject _player;
-    [SerializeField] private GameObject _dialogueBox;
+    //[SerializeField] private GameObject _dialogueBox;
 
     private bool _isTouching = false;
 
