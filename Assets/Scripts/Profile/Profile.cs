@@ -37,7 +37,7 @@ public class Profile
                 Username = Input.text;
             }
             DateTime dateTime = DateTime.Today;
-            DateTime birth = new DateTime(dateTime.Year - (Annee.value), Mois.value, Jour.value);
+            DateTime birth = new DateTime(dateTime.Year - (Annee.value - 1), Mois.value, Jour.value);
             TimeSpan AgeT = dateTime - birth;
             Age = AgeT.Days / 365;
         }
