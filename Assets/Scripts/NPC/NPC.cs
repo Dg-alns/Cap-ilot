@@ -18,7 +18,7 @@ public class NPC : MonoBehaviour
 
     public List<AllDialogueSet> dialogueSet = new List<AllDialogueSet>();
 
-    string NPCPLayerPrefsName;
+    protected string NPCPLayerPrefsName;
 
     private void Awake()
     {
@@ -36,7 +36,7 @@ public class NPC : MonoBehaviour
 
     public List<string> GetLstDialogue() { return dialogueSet[idxOffSetDialogue].dialogueLines; }
    
-    public void NextSet() 
+    public virtual void NextSet() 
     {
         if (idxOffSetDialogue + 1 <= dialogueSet.Count -1)
         {
@@ -44,6 +44,9 @@ public class NPC : MonoBehaviour
         }
         else
             idxOffSetDialogue += 0;
+
+
+        PlayerPrefs.SetInt(NPCPLayerPrefsName, idxOffSetDialogue);
     }
     public void NextSetForCapitain() 
     {

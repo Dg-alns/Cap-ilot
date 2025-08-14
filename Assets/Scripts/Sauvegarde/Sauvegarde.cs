@@ -43,6 +43,7 @@ public class Sauvegarde : MonoBehaviour
         try
         {
             Saving save = JSON_Manager.LoadData<Saving>(Application.dataPath + "/Json/Save.json");
+            Debug.Log("eeeeee " + save);
             if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("Profile"))
             {
                 SceneManager.LoadScene("Journal");
@@ -51,6 +52,8 @@ public class Sauvegarde : MonoBehaviour
             profile = save.profile;
             questManager = save.questManager;
             StatMinigame = save.statMinigame;
+
+            Debug.Log("ddddd " + StatMinigame);
             if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("Journal"))
             {
                 journal.Output = Output;

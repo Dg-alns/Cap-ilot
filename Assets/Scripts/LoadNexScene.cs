@@ -28,7 +28,7 @@ public class LoadNexScene : MonoBehaviour
             Debug.Log("All DELet");
             PlayerPrefs.DeleteAll();
             //DeletPos();
-            QuestManager.SetQuest(QUESTS.None);
+            QuestManager.SetQuest(QUESTS.Hopital);
             tools.DontDestroyTools();
             string scene = PlayerPrefs.HasKey("SceneName") ? PlayerPrefs.GetString("SceneName") : "Personalisation";
             StartCoroutine(_NextSceneData.NextScene(scene));

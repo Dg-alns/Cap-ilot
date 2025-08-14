@@ -55,10 +55,13 @@ public class Sauvegarde_Minigame : MonoBehaviour
 
     public int GetBestScore(string sceneName)
     {
-        Debug.Log(sceneName);
-        Debug.Log(_statMinigame.ContainsKey(sceneName));
-        if(_statMinigame.ContainsKey(sceneName))
+        if (_statMinigame == null)
+            return 0;
+
+        if (_statMinigame.ContainsKey(sceneName))
             return _statMinigame[sceneName]._bestScore;
+
+
         return 0;
     }
 
@@ -80,7 +83,10 @@ public class Sauvegarde_Minigame : MonoBehaviour
     }
 
     public bool GetCanShowInfo(string sceneName)
-    {
+    {        
+        if(_statMinigame == null)
+            return false;
+
         if(_statMinigame.ContainsKey(sceneName))
             return _statMinigame[sceneName]._showInfo;
         return _state;
@@ -88,7 +94,10 @@ public class Sauvegarde_Minigame : MonoBehaviour
 
     public void SetCanShowInfo(bool state)
     {
-        if(_statMinigame.ContainsKey(sceneName))
+        if (_statMinigame == null)
+            return;
+
+        if (_statMinigame.ContainsKey(sceneName))
             _statMinigame[sceneName]._showInfo = state;
 
         else

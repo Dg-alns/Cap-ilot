@@ -337,7 +337,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _player: {fileID: 1082252878}
-  _dialogueBox: {fileID: 0}
   DialogueLineSkiped: 0
 --- !u!114 &622135361
 MonoBehaviour:
@@ -961,11 +960,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1921437452148783518, guid: ee4dd1e779d16ac47b718f4e4f91e101, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.22
+      value: -6.98
       objectReference: {fileID: 0}
     - target: {fileID: 1921437452148783518, guid: ee4dd1e779d16ac47b718f4e4f91e101, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 17.22
+      value: 17.62
       objectReference: {fileID: 0}
     - target: {fileID: 1921437452148783518, guid: ee4dd1e779d16ac47b718f4e4f91e101, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1005,7 +1004,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8985979813463147583, guid: ee4dd1e779d16ac47b718f4e4f91e101, type: 3}
       propertyPath: spaw
-      value: 2
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1156,7 +1155,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5145867479845301797, guid: 194deb3502166994b9337affa1cc0ffc, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 22.29
+      value: 23.18
       objectReference: {fileID: 0}
     - target: {fileID: 5145867479845301797, guid: 194deb3502166994b9337affa1cc0ffc, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1443,7 +1442,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1921437452148783518, guid: ee4dd1e779d16ac47b718f4e4f91e101, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.1
+      value: -4.16
       objectReference: {fileID: 0}
     - target: {fileID: 1921437452148783518, guid: ee4dd1e779d16ac47b718f4e4f91e101, type: 3}
       propertyPath: m_LocalPosition.y

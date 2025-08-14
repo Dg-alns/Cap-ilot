@@ -335,7 +335,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _player: {fileID: 1082252878}
-  _dialogueBox: {fileID: 0}
   DialogueLineSkiped: 0
 --- !u!114 &622135361
 MonoBehaviour:
@@ -1204,11 +1203,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7167352824261831995, guid: ee4dd1e779d16ac47b718f4e4f91e101, type: 3}
       propertyPath: m_Name
-      value: Pancarte Port
+      value: Pancarte Couloir
       objectReference: {fileID: 0}
     - target: {fileID: 8985979813463147583, guid: ee4dd1e779d16ac47b718f4e4f91e101, type: 3}
       propertyPath: spaw
-      value: 2
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1330,7 +1329,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 880684434788671923, guid: 194deb3502166994b9337affa1cc0ffc, type: 3}
       propertyPath: dialogueSet.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 880684434788671923, guid: 194deb3502166994b9337affa1cc0ffc, type: 3}
       propertyPath: dialogueSet.Array.data[0].dialogueLines.Array.size
@@ -1338,6 +1337,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 880684434788671923, guid: 194deb3502166994b9337affa1cc0ffc, type: 3}
       propertyPath: dialogueSet.Array.data[1].dialogueLines.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 880684434788671923, guid: 194deb3502166994b9337affa1cc0ffc, type: 3}
+      propertyPath: dialogueSet.Array.data[2].dialogueLines.Array.size
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 880684434788671923, guid: 194deb3502166994b9337affa1cc0ffc, type: 3}
@@ -1357,6 +1360,10 @@ PrefabInstance:
     - target: {fileID: 880684434788671923, guid: 194deb3502166994b9337affa1cc0ffc, type: 3}
       propertyPath: 'dialogueSet.Array.data[1].dialogueLines.Array.data[0]'
       value: "Je vais vous montrer comment le g\xE9rer."
+      objectReference: {fileID: 0}
+    - target: {fileID: 880684434788671923, guid: 194deb3502166994b9337affa1cc0ffc, type: 3}
+      propertyPath: 'dialogueSet.Array.data[2].dialogueLines.Array.data[0]'
+      value: Je te laisse soritr maintenant que tu as tous les connaissance.
       objectReference: {fileID: 0}
     - target: {fileID: 5145867479845301797, guid: 194deb3502166994b9337affa1cc0ffc, type: 3}
       propertyPath: m_LocalPosition.x

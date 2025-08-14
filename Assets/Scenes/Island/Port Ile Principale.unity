@@ -1182,7 +1182,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _player: {fileID: 468084024}
-  _dialogueBox: {fileID: 0}
   DialogueLineSkiped: 0
 --- !u!114 &309339600
 MonoBehaviour:
@@ -1692,6 +1691,10 @@ PrefabInstance:
       propertyPath: nexScene
       value: 
       objectReference: {fileID: 1913456855}
+    - target: {fileID: 8728174674127034684, guid: 29ae1de120ecad9418ddf494741bca3a, type: 3}
+      propertyPath: SceneName
+      value: Village
+      objectReference: {fileID: 0}
     - target: {fileID: 8728174674127034684, guid: 29ae1de120ecad9418ddf494741bca3a, type: 3}
       propertyPath: m_Enabled
       value: 1
