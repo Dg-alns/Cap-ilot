@@ -8,16 +8,22 @@ public enum SPAWN
     Port,
     Boat,
     Archipel,
+    // IlePrincipale
     Phare,
     Village,
+    // Hopital
     Couloir,
     Chambre,
+    // Alimentation
     Restaurant,
+    // Sport
     Terrain,
+    // Ecole
     Etage1,
     Etage2,
     Cour,
-    Parc
+    // Relation
+    Parc,
 }
 
 public class Spawn : MonoBehaviour

@@ -61,4 +61,9 @@ public class NPCManager : MonoBehaviour
         
         return null; 
     }
+
+    public void ResetDialogueNPC()
+    {
+        dialogueNpc = null;
+    }
 }

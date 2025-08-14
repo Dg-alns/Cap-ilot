@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PlayerSpriteManager : MonoBehaviour
 {
@@ -15,6 +16,8 @@ public class PlayerSpriteManager : MonoBehaviour
     public GameObject Chaussure;
 
     public GameObject Diabete;
+
+    public bool inProfil = false;
 
     private void Start()
     {
@@ -42,6 +45,15 @@ public class PlayerSpriteManager : MonoBehaviour
             Haut.GetComponent<SpriteRenderer>().color = playerData.Color_Haut;
             Bas.GetComponent<SpriteRenderer>().color = playerData.Color_Bas;
             Chaussure.GetComponent<SpriteRenderer>().color = playerData.Color_Chaussure;
+        }
+        else if(inProfil)
+        {
+            Corps.GetComponent<Image>().sprite = playerData.Corps;
+            Cheveux.GetComponent<Image>().sprite = playerData.Cheveux;
+            AccessoirTete.GetComponent<Image>().sprite = playerData.AccessoirTete;
+            Haut.GetComponent<Image>().sprite = playerData.Haut;
+            Bas.GetComponent<Image>().sprite = playerData.Bas;
+            Chaussure.GetComponent<Image>().sprite = playerData.Chaussure;
         }
     }
 

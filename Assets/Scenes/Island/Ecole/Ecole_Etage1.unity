@@ -166,7 +166,7 @@ GameObject:
   - component: {fileID: 135613929}
   - component: {fileID: 135613928}
   - component: {fileID: 135613927}
-  - component: {fileID: 135613926}
+  - component: {fileID: 135613930}
   - component: {fileID: 135613925}
   m_Layer: 0
   m_Name: Eleve31
@@ -212,22 +212,6 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 0.48, y: 0.96}
   m_Direction: 0
---- !u!114 &135613926
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 135613924}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 99675cfb33c29fe4192bc3dd4ca3a680, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  npcId: 31
-  npcName: Eleve
-  idxOffSetDialogue: 0
-  dialogueSet: []
 --- !u!114 &135613927
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -240,7 +224,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 260065e78f7380141a49338d753ea81a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UI: {fileID: 4643652530389774356, guid: cadccd82e06887247a3a3bec27e20a1c, type: 3}
+  UI: {fileID: 4643652530389774356, guid: ecbdcd12b26a020479147be9ebfe8f48, type: 3}
   uiOpen: 0
   SceneName: 
   nexScene: {fileID: 0}
@@ -317,6 +301,24 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &135613930
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 135613924}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0261c139dee0f9342be89f5e3e5d9e99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  npcId: 31
+  npcName: Eleve
+  idxOffSetDialogue: 0
+  dialogueSet:
+  - dialogueLines:
+    - Hey !
 --- !u!1001 &296377392
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -386,9 +388,13 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8728174674127034684, guid: 29ae1de120ecad9418ddf494741bca3a, type: 3}
+      propertyPath: InPort
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8728174674127034684, guid: 29ae1de120ecad9418ddf494741bca3a, type: 3}
       propertyPath: nexScene
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1339902468}
     - target: {fileID: 8728174674127034684, guid: 29ae1de120ecad9418ddf494741bca3a, type: 3}
       propertyPath: SceneName
       value: Port Ecole
@@ -756,7 +762,7 @@ GameObject:
   - component: {fileID: 511351228}
   - component: {fileID: 511351227}
   - component: {fileID: 511351226}
-  - component: {fileID: 511351225}
+  - component: {fileID: 511351229}
   - component: {fileID: 511351224}
   m_Layer: 0
   m_Name: Eleve34
@@ -802,22 +808,6 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 0.48, y: 0.96}
   m_Direction: 0
---- !u!114 &511351225
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 511351223}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 99675cfb33c29fe4192bc3dd4ca3a680, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  npcId: 34
-  npcName: Eleve
-  idxOffSetDialogue: 0
-  dialogueSet: []
 --- !u!114 &511351226
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -830,7 +820,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 260065e78f7380141a49338d753ea81a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UI: {fileID: 4643652530389774356, guid: cadccd82e06887247a3a3bec27e20a1c, type: 3}
+  UI: {fileID: 4643652530389774356, guid: ecbdcd12b26a020479147be9ebfe8f48, type: 3}
   uiOpen: 0
   SceneName: 
   nexScene: {fileID: 0}
@@ -907,6 +897,24 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &511351229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 511351223}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0261c139dee0f9342be89f5e3e5d9e99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  npcId: 34
+  npcName: Eleve
+  idxOffSetDialogue: 0
+  dialogueSet:
+  - dialogueLines:
+    - Hey !
 --- !u!1 &579305663
 GameObject:
   m_ObjectHideFlags: 0
@@ -1357,6 +1365,67 @@ MonoBehaviour:
   animator: {fileID: 0}
   tools: {fileID: 0}
   Player: {fileID: 0}
+--- !u!1001 &822827566
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 875378149}
+    m_Modifications:
+    - target: {fileID: 1921437452148783518, guid: ee4dd1e779d16ac47b718f4e4f91e101, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.72
+      objectReference: {fileID: 0}
+    - target: {fileID: 1921437452148783518, guid: ee4dd1e779d16ac47b718f4e4f91e101, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.49
+      objectReference: {fileID: 0}
+    - target: {fileID: 1921437452148783518, guid: ee4dd1e779d16ac47b718f4e4f91e101, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1921437452148783518, guid: ee4dd1e779d16ac47b718f4e4f91e101, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1921437452148783518, guid: ee4dd1e779d16ac47b718f4e4f91e101, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1921437452148783518, guid: ee4dd1e779d16ac47b718f4e4f91e101, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1921437452148783518, guid: ee4dd1e779d16ac47b718f4e4f91e101, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1921437452148783518, guid: ee4dd1e779d16ac47b718f4e4f91e101, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1921437452148783518, guid: ee4dd1e779d16ac47b718f4e4f91e101, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1921437452148783518, guid: ee4dd1e779d16ac47b718f4e4f91e101, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7167352824261831995, guid: ee4dd1e779d16ac47b718f4e4f91e101, type: 3}
+      propertyPath: m_Name
+      value: Spawn (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8985979813463147583, guid: ee4dd1e779d16ac47b718f4e4f91e101, type: 3}
+      propertyPath: spaw
+      value: 12
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ee4dd1e779d16ac47b718f4e4f91e101, type: 3}
 --- !u!1 &875378148
 GameObject:
   m_ObjectHideFlags: 0
@@ -1388,6 +1457,9 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1227685659}
+  - {fileID: 2087222094}
+  - {fileID: 1384705548}
+  - {fileID: 1084171525}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &875378150
@@ -1462,7 +1534,7 @@ GameObject:
   - component: {fileID: 1015592916}
   - component: {fileID: 1015592915}
   - component: {fileID: 1015592914}
-  - component: {fileID: 1015592913}
+  - component: {fileID: 1015592917}
   - component: {fileID: 1015592912}
   m_Layer: 0
   m_Name: Eleve33
@@ -1508,22 +1580,6 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 0.48, y: 0.96}
   m_Direction: 0
---- !u!114 &1015592913
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1015592911}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 99675cfb33c29fe4192bc3dd4ca3a680, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  npcId: 33
-  npcName: Eleve
-  idxOffSetDialogue: 0
-  dialogueSet: []
 --- !u!114 &1015592914
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1536,7 +1592,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 260065e78f7380141a49338d753ea81a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UI: {fileID: 4643652530389774356, guid: cadccd82e06887247a3a3bec27e20a1c, type: 3}
+  UI: {fileID: 4643652530389774356, guid: ecbdcd12b26a020479147be9ebfe8f48, type: 3}
   uiOpen: 0
   SceneName: 
   nexScene: {fileID: 0}
@@ -1613,6 +1669,24 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1015592917
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1015592911}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0261c139dee0f9342be89f5e3e5d9e99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  npcId: 33
+  npcName: Eleve
+  idxOffSetDialogue: 0
+  dialogueSet:
+  - dialogueLines:
+    - Hey !
 --- !u!1 &1018048500
 GameObject:
   m_ObjectHideFlags: 0
@@ -1833,6 +1907,101 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   test: {fileID: 745427892}
   target: {fileID: 1423705738}
+--- !u!4 &1084171525 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1921437452148783518, guid: ee4dd1e779d16ac47b718f4e4f91e101, type: 3}
+  m_PrefabInstance: {fileID: 1857516632}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1199024656
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1349440603}
+    m_Modifications:
+    - target: {fileID: -31334991667796447, guid: 29ae1de120ecad9418ddf494741bca3a, type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: -31334991667796447, guid: 29ae1de120ecad9418ddf494741bca3a, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1712087800195022735, guid: 29ae1de120ecad9418ddf494741bca3a, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 597938267238691567, guid: 4e466aa062adce44f8bdca383aa38788, type: 3}
+    - target: {fileID: 7660051009266230268, guid: 29ae1de120ecad9418ddf494741bca3a, type: 3}
+      propertyPath: m_Name
+      value: Panneau Bibliotheque
+      objectReference: {fileID: 0}
+    - target: {fileID: 8557331510602295511, guid: 29ae1de120ecad9418ddf494741bca3a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -17
+      objectReference: {fileID: 0}
+    - target: {fileID: 8557331510602295511, guid: 29ae1de120ecad9418ddf494741bca3a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 7.81
+      objectReference: {fileID: 0}
+    - target: {fileID: 8557331510602295511, guid: 29ae1de120ecad9418ddf494741bca3a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8557331510602295511, guid: 29ae1de120ecad9418ddf494741bca3a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8557331510602295511, guid: 29ae1de120ecad9418ddf494741bca3a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8557331510602295511, guid: 29ae1de120ecad9418ddf494741bca3a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8557331510602295511, guid: 29ae1de120ecad9418ddf494741bca3a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8557331510602295511, guid: 29ae1de120ecad9418ddf494741bca3a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8557331510602295511, guid: 29ae1de120ecad9418ddf494741bca3a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8557331510602295511, guid: 29ae1de120ecad9418ddf494741bca3a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8728174674127034684, guid: 29ae1de120ecad9418ddf494741bca3a, type: 3}
+      propertyPath: Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8728174674127034684, guid: 29ae1de120ecad9418ddf494741bca3a, type: 3}
+      propertyPath: InPort
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8728174674127034684, guid: 29ae1de120ecad9418ddf494741bca3a, type: 3}
+      propertyPath: nexScene
+      value: 
+      objectReference: {fileID: 1339902468}
+    - target: {fileID: 8728174674127034684, guid: 29ae1de120ecad9418ddf494741bca3a, type: 3}
+      propertyPath: SceneName
+      value: Ecole_Bibliotheque
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 29ae1de120ecad9418ddf494741bca3a, type: 3}
+--- !u!4 &1199024657 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8557331510602295511, guid: 29ae1de120ecad9418ddf494741bca3a, type: 3}
+  m_PrefabInstance: {fileID: 1199024656}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1226478366
 GameObject:
   m_ObjectHideFlags: 0
@@ -2013,7 +2182,7 @@ GameObject:
   - component: {fileID: 1246662689}
   - component: {fileID: 1246662688}
   - component: {fileID: 1246662687}
-  - component: {fileID: 1246662686}
+  - component: {fileID: 1246662690}
   - component: {fileID: 1246662685}
   m_Layer: 0
   m_Name: Eleve29
@@ -2059,22 +2228,6 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 0.48, y: 0.96}
   m_Direction: 0
---- !u!114 &1246662686
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1246662684}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 99675cfb33c29fe4192bc3dd4ca3a680, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  npcId: 29
-  npcName: Eleve
-  idxOffSetDialogue: 0
-  dialogueSet: []
 --- !u!114 &1246662687
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2087,7 +2240,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 260065e78f7380141a49338d753ea81a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UI: {fileID: 4643652530389774356, guid: cadccd82e06887247a3a3bec27e20a1c, type: 3}
+  UI: {fileID: 4643652530389774356, guid: ecbdcd12b26a020479147be9ebfe8f48, type: 3}
   uiOpen: 0
   SceneName: 
   nexScene: {fileID: 0}
@@ -2164,6 +2317,24 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1246662690
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1246662684}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0261c139dee0f9342be89f5e3e5d9e99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  npcId: 29
+  npcName: Eleve
+  idxOffSetDialogue: 0
+  dialogueSet:
+  - dialogueLines:
+    - Hey !
 --- !u!1001 &1314983409
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2346,6 +2517,9 @@ Transform:
   - {fileID: 1226478367}
   - {fileID: 400698711}
   - {fileID: 296377393}
+  - {fileID: 1582651677}
+  - {fileID: 1199024657}
+  - {fileID: 1511367733}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1349440604
@@ -2456,6 +2630,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 115235319}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!4 &1384705548 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1921437452148783518, guid: ee4dd1e779d16ac47b718f4e4f91e101, type: 3}
+  m_PrefabInstance: {fileID: 2096431183}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1423705738 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5996476692092113503, guid: db719d02bdc5ceb4b8cd5e6ef99e4c86, type: 3}
@@ -2483,7 +2662,7 @@ GameObject:
   - component: {fileID: 1502182052}
   - component: {fileID: 1502182051}
   - component: {fileID: 1502182050}
-  - component: {fileID: 1502182049}
+  - component: {fileID: 1502182053}
   - component: {fileID: 1502182048}
   m_Layer: 0
   m_Name: Eleve30
@@ -2529,22 +2708,6 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 0.48, y: 0.96}
   m_Direction: 0
---- !u!114 &1502182049
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1502182047}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 99675cfb33c29fe4192bc3dd4ca3a680, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  npcId: 30
-  npcName: Eleve
-  idxOffSetDialogue: 0
-  dialogueSet: []
 --- !u!114 &1502182050
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2557,7 +2720,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 260065e78f7380141a49338d753ea81a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UI: {fileID: 4643652530389774356, guid: cadccd82e06887247a3a3bec27e20a1c, type: 3}
+  UI: {fileID: 4643652530389774356, guid: ecbdcd12b26a020479147be9ebfe8f48, type: 3}
   uiOpen: 0
   SceneName: 
   nexScene: {fileID: 0}
@@ -2634,6 +2797,114 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1502182053
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1502182047}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0261c139dee0f9342be89f5e3e5d9e99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  npcId: 30
+  npcName: Eleve
+  idxOffSetDialogue: 0
+  dialogueSet:
+  - dialogueLines:
+    - Hey !
+--- !u!1001 &1511367732
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1349440603}
+    m_Modifications:
+    - target: {fileID: -31334991667796447, guid: 29ae1de120ecad9418ddf494741bca3a, type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: -31334991667796447, guid: 29ae1de120ecad9418ddf494741bca3a, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1712087800195022735, guid: 29ae1de120ecad9418ddf494741bca3a, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 597938267238691567, guid: 4e466aa062adce44f8bdca383aa38788, type: 3}
+    - target: {fileID: 7660051009266230268, guid: 29ae1de120ecad9418ddf494741bca3a, type: 3}
+      propertyPath: m_Name
+      value: Panneau Etage2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8557331510602295511, guid: 29ae1de120ecad9418ddf494741bca3a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -17
+      objectReference: {fileID: 0}
+    - target: {fileID: 8557331510602295511, guid: 29ae1de120ecad9418ddf494741bca3a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 11.49
+      objectReference: {fileID: 0}
+    - target: {fileID: 8557331510602295511, guid: 29ae1de120ecad9418ddf494741bca3a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8557331510602295511, guid: 29ae1de120ecad9418ddf494741bca3a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8557331510602295511, guid: 29ae1de120ecad9418ddf494741bca3a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8557331510602295511, guid: 29ae1de120ecad9418ddf494741bca3a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8557331510602295511, guid: 29ae1de120ecad9418ddf494741bca3a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8557331510602295511, guid: 29ae1de120ecad9418ddf494741bca3a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8557331510602295511, guid: 29ae1de120ecad9418ddf494741bca3a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8557331510602295511, guid: 29ae1de120ecad9418ddf494741bca3a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8728174674127034684, guid: 29ae1de120ecad9418ddf494741bca3a, type: 3}
+      propertyPath: Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8728174674127034684, guid: 29ae1de120ecad9418ddf494741bca3a, type: 3}
+      propertyPath: InPort
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8728174674127034684, guid: 29ae1de120ecad9418ddf494741bca3a, type: 3}
+      propertyPath: nexScene
+      value: 
+      objectReference: {fileID: 1339902468}
+    - target: {fileID: 8728174674127034684, guid: 29ae1de120ecad9418ddf494741bca3a, type: 3}
+      propertyPath: SceneName
+      value: Ecole_Etage2
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 29ae1de120ecad9418ddf494741bca3a, type: 3}
+--- !u!4 &1511367733 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8557331510602295511, guid: 29ae1de120ecad9418ddf494741bca3a, type: 3}
+  m_PrefabInstance: {fileID: 1511367732}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1526315349
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2773,6 +3044,96 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7157599599852030764, guid: 3db41709d5a461944ac57f74b472a5ef, type: 3}
   m_PrefabInstance: {fileID: 1526315349}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1582651676
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1349440603}
+    m_Modifications:
+    - target: {fileID: -31334991667796447, guid: 29ae1de120ecad9418ddf494741bca3a, type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: -31334991667796447, guid: 29ae1de120ecad9418ddf494741bca3a, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1712087800195022735, guid: 29ae1de120ecad9418ddf494741bca3a, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 597938267238691567, guid: 4e466aa062adce44f8bdca383aa38788, type: 3}
+    - target: {fileID: 7660051009266230268, guid: 29ae1de120ecad9418ddf494741bca3a, type: 3}
+      propertyPath: m_Name
+      value: Panneau Cour
+      objectReference: {fileID: 0}
+    - target: {fileID: 8557331510602295511, guid: 29ae1de120ecad9418ddf494741bca3a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -17
+      objectReference: {fileID: 0}
+    - target: {fileID: 8557331510602295511, guid: 29ae1de120ecad9418ddf494741bca3a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.85
+      objectReference: {fileID: 0}
+    - target: {fileID: 8557331510602295511, guid: 29ae1de120ecad9418ddf494741bca3a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8557331510602295511, guid: 29ae1de120ecad9418ddf494741bca3a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8557331510602295511, guid: 29ae1de120ecad9418ddf494741bca3a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8557331510602295511, guid: 29ae1de120ecad9418ddf494741bca3a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8557331510602295511, guid: 29ae1de120ecad9418ddf494741bca3a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8557331510602295511, guid: 29ae1de120ecad9418ddf494741bca3a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8557331510602295511, guid: 29ae1de120ecad9418ddf494741bca3a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8557331510602295511, guid: 29ae1de120ecad9418ddf494741bca3a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8728174674127034684, guid: 29ae1de120ecad9418ddf494741bca3a, type: 3}
+      propertyPath: Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8728174674127034684, guid: 29ae1de120ecad9418ddf494741bca3a, type: 3}
+      propertyPath: InPort
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8728174674127034684, guid: 29ae1de120ecad9418ddf494741bca3a, type: 3}
+      propertyPath: nexScene
+      value: 
+      objectReference: {fileID: 1339902468}
+    - target: {fileID: 8728174674127034684, guid: 29ae1de120ecad9418ddf494741bca3a, type: 3}
+      propertyPath: SceneName
+      value: Ecole_Cour
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 29ae1de120ecad9418ddf494741bca3a, type: 3}
+--- !u!4 &1582651677 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8557331510602295511, guid: 29ae1de120ecad9418ddf494741bca3a, type: 3}
+  m_PrefabInstance: {fileID: 1582651676}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1627345107
 GameObject:
   m_ObjectHideFlags: 0
@@ -2784,7 +3145,7 @@ GameObject:
   - component: {fileID: 1627345112}
   - component: {fileID: 1627345111}
   - component: {fileID: 1627345110}
-  - component: {fileID: 1627345109}
+  - component: {fileID: 1627345113}
   - component: {fileID: 1627345108}
   m_Layer: 0
   m_Name: Eleve28
@@ -2792,7 +3153,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!70 &1627345108
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -2830,22 +3191,6 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 0.48, y: 0.96}
   m_Direction: 0
---- !u!114 &1627345109
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1627345107}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 99675cfb33c29fe4192bc3dd4ca3a680, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  npcId: 28
-  npcName: Eleve
-  idxOffSetDialogue: 0
-  dialogueSet: []
 --- !u!114 &1627345110
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2858,7 +3203,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 260065e78f7380141a49338d753ea81a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UI: {fileID: 4643652530389774356, guid: cadccd82e06887247a3a3bec27e20a1c, type: 3}
+  UI: {fileID: 4643652530389774356, guid: ecbdcd12b26a020479147be9ebfe8f48, type: 3}
   uiOpen: 0
   SceneName: 
   nexScene: {fileID: 0}
@@ -2935,6 +3280,24 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1627345113
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1627345107}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0261c139dee0f9342be89f5e3e5d9e99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  npcId: 28
+  npcName: Eleve
+  idxOffSetDialogue: 0
+  dialogueSet:
+  - dialogueLines:
+    - Hey !
 --- !u!1 &1653498324
 GameObject:
   m_ObjectHideFlags: 0
@@ -2946,7 +3309,7 @@ GameObject:
   - component: {fileID: 1653498329}
   - component: {fileID: 1653498328}
   - component: {fileID: 1653498327}
-  - component: {fileID: 1653498326}
+  - component: {fileID: 1653498330}
   - component: {fileID: 1653498325}
   m_Layer: 0
   m_Name: Eleve32
@@ -2992,22 +3355,6 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 0.48, y: 0.96}
   m_Direction: 0
---- !u!114 &1653498326
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1653498324}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 99675cfb33c29fe4192bc3dd4ca3a680, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  npcId: 32
-  npcName: Eleve
-  idxOffSetDialogue: 0
-  dialogueSet: []
 --- !u!114 &1653498327
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3020,7 +3367,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 260065e78f7380141a49338d753ea81a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UI: {fileID: 4643652530389774356, guid: cadccd82e06887247a3a3bec27e20a1c, type: 3}
+  UI: {fileID: 4643652530389774356, guid: ecbdcd12b26a020479147be9ebfe8f48, type: 3}
   uiOpen: 0
   SceneName: 
   nexScene: {fileID: 0}
@@ -3097,6 +3444,24 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1653498330
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1653498324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0261c139dee0f9342be89f5e3e5d9e99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  npcId: 32
+  npcName: Eleve
+  idxOffSetDialogue: 0
+  dialogueSet:
+  - dialogueLines:
+    - Hey !
 --- !u!1 &1821632958
 GameObject:
   m_ObjectHideFlags: 0
@@ -3108,15 +3473,16 @@ GameObject:
   - component: {fileID: 1821632961}
   - component: {fileID: 1821632960}
   - component: {fileID: 1821632959}
-  - component: {fileID: 1821632962}
   - component: {fileID: 1821632963}
+  - component: {fileID: 1821632965}
+  - component: {fileID: 1821632964}
   m_Layer: 0
   m_Name: Surveillant24
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1821632959
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3129,11 +3495,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 260065e78f7380141a49338d753ea81a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UI: {fileID: 4643652530389774356, guid: cadccd82e06887247a3a3bec27e20a1c, type: 3}
+  UI: {fileID: 4643652530389774356, guid: ecbdcd12b26a020479147be9ebfe8f48, type: 3}
   uiOpen: 0
   SceneName: 
   nexScene: {fileID: 0}
-  Type: 3
+  Type: 2
   activeUI: {fileID: 0}
   InPort: 1
   capitainPort: {fileID: 0}
@@ -3206,28 +3572,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1821632962
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1821632958}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 41e7b3ea85999d5498cfc200574d2c2a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  npcId: 24
-  npcName: Surveillant
-  idxOffSetDialogue: 0
-  dialogueSet:
-  - dialogueLines: []
-  - dialogueLines: []
-  - dialogueLines: []
-  idxMiniGameSet: 1
-  MiniGameName: Quiz
-  loadNexScene: {fileID: 1339902468}
 --- !u!70 &1821632963
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -3265,6 +3609,63 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 0.48, y: 0.96}
   m_Direction: 0
+--- !u!114 &1821632964
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1821632958}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 040e77f21c8e7fd47b158ee4d19f579e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1821632965
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1821632958}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0261c139dee0f9342be89f5e3e5d9e99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  npcId: 24
+  npcName: Suveillant
+  idxOffSetDialogue: 0
+  dialogueSet:
+  - dialogueLines:
+    - "Bonjour et Bienvenue dans notre \xE9cole"
+    - "Dis moi, pourquoi tu as ramen\xE9 ce monstre ici tu veux mettre en danger
+      les enfants. Il est dangereux, tu as bien vu ce qu'il a fait sur l'\xEEle principale
+      !"
+    - "Comment tu arrive \xE0 le contenir? Bon si tu le dis, mais tu seras responsable
+      si il arrive malheur au \xE9l\xE8ve.!"
+    - "Mmmh ... Tu cherches \xE0 rentrer chez toi mais ton bateau et en salle \xE9tat,
+      je vois."
+    - "J'ai peut-\xEAtre quelque chose qui pourrai t'int\xE9resser mais j'aimerai
+      avant que tu fasse un petit test."
+    - "Va voir le professeur, c'est lui qui te fera faire le test. Tu le trouvera
+      au 2\xE8me \xE9tage de l'\xE9cole."
+  - dialogueLines:
+    - "Le professeur est au 2\xE8me \xE9tage, il doit t'attendre pour le test."
+  - dialogueLines:
+    - 'Bien je vois que tu as fait le test. Bien, je vais te donner se que je t''ai
+      promis ce n''est pas grand chose mais j''imagine que tu ne diras pas non.
+
+'
+    - "Tu as l'aire de quelqu'un de bien, j'aimerai te demande une faveur si cela
+      ne te d\xE9range pas.\n"
+    - "J'ai entendu que mon fr\xE8re est en train de pr\xE9parer un tournoi mais
+      il n'a personne pour tester les diff\xE9rentes activit\xE9s tu ne pourrais
+      pas y aller pour moi ?\n"
+    - "De mon cot\xE9 tu m'as donner envie de retourn\xE9 sur l'\xEEle principale,
+      je vais aller les aider pour la r\xE9paration du village tu pourras me retrouver
+      l\xE0-bas si tu veux.\n"
+    - "Allez \xE0 une prochaine fois !"
 --- !u!1 &1837882127
 GameObject:
   m_ObjectHideFlags: 0
@@ -3284,7 +3685,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!70 &1837882128
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -3334,7 +3735,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 260065e78f7380141a49338d753ea81a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UI: {fileID: 4643652530389774356, guid: cadccd82e06887247a3a3bec27e20a1c, type: 3}
+  UI: {fileID: 4643652530389774356, guid: ecbdcd12b26a020479147be9ebfe8f48, type: 3}
   uiOpen: 0
   SceneName: 
   nexScene: {fileID: 0}
@@ -3420,7 +3821,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1837882127}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 99675cfb33c29fe4192bc3dd4ca3a680, type: 3}
+  m_Script: {fileID: 11500000, guid: 0261c139dee0f9342be89f5e3e5d9e99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   npcId: 26
@@ -3429,6 +3830,67 @@ MonoBehaviour:
   dialogueSet:
   - dialogueLines:
     - Hey !
+--- !u!1001 &1857516632
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 875378149}
+    m_Modifications:
+    - target: {fileID: 1921437452148783518, guid: ee4dd1e779d16ac47b718f4e4f91e101, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.72
+      objectReference: {fileID: 0}
+    - target: {fileID: 1921437452148783518, guid: ee4dd1e779d16ac47b718f4e4f91e101, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.49
+      objectReference: {fileID: 0}
+    - target: {fileID: 1921437452148783518, guid: ee4dd1e779d16ac47b718f4e4f91e101, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1921437452148783518, guid: ee4dd1e779d16ac47b718f4e4f91e101, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1921437452148783518, guid: ee4dd1e779d16ac47b718f4e4f91e101, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1921437452148783518, guid: ee4dd1e779d16ac47b718f4e4f91e101, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1921437452148783518, guid: ee4dd1e779d16ac47b718f4e4f91e101, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1921437452148783518, guid: ee4dd1e779d16ac47b718f4e4f91e101, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1921437452148783518, guid: ee4dd1e779d16ac47b718f4e4f91e101, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1921437452148783518, guid: ee4dd1e779d16ac47b718f4e4f91e101, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7167352824261831995, guid: ee4dd1e779d16ac47b718f4e4f91e101, type: 3}
+      propertyPath: m_Name
+      value: Spawn (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8985979813463147583, guid: ee4dd1e779d16ac47b718f4e4f91e101, type: 3}
+      propertyPath: spaw
+      value: 15
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ee4dd1e779d16ac47b718f4e4f91e101, type: 3}
 --- !u!1 &2055514535
 GameObject:
   m_ObjectHideFlags: 0
@@ -3526,6 +3988,72 @@ Transform:
   m_Children: []
   m_Father: {fileID: 115235319}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &2087222094 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1921437452148783518, guid: ee4dd1e779d16ac47b718f4e4f91e101, type: 3}
+  m_PrefabInstance: {fileID: 822827566}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &2096431183
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 875378149}
+    m_Modifications:
+    - target: {fileID: 1921437452148783518, guid: ee4dd1e779d16ac47b718f4e4f91e101, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.72
+      objectReference: {fileID: 0}
+    - target: {fileID: 1921437452148783518, guid: ee4dd1e779d16ac47b718f4e4f91e101, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.49
+      objectReference: {fileID: 0}
+    - target: {fileID: 1921437452148783518, guid: ee4dd1e779d16ac47b718f4e4f91e101, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1921437452148783518, guid: ee4dd1e779d16ac47b718f4e4f91e101, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1921437452148783518, guid: ee4dd1e779d16ac47b718f4e4f91e101, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1921437452148783518, guid: ee4dd1e779d16ac47b718f4e4f91e101, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1921437452148783518, guid: ee4dd1e779d16ac47b718f4e4f91e101, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1921437452148783518, guid: ee4dd1e779d16ac47b718f4e4f91e101, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1921437452148783518, guid: ee4dd1e779d16ac47b718f4e4f91e101, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1921437452148783518, guid: ee4dd1e779d16ac47b718f4e4f91e101, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7167352824261831995, guid: ee4dd1e779d16ac47b718f4e4f91e101, type: 3}
+      propertyPath: m_Name
+      value: Spawn (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8985979813463147583, guid: ee4dd1e779d16ac47b718f4e4f91e101, type: 3}
+      propertyPath: spaw
+      value: 13
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ee4dd1e779d16ac47b718f4e4f91e101, type: 3}
 --- !u!1 &2123713040
 GameObject:
   m_ObjectHideFlags: 0
@@ -3726,7 +4254,7 @@ GameObject:
   - component: {fileID: 2143558639}
   - component: {fileID: 2143558638}
   - component: {fileID: 2143558637}
-  - component: {fileID: 2143558636}
+  - component: {fileID: 2143558640}
   - component: {fileID: 2143558635}
   m_Layer: 0
   m_Name: Eleve27
@@ -3734,7 +4262,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!70 &2143558635
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -3772,22 +4300,6 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 0.48, y: 0.96}
   m_Direction: 0
---- !u!114 &2143558636
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2143558634}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 99675cfb33c29fe4192bc3dd4ca3a680, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  npcId: 27
-  npcName: Eleve
-  idxOffSetDialogue: 0
-  dialogueSet: []
 --- !u!114 &2143558637
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3800,7 +4312,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 260065e78f7380141a49338d753ea81a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UI: {fileID: 4643652530389774356, guid: cadccd82e06887247a3a3bec27e20a1c, type: 3}
+  UI: {fileID: 4643652530389774356, guid: ecbdcd12b26a020479147be9ebfe8f48, type: 3}
   uiOpen: 0
   SceneName: 
   nexScene: {fileID: 0}
@@ -3877,6 +4389,24 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2143558640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2143558634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0261c139dee0f9342be89f5e3e5d9e99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  npcId: 27
+  npcName: Eleve
+  idxOffSetDialogue: 0
+  dialogueSet:
+  - dialogueLines:
+    - Hey !
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
