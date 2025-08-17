@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class Sauvegarde_Minigame : MonoBehaviour
 {
-    private Dictionary<string, TemplateSaveMinigame> _statMinigame;
+    private SerializableDictionary<string, TemplateSaveMinigame> _statMinigame;
     private string _jsonPath;
     string sceneName;
     public Score score;
