@@ -82,7 +82,7 @@ public class QuestManager
     public static void NextQuest()
     {
         PlayerPrefs.SetInt(namePlayerPrefQuest, PlayerPrefs.GetInt(namePlayerPrefQuest) + 1);
-        Debug.Log("Nm Quest  ==  " + namePlayerPrefQuest);
+        Debug.Log("Nm Quest  ==  " + PlayerPrefs.GetInt(namePlayerPrefQuest));
     }
 
     void InitQuest(QUESTS quest, Sprite sprite = null)
