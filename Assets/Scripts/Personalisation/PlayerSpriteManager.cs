@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.Android;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -17,13 +19,15 @@ public class PlayerSpriteManager : MonoBehaviour
 
     public GameObject Diabete;
 
+    public TextMeshProUGUI TextQuestTMP; //TODO a modifier pour le mettre dasn les scene
+
     public bool inProfil = false;
 
     private void Start()
     {
         if (Diabete != null)
         {
-            if (QuestManager.GetPlayerPref() >= QuestManager.GetQUESTS(QUESTS.DemandeCapitaine))
+            if (QuestManager.GetCurrentQuest() >= QuestManager.GetQUESTS(QUESTS.DemandeCapitaine))
                 Diabete.SetActive(true);
         }
 
@@ -48,24 +52,31 @@ public class PlayerSpriteManager : MonoBehaviour
         }
         else if(inProfil)
         {
-            Corps.GetComponent<Image>().sprite = playerData.Corps;
-            Cheveux.GetComponent<Image>().sprite = playerData.Cheveux;
-            AccessoirTete.GetComponent<Image>().sprite = playerData.AccessoirTete;
-            Haut.GetComponent<Image>().sprite = playerData.Haut;
-            Bas.GetComponent<Image>().sprite = playerData.Bas;
-            Chaussure.GetComponent<Image>().sprite = playerData.Chaussure;
+            Corps.GetComponent<Image>().sprite = playerData.GetSprite(PART.Corps);
+            Cheveux.GetComponent<Image>().sprite = playerData.GetSprite(PART.Cheveux);
+            AccessoirTete.GetComponent<Image>().sprite = playerData.GetSprite(PART.AccessoirTete);
+            Haut.GetComponent<Image>().sprite = playerData.GetSprite(PART.Haut);
+            Bas.GetComponent<Image>().sprite = playerData.GetSprite(PART.Bas);
+            Chaussure.GetComponent<Image>().sprite = playerData.GetSprite(PART.Chaussure);
+        }
+        else
+        {
+            UpdateTextQuest();
         }
     }
 
     private void Update()
     {
+
+        UpdateTextQuest();
+
         if (Diabete == null)
             return;
 
         if (Diabete.activeSelf)
             return;
 
-        if (QuestManager.GetPlayerPref() >= QuestManager.GetQUESTS(QUESTS.DemandeCapitaine))
+        if (QuestManager.GetCurrentQuest() >= QuestManager.GetQUESTS(QUESTS.DemandeCapitaine))
             Diabete.SetActive(true);
 
     }
@@ -108,5 +119,55 @@ public class PlayerSpriteManager : MonoBehaviour
                 playerData.GetSprite(PART.Haut) != null ||
                 playerData.GetSprite(PART.Bas) != null ||
                 playerData.GetSprite(PART.Chaussure) != null;
+    }
+
+
+    void UpdateTextQuest()
+    {
+        switch(QuestManager.GetCurrentQuest())
+        {
+            case (int)QUESTS.Introduction:
+                TextQuestTMP.text = "Introduction";
+                break;
+            case (int)QUESTS.ReparationPhare:
+                TextQuestTMP.text = "ReparationPhare";
+                break;
+            case (int)QUESTS.R_Ressoucre:
+                TextQuestTMP.text = "R_Ressoucre";
+                break;
+            case (int)QUESTS.Relation:
+                TextQuestTMP.text = "Relation";
+                break;
+            case (int)QUESTS.Phare:
+                TextQuestTMP.text = "Phare";
+                break;
+            case (int)QUESTS.Maison:
+                TextQuestTMP.text = "Maison";
+                break;
+            case (int)QUESTS.Hopital:
+                TextQuestTMP.text = "Hopital";
+                break;
+            case (int)QUESTS.Sport:
+                TextQuestTMP.text = "Sport";
+                break;
+            case (int)QUESTS.Ecole:
+                TextQuestTMP.text = "Ecole";
+                break;
+            case (int)QUESTS.Alimentation:
+                TextQuestTMP.text = "Alimentation";
+                break;
+            case (int)QUESTS.S_Ressource:
+                TextQuestTMP.text = "S_Ressource";
+                break;
+            case (int)QUESTS.A_Ressource:
+                TextQuestTMP.text = "A_Ressource";
+                break;
+            case (int)QUESTS.E_Ressource:
+                TextQuestTMP.text = "E_Ressource";
+                break;
+            case (int)QUESTS.DemandeCapitaine:
+                TextQuestTMP.text = "DemandeCapitaine";
+                break;
+        }
     }
 }

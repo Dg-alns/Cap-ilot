@@ -36,7 +36,8 @@ public class Ecole_Professeur : MonoBehaviour
 
         ForceDialogueProf();
 
-        QuestManager.NextQuest();
+        //QuestManager.NextQuest();
+        QuestManager.ValidateQuest(QUESTS.Ecole);
     }
    
     void ForceDialogueProf()

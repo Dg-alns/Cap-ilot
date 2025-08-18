@@ -13,7 +13,7 @@ public class Sauvegarde_Minigame : MonoBehaviour
     bool _state = true;
     [SerializeField] Sauvegarde Sauvegarde;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         sceneName = SceneManager.GetActiveScene().name;
         _jsonPath = Application.dataPath + "/Json/Save.json";
@@ -68,6 +68,10 @@ public class Sauvegarde_Minigame : MonoBehaviour
 
     public int GetnbStars(string sceneName)
     {
+        Debug.Log("KEy " + sceneName);
+        Debug.Log("State " + _statMinigame.ContainsKey(sceneName));
+
+
         if(_statMinigame.ContainsKey(sceneName))
             return _statMinigame[sceneName]._nbStar;
         return 0;

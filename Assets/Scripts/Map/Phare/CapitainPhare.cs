@@ -15,13 +15,17 @@ public class CapitainPhare : MonoBehaviour
             PlayerPrefs.SetInt("ReparationPhare", 0);
         }
 
+        if (PlayerPrefs.GetInt("ReparationPhare") == 1)
+            QuestManager.ValidateQuest(QUESTS.ReparationPhare);
+
+
         ActiveCapitain();
         ActiveSetOffDialogue();
     }
 
     void ActiveCapitain()
     {
-        if (QuestManager.GetPlayerPref() >= QuestManager.GetQUESTS(QUESTS.Maison))
+        if (QuestManager.GetCurrentQuest() >= QuestManager.GetQUESTS(QUESTS.Maison) || PlayerPrefs.GetInt("ReparationPhare") == 1)
         {
             dialogueCapitain.SetActive(true);
             return;
@@ -38,15 +42,15 @@ public class CapitainPhare : MonoBehaviour
         if (dialogueCapitain == null)
             return;
 
-        if(QuestManager.GetPlayerPref() == QuestManager.GetQUESTS(QUESTS.DemandeCapitaine))
+        if(QuestManager.GetCurrentQuest() == QuestManager.GetQUESTS(QUESTS.DemandeCapitaine))
         {
             dialogueCapitain.GetComponent<NPC>().idxOffSetDialogue = 1;
         }
-        if(QuestManager.GetPlayerPref() == QuestManager.GetQUESTS(QUESTS.Phare))
+        if(QuestManager.GetCurrentQuest() == QuestManager.GetQUESTS(QUESTS.Phare))
         {
             dialogueCapitain.GetComponent<NPC>().idxOffSetDialogue = 2;
         }
-        if(QuestManager.GetPlayerPref() > QuestManager.GetQUESTS(QUESTS.Phare))
+        if(QuestManager.GetCurrentQuest() > QuestManager.GetQUESTS(QUESTS.Phare))
         {
             dialogueCapitain.GetComponent<NPC>().idxOffSetDialogue = 3;
         }

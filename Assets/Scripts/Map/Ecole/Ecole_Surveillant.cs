@@ -39,7 +39,7 @@ public class Ecole_Surveillant : MonoBehaviour
                 break;
 
             case (int)OffSet_Dialogue_Surveillant.WaitingForTest:
-                if (QuestManager.GetPlayerPref() == QuestManager.GetQUESTS(QUESTS.E_Ressource))
+                if (QuestManager.GetCurrentQuest() == QuestManager.GetQUESTS(QUESTS.E_Ressource))
                 {
                     npc.idxOffSetDialogue = (int)OffSet_Dialogue_Surveillant.GiveRessources;
                     npc.SetPLayerPrefs(npc.idxOffSetDialogue);

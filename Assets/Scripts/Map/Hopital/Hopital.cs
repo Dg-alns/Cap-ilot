@@ -8,7 +8,7 @@ public class Hopital : MonoBehaviour
 
     void Start()
     {
-        if(QuestManager.GetPlayerPref() >= QuestManager.GetQUESTS(QUESTS.Phare))
+        if(QuestManager.GetCurrentQuest() >= QuestManager.GetQUESTS(QUESTS.Phare))
             gameObject.SetActive(false);
     }
 

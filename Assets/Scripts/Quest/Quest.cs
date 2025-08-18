@@ -1,5 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Data;
+using Unity.Services.Friends.Models;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Rendering;
@@ -7,7 +10,7 @@ using UnityEngine.U2D;
 
 public enum QUESTS
 {
-    None,
+    Introduction,
     ReparationPhare,
     Maison,
     DemandeCapitaine,
@@ -26,7 +29,7 @@ public enum QUESTS
 [System.Serializable]
 public class QuestManager
 {
-    public List<Quest> quests;
+    public static List<Quest> quests;
     public SerializableDictionary<int, bool> statusDict;
     private Saving SaveData { get; set; }
 
@@ -37,22 +40,33 @@ public class QuestManager
         quests = new List<Quest>();
         statusDict = new SerializableDictionary<int, bool>();
 
-        InitQuest(QUESTS.None);
-        InitQuest(QUESTS.ReparationPhare);
+        quests.Add(new GlobalQuest((int)QUESTS.Introduction, new ExampleReward(null, QUESTS.Introduction.ToString())));
 
-        //quests.Add(new PhareQuest((int)QUESTS.Maison, new ExampleReward(null, QUESTS.Maison.ToString())));
-        InitQuest(QUESTS.Maison);
-        InitQuest(QUESTS.DemandeCapitaine);
-        InitQuest(QUESTS.Hopital);
-        InitQuest(QUESTS.Phare);
-        InitQuest(QUESTS.Alimentation);
-        InitQuest(QUESTS.A_Ressource);
-        InitQuest(QUESTS.Ecole);
-        InitQuest(QUESTS.E_Ressource);
-        InitQuest(QUESTS.Sport);
-        InitQuest(QUESTS.S_Ressource);
-        InitQuest(QUESTS.Relation);
-        InitQuest(QUESTS.R_Ressoucre);
+        quests.Add(new GlobalQuest((int)QUESTS.ReparationPhare, new ExampleReward(null, QUESTS.ReparationPhare.ToString())));
+
+        quests.Add(new GlobalQuest((int)QUESTS.Maison, new ExampleReward(null, QUESTS.Maison.ToString())));
+
+        quests.Add(new GlobalQuest((int)QUESTS.DemandeCapitaine, new ExampleReward(null, QUESTS.DemandeCapitaine.ToString())));
+
+        quests.Add(new GlobalQuest((int)QUESTS.Hopital, new ExampleReward(null, QUESTS.Hopital.ToString())));
+
+        quests.Add(new GlobalQuest((int)QUESTS.Phare, new ExampleReward(null, QUESTS.Phare.ToString())));
+
+        quests.Add(new GlobalQuest((int)QUESTS.Alimentation, new ExampleReward(null, QUESTS.Alimentation.ToString())));
+
+        quests.Add(new RessourceQuest((int)QUESTS.A_Ressource, new ExampleReward(null, QUESTS.A_Ressource.ToString())));  // Replace Null
+
+        quests.Add(new GlobalQuest((int)QUESTS.Ecole, new ExampleReward(null, QUESTS.Ecole.ToString())));
+
+        quests.Add(new RessourceQuest((int)QUESTS.E_Ressource, new ExampleReward(null, QUESTS.E_Ressource.ToString())));  // Replace Null
+
+        quests.Add(new GlobalQuest((int)QUESTS.Sport, new ExampleReward(null, QUESTS.Sport.ToString())));
+
+        quests.Add(new RessourceQuest((int)QUESTS.S_Ressource, new ExampleReward(null, QUESTS.S_Ressource.ToString())));  // Replace Null
+
+        quests.Add(new GlobalQuest((int)QUESTS.Relation, new ExampleReward(null, QUESTS.Relation.ToString())));
+
+        quests.Add(new RessourceQuest((int)QUESTS.R_Ressoucre, new ExampleReward(null, QUESTS.R_Ressoucre.ToString())));  // Replace Null
 
 
         //add all quests
@@ -62,44 +76,24 @@ public class QuestManager
             {
                 statusDict[quest.id] = quest.status;
             }
-            else
-            {
-                int tmpId = quest.id;
-                while (true)
-                {
-
-                    if (!statusDict.ContainsKey(tmpId))
-                    {
-                        statusDict[tmpId] = quest.status;
-                        break;
-                    }
-                    tmpId++;
-
-                    if (tmpId > statusDict.Count)
-                        break;
-                }
-            }
+            
         }
-    }
 
-    
+        Debug.Log("Size Status " + statusDict.Count);
 
-    public static void NextQuest()
+
+    }    
+
+    public static void NextQuest(int CurrentQuest)
     {
-        PlayerPrefs.SetInt(namePlayerPrefQuest, PlayerPrefs.GetInt(namePlayerPrefQuest) + 1);
+        PlayerPrefs.SetInt(namePlayerPrefQuest, CurrentQuest + 1);
         Debug.Log("Nm Quest  ==  " + PlayerPrefs.GetInt(namePlayerPrefQuest));
     }
 
-    void InitQuest(QUESTS quest, Sprite sprite = null)
-    {
-        quests.Add(new ExampleQuest((int)quest, new ExampleReward(sprite, quest.ToString())));
-    }
-
-    public static int GetPlayerPref() 
+    public static int GetCurrentQuest() 
     {
         if (PlayerPrefs.HasKey(namePlayerPrefQuest) == false)
         {
-            Debug.Log("re");
             PlayerPrefs.SetInt(namePlayerPrefQuest, 0);
         }
 
@@ -107,10 +101,23 @@ public class QuestManager
     }
 
     public static int GetQUESTS(QUESTS quest) { return (int)quest; }
-    public static void SetQuest(QUESTS quest) //TODO for debug game
+
+    public static void SetQuest(int quest)
     {
 
-        PlayerPrefs.SetInt(namePlayerPrefQuest, (int)quest);
+        PlayerPrefs.SetInt(namePlayerPrefQuest, quest);
+    }
+
+    public List<Quest> GetQuests() { return quests; }
+
+
+
+    public static void ValidateQuest(QUESTS quest)
+    {
+        Debug.Log("Validate");
+        Debug.Log((int)quest);
+
+        quests[(int)quest].status = true;
     }
 }
 
@@ -148,25 +155,38 @@ public class ExampleQuest : Quest
     }
 }
 
-//public class PhareQuest : Quest
-//{
-//    public PhareQuest(int id, Reward reward) : base(id, reward)
-//    {
-//    }
-//    override public bool CheckCondition(Saving Data)
-//    {
+public class GlobalQuest : Quest
+{
+    public GlobalQuest(int id, Reward reward) : base(id, reward)
+    {
+    }
+    override public bool CheckCondition(Saving Data)
+    {
+        Debug.Log("CurentQuest " + QuestManager.GetCurrentQuest());
+        Debug.Log("id " + id);
+        Debug.Log("status " + status);
 
-//        if (PlayerPrefs.GetInt("ReparationPhare") == 1)
-//        {
-//            Debug.Log("Condition True Next Quest");
-//            return true;
-//        }
-//        //    if (Data.profile.Username != "")
-//        //{
-//        //    status = true;
-//        //    reward.Obtain(Data);
-//        //    return true;
-//        //}
-//        return false;
-//    }
-//}
+        if (QuestManager.GetCurrentQuest() == id && status)
+            return true;
+
+
+        return false;
+    }
+}
+
+public class RessourceQuest : Quest
+{
+    public RessourceQuest(int id, Reward reward) : base(id, reward)
+    {
+    }
+    override public bool CheckCondition(Saving Data)
+    {
+        if (Data.profile.Username != "")
+        {
+            status = true;
+            reward.Obtain(Data);
+            return true;
+        }
+        return false;
+    }
+}

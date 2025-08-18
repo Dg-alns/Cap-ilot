@@ -36,26 +36,26 @@ public class PortIlePrincipale : MonoBehaviour
 
     private void Start()
     {
-        if (QuestManager.GetPlayerPref() >= QuestManager.GetQUESTS(QUESTS.ReparationPhare))
+        if (QuestManager.GetCurrentQuest() >= QuestManager.GetQUESTS(QUESTS.ReparationPhare))
         {
             ActivePhare();
         }
-        if (QuestManager.GetPlayerPref() >= QuestManager.GetQUESTS(QUESTS.Maison))
+        if (QuestManager.GetCurrentQuest() >= QuestManager.GetQUESTS(QUESTS.Maison))
         {
             ActiveVillage();
         }
 
-        if (QuestManager.GetPlayerPref() >= QuestManager.GetQUESTS(QUESTS.Hopital))
+        if (QuestManager.GetCurrentQuest() >= QuestManager.GetQUESTS(QUESTS.Hopital))
         {
             ActiveBateau();
         }
 
 
-        if (QuestManager.GetPlayerPref() == QuestManager.GetQUESTS(QUESTS.Hopital))
+        if (QuestManager.GetCurrentQuest() == QuestManager.GetQUESTS(QUESTS.Hopital))
         {
             Hopital.CanGotoIle();
         }
-        if (QuestManager.GetPlayerPref() > QuestManager.GetQUESTS(QUESTS.Phare))
+        if (QuestManager.GetCurrentQuest() > QuestManager.GetQUESTS(QUESTS.Phare))
         {
             Alimentation.CanGotoIle();
         }

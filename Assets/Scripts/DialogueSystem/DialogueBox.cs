@@ -128,7 +128,8 @@ public class DialogueBox : MonoBehaviour
 
         if (npcManager.dialogueNpc.npcName.Equals("Diabete"))
         {
-            QuestManager.NextQuest();
+            //QuestManager.NextQuest();
+            QuestManager.ValidateQuest(QUESTS.Maison);
             npcManager.dialogueNpc.gameObject.GetComponent<BoxCollider2D>().enabled = false;
         }
         npcManager.ResetDialogueNPC();

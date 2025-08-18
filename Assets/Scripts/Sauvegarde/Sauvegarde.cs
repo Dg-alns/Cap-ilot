@@ -53,6 +53,16 @@ public class Sauvegarde : MonoBehaviour
             questManager = save.questManager;
             StatMinigame = save.statMinigame;
 
+            foreach (Quest quest in save.questManager.GetQuests())
+            {
+                if (save.questManager.statusDict[quest.id] == false)
+                {
+                    if (QuestManager.GetCurrentQuest() != quest.id)
+                        QuestManager.SetQuest(quest.id);
+                    return;
+                }
+            }
+
             Debug.Log("ddddd " + StatMinigame);
             if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("Journal"))
             {
@@ -95,16 +105,20 @@ public class Sauvegarde : MonoBehaviour
     public void Update()
     {
         Saving save = new Saving(journal, profile, questManager, StatMinigame);
-        foreach (Quest quest in questManager.quests)
+
+        foreach (Quest quest in save.questManager.GetQuests())
         {
-            if (questManager.statusDict[quest.id] == false)
+            if (save.questManager.statusDict[quest.id] == false)
             {
+                Debug.Log("ID == " +  quest.id);
                 if (quest.CheckCondition(save))
                 {
                     questManager.statusDict[quest.id] = true;
+                    QuestManager.NextQuest(quest.id);
                     Save(save);
                     Destroy(quest.reward.GO, 3);
                 }
+                return; // Stop au premier false
             }
         }
     }
@@ -138,6 +152,15 @@ public class Sauvegarde : MonoBehaviour
 
     public void Save (Saving save)
     {
+        Debug.Log("SAVEEEEEEEEEEEE");
+        Debug.Log("Quest " + save.questManager.GetQuests().Count);
+        Debug.Log("Quest " + save.questManager.statusDict.Count);
+        for (int i = 0; i < save.questManager.statusDict.Count; i++)
+        {
+            Debug.Log(i + " State " + save.questManager.statusDict[i]);
+        }
+
+
         journal = save.journal;
         profile = save.profile;
         questManager = save.questManager;

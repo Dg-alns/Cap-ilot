@@ -28,7 +28,7 @@ public class LoadNexScene : MonoBehaviour
             Debug.Log("All DELet");
             PlayerPrefs.DeleteAll();
             //DeletPos();
-            QuestManager.SetQuest(QUESTS.Hopital);
+            //QuestManager.SetQuest((int)QUESTS.Maison);
             tools.DontDestroyTools();
             string scene = PlayerPrefs.HasKey("SceneName") ? PlayerPrefs.GetString("SceneName") : "Personalisation";
             StartCoroutine(_NextSceneData.NextScene(scene));
@@ -111,7 +111,7 @@ public class LoadNexScene : MonoBehaviour
         if (_NextSceneData.GetNextSceneDestination().Equals("MiniGame_LightHouse"))
         {
             PlayerPrefs.SetInt("ReparationPhare", 1);
-            QuestManager.NextQuest(); // TODO UPdate
+            Debug.Log("ReparationPhare");
         }
 
         if (_NextSceneData.GetNextSceneDestination().Equals("MiniGame_ObjCachee"))
@@ -120,7 +120,9 @@ public class LoadNexScene : MonoBehaviour
         if (_NextSceneData.GetNextSceneDestination().Equals("MiniGame_InjectionInsuline") && Couloir.GetStateCouloir() != 1)
         {
             Couloir.SetStateCouloir(1);
-            QuestManager.NextQuest();
+            //QuestManager.NextQuest();
+            Debug.Log("Hopital");
+            QuestManager.ValidateQuest(QUESTS.Hopital);
         }
         
 

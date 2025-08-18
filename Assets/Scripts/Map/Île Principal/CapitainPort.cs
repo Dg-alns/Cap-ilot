@@ -20,7 +20,7 @@ public class CapitainPort : MonoBehaviour
 
     private void Start()
     {
-        if (QuestManager.GetPlayerPref() >= QuestManager.GetQUESTS(QUESTS.ReparationPhare))
+        if (QuestManager.GetCurrentQuest() >= QuestManager.GetQUESTS(QUESTS.ReparationPhare))
         {
             gameObject.SetActive(false);
         }
