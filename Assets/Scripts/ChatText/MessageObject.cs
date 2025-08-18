@@ -35,15 +35,15 @@ public class MessageObject : MonoBehaviour
         {
             //MessageText.alignment = TextAnchor.MiddleRight;
             MessageText.alignment = TextAlignmentOptions.Right;
-            MessageText.text = string.Format($"{message.MessageText} :<color=blue>{message.SenderDisplayName} </color>\n<color=#5A5A5A><size=30>{editedText}{message.ReceivedTime}</size></color>");
+            MessageText.text = string.Format($"{message.MessageText} :<color=blue>{message.SenderDisplayName} </color>\n<color=#5A5A5A><size=20>{editedText}{message.ReceivedTime.Hour}{editedText}{":"}{editedText}{message.ReceivedTime.Minute}</size></color>");
         }
         else
         {
             //MessageText.alignment = TextAnchor.MiddleLeft;
             MessageText.alignment = TextAlignmentOptions.Left;
             MessageText.text = string.IsNullOrEmpty(message.ChannelName)
-                ? string.Format($"<color=purple>{message.SenderDisplayName} </color>: {message.MessageText}\n<color=#5A5A5A><size=30>{editedText}{message.ReceivedTime}</size></color>") // DM
-                : string.Format($"<color=green>{message.SenderDisplayName} </color>: {message.MessageText}\n<color=#5A5A5A><size=30>{editedText}{message.ReceivedTime}</size></color>"); // Channel Message
+                ? string.Format($"<color=purple>{message.SenderDisplayName} </color>: {message.SenderDisplayName} </color>\n<color=#5A5A5A><size=20>{editedText}{message.ReceivedTime.Hour}{editedText}{":"}{editedText}{message.ReceivedTime.Minute}</size></color>") // DM
+                : string.Format($"<color=green>{message.SenderDisplayName} </color>: {message.SenderDisplayName} </color>\n<color=#5A5A5A><size=20>{editedText}{message.ReceivedTime.Hour}{editedText}{":"}{editedText}{message.ReceivedTime.Minute}</size></color>"); // Channel Message
         }
 
     }
