@@ -31,7 +31,7 @@ public class Sauvegarde : MonoBehaviour
     [SerializeField] TMP_Dropdown Mois;
     [SerializeField] TMP_Dropdown Annee;
     [SerializeField] TextMeshProUGUI OutputDate;
-    public Dictionary<string, TemplateSaveMinigame> StatMinigame;
+    public SerializableDictionary<string, TemplateSaveMinigame> StatMinigame;
     // Start is called before the first frame update
 
     private void Awake()
@@ -39,7 +39,7 @@ public class Sauvegarde : MonoBehaviour
         journal = new Journal();
         profile = new Profile();
         questManager = new QuestManager();
-        StatMinigame = new Dictionary<string, TemplateSaveMinigame>();
+        StatMinigame = new SerializableDictionary<string, TemplateSaveMinigame>();
         try
         {
             Saving save = JSON_Manager.LoadData<Saving>(Application.dataPath + "/Json/Save.json");
@@ -152,8 +152,8 @@ public class Saving
     public Journal journal;
     public Profile profile;
     public QuestManager questManager;
-    public Dictionary<string, TemplateSaveMinigame> statMinigame;
-    public Saving(Journal journal, Profile profile, QuestManager questManager, Dictionary<string, TemplateSaveMinigame> statMinigame)
+    public SerializableDictionary<string, TemplateSaveMinigame> statMinigame;
+    public Saving(Journal journal, Profile profile, QuestManager questManager, SerializableDictionary<string, TemplateSaveMinigame> statMinigame)
     {
         this.journal = journal;
         this.profile = profile;
