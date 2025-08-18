@@ -48,7 +48,6 @@ public class SpawnManagement : MonoBehaviour
             return;
         }
 
-
         PersoToPosition.transform.position = dict[Spawn.GetSpaw(loadNexScene.GetPreviousSceneName())];
         PersoToPosition.transform.rotation = new(0, 0, 0, 1);
         SavePos();

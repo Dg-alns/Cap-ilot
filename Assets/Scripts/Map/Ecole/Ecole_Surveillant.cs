@@ -16,11 +16,16 @@ public class Ecole_Surveillant : MonoBehaviour
 
     private void Start()
     {
+        if (QuestManager.GetQUESTS(QUESTS.Ecole) >= QuestManager.GetPlayerPref())
+        {
+            QuestManager.SetQuest(QUESTS.Ecole);
+        }
+
         npcManager = FindFirstObjectByType<NPCManager>();
         npc = GetComponent<DialogueNPC>();
 
-        //npc.SetPLayerPrefs(2);
-        //npc.idxOffSetDialogue = 2;
+        //npc.SetPLayerPrefs(0);
+        //npc.idxOffSetDialogue = 0;
     }
 
     // Start is called before the first frame update
@@ -59,6 +64,7 @@ public class Ecole_Surveillant : MonoBehaviour
             case (int)OffSet_Dialogue_Surveillant.Destroy:
                 if (npcManager.dialogueNpc)
                     return;
+                QuestManager.NextQuest();
                 gameObject.SetActive(false);
                 break;
             default:

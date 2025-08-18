@@ -41,14 +41,17 @@ public class DialogueMiniGameBox : DialogueBox
 
     private void Update()
     {
+        Debug.Log(activeButton);
         if (activeButton == false)
             ActiveButton();
     }
 
     void ActiveButton()
     {
-        if(npc.idxMiniGameSet == npc.idxOffSetDialogue)
+        if (npc.idxMiniGameSet == npc.idxOffSetDialogue)
         {
+            Debug.Log("ICI OUI : " + npc.idxMiniGameSet + " " + npc.idxOffSetDialogue);
+
             activeButton = true;
             buttonStart.SetActive(true);
             buttonReturn.SetActive(true);

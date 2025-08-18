@@ -20,11 +20,11 @@ public class Ecole_Professeur : MonoBehaviour
 
         string previousScene = _professeurNPC.loadNexScene.GetPreviousSceneName();
 
-        //if (!string.Equals(previousScene, "Quiz"))
-        //    return;
+        if (!string.Equals(previousScene, "Quiz"))
+            return;
 
-        //if (QuestManager.GetPlayerPref() != QuestManager.GetQUESTS(QUESTS.Ecole))
-        //    return;
+        if (QuestManager.GetPlayerPref() != QuestManager.GetQUESTS(QUESTS.Ecole))
+            return;
 
         player.dialogueNpc = gameObject;
 

@@ -22,12 +22,12 @@ public class Profil_DownBar : MonoBehaviour
     private void Start()
     {
         
-        string jsonstring = File.ReadAllText("save.json");
+        string jsonstring = File.ReadAllText(Application.dataPath +  "/JSON/Save.json");
         Saving save = JsonUtility.FromJson<Saving>(jsonstring);
 
         _NicknameText.text = save.profile.Username;
 
-        _NbStars.text = sauvegarde_Minigame.GetTotalStars().ToString();
+        //_NbStars.text = sauvegarde_Minigame.GetTotalStars().ToString();
 
         _NbJournal.text = save.GetCompletedJournal().ToString();
         

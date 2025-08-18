@@ -29,7 +29,8 @@ public class Journal_DownBar : MonoBehaviour
     {
         listTheme = new List<string>() { "- Thèmes", "Hopital", "Sport", "Ecole", "Alimentation", "Relation", "Tentation" };
         
-        string jsonstring = File.ReadAllText("save.json");
+        string jsonstring = File.ReadAllText(Application.dataPath + "/JSON/Save.json");
+        Debug.Log(jsonstring);
         save = JsonUtility.FromJson<Saving>(jsonstring);
 
         // If the player write something one day, we have to reload it the same day
@@ -119,7 +120,7 @@ public class Journal_DownBar : MonoBehaviour
         // Save DATA in JSON
         save.journal.journal[DateTime.Today.ToString("d")] = totalContent;
         string jsonString = JsonUtility.ToJson(save);
-        string fileName = "save.json";
+        string fileName = Application.dataPath + "/JSON/Save.json";
         File.WriteAllText(fileName, jsonString);
 
         Debug.Log("Sauvegarde effectuer !");

@@ -48,12 +48,12 @@ public class PlayerSpriteManager : MonoBehaviour
         }
         else if(inProfil)
         {
-            Corps.GetComponent<Image>().sprite = playerData.Corps;
-            Cheveux.GetComponent<Image>().sprite = playerData.Cheveux;
-            AccessoirTete.GetComponent<Image>().sprite = playerData.AccessoirTete;
-            Haut.GetComponent<Image>().sprite = playerData.Haut;
-            Bas.GetComponent<Image>().sprite = playerData.Bas;
-            Chaussure.GetComponent<Image>().sprite = playerData.Chaussure;
+            Corps.GetComponent<Image>().sprite = playerData.GetSprite(PART.Corps);
+            Cheveux.GetComponent<Image>().sprite = playerData.GetSprite(PART.Cheveux);
+            AccessoirTete.GetComponent<Image>().sprite = playerData.GetSprite(PART.AccessoirTete);
+            Haut.GetComponent<Image>().sprite = playerData.GetSprite(PART.Haut);
+            Bas.GetComponent<Image>().sprite = playerData.GetSprite(PART.Bas);
+            Chaussure.GetComponent<Image>().sprite = playerData.GetSprite(PART.Chaussure);
         }
     }
 
