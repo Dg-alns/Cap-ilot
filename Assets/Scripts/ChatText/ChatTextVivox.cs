@@ -123,7 +123,7 @@ public class ChatTextVivox : MonoBehaviour
     {
         if(VivoxService.Instance.IsLoggedIn){
 
-            FetchMessages = FetchHistory(false);
+            FetchMessages = FetchHistory(true);
         }
     }
 

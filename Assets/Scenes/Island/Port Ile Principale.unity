@@ -1520,6 +1520,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5996476692092113503, guid: db719d02bdc5ceb4b8cd5e6ef99e4c86, type: 3}
   m_PrefabInstance: {fileID: 1733921147442767751}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &478050874 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4728401249212987945, guid: c546a0e19d4cbbc41931e1ccb56dcb31, type: 3}
+  m_PrefabInstance: {fileID: 1897495362}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4142bd43b4694434d8b6a22f5ecd9dc6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &526816509
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1709,6 +1720,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3721242166122303522, guid: 624c75379adc16346aa5782c95016b1a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3721242166326456973, guid: 624c75379adc16346aa5782c95016b1a, type: 3}
+      propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3721242166326456973, guid: 624c75379adc16346aa5782c95016b1a, type: 3}
@@ -4354,6 +4369,34 @@ PrefabInstance:
     - target: {fileID: 2444531636881176216, guid: c546a0e19d4cbbc41931e1ccb56dcb31, type: 3}
       propertyPath: m_Color.r
       value: 0.105882354
+      objectReference: {fileID: 0}
+    - target: {fileID: 2550778223519367324, guid: c546a0e19d4cbbc41931e1ccb56dcb31, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2550778223519367324, guid: c546a0e19d4cbbc41931e1ccb56dcb31, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2550778223519367324, guid: c546a0e19d4cbbc41931e1ccb56dcb31, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 478050874}
+    - target: {fileID: 2550778223519367324, guid: c546a0e19d4cbbc41931e1ccb56dcb31, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2550778223519367324, guid: c546a0e19d4cbbc41931e1ccb56dcb31, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: History
+      objectReference: {fileID: 0}
+    - target: {fileID: 2550778223519367324, guid: c546a0e19d4cbbc41931e1ccb56dcb31, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ChatTextVivox, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2550778223519367324, guid: c546a0e19d4cbbc41931e1ccb56dcb31, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 2634858072679568773, guid: c546a0e19d4cbbc41931e1ccb56dcb31, type: 3}
       propertyPath: m_IsActive
