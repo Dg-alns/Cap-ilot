@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Rendering;
+using UnityEngine.U2D;
 
 public enum QUESTS
 {
@@ -38,6 +39,8 @@ public class QuestManager
 
         InitQuest(QUESTS.None);
         InitQuest(QUESTS.ReparationPhare);
+
+        //quests.Add(new PhareQuest((int)QUESTS.Maison, new ExampleReward(null, QUESTS.Maison.ToString())));
         InitQuest(QUESTS.Maison);
         InitQuest(QUESTS.DemandeCapitaine);
         InitQuest(QUESTS.Hopital);
@@ -78,6 +81,8 @@ public class QuestManager
             }
         }
     }
+
+    
 
     public static void NextQuest()
     {
@@ -142,3 +147,26 @@ public class ExampleQuest : Quest
         return false;
     }
 }
+
+//public class PhareQuest : Quest
+//{
+//    public PhareQuest(int id, Reward reward) : base(id, reward)
+//    {
+//    }
+//    override public bool CheckCondition(Saving Data)
+//    {
+
+//        if (PlayerPrefs.GetInt("ReparationPhare") == 1)
+//        {
+//            Debug.Log("Condition True Next Quest");
+//            return true;
+//        }
+//        //    if (Data.profile.Username != "")
+//        //{
+//        //    status = true;
+//        //    reward.Obtain(Data);
+//        //    return true;
+//        //}
+//        return false;
+//    }
+//}
