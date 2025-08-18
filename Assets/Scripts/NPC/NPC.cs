@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.Rendering.DebugUI;
 
 [System.Serializable]
 public class AllDialogueSet
@@ -13,29 +14,29 @@ public class NPC : MonoBehaviour
 {
     public int npcId;
     public string npcName;
-    public int idxOffSetDialogue = 0;
+    public int idxOffSetDialogue;
 
     public List<AllDialogueSet> dialogueSet = new List<AllDialogueSet>();
 
-    string NPCPLayerPrefsName;
+    protected string NPCPLayerPrefsName;
 
     private void Awake()
     {
         NPCPLayerPrefsName = npcId.ToString() + npcName;
 
-        //PlayerPrefs.SetInt(NPCPLayerPrefsName, 0);
-
         if (PlayerPrefs.HasKey(NPCPLayerPrefsName))
         {
             idxOffSetDialogue = PlayerPrefs.GetInt(NPCPLayerPrefsName);
-
-            Debug.Log(PlayerPrefs.GetInt(NPCPLayerPrefsName));
+        }
+        else
+        {
+            PlayerPrefs.SetInt(NPCPLayerPrefsName, 0);
         }
     }
 
     public List<string> GetLstDialogue() { return dialogueSet[idxOffSetDialogue].dialogueLines; }
    
-    public void NextSet() 
+    public virtual void NextSet() 
     {
         if (idxOffSetDialogue + 1 <= dialogueSet.Count -1)
         {
@@ -43,6 +44,9 @@ public class NPC : MonoBehaviour
         }
         else
             idxOffSetDialogue += 0;
+
+
+        PlayerPrefs.SetInt(NPCPLayerPrefsName, idxOffSetDialogue);
     }
     public void NextSetForCapitain() 
     {
@@ -54,12 +58,14 @@ public class NPC : MonoBehaviour
     public void UpInfoPLayerPrefs()
     {
         PlayerPrefs.SetInt(NPCPLayerPrefsName, (PlayerPrefs.GetInt(NPCPLayerPrefsName) + 1));
+        idxOffSetDialogue += 1;
     }
 
     public void SetPLayerPrefs(int value)
     {
         Debug.Log("Name : " + NPCPLayerPrefsName);
         PlayerPrefs.SetInt(NPCPLayerPrefsName, value);
+        idxOffSetDialogue = value;
     }
 
     public int GetPlayerPrefs()
@@ -68,4 +74,11 @@ public class NPC : MonoBehaviour
     }
 
     public string GetNamePlayerPrefsNPC() { return NPCPLayerPrefsName; }
+    public int GePlayerPrefsNPC()
+    {
+        if (PlayerPrefs.HasKey(NPCPLayerPrefsName) == false) 
+            PlayerPrefs.SetInt(NPCPLayerPrefsName, 0); 
+
+        return PlayerPrefs.GetInt(NPCPLayerPrefsName);  
+    }
 }

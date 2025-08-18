@@ -53,18 +53,21 @@ public class Movement : MonoBehaviour
     void Update()
     {
         // Animation Diabete
-        if (_diabeteAnimator.gameObject.activeSelf)
+        if (_diabeteAnimator != null)
         {
-
-            if (_diabeteAnimator != null)
+            if (_diabeteAnimator.gameObject.activeSelf)
             {
-                if (_agent.destination != transform.position)
+
+                if (_diabeteAnimator != null)
                 {
-                    _diabeteAnimator.SetBool("Walking", true);
-                }
-                else
-                {
-                    _diabeteAnimator.SetBool("Walking", false);
+                    if (_agent.destination != transform.position)
+                    {
+                        _diabeteAnimator.SetBool("Walking", true);
+                    }
+                    else
+                    {
+                        _diabeteAnimator.SetBool("Walking", false);
+                    }
                 }
             }
         }

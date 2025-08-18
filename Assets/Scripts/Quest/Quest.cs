@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Rendering;
+using UnityEngine.U2D;
 
 public enum QUESTS
 {
@@ -29,7 +31,6 @@ public class QuestManager
     private Saving SaveData { get; set; }
 
     static string namePlayerPrefQuest = "PlayerPrefsQuest";
-    int CurrentQuest;
 
     public QuestManager()
     {
@@ -38,6 +39,8 @@ public class QuestManager
 
         InitQuest(QUESTS.None);
         InitQuest(QUESTS.ReparationPhare);
+
+        //quests.Add(new PhareQuest((int)QUESTS.Maison, new ExampleReward(null, QUESTS.Maison.ToString())));
         InitQuest(QUESTS.Maison);
         InitQuest(QUESTS.DemandeCapitaine);
         InitQuest(QUESTS.Hopital);
@@ -79,10 +82,12 @@ public class QuestManager
         }
     }
 
+    
+
     public static void NextQuest()
     {
         PlayerPrefs.SetInt(namePlayerPrefQuest, PlayerPrefs.GetInt(namePlayerPrefQuest) + 1);
-        Debug.Log("Nm Quest  ==  " + namePlayerPrefQuest);
+        Debug.Log("Nm Quest  ==  " + PlayerPrefs.GetInt(namePlayerPrefQuest));
     }
 
     void InitQuest(QUESTS quest, Sprite sprite = null)
@@ -90,9 +95,23 @@ public class QuestManager
         quests.Add(new ExampleQuest((int)quest, new ExampleReward(sprite, quest.ToString())));
     }
 
-    public static int GetPlayerPref() { return PlayerPrefs.GetInt(namePlayerPrefQuest); }
+    public static int GetPlayerPref() 
+    {
+        if (PlayerPrefs.HasKey(namePlayerPrefQuest) == false)
+        {
+            Debug.Log("re");
+            PlayerPrefs.SetInt(namePlayerPrefQuest, 0);
+        }
+
+        return PlayerPrefs.GetInt(namePlayerPrefQuest); 
+    }
 
     public static int GetQUESTS(QUESTS quest) { return (int)quest; }
+    public static void SetQuest(QUESTS quest) //TODO for debug game
+    {
+
+        PlayerPrefs.SetInt(namePlayerPrefQuest, (int)quest);
+    }
 }
 
 public class Quest
@@ -128,3 +147,26 @@ public class ExampleQuest : Quest
         return false;
     }
 }
+
+//public class PhareQuest : Quest
+//{
+//    public PhareQuest(int id, Reward reward) : base(id, reward)
+//    {
+//    }
+//    override public bool CheckCondition(Saving Data)
+//    {
+
+//        if (PlayerPrefs.GetInt("ReparationPhare") == 1)
+//        {
+//            Debug.Log("Condition True Next Quest");
+//            return true;
+//        }
+//        //    if (Data.profile.Username != "")
+//        //{
+//        //    status = true;
+//        //    reward.Obtain(Data);
+//        //    return true;
+//        //}
+//        return false;
+//    }
+//}

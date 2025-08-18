@@ -33,10 +33,10 @@ public class DialogueMiniGameBox : DialogueBox
 
         _isPostMinigameDialogue = isPostMinigameDialogue;
 
-        PlayerPrefs.DeleteKey(npc.GetNamePlayerPrefsNPC());
+        //PlayerPrefs.DeleteKey(npc.GetNamePlayerPrefsNPC());
 
-        if(PlayerPrefs.HasKey(npc.GetNamePlayerPrefsNPC()) == false)
-            PlayerPrefs.SetInt(npc.GetNamePlayerPrefsNPC(), 0);
+        //if(PlayerPrefs.HasKey(npc.GetNamePlayerPrefsNPC()) == false)
+        //    PlayerPrefs.SetInt(npc.GetNamePlayerPrefsNPC(), 0);
     }
 
     private void Update()
@@ -53,9 +53,9 @@ public class DialogueMiniGameBox : DialogueBox
             buttonStart.SetActive(true);
             buttonReturn.SetActive(true);
 
-            Debug.Log("Active Button : " + PlayerPrefs.GetInt(npc.GetNamePlayerPrefsNPC()));
 
-            PlayerPrefs.SetInt(npc.GetNamePlayerPrefsNPC(), 1);
+            
+            //PlayerPrefs.SetInt(npc.GetNamePlayerPrefsNPC(), 1);
         }
     }
 
@@ -69,20 +69,21 @@ public class DialogueMiniGameBox : DialogueBox
             Debug.LogError("ERROR : Dialogue NPC not found");
         }
 
-        if (PlayerPrefs.GetInt(npc.GetNamePlayerPrefsNPC()) == npc.idxMiniGameSet)
-            lineList = npcManager.dialogueNpc.dialogueSet[npc.idxMiniGameSet].dialogueLines;
-        else
-            lineList = npcManager.dialogueNpc.GetLstDialogue();
+        //if (PlayerPrefs.GetInt(npc.GetNamePlayerPrefsNPC()) == npc.idxMiniGameSet)
+        //    lineList = npcManager.dialogueNpc.dialogueSet[npc.idxMiniGameSet].dialogueLines;
+        //else
+        lineList = npcManager.dialogueNpc.GetLstDialogue();
     }
 
     public override void EndDialogue()
     {
         if (buttonStart.activeSelf == false)
         {
-            //DestroiUI();
+            if (npc.idxOffSetDialogue > npc.idxMiniGameSet)
+                DestroiUI();
+            
             npcManager.dialogueNpc.NextSet();
             GetDialogueLines();
-
             _lineIndex = 0;
             _dialogueText.SetText(lineList[_lineIndex]);
             dialogStarted = true;
@@ -105,6 +106,12 @@ public class DialogueMiniGameBox : DialogueBox
 
     public void LoadMiniGame()
     {
+        npcManager.dialogueNpc.NextSet();
+        GetDialogueLines();
+
+        Debug.Log("IDX " + npc.idxOffSetDialogue + " -- " + npc.idxMiniGameSet);
+
+
         npc.loadNexScene.LoadMiniGame(npc.MiniGameName);
     }
 

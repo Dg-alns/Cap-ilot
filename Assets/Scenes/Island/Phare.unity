@@ -226,7 +226,7 @@ PrefabInstance:
     - target: {fileID: 8728174674127034684, guid: 29ae1de120ecad9418ddf494741bca3a, type: 3}
       propertyPath: nexScene
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1339902468}
     - target: {fileID: 8728174674127034684, guid: 29ae1de120ecad9418ddf494741bca3a, type: 3}
       propertyPath: SceneName
       value: Port Ile Principale
@@ -509,7 +509,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _player: {fileID: 1423705738}
-  _dialogueBox: {fileID: 0}
   DialogueLineSkiped: 0
 --- !u!114 &622135361
 MonoBehaviour:
@@ -717,7 +716,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8185881588264402033, guid: d400b78d53980d349bec9c8c27796ef6, type: 3}
       propertyPath: npcId
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8185881588264402033, guid: d400b78d53980d349bec9c8c27796ef6, type: 3}
       propertyPath: npcName
@@ -977,7 +976,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 880684434788671923, guid: 194deb3502166994b9337affa1cc0ffc, type: 3}
       propertyPath: npcId
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 880684434788671923, guid: 194deb3502166994b9337affa1cc0ffc, type: 3}
       propertyPath: npcName
@@ -990,7 +989,7 @@ PrefabInstance:
     - target: {fileID: 880684434788671923, guid: 194deb3502166994b9337affa1cc0ffc, type: 3}
       propertyPath: loadNexScene
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1339902468}
     - target: {fileID: 880684434788671923, guid: 194deb3502166994b9337affa1cc0ffc, type: 3}
       propertyPath: idxMiniGameSet
       value: 1
@@ -1134,7 +1133,6 @@ MonoBehaviour:
   loadNexScene: {fileID: 1339902468}
   port: {fileID: 0}
   PersoToPosition: {fileID: 1314983410}
-  capitain: {fileID: 0}
 --- !u!1 &962963979
 GameObject:
   m_ObjectHideFlags: 0
@@ -1621,6 +1619,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4304060261653511169, guid: db719d02bdc5ceb4b8cd5e6ef99e4c86, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6346876332556961359, guid: db719d02bdc5ceb4b8cd5e6ef99e4c86, type: 3}
       propertyPath: m_Name
       value: Player
@@ -1699,6 +1701,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Transition&Energie
       objectReference: {fileID: 0}
+    - target: {fileID: 7058140350665155397, guid: 31923a047120cd44997e18f99d66f869, type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 1423705738}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2037,8 +2043,6 @@ MonoBehaviour:
   sceneDestination: {fileID: 11400000, guid: 4f9d2ebe370453d43b934f62e2c5b6fc, type: 2}
   dialogueCapitain: {fileID: 745674850}
   MiniGameCapitain: {fileID: 836755963}
-  Hopital: {fileID: 11400000, guid: 45f7f7505f83cdb408cc61b4af66995a, type: 2}
-  Alimentation: {fileID: 11400000, guid: 0943cd8cdb8415a44966467f5564256c, type: 2}
 --- !u!4 &1817012203
 Transform:
   m_ObjectHideFlags: 0

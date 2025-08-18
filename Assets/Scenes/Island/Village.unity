@@ -171,6 +171,7 @@ MonoBehaviour:
   Sport: {fileID: 755739072}
   Alimentation: {fileID: 1541046271}
   Relation: {fileID: 1952744088}
+  MaisonDiabete: {fileID: 1186701939}
 --- !u!1 &622135359
 GameObject:
   m_ObjectHideFlags: 0
@@ -400,7 +401,6 @@ MonoBehaviour:
   loadNexScene: {fileID: 1526889019}
   port: {fileID: 0}
   PersoToPosition: {fileID: 1082252877}
-  capitain: {fileID: 0}
 --- !u!1 &915074301
 GameObject:
   m_ObjectHideFlags: 0
@@ -1207,7 +1207,7 @@ PrefabInstance:
     - target: {fileID: 8728174674127034684, guid: 29ae1de120ecad9418ddf494741bca3a, type: 3}
       propertyPath: nexScene
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1526889019}
     - target: {fileID: 8728174674127034684, guid: 29ae1de120ecad9418ddf494741bca3a, type: 3}
       propertyPath: SceneName
       value: Port Ile Principale
@@ -1227,7 +1227,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1186701940}
   - component: {fileID: 1186701942}
+  - component: {fileID: 1186701944}
   - component: {fileID: 1186701941}
+  - component: {fileID: 1186701943}
+  - component: {fileID: 1186701945}
   m_Layer: 0
   m_Name: maison_user_sans_ombre_0
   m_TagString: Untagged
@@ -1321,6 +1324,92 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &1186701943
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1186701939}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: -0.016520023, y: -4.9884596}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 8.35, y: 11.33}
+    newSize: {x: 8.35, y: 11.33}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 3.4937086, y: 1.5513973}
+  m_EdgeRadius: 0
+--- !u!114 &1186701944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1186701939}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 260065e78f7380141a49338d753ea81a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UI: {fileID: 4643652530389774356, guid: 10b415fd8ea5ae548b2ba64f8f442494, type: 3}
+  uiOpen: 0
+  SceneName: 
+  nexScene: {fileID: 0}
+  Type: 2
+  activeUI: {fileID: 0}
+  InPort: 1
+  capitainPort: {fileID: 0}
+--- !u!114 &1186701945
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1186701939}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0261c139dee0f9342be89f5e3e5d9e99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  npcId: 8
+  npcName: Diabete
+  idxOffSetDialogue: 0
+  dialogueSet:
+  - dialogueLines:
+    - blabla
+    - diabete
+    - dialogue
 --- !u!1 &1349440602
 GameObject:
   m_ObjectHideFlags: 0
@@ -2321,7 +2410,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8185881588264402033, guid: d400b78d53980d349bec9c8c27796ef6, type: 3}
       propertyPath: npcId
-      value: 3
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 8185881588264402033, guid: d400b78d53980d349bec9c8c27796ef6, type: 3}
       propertyPath: npcName

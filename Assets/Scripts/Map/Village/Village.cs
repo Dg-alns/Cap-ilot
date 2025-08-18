@@ -2,12 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Village : MonoBehaviour
+public class Village : MonoBehaviour //TODO Diego ajouter les maison endomager
 {
     public GameObject Ecole;
     public GameObject Sport;
     public GameObject Alimentation;
     public GameObject Relation;
+
+    public GameObject MaisonDiabete;
 
 
     void Start()
@@ -33,6 +35,11 @@ public class Village : MonoBehaviour
         if (Sport.activeSelf)
         {
             Ecole.GetComponent<NPC>().SetPLayerPrefs(1);
+        }
+
+        if(QuestManager.GetPlayerPref() >= QuestManager.GetQUESTS(QUESTS.DemandeCapitaine))
+        {
+            MaisonDiabete.GetComponent<Collider2D>().enabled = false;
         }
     }
 }

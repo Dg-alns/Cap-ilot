@@ -101,10 +101,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UI: {fileID: 1071217116996878445, guid: 831abd4b3ecd17443bfbb8678cdc0bb8, type: 3}
-  SceneName: Village
+  uiOpen: 0
+  SceneName: 
   nexScene: {fileID: 0}
-  Type: 0
+  Type: 1
   activeUI: {fileID: 0}
+  InPort: 1
+  capitainPort: {fileID: 0}
 --- !u!61 &5715185192473362372
 BoxCollider2D:
   m_ObjectHideFlags: 0

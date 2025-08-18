@@ -17,13 +17,15 @@ public class PortManager : MonoBehaviour
         {
             allPorts = Tools.CreateGameObjectList<AccesToPort>(gameObject.name);
 
+
+            PositionBateau();
+
             for (int i = 0; i < allPorts.Count; i++)
             {
-                if (allPorts[i].GetComponent<AccesToPort>().port.CanGoToIle == false)
+                if (allPorts[i].GetComponent<AccesToPort>().port.GetCanGotoIle() == false)
                     allPorts[i].SetActive(false);
             }
 
-            PositionBateau();
         }
     }
 

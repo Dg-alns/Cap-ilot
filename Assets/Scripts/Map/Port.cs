@@ -18,8 +18,14 @@ public enum Iles
 public class Port : ScriptableObject
 {
     public string IleName;
-    public bool isDiscover = false;
-    public bool CanGoToIle = false;
+    [SerializeField] bool isDiscover;
+    [SerializeField] bool CanGoToIle;
 
     public Iles ile = Iles.None;
+
+    public void IsDiscover() { isDiscover = true; }
+    public void CanGotoIle() { CanGoToIle = true; }
+
+    public bool GetIsDiscover() { return isDiscover; }
+    public bool GetCanGotoIle() { return CanGoToIle; }
 }
