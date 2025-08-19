@@ -78,16 +78,11 @@ public class QuestManager
             }
             
         }
-
-        Debug.Log("Size Status " + statusDict.Count);
-
-
     }    
 
     public static void NextQuest(int CurrentQuest)
     {
         PlayerPrefs.SetInt(namePlayerPrefQuest, CurrentQuest + 1);
-        Debug.Log("Nm Quest  ==  " + PlayerPrefs.GetInt(namePlayerPrefQuest));
     }
 
     public static int GetCurrentQuest() 
@@ -114,9 +109,6 @@ public class QuestManager
 
     public static void ValidateQuest(QUESTS quest)
     {
-        Debug.Log("Validate");
-        Debug.Log((int)quest);
-
         quests[(int)quest].status = true;
     }
 }
@@ -162,10 +154,6 @@ public class GlobalQuest : Quest
     }
     override public bool CheckCondition(Saving Data)
     {
-        Debug.Log("CurentQuest " + QuestManager.GetCurrentQuest());
-        Debug.Log("id " + id);
-        Debug.Log("status " + status);
-
         if (QuestManager.GetCurrentQuest() == id && status)
             return true;
 

@@ -63,7 +63,6 @@ public class NPC : MonoBehaviour
 
     public void SetPLayerPrefs(int value)
     {
-        Debug.Log("Name : " + NPCPLayerPrefsName);
         PlayerPrefs.SetInt(NPCPLayerPrefsName, value);
         idxOffSetDialogue = value;
     }

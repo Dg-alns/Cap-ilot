@@ -55,7 +55,7 @@ public class PortIlePrincipale : MonoBehaviour
         {
             Hopital.CanGotoIle();
         }
-        if (QuestManager.GetCurrentQuest() > QuestManager.GetQUESTS(QUESTS.Phare))
+        if (QuestManager.GetCurrentQuest() >= QuestManager.GetQUESTS(QUESTS.Alimentation))
         {
             Alimentation.CanGotoIle();
         }

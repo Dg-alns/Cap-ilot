@@ -14,8 +14,10 @@ public class Couloir : MonoBehaviour
             PlayerPrefs.SetInt(NamePlayerPref, 0);
 
 
-        if (PlayerPrefs.GetInt(NamePlayerPref) == 1)
+        if (PlayerPrefs.GetInt(NamePlayerPref) == 1 || QuestManager.GetCurrentQuest() > QuestManager.GetQUESTS(QUESTS.Hopital))
+        {
             Port.SetActive(true);
+        }
     }
 
 

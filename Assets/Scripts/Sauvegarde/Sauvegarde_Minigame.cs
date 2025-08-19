@@ -13,13 +13,20 @@ public class Sauvegarde_Minigame : MonoBehaviour
     bool _state = true;
     [SerializeField] Sauvegarde Sauvegarde;
     // Start is called before the first frame update
-    void Awake()
+
+    private void Init()
     {
         sceneName = SceneManager.GetActiveScene().name;
         _jsonPath = Application.dataPath + "/Json/Save.json";
         //_statMinigame = JsonUtility.FromJson<Dictionary<string, TemplateSaveMinigame>>(_jsonPath);
         _statMinigame = Sauvegarde.StatMinigame;
         Debug.Log("Nombre de stat : " + _statMinigame.Count);
+    }
+
+    void Start()
+    {
+
+        Init();
         /*try
         {
             _statMinigame = JSON_Manager.LoadData<Dictionary<string, TemplateSaveMinigame>>(_jsonPath);
@@ -68,6 +75,9 @@ public class Sauvegarde_Minigame : MonoBehaviour
 
     public int GetnbStars(string sceneName)
     {
+        if (_statMinigame == null)
+            Init();
+
         Debug.Log("KEy " + sceneName);
         Debug.Log("State " + _statMinigame.ContainsKey(sceneName));
 
@@ -96,6 +106,17 @@ public class Sauvegarde_Minigame : MonoBehaviour
         if(_statMinigame.ContainsKey(sceneName))
             return _statMinigame[sceneName]._showInfo;
         return _state;
+    }
+
+    public bool HaveMiniGame(string sceneName)
+    {        
+        if(_statMinigame == null)
+            return false;
+
+        if(_statMinigame.ContainsKey(sceneName))
+            return true;
+
+        return false;
     }
 
     public void SetCanShowInfo(bool state)

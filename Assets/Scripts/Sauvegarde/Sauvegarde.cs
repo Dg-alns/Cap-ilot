@@ -63,7 +63,6 @@ public class Sauvegarde : MonoBehaviour
                 }
             }
 
-            Debug.Log("ddddd " + StatMinigame);
             if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("Journal"))
             {
                 journal.Output = Output;
@@ -110,7 +109,6 @@ public class Sauvegarde : MonoBehaviour
         {
             if (save.questManager.statusDict[quest.id] == false)
             {
-                Debug.Log("ID == " +  quest.id);
                 if (quest.CheckCondition(save))
                 {
                     questManager.statusDict[quest.id] = true;
@@ -152,15 +150,6 @@ public class Sauvegarde : MonoBehaviour
 
     public void Save (Saving save)
     {
-        Debug.Log("SAVEEEEEEEEEEEE");
-        Debug.Log("Quest " + save.questManager.GetQuests().Count);
-        Debug.Log("Quest " + save.questManager.statusDict.Count);
-        for (int i = 0; i < save.questManager.statusDict.Count; i++)
-        {
-            Debug.Log(i + " State " + save.questManager.statusDict[i]);
-        }
-
-
         journal = save.journal;
         profile = save.profile;
         questManager = save.questManager;

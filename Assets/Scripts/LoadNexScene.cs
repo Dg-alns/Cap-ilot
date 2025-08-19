@@ -111,7 +111,6 @@ public class LoadNexScene : MonoBehaviour
         if (_NextSceneData.GetNextSceneDestination().Equals("MiniGame_LightHouse"))
         {
             PlayerPrefs.SetInt("ReparationPhare", 1);
-            Debug.Log("ReparationPhare");
         }
 
         if (_NextSceneData.GetNextSceneDestination().Equals("MiniGame_ObjCachee"))
@@ -121,7 +120,6 @@ public class LoadNexScene : MonoBehaviour
         {
             Couloir.SetStateCouloir(1);
             //QuestManager.NextQuest();
-            Debug.Log("Hopital");
             QuestManager.ValidateQuest(QUESTS.Hopital);
         }
         

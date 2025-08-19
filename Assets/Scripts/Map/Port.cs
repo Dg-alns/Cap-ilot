@@ -24,7 +24,10 @@ public class Port : ScriptableObject
     public Iles ile = Iles.None;
 
     public void IsDiscover() { isDiscover = true; }
-    public void CanGotoIle() { CanGoToIle = true; }
+    public void CanGotoIle() 
+    { 
+        CanGoToIle = true; 
+    }
 
     public bool GetIsDiscover() { return isDiscover; }
     public bool GetCanGotoIle() { return CanGoToIle; }
