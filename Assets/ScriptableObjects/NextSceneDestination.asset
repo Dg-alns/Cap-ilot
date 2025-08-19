@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16bb799b6ab064e4e8b4400127b57058, type: 3}
   m_Name: NextSceneDestination
   m_EditorClassIdentifier: 
-  _sceneName: Couloir
-  _CurrentsceneName: Port Sport
+  _sceneName: MiniGame_Funambule
+  _CurrentsceneName: MiniGame_Funambule
   isLauch: 0

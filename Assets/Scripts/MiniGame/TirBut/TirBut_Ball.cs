@@ -120,7 +120,6 @@ public class TirBut_Ball : MonoBehaviour
     public void Shoot(int indexPosition)
     {
         // Set the target to a goal position
-        Debug.Log("rotation : " + indexPosition % 3);
         _animator.SetInteger("Rotation", indexPosition % 3);
         _animator.SetBool("EndRotation", false);
 

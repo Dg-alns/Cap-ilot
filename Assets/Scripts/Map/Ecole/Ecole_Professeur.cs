@@ -16,16 +16,17 @@ public class Ecole_Professeur : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
+        // Get some data
         _professeurNPC = GetComponent<MiniGameNPC>();
-
         string previousScene = _professeurNPC.loadNexScene.GetPreviousSceneName();
 
-        if (!string.Equals(previousScene, "Quiz"))
-            return;
+        // Check the condition to the valid the quest
+        //if (!string.Equals(previousScene, "Quiz"))
+        //    return;
+        //if (QuestManager.GetPlayerPref() != QuestManager.GetQUESTS(QUESTS.Ecole))
+        //    return;
 
-        if (QuestManager.GetPlayerPref() != QuestManager.GetQUESTS(QUESTS.Ecole))
-            return;
-
+        // Process to force a dialogue
         player.dialogueNpc = gameObject;
 
         NPCManager npcManager = Object.FindFirstObjectByType<NPCManager>(FindObjectsInactive.Include);
@@ -36,7 +37,9 @@ public class Ecole_Professeur : MonoBehaviour
 
         ForceDialogueProf();
 
-        QuestManager.NextQuest();
+        // Valid the Quest
+        //QuestManager.NextQuest();
+        QuestManager.SetQuest(QUESTS.E_Ressource);
     }
    
     void ForceDialogueProf()

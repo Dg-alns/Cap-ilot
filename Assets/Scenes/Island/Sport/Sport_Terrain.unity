@@ -447,7 +447,7 @@ MonoBehaviour:
   UI: {fileID: 4643652530389774356, guid: cadccd82e06887247a3a3bec27e20a1c, type: 3}
   uiOpen: 0
   SceneName: 
-  nexScene: {fileID: 0}
+  nexScene: {fileID: 1339902468}
   Type: 3
   activeUI: {fileID: 0}
   InPort: 1
@@ -492,8 +492,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1689557907
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 7267005391270413420, guid: 8c303d2db374c7a4a87cf58b56766399, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -546,7 +546,7 @@ MonoBehaviour:
     - "Tu es pr\xEAt pour affronter le monstre \xE0 la boxe ?"
   idxMiniGameSet: 1
   MiniGameName: MiniGame_Boxe
-  loadNexScene: {fileID: 0}
+  loadNexScene: {fileID: 1339902468}
 --- !u!1 &579305663
 GameObject:
   m_ObjectHideFlags: 0
@@ -1161,7 +1161,7 @@ MonoBehaviour:
   UI: {fileID: 4643652530389774356, guid: cadccd82e06887247a3a3bec27e20a1c, type: 3}
   uiOpen: 0
   SceneName: 
-  nexScene: {fileID: 0}
+  nexScene: {fileID: 1339902468}
   Type: 3
   activeUI: {fileID: 0}
   InPort: 1
@@ -1206,8 +1206,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1689557907
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: -2777255987565907183, guid: aafab9636b0a6ba4f8350aa41ba723f1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1260,7 +1260,7 @@ MonoBehaviour:
     - "Tu es pr\xEAt a courir un bon coup lors d'une s\xE9ance de marathon ?"
   idxMiniGameSet: 1
   MiniGameName: MiniGame_Marathon
-  loadNexScene: {fileID: 0}
+  loadNexScene: {fileID: 1339902468}
 --- !u!1 &1018048500
 GameObject:
   m_ObjectHideFlags: 0
@@ -2098,6 +2098,8 @@ GameObject:
   - component: {fileID: 1653498328}
   - component: {fileID: 1653498327}
   - component: {fileID: 1653498330}
+  - component: {fileID: 1653498332}
+  - component: {fileID: 1653498331}
   - component: {fileID: 1653498325}
   m_Layer: 0
   m_Name: GerantTournoi36
@@ -2203,8 +2205,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1689557907
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 55531119647216006, guid: 86f714f33a86c9047a767718f389ef2b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -2248,7 +2250,59 @@ MonoBehaviour:
   npcName: Gerant
   idxOffSetDialogue: 0
   dialogueSet:
-  - dialogueLines: []
+  - dialogueLines:
+    - "Bonjour et bienvenue \xE0 toi sur l'\xEEle du spo ..."
+    - "Mais je le reconnais cet affreux ! C'est celui qui a ravager l'\xEEle principal
+      ! "
+    - "Comment ? Ne me dis pas que tu l'as adopt\xE9 il est tr\xE8s dangereux. Enfin
+      bon il a l'air de se tenir tranquille avec toi donc \xE7a va mais garde le
+      \xE0 l'\u0153il."
+    - "J'imagine d'ailleurs que c'est toi dont mon fr\xE8re ma parl\xE9, il ne m'\xE9crit
+      pas beaucoup mais je suis heureux qu'il pense \xE0 moi."
+    - "Je vais donc t'expliquer la raison de ta venu dans les d\xE9tails."
+    - "Premi\xE8rement j'organisation sportif avec plusieurs activit\xE9 qui font
+      travailler plusieurs aspect: la force, l'endurance et la pr\xE9cision."
+    - "Deuxi\xE8mement j'ai besoin de quelqu'un pour test\xE9 les activit\xE9s, et
+      l\xE0 que tu entre en jeu."
+    - "Il y a trois activit\xE9 : Boxe, Marathon, Tir au but"
+    - "Je t'attendrai ici. Viens me voir d\xE8s que tu auras fini les diff\xE9rentes
+      activit\xE9s et j'aurai quelque chose pour toi !"
+  - dialogueLines:
+    - "Je t'attendrai ici. Viens me voir d\xE8s que tu auras fini les diff\xE9rentes
+      activit\xE9s et j'aurai quelque chose pour toi !"
+  - dialogueLines:
+    - "Alors ces activit\xE9s pas mal hein !\n"
+    - "J'esp\xE8re que tu t'es bien amus\xE9 en tout cas j'ai pris plaisir \xE0 te
+      voir faire ces activit\xE9s."
+    - "Tiens, mon fr\xE8re m'avait parler de ton bateau alors, je re donne cette
+      corde \xE7a ne peut que t'\xEAtre utile !"
+    - "Bien mon tournoi ne commence pas avant un moment, je ferai mieux d'aller retrouver
+      mon fr\xE8re, cela fait un moment que je ne l'ai pas vu !"
+    - "On se retrouve sur l'\xEEle principal ci tu veux papoter un coup"
+--- !u!114 &1653498331
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1653498324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7eb9ff90e99a1e479fae98d7b70ecef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1653498332
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1653498324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b22952453eaaa8d4aabd5fca08630c52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2023388801
 GameObject:
   m_ObjectHideFlags: 0
@@ -2321,7 +2375,7 @@ MonoBehaviour:
   UI: {fileID: 4643652530389774356, guid: cadccd82e06887247a3a3bec27e20a1c, type: 3}
   uiOpen: 0
   SceneName: 
-  nexScene: {fileID: 0}
+  nexScene: {fileID: 1339902468}
   Type: 3
   activeUI: {fileID: 0}
   InPort: 1
@@ -2366,8 +2420,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1689557907
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 4778487978208972821, guid: 12d1d8c821442ae41925f419377b1b66, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -2421,7 +2475,7 @@ MonoBehaviour:
     - "Tu es pr\xEAt pour une petite s\xE9ance de tir au but ?"
   idxMiniGameSet: 1
   MiniGameName: MiniGame_TirBut
-  loadNexScene: {fileID: 0}
+  loadNexScene: {fileID: 1339902468}
 --- !u!1 &2055514535
 GameObject:
   m_ObjectHideFlags: 0

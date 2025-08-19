@@ -41,7 +41,6 @@ public class DialogueMiniGameBox : DialogueBox
 
     private void Update()
     {
-        Debug.Log(activeButton);
         if (activeButton == false)
             ActiveButton();
     }
@@ -50,7 +49,6 @@ public class DialogueMiniGameBox : DialogueBox
     {
         if (npc.idxMiniGameSet == npc.idxOffSetDialogue)
         {
-            Debug.Log("ICI OUI : " + npc.idxMiniGameSet + " " + npc.idxOffSetDialogue);
 
             activeButton = true;
             buttonStart.SetActive(true);
