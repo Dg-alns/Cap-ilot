@@ -126,7 +126,7 @@ public class DialogueBox : MonoBehaviour
         npcManager.dialogueNpc.GetComponent<Trigger>().activeUI = null;
         npcManager.dialogueNpc.GetComponent<Trigger>().uiOpen = false;
 
-        if (npcManager.dialogueNpc.npcName.Equals("Diabete"))
+        if (npcManager.dialogueNpc.npcName.Equals("diabete"))
         {
             //QuestManager.NextQuest();
             QuestManager.ValidateQuest(QUESTS.Maison);

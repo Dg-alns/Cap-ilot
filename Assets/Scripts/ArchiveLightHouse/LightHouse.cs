@@ -25,7 +25,7 @@ public class LightHouse : MonoBehaviour
         {
             if (Input.GetMouseButtonUp(0))
             {
-                if (PlayerPrefs.HasKey("LightHouseRepaired") && PlayerPrefs.GetInt("LightHouseRepaired") ==1)
+                if (PlayerPrefs.HasKey("LightHouseRepaired") && PlayerPrefs.GetInt("LightHouseRepaired") ==1 || QuestManager.GetCurrentQuest() > QuestManager.GetQUESTS(QUESTS.Phare))
                 {
                     _UIArchives.SetActive(true);
                 }

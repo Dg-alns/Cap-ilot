@@ -8,6 +8,8 @@ public class CapitainPhare : MonoBehaviour
 
     public GameObject dialogueCapitain;
     public GameObject MiniGameCapitain;
+
+    public NPCManager npcManager;
     void Awake()
     {
         if (PlayerPrefs.HasKey("ReparationPhare") == false)
@@ -49,10 +51,21 @@ public class CapitainPhare : MonoBehaviour
         if(QuestManager.GetCurrentQuest() == QuestManager.GetQUESTS(QUESTS.Phare))
         {
             dialogueCapitain.GetComponent<NPC>().idxOffSetDialogue = 2;
+
         }
         if(QuestManager.GetCurrentQuest() > QuestManager.GetQUESTS(QUESTS.Phare))
         {
             dialogueCapitain.GetComponent<NPC>().idxOffSetDialogue = 3;
         }
+    }
+
+    private void Update()
+    {
+        if (npcManager.dialogueNpc == null)
+            return;
+
+        if (dialogueCapitain.GetComponent<NPC>().idxOffSetDialogue == 2 && QuestManager.GetCurrentQuest() == QuestManager.GetQUESTS(QUESTS.Phare))
+            QuestManager.ValidateQuest(QUESTS.Phare);
+        
     }
 }

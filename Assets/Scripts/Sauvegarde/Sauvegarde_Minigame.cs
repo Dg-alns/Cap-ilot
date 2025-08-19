@@ -20,7 +20,6 @@ public class Sauvegarde_Minigame : MonoBehaviour
         _jsonPath = Application.dataPath + "/Json/Save.json";
         //_statMinigame = JsonUtility.FromJson<Dictionary<string, TemplateSaveMinigame>>(_jsonPath);
         _statMinigame = Sauvegarde.StatMinigame;
-        Debug.Log("Nombre de stat : " + _statMinigame.Count);
     }
 
     void Start()
@@ -78,10 +77,6 @@ public class Sauvegarde_Minigame : MonoBehaviour
         if (_statMinigame == null)
             Init();
 
-        Debug.Log("KEy " + sceneName);
-        Debug.Log("State " + _statMinigame.ContainsKey(sceneName));
-
-
         if(_statMinigame.ContainsKey(sceneName))
             return _statMinigame[sceneName]._nbStar;
         return 0;
@@ -90,7 +85,7 @@ public class Sauvegarde_Minigame : MonoBehaviour
     public int GetTotalStars()
     {
         int total = 0;
-        Debug.Log(_statMinigame);
+
         foreach(KeyValuePair<string,TemplateSaveMinigame> s in _statMinigame)
         {
             total += s.Value._nbStar;
@@ -145,10 +140,9 @@ public class Sauvegarde_Minigame : MonoBehaviour
     public void SaveMiniGame(bool reverse)
     {
         string sceneName = SceneManager.GetActiveScene().name;
-        Debug.Log(sceneName);
+
         if (_statMinigame.ContainsKey(sceneName))
         {
-            Debug.Log("LLALA");
             _statMinigame[sceneName].CheckNewScore(score, reverse);
         }
         else{

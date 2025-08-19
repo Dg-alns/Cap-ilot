@@ -172,6 +172,12 @@ MonoBehaviour:
   Alimentation: {fileID: 1541046271}
   Relation: {fileID: 1952744088}
   MaisonDiabete: {fileID: 1186701939}
+  MaisonAlimentation: {fileID: 1165837235}
+  MaisonRelation: {fileID: 1160615046}
+  MaisonFrere: {fileID: 2044612490}
+  MaisonCleanAlimentation: {fileID: -3354657111093640482, guid: fa18d7f02db193843a8f9befe0270377, type: 3}
+  MaisonCleanRelation: {fileID: 1496580848043783454, guid: 81b902f7f4407bc42a0265b38c2eb11a, type: 3}
+  MaisonCleanFrere: {fileID: 6291539402958747466, guid: 86b747cfe32f3714caaeebd0255e5649, type: 3}
 --- !u!1 &622135359
 GameObject:
   m_ObjectHideFlags: 0
@@ -203,7 +209,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _player: {fileID: 1082252878}
-  _dialogueBox: {fileID: 0}
   DialogueLineSkiped: 0
 --- !u!114 &622135361
 MonoBehaviour:
@@ -944,7 +949,7 @@ GameObject:
   - component: {fileID: 1160615046}
   - component: {fileID: 1160615045}
   m_Layer: 0
-  m_Name: maison_3_sans_ombre_0
+  m_Name: MaisonRelation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1025,7 +1030,7 @@ SpriteRenderer:
   m_SortingLayerID: 1689557907
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1496580848043783454, guid: 81b902f7f4407bc42a0265b38c2eb11a, type: 3}
+  m_Sprite: {fileID: -3119072210832300061, guid: c6e42f246bb5d4d45b63b77a434d514e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1048,7 +1053,7 @@ GameObject:
   - component: {fileID: 1165837235}
   - component: {fileID: 1165837234}
   m_Layer: 0
-  m_Name: maison_2_sans_ombre_0
+  m_Name: MaisonAlimentation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1129,7 +1134,7 @@ SpriteRenderer:
   m_SortingLayerID: 1689557907
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: -3354657111093640482, guid: fa18d7f02db193843a8f9befe0270377, type: 3}
+  m_Sprite: {fileID: 1825308058143250650, guid: 80d63b3bac67534438f0bea4411d6e80, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1162,11 +1167,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8557331510602295511, guid: 29ae1de120ecad9418ddf494741bca3a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 25
+      value: -25.450003
       objectReference: {fileID: 0}
     - target: {fileID: 8557331510602295511, guid: 29ae1de120ecad9418ddf494741bca3a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -25
+      value: -2.03
       objectReference: {fileID: 0}
     - target: {fileID: 8557331510602295511, guid: 29ae1de120ecad9418ddf494741bca3a, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1636,11 +1641,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1921437452148783518, guid: ee4dd1e779d16ac47b718f4e4f91e101, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.1
+      value: -47.84
       objectReference: {fileID: 0}
     - target: {fileID: 1921437452148783518, guid: ee4dd1e779d16ac47b718f4e4f91e101, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.07
+      value: 21.9
       objectReference: {fileID: 0}
     - target: {fileID: 1921437452148783518, guid: ee4dd1e779d16ac47b718f4e4f91e101, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2553,7 +2558,7 @@ GameObject:
   - component: {fileID: 2044612490}
   - component: {fileID: 2044612489}
   m_Layer: 0
-  m_Name: maison_1_sans_ombre_0
+  m_Name: MaisonFrere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2634,7 +2639,7 @@ SpriteRenderer:
   m_SortingLayerID: 1689557907
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 6291539402958747466, guid: 86b747cfe32f3714caaeebd0255e5649, type: 3}
+  m_Sprite: {fileID: 5040066993975790398, guid: b285a27ca63fb474da0daa6e00935f2f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

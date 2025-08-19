@@ -812,7 +812,6 @@ GameObject:
   - component: {fileID: 746550521}
   - component: {fileID: 746550523}
   - component: {fileID: 746550524}
-  - component: {fileID: 746550525}
   m_Layer: 0
   m_Name: phare_final_0
   m_TagString: Untagged
@@ -901,7 +900,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb359f8b2bf870446b9f3baa7f9e2fdf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _UIArchives: {fileID: 0}
+  _UIArchives: {fileID: 1526315350}
   isRepaired: 1
 --- !u!61 &746550524
 BoxCollider2D:
@@ -933,11 +932,11 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -5.243234}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -947,25 +946,8 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 15.840001, y: 44.860954}
+  m_Size: {x: 15.840001, y: 13.909951}
   m_EdgeRadius: 0
---- !u!114 &746550525
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 746550520}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c494cd52d0f7644d8b2ac1986045269, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _NextSceneData: {fileID: 11400000, guid: 4f9d2ebe370453d43b934f62e2c5b6fc, type: 2}
-  _energy: {fileID: 0}
-  animator: {fileID: 0}
-  tools: {fileID: 0}
-  Player: {fileID: 0}
 --- !u!1001 &836755961
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2086,6 +2068,7 @@ MonoBehaviour:
   sceneDestination: {fileID: 11400000, guid: 4f9d2ebe370453d43b934f62e2c5b6fc, type: 2}
   dialogueCapitain: {fileID: 745674850}
   MiniGameCapitain: {fileID: 836755963}
+  npcManager: {fileID: 962963980}
 --- !u!4 &1817012203
 Transform:
   m_ObjectHideFlags: 0

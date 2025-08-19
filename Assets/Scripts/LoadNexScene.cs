@@ -25,7 +25,6 @@ public class LoadNexScene : MonoBehaviour
         {
             _NextSceneData.isLauch = true;
             animator.SetTrigger("Transition");
-            Debug.Log("All DELet");
             PlayerPrefs.DeleteAll();
             //DeletPos();
             //QuestManager.SetQuest((int)QUESTS.Maison);
@@ -43,7 +42,7 @@ public class LoadNexScene : MonoBehaviour
             _NextSceneData.isLauch = true;
 
             animator.SetTrigger("Transition");
-            _NextSceneData.SetCurrentScene("");//TODO enlever
+            //_NextSceneData.SetCurrentScene("");//TODO enlever
 
 
             string scene = _NextSceneData.GetPreviousScene().Length > 1 ? _NextSceneData.GetPreviousScene() : "Port Ile Principale";
@@ -124,6 +123,12 @@ public class LoadNexScene : MonoBehaviour
         }
         
 
+        animator.SetTrigger("Transition");
+        StartCoroutine(_NextSceneData.SwitchScene(_NextSceneData.GetPreviousScene()));
+    }
+
+    public void LoadPreviousSceneWithMenu()
+    {     
         animator.SetTrigger("Transition");
         StartCoroutine(_NextSceneData.SwitchScene(_NextSceneData.GetPreviousScene()));
     }

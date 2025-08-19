@@ -78,7 +78,7 @@ public class Menu : MonoBehaviour
     {
         if (_NextScene)
         {
-            _NextScene.LoadPreviousScene();
+            _NextScene.LoadPreviousSceneWithMenu();
             return;
         }
         Debug.LogWarning("NextScene is not Initiate in the menu");

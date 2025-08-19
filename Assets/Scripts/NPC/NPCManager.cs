@@ -11,6 +11,7 @@ public class NPCManager : MonoBehaviour
     
     public void Awake()
     {
+        dialogueNpc = null;
         _allNpc = new List<NPC>();
 
         List<Type> npcSubclasses = GetAllSubclassesOf<NPC>();

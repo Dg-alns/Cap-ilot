@@ -9,7 +9,7 @@ public enum DIRECTION
     Y
 }
 
-public class SwipeManager : MonoBehaviour //TODO Diego a adapter pour mobile
+public class SwipeManager : MonoBehaviour
 {
     Vector2 InitialposMous = Vector2.zero;
     Vector2 LastposMous = Vector2.zero;

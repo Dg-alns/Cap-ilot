@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Village : MonoBehaviour //TODO Diego ajouter les maison endomager
+public class Village : MonoBehaviour 
 {
     public GameObject Ecole;
     public GameObject Sport;
@@ -11,12 +11,21 @@ public class Village : MonoBehaviour //TODO Diego ajouter les maison endomager
 
     public GameObject MaisonDiabete;
 
+    public SpriteRenderer MaisonAlimentation;
+    public SpriteRenderer MaisonRelation;
+    public SpriteRenderer MaisonFrere;
+
+    public Sprite MaisonCleanAlimentation;
+    public Sprite MaisonCleanRelation;
+    public Sprite MaisonCleanFrere;
+
 
     void Start()
     {
         if(QuestManager.GetCurrentQuest() > QuestManager.GetQUESTS(QUESTS.A_Ressource))
         {
             Alimentation.SetActive(true);
+            MaisonAlimentation.sprite = MaisonCleanAlimentation;
         }
         if(QuestManager.GetCurrentQuest() > QuestManager.GetQUESTS(QUESTS.S_Ressource))
         {
@@ -25,10 +34,12 @@ public class Village : MonoBehaviour //TODO Diego ajouter les maison endomager
         if(QuestManager.GetCurrentQuest() > QuestManager.GetQUESTS(QUESTS.E_Ressource))
         {
             Ecole.SetActive(true);
+            MaisonFrere.sprite = MaisonCleanFrere;
         }
         if(QuestManager.GetCurrentQuest() > QuestManager.GetQUESTS(QUESTS.R_Ressoucre))
         {
             Relation.SetActive(true);
+            MaisonRelation.sprite = MaisonCleanRelation;
         }
 
 

@@ -19,7 +19,7 @@ public class PlayerSpriteManager : MonoBehaviour
 
     public GameObject Diabete;
 
-    public TextMeshProUGUI TextQuestTMP; //TODO a modifier pour le mettre dasn les scene
+    public TextMeshProUGUI TextQuestTMP; //TODO a modifier pour le mettre dans les scene
 
     public bool inProfil = false;
 
@@ -124,6 +124,9 @@ public class PlayerSpriteManager : MonoBehaviour
 
     void UpdateTextQuest()
     {
+        if (TextQuestTMP == null)
+            return;
+
         switch(QuestManager.GetCurrentQuest())
         {
             case (int)QUESTS.Introduction:
