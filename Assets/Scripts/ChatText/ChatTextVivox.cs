@@ -17,6 +17,10 @@ using Unity.Services.Authentication;
 public class ChatTextVivox : MonoBehaviour
 {
 
+
+    [SerializeField] private TextMeshProUGUI _textNoFriend;
+    [SerializeField] private GameObject _uiButtonFriend;
+
     List<RosterItem> rosterList = new List<RosterItem>();
 
     private IList<KeyValuePair<string, MessageObject>> m_MessageObjPool = new List<KeyValuePair<string, MessageObject>>();
@@ -32,6 +36,8 @@ public class ChatTextVivox : MonoBehaviour
     
     private Task FetchMessages = null;
     private DateTime? oldestMessage = null;
+
+    private string _idOtherPlayer;
 
     private void Start()
     {
@@ -83,13 +89,14 @@ public class ChatTextVivox : MonoBehaviour
     }
 
 
-    public void ClearMessageObjectPool(string PlayerID)
+    public void AddFriendChannel(string PlayerID)
     {
         /*foreach (KeyValuePair<string, MessageObject> keyValuePair in m_MessageObjPool)
         {
             Destroy(keyValuePair.Value.gameObject);
         }
         m_MessageObjPool.Clear();*/
+        _uiButtonFriend.GetComponent<ButtonFriend>().ChangePanel();
         VivoxService.Instance.LeaveAllChannelsAsync();
         _channelName = GetPrivateChannelName(PlayerID, AuthenticationService.Instance.PlayerId);
         VivoxService.Instance.JoinGroupChannelAsync(
@@ -98,6 +105,39 @@ public class ChatTextVivox : MonoBehaviour
         );
 
         //FetchMessages = FetchHistory(true);
+    }
+
+    public void JoinLobbyChannel()
+    {
+        _textNoFriend.gameObject.SetActive(false);
+        VivoxService.Instance.LeaveAllChannelsAsync();
+        _channelName = VivoxVoiceManager.LobbyChannelName;
+        VivoxService.Instance.JoinGroupChannelAsync(
+                _channelName,
+                ChatCapability.TextOnly
+        );
+    }
+    public void JoinFriendChannel()
+    {
+        foreach (KeyValuePair<string, MessageObject> keyValuePair in m_MessageObjPool)
+        {
+            Destroy(keyValuePair.Value.gameObject);
+        }
+        m_MessageObjPool.Clear();
+        VivoxService.Instance.LeaveAllChannelsAsync();
+        if (PlayerPrefs.HasKey("otherPlayerId"))
+        {
+            _channelName = GetPrivateChannelName(PlayerPrefs.GetString("otherPlayerId"), AuthenticationService.Instance.PlayerId);
+            VivoxService.Instance.JoinGroupChannelAsync(
+                    _channelName,
+                    ChatCapability.TextOnly
+            );
+        }
+        else
+        {
+            _textNoFriend.gameObject.SetActive(true);
+        }
+        
     }
 
     private void ScrollRectChange(Vector2 vector)
@@ -250,6 +290,8 @@ public class ChatTextVivox : MonoBehaviour
 
     public static string GetPrivateChannelName(string playerId1, string playerId2)
     {
+
+        PlayerPrefs.SetString("otherPlayerId", playerId1);
         var sorted = new List<string> { playerId1, playerId2 };
         sorted.Sort(); // Assure un ordre stable
         _channelName = $"private_{sorted[0]}_{sorted[1]}";

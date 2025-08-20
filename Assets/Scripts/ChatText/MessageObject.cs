@@ -71,6 +71,6 @@ public class MessageObject : MonoBehaviour
 
     private void ClearAll()
     {
-        FindAnyObjectByType<ChatTextVivox>().ClearMessageObjectPool(m_vivoxMessage.SenderPlayerId);
+        FindAnyObjectByType<ChatTextVivox>().AddFriendChannel(m_vivoxMessage.SenderPlayerId);
     }
 }

@@ -25,8 +25,10 @@ public class ButtonFriend : MonoBehaviour
        
         GetComponent<Image>().color = new Color(0.1058824f, 0.3215686f, 0.3490196f); ;
         GetComponentInChildren<TextMeshProUGUI>().color = Color.white;
+        GetComponent<Button>().interactable = false;
 
         _otherButton.color = Color.white;
         _otherButton.GetComponentInChildren<TextMeshProUGUI>().color = new Color(0.1058824f, 0.3215686f, 0.3490196f);
+        _otherButton.GetComponent<Button>().interactable = true;
     }
 }
