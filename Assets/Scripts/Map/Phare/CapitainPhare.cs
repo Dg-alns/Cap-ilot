@@ -64,8 +64,13 @@ public class CapitainPhare : MonoBehaviour
         if (npcManager.dialogueNpc == null)
             return;
 
+        if (dialogueCapitain.GetComponent<NPC>().idxOffSetDialogue == 1 && QuestManager.GetCurrentQuest() == QuestManager.GetQUESTS(QUESTS.DemandeCapitaine))
+            QuestManager.ValidateQuest(QUESTS.DemandeCapitaine);
+
         if (dialogueCapitain.GetComponent<NPC>().idxOffSetDialogue == 2 && QuestManager.GetCurrentQuest() == QuestManager.GetQUESTS(QUESTS.Phare))
             QuestManager.ValidateQuest(QUESTS.Phare);
-        
+
+
+        ActiveSetOffDialogue();
     }
 }

@@ -1349,7 +1349,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 880684434788671923, guid: 194deb3502166994b9337affa1cc0ffc, type: 3}
       propertyPath: 'dialogueSet.Array.data[0].dialogueLines.Array.data[1]'
-      value: "Nous vous avons r\xE9cup\xE9rer au port, vous faisiez une crispe d'hypoglyc\xE9mie."
+      value: "Nous vous avons r\xE9cup\xE9rer au port, vous faisiez une crise d'hypoglyc\xE9mie."
       objectReference: {fileID: 0}
     - target: {fileID: 880684434788671923, guid: 194deb3502166994b9337affa1cc0ffc, type: 3}
       propertyPath: 'dialogueSet.Array.data[0].dialogueLines.Array.data[2]'

@@ -22,6 +22,7 @@ public class DownBarManager : MonoBehaviour
     {
         _activePageMark = PAGE_MARK.GAME;
         _animator.SetInteger("StateDownBar", (int)_activePageMark);
+
     }
 
     // Change the animator integer to show the appropriate page

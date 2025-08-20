@@ -8,7 +8,6 @@ public class LightHouse : MonoBehaviour
     private Tools m_csTools;
     [SerializeField] private GameObject _UIArchives;
 
-    public bool isRepaired;
     void Start()
     {
         m_csTools = FindAnyObjectByType<Tools>();

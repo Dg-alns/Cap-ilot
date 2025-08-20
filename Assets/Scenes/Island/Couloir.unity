@@ -1125,7 +1125,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 880684434788671923, guid: 194deb3502166994b9337affa1cc0ffc, type: 3}
       propertyPath: dialogueSet.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 880684434788671923, guid: 194deb3502166994b9337affa1cc0ffc, type: 3}
       propertyPath: dialogueSet.Array.data[0].dialogueLines.Array.size
@@ -1133,6 +1133,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 880684434788671923, guid: 194deb3502166994b9337affa1cc0ffc, type: 3}
       propertyPath: dialogueSet.Array.data[1].dialogueLines.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 880684434788671923, guid: 194deb3502166994b9337affa1cc0ffc, type: 3}
+      propertyPath: dialogueSet.Array.data[2].dialogueLines.Array.size
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 880684434788671923, guid: 194deb3502166994b9337affa1cc0ffc, type: 3}
@@ -1152,6 +1156,11 @@ PrefabInstance:
     - target: {fileID: 880684434788671923, guid: 194deb3502166994b9337affa1cc0ffc, type: 3}
       propertyPath: 'dialogueSet.Array.data[1].dialogueLines.Array.data[1]'
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 880684434788671923, guid: 194deb3502166994b9337affa1cc0ffc, type: 3}
+      propertyPath: 'dialogueSet.Array.data[2].dialogueLines.Array.data[0]'
+      value: "Maintenant que tu connait tous sur ton diab\xE8te. Je te l'aisse explorer
+        notre archipel."
       objectReference: {fileID: 0}
     - target: {fileID: 5145867479845301797, guid: 194deb3502166994b9337affa1cc0ffc, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1210,6 +1219,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9067902587201038583, guid: 194deb3502166994b9337affa1cc0ffc, type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9067902587201038583, guid: 194deb3502166994b9337affa1cc0ffc, type: 3}
       propertyPath: m_SortingLayerID
       value: 1689557907
       objectReference: {fileID: 0}
@@ -1250,13 +1263,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Panneau Port
       objectReference: {fileID: 0}
+    - target: {fileID: 7660051009266230268, guid: 29ae1de120ecad9418ddf494741bca3a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8557331510602295511, guid: 29ae1de120ecad9418ddf494741bca3a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 25
+      value: 24.61
       objectReference: {fileID: 0}
     - target: {fileID: 8557331510602295511, guid: 29ae1de120ecad9418ddf494741bca3a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -25
+      value: -25.98
       objectReference: {fileID: 0}
     - target: {fileID: 8557331510602295511, guid: 29ae1de120ecad9418ddf494741bca3a, type: 3}
       propertyPath: m_LocalPosition.z

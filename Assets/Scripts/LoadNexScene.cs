@@ -25,7 +25,8 @@ public class LoadNexScene : MonoBehaviour
         {
             _NextSceneData.isLauch = true;
             animator.SetTrigger("Transition");
-            PlayerPrefs.DeleteAll();
+            //PlayerPrefs.DeleteAll();
+
             //DeletPos();
             //QuestManager.SetQuest((int)QUESTS.Maison);
             tools.DontDestroyTools();

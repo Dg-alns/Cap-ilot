@@ -8,6 +8,7 @@ public class Phare : MonoBehaviour
     public GameObject TopPhare;
     public Sprite phareClean;
 
+    public BoxCollider2D PhareCollider;
 
     void Start()
     {
@@ -18,5 +19,8 @@ public class Phare : MonoBehaviour
                 TopPhare.SetActive(false);
             }
         }
+
+        if(QuestManager.GetCurrentQuest() > QuestManager.GetQUESTS(QUESTS.Phare))
+            PhareCollider.isTrigger = true;
     }
 }

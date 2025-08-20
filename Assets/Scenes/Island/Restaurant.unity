@@ -1307,7 +1307,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8185881588264402033, guid: d400b78d53980d349bec9c8c27796ef6, type: 3}
       propertyPath: 'dialogueSet.Array.data[2].dialogueLines.Array.data[3]'
-      value: J'aimerais revenir au village, embarquant ensemble.
+      value: J'aimerais revenir au village, embarquont ensemble.
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -7297,6 +7297,7 @@ MonoBehaviour:
   Bas: {fileID: 32388594130441110}
   Chaussure: {fileID: 6024888467845638966}
   Diabete: {fileID: 0}
+  TextQuestTMP: {fileID: 0}
   inProfil: 1
 --- !u!1 &1970193169693175105
 GameObject:

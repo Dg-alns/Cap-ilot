@@ -63,7 +63,7 @@ public class Sauvegarde_Minigame : MonoBehaviour
     public int GetBestScore(string sceneName)
     {
         if (_statMinigame == null)
-            return 0;
+            Init();
 
         if (_statMinigame.ContainsKey(sceneName))
             return _statMinigame[sceneName]._bestScore;
@@ -84,6 +84,9 @@ public class Sauvegarde_Minigame : MonoBehaviour
 
     public int GetTotalStars()
     {
+        if (_statMinigame == null)
+            Init();
+
         int total = 0;
 
         foreach(KeyValuePair<string,TemplateSaveMinigame> s in _statMinigame)
@@ -96,9 +99,9 @@ public class Sauvegarde_Minigame : MonoBehaviour
     public bool GetCanShowInfo(string sceneName)
     {        
         if(_statMinigame == null)
-            return false;
+            Init();
 
-        if(_statMinigame.ContainsKey(sceneName))
+        if (_statMinigame.ContainsKey(sceneName))
             return _statMinigame[sceneName]._showInfo;
         return _state;
     }
@@ -106,9 +109,9 @@ public class Sauvegarde_Minigame : MonoBehaviour
     public bool HaveMiniGame(string sceneName)
     {        
         if(_statMinigame == null)
-            return false;
+            Init();
 
-        if(_statMinigame.ContainsKey(sceneName))
+        if (_statMinigame.ContainsKey(sceneName))
             return true;
 
         return false;

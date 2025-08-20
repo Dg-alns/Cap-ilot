@@ -10,6 +10,10 @@ public class PortIlePrincipale : MonoBehaviour
 
     public Port Hopital;
     public Port Alimentation;
+    public Port Relation;
+    public Port Sport;
+    public Port Tentation;
+    public Port Ecole;
 
     public void ActivePancartePhare()
     {
@@ -47,17 +51,28 @@ public class PortIlePrincipale : MonoBehaviour
 
         if (QuestManager.GetCurrentQuest() >= QuestManager.GetQUESTS(QUESTS.Hopital))
         {
-            ActiveBateau();
-        }
-
-
-        if (QuestManager.GetCurrentQuest() == QuestManager.GetQUESTS(QUESTS.Hopital))
-        {
             Hopital.CanGotoIle();
+            ActiveBateau();
         }
         if (QuestManager.GetCurrentQuest() >= QuestManager.GetQUESTS(QUESTS.Alimentation))
         {
             Alimentation.CanGotoIle();
+        }
+        if (QuestManager.GetCurrentQuest() >= QuestManager.GetQUESTS(QUESTS.Relation))
+        {
+            Relation.CanGotoIle();
+        }
+        if (QuestManager.GetCurrentQuest() >= QuestManager.GetQUESTS(QUESTS.Sport))
+        {
+            Sport.CanGotoIle();
+        }
+        //if (QuestManager.GetCurrentQuest() >= QuestManager.GetQUESTS(QUESTS.Tentation))
+        //{
+        //    Tentation.CanGotoIle();
+        //}
+        if (QuestManager.GetCurrentQuest() >= QuestManager.GetQUESTS(QUESTS.Ecole))
+        {
+            Ecole.CanGotoIle();
         }
     }
 }

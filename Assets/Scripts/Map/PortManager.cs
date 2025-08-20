@@ -22,6 +22,9 @@ public class PortManager : MonoBehaviour
 
             for (int i = 0; i < allPorts.Count; i++)
             {
+                if(allPorts[i].GetComponent<AccesToPort>().port.GetIsDiscover())
+                    allPorts[i].GetComponent<AccesToPort>().port.CanGotoIle();
+
                 if (allPorts[i].GetComponent<AccesToPort>().port.GetCanGotoIle() == false)
                     allPorts[i].SetActive(false);
             }
