@@ -39,4 +39,10 @@ public class Relation_TalkedNPC : MonoBehaviour
             }
         }
     }
+
+    public void SetTalked(bool isTalked)
+    {
+        alreadyTalked = isTalked;
+        PlayerPrefs.SetInt(keyPlayerPrefs, isTalked ? 1 : 0);
+    }
 }

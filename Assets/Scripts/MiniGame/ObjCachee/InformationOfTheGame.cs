@@ -82,6 +82,11 @@ public class InformationOfTheGame : MonoBehaviour
                         Or.IsDefeatScore(or); 
                         break;
                     }
+                default:
+                    {
+                        Debug.Log("ERROR SCORE !!");
+                        break;
+                    }
             }
         }  
     }

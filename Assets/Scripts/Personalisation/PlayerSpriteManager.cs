@@ -54,6 +54,14 @@ public class PlayerSpriteManager : MonoBehaviour
             Haut.GetComponent<Image>().sprite = playerData.GetSprite(PART.Haut);
             Bas.GetComponent<Image>().sprite = playerData.GetSprite(PART.Bas);
             Chaussure.GetComponent<Image>().sprite = playerData.GetSprite(PART.Chaussure);
+
+
+            Corps.GetComponent<Image>().color = playerData.GetColor(PART.Corps);
+            Cheveux.GetComponent<Image>().color = playerData.GetColor(PART.Cheveux);
+            AccessoirTete.GetComponent<Image>().color = playerData.GetColor(PART.AccessoirTete);
+            Haut.GetComponent<Image>().color = playerData.GetColor(PART.Haut);
+            Bas.GetComponent<Image>().color = playerData.GetColor(PART.Bas);
+            Chaussure.GetComponent<Image>().color = playerData.GetColor(PART.Chaussure);
         }
     }
 

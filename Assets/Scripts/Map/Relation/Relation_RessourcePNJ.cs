@@ -11,6 +11,8 @@ public class Relation_RessourcePNJ : MonoBehaviour
 
     private void Start()
     {
+        saving = JSON_Manager.LoadData<Saving>(Application.dataPath + "/Json/Save.json");
+
         if (QuestManager.GetQUESTS(QUESTS.Relation) >= QuestManager.GetPlayerPref())
         {
             QuestManager.SetQuest(QUESTS.Relation);
@@ -35,6 +37,10 @@ public class Relation_RessourcePNJ : MonoBehaviour
                 {
                     npc.idxOffSetDialogue = (int)OffSet_Dialogue_Surveillant.WaitingForTest;
                     npc.SetPLayerPrefs(npc.idxOffSetDialogue);
+                    foreach (Relation_TalkedNPC npcT in npcTalked)
+                    {
+                        npcT.SetTalked(false);
+                    }
                 }
                 break;
 
@@ -73,6 +79,10 @@ public class Relation_RessourcePNJ : MonoBehaviour
     public void ConditionToGiveRessource()
     {
         Debug.Log("TEST");
+
+        if (!saving.statMinigame.ContainsKey("MiniGame_Funambule"))
+            return;
+
         foreach(Relation_TalkedNPC npcT in npcTalked)
         {
             if (!npcT.alreadyTalked)

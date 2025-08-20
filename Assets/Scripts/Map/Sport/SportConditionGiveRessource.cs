@@ -27,13 +27,13 @@ public class SportConditionGiveRessource : MonoBehaviour
 
     bool ConditionToGiveRessource()
     {
-        //Saving save = null;
-        //if (save.statMinigame.ContainsKey("MiniGame_TirBut"))
-        //    return false;
-        //if (save.statMinigame.ContainsKey("MiniGame_Marathon"))
-        //    return false;
-        //if (save.statMinigame.ContainsKey("MiniGame_Boxe"))
-        //    return false;
+        Saving save = JSON_Manager.LoadData<Saving>(Application.dataPath + "/Json/Save.json");
+        if (save.statMinigame.ContainsKey("MiniGame_TirBut"))
+            return false;
+        if (save.statMinigame.ContainsKey("MiniGame_Marathon"))
+            return false;
+        if (save.statMinigame.ContainsKey("MiniGame_Boxe"))
+            return false;
         return true;
     }
 }

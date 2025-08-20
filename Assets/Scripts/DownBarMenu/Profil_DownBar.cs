@@ -17,19 +17,24 @@ public class Profil_DownBar : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _NbStars;
     [SerializeField] private TextMeshProUGUI _NbHours;
     [SerializeField] private TextMeshProUGUI _NbJournal;
-    [SerializeField] private TextMeshProUGUI _NbQuête;
+    [SerializeField] private TextMeshProUGUI _NbQuest;
 
     private void Start()
     {
         
-        string jsonstring = File.ReadAllText(Application.dataPath +  "/JSON/Save.json");
-        Saving save = JsonUtility.FromJson<Saving>(jsonstring);
+        Saving save = JSON_Manager.LoadData<Saving>(Application.dataPath + "/Json/Save.json");
 
         _NicknameText.text = save.profile.Username;
 
-        //_NbStars.text = sauvegarde_Minigame.GetTotalStars().ToString();
+        _NbStars.text = sauvegarde_Minigame.GetTotalStars().ToString();
 
         _NbJournal.text = save.GetCompletedJournal().ToString();
-        
+
+        int numQuest = QuestManager.GetPlayerPref();
+        int totalQuest = (int)QUESTS.Count;
+
+        _NbQuest.text = numQuest < 0 ? "0/" + totalQuest.ToString() : numQuest.ToString() + "/" + totalQuest.ToString();
+
+
     }
 }

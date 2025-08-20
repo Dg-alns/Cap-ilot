@@ -97,6 +97,10 @@ public class Sauvegarde : MonoBehaviour
         Saving save = new Saving(journal, profile, questManager, StatMinigame);
         foreach (Quest quest in questManager.quests)
         {
+            if (SceneManager.GetActiveScene().name.Contains("MiniGame"))
+                return;
+            if (SceneManager.GetActiveScene().name.Contains("Down"))
+                return;
             if (questManager.statusDict[quest.id] == false)
             {
                 if (quest.CheckCondition(save))

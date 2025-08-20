@@ -475,7 +475,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   score: {fileID: 33948726}
-  Sauvegarde: {fileID: 212153151}
+  _Sauvegarde: {fileID: 212153151}
 --- !u!114 &212153151
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -515,6 +515,9 @@ MonoBehaviour:
   Mois: {fileID: 0}
   Annee: {fileID: 0}
   OutputDate: {fileID: 0}
+  StatMinigame:
+    m_keys: []
+    m_values: []
 --- !u!1 &271293042
 GameObject:
   m_ObjectHideFlags: 0

@@ -11,14 +11,14 @@ public class Sauvegarde_Minigame : MonoBehaviour
     public Score score;
 
     bool _state = true;
-    [SerializeField] Sauvegarde Sauvegarde;
+    [SerializeField] Sauvegarde _Sauvegarde;
     // Start is called before the first frame update
     void Start()
     {
         sceneName = SceneManager.GetActiveScene().name;
         _jsonPath = Application.dataPath + "/Json/Save.json";
         //_statMinigame = JsonUtility.FromJson<Dictionary<string, TemplateSaveMinigame>>(_jsonPath);
-        _statMinigame = Sauvegarde.StatMinigame;
+        _statMinigame = _Sauvegarde.StatMinigame;
         Debug.Log("Nombre de stat : " + _statMinigame.Count);
         /*try
         {
@@ -129,7 +129,7 @@ public class Sauvegarde_Minigame : MonoBehaviour
         else{
             _statMinigame[sceneName] = new TemplateSaveMinigame(score.nbStars, score.MiniGamePoint, _state);
         }
-        Saving save = new Saving(Sauvegarde.journal, Sauvegarde.profile, Sauvegarde.questManager, _statMinigame);
-        Sauvegarde.Save(save);
+        Saving save = new Saving(_Sauvegarde.journal, _Sauvegarde.profile, _Sauvegarde.questManager, _statMinigame);
+        _Sauvegarde.Save(save);
     }
 }

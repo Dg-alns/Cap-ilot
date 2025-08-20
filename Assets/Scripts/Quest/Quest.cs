@@ -8,6 +8,7 @@ using UnityEngine.U2D;
 public enum QUESTS
 {
     None,
+
     ReparationPhare,
     Maison,
     DemandeCapitaine,
@@ -20,7 +21,9 @@ public enum QUESTS
     Sport,
     S_Ressource,
     Relation,
-    R_Ressoucre
+    R_Ressoucre,
+
+    Count
 }
 
 [System.Serializable]
