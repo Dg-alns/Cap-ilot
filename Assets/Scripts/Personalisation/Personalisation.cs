@@ -8,10 +8,9 @@ using UnityEngine.UI;
 public class Personalisation : MonoBehaviour
 {
     public PagesManagement pagesManagement;
+    public PositionementPartManager positionementPartManager;
     public TextMeshProUGUI PageOfAccesoires;
     public Sprite cadena;
-
-    public GameObject PrefabEyes;
 
     int nbMaxpagesOfCurrentLst;
     int idxcurrentpages;
@@ -129,6 +128,7 @@ public class Personalisation : MonoBehaviour
                         {
                             go.GetComponent<SpriteRenderer>().sprite = gameObject.GetComponent<Image>().sprite;
                             go.GetComponent<SpriteRenderer>().color = Color.white;
+                            positionementPartManager.SetPostion(go, GetLsitScriptObj(Playerpart.DetectionOfPart(pagesManagement.CurrentPage))[i + offset]);
                         }
                     }
                 }
@@ -247,6 +247,7 @@ public class Personalisation : MonoBehaviour
 
     void CreateLstAllColor()
     {
+        AddColor(Color.white);
         AddColor(Color.red);
         AddColor(Color.blue);
         AddColor(Color.green);
@@ -280,7 +281,6 @@ public class Personalisation : MonoBehaviour
 
         PersoPlayerData data = AllBody[nextBody];
 
-
         if (go.GetComponent<SpriteRenderer>().sprite != data.sprite)
         {
             go.GetComponent<SpriteRenderer>().sprite = data.sprite;
@@ -306,7 +306,6 @@ public class Personalisation : MonoBehaviour
 
         PersoPlayerData dataLeft = AllEyesLeft[nextBody];
         PersoPlayerData dataRight = AllEyesLeft[nextBody];
-
 
         if (Left.GetComponent<SpriteRenderer>().sprite != dataLeft.sprite)
         {
