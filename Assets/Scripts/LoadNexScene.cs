@@ -28,7 +28,6 @@ public class LoadNexScene : MonoBehaviour
             PlayerPrefs.DeleteAll();
 
             //DeletPos();
-            //QuestManager.SetQuest((int)QUESTS.Maison);
             tools.DontDestroyTools();
             string scene = PlayerPrefs.HasKey("SceneName") ? PlayerPrefs.GetString("SceneName") : "Personalisation";
             StartCoroutine(_NextSceneData.NextScene(scene));

@@ -6,18 +6,18 @@ public class Serveur : Pnj_Ressource
 {
     protected override bool TakeRessource()
     {
-        return QuestManager.GetCurrentQuest() == QuestManager.GetQUESTS(QUESTS.A_Ressource);
+        return QuestManager.GetCurrentQuest() == QuestManager.GetQUESTS(quest);
     }
 
     protected override void ValidateQuestRessource()
     {
         Debug.Log("Validate A_Ressource");
-        QuestManager.ValidateQuest(QUESTS.A_Ressource);
+        QuestManager.ValidateQuest(quest);
     }
 
     protected override bool ToDestroy()
     {
-        if (QuestManager.GetCurrentQuest() > QuestManager.GetQUESTS(QUESTS.A_Ressource))
+        if (QuestManager.GetCurrentQuest() > QuestManager.GetQUESTS(quest))
             return true;
 
         return false;

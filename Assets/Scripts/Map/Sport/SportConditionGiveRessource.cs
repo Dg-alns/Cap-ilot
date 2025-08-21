@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SportConditionGiveRessource : MonoBehaviour
+public class SportConditionGiveRessource : MonoBehaviour // Todo passer avecn npcRessource
 {
     LoadNexScene loadNexScene;
     // Start is called before the first frame update
@@ -10,7 +10,7 @@ public class SportConditionGiveRessource : MonoBehaviour
     {
         //QuestManager.SetQuest(QUESTS.Sport);
 
-        if (QuestManager.GetPlayerPref() != QuestManager.GetQUESTS(QUESTS.Sport))
+        if (QuestManager.GetCurrentQuest() != QuestManager.GetQUESTS(QUESTS.Sport))
             return;
 
         loadNexScene = FindAnyObjectByType<LoadNexScene>();
@@ -20,7 +20,7 @@ public class SportConditionGiveRessource : MonoBehaviour
             bool conditionNextQuest = ConditionToGiveRessource();
             if (conditionNextQuest)
             {
-                QuestManager.NextQuest();
+                //QuestManager.ValidateQuest(QUESTS.);
             }
         }
     }

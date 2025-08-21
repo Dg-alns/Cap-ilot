@@ -932,7 +932,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _UIArchives: {fileID: 0}
-  isRepaired: 1
 --- !u!61 &746550524
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2303,6 +2302,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b22952453eaaa8d4aabd5fca08630c52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  quest: 11
 --- !u!1 &2023388801
 GameObject:
   m_ObjectHideFlags: 0

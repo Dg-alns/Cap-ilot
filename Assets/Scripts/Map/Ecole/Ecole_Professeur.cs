@@ -23,7 +23,7 @@ public class Ecole_Professeur : MonoBehaviour
         // Check the condition to the valid the quest
         //if (!string.Equals(previousScene, "Quiz"))
         //    return;
-        //if (QuestManager.GetPlayerPref() != QuestManager.GetQUESTS(QUESTS.Ecole))
+        //if (QuestManager.GetCurrentQuest() != QuestManager.GetQUESTS(QUESTS.Ecole))
         //    return;
 
         // Process to force a dialogue
@@ -37,8 +37,8 @@ public class Ecole_Professeur : MonoBehaviour
 
         ForceDialogueProf();
 
-        //QuestManager.ValidateQuest(QUESTS.Ecole); // TODO Voir Merge
-        QuestManager.SetQuest(QUESTS.E_Ressource);
+        QuestManager.ValidateQuest(QUESTS.Ecole); // TODO Voir Merge
+        //QuestManager.SetQuest(QUESTS.E_Ressource);
     }
    
     void ForceDialogueProf()

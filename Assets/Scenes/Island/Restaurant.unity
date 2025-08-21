@@ -287,7 +287,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   score: {fileID: 0}
-  Sauvegarde: {fileID: 115235321}
+  _Sauvegarde: {fileID: 0}
 --- !u!114 &115235321
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1334,6 +1334,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1447fd8f71a9ce44395ae297e7bdfac5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  quest: 7
 --- !u!1001 &1176027500
 PrefabInstance:
   m_ObjectHideFlags: 0

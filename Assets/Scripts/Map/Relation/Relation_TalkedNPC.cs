@@ -35,7 +35,7 @@ public class Relation_TalkedNPC : MonoBehaviour
             {
                 PlayerPrefs.SetInt(keyPlayerPrefs, 1);
                 alreadyTalked = true;
-                FindAnyObjectByType<Relation_RessourcePNJ>().ConditionToGiveRessource();
+                //FindAnyObjectByType<Relation_RessourcePNJ>().ConditionToGiveRessource();
             }
         }
     }

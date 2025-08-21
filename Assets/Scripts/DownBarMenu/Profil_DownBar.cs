@@ -30,7 +30,7 @@ public class Profil_DownBar : MonoBehaviour
 
         _NbJournal.text = save.GetCompletedJournal().ToString();
 
-        int numQuest = QuestManager.GetPlayerPref();
+        int numQuest = QuestManager.GetCurrentQuest();
         int totalQuest = (int)QUESTS.Count;
 
         _NbQuest.text = numQuest < 0 ? "0/" + totalQuest.ToString() : numQuest.ToString() + "/" + totalQuest.ToString();

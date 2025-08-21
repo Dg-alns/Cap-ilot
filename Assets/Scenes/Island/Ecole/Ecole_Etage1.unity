@@ -764,7 +764,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _UIArchives: {fileID: 0}
-  isRepaired: 1
 --- !u!61 &746550524
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2733,6 +2732,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 040e77f21c8e7fd47b158ee4d19f579e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  quest: 9
 --- !u!114 &1821632965
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3235,8 +3235,6 @@ MonoBehaviour:
       je vais aller les aider pour la r\xE9paration du village tu pourras me retrouver
       l\xE0-bas si tu veux.\n"
     - "Allez \xE0 une prochaine fois !"
-  ileFirstQuest: 8
-  ressourceQuest: 9
 --- !u!70 &2114707086
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

@@ -13,8 +13,9 @@ public class Pnj_Ressource : MonoBehaviour
 {
     protected DialogueNPC npc;
     protected NPCManager npcManager;
+    [SerializeField] protected QUESTS quest;
 
-    private void Start()
+    protected virtual void Start()
     {
         npcManager = FindFirstObjectByType<NPCManager>();
         npc = GetComponent<DialogueNPC>();      
