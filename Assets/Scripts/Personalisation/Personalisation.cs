@@ -7,51 +7,23 @@ using UnityEngine.UI;
 
 public class Personalisation : MonoBehaviour
 {
-    //public SearchScriptObj search;
-    //public PersoPlayerData playerData;
-
     public PagesManagement pagesManagement;
-
     public TextMeshProUGUI PageOfAccesoires;
-
     public Sprite cadena;
 
+    public GameObject PrefabEyes;
+
     int nbMaxpagesOfCurrentLst;
-    int currentpages;
+    int idxcurrentpages;
+    int sizeGrid;
+    int idxcurrentBody = -1;
+    int idxcurrentEyes = -1;
 
     Dictionary<PartOfBody, int> nbPagesOfAccesoires = new Dictionary<PartOfBody, int>();
-
-    List<GameObject> listOfGridPersonalisation;
-
     List<Color> listOfAllColors = new List<Color>();
 
+    List<GameObject> listOfGridPersonalisation;
     List<GameObject> GridAllColors;
-
-
-    // Arm
-    List<PersoPlayerData> ScriptsHaut = SearchScriptObj.HautSObj;
-    List<PersoPlayerData> ScriptsHand = SearchScriptObj.HandSObj;
-    List<PersoPlayerData> ScriptsShoulder = SearchScriptObj.ShoulderSObj;
-
-
-    List<PersoPlayerData> ScriptsChest = SearchScriptObj.CorpsSObj;
-
-    // Face
-    //List<ScriptableObject> ScriptsEyebrows = SearchScriptObj.EyebrowsSObj;
-    List<PersoPlayerData> ScriptsAccTete = SearchScriptObj.AccTeteSObj;
-    List<PersoPlayerData> ScriptsHair = SearchScriptObj.HairSObj;
-    List<PersoPlayerData> ScriptsMouse = SearchScriptObj.MouseSObj;
-    List<PersoPlayerData> ScriptsNose = SearchScriptObj.NoseSObj;
-
-
-    //Leg
-    List<PersoPlayerData> ScriptsShoes = SearchScriptObj.ShoesSObj;
-    List<PersoPlayerData> ScriptsThigh = SearchScriptObj.ThighSObj;
-    List<PersoPlayerData> ScriptsBas = SearchScriptObj.BasSObj;
-
-
-    int sizeGrid;
-
 
     void Awake()
     {
@@ -72,90 +44,33 @@ public class Personalisation : MonoBehaviour
 
     void UpdateText()
     {
-        PageOfAccesoires.text = $"{currentpages} / {nbMaxpagesOfCurrentLst}";
+        PageOfAccesoires.text = $"{idxcurrentpages} / {nbMaxpagesOfCurrentLst}";
     }
-
-
-    //List<PersoPlayerData> GetLsitScriptObj(PartOfBody part)
-    //{
-    //    switch(part)
-    //    {
-    //        case PartOfBody.Hair:
-    //            return ScriptsHair;
-
-    //        case PartOfBody.Chest:
-    //            return ScriptsChest;
-
-    //        case PartOfBody.Eyes:
-    //            return ScriptsEyes;
-
-    //        case PartOfBody.Mouse:
-    //            return ScriptsMouse;
-
-    //        case PartOfBody.Nose:
-    //            return ScriptsNose;
-
-    //        case PartOfBody.L_Arm:
-    //            return ScriptsArm;
-
-    //        case PartOfBody.R_Arm:
-    //            return ScriptsArm;
-
-    //        case PartOfBody.L_Foot:
-    //            return ScriptsFoot;
-
-    //        case PartOfBody.R_Foot:
-    //            return ScriptsFoot;
-
-    //        case PartOfBody.L_Thigh:
-    //            return ScriptsThigh;
-
-    //        case PartOfBody.R_Thigh:
-    //            return ScriptsThigh;
-
-    //        case PartOfBody.L_Hand:
-    //            return ScriptsHand;
-
-    //        case PartOfBody.R_Hand:
-    //            return ScriptsHand;
-
-    //        case PartOfBody.L_Leg:
-    //            return ScriptsLeg;
-
-    //        case PartOfBody.R_Leg:
-    //            return ScriptsLeg;
-
-    //        case PartOfBody.L_Shoulder:
-    //            return ScriptsShoulder;
-
-    //        case PartOfBody.R_Shoulder:
-    //            return ScriptsShoulder;
-    //    }
-
-    //    return null;
-    //}
 
     List<PersoPlayerData> GetLsitScriptObj(PartOfBody part)
     {
         switch (part)
         {
             case PartOfBody.Hair:
-                return ScriptsHair;
+                return SearchScriptObj.HairSObj;
 
-            case PartOfBody.Chest:
-                return ScriptsChest;
+            case PartOfBody.Body:
+                return SearchScriptObj.BodySObj;
 
-            case PartOfBody.AccTete:
-                return ScriptsAccTete;
+            case PartOfBody.EyesLeft:
+                return SearchScriptObj.EyesLeftObj;
 
-            case PartOfBody.Haut:
-                return ScriptsHaut;
+            case PartOfBody.EyesRight:
+                return SearchScriptObj.EyesRightObj;
 
-            case PartOfBody.Bas:
-                return ScriptsBas;
+            case PartOfBody.Top:
+                return SearchScriptObj.TopSObj;
+
+            case PartOfBody.Bottom:
+                return SearchScriptObj.BottomSObj;
 
             case PartOfBody.Shoes:
-                return ScriptsShoes;
+                return SearchScriptObj.ShoesSObj;
         }
 
         return null;
@@ -163,8 +78,8 @@ public class Personalisation : MonoBehaviour
 
     int OffsetOfidxLst()
     {
-        if (currentpages >= 1 && currentpages <= nbMaxpagesOfCurrentLst)
-            return (currentpages - 1) * sizeGrid;
+        if (idxcurrentpages >= 1 && idxcurrentpages <= nbMaxpagesOfCurrentLst)
+            return (idxcurrentpages - 1) * sizeGrid;
 
         return -1;
     }
@@ -172,6 +87,9 @@ public class Personalisation : MonoBehaviour
     public void UpdateGrillPersonalisation()
     {
         int offset = OffsetOfidxLst();
+
+        if (offset < 0)
+            return;
 
         for(int i = 0; i < listOfGridPersonalisation.Count; i++)
         {
@@ -184,7 +102,7 @@ public class Personalisation : MonoBehaviour
             Sprite sprite = GetLsitScriptObj(Playerpart.DetectionOfPart(pagesManagement.CurrentPage))[i + offset].sprite;
             listOfGridPersonalisation[i].GetComponent<Image>().sprite = sprite;
 
-            if (GetLsitScriptObj(Playerpart.DetectionOfPart(pagesManagement.CurrentPage))[i + offset].isDebloquer)
+            if (GetLsitScriptObj(Playerpart.DetectionOfPart(pagesManagement.CurrentPage))[i + offset].IsDebloquer())
             {
                 listOfGridPersonalisation[i].GetComponent<Image>().color = Color.white;
             }
@@ -196,12 +114,14 @@ public class Personalisation : MonoBehaviour
     public void ChangePerso(GameObject gameObject)
     {
         int offset = OffsetOfidxLst();
+        if (offset < 0)
+            return;
         if (gameObject.GetComponent<Image>().sprite != null)
         {
             for (int i = 0; i < listOfGridPersonalisation.Count; i++) {
                 if (gameObject.name.Contains((i+1).ToString()))
                 {
-                    if (GetLsitScriptObj(Playerpart.DetectionOfPart(pagesManagement.CurrentPage))[i + offset].isDebloquer)
+                    if (GetLsitScriptObj(Playerpart.DetectionOfPart(pagesManagement.CurrentPage))[i + offset].IsDebloquer())
                     {
                         GameObject go = Playerpart.GetPartOfPlayer(pagesManagement.CurrentPage);
 
@@ -225,9 +145,9 @@ public class Personalisation : MonoBehaviour
 
     public void NextPageOfCustoPart()   
     {
-        if(currentpages < nbMaxpagesOfCurrentLst)
+        if(idxcurrentpages < nbMaxpagesOfCurrentLst)
         {
-            currentpages++;
+            idxcurrentpages++;
             UpdateGrillPersonalisation();
             UpdateText();
         }
@@ -235,9 +155,9 @@ public class Personalisation : MonoBehaviour
 
     public void PreviousPageOfCustoPart()
     {
-        if (currentpages > 1)
+        if (idxcurrentpages > 1)
         {
-            currentpages--;
+            idxcurrentpages--;
             UpdateGrillPersonalisation();
             UpdateText();
         }
@@ -314,7 +234,7 @@ public class Personalisation : MonoBehaviour
     public void ChangeOfAnyPart()
     {
         nbMaxpagesOfCurrentLst = FindSpeNbPageOfAccessoires();
-        currentpages = 1;
+        idxcurrentpages = 1;
         UpdateText();
     }
 
@@ -342,6 +262,57 @@ public class Personalisation : MonoBehaviour
         for (int i = 0; i < GridAllColors.Count; i++)
         {
             GridAllColors[i].GetComponent<Image>().color = listOfAllColors[i];
+        }
+    }
+
+    public void NextBody()
+    {
+        List<PersoPlayerData> AllBody =  GetLsitScriptObj(PartOfBody.Body);
+        GameObject go = Playerpart.GetPartOfPlayer(PartOfBody.Body.ToString());
+
+        for(int i = 0; i < AllBody.Count;i++)
+        {
+            if (AllBody[i].sprite == go.GetComponent<SpriteRenderer>().sprite)
+                idxcurrentBody = i;
+        }
+
+        int nextBody = (idxcurrentBody + 1) < AllBody.Count ? (idxcurrentBody + 1) : 0;
+
+        PersoPlayerData data = AllBody[nextBody];
+
+
+        if (go.GetComponent<SpriteRenderer>().sprite != data.sprite)
+        {
+            go.GetComponent<SpriteRenderer>().sprite = data.sprite;
+            idxcurrentBody = nextBody;
+        }
+    }
+
+    public void NextEye()
+    {
+        List<PersoPlayerData> AllEyesLeft =  GetLsitScriptObj(PartOfBody.EyesLeft);
+        GameObject Left = Playerpart.GetPartOfPlayer(PartOfBody.EyesLeft.ToString());
+
+        List<PersoPlayerData> AllEyesRight =  GetLsitScriptObj(PartOfBody.EyesRight);
+        GameObject Right = Playerpart.GetPartOfPlayer(PartOfBody.EyesRight.ToString());
+
+        for(int i = 0; i < AllEyesLeft.Count;i++)
+        {
+            if (AllEyesLeft[i].sprite == Left.GetComponent<SpriteRenderer>().sprite)
+                idxcurrentEyes = i;
+        }
+
+        int nextBody = (idxcurrentEyes + 1) < AllEyesLeft.Count ? (idxcurrentEyes + 1) : 0;
+
+        PersoPlayerData dataLeft = AllEyesLeft[nextBody];
+        PersoPlayerData dataRight = AllEyesLeft[nextBody];
+
+
+        if (Left.GetComponent<SpriteRenderer>().sprite != dataLeft.sprite)
+        {
+            Left.GetComponent<SpriteRenderer>().sprite = dataLeft.sprite;
+            Right.GetComponent<SpriteRenderer>().sprite = dataRight.sprite;
+            idxcurrentEyes = nextBody;
         }
     }
 }

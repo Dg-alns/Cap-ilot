@@ -143,7 +143,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      apercu_bibliotheque_cap_ilot_0: 6124499981537840649
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

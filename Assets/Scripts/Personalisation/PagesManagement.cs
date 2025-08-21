@@ -28,6 +28,8 @@ public class PagesManagement : MonoBehaviour
     {
         foreach (var prt in Playerpart.AllParOfPlayer)
         {
+            if(prt.Key == PartOfBody.Body || prt.Key == PartOfBody.EyesLeft|| prt.Key == PartOfBody.EyesRight)
+                continue;
             pages.Add(prt.Key);
         }
 

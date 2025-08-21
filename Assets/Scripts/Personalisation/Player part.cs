@@ -3,34 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 
 // Detection all part of player for change after for personalisation script
-//public enum PartOfBody
-//{
-//    Chest,
-//    Hair,
-//    Eyes,
-//    Mouse,
-//    Nose,
-//    L_Shoulder,
-//    R_Shoulder,
-//    L_Arm,
-//    R_Arm,
-//    L_Hand,
-//    R_Hand,
-//    L_Thigh,
-//    R_Thigh,
-//    L_Leg,
-//    R_Leg,
-//    L_Foot,
-//    R_Foot,
-//    NULL
-//}
 public enum PartOfBody
 {
-    Chest,
+    Body,
     Hair,
-    AccTete,
-    Haut,
-    Bas,
+    EyesLeft,
+    EyesRight,
+    Top,
+    Bottom,
     Shoes,
     NULL
 }

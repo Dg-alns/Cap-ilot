@@ -12,7 +12,7 @@ public class PlayerSpriteManager : MonoBehaviour
 
     public GameObject Corps;
     public GameObject Cheveux;
-    public GameObject AccessoirTete;
+    public GameObject Eyes;
     public GameObject Haut;
     public GameObject Bas;
     public GameObject Chaussure;
@@ -38,14 +38,14 @@ public class PlayerSpriteManager : MonoBehaviour
 
             Corps.GetComponent<SpriteRenderer>().sprite = playerData.GetSprite(PART.Corps);
             Cheveux.GetComponent<SpriteRenderer>().sprite = playerData.GetSprite(PART.Cheveux);
-            AccessoirTete.GetComponent<SpriteRenderer>().sprite = playerData.GetSprite(PART.AccessoirTete);
+            Eyes.GetComponent<SpriteRenderer>().sprite = playerData.GetSprite(PART.AccessoirTete);
             Haut.GetComponent<SpriteRenderer>().sprite = playerData.GetSprite(PART.Haut);
             Bas.GetComponent<SpriteRenderer>().sprite = playerData.GetSprite(PART.Bas);
             Chaussure.GetComponent<SpriteRenderer>().sprite = playerData.GetSprite(PART.Chaussure);
 
             Corps.GetComponent<SpriteRenderer>().color = playerData.GetColor(PART.Corps);
             Cheveux.GetComponent<SpriteRenderer>().color = playerData.GetColor(PART.Cheveux);
-            AccessoirTete.GetComponent<SpriteRenderer>().color = playerData.GetColor(PART.AccessoirTete);
+            Eyes.GetComponent<SpriteRenderer>().color = playerData.GetColor(PART.AccessoirTete);
             Haut.GetComponent<SpriteRenderer>().color = playerData.GetColor(PART.Haut);
             Bas.GetComponent<SpriteRenderer>().color = playerData.GetColor(PART.Bas);
             Chaussure.GetComponent<SpriteRenderer>().color = playerData.GetColor(PART.Chaussure);
@@ -54,14 +54,14 @@ public class PlayerSpriteManager : MonoBehaviour
         {
             Corps.GetComponent<Image>().sprite = playerData.GetSprite(PART.Corps);
             Cheveux.GetComponent<Image>().sprite = playerData.GetSprite(PART.Cheveux);
-            AccessoirTete.GetComponent<Image>().sprite = playerData.GetSprite(PART.AccessoirTete);
+            Eyes.GetComponent<Image>().sprite = playerData.GetSprite(PART.AccessoirTete);
             Haut.GetComponent<Image>().sprite = playerData.GetSprite(PART.Haut);
             Bas.GetComponent<Image>().sprite = playerData.GetSprite(PART.Bas);
             Chaussure.GetComponent<Image>().sprite = playerData.GetSprite(PART.Chaussure);
             
             Corps.GetComponent<Image>().color = playerData.GetColor(PART.Corps);
             Cheveux.GetComponent<Image>().color = playerData.GetColor(PART.Cheveux);
-            AccessoirTete.GetComponent<Image>().color = playerData.GetColor(PART.AccessoirTete);
+            Eyes.GetComponent<Image>().color = playerData.GetColor(PART.AccessoirTete);
             Haut.GetComponent<Image>().color = playerData.GetColor(PART.Haut);
             Bas.GetComponent<Image>().color = playerData.GetColor(PART.Bas);
             Chaussure.GetComponent<Image>().color = playerData.GetColor(PART.Chaussure);
@@ -94,7 +94,7 @@ public class PlayerSpriteManager : MonoBehaviour
 
         playerData.SaveSprite(PART.Cheveux, Cheveux.GetComponent<SpriteRenderer>().sprite, Cheveux.GetComponent<SpriteRenderer>().color);
 
-        playerData.SaveSprite(PART.AccessoirTete, AccessoirTete.GetComponent<SpriteRenderer>().sprite, AccessoirTete.GetComponent<SpriteRenderer>().color);
+        playerData.SaveSprite(PART.AccessoirTete, Eyes.GetComponent<SpriteRenderer>().sprite, Eyes.GetComponent<SpriteRenderer>().color);
 
         playerData.SaveSprite(PART.Haut, Haut.GetComponent<SpriteRenderer>().sprite, Haut.GetComponent<SpriteRenderer>().color);
 
