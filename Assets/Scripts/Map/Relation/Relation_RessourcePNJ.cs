@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Relation_RessourcePNJ : Pnj_Ressource
 {
-    [SerializeField] List<Relation_TalkedNPC> npcTalked = new List<Relation_TalkedNPC>(4);
+    [SerializeField] List<AlreadyTalkedNPC> npcTalked = new List<AlreadyTalkedNPC>(4);
     //private DialogueNPC npc;
     //private NPCManager npcManager;
     Saving saving;
@@ -97,7 +97,7 @@ public class Relation_RessourcePNJ : Pnj_Ressource
         if (!saving.statMinigame.ContainsKey("MiniGame_Funambule"))
             return false;
 
-        foreach (Relation_TalkedNPC npcT in npcTalked)
+        foreach (AlreadyTalkedNPC npcT in npcTalked)
         {
             if (!npcT.alreadyTalked)
                 return false;

@@ -10,6 +10,7 @@ public class Journal_DownBar : MonoBehaviour
     private List<string> listTheme;
 
     [SerializeField] private Calendrier_DownBar calendrier;
+    [SerializeField] private GameObject MarkPage_journal;
 
     [Header("Emotion")]
     [SerializeField] private EmotionWheel emotionWheel;
@@ -27,6 +28,7 @@ public class Journal_DownBar : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        MarkPage_journal.SetActive(false);
         listTheme = new List<string>() { "- Thèmes", "Hopital", "Sport", "Ecole", "Alimentation", "Relation", "Tentation" };
         
         string jsonstring = File.ReadAllText(Application.dataPath + "/JSON/Save.json");
@@ -74,7 +76,11 @@ public class Journal_DownBar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (MarkPage_journal.activeSelf)
+            return;
+
+        if(QuestManager.GetCurrentQuest() > (int)QUESTS.ReparationPhare)
+            MarkPage_journal.SetActive(true);
     }
 
     public void AddTheme()

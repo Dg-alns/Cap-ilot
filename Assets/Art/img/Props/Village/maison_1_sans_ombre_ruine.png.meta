@@ -143,7 +143,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      maison_1_sans_ombre_ruine_0: -3119072210832300061
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
