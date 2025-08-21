@@ -11,21 +11,24 @@ public class Sauvegarde_Minigame : MonoBehaviour
     public Score score;
 
     bool _state = true;
-    [SerializeField] Sauvegarde Sauvegarde;
+    [SerializeField] Sauvegarde _Sauvegarde;
     // Start is called before the first frame update
 
-    private void Init()
-    {
-        sceneName = SceneManager.GetActiveScene().name;
-        _jsonPath = Application.dataPath + "/Json/Save.json";
-        //_statMinigame = JsonUtility.FromJson<Dictionary<string, TemplateSaveMinigame>>(_jsonPath);
-        _statMinigame = Sauvegarde.StatMinigame;
-    }
+//     private void Init()
+//     {
+//         sceneName = SceneManager.GetActiveScene().name;
+//         _jsonPath = Application.dataPath + "/Json/Save.json";
+//         //_statMinigame = JsonUtility.FromJson<Dictionary<string, TemplateSaveMinigame>>(_jsonPath);
+
+//         _statMinigame = Sauvegarde.StatMinigame;
+//     }
 
     void Start()
     {
 
-        Init();
+        //Init();
+        _statMinigame = _Sauvegarde.StatMinigame;
+        Debug.Log("Nombre de stat : " + _statMinigame.Count);
         /*try
         {
             _statMinigame = JSON_Manager.LoadData<Dictionary<string, TemplateSaveMinigame>>(_jsonPath);
@@ -63,7 +66,7 @@ public class Sauvegarde_Minigame : MonoBehaviour
     public int GetBestScore(string sceneName)
     {
         if (_statMinigame == null)
-            Init();
+            return;
 
         if (_statMinigame.ContainsKey(sceneName))
             return _statMinigame[sceneName]._bestScore;
@@ -75,7 +78,7 @@ public class Sauvegarde_Minigame : MonoBehaviour
     public int GetnbStars(string sceneName)
     {
         if (_statMinigame == null)
-            Init();
+            return;
 
         if(_statMinigame.ContainsKey(sceneName))
             return _statMinigame[sceneName]._nbStar;
@@ -85,7 +88,7 @@ public class Sauvegarde_Minigame : MonoBehaviour
     public int GetTotalStars()
     {
         if (_statMinigame == null)
-            Init();
+            return;
 
         int total = 0;
 
@@ -99,7 +102,7 @@ public class Sauvegarde_Minigame : MonoBehaviour
     public bool GetCanShowInfo(string sceneName)
     {        
         if(_statMinigame == null)
-            Init();
+            return;
 
         if (_statMinigame.ContainsKey(sceneName))
             return _statMinigame[sceneName]._showInfo;
@@ -109,7 +112,7 @@ public class Sauvegarde_Minigame : MonoBehaviour
     public bool HaveMiniGame(string sceneName)
     {        
         if(_statMinigame == null)
-            Init();
+            return;
 
         if (_statMinigame.ContainsKey(sceneName))
             return true;
@@ -151,7 +154,7 @@ public class Sauvegarde_Minigame : MonoBehaviour
         else{
             _statMinigame[sceneName] = new TemplateSaveMinigame(score.nbStars, score.MiniGamePoint, _state);
         }
-        Saving save = new Saving(Sauvegarde.journal, Sauvegarde.profile, Sauvegarde.questManager, _statMinigame);
-        Sauvegarde.Save(save);
+        Saving save = new Saving(_Sauvegarde.journal, _Sauvegarde.profile, _Sauvegarde.questManager, _statMinigame);
+        _Sauvegarde.Save(save);
     }
 }

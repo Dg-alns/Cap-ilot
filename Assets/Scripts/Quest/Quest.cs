@@ -23,7 +23,9 @@ public enum QUESTS
     Sport,
     S_Ressource,
     Relation,
-    R_Ressoucre
+    R_Ressoucre,
+
+    Count
 }
 
 [System.Serializable]

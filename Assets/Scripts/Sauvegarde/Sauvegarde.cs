@@ -108,6 +108,10 @@ public class Sauvegarde : MonoBehaviour
         foreach (Quest quest in save.questManager.GetQuests())
         {
             if (save.questManager.statusDict[quest.id] == false)
+            // if (SceneManager.GetActiveScene().name.Contains("MiniGame"))
+            //     return;
+            // if (SceneManager.GetActiveScene().name.Contains("Down"))
+            //     return;
             {
                 if (quest.CheckCondition(save))
                 {

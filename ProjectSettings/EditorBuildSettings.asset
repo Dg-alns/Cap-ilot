@@ -86,7 +86,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MiniGames/MiniGame_Funambule.unity
     guid: ab63fa7a7cead1e4a9011ecdb21857ed
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Island/Ecole/Ecole_Bibliotheque.unity
     guid: e7cbd98a19fc0024b8a718c94c152108
   - enabled: 1
