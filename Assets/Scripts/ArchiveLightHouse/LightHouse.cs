@@ -20,7 +20,11 @@ public class LightHouse : MonoBehaviour
     }
     private void OnMouseOver()
     {
-        if (!m_csTools.IsPointerOverUIElement())
+
+        if (QuestManager.GetCurrentQuest() <= QuestManager.GetQUESTS(QUESTS.Phare))
+            return;
+
+            if (!m_csTools.IsPointerOverUIElement())
         {
             if (Input.GetMouseButtonUp(0))
             {

@@ -21,7 +21,7 @@ public class Round : MonoBehaviour
     public SwipeManager swipeManager;
 
     int CurrentRound = 1;
-    int nbPhase = 1;
+    int nbPhase = 3;
     int CurrentPhase = 0;
 
     public void StartRound()
