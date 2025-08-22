@@ -143,7 +143,7 @@ public class PlayerSpriteManager : MonoBehaviour
                 TextQuestTMP.text = "ReparationPhare";
                 break;
             case (int)QUESTS.R_Ressoucre:
-                TextQuestTMP.text = "R_Ressoucre";
+                TextQuestTMP.text = "R_Ressource";
                 break;
             case (int)QUESTS.Relation:
                 TextQuestTMP.text = "Relation";

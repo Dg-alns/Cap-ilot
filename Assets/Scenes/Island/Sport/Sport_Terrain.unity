@@ -2098,7 +2098,6 @@ GameObject:
   - component: {fileID: 1653498327}
   - component: {fileID: 1653498330}
   - component: {fileID: 1653498332}
-  - component: {fileID: 1653498331}
   - component: {fileID: 1653498325}
   m_Layer: 0
   m_Name: GerantTournoi36
@@ -2278,18 +2277,6 @@ MonoBehaviour:
     - "Bien mon tournoi ne commence pas avant un moment, je ferai mieux d'aller retrouver
       mon fr\xE8re, cela fait un moment que je ne l'ai pas vu !"
     - "On se retrouve sur l'\xEEle principal ci tu veux papoter un coup"
---- !u!114 &1653498331
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1653498324}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a7eb9ff90e99a1e479fae98d7b70ecef, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1653498332
 MonoBehaviour:
   m_ObjectHideFlags: 0
