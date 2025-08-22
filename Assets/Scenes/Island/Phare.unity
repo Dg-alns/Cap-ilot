@@ -155,6 +155,11 @@ Transform:
   - {fileID: 962963981}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &272502441 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 399233344824254333, guid: 3db41709d5a461944ac57f74b472a5ef, type: 3}
+  m_PrefabInstance: {fileID: 1526315349}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &296377392
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1159,6 +1164,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 115235319}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1001657401 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7515419757501353968, guid: 3db41709d5a461944ac57f74b472a5ef, type: 3}
+  m_PrefabInstance: {fileID: 1526315349}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1018048500
 GameObject:
   m_ObjectHideFlags: 0
@@ -1756,7 +1766,6 @@ MonoBehaviour:
   phare: {fileID: 746550520}
   TopPhare: {fileID: 1226478366}
   phareClean: {fileID: 3211125702643728294, guid: 996da48264f5d0d47b121a697779f607, type: 3}
-  PhareCollider: {fileID: 0}
 --- !u!114 &1349440605
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1797,6 +1806,9 @@ MonoBehaviour:
   Annee: {fileID: 0}
   OutputDate: {fileID: 0}
   StatMinigame:
+    m_keys: []
+    m_values: []
+  StatPlayer:
     m_keys: []
     m_values: []
 --- !u!1 &1361216311
@@ -2225,9 +2237,9 @@ MonoBehaviour:
   _archivesList:
   - {fileID: 11400000, guid: 4023b08c9da2a60408f04676fe6fd2ae, type: 2}
   - {fileID: 11400000, guid: d2b67b959d9ec6b4aaca5b2a9e02e77c, type: 2}
-  _scrollView: {fileID: 1526315350}
+  _scrollView: {fileID: 272502441}
   _prefabTitle: {fileID: 287055388868218348, guid: 0fd527ba06fec6e4c91da263fef7c955, type: 3}
-  _articlePage: {fileID: 0}
+  _articlePage: {fileID: 1001657401}
   _titleArticle: {fileID: 0}
   _linkArticle: {fileID: 0}
   _contentArticle: {fileID: 0}

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using Unity.Collections.LowLevel.Unsafe;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.Android;
 using UnityEngine.SceneManagement;
@@ -56,15 +57,22 @@ public class PlayerSpriteManager : MonoBehaviour
             DetectionPlayerDataSprite(PartOfBody.Bottom, Bas);
             DetectionPlayerDataSprite(PartOfBody.Shoes, Chaussure);
 
-            DetectionPlayerDataColor(PartOfBody.Body, Corps);
-            DetectionPlayerDataColor(PartOfBody.Hair, Cheveux);
-            DetectionPlayerDataColor(PartOfBody.EyesLeft, EyeLeft);
-            DetectionPlayerDataColor(PartOfBody.EyesRight, EyeRight);
-            DetectionPlayerDataColor(PartOfBody.Top, Haut);
-            DetectionPlayerDataColor(PartOfBody.Bottom, Bas);
-            DetectionPlayerDataColor(PartOfBody.Shoes, Chaussure);
+            Corps.GetComponent<SpriteRenderer>().color = playerData.GetColor(PartOfBody.Body);
+            Cheveux.GetComponent<SpriteRenderer>().color = playerData.GetColor(PartOfBody.Hair);
+            EyeLeft.GetComponent<SpriteRenderer>().color = playerData.GetColor(PartOfBody.EyesLeft);
+            EyeRight.GetComponent<SpriteRenderer>().color = playerData.GetColor(PartOfBody.EyesRight);
+            Chaussure.GetComponent<SpriteRenderer>().color = playerData.GetColor(PartOfBody.Shoes);
+            Haut.GetComponent<SpriteRenderer>().color = playerData.GetColor(PartOfBody.Top);
+            Bas.GetComponent<SpriteRenderer>().color = playerData.GetColor(PartOfBody.Bottom);
+            //DetectionPlayerDataColor(PartOfBody.Body, Corps);
+            //DetectionPlayerDataColor(PartOfBody.Hair, Cheveux);
+            //DetectionPlayerDataColor(PartOfBody.EyesLeft, EyeLeft);
+            //DetectionPlayerDataColor(PartOfBody.EyesRight, EyeRight);
+            //DetectionPlayerDataColor(PartOfBody.Top, Haut);
+            //DetectionPlayerDataColor(PartOfBody.Bottom, Bas);
+            //DetectionPlayerDataColor(PartOfBody.Shoes, Chaussure);
         }
-        else if(inProfil)
+        else if(inProfil) //tODO adapter avec image
         {
             DetectionPlayerDataSprite(PartOfBody.Body, Corps);
             DetectionPlayerDataSprite(PartOfBody.Hair, Cheveux);
@@ -73,14 +81,22 @@ public class PlayerSpriteManager : MonoBehaviour
             DetectionPlayerDataSprite(PartOfBody.Top, Haut);
             DetectionPlayerDataSprite(PartOfBody.Bottom, Bas);
             DetectionPlayerDataSprite(PartOfBody.Shoes, Chaussure);
-            
-            DetectionPlayerDataColor(PartOfBody.Body, Corps);
-            DetectionPlayerDataColor(PartOfBody.Hair, Cheveux);
-            DetectionPlayerDataColor(PartOfBody.EyesLeft, EyeLeft);
-            DetectionPlayerDataColor(PartOfBody.EyesRight, EyeRight);
-            DetectionPlayerDataColor(PartOfBody.Top, Haut);
-            DetectionPlayerDataColor(PartOfBody.Body, Bas);
-            DetectionPlayerDataColor(PartOfBody.Shoes, Chaussure);
+
+            Corps.GetComponent<Image>().color = playerData.GetColor(PartOfBody.Body);
+            Cheveux.GetComponent<Image>().color = playerData.GetColor(PartOfBody.Hair);
+            EyeLeft.GetComponent<Image>().color = playerData.GetColor(PartOfBody.EyesLeft);
+            EyeRight.GetComponent<Image>().color = playerData.GetColor(PartOfBody.EyesRight);
+            Haut.GetComponent<Image>().color = playerData.GetColor(PartOfBody.Top);
+            Bas.GetComponent<Image>().color = playerData.GetColor(PartOfBody.Bottom);
+            Chaussure.GetComponent<Image>().color = playerData.GetColor(PartOfBody.Shoes);
+
+            //DetectionPlayerDataColor(PartOfBody.Body, Corps);
+            //DetectionPlayerDataColor(PartOfBody.Hair, Cheveux);
+            //DetectionPlayerDataColor(PartOfBody.EyesLeft, EyeLeft);
+            //DetectionPlayerDataColor(PartOfBody.EyesRight, EyeRight);
+            //DetectionPlayerDataColor(PartOfBody.Top, Haut);
+            //DetectionPlayerDataColor(PartOfBody.Body, Bas);
+            //DetectionPlayerDataColor(PartOfBody.Shoes, Chaussure);
         }
         else
         {
@@ -178,7 +194,10 @@ public class PlayerSpriteManager : MonoBehaviour
         TemplateSavePlayerData Part_Player = _statePlayer[partOfBody.ToString()];
 
         if (Part_Player == null)
+        {
             go.GetComponent<Image>().color = playerData.GetColor(partOfBody);
+            return;
+        }
 
         playerData.SetPart_Body(partOfBody, Part_Player.GetSprite(), Part_Player.GetColor());
 
