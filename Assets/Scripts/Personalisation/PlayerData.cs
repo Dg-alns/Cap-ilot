@@ -1,101 +1,101 @@
 using UnityEngine;
 
-public enum PART
-{
-    Corps,
-    Cheveux,
-    AccessoirTete,
-    Haut,
-    Bas,
-    Chaussure,
-}
-
 
 [CreateAssetMenu(fileName = "PersonalisationData", menuName = "PersonalisationData/Create PersoData")]
 public class PlayerData : ScriptableObject
 {
     [SerializeField] Sprite Corps;
     [SerializeField] Sprite Cheveux;
-    [SerializeField] Sprite AccessoirTete;
+    [SerializeField] Sprite EyeLeft;
+    [SerializeField] Sprite EyeRight;
     [SerializeField] Sprite Haut;
     [SerializeField] Sprite Bas;
     [SerializeField] Sprite Chaussure;
 
     [SerializeField] Color Color_Corps;
     [SerializeField] Color Color_Cheveux;
-    [SerializeField] Color Color_AccessoirTete;
+    [SerializeField] Color Color_EyeLeft;
+    [SerializeField] Color Color_EyeRight;
     [SerializeField] Color Color_Haut;
     [SerializeField] Color Color_Bas;
     [SerializeField] Color Color_Chaussure;
 
 
-    public void SaveSprite(PART part, Sprite sprite, Color color)
+    public void SetPart_Body(PartOfBody part, Sprite sprite, Color color)
     {
         switch(part)
         {
-            case PART.Corps:
+            case PartOfBody.Body:
                 Corps = sprite;
                 Color_Corps = color;
                 break;
-            case PART.Cheveux:
+            case PartOfBody.Hair:
                 Cheveux = sprite;
                 Color_Cheveux = color;
                 break;
-            case PART.AccessoirTete:
-                AccessoirTete = sprite;
-                Color_AccessoirTete = color;
+            case PartOfBody.EyesLeft:
+                EyeLeft = sprite;
+                Color_EyeLeft = color;
                 break;
-            case PART.Haut:
+            case PartOfBody.EyesRight:
+                EyeRight = sprite;
+                Color_EyeRight = color;
+                break;
+            case PartOfBody.Top:
                 Haut = sprite;
                 Color_Haut = color;
                 break;
-            case PART.Bas:
+            case PartOfBody.Bottom:
                 Bas = sprite;
                 Color_Bas = color;
                 break;
-            case PART.Chaussure:
+            case PartOfBody.Shoes:
                 Chaussure = sprite;
                 Color_Chaussure = color;
                 break;
         }
     }
 
-    public Sprite GetSprite(PART part)
+    public Sprite GetSprite(PartOfBody part)
     {
         switch(part)
         {
-            case PART.Corps:
+            case PartOfBody.Body:
                 return Corps;
-            case PART.Cheveux:
+            case PartOfBody.Hair:
                 return Cheveux;
-            case PART.AccessoirTete:
-                return AccessoirTete;
-            case PART.Haut:
+            case PartOfBody.EyesLeft:
+                return EyeLeft;
+            case PartOfBody.EyesRight:
+                return EyeRight;
+            case PartOfBody.Top:
                 return Haut;
-            case PART.Bas:
+            case PartOfBody.Bottom:
                 return Bas;     
-            case PART.Chaussure:
+            case PartOfBody.Shoes:
                 return Chaussure;
         }
 
         return null;
     }
 
-    public Color GetColor(PART part)
+    public Color GetColor(PartOfBody part)
     {
         switch(part)
         {
-            case PART.Corps:
+            case PartOfBody.Body:
                 return Color_Corps;
-            case PART.Cheveux:
+            case PartOfBody.Hair:
                 return Color_Cheveux;
-            case PART.AccessoirTete:
-                return Color_AccessoirTete;
-            case PART.Haut:
+            case PartOfBody.EyesLeft:
+                return Color_EyeLeft;
+            case PartOfBody.EyesRight:
+                return Color_EyeRight;
+            case PartOfBody.Top:
                 return Color_Haut;
-            case PART.Bas:
+            case PartOfBody.Bottom:
                 return Color_Bas;
-            case PART.Chaussure:
+            case PartOfBody.Shoes:
                 return Color_Chaussure;
         }
 

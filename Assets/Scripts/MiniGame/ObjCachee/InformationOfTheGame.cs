@@ -100,9 +100,9 @@ public class InformationOfTheGame : MonoBehaviour
     {
         GameObjectToStart.GetComponent<Diabète>().Currentspeed = GameObjectToStart.GetComponent<Diabète>().Basespeed;
         if(toggle == null)
-            save.GetComponent<Sauvegarde_Minigame>().SetCanShowInfo(false);
+            save.GetComponent<Sauvegarde_Minigame>().SetCanShowInfo(SceneManager.GetActiveScene().name, false);
 
-        save.GetComponent<Sauvegarde_Minigame>().SetCanShowInfo(toggle.isOn);
+        save.GetComponent<Sauvegarde_Minigame>().SetCanShowInfo(SceneManager.GetActiveScene().name, toggle.isOn);
         canvas.gameObject.SetActive(false);
         timer.stop = false;
     }
@@ -111,9 +111,9 @@ public class InformationOfTheGame : MonoBehaviour
     {
         GameObjectToStart.GetComponent<Diabete_Memorie>().ActiveDiabete();
         if (toggle == null)
-            save.GetComponent<Sauvegarde_Minigame>().SetCanShowInfo(false);
+            save.GetComponent<Sauvegarde_Minigame>().SetCanShowInfo(SceneManager.GetActiveScene().name, false);
 
-        save.GetComponent<Sauvegarde_Minigame>().SetCanShowInfo(toggle.isOn);
+        save.GetComponent<Sauvegarde_Minigame>().SetCanShowInfo(SceneManager.GetActiveScene().name, toggle.isOn);
         canvas.gameObject.SetActive(false);
         timer.stop = false;
     }

@@ -1,18 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.Collections.LowLevel.Unsafe;
 using UnityEngine;
 using UnityEngine.Android;
 using UnityEngine.SceneManagement;
+using UnityEngine.SocialPlatforms.Impl;
 using UnityEngine.UI;
 
 public class PlayerSpriteManager : MonoBehaviour
 {
     public PlayerData playerData;
+    public TemplateSavePlayerData TemplateSavePlayer;
+    public PositionementPartManager positionementPartManager;
+    [SerializeField] Sauvegarde _Sauvegarde;
+
+    private SerializableDictionary<string, TemplateSavePlayerData> _statePlayer;
 
     public GameObject Corps;
     public GameObject Cheveux;
-    public GameObject Eyes;
+    public GameObject EyeLeft;
+    public GameObject EyeRight;
     public GameObject Haut;
     public GameObject Bas;
     public GameObject Chaussure;
@@ -25,46 +33,54 @@ public class PlayerSpriteManager : MonoBehaviour
 
     private void Start()
     {
+        _statePlayer = _Sauvegarde.StatPlayer;
+
         if (Diabete != null)
         {
             if (QuestManager.GetCurrentQuest() >= QuestManager.GetQUESTS(QUESTS.DemandeCapitaine))
                 Diabete.SetActive(true);
         }
 
+
+
         if (SceneManager.GetActiveScene().name == "Personalisation")
         {
-            if (HaveDateEnter() == false)
-                return;
+            //if (HaveDateEnter() == false)
+            //    return;
 
-            Corps.GetComponent<SpriteRenderer>().sprite = playerData.GetSprite(PART.Corps);
-            Cheveux.GetComponent<SpriteRenderer>().sprite = playerData.GetSprite(PART.Cheveux);
-            Eyes.GetComponent<SpriteRenderer>().sprite = playerData.GetSprite(PART.AccessoirTete);
-            Haut.GetComponent<SpriteRenderer>().sprite = playerData.GetSprite(PART.Haut);
-            Bas.GetComponent<SpriteRenderer>().sprite = playerData.GetSprite(PART.Bas);
-            Chaussure.GetComponent<SpriteRenderer>().sprite = playerData.GetSprite(PART.Chaussure);
+            DetectionPlayerDataSprite(PartOfBody.Body, Corps);
+            DetectionPlayerDataSprite(PartOfBody.Hair, Cheveux);
+            DetectionPlayerDataSprite(PartOfBody.EyesLeft, EyeLeft);
+            DetectionPlayerDataSprite(PartOfBody.EyesRight, EyeRight);
+            DetectionPlayerDataSprite(PartOfBody.Top, Haut);
+            DetectionPlayerDataSprite(PartOfBody.Bottom, Bas);
+            DetectionPlayerDataSprite(PartOfBody.Shoes, Chaussure);
 
-            Corps.GetComponent<SpriteRenderer>().color = playerData.GetColor(PART.Corps);
-            Cheveux.GetComponent<SpriteRenderer>().color = playerData.GetColor(PART.Cheveux);
-            Eyes.GetComponent<SpriteRenderer>().color = playerData.GetColor(PART.AccessoirTete);
-            Haut.GetComponent<SpriteRenderer>().color = playerData.GetColor(PART.Haut);
-            Bas.GetComponent<SpriteRenderer>().color = playerData.GetColor(PART.Bas);
-            Chaussure.GetComponent<SpriteRenderer>().color = playerData.GetColor(PART.Chaussure);
+            DetectionPlayerDataColor(PartOfBody.Body, Corps);
+            DetectionPlayerDataColor(PartOfBody.Hair, Cheveux);
+            DetectionPlayerDataColor(PartOfBody.EyesLeft, EyeLeft);
+            DetectionPlayerDataColor(PartOfBody.EyesRight, EyeRight);
+            DetectionPlayerDataColor(PartOfBody.Top, Haut);
+            DetectionPlayerDataColor(PartOfBody.Bottom, Bas);
+            DetectionPlayerDataColor(PartOfBody.Shoes, Chaussure);
         }
         else if(inProfil)
         {
-            Corps.GetComponent<Image>().sprite = playerData.GetSprite(PART.Corps);
-            Cheveux.GetComponent<Image>().sprite = playerData.GetSprite(PART.Cheveux);
-            Eyes.GetComponent<Image>().sprite = playerData.GetSprite(PART.AccessoirTete);
-            Haut.GetComponent<Image>().sprite = playerData.GetSprite(PART.Haut);
-            Bas.GetComponent<Image>().sprite = playerData.GetSprite(PART.Bas);
-            Chaussure.GetComponent<Image>().sprite = playerData.GetSprite(PART.Chaussure);
+            DetectionPlayerDataSprite(PartOfBody.Body, Corps);
+            DetectionPlayerDataSprite(PartOfBody.Hair, Cheveux);
+            DetectionPlayerDataSprite(PartOfBody.EyesLeft, EyeLeft);
+            DetectionPlayerDataSprite(PartOfBody.EyesRight, EyeRight);
+            DetectionPlayerDataSprite(PartOfBody.Top, Haut);
+            DetectionPlayerDataSprite(PartOfBody.Bottom, Bas);
+            DetectionPlayerDataSprite(PartOfBody.Shoes, Chaussure);
             
-            Corps.GetComponent<Image>().color = playerData.GetColor(PART.Corps);
-            Cheveux.GetComponent<Image>().color = playerData.GetColor(PART.Cheveux);
-            Eyes.GetComponent<Image>().color = playerData.GetColor(PART.AccessoirTete);
-            Haut.GetComponent<Image>().color = playerData.GetColor(PART.Haut);
-            Bas.GetComponent<Image>().color = playerData.GetColor(PART.Bas);
-            Chaussure.GetComponent<Image>().color = playerData.GetColor(PART.Chaussure);
+            DetectionPlayerDataColor(PartOfBody.Body, Corps);
+            DetectionPlayerDataColor(PartOfBody.Hair, Cheveux);
+            DetectionPlayerDataColor(PartOfBody.EyesLeft, EyeLeft);
+            DetectionPlayerDataColor(PartOfBody.EyesRight, EyeRight);
+            DetectionPlayerDataColor(PartOfBody.Top, Haut);
+            DetectionPlayerDataColor(PartOfBody.Body, Bas);
+            DetectionPlayerDataColor(PartOfBody.Shoes, Chaussure);
         }
         else
         {
@@ -90,20 +106,18 @@ public class PlayerSpriteManager : MonoBehaviour
 
     public void SavePersonalisation()
     {
-        playerData.SaveSprite(PART.Corps, Corps.GetComponent<SpriteRenderer>().sprite, Corps.GetComponent<SpriteRenderer>().color);
+        SavePart(PartOfBody.Body, Corps);
+        SavePart(PartOfBody.Hair, Cheveux);
+        SavePart(PartOfBody.EyesLeft, EyeLeft);
+        SavePart(PartOfBody.EyesRight, EyeRight);
+        SavePart(PartOfBody.Top, Haut);
+        SavePart(PartOfBody.Bottom, Bas);
+        SavePart(PartOfBody.Shoes, Chaussure);
 
-        playerData.SaveSprite(PART.Cheveux, Cheveux.GetComponent<SpriteRenderer>().sprite, Cheveux.GetComponent<SpriteRenderer>().color);
-
-        playerData.SaveSprite(PART.AccessoirTete, Eyes.GetComponent<SpriteRenderer>().sprite, Eyes.GetComponent<SpriteRenderer>().color);
-
-        playerData.SaveSprite(PART.Haut, Haut.GetComponent<SpriteRenderer>().sprite, Haut.GetComponent<SpriteRenderer>().color);
-
-        playerData.SaveSprite(PART.Bas, Bas.GetComponent<SpriteRenderer>().sprite, Bas.GetComponent<SpriteRenderer>().color);
-
-        playerData.SaveSprite(PART.Chaussure, Chaussure.GetComponent<SpriteRenderer>().sprite, Chaussure.GetComponent<SpriteRenderer>().color);
-       
+        Saving save = new Saving(_Sauvegarde.journal, _Sauvegarde.profile, _Sauvegarde.questManager, _Sauvegarde.StatMinigame, _statePlayer);
+        _Sauvegarde.Save(save);
         
-        
+
         //playerData.Cheveux = Cheveux.GetComponent<SpriteRenderer>().sprite;
         //playerData.AccessoirTete = AccessoirTete.GetComponent<SpriteRenderer>().sprite;
         //playerData.Haut = Haut.GetComponent<SpriteRenderer>().sprite;
@@ -118,14 +132,68 @@ public class PlayerSpriteManager : MonoBehaviour
         //playerData.Color_Chaussure = Chaussure.GetComponent<SpriteRenderer>().color;
     }
 
+
+    void SavePart(PartOfBody part, GameObject Part)
+    {
+        playerData.SetPart_Body(part, Part.GetComponent<SpriteRenderer>().sprite, Part.GetComponent<SpriteRenderer>().color);
+
+        string partName = part.ToString();
+
+        if (_statePlayer.ContainsKey(partName))
+        {
+            _statePlayer[partName].CheckNewPart_Body(Part.GetComponent<SpriteRenderer>().sprite);
+            _statePlayer[partName].CheckNewColor(Part.GetComponent<SpriteRenderer>().color);
+        }
+        else
+        {
+            _statePlayer[partName] = new TemplateSavePlayerData(Part.GetComponent<SpriteRenderer>().sprite, Part.GetComponent<SpriteRenderer>().color);
+        }
+    }
+
+    public void DetectionPlayerDataSprite(PartOfBody partOfBody, GameObject go)
+    {
+        TemplateSavePlayerData Part_Player = _statePlayer[partOfBody.ToString()];
+
+        List<PersoPlayerData> ee = SearchScriptObj.GetLsitScriptObj(partOfBody);
+
+        if (Part_Player == null) {
+            go.GetComponent<SpriteRenderer>().sprite = playerData.GetSprite(partOfBody);
+            return;
+        }
+
+
+        playerData.SetPart_Body(partOfBody, Part_Player.GetSprite(), Part_Player.GetColor());
+
+        go.GetComponent<SpriteRenderer>().sprite = playerData.GetSprite(partOfBody);    
+
+        for(int i  = 0; i < ee.Count; i++)
+        {
+            if (ee[i].sprite == Part_Player.Part_Body)
+                positionementPartManager.SetPostion(go, ee[i]);
+        }
+    }
+
+    public void DetectionPlayerDataColor(PartOfBody partOfBody, GameObject go)
+    {
+        TemplateSavePlayerData Part_Player = _statePlayer[partOfBody.ToString()];
+
+        if (Part_Player == null)
+            go.GetComponent<Image>().color = playerData.GetColor(partOfBody);
+
+        playerData.SetPart_Body(partOfBody, Part_Player.GetSprite(), Part_Player.GetColor());
+
+        go.GetComponent<Image>().color = playerData.GetColor(partOfBody);
+    }
+
     bool HaveDateEnter()
     {
-        return playerData.GetSprite(PART.Corps) != null ||
-                playerData.GetSprite(PART.Cheveux) != null ||
-                playerData.GetSprite(PART.AccessoirTete) != null ||
-                playerData.GetSprite(PART.Haut) != null ||
-                playerData.GetSprite(PART.Bas) != null ||
-                playerData.GetSprite(PART.Chaussure) != null;
+        return playerData.GetSprite(PartOfBody.Body) != null ||
+                playerData.GetSprite(PartOfBody.Hair) != null ||
+                playerData.GetSprite(PartOfBody.EyesLeft) != null ||
+                playerData.GetSprite(PartOfBody.EyesRight) != null ||
+                playerData.GetSprite(PartOfBody.Top) != null ||
+                playerData.GetSprite(PartOfBody.Bottom) != null ||
+                playerData.GetSprite(PartOfBody.Shoes) != null;
     }
 
 

@@ -17,6 +17,9 @@ public class PositionementPartManager : MonoBehaviour
 
         List<Vector2> lst = DetectionList(persoPlayerData.part);
 
+        if (lst == null)
+            return;
+
         for (int i = 0; i < lst.Count; i++)
         {
             if (spePArt.Equals(char.Parse((i+1).ToString())))
@@ -25,8 +28,6 @@ public class PositionementPartManager : MonoBehaviour
                 return;
             }
         }
-
-
     }
 
     char DetectonNumberSpeOffPart(string name)

@@ -35,4 +35,33 @@ public class SearchScriptObj : MonoBehaviour
             lst.Add(alldataPerso[i]);           
         }
     }
+
+    public static List<PersoPlayerData> GetLsitScriptObj(PartOfBody part)
+    {
+        switch (part)
+        {
+            case PartOfBody.Hair:
+                return HairSObj;
+
+            case PartOfBody.Body:
+                return BodySObj;
+
+            case PartOfBody.EyesLeft:
+                return EyesLeftObj;
+
+            case PartOfBody.EyesRight:
+                return EyesRightObj;
+
+            case PartOfBody.Top:
+                return TopSObj;
+
+            case PartOfBody.Bottom:
+                return BottomSObj;
+
+            case PartOfBody.Shoes:
+                return ShoesSObj;
+        }
+
+        return null;
+    }
 }

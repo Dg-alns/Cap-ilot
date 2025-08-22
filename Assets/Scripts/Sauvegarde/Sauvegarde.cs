@@ -32,6 +32,7 @@ public class Sauvegarde : MonoBehaviour
     [SerializeField] TMP_Dropdown Annee;
     [SerializeField] TextMeshProUGUI OutputDate;
     public SerializableDictionary<string, TemplateSaveMinigame> StatMinigame;
+    public SerializableDictionary<string, TemplateSavePlayerData> StatPlayer;
     // Start is called before the first frame update
 
     private void Awake()
@@ -40,6 +41,7 @@ public class Sauvegarde : MonoBehaviour
         profile = new Profile();
         questManager = new QuestManager();
         StatMinigame = new SerializableDictionary<string, TemplateSaveMinigame>();
+        StatPlayer = new SerializableDictionary<string, TemplateSavePlayerData>();
         try
         {
             Debug.Log("Catch1");
@@ -52,6 +54,7 @@ public class Sauvegarde : MonoBehaviour
             profile = save.profile;
             questManager = save.questManager;
             StatMinigame = save.statMinigame;
+            StatPlayer = save.statPlayer;
 
             foreach (Quest quest in save.questManager.GetQuests())
             {
@@ -103,15 +106,11 @@ public class Sauvegarde : MonoBehaviour
 
     public void Update()
     {
-        Saving save = new Saving(journal, profile, questManager, StatMinigame);
+        Saving save = new Saving(journal, profile, questManager, StatMinigame, StatPlayer);
 
         foreach (Quest quest in save.questManager.GetQuests())
         {
             if (save.questManager.statusDict[quest.id] == false)
-            // if (SceneManager.GetActiveScene().name.Contains("MiniGame"))
-            //     return;
-            // if (SceneManager.GetActiveScene().name.Contains("Down"))
-            //     return;
             {
                 if (quest.CheckCondition(save))
                 {
@@ -141,7 +140,7 @@ public class Sauvegarde : MonoBehaviour
         profile.Save();
         journal.ThemeList = Themes;
         journal.Save();
-        Saving save = new Saving(journal, profile, questManager, StatMinigame);
+        Saving save = new Saving(journal, profile, questManager, StatMinigame, StatPlayer);
         JSON_Manager.SaveData<Saving>(Application.dataPath + "/Json/Save.json", save);
         journal.UpdateJournal();
         profile.UpdateProfile();
@@ -158,6 +157,7 @@ public class Sauvegarde : MonoBehaviour
         profile = save.profile;
         questManager = save.questManager;
         StatMinigame = save.statMinigame;
+        StatPlayer = save.statPlayer;
         JSON_Manager.SaveData<Saving>(Application.dataPath + "/Json/Save.json", save);
     }
 }
@@ -169,12 +169,14 @@ public class Saving
     public Profile profile;
     public QuestManager questManager;
     public SerializableDictionary<string, TemplateSaveMinigame> statMinigame;
-    public Saving(Journal journal, Profile profile, QuestManager questManager, SerializableDictionary<string, TemplateSaveMinigame> statMinigame)
+    public SerializableDictionary<string, TemplateSavePlayerData> statPlayer;
+    public Saving(Journal journal, Profile profile, QuestManager questManager, SerializableDictionary<string, TemplateSaveMinigame> statMinigame, SerializableDictionary<string, TemplateSavePlayerData> statPlayer)
     {
         this.journal = journal;
         this.profile = profile;
         this.questManager = questManager;
         this.statMinigame = statMinigame;
+        this.statPlayer = statPlayer;
     }
     public int GetCompletedJournal()
     {
