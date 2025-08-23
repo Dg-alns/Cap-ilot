@@ -136,7 +136,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89774d5208bddd54bb55b4db2cd9b6c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FrontHair: {fileID: 5585359715184780502}
+  FrontHair: {fileID: 1199086273175077245}
   BackHair: {fileID: 5585359715184780502}
   Body: {fileID: 1943673091377591934}
   Top: {fileID: 8969379464605073516}
