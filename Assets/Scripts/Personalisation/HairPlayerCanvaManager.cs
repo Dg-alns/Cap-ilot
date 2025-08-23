@@ -12,10 +12,15 @@ public class HairPlayerCanvaManager : MonoBehaviour
     public Image Body;
     public Image Top;
 
-    public void InitHair(Sprite Front, Sprite Back)
+    public void InitHair(Sprite Front, Sprite Back = null)
     {
         FrontHair.sprite = Front;
-        BackHair.sprite = Back;
+        BackHair.color = Color.clear;
+        if (Back != null)
+        {
+            BackHair.sprite = Back;
+            BackHair.color = Color.white;
+        }
     }
 
     public void SetColorVisual(Color color)

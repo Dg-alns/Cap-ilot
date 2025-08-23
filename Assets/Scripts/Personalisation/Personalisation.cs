@@ -95,33 +95,51 @@ public class Personalisation : MonoBehaviour
         {
             listOfGridPersonalisation[i].GetComponent<Image>().color = Color.clear;
 
-            if (i + offset >= SearchScriptObj.GetLstHairObj()[0].Count)
+            if (i + offset >= SearchScriptObj.GetLstHairObj().Count)
             {
                 listOfGridPersonalisation[i].GetComponentInChildren<HairPlayerCanvaManager>().SetColorVisual(new Color(1, 1, 1, 0));
                 continue;
             }
 
             listOfGridPersonalisation[i].GetComponentInChildren<HairPlayerCanvaManager>().SetColorVisual(new Color(1, 1, 1, 1));
-            PersoPlayerData spriteFront = SearchScriptObj.GetLstHairObj()[0][i + offset];
-            PersoPlayerData spriteBack = SearchScriptObj.GetLstHairObj()[1][i + offset];
-
-
+            HairData hair = SearchScriptObj.GetLstHairObj()[i + offset];
 
             HairPlayerCanvaManager Head = listOfGridPersonalisation[i].GetComponentInChildren<HairPlayerCanvaManager>();
 
-            if (spriteFront.IsDebloquer() && spriteBack.IsDebloquer())
-            {
-                Head.InitHair(spriteFront.sprite, spriteBack.sprite);
-            }
+
+            if (hair.Back == null)
+                ShowFrontHair(Head, hair, i);
             else
-            {
-                listOfGridPersonalisation[i].GetComponent<Image>().sprite = cadena;
-                listOfGridPersonalisation[i].GetComponent<Image>().color = new Color(1, 1, 1, 1);
-            }
+                ShowFrontBackHair(Head, hair, i);
         }
     }
 
-    public void ChangePerso(GameObject gameObject)
+    void ShowFrontHair(HairPlayerCanvaManager Head, HairData hair, int i)
+    {
+        if (hair.IsDebloquer())
+        {
+            Head.InitHair(hair.sprite);
+        }
+        else
+        {
+            listOfGridPersonalisation[i].GetComponent<Image>().sprite = cadena;
+            listOfGridPersonalisation[i].GetComponent<Image>().color = new Color(1, 1, 1, 1);
+        }
+    }
+    void ShowFrontBackHair(HairPlayerCanvaManager Head, HairData hair, int i)
+    {
+        if (hair.IsDebloquer() && hair.Back.IsDebloquer())
+        {
+            Head.InitHair(hair.sprite, hair.Back.sprite);
+        }
+        else
+        {
+            listOfGridPersonalisation[i].GetComponent<Image>().sprite = cadena;
+            listOfGridPersonalisation[i].GetComponent<Image>().color = new Color(1, 1, 1, 1);
+        }
+    }
+
+    public void ChangePerso(GameObject gameObject) // TODO Diego Gere les null en back
     {
         int offset = OffsetOfidxLst();
 
@@ -139,6 +157,10 @@ public class Personalisation : MonoBehaviour
             for (int i = 0; i < listOfGridPersonalisation.Count; i++) {
                 if (gameObject.name.Contains((i+1).ToString()))
                 {
+                    if (listOfGridPersonalisation[i].GetComponent<Image>().color == Color.clear)
+                        return;
+
+
                     if (SearchScriptObj.GetLsitScriptObj(Playerpart.DetectionOfPart(pagesManagement.CurrentPage))[i + offset].IsDebloquer())
                     {
                         GameObject go = Playerpart.GetPartOfPlayer(pagesManagement.CurrentPage);
@@ -160,31 +182,55 @@ public class Personalisation : MonoBehaviour
     {
         HairPlayerCanvaManager ee = gameObject.GetComponentInChildren<HairPlayerCanvaManager>();
 
-        if (gameObject.GetComponent<Image>().sprite != null)
+        for (int i = 0; i < listOfGridPersonalisation.Count; i++) {
+            if (gameObject.name.Contains((i+1).ToString()))
+            {
+                HairData hair = SearchScriptObj.GetLstHairObj()[i + offset];
+
+                if (hair.Back == null)
+                    ChangeFrontHair(ee, offset, i);
+                else
+                    ChangeFrontBackHair(ee, offset, i);
+            }
+        }   
+    }
+
+
+    void ChangeFrontBackHair(HairPlayerCanvaManager ee, int offset, int i)
+    {
+        if (SearchScriptObj.GetLstHairObj()[i + offset].IsDebloquer() && SearchScriptObj.GetLstHairObj()[i + offset].Back.IsDebloquer())
         {
-            for (int i = 0; i < listOfGridPersonalisation.Count; i++) {
-                if (gameObject.name.Contains((i+1).ToString()))
-                {
-                    if (SearchScriptObj.GetLstHairObj()[0][i + offset].IsDebloquer() && SearchScriptObj.GetLstHairObj()[1][i + offset].IsDebloquer())
-                    {
-                        Dictionary<PartOfBody, GameObject> HairPlayer = Playerpart.GetHairs();
+            Dictionary<PartOfBody, GameObject> HairPlayer = Playerpart.GetHairs();
 
-                        if (HairPlayer[PartOfBody.Hair].GetComponent<SpriteRenderer>().sprite != ee.FrontHair.sprite || HairPlayer[PartOfBody.HairBack].GetComponent<SpriteRenderer>().sprite != ee.BackHair.sprite)
-                        {
-                            HairPlayer[PartOfBody.Hair].GetComponent<SpriteRenderer>().sprite = ee.FrontHair.sprite;
-                            HairPlayer[PartOfBody.HairBack].GetComponent<SpriteRenderer>().sprite = ee.BackHair.sprite;
+            if (HairPlayer[PartOfBody.Hair].GetComponent<SpriteRenderer>().sprite != ee.FrontHair.sprite || HairPlayer[PartOfBody.HairBack].GetComponent<SpriteRenderer>().sprite != ee.BackHair.sprite)
+            {
+                HairPlayer[PartOfBody.Hair].GetComponent<SpriteRenderer>().sprite = ee.FrontHair.sprite;
+                HairPlayer[PartOfBody.HairBack].GetComponent<SpriteRenderer>().sprite = ee.BackHair.sprite;
 
-                            HairPlayer[PartOfBody.Hair].GetComponent<SpriteRenderer>().color = Color.white;
-                            HairPlayer[PartOfBody.HairBack].GetComponent<SpriteRenderer>().color = Color.white;
+                HairPlayer[PartOfBody.Hair].GetComponent<SpriteRenderer>().color = Color.white;
+                HairPlayer[PartOfBody.HairBack].GetComponent<SpriteRenderer>().color = Color.white;
 
-                            positionementPartManager.SetPostion(HairPlayer[PartOfBody.Hair], SearchScriptObj.GetLstHairObj()[0][i + offset]);
-                            positionementPartManager.SetPostion(HairPlayer[PartOfBody.HairBack], SearchScriptObj.GetLstHairObj()[1][i + offset]);
-                        }
-                    }
-                }
+                positionementPartManager.SetPostionHair(HairPlayer[PartOfBody.Hair], SearchScriptObj.GetLstHairObj()[i + offset]);
             }
         }
-            
+    }
+
+    void ChangeFrontHair(HairPlayerCanvaManager ee, int offset, int i)
+    {
+        if (SearchScriptObj.GetLstHairObj()[i + offset].IsDebloquer())
+        {
+            Dictionary<PartOfBody, GameObject> HairPlayer = Playerpart.GetHairs();
+
+            if (HairPlayer[PartOfBody.Hair].GetComponent<SpriteRenderer>().sprite != ee.FrontHair.sprite)
+            {
+                HairPlayer[PartOfBody.Hair].GetComponent<SpriteRenderer>().sprite = ee.FrontHair.sprite;
+                HairPlayer[PartOfBody.Hair].GetComponent<SpriteRenderer>().color = Color.white;
+
+                HairPlayer[PartOfBody.HairBack].GetComponent<SpriteRenderer>().color = Color.clear;
+
+                positionementPartManager.SetPostionHair(HairPlayer[PartOfBody.Hair], SearchScriptObj.GetLstHairObj()[i + offset]);
+            }
+        }
     }
 
     public void Remove()
@@ -250,7 +296,7 @@ public class Personalisation : MonoBehaviour
         int nbAccessoires = 0;
 
         if (pagesManagement.CurrentPage.Equals(PartOfBody.Hair.ToString())) 
-            nbAccessoires = SearchScriptObj.GetLstHairObj()[0].Count;
+            nbAccessoires = SearchScriptObj.GetLstHairObj().Count;
         else
             nbAccessoires = SearchScriptObj.GetLsitScriptObj(Playerpart.DetectionOfPart(pagesManagement.CurrentPage)).Count;
 

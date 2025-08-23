@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dab4e8dbe29526346ac45f60788144ff, type: 3}
-  m_Name: Hair 1
+  m_Name: Hair 2
   m_EditorClassIdentifier: 
   part: 2
-  sprite: {fileID: -855298285791758126, guid: 8b420ade25df38d41b948dfaeb891ace, type: 3}
+  sprite: {fileID: 6937817954938267909, guid: f2564d759ef3ff948bef52a1e5d9e785, type: 3}
   isDebloquer: 1

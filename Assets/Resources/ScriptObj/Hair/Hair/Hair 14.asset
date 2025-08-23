@@ -9,9 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dab4e8dbe29526346ac45f60788144ff, type: 3}
-  m_Name: Hair 1
+  m_Script: {fileID: 11500000, guid: 177fcfca77c913b4dbedc216f4631b07, type: 3}
+  m_Name: Hair 14
   m_EditorClassIdentifier: 
-  part: 2
-  sprite: {fileID: -855298285791758126, guid: 8b420ade25df38d41b948dfaeb891ace, type: 3}
+  part: 1
+  sprite: {fileID: -4178046375966092550, guid: 5208cdee954c7be4ca366842e44ba939, type: 3}
+  Back: {fileID: 0}
   isDebloquer: 1

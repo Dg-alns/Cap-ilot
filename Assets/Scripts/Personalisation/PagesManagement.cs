@@ -26,6 +26,11 @@ public class PagesManagement : MonoBehaviour
 
     void Start()
     {
+        if(Playerpart.AllParOfPlayer.Count <= 0)
+        {
+
+        }
+
         foreach (var prt in Playerpart.AllParOfPlayer)
         {
             if(prt.Key == PartOfBody.Body || prt.Key == PartOfBody.EyesLeft|| prt.Key == PartOfBody.EyesRight || prt.Key == PartOfBody.HairBack)
@@ -34,9 +39,11 @@ public class PagesManagement : MonoBehaviour
             pages.Add(prt.Key);
         }
 
+        Debug.Log(pages.Count);
         allNamepages[0] = pages[0].ToString();
         allNamepages[1] = pages[1].ToString();
         allNamepages[2] = pages[2].ToString();
+        
 
         allpages[0] = but1;
         allpages[1] = but2;

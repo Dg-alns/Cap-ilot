@@ -7,7 +7,7 @@
         static public List<PersoPlayerData> BodySObj = new List<PersoPlayerData>();
         static public List<PersoPlayerData> EyesLeftObj = new List<PersoPlayerData>();
         static public List<PersoPlayerData> EyesRightObj = new List<PersoPlayerData>();
-        static public List<PersoPlayerData> HairFrontSObj = new List<PersoPlayerData>();
+        static public List<HairData> HairFrontSObj = new List<HairData>();
         static public List<PersoPlayerData> HairBackSObj = new List<PersoPlayerData>();
         static public List<PersoPlayerData> ShoesSObj = new List<PersoPlayerData>();
         static public List<PersoPlayerData> BottomSObj = new List<PersoPlayerData>();
@@ -17,8 +17,8 @@
             LoadCategory("ScriptObj/Body", BodySObj);
             LoadCategory("ScriptObj/Top", TopSObj);
             LoadCategory("ScriptObj/Eyes/Left", EyesLeftObj); 
-            LoadCategory("ScriptObj/Eyes/Right", EyesRightObj); 
-            LoadCategory("ScriptObj/Hair/Hair", HairFrontSObj);
+            LoadCategory("ScriptObj/Eyes/Right", EyesRightObj);
+            LoadHairCategory("ScriptObj/Hair/Hair", HairFrontSObj);
             LoadCategory("ScriptObj/Hair/Back", HairBackSObj);
             LoadCategory("ScriptObj/Shoes", ShoesSObj);
             LoadCategory("ScriptObj/Bottom", BottomSObj);
@@ -28,6 +28,20 @@
         {
             lst.Clear();
             PersoPlayerData[] alldataPerso = Resources.LoadAll<PersoPlayerData>(Path);
+
+            for (int i = 0; i < alldataPerso.Length; i++) 
+            {
+                if (alldataPerso[i].IsDebloquer() == false)
+                    continue;
+
+                lst.Add(alldataPerso[i]);           
+            }
+        }
+
+        void LoadHairCategory(string Path, List<HairData> lst)
+        {
+            lst.Clear();
+            HairData[] alldataPerso = Resources.LoadAll<HairData>(Path);
 
             for (int i = 0; i < alldataPerso.Length; i++) 
             {
@@ -64,9 +78,9 @@
             return null;
         }
 
-        public static List<List<PersoPlayerData>> GetLstHairObj()
+        public static List<HairData> GetLstHairObj()
         {
-            return new List<List<PersoPlayerData>> { HairFrontSObj, HairBackSObj };
+            return HairFrontSObj;
 
     }
 }

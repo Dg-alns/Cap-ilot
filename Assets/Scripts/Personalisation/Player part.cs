@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
@@ -27,7 +28,6 @@ public class Playerpart : MonoBehaviour
         {
             if (part.ToString().Contains(name))
                 return part;
-
         }
         return PartOfBody.NULL;
     }
@@ -58,6 +58,9 @@ public class Playerpart : MonoBehaviour
 
     void Awake()
     {
+        if (AllParOfPlayer.Count > 0)
+            return;
+
         AllParOfPlayer.Clear();
         SpriteRenderer[] e = GetComponentsInChildren<SpriteRenderer>();
 
