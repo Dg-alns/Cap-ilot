@@ -143,7 +143,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      noir_walk_1_0: 569879573780029645
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

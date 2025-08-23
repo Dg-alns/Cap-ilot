@@ -2535,6 +2535,14 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4904662380916096172, guid: 7764874e86e57964aa140c7c7f3c7548, type: 3}
+      propertyPath: _Sauvegarde
+      value: 
+      objectReference: {fileID: 2137184849}
+    - target: {fileID: 4904662380916096172, guid: 7764874e86e57964aa140c7c7f3c7548, type: 3}
+      propertyPath: positionementPartManager
+      value: 
+      objectReference: {fileID: 1852103175}
     - target: {fileID: 5048879528300950016, guid: 7764874e86e57964aa140c7c7f3c7548, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -2794,8 +2802,31 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8957345658816632563, guid: 7764874e86e57964aa140c7c7f3c7548, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1852103175}
   m_SourcePrefab: {fileID: 100100000, guid: 7764874e86e57964aa140c7c7f3c7548, type: 3}
+--- !u!1 &1852103174 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8957345658816632563, guid: 7764874e86e57964aa140c7c7f3c7548, type: 3}
+  m_PrefabInstance: {fileID: 1852103173}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1852103175
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1852103174}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2d526707e1e6c74ebbd54f8618e4c6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AllPostionTop: []
+  AllPostionBottom: []
+  AllPostionShoes: []
 --- !u!1 &1855371187
 GameObject:
   m_ObjectHideFlags: 0
@@ -4161,6 +4192,9 @@ MonoBehaviour:
   Annee: {fileID: 0}
   OutputDate: {fileID: 0}
   StatMinigame:
+    m_keys: []
+    m_values: []
+  StatPlayer:
     m_keys: []
     m_values: []
 --- !u!1001 &1733921147442767751

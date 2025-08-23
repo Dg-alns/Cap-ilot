@@ -191,7 +191,10 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Calque 14_0: -3243783079852467997
+      Calque 14_1: 6007483494165776327
+      Calque 14_2: -4033876500584767091
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

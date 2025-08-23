@@ -143,7 +143,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      metis_idle_1_0: -4276068300791292981
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

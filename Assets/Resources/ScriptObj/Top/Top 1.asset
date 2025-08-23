@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dab4e8dbe29526346ac45f60788144ff, type: 3}
   m_Name: Top 1
   m_EditorClassIdentifier: 
-  part: 4
+  part: 5
   sprite: {fileID: -7505035662071194081, guid: aac7ccd0f8a058f4e8c957ea4d275d60, type: 3}
   isDebloquer: 1

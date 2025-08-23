@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dab4e8dbe29526346ac45f60788144ff, type: 3}
   m_Name: Shoes 1
   m_EditorClassIdentifier: 
-  part: 6
+  part: 7
   sprite: {fileID: 1022016120387972011, guid: 9dcef1c8436b15046a12deaab259a323, type: 3}
   isDebloquer: 1

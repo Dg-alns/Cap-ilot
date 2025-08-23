@@ -29,7 +29,7 @@ public class PlayerData : ScriptableObject
                 Corps = sprite;
                 Color_Corps = color;
                 break;
-            case PartOfBody.Hair:
+            case PartOfBody.HairBack:
                 Cheveux = sprite;
                 Color_Cheveux = color;
                 break;
@@ -62,7 +62,7 @@ public class PlayerData : ScriptableObject
         {
             case PartOfBody.Body:
                 return Corps;
-            case PartOfBody.Hair:
+            case PartOfBody.HairBack:
                 return Cheveux;
             case PartOfBody.EyesLeft:
                 return EyeLeft;
@@ -85,7 +85,7 @@ public class PlayerData : ScriptableObject
         {
             case PartOfBody.Body:
                 return Color_Corps;
-            case PartOfBody.Hair:
+            case PartOfBody.HairBack:
                 return Color_Cheveux;
             case PartOfBody.EyesLeft:
                 return Color_EyeLeft;

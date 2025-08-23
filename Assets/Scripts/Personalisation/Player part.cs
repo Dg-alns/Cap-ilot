@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 // Detection all part of player for change after for personalisation script
@@ -7,6 +8,7 @@ public enum PartOfBody
 {
     Body,
     Hair,
+    HairBack,
     EyesLeft,
     EyesRight,
     Top,
@@ -30,7 +32,7 @@ public class Playerpart : MonoBehaviour
         return PartOfBody.NULL;
     }
 
-    static public  GameObject GetPartOfPlayer(string part)
+    static public GameObject GetPartOfPlayer(string part)
     {
         foreach(var prt in AllParOfPlayer)
         {
@@ -38,6 +40,19 @@ public class Playerpart : MonoBehaviour
                 return prt.Value;
         }
         return null;
+    }
+
+    static public Dictionary<PartOfBody, GameObject> GetHairs()
+    {
+        Dictionary<PartOfBody, GameObject> lst = new Dictionary<PartOfBody, GameObject>();
+
+        foreach (var prt in AllParOfPlayer)
+        {
+            if (prt.Key.ToString() == PartOfBody.Hair.ToString() || prt.Key.ToString() == PartOfBody.HairBack.ToString())
+                lst[prt.Key] = prt.Value;
+        }
+
+        return lst;
     }
 
 
@@ -50,7 +65,8 @@ public class Playerpart : MonoBehaviour
         {
             PartOfBody part = DetectionOfPart(e[i].gameObject.name);
 
-            if(part != PartOfBody.NULL)
+            Debug.Log(part.ToString());
+            if (part != PartOfBody.NULL)
             {
                 AllParOfPlayer.Add(part, e[i].gameObject);
             }

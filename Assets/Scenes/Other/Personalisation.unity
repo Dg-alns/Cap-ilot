@@ -1111,6 +1111,18 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3841700574691214828, guid: 3a5e3017a39506f44add5b1db1da0060, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3841700574691214828, guid: 3a5e3017a39506f44add5b1db1da0060, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3841700574691214828, guid: 3a5e3017a39506f44add5b1db1da0060, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5176219274497111138, guid: 3a5e3017a39506f44add5b1db1da0060, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.2121

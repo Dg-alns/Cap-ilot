@@ -167,7 +167,9 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      shoes_walk_2_0: 6227021894537035301
+      shoes_walk_2_1: 2605823030888689780
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

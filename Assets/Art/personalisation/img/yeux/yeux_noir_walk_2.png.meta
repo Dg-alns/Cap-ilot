@@ -167,7 +167,9 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      yeux_noir_walk_2_0: 3416605691957124673
+      yeux_noir_walk_2_1: 8156970277695997163
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -215,7 +215,11 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Calque 18 copie 2_0: 8228813034664584406
+      Calque 18 copie 2_1: -8571358646508637135
+      Calque 18 copie 2_2: -6659409191500869251
+      Calque 18 copie 2_3: -2543144480006561369
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

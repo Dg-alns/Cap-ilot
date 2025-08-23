@@ -167,7 +167,9 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      yeux_marron_idle_1_0: -4947088336512927778
+      yeux_marron_idle_1_1: 5321911944732881108
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
