@@ -139,7 +139,7 @@ public class Personalisation : MonoBehaviour
         }
     }
 
-    public void ChangePerso(GameObject gameObject) // TODO Diego Gere les null en back
+    public void ChangePerso(GameObject gameObject)
     {
         int offset = OffsetOfidxLst();
 
@@ -168,7 +168,7 @@ public class Personalisation : MonoBehaviour
                         if (go.GetComponent<SpriteRenderer>().sprite != gameObject.GetComponent<Image>().sprite)
                         {
                             go.GetComponent<SpriteRenderer>().sprite = gameObject.GetComponent<Image>().sprite;
-                            go.GetComponent<SpriteRenderer>().color = Color.white;
+
                             positionementPartManager.SetPostion(go, SearchScriptObj.GetLsitScriptObj(Playerpart.DetectionOfPart(pagesManagement.CurrentPage))[i + offset]);
                         }
                     }
@@ -207,8 +207,7 @@ public class Personalisation : MonoBehaviour
                 HairPlayer[PartOfBody.Hair].GetComponent<SpriteRenderer>().sprite = ee.FrontHair.sprite;
                 HairPlayer[PartOfBody.HairBack].GetComponent<SpriteRenderer>().sprite = ee.BackHair.sprite;
 
-                HairPlayer[PartOfBody.Hair].GetComponent<SpriteRenderer>().color = Color.white;
-                HairPlayer[PartOfBody.HairBack].GetComponent<SpriteRenderer>().color = Color.white;
+                HairPlayer[PartOfBody.HairBack].GetComponent<SpriteRenderer>().color = HairPlayer[PartOfBody.Hair].GetComponent<SpriteRenderer>().color;
 
                 positionementPartManager.SetPostionHair(PartOfBody.Hair, HairPlayer[PartOfBody.Hair], SearchScriptObj.GetLstHairObj()[i + offset]);
                 positionementPartManager.SetPostionHair(PartOfBody.HairBack, HairPlayer[PartOfBody.HairBack], SearchScriptObj.GetLstHairObj()[i + offset]);
@@ -225,8 +224,8 @@ public class Personalisation : MonoBehaviour
             if (HairPlayer[PartOfBody.Hair].GetComponent<SpriteRenderer>().sprite != ee.FrontHair.sprite)
             {
                 HairPlayer[PartOfBody.Hair].GetComponent<SpriteRenderer>().sprite = ee.FrontHair.sprite;
-                HairPlayer[PartOfBody.Hair].GetComponent<SpriteRenderer>().color = Color.white;
 
+                HairPlayer[PartOfBody.HairBack].GetComponent<SpriteRenderer>().sprite = null;
                 HairPlayer[PartOfBody.HairBack].GetComponent<SpriteRenderer>().color = Color.clear;
 
                 positionementPartManager.SetPostionHair(PartOfBody.Hair, HairPlayer[PartOfBody.Hair], SearchScriptObj.GetLstHairObj()[i + offset]);

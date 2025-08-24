@@ -37,7 +37,7 @@ public class PlayerData : ScriptableObject
                 break;
             case PartOfBody.Hair:
                 CheveuxFront = sprite;
-                Color_CheveuxBack = color;
+                Color_CheveuxFront = color;
                 break;
             case PartOfBody.EyesLeft:
                 EyeLeft = sprite;

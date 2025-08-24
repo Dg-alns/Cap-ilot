@@ -55,14 +55,10 @@ public class Playerpart : MonoBehaviour
         return lst;
     }
 
-
-    void Awake()
+    static public void Init(GameObject gameObject)
     {
-        if (AllParOfPlayer.Count > 0)
-            return;
-
         AllParOfPlayer.Clear();
-        SpriteRenderer[] e = GetComponentsInChildren<SpriteRenderer>();
+        SpriteRenderer[] e = gameObject.GetComponentsInChildren<SpriteRenderer>();
 
         for (int i = 0; i < e.Length; i++)
         {
@@ -74,4 +70,21 @@ public class Playerpart : MonoBehaviour
             }
         }
     }
+
+
+    //void Awake()
+    //{
+    //    AllParOfPlayer.Clear();
+    //    SpriteRenderer[] e = GetComponentsInChildren<SpriteRenderer>();
+
+    //    for (int i = 0; i < e.Length; i++)
+    //    {
+    //        PartOfBody part = DetectionOfPart(e[i].gameObject.name);
+
+    //        if (part != PartOfBody.NULL)
+    //        {
+    //            AllParOfPlayer.Add(part, e[i].gameObject);
+    //        }
+    //    }
+    //}
 }

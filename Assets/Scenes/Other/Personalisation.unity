@@ -735,6 +735,10 @@ PrefabInstance:
       propertyPath: AllPostionBottom.Array.data[1].y
       value: -0.633
       objectReference: {fileID: 0}
+    - target: {fileID: 4749286153127921545, guid: a5fc9c6e1f68deb41b1415fdc98dccc3, type: 3}
+      propertyPath: PlayerpartGameObject
+      value: 
+      objectReference: {fileID: 2009551257}
     - target: {fileID: 6466132690292987604, guid: a5fc9c6e1f68deb41b1415fdc98dccc3, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0

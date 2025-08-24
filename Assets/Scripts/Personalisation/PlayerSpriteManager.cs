@@ -44,7 +44,7 @@ public class PlayerSpriteManager : MonoBehaviour
 
 
 
-        if (SceneManager.GetActiveScene().name == "Personalisation")
+        if (inProfil == false)
         {
             //if (HaveDateEnter() == false)
             //    return;
@@ -59,19 +59,19 @@ public class PlayerSpriteManager : MonoBehaviour
             DetectionPlayerDataSprite(PartOfBody.Shoes, Chaussure);
 
             DetectionPlayerDataColor(PartOfBody.Body, Corps);
-            DetectionPlayerDataColor(PartOfBody.HairBack, CheveuxBack);
             DetectionPlayerDataColor(PartOfBody.Hair, CheveuxFront);
+            DetectionPlayerDataColor(PartOfBody.HairBack, CheveuxBack);
             DetectionPlayerDataColor(PartOfBody.EyesLeft, EyeLeft);
             DetectionPlayerDataColor(PartOfBody.EyesRight, EyeRight);
             DetectionPlayerDataColor(PartOfBody.Top, Haut);
             DetectionPlayerDataColor(PartOfBody.Bottom, Bas);
             DetectionPlayerDataColor(PartOfBody.Shoes, Chaussure);
         }
-        else if(inProfil) //tODO adapter avec image
+        else //tODO adapter avec image
         {
             DetectionPlayerDataSprite(PartOfBody.Body, Corps);
-            DetectionPlayerDataHairSprite(PartOfBody.HairBack, CheveuxBack);
             DetectionPlayerDataHairSprite(PartOfBody.Hair, CheveuxFront);
+            DetectionPlayerDataHairSprite(PartOfBody.HairBack, CheveuxBack);
             DetectionPlayerDataSprite(PartOfBody.EyesLeft, EyeLeft);
             DetectionPlayerDataSprite(PartOfBody.EyesRight, EyeRight);
             DetectionPlayerDataSprite(PartOfBody.Top, Haut);
@@ -87,17 +87,13 @@ public class PlayerSpriteManager : MonoBehaviour
             //Chaussure.GetComponent<Image>().color = playerData.GetColor(PartOfBody.Shoes);
 
             DetectionPlayerDataColor(PartOfBody.Body, Corps);
-            DetectionPlayerDataColor(PartOfBody.HairBack, CheveuxBack);
             DetectionPlayerDataColor(PartOfBody.Hair, CheveuxFront);
+            DetectionPlayerDataColor(PartOfBody.HairBack, CheveuxBack);
             DetectionPlayerDataColor(PartOfBody.EyesLeft, EyeLeft);
             DetectionPlayerDataColor(PartOfBody.EyesRight, EyeRight);
             DetectionPlayerDataColor(PartOfBody.Top, Haut);
             DetectionPlayerDataColor(PartOfBody.Body, Bas);
             DetectionPlayerDataColor(PartOfBody.Shoes, Chaussure);
-        }
-        else
-        {
-            UpdateTextQuest();
         }
     }
 
@@ -120,8 +116,8 @@ public class PlayerSpriteManager : MonoBehaviour
     public void SavePersonalisation()
     {
         SavePart(PartOfBody.Body, Corps);
-        SavePart(PartOfBody.HairBack, CheveuxBack);
         SavePart(PartOfBody.Hair, CheveuxFront);
+        SavePart(PartOfBody.HairBack, CheveuxBack);
         SavePart(PartOfBody.EyesLeft, EyeLeft);
         SavePart(PartOfBody.EyesRight, EyeRight);
         SavePart(PartOfBody.Top, Haut);
@@ -230,7 +226,7 @@ public class PlayerSpriteManager : MonoBehaviour
 
     }
 
-    public void DetectionPlayerDataColor(PartOfBody partOfBody, GameObject go)
+    public void DetectionPlayerDataColor(PartOfBody partOfBody, GameObject go) // Fixe frontHair Color
     {
         if (_statePlayer.ContainsKey(partOfBody.ToString()) == false)
             return;
