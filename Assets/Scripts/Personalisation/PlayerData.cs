@@ -5,7 +5,8 @@ using UnityEngine;
 public class PlayerData : ScriptableObject
 {
     [SerializeField] Sprite Corps;
-    [SerializeField] Sprite Cheveux;
+    [SerializeField] Sprite CheveuxFront;
+    [SerializeField] Sprite CheveuxBack;
     [SerializeField] Sprite EyeLeft;
     [SerializeField] Sprite EyeRight;
     [SerializeField] Sprite Haut;
@@ -13,7 +14,8 @@ public class PlayerData : ScriptableObject
     [SerializeField] Sprite Chaussure;
 
     [SerializeField] Color Color_Corps;
-    [SerializeField] Color Color_Cheveux;
+    [SerializeField] Color Color_CheveuxFront;
+    [SerializeField] Color Color_CheveuxBack;
     [SerializeField] Color Color_EyeLeft;
     [SerializeField] Color Color_EyeRight;
     [SerializeField] Color Color_Haut;
@@ -30,8 +32,12 @@ public class PlayerData : ScriptableObject
                 Color_Corps = color;
                 break;
             case PartOfBody.HairBack:
-                Cheveux = sprite;
-                Color_Cheveux = color;
+                CheveuxBack = sprite;
+                Color_CheveuxBack = color;
+                break;
+            case PartOfBody.Hair:
+                CheveuxFront = sprite;
+                Color_CheveuxBack = color;
                 break;
             case PartOfBody.EyesLeft:
                 EyeLeft = sprite;
@@ -62,8 +68,10 @@ public class PlayerData : ScriptableObject
         {
             case PartOfBody.Body:
                 return Corps;
+            case PartOfBody.Hair:
+                return CheveuxFront;
             case PartOfBody.HairBack:
-                return Cheveux;
+                return CheveuxBack;
             case PartOfBody.EyesLeft:
                 return EyeLeft;
             case PartOfBody.EyesRight:
@@ -85,8 +93,10 @@ public class PlayerData : ScriptableObject
         {
             case PartOfBody.Body:
                 return Color_Corps;
+            case PartOfBody.Hair:
+                return Color_CheveuxFront;
             case PartOfBody.HairBack:
-                return Color_Cheveux;
+                return Color_CheveuxBack;
             case PartOfBody.EyesLeft:
                 return Color_EyeLeft;
             case PartOfBody.EyesRight:

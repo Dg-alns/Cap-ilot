@@ -68,7 +68,6 @@ public class Playerpart : MonoBehaviour
         {
             PartOfBody part = DetectionOfPart(e[i].gameObject.name);
 
-            Debug.Log(part.ToString());
             if (part != PartOfBody.NULL)
             {
                 AllParOfPlayer.Add(part, e[i].gameObject);

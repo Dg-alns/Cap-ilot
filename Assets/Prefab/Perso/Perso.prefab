@@ -1,38 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1802859111099684459
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3996409443298278473}
-  m_Layer: 0
-  m_Name: Hair
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &3996409443298278473
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1802859111099684459}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.026939673, y: -0.6225274, z: -0.031631276}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 8323449771713683779}
-  - {fileID: 3697911476265918061}
-  m_Father: {fileID: 5176219274497111138}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3705053579850701448
 GameObject:
   m_ObjectHideFlags: 0
@@ -59,11 +26,11 @@ Transform:
   m_GameObject: {fileID: 3705053579850701448}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.044, y: 1.492, z: 0.031631276}
+  m_LocalPosition: {x: 0.021, y: 0.908, z: 0}
   m_LocalScale: {x: 3.3493705, y: 3.3493705, z: 3.3493705}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 3996409443298278473}
+  m_Father: {fileID: 5176219274497111138}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2321132221827531233
 SpriteRenderer:
@@ -108,8 +75,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 6
-  m_Sprite: {fileID: 4113829005332862926, guid: 91a77a7fab62e9444af33eaf67311d90, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 6937817954938267909, guid: 0af2e578b42c0514596b00ac78495b36, type: 3}
+  m_Color: {r: 0.98490566, g: 0.98490566, b: 0.98490566, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -327,7 +294,8 @@ Transform:
   - {fileID: 6078171332992469798}
   - {fileID: 5232277390489423236}
   - {fileID: 6498028222130609598}
-  - {fileID: 3996409443298278473}
+  - {fileID: 8323449771713683779}
+  - {fileID: 3697911476265918061}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2650798096138126859
@@ -361,7 +329,8 @@ MonoBehaviour:
   positionementPartManager: {fileID: 0}
   _Sauvegarde: {fileID: 0}
   Corps: {fileID: 4425528842726197159}
-  Cheveux: {fileID: 3705053579850701448}
+  CheveuxFront: {fileID: 3705053579850701448}
+  CheveuxBack: {fileID: 7632547507795839133}
   EyeLeft: {fileID: 8070620428653904671}
   EyeRight: {fileID: 9058119246070756786}
   Haut: {fileID: 4856045633756635186}
@@ -482,11 +451,11 @@ Transform:
   m_GameObject: {fileID: 7632547507795839133}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.678, y: 0.891, z: 0.031631276}
+  m_LocalPosition: {x: -0.57, y: 0.197, z: 0}
   m_LocalScale: {x: 3.3493705, y: 3.3493705, z: 3.3493705}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 3996409443298278473}
+  m_Father: {fileID: 5176219274497111138}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4197383154282073160
 SpriteRenderer:
@@ -532,7 +501,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: -1
   m_Sprite: {fileID: -1540426309290004842, guid: c536c27a500d22943a2d6b2850ffa95f, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.98490566, g: 0.98490566, b: 0.98490566, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

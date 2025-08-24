@@ -12,14 +12,14 @@ using UnityEngine.UI;
 public class PlayerSpriteManager : MonoBehaviour
 {
     public PlayerData playerData;
-    public TemplateSavePlayerData TemplateSavePlayer;
     public PositionementPartManager positionementPartManager;
     [SerializeField] Sauvegarde _Sauvegarde;
 
     private SerializableDictionary<string, TemplateSavePlayerData> _statePlayer;
 
     public GameObject Corps;
-    public GameObject Cheveux;
+    public GameObject CheveuxFront;
+    public GameObject CheveuxBack;
     public GameObject EyeLeft;
     public GameObject EyeRight;
     public GameObject Haut;
@@ -50,7 +50,8 @@ public class PlayerSpriteManager : MonoBehaviour
             //    return;
 
             DetectionPlayerDataSprite(PartOfBody.Body, Corps);
-            DetectionPlayerDataSprite(PartOfBody.HairBack, Cheveux);
+            DetectionPlayerDataHairSprite(PartOfBody.Hair, CheveuxFront);
+            DetectionPlayerDataHairSprite(PartOfBody.HairBack, CheveuxBack);
             DetectionPlayerDataSprite(PartOfBody.EyesLeft, EyeLeft);
             DetectionPlayerDataSprite(PartOfBody.EyesRight, EyeRight);
             DetectionPlayerDataSprite(PartOfBody.Top, Haut);
@@ -58,7 +59,8 @@ public class PlayerSpriteManager : MonoBehaviour
             DetectionPlayerDataSprite(PartOfBody.Shoes, Chaussure);
 
             DetectionPlayerDataColor(PartOfBody.Body, Corps);
-            DetectionPlayerDataColor(PartOfBody.HairBack, Cheveux);
+            DetectionPlayerDataColor(PartOfBody.HairBack, CheveuxBack);
+            DetectionPlayerDataColor(PartOfBody.Hair, CheveuxFront);
             DetectionPlayerDataColor(PartOfBody.EyesLeft, EyeLeft);
             DetectionPlayerDataColor(PartOfBody.EyesRight, EyeRight);
             DetectionPlayerDataColor(PartOfBody.Top, Haut);
@@ -68,7 +70,8 @@ public class PlayerSpriteManager : MonoBehaviour
         else if(inProfil) //tODO adapter avec image
         {
             DetectionPlayerDataSprite(PartOfBody.Body, Corps);
-            DetectionPlayerDataSprite(PartOfBody.HairBack, Cheveux);
+            DetectionPlayerDataHairSprite(PartOfBody.HairBack, CheveuxBack);
+            DetectionPlayerDataHairSprite(PartOfBody.Hair, CheveuxFront);
             DetectionPlayerDataSprite(PartOfBody.EyesLeft, EyeLeft);
             DetectionPlayerDataSprite(PartOfBody.EyesRight, EyeRight);
             DetectionPlayerDataSprite(PartOfBody.Top, Haut);
@@ -84,7 +87,8 @@ public class PlayerSpriteManager : MonoBehaviour
             //Chaussure.GetComponent<Image>().color = playerData.GetColor(PartOfBody.Shoes);
 
             DetectionPlayerDataColor(PartOfBody.Body, Corps);
-            DetectionPlayerDataColor(PartOfBody.HairBack, Cheveux);
+            DetectionPlayerDataColor(PartOfBody.HairBack, CheveuxBack);
+            DetectionPlayerDataColor(PartOfBody.Hair, CheveuxFront);
             DetectionPlayerDataColor(PartOfBody.EyesLeft, EyeLeft);
             DetectionPlayerDataColor(PartOfBody.EyesRight, EyeRight);
             DetectionPlayerDataColor(PartOfBody.Top, Haut);
@@ -116,7 +120,8 @@ public class PlayerSpriteManager : MonoBehaviour
     public void SavePersonalisation()
     {
         SavePart(PartOfBody.Body, Corps);
-        SavePart(PartOfBody.HairBack, Cheveux);
+        SavePart(PartOfBody.HairBack, CheveuxBack);
+        SavePart(PartOfBody.Hair, CheveuxFront);
         SavePart(PartOfBody.EyesLeft, EyeLeft);
         SavePart(PartOfBody.EyesRight, EyeRight);
         SavePart(PartOfBody.Top, Haut);
@@ -161,7 +166,7 @@ public class PlayerSpriteManager : MonoBehaviour
 
     public void DetectionPlayerDataSprite(PartOfBody partOfBody, GameObject go) 
     {
-        if (_statePlayer.ContainsKey(partOfBody.ToString()) == false || partOfBody == PartOfBody.HairBack)
+        if (_statePlayer.ContainsKey(partOfBody.ToString()) == false)
             return;
 
         TemplateSavePlayerData Part_Player = _statePlayer[partOfBody.ToString()];
@@ -186,14 +191,51 @@ public class PlayerSpriteManager : MonoBehaviour
 
     }
 
+    public void DetectionPlayerDataHairSprite(PartOfBody partOfBody, GameObject go) 
+    {
+        if (_statePlayer.ContainsKey(partOfBody.ToString()) == false)
+            return;
+
+
+        TemplateSavePlayerData Part_Player = _statePlayer[partOfBody.ToString()];
+        List<HairData> AllHairData = SearchScriptObj.GetLstHairObj();
+
+        playerData.SetPart_Body(partOfBody, Part_Player.GetSprite(), Part_Player.GetColor());
+
+
+        if (go.GetComponent<SpriteRenderer>())
+        {
+            go.GetComponent<SpriteRenderer>().sprite = playerData.GetSprite(partOfBody);
+
+            for (int i = 0; i < AllHairData.Count; i++)
+            {
+                if(partOfBody == PartOfBody.Hair)
+                {
+                    if (AllHairData[i].sprite == Part_Player.Part_Body)
+                        positionementPartManager.SetPostionHair(partOfBody, go, AllHairData[i]);
+                }
+                else if(partOfBody == PartOfBody.HairBack)
+                {
+                    if (AllHairData[i].Back == null)
+                        continue;
+
+                    if (AllHairData[i].Back.sprite == Part_Player.Part_Body)
+                        positionementPartManager.SetPostionHair(partOfBody, go, AllHairData[i]);
+                }
+            }
+        }
+        else if (go.GetComponent<Image>())
+            go.GetComponent<Image>().sprite = playerData.GetSprite(partOfBody);    
+
+
+    }
+
     public void DetectionPlayerDataColor(PartOfBody partOfBody, GameObject go)
     {
         if (_statePlayer.ContainsKey(partOfBody.ToString()) == false)
             return;
 
         TemplateSavePlayerData Part_Player = _statePlayer[partOfBody.ToString()];
-        List<PersoPlayerData> ee = SearchScriptObj.GetLsitScriptObj(partOfBody);
-
         playerData.SetPart_Body(partOfBody, Part_Player.GetSprite(), Part_Player.GetColor());
 
 

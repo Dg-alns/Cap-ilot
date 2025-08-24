@@ -210,7 +210,8 @@ public class Personalisation : MonoBehaviour
                 HairPlayer[PartOfBody.Hair].GetComponent<SpriteRenderer>().color = Color.white;
                 HairPlayer[PartOfBody.HairBack].GetComponent<SpriteRenderer>().color = Color.white;
 
-                positionementPartManager.SetPostionHair(HairPlayer[PartOfBody.Hair], SearchScriptObj.GetLstHairObj()[i + offset]);
+                positionementPartManager.SetPostionHair(PartOfBody.Hair, HairPlayer[PartOfBody.Hair], SearchScriptObj.GetLstHairObj()[i + offset]);
+                positionementPartManager.SetPostionHair(PartOfBody.HairBack, HairPlayer[PartOfBody.HairBack], SearchScriptObj.GetLstHairObj()[i + offset]);
             }
         }
     }
@@ -228,7 +229,7 @@ public class Personalisation : MonoBehaviour
 
                 HairPlayer[PartOfBody.HairBack].GetComponent<SpriteRenderer>().color = Color.clear;
 
-                positionementPartManager.SetPostionHair(HairPlayer[PartOfBody.Hair], SearchScriptObj.GetLstHairObj()[i + offset]);
+                positionementPartManager.SetPostionHair(PartOfBody.Hair, HairPlayer[PartOfBody.Hair], SearchScriptObj.GetLstHairObj()[i + offset]);
             }
         }
     }
@@ -261,7 +262,15 @@ public class Personalisation : MonoBehaviour
 
     public void SelectColor(GameObject gameObject)
     {
+        if(pagesManagement.CurrentPage == PartOfBody.Hair.ToString())
+        {
+            Dictionary<PartOfBody, GameObject> HairPlayer = Playerpart.GetHairs();
+            HairPlayer[PartOfBody.Hair].GetComponent<SpriteRenderer>().color = gameObject.GetComponent<Image>().color;
+            HairPlayer[PartOfBody.HairBack].GetComponent<SpriteRenderer>().color = gameObject.GetComponent<Image>().color;
+        }
+
         GameObject go = Playerpart.GetPartOfPlayer(pagesManagement.CurrentPage);
+
 
         if (go.GetComponent<SpriteRenderer>().color != gameObject.GetComponent<Image>().color)
             go.GetComponent<SpriteRenderer>().color = gameObject.GetComponent<Image>().color;  
@@ -348,15 +357,15 @@ public class Personalisation : MonoBehaviour
 
     void CreateLstAllColor()
     {
-        AddColor(Color.white);
-        AddColor(Color.red);
-        AddColor(Color.blue);
-        AddColor(Color.green);
-        AddColor(Color.cyan);
-        AddColor(Color.black);
-        AddColor(Color.gray);
-        AddColor(Color.yellow);
-        AddColor(Color.magenta);
+        AddColor(new Color(1, 1, 1, 1)); //White
+        AddColor(new Color(0.6981132f, 0.1145959f, 0.1145959f, 1)); //red
+        AddColor(new Color(0.1339907f, 0.2056354f, 0.5773585f, 1)); //blue
+        AddColor(new Color(0.1252421f, 0.4867924f, 0.1056247f, 1)); //green
+        AddColor(new Color(0.09149875f, 0.6830188f, 0.5999841f, 1)); //cyan
+        AddColor(new Color(0, 0, 0, 1)); //black
+        AddColor(new Color(0.7056604f, 0.7056604f, 0.7056604f, 1)); //gray
+        AddColor(new Color(0.7132075f, 0.5749689f, 0.1870487f, 1)); //yellow
+        AddColor(new Color(0.5471698f, 0.04852258f, 0.5021859f, 1)); //magenta
     }
 
     void InitColorPosition()

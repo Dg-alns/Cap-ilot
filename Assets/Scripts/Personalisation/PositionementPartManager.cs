@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 
@@ -16,7 +17,7 @@ public class PositionementPartManager : MonoBehaviour
 
     public void SetPostion(GameObject go, PersoPlayerData persoPlayerData)
     {
-        char spePArt = DetectonNumberSpeOffPart(persoPlayerData.name);
+        string spePart = DetectonNumberSpeOffPartRevert(persoPlayerData.name);
 
         List<Vector2> lst = DetectionList(persoPlayerData.part);
 
@@ -25,53 +26,82 @@ public class PositionementPartManager : MonoBehaviour
 
         for (int i = 0; i < lst.Count; i++)
         {
-            if (spePArt.Equals(char.Parse((i+1).ToString())))
+            if (spePart.Equals((i + 1).ToString()))
             {
                 go.transform.localPosition = lst[i];
                 return;
             }
         }
     }
-    public void SetPostionHair(GameObject go, HairData hairData)
+    public void SetPostionHair(PartOfBody partOfBody, GameObject go, HairData hairData)
     {
-        char spePArtFront = DetectonNumberSpeOffPart(hairData.name);
+        string spePartFront = "";
+        List<Vector2> lstFront = new List<Vector2>();
 
-        List<Vector2> lstFront = DetectionList(hairData.part);
+        if (partOfBody == PartOfBody.Hair)
+        {
+            spePartFront = DetectonNumberSpeOffPart(hairData.sprite.name);
+            lstFront = DetectionList(partOfBody);
+        }
+        else if (partOfBody == PartOfBody.HairBack)
+        {
+            spePartFront = DetectonNumberSpeOffPart(hairData.Back.sprite.name);
+            lstFront = DetectionList(partOfBody);
+        }
 
         if (lstFront == null)
             return;
 
         for (int i = 0; i < lstFront.Count; i++)
         {
-            if (spePArtFront.Equals(char.Parse((i+1).ToString()))) // AVoir
+            if (spePartFront.Equals((i + 1).ToString()))
             {
                 go.transform.localPosition = lstFront[i];
-                return;
-            }
-        }
-
-        if (hairData.Back == null)
-            return;
-
-        char spePArtBack = DetectonNumberSpeOffPart(hairData.Back.name);
-
-        List<Vector2> lstBack = DetectionList(hairData.Back.part);
-
-        if (lstBack == null)
-            return;
-        for (int i = 0; i < lstBack.Count; i++)
-        {
-            if (spePArtBack.Equals(char.Parse((i+1).ToString())))
-            {
-                go.transform.localPosition = lstBack[i];
-                return;
+                break;
             }
         }
     }
 
-    char DetectonNumberSpeOffPart(string name)
+    string DetectonNumberSpeOffPart(string name)
     {
-        return name[name.Length - 1];
+        string result = "";
+
+        for (int i = 0; i < name.Length; i++)
+        {
+            if (DeteIdxChiffre(name[i]) >= 0)
+                result += name[i];
+            else
+                break;
+        }
+
+        return result;
+    }
+
+    string DetectonNumberSpeOffPartRevert(string name)
+    {
+        string result = "";
+
+        for (int i = name.Length - 1; i >= 0; i--)
+        {
+            if (DeteIdxChiffre(name[i]) >= 0)
+                result += name[i];
+            else
+                break;
+        }
+
+        return result;
+    }
+
+    int DeteIdxChiffre(char value)
+    {
+        List<int> list = new List<int> { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+
+        for (int i = 0;i < list.Count;i++)
+        {
+            if(value.Equals(char.Parse(i.ToString())))
+                return i;
+        }
+        return -1;
     }
 
 
