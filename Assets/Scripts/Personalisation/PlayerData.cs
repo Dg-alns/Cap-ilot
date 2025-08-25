@@ -32,11 +32,11 @@ public class PlayerData : ScriptableObject
                 Color_Corps = color;
                 break;
             case PartOfBody.HairBack:
-                CheveuxBack = SearchScriptObj.GetSpriteHair(SearchScriptObj.HairFrontSObj, spriteName, PartOfBody.HairBack);
+                CheveuxBack = SearchScriptObj.GetSprite(SearchScriptObj.HairBackSObj, spriteName);
                 Color_CheveuxBack = color;
                 break;
             case PartOfBody.Hair:
-                CheveuxFront = SearchScriptObj.GetSpriteHair(SearchScriptObj.HairFrontSObj, spriteName, PartOfBody.Hair);
+                CheveuxFront = SearchScriptObj.GetSpriteHair(SearchScriptObj.HairFrontSObj, spriteName);
                 Color_CheveuxFront = color;
                 break;
             case PartOfBody.EyesLeft:

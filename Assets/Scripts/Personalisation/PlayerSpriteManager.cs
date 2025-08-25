@@ -126,20 +126,6 @@ public class PlayerSpriteManager : MonoBehaviour
 
         Saving save = new Saving(_Sauvegarde.journal, _Sauvegarde.profile, _Sauvegarde.questManager, _Sauvegarde.StatMinigame, _statePlayer);
         _Sauvegarde.Save(save);
-        
-
-        //playerData.Cheveux = Cheveux.GetComponent<SpriteRenderer>().sprite;
-        //playerData.AccessoirTete = AccessoirTete.GetComponent<SpriteRenderer>().sprite;
-        //playerData.Haut = Haut.GetComponent<SpriteRenderer>().sprite;
-        //playerData.Bas = Bas.GetComponent<SpriteRenderer>().sprite;
-        //playerData.Chaussure = Chaussure.GetComponent<SpriteRenderer>().sprite;
-
-        //playerData.Color_Corps = Corps.GetComponent<SpriteRenderer>().color;
-        //playerData.Color_Cheveux = Cheveux.GetComponent<SpriteRenderer>().color;
-        //playerData.Color_AccessoirTete = AccessoirTete.GetComponent<SpriteRenderer>().color;
-        //playerData.Color_Haut = Haut.GetComponent<SpriteRenderer>().color;
-        //playerData.Color_Bas = Bas.GetComponent<SpriteRenderer>().color;
-        //playerData.Color_Chaussure = Chaussure.GetComponent<SpriteRenderer>().color;
     }
 
 
@@ -194,6 +180,7 @@ public class PlayerSpriteManager : MonoBehaviour
 
 
         TemplateSavePlayerData Part_Player = _statePlayer[partOfBody.ToString()];
+        Debug.Log(Part_Player.Name_Part_Body);
         List<HairData> AllHairData = SearchScriptObj.GetLstHairObj();
 
         playerData.SetPart_Body(partOfBody, Part_Player.GetSpriteName(), Part_Player.GetColor());
@@ -226,7 +213,7 @@ public class PlayerSpriteManager : MonoBehaviour
 
     }
 
-    public void DetectionPlayerDataColor(PartOfBody partOfBody, GameObject go) // Fixe frontHair Color
+    public void DetectionPlayerDataColor(PartOfBody partOfBody, GameObject go)
     {
         if (_statePlayer.ContainsKey(partOfBody.ToString()) == false)
             return;
