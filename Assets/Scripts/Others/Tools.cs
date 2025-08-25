@@ -66,6 +66,15 @@ public  class Tools : MonoBehaviour
         return objs;
     }
 
+    static public List<T> CreateList<T>(GameObject parent)
+    {
+        T[] allChild = parent.GetComponentsInChildren<T>();
+
+        List<T> objs = new List<T>(allChild);
+
+        return objs;
+    }
+
     static public List<GameObject> CreateGameObjectList<T>(string nameParentOfTheList) where T : Component
     {
         GameObject parent = GameObject.Find(nameParentOfTheList);

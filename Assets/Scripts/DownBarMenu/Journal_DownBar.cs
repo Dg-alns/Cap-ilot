@@ -125,7 +125,7 @@ public class Journal_DownBar : MonoBehaviour
 
         // Save DATA in JSON
         save.journal.journal[DateTime.Today.ToString("d")] = totalContent;
-        string jsonString = JsonUtility.ToJson(save);
+        string jsonString = JsonUtility.ToJson(save,true);
         string fileName = Application.dataPath + "/JSON/Save.json";
         File.WriteAllText(fileName, jsonString);
 

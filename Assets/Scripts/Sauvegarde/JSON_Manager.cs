@@ -10,7 +10,7 @@ static public class JSON_Manager
 
     static public void SaveData<T>(string path, T data)
     {
-        string json = JsonUtility.ToJson(data);
+        string json = JsonUtility.ToJson(data,true);
         File.WriteAllText(path, json);
     }
 
