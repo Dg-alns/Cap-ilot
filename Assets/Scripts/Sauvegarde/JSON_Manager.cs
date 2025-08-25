@@ -13,7 +13,7 @@ public static class JSON_Manager
     //public static void SaveData<T>(string path, T data)
     //{
     //    string json = JsonUtility.ToJson(data, true);
-    //    File.WriteAllText(path + json, json);
+    //    File.WriteAllText(Application.dataPath + "/Json/" + path + ".json", json);
     //}
 
     public static T LoadData<T>(string fileName)
@@ -24,9 +24,9 @@ public static class JSON_Manager
         return JsonUtility.FromJson<T>(json);
 
     }
-    //public static T LoadData<T>(string fileName)
+    //public static T LoadData<T>(string path)
     //{
-    //    string json = File.ReadAllText(fileName + "json");
+    //    string json = File.ReadAllText(Application.dataPath + "/Json/" + path + ".json");
     //    return JsonUtility.FromJson<T>(json);
 
     //}
