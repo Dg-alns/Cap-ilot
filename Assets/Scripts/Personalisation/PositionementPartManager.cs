@@ -7,19 +7,25 @@ using UnityEngine;
 public class PositionementPartManager : MonoBehaviour
 {
     [SerializeField] private List<Vector2> AllPostionTop;
+    [SerializeField] private List<Vector2> AllSizeTop;
 
     [SerializeField] private List<Vector2> AllPostionBottom;
+    [SerializeField] private List<Vector2> AllSizeBottom;
 
     [SerializeField] private List<Vector2> AllPostionShoes;
+    [SerializeField] private List<Vector2> AllSizeShoes;
 
     [SerializeField] private List<Vector2> AllPostionHairFront;
-    [SerializeField] private List<Vector2> AllPostionHairBack;
+    [SerializeField] private List<Vector2> AllSizeHairFront;
 
-    public void SetPostion(GameObject go, PersoPlayerData persoPlayerData)
+    [SerializeField] private List<Vector2> AllPostionHairBack;
+    [SerializeField] private List<Vector2> AllSizeHairBack;
+
+    public virtual void SetPostion(GameObject go, PersoPlayerData persoPlayerData)
     {
         string spePart = DetectonNumberSpeOffPartRevert(persoPlayerData.name);
 
-        List<Vector2> lst = DetectionList(persoPlayerData.part);
+        List<Vector2> lst = DetectionPositionList(persoPlayerData.part);
 
         if (lst == null)
             return;
@@ -33,7 +39,7 @@ public class PositionementPartManager : MonoBehaviour
             }
         }
     }
-    public void SetPostionHair(PartOfBody partOfBody, GameObject go, HairData hairData)
+    public virtual void SetPostionHair(PartOfBody partOfBody, GameObject go, HairData hairData)
     {
         string spePartFront = "";
         List<Vector2> lstFront = new List<Vector2>();
@@ -41,12 +47,12 @@ public class PositionementPartManager : MonoBehaviour
         if (partOfBody == PartOfBody.Hair)
         {
             spePartFront = DetectonNumberSpeOffPart(hairData.sprite.name);
-            lstFront = DetectionList(partOfBody);
+            lstFront = DetectionPositionList(partOfBody);
         }
         else if (partOfBody == PartOfBody.HairBack)
         {
             spePartFront = DetectonNumberSpeOffPart(hairData.Back.sprite.name);
-            lstFront = DetectionList(partOfBody);
+            lstFront = DetectionPositionList(partOfBody);
         }
 
         if (lstFront == null)
@@ -62,7 +68,7 @@ public class PositionementPartManager : MonoBehaviour
         }
     }
 
-    string DetectonNumberSpeOffPart(string name)
+    protected string DetectonNumberSpeOffPart(string name)
     {
         string result = "";
 
@@ -77,14 +83,14 @@ public class PositionementPartManager : MonoBehaviour
         return result;
     }
 
-    string DetectonNumberSpeOffPartRevert(string name)
+    protected string DetectonNumberSpeOffPartRevert(string name)
     {
         string result = "";
 
         for (int i = name.Length - 1; i >= 0; i--)
         {
             if (DeteIdxChiffre(name[i]) >= 0)
-                result += name[i];
+                result = name[i] + result;
             else
                 break;
         }
@@ -92,7 +98,7 @@ public class PositionementPartManager : MonoBehaviour
         return result;
     }
 
-    int DeteIdxChiffre(char value)
+    protected int DeteIdxChiffre(char value)
     {
         List<int> list = new List<int> { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
 
@@ -105,7 +111,7 @@ public class PositionementPartManager : MonoBehaviour
     }
 
 
-    List<Vector2> DetectionList(PartOfBody partOfBody)
+    protected List<Vector2> DetectionPositionList(PartOfBody partOfBody)
     {
         switch(partOfBody)
         {
@@ -119,6 +125,26 @@ public class PositionementPartManager : MonoBehaviour
                 return AllPostionHairBack;
             case PartOfBody.Hair:
                 return AllPostionHairFront;
+        }
+
+        return null;
+    }
+
+
+    protected List<Vector2> DetectionSizeList(PartOfBody partOfBody)
+    {
+        switch(partOfBody)
+        {
+            case PartOfBody.Top:
+                return AllSizeTop;
+            case PartOfBody.Bottom:
+                return AllSizeBottom;
+            case PartOfBody.Shoes:
+                return AllSizeShoes;
+            case PartOfBody.HairBack:
+                return AllSizeHairBack;
+            case PartOfBody.Hair:
+                return AllSizeHairFront;
         }
 
         return null;

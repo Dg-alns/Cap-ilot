@@ -161,6 +161,7 @@ GameObject:
   - component: {fileID: 5176219274497111138}
   - component: {fileID: 2650798096138126859}
   - component: {fileID: 8443335512362319947}
+  - component: {fileID: 5417926925729202071}
   m_Layer: 0
   m_Name: Perso Canva
   m_TagString: Untagged
@@ -228,6 +229,80 @@ MonoBehaviour:
   Diabete: {fileID: 0}
   TextQuestTMP: {fileID: 0}
   inProfil: 1
+--- !u!114 &5417926925729202071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5580803202734008852}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2237c41442bb65d4e9d89cd9285b7b5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AllPostionTop:
+  - {x: 0.13, y: -0.27}
+  - {x: -0.09, y: -0.59}
+  AllSizeTop:
+  - {x: 1.8, y: 2.14}
+  - {x: 2.7, y: 2.7}
+  AllPostionBottom:
+  - {x: 0.01, y: -3.12}
+  - {x: -0.03, y: -2.37}
+  - {x: -0.03, y: -2.48}
+  AllSizeBottom:
+  - {x: 3.72, y: 3.72}
+  - {x: 3.4, y: 2.7}
+  - {x: 5.1, y: 2.7}
+  AllPostionShoes:
+  - {x: -0.25, y: -5.58}
+  AllSizeShoes:
+  - {x: 1.33, y: 1.33}
+  AllPostionHairFront:
+  - {x: 0.21, y: 3.62}
+  - {x: 0.06, y: 3.4}
+  - {x: 0.28, y: 4.3}
+  - {x: 0, y: 4.39}
+  - {x: 0, y: 4.39}
+  - {x: 0.04, y: 4.33}
+  - {x: 0.13, y: 4.02}
+  - {x: 0.08, y: 4.05}
+  AllSizeHairFront:
+  - {x: 5.9, y: 5.5}
+  - {x: 5.9, y: 5.5}
+  - {x: 6.08, y: 4.3}
+  - {x: 5.27, y: 3.62}
+  - {x: 5.27, y: 3.62}
+  - {x: 5.27, y: 3.2}
+  - {x: 6.06, y: 4.6}
+  - {x: 6.71, y: 4.3}
+  AllPostionHairBack:
+  - {x: 0, y: 0}
+  - {x: 0, y: 0}
+  - {x: 0.06, y: 2.45}
+  - {x: -0.44, y: 1.42}
+  - {x: -0.16, y: 0.7}
+  - {x: -0.16, y: 0.35}
+  - {x: -0.16, y: -0.44}
+  - {x: -0.16, y: -0.44}
+  - {x: -1.67, y: 5.48}
+  - {x: -2.95, y: 2.93}
+  - {x: -2.85, y: 1.68}
+  - {x: -2.56, y: 1.49}
+  AllSizeHairBack:
+  - {x: 0, y: 0}
+  - {x: 0, y: 0}
+  - {x: 6.1, y: 6.1}
+  - {x: 8, y: 9.4}
+  - {x: 4.95, y: 2.5}
+  - {x: 4.95, y: 3.05}
+  - {x: 4.95, y: 5.21}
+  - {x: 4.95, y: 7.45}
+  - {x: 2.63, y: 2.63}
+  - {x: 2.2, y: 5.7}
+  - {x: 2.8, y: 7.33}
+  - {x: 3.3, y: 8.6}
 --- !u!1 &6942714064836378602
 GameObject:
   m_ObjectHideFlags: 0
