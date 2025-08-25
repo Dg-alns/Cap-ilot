@@ -1,7 +1,5 @@
 using System;
 using System.Collections.Generic;
-using Unity.VisualScripting;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 // Detection all part of player for change after for personalisation script

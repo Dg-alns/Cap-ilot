@@ -1,23 +1,33 @@
-using System.Collections;
-using System.Collections.Generic;
 using System.IO;
-using Newtonsoft.Json;
-using Unity.Services.Friends.Models;
 using UnityEngine;
 
-static public class JSON_Manager
+public static class JSON_Manager
 {
-
-    static public void SaveData<T>(string path, T data)
+    public static void SaveData<T>(string fileName, T data)
     {
-        string json = JsonUtility.ToJson(data);
+        string path = Path.Combine(Application.persistentDataPath, fileName + ".json");
+        string json = JsonUtility.ToJson(data, true);
         File.WriteAllText(path, json);
     }
 
-    static public T LoadData<T>(string path)
+    //public static void SaveData<T>(string path, T data)
+    //{
+    //    string json = JsonUtility.ToJson(data, true);
+    //    File.WriteAllText(path + json, json);
+    //}
+
+    public static T LoadData<T>(string fileName)
     {
+        string path = Path.Combine(Application.persistentDataPath, fileName + ".json");
+
         string json = File.ReadAllText(path);
-        T data = JsonUtility.FromJson<T>(json);
-        return data;
+        return JsonUtility.FromJson<T>(json);
+
     }
+    //public static T LoadData<T>(string fileName)
+    //{
+    //    string json = File.ReadAllText(fileName + "json");
+    //    return JsonUtility.FromJson<T>(json);
+
+    //}
 }

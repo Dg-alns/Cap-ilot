@@ -45,7 +45,7 @@ public class Sauvegarde : MonoBehaviour
         try
         {
             Debug.Log("Catch1");
-            Saving save = JSON_Manager.LoadData<Saving>(Application.dataPath + "/Json/Save.json");
+            Saving save = JSON_Manager.LoadData<Saving>("Save");
             if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("Profile"))
             {
                 SceneManager.LoadScene("Journal");
@@ -141,7 +141,8 @@ public class Sauvegarde : MonoBehaviour
         journal.ThemeList = Themes;
         journal.Save();
         Saving save = new Saving(journal, profile, questManager, StatMinigame, StatPlayer);
-        JSON_Manager.SaveData<Saving>(Application.dataPath + "/Json/Save.json", save);
+        //JSON_Manager.SaveData<Saving>(Application.dataPath + "/Json/Save.json", save);
+        JSON_Manager.SaveData("Save", save);
         journal.UpdateJournal();
         profile.UpdateProfile();
         Themes.Clear();
@@ -158,7 +159,8 @@ public class Sauvegarde : MonoBehaviour
         questManager = save.questManager;
         StatMinigame = save.statMinigame;
         StatPlayer = save.statPlayer;
-        JSON_Manager.SaveData<Saving>(Application.dataPath + "/Json/Save.json", save);
+        JSON_Manager.SaveData("Save", save);
+        //JSON_Manager.SaveData<Saving>(Application.dataPath + "/Json/Save.json", save);
     }
 }
 

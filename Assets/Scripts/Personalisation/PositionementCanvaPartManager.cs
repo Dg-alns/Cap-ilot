@@ -28,6 +28,7 @@ public class PositionementCanvaPartManager : PositionementPartManager
     }
     public override void SetPostionHair(PartOfBody partOfBody, GameObject go, HairData hairData)
     {
+        Debug.Log("Position Size " + partOfBody.ToString());
         string spePartFront = "";
         List<Vector2> lstHair = new List<Vector2>();
         List<Vector2> lstSize = new List<Vector2>();

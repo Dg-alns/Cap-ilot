@@ -12,7 +12,7 @@ public class Relation_RessourcePNJ : Pnj_Ressource
     protected new void Start()
     {
         base.Start();
-        saving = JSON_Manager.LoadData<Saving>(Application.dataPath + "/Json/Save.json");
+        Saving save = JSON_Manager.LoadData<Saving>("Save");
 
 
         npcManager = FindFirstObjectByType<NPCManager>();

@@ -26406,6 +26406,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 11.889387
       objectReference: {fileID: 0}
+    - target: {fileID: 8443335512362319947, guid: b3a1908b85ea6b84a872a1c0b121c994, type: 3}
+      propertyPath: positionementPartManager
+      value: 
+      objectReference: {fileID: 6370603205448701134}
     - target: {fileID: 8761102814639652300, guid: b3a1908b85ea6b84a872a1c0b121c994, type: 3}
       propertyPath: m_SizeDelta.x
       value: 1
@@ -26436,3 +26440,14 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5176219274497111138, guid: b3a1908b85ea6b84a872a1c0b121c994, type: 3}
   m_PrefabInstance: {fileID: 1394068635351313241}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &6370603205448701134 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5417926925729202071, guid: b3a1908b85ea6b84a872a1c0b121c994, type: 3}
+  m_PrefabInstance: {fileID: 1394068635351313241}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2237c41442bb65d4e9d89cd9285b7b5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
