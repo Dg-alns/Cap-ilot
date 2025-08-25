@@ -1,36 +1,19 @@
 using System;
 using System.Collections.Generic;
+using Unity.VisualScripting;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 // Detection all part of player for change after for personalisation script
-//public enum PartOfBody
-//{
-//    Chest,
-//    Hair,
-//    Eyes,
-//    Mouse,
-//    Nose,
-//    L_Shoulder,
-//    R_Shoulder,
-//    L_Arm,
-//    R_Arm,
-//    L_Hand,
-//    R_Hand,
-//    L_Thigh,
-//    R_Thigh,
-//    L_Leg,
-//    R_Leg,
-//    L_Foot,
-//    R_Foot,
-//    NULL
-//}
 public enum PartOfBody
 {
-    Chest,
+    Body,
     Hair,
-    AccTete,
-    Haut,
-    Bas,
+    HairBack,
+    EyesLeft,
+    EyesRight,
+    Top,
+    Bottom,
     Shoes,
     NULL
 }
@@ -45,12 +28,11 @@ public class Playerpart : MonoBehaviour
         {
             if (part.ToString().Contains(name))
                 return part;
-
         }
         return PartOfBody.NULL;
     }
 
-    static public  GameObject GetPartOfPlayer(string part)
+    static public GameObject GetPartOfPlayer(string part)
     {
         foreach(var prt in AllParOfPlayer)
         {
@@ -60,20 +42,49 @@ public class Playerpart : MonoBehaviour
         return null;
     }
 
+    static public Dictionary<PartOfBody, GameObject> GetHairs()
+    {
+        Dictionary<PartOfBody, GameObject> lst = new Dictionary<PartOfBody, GameObject>();
 
-    void Awake()
+        foreach (var prt in AllParOfPlayer)
+        {
+            if (prt.Key.ToString() == PartOfBody.Hair.ToString() || prt.Key.ToString() == PartOfBody.HairBack.ToString())
+                lst[prt.Key] = prt.Value;
+        }
+
+        return lst;
+    }
+
+    static public void Init(GameObject gameObject)
     {
         AllParOfPlayer.Clear();
-        SpriteRenderer[] e = GetComponentsInChildren<SpriteRenderer>();
+        SpriteRenderer[] e = gameObject.GetComponentsInChildren<SpriteRenderer>();
 
         for (int i = 0; i < e.Length; i++)
         {
             PartOfBody part = DetectionOfPart(e[i].gameObject.name);
 
-            if(part != PartOfBody.NULL)
+            if (part != PartOfBody.NULL)
             {
                 AllParOfPlayer.Add(part, e[i].gameObject);
             }
         }
     }
+
+
+    //void Awake()
+    //{
+    //    AllParOfPlayer.Clear();
+    //    SpriteRenderer[] e = GetComponentsInChildren<SpriteRenderer>();
+
+    //    for (int i = 0; i < e.Length; i++)
+    //    {
+    //        PartOfBody part = DetectionOfPart(e[i].gameObject.name);
+
+    //        if (part != PartOfBody.NULL)
+    //        {
+    //            AllParOfPlayer.Add(part, e[i].gameObject);
+    //        }
+    //    }
+    //}
 }

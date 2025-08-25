@@ -14,13 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Corps: {fileID: 0}
   Cheveux: {fileID: 0}
-  AccessoirTete: {fileID: 0}
+  EyeLeft: {fileID: 0}
+  EyeRight: {fileID: 0}
   Haut: {fileID: 0}
   Bas: {fileID: 0}
   Chaussure: {fileID: 0}
   Color_Corps: {r: 1, g: 1, b: 1, a: 1}
   Color_Cheveux: {r: 1, g: 1, b: 1, a: 1}
-  Color_AccessoirTete: {r: 1, g: 1, b: 1, a: 1}
+  Color_EyeLeft: {r: 1, g: 1, b: 1, a: 1}
+  Color_EyeRight: {r: 1, g: 1, b: 1, a: 1}
   Color_Haut: {r: 1, g: 1, b: 1, a: 1}
   Color_Bas: {r: 1, g: 1, b: 1, a: 1}
   Color_Chaussure: {r: 1, g: 1, b: 1, a: 1}

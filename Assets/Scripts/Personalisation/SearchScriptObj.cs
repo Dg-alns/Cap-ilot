@@ -1,60 +1,86 @@
-using System.Collections.Generic;
-using UnityEngine;
+    using System.Collections.Generic;
+    using UnityEngine;
 
-public class SearchScriptObj : MonoBehaviour
-{
-    // Arm
-    static public List<PersoPlayerData> HautSObj = new List<PersoPlayerData>();
-    static public List<PersoPlayerData> HandSObj = new List<PersoPlayerData>();
-    static public List<PersoPlayerData> ShoulderSObj = new List<PersoPlayerData>();
-
-
-    static public List<PersoPlayerData> CorpsSObj = new List<PersoPlayerData>();
-
-    // Face
-    //static public List<ScriptableObject> EyebrowsSObj = new List<ScriptableObject>();
-    static public List<PersoPlayerData> AccTeteSObj = new List<PersoPlayerData>();
-    static public List<PersoPlayerData> HairSObj = new List<PersoPlayerData>();
-    static public List<PersoPlayerData> MouseSObj = new List<PersoPlayerData>();
-    static public List<PersoPlayerData> NoseSObj = new List<PersoPlayerData>();
-
-
-    // Leg
-    static public List<PersoPlayerData> ShoesSObj = new List<PersoPlayerData>();
-    static public List< PersoPlayerData> ThighSObj = new List<PersoPlayerData>();
-    static public List<PersoPlayerData> BasSObj = new List<PersoPlayerData>();
-
-    void Awake() // Todo Personalisation Changer Les scripObj par 'corps, cheveux, accessoires tete, vetement haut, vetement bas, chaussures'
+    public class SearchScriptObj : MonoBehaviour
     {
-        LoadCategory("ScriptObj/Arm/Arm", HautSObj);
-        //LoadCategory("ScriptObj/Arm/Hand", HandSObj);
-        //LoadCategory("ScriptObj/Arm/Shoulder", ShoulderSObj);
+        static public List<PersoPlayerData> TopSObj = new List<PersoPlayerData>();
+        static public List<PersoPlayerData> BodySObj = new List<PersoPlayerData>();
+        static public List<PersoPlayerData> EyesLeftObj = new List<PersoPlayerData>();
+        static public List<PersoPlayerData> EyesRightObj = new List<PersoPlayerData>();
+        static public List<HairData> HairFrontSObj = new List<HairData>();
+        static public List<PersoPlayerData> HairBackSObj = new List<PersoPlayerData>();
+        static public List<PersoPlayerData> ShoesSObj = new List<PersoPlayerData>();
+        static public List<PersoPlayerData> BottomSObj = new List<PersoPlayerData>();
 
-        LoadCategory("ScriptObj/Chest", CorpsSObj);
-
-        ////LoadCategory("ScriptObj/Face/EyeBrows", EyesSObj); 
-        LoadCategory("ScriptObj/Face/Eyes", AccTeteSObj); 
-        LoadCategory("ScriptObj/Face/Hair", HairSObj);
-        //LoadCategory("ScriptObj/Face/Mouse", MouseSObj);
-        //LoadCategory("ScriptObj/Face/Nose", NoseSObj);
-
-        LoadCategory("ScriptObj/Leg/Foot", ShoesSObj);
-        //LoadCategory("ScriptObj/Leg/Thigh", ThighSObj);
-        LoadCategory("ScriptObj/Leg/Leg", BasSObj);
-
-    }
-
-    void LoadCategory(string Path, List<PersoPlayerData> lst)
-    {
-        lst.Clear();
-        PersoPlayerData[] alldataPerso = Resources.LoadAll<PersoPlayerData>(Path);
-
-        for (int i = 0; i < alldataPerso.Length; i++) 
+        void Awake()
         {
-            if (alldataPerso[i].isDebloquer == false)
-                Debug.Log(i);
-
-            lst.Add(alldataPerso[i]);           
+            LoadCategory("ScriptObj/Body", BodySObj);
+            LoadCategory("ScriptObj/Top", TopSObj);
+            LoadCategory("ScriptObj/Eyes/Left", EyesLeftObj); 
+            LoadCategory("ScriptObj/Eyes/Right", EyesRightObj);
+            LoadHairCategory("ScriptObj/Hair/Hair", HairFrontSObj);
+            LoadCategory("ScriptObj/Hair/Back", HairBackSObj);
+            LoadCategory("ScriptObj/Shoes", ShoesSObj);
+            LoadCategory("ScriptObj/Bottom", BottomSObj);
         }
+
+        void LoadCategory(string Path, List<PersoPlayerData> lst)
+        {
+            lst.Clear();
+            PersoPlayerData[] alldataPerso = Resources.LoadAll<PersoPlayerData>(Path);
+
+            for (int i = 0; i < alldataPerso.Length; i++) 
+            {
+                if (alldataPerso[i].IsDebloquer() == false)
+                    continue;
+
+                lst.Add(alldataPerso[i]);           
+            }
+        }
+
+        void LoadHairCategory(string Path, List<HairData> lst)
+        {
+            lst.Clear();
+            HairData[] alldataPerso = Resources.LoadAll<HairData>(Path);
+
+            for (int i = 0; i < alldataPerso.Length; i++) 
+            {
+                if (alldataPerso[i].IsDebloquer() == false)
+                    continue;
+
+                lst.Add(alldataPerso[i]);           
+            }
+        }
+
+        public static List<PersoPlayerData> GetLsitScriptObj(PartOfBody part)
+        {
+            switch (part)
+            {
+                case PartOfBody.Body:
+                    return BodySObj;
+
+                case PartOfBody.EyesLeft:
+                    return EyesLeftObj;
+
+                case PartOfBody.EyesRight:
+                    return EyesRightObj;
+
+                case PartOfBody.Top:
+                    return TopSObj;
+
+                case PartOfBody.Bottom:
+                    return BottomSObj;
+
+                case PartOfBody.Shoes:
+                    return ShoesSObj;
+            }
+
+            return null;
+        }
+
+        public static List<HairData> GetLstHairObj()
+        {
+            return HairFrontSObj;
+
     }
 }

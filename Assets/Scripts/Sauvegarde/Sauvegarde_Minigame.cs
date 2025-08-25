@@ -120,7 +120,7 @@ public class Sauvegarde_Minigame : MonoBehaviour
         return false;
     }
 
-    public void SetCanShowInfo(bool state)
+    public void SetCanShowInfo(string sceneName, bool state)
     {
         if (_statMinigame == null)
             return;
@@ -154,7 +154,7 @@ public class Sauvegarde_Minigame : MonoBehaviour
         else{
             _statMinigame[sceneName] = new TemplateSaveMinigame(score.nbStars, score.MiniGamePoint, _state);
         }
-        Saving save = new Saving(_Sauvegarde.journal, _Sauvegarde.profile, _Sauvegarde.questManager, _statMinigame);
+        Saving save = new Saving(_Sauvegarde.journal, _Sauvegarde.profile, _Sauvegarde.questManager, _statMinigame, _Sauvegarde.StatPlayer);
         _Sauvegarde.Save(save);
     }
 }

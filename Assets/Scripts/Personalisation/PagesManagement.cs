@@ -12,6 +12,9 @@ public class PagesManagement : MonoBehaviour
     public Personalisation personalisation;
 
     public GameObject but1;
+
+
+    public GameObject PlayerpartGameObject;
     public GameObject but2;
     public GameObject but3;
 
@@ -26,14 +29,20 @@ public class PagesManagement : MonoBehaviour
 
     void Start()
     {
+        Playerpart.Init(PlayerpartGameObject);
+
         foreach (var prt in Playerpart.AllParOfPlayer)
         {
+            if(prt.Key == PartOfBody.Body || prt.Key == PartOfBody.EyesLeft|| prt.Key == PartOfBody.EyesRight || prt.Key == PartOfBody.HairBack)
+                continue;
+
             pages.Add(prt.Key);
         }
 
         allNamepages[0] = pages[0].ToString();
         allNamepages[1] = pages[1].ToString();
         allNamepages[2] = pages[2].ToString();
+        
 
         allpages[0] = but1;
         allpages[1] = but2;

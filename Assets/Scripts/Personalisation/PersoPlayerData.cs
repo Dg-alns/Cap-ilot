@@ -6,5 +6,9 @@ public class PersoPlayerData : ScriptableObject
 {
     public PartOfBody part;
     public Sprite sprite;
-    public bool isDebloquer = true;
+    [SerializeField] private bool isDebloquer;
+
+    public void SetIsDebloque(bool value) {  isDebloquer = value; }
+
+    public bool IsDebloquer() {  return isDebloquer; }
 }

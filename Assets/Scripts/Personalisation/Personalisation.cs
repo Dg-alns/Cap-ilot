@@ -7,51 +7,22 @@ using UnityEngine.UI;
 
 public class Personalisation : MonoBehaviour
 {
-    //public SearchScriptObj search;
-    //public PersoPlayerData playerData;
-
     public PagesManagement pagesManagement;
-
+    public PositionementPartManager positionementPartManager;
     public TextMeshProUGUI PageOfAccesoires;
-
     public Sprite cadena;
 
     int nbMaxpagesOfCurrentLst;
-    int currentpages;
+    int idxcurrentpages;
+    int sizeGrid;
+    int idxcurrentBody = -1;
+    int idxcurrentEyes = -1;
 
     Dictionary<PartOfBody, int> nbPagesOfAccesoires = new Dictionary<PartOfBody, int>();
-
-    List<GameObject> listOfGridPersonalisation;
-
     List<Color> listOfAllColors = new List<Color>();
 
+    List<GameObject> listOfGridPersonalisation;
     List<GameObject> GridAllColors;
-
-
-    // Arm
-    List<PersoPlayerData> ScriptsHaut = SearchScriptObj.HautSObj;
-    List<PersoPlayerData> ScriptsHand = SearchScriptObj.HandSObj;
-    List<PersoPlayerData> ScriptsShoulder = SearchScriptObj.ShoulderSObj;
-
-
-    List<PersoPlayerData> ScriptsChest = SearchScriptObj.CorpsSObj;
-
-    // Face
-    //List<ScriptableObject> ScriptsEyebrows = SearchScriptObj.EyebrowsSObj;
-    List<PersoPlayerData> ScriptsAccTete = SearchScriptObj.AccTeteSObj;
-    List<PersoPlayerData> ScriptsHair = SearchScriptObj.HairSObj;
-    List<PersoPlayerData> ScriptsMouse = SearchScriptObj.MouseSObj;
-    List<PersoPlayerData> ScriptsNose = SearchScriptObj.NoseSObj;
-
-
-    //Leg
-    List<PersoPlayerData> ScriptsShoes = SearchScriptObj.ShoesSObj;
-    List<PersoPlayerData> ScriptsThigh = SearchScriptObj.ThighSObj;
-    List<PersoPlayerData> ScriptsBas = SearchScriptObj.BasSObj;
-
-
-    int sizeGrid;
-
 
     void Awake()
     {
@@ -72,99 +43,13 @@ public class Personalisation : MonoBehaviour
 
     void UpdateText()
     {
-        PageOfAccesoires.text = $"{currentpages} / {nbMaxpagesOfCurrentLst}";
-    }
-
-
-    //List<PersoPlayerData> GetLsitScriptObj(PartOfBody part)
-    //{
-    //    switch(part)
-    //    {
-    //        case PartOfBody.Hair:
-    //            return ScriptsHair;
-
-    //        case PartOfBody.Chest:
-    //            return ScriptsChest;
-
-    //        case PartOfBody.Eyes:
-    //            return ScriptsEyes;
-
-    //        case PartOfBody.Mouse:
-    //            return ScriptsMouse;
-
-    //        case PartOfBody.Nose:
-    //            return ScriptsNose;
-
-    //        case PartOfBody.L_Arm:
-    //            return ScriptsArm;
-
-    //        case PartOfBody.R_Arm:
-    //            return ScriptsArm;
-
-    //        case PartOfBody.L_Foot:
-    //            return ScriptsFoot;
-
-    //        case PartOfBody.R_Foot:
-    //            return ScriptsFoot;
-
-    //        case PartOfBody.L_Thigh:
-    //            return ScriptsThigh;
-
-    //        case PartOfBody.R_Thigh:
-    //            return ScriptsThigh;
-
-    //        case PartOfBody.L_Hand:
-    //            return ScriptsHand;
-
-    //        case PartOfBody.R_Hand:
-    //            return ScriptsHand;
-
-    //        case PartOfBody.L_Leg:
-    //            return ScriptsLeg;
-
-    //        case PartOfBody.R_Leg:
-    //            return ScriptsLeg;
-
-    //        case PartOfBody.L_Shoulder:
-    //            return ScriptsShoulder;
-
-    //        case PartOfBody.R_Shoulder:
-    //            return ScriptsShoulder;
-    //    }
-
-    //    return null;
-    //}
-
-    List<PersoPlayerData> GetLsitScriptObj(PartOfBody part)
-    {
-        switch (part)
-        {
-            case PartOfBody.Hair:
-                return ScriptsHair;
-
-            case PartOfBody.Chest:
-                return ScriptsChest;
-
-            case PartOfBody.AccTete:
-                return ScriptsAccTete;
-
-            case PartOfBody.Haut:
-                return ScriptsHaut;
-
-            case PartOfBody.Bas:
-                return ScriptsBas;
-
-            case PartOfBody.Shoes:
-                return ScriptsShoes;
-        }
-
-        return null;
+        PageOfAccesoires.text = $"{idxcurrentpages} / {nbMaxpagesOfCurrentLst}";
     }
 
     int OffsetOfidxLst()
     {
-        if (currentpages >= 1 && currentpages <= nbMaxpagesOfCurrentLst)
-            return (currentpages - 1) * sizeGrid;
+        if (idxcurrentpages >= 1 && idxcurrentpages <= nbMaxpagesOfCurrentLst)
+            return (idxcurrentpages - 1) * sizeGrid;
 
         return -1;
     }
@@ -173,18 +58,29 @@ public class Personalisation : MonoBehaviour
     {
         int offset = OffsetOfidxLst();
 
+        if (offset < 0)
+            return;
+
+        if (pagesManagement.CurrentPage.Equals(PartOfBody.Hair.ToString()))
+        {
+            UpdateHair(offset);
+            return;
+        }
+
         for(int i = 0; i < listOfGridPersonalisation.Count; i++)
         {
-            if(i + offset >= GetLsitScriptObj(Playerpart.DetectionOfPart(pagesManagement.CurrentPage)).Count)
+            listOfGridPersonalisation[i].GetComponentInChildren<HairPlayerCanvaManager>().SetColorVisual(new Color(1, 1, 1, 0));
+
+            if (i + offset >= SearchScriptObj.GetLsitScriptObj(Playerpart.DetectionOfPart(pagesManagement.CurrentPage)).Count)
             {
                 listOfGridPersonalisation[i].GetComponent<Image>().color = Color.clear;
                 continue;
             }
 
-            Sprite sprite = GetLsitScriptObj(Playerpart.DetectionOfPart(pagesManagement.CurrentPage))[i + offset].sprite;
+            Sprite sprite = SearchScriptObj.GetLsitScriptObj(Playerpart.DetectionOfPart(pagesManagement.CurrentPage))[i + offset].sprite;
             listOfGridPersonalisation[i].GetComponent<Image>().sprite = sprite;
 
-            if (GetLsitScriptObj(Playerpart.DetectionOfPart(pagesManagement.CurrentPage))[i + offset].isDebloquer)
+            if (SearchScriptObj.GetLsitScriptObj(Playerpart.DetectionOfPart(pagesManagement.CurrentPage))[i + offset].IsDebloquer())
             {
                 listOfGridPersonalisation[i].GetComponent<Image>().color = Color.white;
             }
@@ -193,28 +89,148 @@ public class Personalisation : MonoBehaviour
         }
     }
 
+    void UpdateHair(int offset)
+    {
+        for (int i = 0; i < listOfGridPersonalisation.Count; i++)
+        {
+            listOfGridPersonalisation[i].GetComponent<Image>().color = Color.clear;
+
+            if (i + offset >= SearchScriptObj.GetLstHairObj().Count)
+            {
+                listOfGridPersonalisation[i].GetComponentInChildren<HairPlayerCanvaManager>().SetColorVisual(new Color(1, 1, 1, 0));
+                continue;
+            }
+
+            listOfGridPersonalisation[i].GetComponentInChildren<HairPlayerCanvaManager>().SetColorVisual(new Color(1, 1, 1, 1));
+            HairData hair = SearchScriptObj.GetLstHairObj()[i + offset];
+
+            HairPlayerCanvaManager Head = listOfGridPersonalisation[i].GetComponentInChildren<HairPlayerCanvaManager>();
+
+
+            if (hair.Back == null)
+                ShowFrontHair(Head, hair, i);
+            else
+                ShowFrontBackHair(Head, hair, i);
+        }
+    }
+
+    void ShowFrontHair(HairPlayerCanvaManager Head, HairData hair, int i)
+    {
+        if (hair.IsDebloquer())
+        {
+            Head.InitHair(hair.sprite);
+        }
+        else
+        {
+            listOfGridPersonalisation[i].GetComponent<Image>().sprite = cadena;
+            listOfGridPersonalisation[i].GetComponent<Image>().color = new Color(1, 1, 1, 1);
+        }
+    }
+    void ShowFrontBackHair(HairPlayerCanvaManager Head, HairData hair, int i)
+    {
+        if (hair.IsDebloquer() && hair.Back.IsDebloquer())
+        {
+            Head.InitHair(hair.sprite, hair.Back.sprite);
+        }
+        else
+        {
+            listOfGridPersonalisation[i].GetComponent<Image>().sprite = cadena;
+            listOfGridPersonalisation[i].GetComponent<Image>().color = new Color(1, 1, 1, 1);
+        }
+    }
+
     public void ChangePerso(GameObject gameObject)
     {
         int offset = OffsetOfidxLst();
+
+        if (offset < 0)
+            return;
+
+        if (pagesManagement.CurrentPage.Equals(PartOfBody.Hair.ToString()))
+        {
+            ChangeHair(offset, gameObject);
+            return;
+        }
+
         if (gameObject.GetComponent<Image>().sprite != null)
         {
             for (int i = 0; i < listOfGridPersonalisation.Count; i++) {
                 if (gameObject.name.Contains((i+1).ToString()))
                 {
-                    if (GetLsitScriptObj(Playerpart.DetectionOfPart(pagesManagement.CurrentPage))[i + offset].isDebloquer)
+                    if (listOfGridPersonalisation[i].GetComponent<Image>().color == Color.clear)
+                        return;
+
+
+                    if (SearchScriptObj.GetLsitScriptObj(Playerpart.DetectionOfPart(pagesManagement.CurrentPage))[i + offset].IsDebloquer())
                     {
                         GameObject go = Playerpart.GetPartOfPlayer(pagesManagement.CurrentPage);
 
                         if (go.GetComponent<SpriteRenderer>().sprite != gameObject.GetComponent<Image>().sprite)
                         {
                             go.GetComponent<SpriteRenderer>().sprite = gameObject.GetComponent<Image>().sprite;
-                            go.GetComponent<SpriteRenderer>().color = Color.white;
+
+                            positionementPartManager.SetPostion(go, SearchScriptObj.GetLsitScriptObj(Playerpart.DetectionOfPart(pagesManagement.CurrentPage))[i + offset]);
                         }
                     }
                 }
             }
         }
             
+    }
+
+    public void ChangeHair(int offset, GameObject gameObject)
+    {
+        HairPlayerCanvaManager ee = gameObject.GetComponentInChildren<HairPlayerCanvaManager>();
+
+        for (int i = 0; i < listOfGridPersonalisation.Count; i++) {
+            if (gameObject.name.Contains((i+1).ToString()))
+            {
+                HairData hair = SearchScriptObj.GetLstHairObj()[i + offset];
+
+                if (hair.Back == null)
+                    ChangeFrontHair(ee, offset, i);
+                else
+                    ChangeFrontBackHair(ee, offset, i);
+            }
+        }   
+    }
+
+
+    void ChangeFrontBackHair(HairPlayerCanvaManager ee, int offset, int i)
+    {
+        if (SearchScriptObj.GetLstHairObj()[i + offset].IsDebloquer() && SearchScriptObj.GetLstHairObj()[i + offset].Back.IsDebloquer())
+        {
+            Dictionary<PartOfBody, GameObject> HairPlayer = Playerpart.GetHairs();
+
+            if (HairPlayer[PartOfBody.Hair].GetComponent<SpriteRenderer>().sprite != ee.FrontHair.sprite || HairPlayer[PartOfBody.HairBack].GetComponent<SpriteRenderer>().sprite != ee.BackHair.sprite)
+            {
+                HairPlayer[PartOfBody.Hair].GetComponent<SpriteRenderer>().sprite = ee.FrontHair.sprite;
+                HairPlayer[PartOfBody.HairBack].GetComponent<SpriteRenderer>().sprite = ee.BackHair.sprite;
+
+                HairPlayer[PartOfBody.HairBack].GetComponent<SpriteRenderer>().color = HairPlayer[PartOfBody.Hair].GetComponent<SpriteRenderer>().color;
+
+                positionementPartManager.SetPostionHair(PartOfBody.Hair, HairPlayer[PartOfBody.Hair], SearchScriptObj.GetLstHairObj()[i + offset]);
+                positionementPartManager.SetPostionHair(PartOfBody.HairBack, HairPlayer[PartOfBody.HairBack], SearchScriptObj.GetLstHairObj()[i + offset]);
+            }
+        }
+    }
+
+    void ChangeFrontHair(HairPlayerCanvaManager ee, int offset, int i)
+    {
+        if (SearchScriptObj.GetLstHairObj()[i + offset].IsDebloquer())
+        {
+            Dictionary<PartOfBody, GameObject> HairPlayer = Playerpart.GetHairs();
+
+            if (HairPlayer[PartOfBody.Hair].GetComponent<SpriteRenderer>().sprite != ee.FrontHair.sprite)
+            {
+                HairPlayer[PartOfBody.Hair].GetComponent<SpriteRenderer>().sprite = ee.FrontHair.sprite;
+
+                HairPlayer[PartOfBody.HairBack].GetComponent<SpriteRenderer>().sprite = null;
+                HairPlayer[PartOfBody.HairBack].GetComponent<SpriteRenderer>().color = Color.clear;
+
+                positionementPartManager.SetPostionHair(PartOfBody.Hair, HairPlayer[PartOfBody.Hair], SearchScriptObj.GetLstHairObj()[i + offset]);
+            }
+        }
     }
 
     public void Remove()
@@ -225,9 +241,9 @@ public class Personalisation : MonoBehaviour
 
     public void NextPageOfCustoPart()   
     {
-        if(currentpages < nbMaxpagesOfCurrentLst)
+        if(idxcurrentpages < nbMaxpagesOfCurrentLst)
         {
-            currentpages++;
+            idxcurrentpages++;
             UpdateGrillPersonalisation();
             UpdateText();
         }
@@ -235,9 +251,9 @@ public class Personalisation : MonoBehaviour
 
     public void PreviousPageOfCustoPart()
     {
-        if (currentpages > 1)
+        if (idxcurrentpages > 1)
         {
-            currentpages--;
+            idxcurrentpages--;
             UpdateGrillPersonalisation();
             UpdateText();
         }
@@ -245,7 +261,15 @@ public class Personalisation : MonoBehaviour
 
     public void SelectColor(GameObject gameObject)
     {
+        if(pagesManagement.CurrentPage == PartOfBody.Hair.ToString())
+        {
+            Dictionary<PartOfBody, GameObject> HairPlayer = Playerpart.GetHairs();
+            HairPlayer[PartOfBody.Hair].GetComponent<SpriteRenderer>().color = gameObject.GetComponent<Image>().color;
+            HairPlayer[PartOfBody.HairBack].GetComponent<SpriteRenderer>().color = gameObject.GetComponent<Image>().color;
+        }
+
         GameObject go = Playerpart.GetPartOfPlayer(pagesManagement.CurrentPage);
+
 
         if (go.GetComponent<SpriteRenderer>().color != gameObject.GetComponent<Image>().color)
             go.GetComponent<SpriteRenderer>().color = gameObject.GetComponent<Image>().color;  
@@ -277,7 +301,12 @@ public class Personalisation : MonoBehaviour
 
     int CalculateNbPageForCustoPart()
     {
-        int nbAccessoires = GetLsitScriptObj(Playerpart.DetectionOfPart(pagesManagement.CurrentPage)).Count;
+        int nbAccessoires = 0;
+
+        if (pagesManagement.CurrentPage.Equals(PartOfBody.Hair.ToString())) 
+            nbAccessoires = SearchScriptObj.GetLstHairObj().Count;
+        else
+            nbAccessoires = SearchScriptObj.GetLsitScriptObj(Playerpart.DetectionOfPart(pagesManagement.CurrentPage)).Count;
 
         int nbLst = 0;
         while (true)
@@ -314,7 +343,7 @@ public class Personalisation : MonoBehaviour
     public void ChangeOfAnyPart()
     {
         nbMaxpagesOfCurrentLst = FindSpeNbPageOfAccessoires();
-        currentpages = 1;
+        idxcurrentpages = 1;
         UpdateText();
     }
 
@@ -327,14 +356,15 @@ public class Personalisation : MonoBehaviour
 
     void CreateLstAllColor()
     {
-        AddColor(Color.red);
-        AddColor(Color.blue);
-        AddColor(Color.green);
-        AddColor(Color.cyan);
-        AddColor(Color.black);
-        AddColor(Color.gray);
-        AddColor(Color.yellow);
-        AddColor(Color.magenta);
+        AddColor(new Color(1, 1, 1, 1)); //White
+        AddColor(new Color(0.6981132f, 0.1145959f, 0.1145959f, 1)); //red
+        AddColor(new Color(0.1339907f, 0.2056354f, 0.5773585f, 1)); //blue
+        AddColor(new Color(0.1252421f, 0.4867924f, 0.1056247f, 1)); //green
+        AddColor(new Color(0.09149875f, 0.6830188f, 0.5999841f, 1)); //cyan
+        AddColor(new Color(0, 0, 0, 1)); //black
+        AddColor(new Color(0.7056604f, 0.7056604f, 0.7056604f, 1)); //gray
+        AddColor(new Color(0.7132075f, 0.5749689f, 0.1870487f, 1)); //yellow
+        AddColor(new Color(0.5471698f, 0.04852258f, 0.5021859f, 1)); //magenta
     }
 
     void InitColorPosition()
@@ -342,6 +372,55 @@ public class Personalisation : MonoBehaviour
         for (int i = 0; i < GridAllColors.Count; i++)
         {
             GridAllColors[i].GetComponent<Image>().color = listOfAllColors[i];
+        }
+    }
+
+    public void NextBody()
+    {
+        List<PersoPlayerData> AllBody =  SearchScriptObj.GetLsitScriptObj(PartOfBody.Body);
+        GameObject go = Playerpart.GetPartOfPlayer(PartOfBody.Body.ToString());
+
+        for(int i = 0; i < AllBody.Count;i++)
+        {
+            if (AllBody[i].sprite == go.GetComponent<SpriteRenderer>().sprite)
+                idxcurrentBody = i;
+        }
+
+        int nextBody = (idxcurrentBody + 1) < AllBody.Count ? (idxcurrentBody + 1) : 0;
+
+        PersoPlayerData data = AllBody[nextBody];
+
+        if (go.GetComponent<SpriteRenderer>().sprite != data.sprite)
+        {
+            go.GetComponent<SpriteRenderer>().sprite = data.sprite;
+            idxcurrentBody = nextBody;
+        }
+    }
+
+    public void NextEye()
+    {
+        List<PersoPlayerData> AllEyesLeft =  SearchScriptObj.GetLsitScriptObj(PartOfBody.EyesLeft);
+        GameObject Left = Playerpart.GetPartOfPlayer(PartOfBody.EyesLeft.ToString());
+
+        List<PersoPlayerData> AllEyesRight =  SearchScriptObj.GetLsitScriptObj(PartOfBody.EyesRight);
+        GameObject Right = Playerpart.GetPartOfPlayer(PartOfBody.EyesRight.ToString());
+
+        for(int i = 0; i < AllEyesLeft.Count;i++)
+        {
+            if (AllEyesLeft[i].sprite == Left.GetComponent<SpriteRenderer>().sprite)
+                idxcurrentEyes = i;
+        }
+
+        int nextBody = (idxcurrentEyes + 1) < AllEyesLeft.Count ? (idxcurrentEyes + 1) : 0;
+
+        PersoPlayerData dataLeft = AllEyesLeft[nextBody];
+        PersoPlayerData dataRight = AllEyesLeft[nextBody];
+
+        if (Left.GetComponent<SpriteRenderer>().sprite != dataLeft.sprite)
+        {
+            Left.GetComponent<SpriteRenderer>().sprite = dataLeft.sprite;
+            Right.GetComponent<SpriteRenderer>().sprite = dataRight.sprite;
+            idxcurrentEyes = nextBody;
         }
     }
 }
