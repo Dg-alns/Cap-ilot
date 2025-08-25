@@ -145,18 +145,18 @@ public class PlayerSpriteManager : MonoBehaviour
 
     void SavePart(PartOfBody part, GameObject Part)
     {
-        playerData.SetPart_Body(part, Part.GetComponent<SpriteRenderer>().sprite, Part.GetComponent<SpriteRenderer>().color);
+        playerData.SetPart_Body(part, Part.GetComponent<SpriteRenderer>().sprite.name, Part.GetComponent<SpriteRenderer>().color);
 
         string partName = part.ToString();
 
         if (_statePlayer.ContainsKey(partName))
         {
-            _statePlayer[partName].CheckNewPart_Body(Part.GetComponent<SpriteRenderer>().sprite);
+            _statePlayer[partName].CheckNewPart_Body(Part.GetComponent<SpriteRenderer>().sprite.name);
             _statePlayer[partName].CheckNewColor(Part.GetComponent<SpriteRenderer>().color);
         }
         else
         {
-            _statePlayer[partName] = new TemplateSavePlayerData(Part.GetComponent<SpriteRenderer>().sprite, Part.GetComponent<SpriteRenderer>().color);
+            _statePlayer[partName] = new TemplateSavePlayerData(Part.GetComponent<SpriteRenderer>().sprite.name, Part.GetComponent<SpriteRenderer>().color);
         }
     }
 
@@ -168,7 +168,7 @@ public class PlayerSpriteManager : MonoBehaviour
         TemplateSavePlayerData Part_Player = _statePlayer[partOfBody.ToString()];
         List<PersoPlayerData> AllPlayerPart = SearchScriptObj.GetLsitScriptObj(partOfBody);
 
-        playerData.SetPart_Body(partOfBody, Part_Player.GetSprite(), Part_Player.GetColor());
+        playerData.SetPart_Body(partOfBody, Part_Player.GetSpriteName(), Part_Player.GetColor());
 
 
         if (go.GetComponent<SpriteRenderer>())
@@ -177,7 +177,7 @@ public class PlayerSpriteManager : MonoBehaviour
 
             for (int i = 0; i < AllPlayerPart.Count; i++)
             {
-                if (AllPlayerPart[i].sprite == Part_Player.Part_Body)
+                if (AllPlayerPart[i].sprite.name == Part_Player.Name_Part_Body)
                     positionementPartManager.SetPostion(go, AllPlayerPart[i]);
             }
         }
@@ -196,7 +196,7 @@ public class PlayerSpriteManager : MonoBehaviour
         TemplateSavePlayerData Part_Player = _statePlayer[partOfBody.ToString()];
         List<HairData> AllHairData = SearchScriptObj.GetLstHairObj();
 
-        playerData.SetPart_Body(partOfBody, Part_Player.GetSprite(), Part_Player.GetColor());
+        playerData.SetPart_Body(partOfBody, Part_Player.GetSpriteName(), Part_Player.GetColor());
 
 
         if (go.GetComponent<SpriteRenderer>())
@@ -207,7 +207,7 @@ public class PlayerSpriteManager : MonoBehaviour
             {
                 if(partOfBody == PartOfBody.Hair)
                 {
-                    if (AllHairData[i].sprite == Part_Player.Part_Body)
+                    if (AllHairData[i].sprite.name == Part_Player.Name_Part_Body)
                         positionementPartManager.SetPostionHair(partOfBody, go, AllHairData[i]);
                 }
                 else if(partOfBody == PartOfBody.HairBack)
@@ -215,7 +215,7 @@ public class PlayerSpriteManager : MonoBehaviour
                     if (AllHairData[i].Back == null)
                         continue;
 
-                    if (AllHairData[i].Back.sprite == Part_Player.Part_Body)
+                    if (AllHairData[i].Back.sprite.name == Part_Player.Name_Part_Body)
                         positionementPartManager.SetPostionHair(partOfBody, go, AllHairData[i]);
                 }
             }
@@ -232,7 +232,7 @@ public class PlayerSpriteManager : MonoBehaviour
             return;
 
         TemplateSavePlayerData Part_Player = _statePlayer[partOfBody.ToString()];
-        playerData.SetPart_Body(partOfBody, Part_Player.GetSprite(), Part_Player.GetColor());
+        playerData.SetPart_Body(partOfBody, Part_Player.GetSpriteName(), Part_Player.GetColor());
 
 
         if (go.GetComponent<SpriteRenderer>())

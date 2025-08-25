@@ -23,40 +23,40 @@ public class PlayerData : ScriptableObject
     [SerializeField] Color Color_Chaussure;
 
 
-    public void SetPart_Body(PartOfBody part, Sprite sprite, Color color)
+    public void SetPart_Body(PartOfBody part, string spriteName, Color color)
     {
         switch(part)
         {
             case PartOfBody.Body:
-                Corps = sprite;
+                Corps = SearchScriptObj.GetSprite(SearchScriptObj.BodySObj, spriteName);
                 Color_Corps = color;
                 break;
             case PartOfBody.HairBack:
-                CheveuxBack = sprite;
+                CheveuxBack = SearchScriptObj.GetSpriteHair(SearchScriptObj.HairFrontSObj, spriteName, PartOfBody.HairBack);
                 Color_CheveuxBack = color;
                 break;
             case PartOfBody.Hair:
-                CheveuxFront = sprite;
+                CheveuxFront = SearchScriptObj.GetSpriteHair(SearchScriptObj.HairFrontSObj, spriteName, PartOfBody.Hair);
                 Color_CheveuxFront = color;
                 break;
             case PartOfBody.EyesLeft:
-                EyeLeft = sprite;
+                EyeLeft = SearchScriptObj.GetSprite(SearchScriptObj.EyesLeftObj, spriteName);
                 Color_EyeLeft = color;
                 break;
             case PartOfBody.EyesRight:
-                EyeRight = sprite;
+                EyeRight = SearchScriptObj.GetSprite(SearchScriptObj.EyesRightObj, spriteName);
                 Color_EyeRight = color;
                 break;
             case PartOfBody.Top:
-                Haut = sprite;
+                Haut = SearchScriptObj.GetSprite(SearchScriptObj.TopSObj, spriteName);
                 Color_Haut = color;
                 break;
             case PartOfBody.Bottom:
-                Bas = sprite;
+                Bas = SearchScriptObj.GetSprite(SearchScriptObj.BottomSObj, spriteName);
                 Color_Bas = color;
                 break;
             case PartOfBody.Shoes:
-                Chaussure = sprite;
+                Chaussure = SearchScriptObj.GetSprite(SearchScriptObj.ShoesSObj, spriteName);
                 Color_Chaussure = color;
                 break;
         }

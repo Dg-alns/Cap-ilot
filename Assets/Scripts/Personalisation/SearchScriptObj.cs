@@ -82,5 +82,38 @@
         {
             return HairFrontSObj;
 
+        }
+
+    public static Sprite GetSprite(List<PersoPlayerData> lst, string name)
+    {
+        for(int i = 0; i < lst.Count; i++)
+        {
+            if (lst[i].sprite.name == name)
+                return lst[i].sprite;
+        }
+
+        return null;
+    }
+
+    public static Sprite GetSpriteHair(List<HairData> lst, string name, PartOfBody partOfBody) 
+    {
+        if (partOfBody == PartOfBody.Hair)
+        {
+            for (int i = 0; i < lst.Count; i++)
+            {
+                if (lst[i].sprite.name == name)
+                    return lst[i].sprite;
+            }
+        }
+        else if(partOfBody == PartOfBody.HairBack)
+        {
+            for (int i = 0; i < lst.Count; i++)
+            {
+                if (lst[i].sprite.name == name)
+                    return lst[i].Back.sprite;
+            }
+        }
+
+        return null;
     }
 }

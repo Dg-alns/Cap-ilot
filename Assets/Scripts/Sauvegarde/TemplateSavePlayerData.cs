@@ -6,20 +6,20 @@ using UnityEngine;
 [System.Serializable]
 public class TemplateSavePlayerData
 {
-    public Sprite Part_Body;
+    public string Name_Part_Body;
     public Color Color_Part_Body;
 
-    public TemplateSavePlayerData(Sprite Part, Color Color)
+    public TemplateSavePlayerData(string name, Color Color)
     {
-        Part_Body = Part;
+        Name_Part_Body = name;
         Color_Part_Body = Color;
     }
 
-    public void CheckNewPart_Body(Sprite Part)
+    public void CheckNewPart_Body(string name)
     {
-        if(Part != Part_Body)
+        if(name != Name_Part_Body)
         {
-            Part_Body = Part;
+            Name_Part_Body = name;
         }
     }
 
@@ -31,6 +31,6 @@ public class TemplateSavePlayerData
         }
     }
 
-    public Sprite GetSprite() { return Part_Body; }
+    public string GetSpriteName() { return Name_Part_Body; }
     public Color GetColor() { return Color_Part_Body; }
 }
