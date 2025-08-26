@@ -73,9 +73,7 @@
         ],
         "m_values": [
             {
-                "Part_Body": {
-                    "instanceID": 55074
-                },
+                "Name_Part_Body": "metis_idle_1_0",
                 "Color_Part_Body": {
                     "r": 1.0,
                     "g": 1.0,
@@ -84,31 +82,25 @@
                 }
             },
             {
-                "Part_Body": {
-                    "instanceID": 54176
-                },
+                "Name_Part_Body": "2_0",
                 "Color_Part_Body": {
-                    "r": 0.09149874746799469,
-                    "g": 0.6830188035964966,
-                    "b": 0.5999841094017029,
+                    "r": 0.0,
+                    "g": 0.0,
+                    "b": 0.0,
                     "a": 1.0
                 }
             },
             {
-                "Part_Body": {
-                    "instanceID": 55108
-                },
+                "Name_Part_Body": "9_0",
                 "Color_Part_Body": {
-                    "r": 0.09149874746799469,
-                    "g": 0.6830188035964966,
-                    "b": 0.5999841094017029,
+                    "r": 0.0,
+                    "g": 0.0,
+                    "b": 0.0,
                     "a": 1.0
                 }
             },
             {
-                "Part_Body": {
-                    "instanceID": 55090
-                },
+                "Name_Part_Body": "yeux_vert_idle_1_0",
                 "Color_Part_Body": {
                     "r": 1.0,
                     "g": 1.0,
@@ -117,9 +109,7 @@
                 }
             },
             {
-                "Part_Body": {
-                    "instanceID": 54592
-                },
+                "Name_Part_Body": "top1idle1_0",
                 "Color_Part_Body": {
                     "r": 0.698113203048706,
                     "g": 0.11459589749574661,
@@ -128,24 +118,20 @@
                 }
             },
             {
-                "Part_Body": {
-                    "instanceID": 54598
-                },
-                "Color_Part_Body": {
-                    "r": 0.13399070501327516,
-                    "g": 0.20563539862632752,
-                    "b": 0.5773584842681885,
-                    "a": 1.0
-                }
-            },
-            {
-                "Part_Body": {
-                    "instanceID": 54594
-                },
+                "Name_Part_Body": "bot_3_idle_1_0",
                 "Color_Part_Body": {
                     "r": 0.12524209916591645,
                     "g": 0.4867923855781555,
                     "b": 0.10562469810247421,
+                    "a": 1.0
+                }
+            },
+            {
+                "Name_Part_Body": "shoes_idle_1_0",
+                "Color_Part_Body": {
+                    "r": 0.13399070501327516,
+                    "g": 0.20563539862632752,
+                    "b": 0.5773584842681885,
                     "a": 1.0
                 }
             }

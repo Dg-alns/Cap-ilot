@@ -7,20 +7,20 @@ using UnityEngine.U2D;
 [System.Serializable]
 public class TemplateSavePlayerData
 {
-    public Sprite Part_Body;
+    public string Name_Part_Body;
     public Color Color_Part_Body;
 
-    public TemplateSavePlayerData(Sprite sprite, Color Color)
+    public TemplateSavePlayerData(string sprite, Color Color)
     {
-        Part_Body = sprite;
+        Name_Part_Body = sprite;
         Color_Part_Body = Color;
     }
 
-    public void CheckNewPart_Body(Sprite sprite)
+    public void CheckNewPart_Body(string sprite)
     {
-        if(sprite != Part_Body)
+        if(sprite != Name_Part_Body)
         {
-            Part_Body = sprite;
+            Name_Part_Body = sprite;
         }
     }
 
@@ -32,6 +32,6 @@ public class TemplateSavePlayerData
         }
     }
 
-    public Sprite GetSprite() { return Part_Body; }
+    public string GetSpriteName() { return Name_Part_Body; }
     public Color GetColor() { return Color_Part_Body; }
 }

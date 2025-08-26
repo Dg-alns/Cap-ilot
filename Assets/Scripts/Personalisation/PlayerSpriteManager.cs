@@ -148,12 +148,12 @@ public class PlayerSpriteManager : MonoBehaviour
 
         if (_statePlayer.ContainsKey(partName))
         {
-            _statePlayer[partName].CheckNewPart_Body(nameSprite);
+            _statePlayer[partName].CheckNewPart_Body(nameSprite.name);
             _statePlayer[partName].CheckNewColor(Part.GetComponent<SpriteRenderer>().color);
         }
         else
         {
-            _statePlayer[partName] = new TemplateSavePlayerData(nameSprite, Part.GetComponent<SpriteRenderer>().color);
+            _statePlayer[partName] = new TemplateSavePlayerData(nameSprite.name, Part.GetComponent<SpriteRenderer>().color);
         }
     }
 
@@ -165,12 +165,12 @@ public class PlayerSpriteManager : MonoBehaviour
         TemplateSavePlayerData Part_Player = _statePlayer[partOfBody.ToString()];
         List<PersoPlayerData> AllPlayerPart = SearchScriptObj.GetLsitScriptObj(partOfBody);
 
-        playerData.SetPart_Body(partOfBody, Part_Player.GetSprite(), Part_Player.GetColor());
+        playerData.SetPart_Body(partOfBody, Part_Player.GetSpriteName(), Part_Player.GetColor());
 
 
         for (int i = 0; i < AllPlayerPart.Count; i++)
         {
-            if (AllPlayerPart[i].sprite == Part_Player.Part_Body)
+            if (AllPlayerPart[i].sprite.name == Part_Player.Name_Part_Body)
                 positionementPartManager.SetPostion(go, AllPlayerPart[i]);
         }
 
@@ -194,12 +194,12 @@ public class PlayerSpriteManager : MonoBehaviour
         List<PersoPlayerData> AllPlayerPart = SearchScriptObj.GetLsitScriptObj(partOfBody);
         List<PersoPlayerData> EyeRightLst = SearchScriptObj.GetLsitScriptObj(PartOfBody.EyesRight);
 
-        playerData.SetPart_Body(partOfBody, Part_Player.GetSprite(), Part_Player.GetColor());
+        playerData.SetPart_Body(partOfBody, Part_Player.GetSpriteName(), Part_Player.GetColor());
 
         for(int i = 0; i < AllPlayerPart.Count; i++)
         {
-            if (AllPlayerPart[i].sprite == Part_Player.Part_Body)
-                playerData.SetPart_Body(PartOfBody.EyesRight, EyeRightLst[i].sprite, Part_Player.GetColor());
+            if (AllPlayerPart[i].sprite.name == Part_Player.Name_Part_Body)
+                playerData.SetPart_Body(PartOfBody.EyesRight, EyeRightLst[i].sprite.name, Part_Player.GetColor());
         }
 
         if (go.GetComponent<SpriteRenderer>())
@@ -224,13 +224,13 @@ public class PlayerSpriteManager : MonoBehaviour
 
         List<HairData> AllHairData = SearchScriptObj.GetLstHairObj();
 
-        playerData.SetPart_Body(partOfBody, Part_Player.GetSprite(), Part_Player.GetColor());
+        playerData.SetPart_Body(partOfBody, Part_Player.GetSpriteName(), Part_Player.GetColor());
 
         for (int i = 0; i < AllHairData.Count; i++)
         {
             if (partOfBody == PartOfBody.Hair)
             {
-                if (AllHairData[i].sprite == Part_Player.Part_Body)
+                if (AllHairData[i].sprite.name == Part_Player.Name_Part_Body)
                     positionementPartManager.SetPostionHair(partOfBody, go, AllHairData[i]);
             }
             else if (partOfBody == PartOfBody.HairBack)
@@ -238,7 +238,7 @@ public class PlayerSpriteManager : MonoBehaviour
                 if (AllHairData[i].Back == null)
                     continue;
 
-                if (AllHairData[i].Back.sprite == Part_Player.Part_Body)
+                if (AllHairData[i].Back.sprite.name == Part_Player.Name_Part_Body)
                     positionementPartManager.SetPostionHair(partOfBody, go, AllHairData[i]);
             }
         }
@@ -257,7 +257,7 @@ public class PlayerSpriteManager : MonoBehaviour
             return;
 
         TemplateSavePlayerData Part_Player = _statePlayer[partOfBody.ToString()];
-        playerData.SetPart_Body(partOfBody, Part_Player.GetSprite(), Part_Player.GetColor());
+        playerData.SetPart_Body(partOfBody, Part_Player.GetSpriteName(), Part_Player.GetColor());
 
 
         if (go.GetComponent<SpriteRenderer>())
