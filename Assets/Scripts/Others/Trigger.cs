@@ -12,7 +12,8 @@ public enum TriggerType
     PORT,
     PANCARTE,
     DIALOG,
-    MINIGAME
+    MINIGAME,
+    QUIZ
 }
 
 public class Trigger : MonoBehaviour
@@ -126,6 +127,23 @@ public class Trigger : MonoBehaviour
 
                     uiOpen = true;
                 }     
+                break;
+            case TriggerType.QUIZ:
+                if (!uiOpen)
+                {
+                    activeUI = Instantiate(UI);
+
+                    activeUI.GetComponentInChildren<DialogueQuizBox>().dialogStarted = false;
+                    activeUI.GetComponentInChildren<DialogueQuizBox>().lineList.Clear();
+                    activeUI.GetComponentInChildren<DialogueQuizBox>().FindNPCManagerInActiveScene();
+                    activeUI.GetComponentInChildren<DialogueQuizBox>().Init();
+                    activeUI.GetComponentInChildren<DialogueQuizBox>().FindTouchManagerInActiveScene();
+                    activeUI.GetComponentInChildren<DialogueQuizBox>().AssignTextAreas();
+                    activeUI.GetComponentInChildren<DialogueQuizBox>().GetDialogueLines();
+                    activeUI.GetComponentInChildren<DialogueQuizBox>().StartDialogue();
+
+                    uiOpen = true;
+                }
                 break;
         }
     }
