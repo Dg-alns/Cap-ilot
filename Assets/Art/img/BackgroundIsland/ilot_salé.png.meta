@@ -191,7 +191,10 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      "ilot_sal\xE9_0": 1682057826497162294
+      "ilot_sal\xE9_1": 1980373136006502540
+      "ilot_sal\xE9_2": -253723153260755718
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

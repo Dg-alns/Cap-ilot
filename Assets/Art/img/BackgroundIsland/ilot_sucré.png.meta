@@ -263,7 +263,13 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      "ilot_sucr\xE9_0": 7239208652930232080
+      "ilot_sucr\xE9_1": -1308559777337850685
+      "ilot_sucr\xE9_2": 6435987562235884899
+      "ilot_sucr\xE9_3": -3620167378203285829
+      "ilot_sucr\xE9_4": -8208368137976077758
+      "ilot_sucr\xE9_5": 5550745029170853687
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
