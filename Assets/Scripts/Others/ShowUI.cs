@@ -10,7 +10,7 @@ public class ShowUI : MonoBehaviour
     bool open;
     void Start()
     {
-        GetComponent<Button>().onClick.AddListener(ShowHideUI);
+        //GetComponent<Button>().onClick.AddListener(ShowHideUI);
     }
 
     // Update is called once per frame
@@ -19,21 +19,21 @@ public class ShowUI : MonoBehaviour
         
     }
 
-    void ShowHideUI()
+    public void Show()
     {
-        if (open)
+        
+        if (!VivoxService.Instance.IsLoggedIn )
         {
-            animator.Play("HideUI");
-            open = false;
+            _panelLoading.SetActive(true);
         }
-        else {
-            if (!VivoxService.Instance.IsLoggedIn )
-            {
-                _panelLoading.SetActive(true);
-            }
-            animator.Play("ShowUI");
-            open = true;
-        }
-
+        animator.Play("ShowUI");
+    
     }
+
+    public void HideUI()
+    {
+        animator.Play("HideUI");
+        //open = false;
+    }
+
 }
