@@ -19,6 +19,12 @@ public class AnimationAvatarData : ScriptableObject
         'w','x','c','v','b','n'
     };
 
+
+    private static readonly HashSet<char> nb = new HashSet<char>
+    {
+        '0', '1', '2', '3', '4', '5', '6', '7', '8', '9'
+    };
+
     public string GetCouleurBody()
     {
         StringBuilder result = new StringBuilder();
@@ -31,6 +37,21 @@ public class AnimationAvatarData : ScriptableObject
                 break;
         }
         
+        return result.ToString();
+    }
+
+    public string GetNameScript()
+    {
+        StringBuilder result = new StringBuilder();
+
+        for (int i = name.Length - 1; i >= 0; i--)
+        {
+            if (nb.Contains(name[i]))
+                result.Insert(0, name[i]);
+            else
+                break;
+        }
+
         return result.ToString();
     }
 

@@ -27,6 +27,7 @@ public class Movement : MonoBehaviour
 
     [Header("Animation")]
     [SerializeField] private Animator _diabeteAnimator;
+    [SerializeField] private AnimationAvatarManager _animationAvatarManager;
 
     public GameObject dialogueNpc;
     public GameObject activeDialogueUI;
@@ -52,25 +53,28 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Animation Diabete
-        if (_diabeteAnimator != null)
+        if (_agent.destination != transform.position)
         {
-            if (_diabeteAnimator.gameObject.activeSelf)
-            {
+            if (_animationAvatarManager.animator.GetBool("Walking") == false)
+                _animationAvatarManager.SwitchAnimation();
 
-                if (_diabeteAnimator != null)
-                {
-                    if (_agent.destination != transform.position)
-                    {
-                        _diabeteAnimator.SetBool("Walking", true);
-                    }
-                    else
-                    {
-                        _diabeteAnimator.SetBool("Walking", false);
-                    }
-                }
-            }
+            if (_diabeteAnimator != null && _diabeteAnimator.gameObject.activeSelf)
+                _diabeteAnimator.SetBool("Walking", true);
+
+            _animationAvatarManager.animator.SetBool("Walking", true);
         }
+        else
+        {
+            if (_animationAvatarManager.animator.GetBool("Walking") == true)
+                _animationAvatarManager.SwitchAnimation();
+
+
+            if (_diabeteAnimator != null && _diabeteAnimator.gameObject.activeSelf)
+                _diabeteAnimator.SetBool("Walking", false);
+
+            _animationAvatarManager.animator.SetBool("Walking", false);
+        }
+    
 
 
 

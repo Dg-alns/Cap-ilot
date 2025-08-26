@@ -52,57 +52,13 @@ public class PlayerSpriteManager : MonoBehaviour
         DetectionPlayerDataColor(PartOfBody.Shoes, Chaussure);
 
         if (inProfil == false) {
-            Sprite Body = Corps.GetComponent<SpriteRenderer>().sprite;
-            Sprite Top = Haut.GetComponent<SpriteRenderer>().sprite;
-            Sprite Bottom = Bas.GetComponent<SpriteRenderer>().sprite;
+            SpriteRenderer Body = Corps.GetComponent<SpriteRenderer>();
+            SpriteRenderer Top = Haut.GetComponent<SpriteRenderer>();
+            SpriteRenderer Bottom = Bas.GetComponent<SpriteRenderer>();
+            SpriteRenderer Shoes = Chaussure.GetComponent<SpriteRenderer>();
 
-            GetComponent<AnimationAvatarManager>().Init(Body.name, Top.name, Bottom.name);
+            GetComponent<AnimationAvatarManager>().Init(Body, Bottom, Top, Shoes);
         }
-
-        //if (inProfil == false)
-        //{
-        //    DetectionPlayerDataSprite(PartOfBody.Body, Corps);
-        //    DetectionPlayerDataHairSprite(PartOfBody.Hair, CheveuxFront);
-        //    DetectionPlayerDataHairSprite(PartOfBody.HairBack, CheveuxBack);
-        //    DetectionPlayerDataEyes(PartOfBody.EyesLeft, EyeLeft);
-        //    DetectionPlayerDataSprite(PartOfBody.Top, Haut);
-        //    DetectionPlayerDataSprite(PartOfBody.Bottom, Bas);
-        //    DetectionPlayerDataSprite(PartOfBody.Shoes, Chaussure);
-
-        //    DetectionPlayerDataColor(PartOfBody.Body, Corps);
-        //    DetectionPlayerDataColor(PartOfBody.Hair, CheveuxFront);
-        //    DetectionPlayerDataColor(PartOfBody.HairBack, CheveuxBack);
-        //    DetectionPlayerDataColor(PartOfBody.Top, Haut);
-        //    DetectionPlayerDataColor(PartOfBody.Bottom, Bas);
-        //    DetectionPlayerDataColor(PartOfBody.Shoes, Chaussure);
-        //}
-        //else //tODO adapter avec image
-        //{
-        //    DetectionPlayerDataSprite(PartOfBody.Body, Corps);
-        //    DetectionPlayerDataHairSprite(PartOfBody.Hair, CheveuxFront);
-        //    DetectionPlayerDataHairSprite(PartOfBody.HairBack, CheveuxBack);
-        //    DetectionPlayerDataEyes(PartOfBody.EyesLeft, EyeLeft);
-        //    DetectionPlayerDataSprite(PartOfBody.Top, Haut);
-        //    DetectionPlayerDataSprite(PartOfBody.Bottom, Bas);
-        //    DetectionPlayerDataSprite(PartOfBody.Shoes, Chaussure);
-
-        //    //Corps.GetComponent<Image>().color = playerData.GetColor(PartOfBody.Body);
-        //    //Cheveux.GetComponent<Image>().color = playerData.GetColor(PartOfBody.Hair);
-        //    //EyeLeft.GetComponent<Image>().color = playerData.GetColor(PartOfBody.EyesLeft);
-        //    //EyeRight.GetComponent<Image>().color = playerData.GetColor(PartOfBody.EyesRight);
-        //    //Haut.GetComponent<Image>().color = playerData.GetColor(PartOfBody.Top);
-        //    //Bas.GetComponent<Image>().color = playerData.GetColor(PartOfBody.Bottom);
-        //    //Chaussure.GetComponent<Image>().color = playerData.GetColor(PartOfBody.Shoes);
-
-        //    DetectionPlayerDataColor(PartOfBody.Body, Corps);
-        //    DetectionPlayerDataColor(PartOfBody.Hair, CheveuxFront);
-        //    DetectionPlayerDataColor(PartOfBody.HairBack, CheveuxBack);
-        //    //DetectionPlayerDataColor(PartOfBody.EyesLeft, EyeLeft);
-        //    //DetectionPlayerDataColor(PartOfBody.EyesRight, EyeRight);
-        //    DetectionPlayerDataColor(PartOfBody.Top, Haut);
-        //    DetectionPlayerDataColor(PartOfBody.Body, Bas);
-        //    DetectionPlayerDataColor(PartOfBody.Shoes, Chaussure);
-        //}
     }
 
     private void Update()
@@ -138,29 +94,40 @@ public class PlayerSpriteManager : MonoBehaviour
 
     void SavePart(PartOfBody part, GameObject Part)
     {
-        Sprite nameSprite;
+        string nameSprite;
+        Color color;
 
-        if(part == PartOfBody.HairBack)
+        if (part == PartOfBody.HairBack)
         {
             if (Part.GetComponent<SpriteRenderer>().sprite != null)
-                nameSprite = Part.GetComponent<SpriteRenderer>().sprite;
+            {
+                nameSprite = Part.GetComponent<SpriteRenderer>().sprite.name;
+                color = Part.GetComponent<SpriteRenderer>().color;
+            }
 
             else
+            {
                 nameSprite = null;
+                color = Color.clear;
+            }
+
         }
         else
-            nameSprite = Part.GetComponent<SpriteRenderer>().sprite;
+        {
+            nameSprite = Part.GetComponent<SpriteRenderer>().sprite.name;
+            color = Part.GetComponent<SpriteRenderer>().color;
+        }
 
         string partName = part.ToString();
 
         if (_statePlayer.ContainsKey(partName))
         {
-            _statePlayer[partName].CheckNewPart_Body(nameSprite.name);
+            _statePlayer[partName].CheckNewPart_Body(nameSprite);
             _statePlayer[partName].CheckNewColor(Part.GetComponent<SpriteRenderer>().color);
         }
         else
         {
-            _statePlayer[partName] = new TemplateSavePlayerData(nameSprite.name, Part.GetComponent<SpriteRenderer>().color);
+            _statePlayer[partName] = new TemplateSavePlayerData(nameSprite, color);
         }
     }
 

@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0c1c6a1c6f0cb864c90dea833e0047d5, type: 3}
-  m_Name: Body_walk_
+  m_Name: Bottom_2
   m_EditorClassIdentifier: 
   Animationlst:
-  - {fileID: -917927424430062970, guid: d57100d1d8fc56240886a03a6ae8b92c, type: 3}
-  - {fileID: 536700122234535284, guid: 088052cc330dcd3408e0bf4442dca809, type: 3}
+  - {fileID: -8761389887855653742, guid: 993dc95a35aa04244ad48ac448c40e7e, type: 3}
+  - {fileID: 21300000, guid: 05c6b32df0b0ae04bbeab328a0c8c50b, type: 3}

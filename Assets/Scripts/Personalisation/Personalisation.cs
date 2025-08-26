@@ -118,7 +118,7 @@ public class Personalisation : MonoBehaviour
     {
         if (hair.IsDebloquer())
         {
-            Head.InitHair(hair.sprite);
+            Head.InitHair(hair);
         }
         else
         {
@@ -130,7 +130,7 @@ public class Personalisation : MonoBehaviour
     {
         if (hair.IsDebloquer() && hair.Back.IsDebloquer())
         {
-            Head.InitHair(hair.sprite, hair.Back.sprite);
+            Head.InitHair(hair);
         }
         else
         {
@@ -202,10 +202,10 @@ public class Personalisation : MonoBehaviour
         {
             Dictionary<PartOfBody, GameObject> HairPlayer = Playerpart.GetHairs();
 
-            if (HairPlayer[PartOfBody.Hair].GetComponent<SpriteRenderer>().sprite != ee.FrontHair.sprite || HairPlayer[PartOfBody.HairBack].GetComponent<SpriteRenderer>().sprite != ee.BackHair.sprite)
+            if (HairPlayer[PartOfBody.Hair].GetComponent<SpriteRenderer>().sprite != ee.GetFrontHair() || HairPlayer[PartOfBody.HairBack].GetComponent<SpriteRenderer>().sprite != ee.GetBackHair())
             {
-                HairPlayer[PartOfBody.Hair].GetComponent<SpriteRenderer>().sprite = ee.FrontHair.sprite;
-                HairPlayer[PartOfBody.HairBack].GetComponent<SpriteRenderer>().sprite = ee.BackHair.sprite;
+                HairPlayer[PartOfBody.Hair].GetComponent<SpriteRenderer>().sprite = ee.GetFrontHair();
+                HairPlayer[PartOfBody.HairBack].GetComponent<SpriteRenderer>().sprite = ee.GetBackHair();
 
                 HairPlayer[PartOfBody.HairBack].GetComponent<SpriteRenderer>().color = HairPlayer[PartOfBody.Hair].GetComponent<SpriteRenderer>().color;
 
@@ -221,9 +221,9 @@ public class Personalisation : MonoBehaviour
         {
             Dictionary<PartOfBody, GameObject> HairPlayer = Playerpart.GetHairs();
 
-            if (HairPlayer[PartOfBody.Hair].GetComponent<SpriteRenderer>().sprite != ee.FrontHair.sprite)
+            if (HairPlayer[PartOfBody.Hair].GetComponent<SpriteRenderer>().sprite != ee.GetFrontHair())
             {
-                HairPlayer[PartOfBody.Hair].GetComponent<SpriteRenderer>().sprite = ee.FrontHair.sprite;
+                HairPlayer[PartOfBody.Hair].GetComponent<SpriteRenderer>().sprite = ee.GetFrontHair();
 
                 HairPlayer[PartOfBody.HairBack].GetComponent<SpriteRenderer>().sprite = null;
                 HairPlayer[PartOfBody.HairBack].GetComponent<SpriteRenderer>().color = Color.clear;

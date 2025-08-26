@@ -14,27 +14,63 @@ public class AnimationAvatarManager : MonoBehaviour
 
     List<AnimationAvatarData> Idle_Bottom_Animation = new List<AnimationAvatarData>();
     List<AnimationAvatarData> Walk_Bottom_Animation = new List<AnimationAvatarData>();
+    
+
+    List<AnimationAvatarData> Idle_Shoes_Animation = new List<AnimationAvatarData>();
+    List<AnimationAvatarData> Walk_Shoes_Animation = new List<AnimationAvatarData>();
 
     SpriteRenderer Body;
+    SpriteRenderer Bottom;
+    SpriteRenderer Top;
+    SpriteRenderer Shoes;
 
     AnimationAvatarData CurrentAnimation_Idle_Body;
-    int idx_Body_Idle = 0;
+    AnimationAvatarData CurrentAnimation_Idle_Bottom;
+    AnimationAvatarData CurrentAnimation_Idle_Top;
+    AnimationAvatarData CurrentAnimation_Idle_Shoes;
 
-    public void Init(string nameBody, string nameTop, string nameBot)
+    AnimationAvatarData CurrentAnimation_Walk_Body;
+    AnimationAvatarData CurrentAnimation_Walk_Bottom;
+    AnimationAvatarData CurrentAnimation_Walk_Top;
+    AnimationAvatarData CurrentAnimation_Walk_Shoes;
+
+    int idx_Body_Idle = 0;
+    int idx_Body_Walk = 0;
+
+    public void Init(SpriteRenderer body, SpriteRenderer bottom, SpriteRenderer top, SpriteRenderer shoes)
     {
-        Body = GetComponent<PlayerSpriteManager>().Corps.GetComponent<SpriteRenderer>();
+        Body = body;
+        Bottom = bottom;
+        Top = top;
+        Shoes = shoes;
 
 
         SearchScriptObj.LoadCategory("ScriptObj/Animation/Body/Idle", Idle_Body_Animation);
+        SearchScriptObj.LoadCategory("ScriptObj/Animation/Bottom/Idle", Idle_Bottom_Animation);
+        SearchScriptObj.LoadCategory("ScriptObj/Animation/Top/Idle", Idle_Top_Animation);
+        SearchScriptObj.LoadCategory("ScriptObj/Animation/Shoes/Idle", Idle_Shoes_Animation);
 
-        CurrentAnimation_Idle_Body = DetectionAnimation(Idle_Body_Animation, nameBody);
+
+        SearchScriptObj.LoadCategory("ScriptObj/Animation/Body/Walk", Walk_Body_Animation);
+        SearchScriptObj.LoadCategory("ScriptObj/Animation/Bottom/Walk", Walk_Bottom_Animation);
+        SearchScriptObj.LoadCategory("ScriptObj/Animation/Top/Walk", Walk_Top_Animation);
+        SearchScriptObj.LoadCategory("ScriptObj/Animation/Shoes/Walk", Walk_Shoes_Animation);
+
+
+        CurrentAnimation_Idle_Body = DetectionAnimationBody(Idle_Body_Animation, body.sprite.name);
+        CurrentAnimation_Idle_Bottom = DetectionAnimationIdle(Idle_Bottom_Animation, bottom.sprite.name);
+        CurrentAnimation_Idle_Top = DetectionAnimationIdle(Idle_Top_Animation, top.sprite.name);
+        CurrentAnimation_Idle_Shoes = DetectionAnimationIdle(Idle_Shoes_Animation, shoes.sprite.name);
+
+        CurrentAnimation_Walk_Body = DetectionAnimationBody(Walk_Body_Animation, body.sprite.name);
+        CurrentAnimation_Walk_Bottom = DetectionAnimationWalk(Walk_Bottom_Animation, CurrentAnimation_Idle_Bottom.name);
+        CurrentAnimation_Walk_Top = DetectionAnimationWalk(Walk_Top_Animation, CurrentAnimation_Idle_Top.name);
+        CurrentAnimation_Walk_Shoes = DetectionAnimationWalk(Walk_Shoes_Animation, CurrentAnimation_Idle_Shoes.name);
 
         animator.enabled = true;
-
-
     }
 
-    AnimationAvatarData DetectionAnimation(List<AnimationAvatarData> lst, string nameSprite)
+    AnimationAvatarData DetectionAnimationBody(List<AnimationAvatarData> lst, string nameSprite)
     {
         foreach (AnimationAvatarData anim in lst)
         {
@@ -45,19 +81,75 @@ public class AnimationAvatarManager : MonoBehaviour
         return null;
     }
 
-    public void ChangeSpriteIdle_Body()
+    AnimationAvatarData DetectionAnimationIdle(List<AnimationAvatarData> lst, string nameSprite)
     {
-        Debug.Log("Change");
+        foreach (AnimationAvatarData anim in lst)
+        {
+            foreach (Sprite sprite in anim.GetAnimation())
+            {
+                if (nameSprite.Contains(sprite.name))
+                    return anim;
+            }
+        }
+
+        return null;
+    }
+    AnimationAvatarData DetectionAnimationWalk(List<AnimationAvatarData> lst, string IdleNameScript)
+    {
+        foreach (AnimationAvatarData anim in lst)
+        {
+            if (anim.name.Contains(IdleNameScript))
+                return anim;
+            
+        }
+
+        return null;
+    }
+
+    public void ChangeAllSpriteIdleAnimation()
+    {
         idx_Body_Idle++;
 
-        Debug.Log(CurrentAnimation_Idle_Body.GetAnimation().Count);
+        ChangeSpriteIdle(CurrentAnimation_Idle_Body, Body);
+        ChangeSpriteIdle(CurrentAnimation_Idle_Bottom, Bottom);
+        ChangeSpriteIdle(CurrentAnimation_Idle_Top, Top);
+    }
 
-        if (idx_Body_Idle < CurrentAnimation_Idle_Body.GetAnimation().Count)
-            Body.sprite = CurrentAnimation_Idle_Body.GetAnimation()[idx_Body_Idle];
+    public void ChangeAllSpriteWalkAnimation()
+    {
+        idx_Body_Walk++;
+
+        ChangeSpriteWalk(CurrentAnimation_Walk_Body, Body);
+        ChangeSpriteWalk(CurrentAnimation_Walk_Bottom, Bottom);
+        ChangeSpriteWalk(CurrentAnimation_Walk_Top, Top);
+    }
+
+    void ChangeSpriteIdle(AnimationAvatarData CurrentAnimation, SpriteRenderer PartAvatar)
+    {
+        if (idx_Body_Idle < CurrentAnimation.GetAnimation().Count)
+            PartAvatar.sprite = CurrentAnimation.GetAnimation()[idx_Body_Idle];
         else
         {
             idx_Body_Idle = 0;
-            Body.sprite = CurrentAnimation_Idle_Body.GetAnimation()[idx_Body_Idle];
+            PartAvatar.sprite = CurrentAnimation.GetAnimation()[idx_Body_Idle];
         }
+    }
+
+    void ChangeSpriteWalk(AnimationAvatarData CurrentAnimation, SpriteRenderer PartAvatar)
+    {
+        if (idx_Body_Walk < CurrentAnimation.GetAnimation().Count)
+            PartAvatar.sprite = CurrentAnimation.GetAnimation()[idx_Body_Walk];
+        else
+        {
+            idx_Body_Walk = 0;
+            PartAvatar.sprite = CurrentAnimation.GetAnimation()[idx_Body_Walk];
+        }
+    }
+
+
+    public void SwitchAnimation()
+    {
+        idx_Body_Walk = 0;
+        idx_Body_Idle = 0;
     }
 }

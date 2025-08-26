@@ -397,7 +397,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _npcManager: {fileID: 0}
   _dialogue: {fileID: 4643652530389774356, guid: ecbdcd12b26a020479147be9ebfe8f48, type: 3}
-  _diabeteAnimator: {fileID: 0}
+  _diabeteAnimator: {fileID: 2248391333379953905}
+  _animationAvatarManager: {fileID: 8198173181661229690}
   dialogueNpc: {fileID: 0}
   activeDialogueUI: {fileID: 0}
 --- !u!195 &1163573149948061793
@@ -470,9 +471,33 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5232277390489423236, guid: 3a5e3017a39506f44add5b1db1da0060, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.026
+      objectReference: {fileID: 0}
+    - target: {fileID: 5232277390489423236, guid: 3a5e3017a39506f44add5b1db1da0060, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.862
+      objectReference: {fileID: 0}
     - target: {fileID: 5580803202734008852, guid: 3a5e3017a39506f44add5b1db1da0060, type: 3}
       propertyPath: m_Name
       value: Perso
+      objectReference: {fileID: 0}
+    - target: {fileID: 5828489888960739762, guid: 3a5e3017a39506f44add5b1db1da0060, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -3749624154352775247, guid: 356db8e0366d0b541a4d021c227f07ac, type: 3}
+    - target: {fileID: 6528681061074117086, guid: 3a5e3017a39506f44add5b1db1da0060, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -4946167290538184504, guid: cb0497506dc979e4b90470ae2798182c, type: 3}
+    - target: {fileID: 7153889631575900098, guid: 3a5e3017a39506f44add5b1db1da0060, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -6156817258769405833, guid: fa2071b09f8e02942be60573127aa66e, type: 3}
+    - target: {fileID: 7153889631575900098, guid: 3a5e3017a39506f44add5b1db1da0060, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8443335512362319947, guid: 3a5e3017a39506f44add5b1db1da0060, type: 3}
       propertyPath: Diabete
@@ -492,3 +517,14 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5176219274497111138, guid: 3a5e3017a39506f44add5b1db1da0060, type: 3}
   m_PrefabInstance: {fileID: 2386213191601845098}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &8198173181661229690 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5825488941746897168, guid: 3a5e3017a39506f44add5b1db1da0060, type: 3}
+  m_PrefabInstance: {fileID: 2386213191601845098}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17c557d09f65f8842ba8684949700afd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0c1c6a1c6f0cb864c90dea833e0047d5, type: 3}
-  m_Name: Body_walk_metis
+  m_Name: Bottom_2
   m_EditorClassIdentifier: 
   Animationlst:
-  - {fileID: 2151216815024714144, guid: 7a9a0c938caca834491cc70ea16a64ad, type: 3}
-  - {fileID: 4403159230170056990, guid: 03f20a76a55c5d84a96cc5a481a88412, type: 3}
+  - {fileID: -2232893730857747681, guid: 9c1e78ca57d7ac04c9c33f2bb7647f13, type: 3}
+  - {fileID: 7294459118415399495, guid: 1cce4ab96c8ad0c4e9c5931d1db5071d, type: 3}

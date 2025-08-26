@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Idle
+  m_Name: Walk
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -103,7 +103,7 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 0.5
-    functionName: ChangeAllSpriteIdleAnimation
+    functionName: ChangeAllSpriteWalkAnimation
     data: 
     objectReferenceParameter: {fileID: 5580803202734008852, guid: 3a5e3017a39506f44add5b1db1da0060, type: 3}
     floatParameter: 0
