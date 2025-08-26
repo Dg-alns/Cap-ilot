@@ -30,7 +30,7 @@ public class Journal_DownBar : MonoBehaviour
         listTheme = new List<string>() { "- Thèmes", "Hopital", "Sport", "Ecole", "Alimentation", "Relation", "Tentation" };
         
         string jsonstring = File.ReadAllText(Application.dataPath + "/JSON/Save.json");
-        Debug.Log(jsonstring);
+
         save = JsonUtility.FromJson<Saving>(jsonstring);
 
         // If the player write something one day, we have to reload it the same day

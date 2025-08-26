@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Text;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -20,6 +21,11 @@ public class PositionementPartManager : MonoBehaviour
 
     [SerializeField] private List<Vector2> AllPostionHairBack;
     [SerializeField] private List<Vector2> AllSizeHairBack;
+
+    private static readonly HashSet<char> nb = new HashSet<char>
+    {
+        '0', '1', '2', '3', '4', '5', '6', '7', '8', '9'
+    };
 
     public virtual void SetPostion(GameObject go, PersoPlayerData persoPlayerData)
     {
@@ -70,44 +76,42 @@ public class PositionementPartManager : MonoBehaviour
 
     protected string DetectonNumberSpeOffPart(string name)
     {
-        string result = "";
+        StringBuilder result = new StringBuilder();
 
         for (int i = 0; i < name.Length; i++)
         {
-            if (DeteIdxChiffre(name[i]) >= 0)
-                result += name[i];
+            if (nb.Contains(name[i]))
+                result.Append(name[i]);
             else
                 break;
         }
 
-        return result;
+        return result.ToString();
     }
 
     protected string DetectonNumberSpeOffPartRevert(string name)
     {
-        string result = "";
+        StringBuilder result = new StringBuilder();
 
         for (int i = name.Length - 1; i >= 0; i--)
         {
-            if (DeteIdxChiffre(name[i]) >= 0)
-                result = name[i] + result;
+            if (nb.Contains(name[i]))
+                result.Insert(0, name[i]);
             else
                 break;
         }
 
-        return result;
+        return result.ToString();
     }
 
-    protected int DeteIdxChiffre(char value)
+    protected bool DeteIdxChiffre(char value)
     {
-        List<int> list = new List<int> { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
-
-        for (int i = 0;i < list.Count;i++)
+        for (int i = 0; i < 10 ;i++)
         {
             if(value.Equals(char.Parse(i.ToString())))
-                return i;
+                return true;
         }
-        return -1;
+        return false;
     }
 
 

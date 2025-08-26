@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c1c6a1c6f0cb864c90dea833e0047d5, type: 3}
+  m_Name: Body_idle_noir
+  m_EditorClassIdentifier: 
+  Animationlst:
+  - {fileID: -4946167290538184504, guid: cb0497506dc979e4b90470ae2798182c, type: 3}
+  - {fileID: 3247725907873304750, guid: 390adcb0164eefa46918c54a141d63de, type: 3}

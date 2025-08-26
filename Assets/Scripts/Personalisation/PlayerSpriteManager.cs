@@ -51,6 +51,13 @@ public class PlayerSpriteManager : MonoBehaviour
         DetectionPlayerDataColor(PartOfBody.Bottom, Bas);
         DetectionPlayerDataColor(PartOfBody.Shoes, Chaussure);
 
+        if (inProfil == false) {
+            Sprite Body = Corps.GetComponent<SpriteRenderer>().sprite;
+            Sprite Top = Haut.GetComponent<SpriteRenderer>().sprite;
+            Sprite Bottom = Bas.GetComponent<SpriteRenderer>().sprite;
+
+            GetComponent<AnimationAvatarManager>().Init(Body.name, Top.name, Bottom.name);
+        }
 
         //if (inProfil == false)
         //{

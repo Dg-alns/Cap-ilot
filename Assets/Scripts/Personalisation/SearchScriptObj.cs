@@ -1,5 +1,6 @@
     using System.Collections.Generic;
-    using UnityEngine;
+using Unity.Android.Gradle.Manifest;
+using UnityEngine;
 
     public class SearchScriptObj : MonoBehaviour
     {
@@ -24,14 +25,14 @@
             LoadCategory("ScriptObj/Bottom", BottomSObj);
         }
 
-        void LoadCategory(string Path, List<PersoPlayerData> lst)
+        public static void LoadCategory<T>(string Path, List<T> lst) where T : ScriptableObject
         {
             lst.Clear();
-            PersoPlayerData[] alldataPerso = Resources.LoadAll<PersoPlayerData>(Path);
+            T[] alldataPerso = Resources.LoadAll<T>(Path);
 
             for (int i = 0; i < alldataPerso.Length; i++) 
             {
-                if (alldataPerso[i].IsDebloquer() == false)
+                if (alldataPerso[i] is PersoPlayerData perso && perso.IsDebloquer() == false)
                     continue;
 
                 lst.Add(alldataPerso[i]);           
