@@ -58,7 +58,7 @@ public class Calendrier_DownBar : MonoBehaviour
     private int DaysInMonth;
 
     // Create an Warning in the console
-    private Saving save;
+    public Saving save;
 
     // Start is called before the first frame update
     void Start()

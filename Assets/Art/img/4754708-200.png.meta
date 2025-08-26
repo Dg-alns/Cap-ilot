@@ -1,16 +1,25 @@
 fileFormatVersion: 2
-guid: 143a37c8adeda2d4cae8078ed953ee01
+guid: 8f2b5b290df04064e80267ed655338a8
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1682057826497162294
-    second: "ilot_sal\xE9_0"
+      213: 2372458468261835837
+    second: 4754708-200_0
   - first:
-      213: 1980373136006502540
-    second: "ilot_sal\xE9_1"
+      213: 7327894490263854615
+    second: 4754708-200_1
   - first:
-      213: -253723153260755718
-    second: "ilot_sal\xE9_2"
+      213: -1220053503803264229
+    second: 4754708-200_2
+  - first:
+      213: -9025850646973933677
+    second: 4754708-200_3
+  - first:
+      213: 512612779327976591
+    second: 4754708-200_4
+  - first:
+      213: 7526635355642435531
+    second: 4754708-200_5
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -119,13 +128,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "ilot_sal\xE9_0"
+      name: 4754708-200_1
       rect:
         serializedVersion: 2
-        x: 0
-        y: 629
-        width: 2431
-        height: 1323
+        x: 18
+        y: 61
+        width: 165
+        height: 83
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -133,8 +142,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 63c67086eaed75710800000000000000
-      internalID: 1682057826497162294
+      spriteID: 71e18bbc639e1b560800000000000000
+      internalID: 7327894490263854615
       vertices: []
       indices: 
       edges: []
@@ -142,7 +151,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 27602aca096c5774cb23b8c01061f1c7
+    spriteID: 0f412df6576bc254e97cbd69ee265874
     internalID: 0
     vertices: []
     indices: 
@@ -150,9 +159,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      "ilot_sal\xE9_0": 1682057826497162294
-      "ilot_sal\xE9_1": 1980373136006502540
-      "ilot_sal\xE9_2": -253723153260755718
+      4754708-200_6: -1246375817
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
