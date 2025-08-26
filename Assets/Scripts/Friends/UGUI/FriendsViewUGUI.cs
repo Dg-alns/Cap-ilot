@@ -43,6 +43,9 @@ namespace Unity.Services.Samples.Friends.UGUI
                 {
                     SendingTextFriend?.Invoke(friendsEntryData.Id);
                     FindAnyObjectByType<RelationshipsManager>().gameObject.SetActive(false);
+                    var chatText = FindAnyObjectByType<LoginVivox>();
+                    //chatText.gameObject.SetActive(true);
+                    chatText.GetComponent<Animator>().Play("ShowUI");
                     //entry.gameObject.SetActive(false);
                 });
                 m_FriendEntries.Add(entry);
