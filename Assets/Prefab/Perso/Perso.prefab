@@ -271,6 +271,7 @@ GameObject:
   - component: {fileID: 8443335512362319947}
   - component: {fileID: 4862652243268357933}
   - component: {fileID: 5825488941746897168}
+  - component: {fileID: 7471091122664049172}
   m_Layer: 0
   m_Name: Perso
   m_TagString: Untagged
@@ -325,7 +326,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerData: {fileID: 11400000, guid: c97d27d042b7f334cb47d884e22e0f3a, type: 2}
-  positionementPartManager: {fileID: 0}
+  positionementPartManager: {fileID: 7471091122664049172}
   _Sauvegarde: {fileID: 0}
   Corps: {fileID: 4425528842726197159}
   CheveuxFront: {fileID: 3705053579850701448}
@@ -372,6 +373,54 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 4862652243268357933}
+--- !u!114 &7471091122664049172
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5580803202734008852}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2d526707e1e6c74ebbd54f8618e4c6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AllPostionTop:
+  - {x: 0.033, y: -0.064}
+  - {x: -0.032, y: -0.134}
+  AllSizeTop: []
+  AllPostionBottom:
+  - {x: 0.01, y: -0.841}
+  - {x: -0.015, y: -0.633}
+  - {x: -0.015, y: -0.685}
+  AllSizeBottom: []
+  AllPostionShoes:
+  - {x: 0, y: -1.472}
+  AllSizeShoes: []
+  AllPostionHairFront:
+  - {x: 0.021, y: 0.908}
+  - {x: 0.021, y: 0.908}
+  - {x: 0.111, y: 1.121}
+  - {x: 0.012, y: 1.159}
+  - {x: 0.03, y: 1.13}
+  - {x: 0.03, y: 1.13}
+  - {x: 0.03, y: 1.022}
+  - {x: 0.03, y: 1.16}
+  AllSizeHairFront: []
+  AllPostionHairBack:
+  - {x: 0, y: 0}
+  - {x: 0, y: 0}
+  - {x: -0.035, y: 0.686}
+  - {x: -0.116, y: 0.443}
+  - {x: 0.012, y: 0.443}
+  - {x: 0.012, y: 0.339}
+  - {x: 0.012, y: 0.183}
+  - {x: 0.012, y: -0.073}
+  - {x: -0.429, y: 1.359}
+  - {x: -0.57, y: 0.97}
+  - {x: -0.57, y: 0.6}
+  - {x: -0.57, y: 0.197}
+  AllSizeHairBack: []
 --- !u!1 &6693675642412244352
 GameObject:
   m_ObjectHideFlags: 0

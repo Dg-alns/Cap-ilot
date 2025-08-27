@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: "\xC9cole"
   m_EditorClassIdentifier: 
   IleName: Port Ecole
-  isDiscover: 0
-  CanGoToIle: 0
+  isDiscover: 1
+  CanGoToIle: 1
   ile: 5

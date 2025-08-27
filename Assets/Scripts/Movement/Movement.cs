@@ -53,26 +53,29 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (_agent.destination != transform.position)
+        if (_animationAvatarManager != null && _diabeteAnimator != null)
         {
-            if (_animationAvatarManager.animator.GetBool("Walking") == false)
-                _animationAvatarManager.SwitchAnimation();
+            if (_agent.destination != transform.position)
+            {
+                if (_animationAvatarManager.animator.GetBool("Walking") == false)
+                    _animationAvatarManager.SwitchAnimation();
 
-            if (_diabeteAnimator != null && _diabeteAnimator.gameObject.activeSelf)
-                _diabeteAnimator.SetBool("Walking", true);
+                if (_diabeteAnimator != null && _diabeteAnimator.gameObject.activeSelf)
+                    _diabeteAnimator.SetBool("Walking", true);
 
-            _animationAvatarManager.animator.SetBool("Walking", true);
-        }
-        else
-        {
-            if (_animationAvatarManager.animator.GetBool("Walking") == true)
-                _animationAvatarManager.SwitchAnimation();
+                _animationAvatarManager.animator.SetBool("Walking", true);
+            }
+            else
+            {
+                if (_animationAvatarManager.animator.GetBool("Walking") == true)
+                    _animationAvatarManager.SwitchAnimation();
 
 
-            if (_diabeteAnimator != null && _diabeteAnimator.gameObject.activeSelf)
-                _diabeteAnimator.SetBool("Walking", false);
+                if (_diabeteAnimator != null && _diabeteAnimator.gameObject.activeSelf)
+                    _diabeteAnimator.SetBool("Walking", false);
 
-            _animationAvatarManager.animator.SetBool("Walking", false);
+                _animationAvatarManager.animator.SetBool("Walking", false);
+            }
         }
     
 

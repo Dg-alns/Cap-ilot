@@ -301,6 +301,9 @@ public class PlayerSpriteManager : MonoBehaviour
             case (int)QUESTS.DemandeCapitaine:
                 TextQuestTMP.text = "DemandeCapitaine";
                 break;
+            case (int)QUESTS.Tentation:
+                TextQuestTMP.text = "Tentation";
+                break;
         }
     }
 }

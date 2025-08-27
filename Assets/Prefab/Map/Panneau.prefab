@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1712087800195022735}
   - component: {fileID: 8728174674127034684}
   - component: {fileID: 5715185192473362372}
+  - component: {fileID: 142404223125483454}
   m_Layer: 0
   m_Name: Panneau
   m_TagString: Untagged
@@ -74,8 +75,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1689557907
-  m_SortingLayer: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -3474768020874936678, guid: 4c850f3825d2bb449a2e70a539966cf5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -154,3 +155,30 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 4.2, y: 4.83}
   m_EdgeRadius: 0
+--- !u!50 &142404223125483454
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7660051009266230268}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0

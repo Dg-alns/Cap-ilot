@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Alimentation
   m_EditorClassIdentifier: 
   IleName: Port Alimentation
-  isDiscover: 0
-  CanGoToIle: 0
+  isDiscover: 1
+  CanGoToIle: 1
   ile: 4

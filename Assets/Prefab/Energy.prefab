@@ -54,6 +54,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _energy: 0
+  _restoreDuration: 900
   _textNbEnergy: {fileID: 6280497026553097769}
   _textRemainingTime: {fileID: 3623412360797764562}
   _energySlider: {fileID: 8652452961482896748}

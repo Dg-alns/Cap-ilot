@@ -24,6 +24,7 @@ public enum QUESTS
     S_Ressource,
     Relation,
     R_Ressoucre,
+    Tentation,
 
     Count
 }
@@ -69,6 +70,8 @@ public class QuestManager
         quests.Add(new GlobalQuest((int)QUESTS.Relation, new ExampleReward(null, QUESTS.Relation.ToString())));
 
         quests.Add(new RessourceQuest((int)QUESTS.R_Ressoucre, new ExampleReward(null, QUESTS.R_Ressoucre.ToString())));  // Replace Null
+
+        quests.Add(new GlobalQuest((int)QUESTS.Tentation, new ExampleReward(null, QUESTS.Tentation.ToString())));
 
 
         //add all quests

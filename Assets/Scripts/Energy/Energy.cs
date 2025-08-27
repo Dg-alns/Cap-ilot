@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class Energy : MonoBehaviour
 {
-    [SerializeField] private int _energy;
+    private int _energy;
     private int _maxEnergy;
 
     [SerializeField] private int _restoreDuration;
