@@ -132,11 +132,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 339
-        width: 1546
-        height: 1349
+        y: 364
+        width: 1524
+        height: 1324
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -148,115 +148,10 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: "ilot_sucr\xE9_1"
-      rect:
-        serializedVersion: 2
-        x: 1556
-        y: 1560
-        width: 29
-        height: 18
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 3c4c968c0df07dde0800000000000000
-      internalID: -1308559777337850685
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: "ilot_sucr\xE9_2"
-      rect:
-        serializedVersion: 2
-        x: 1626
-        y: 1228
-        width: 636
-        height: 433
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 365f6e9a698315950800000000000000
-      internalID: 6435987562235884899
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: "ilot_sucr\xE9_3"
-      rect:
-        serializedVersion: 2
-        x: 1986
-        y: 688
-        width: 17
-        height: 176
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: bb66cb233f492cdc0800000000000000
-      internalID: -3620167378203285829
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: "ilot_sucr\xE9_4"
-      rect:
-        serializedVersion: 2
-        x: 184
-        y: 335
-        width: 46
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 2422d461ba4061e80800000000000000
-      internalID: -8208368137976077758
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: "ilot_sucr\xE9_5"
-      rect:
-        serializedVersion: 2
-        x: 1091
-        y: 0
-        width: 188
-        height: 343
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 7377e76e135380d40800000000000000
-      internalID: 5550745029170853687
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 554bc295c024f434b9c9287ee4cc1d28
     internalID: 0
     vertices: []
     indices: 

@@ -18,10 +18,14 @@ public class Pnj_Ressource : MonoBehaviour
     protected virtual void Start()
     {
         npcManager = FindFirstObjectByType<NPCManager>();
-        npc = GetComponent<DialogueNPC>();      
-        
-        if(ToDestroy())
+        npc = GetComponent<DialogueNPC>();
+
+        if (ToDestroy())
+        {
+            Debug.Log("Destroy npc ressource : " + gameObject.name);
             gameObject.SetActive(false);
+
+        }
 
     }
 
@@ -37,6 +41,7 @@ public class Pnj_Ressource : MonoBehaviour
                 {
                     npc.idxOffSetDialogue = (int)OffSet_Dialogue_Ressource.WaitingForTest;
                     npc.SetPLayerPrefs(npc.idxOffSetDialogue);
+                    FirstTalk();
                 }
                 break;
 
@@ -68,6 +73,10 @@ public class Pnj_Ressource : MonoBehaviour
                 Debug.LogError("idxDialogue impossible");
                 break;
         }
+    }
+    virtual protected void FirstTalk()
+    {
+        return;
     }
 
     virtual protected bool TakeRessource()

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Relation_TalkedNPC : MonoBehaviour
+public class AlreadyTalkedNPC : MonoBehaviour
 {
     public bool alreadyTalked = false;
     NPCManager npcManager;
@@ -12,14 +12,15 @@ public class Relation_TalkedNPC : MonoBehaviour
     void Start()
     {
         keyPlayerPrefs = gameObject.name + "Talked";
-        PlayerPrefs.DeleteKey(keyPlayerPrefs);
+        npcManager = FindAnyObjectByType<NPCManager>();
+
+        //PlayerPrefs.DeleteKey(keyPlayerPrefs);
         if (PlayerPrefs.HasKey(keyPlayerPrefs))
         {
             alreadyTalked = PlayerPrefs.GetInt(keyPlayerPrefs) == 0 ? false : true;
             return;
         }
 
-        npcManager = FindAnyObjectByType<NPCManager>();
         PlayerPrefs.SetInt(keyPlayerPrefs, 0);
     }
 

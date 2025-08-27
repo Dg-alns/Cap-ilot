@@ -10,6 +10,7 @@ public class Journal_DownBar : MonoBehaviour
     private List<string> listTheme;
 
     [SerializeField] private Calendrier_DownBar calendrier;
+    [SerializeField] private GameObject MarkPage_journal;
 
     [Header("Emotion")]
     [SerializeField] private EmotionWheel emotionWheel;
@@ -27,10 +28,10 @@ public class Journal_DownBar : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        listTheme = new List<string>() { "- Thèmes", "Hopital", "Sport", "Ecole", "Alimentation", "Relation", "Tentation" };
+        MarkPage_journal.SetActive(false);
+        listTheme = new List<string>() { "- Thï¿½mes", "Hopital", "Sport", "Ecole", "Alimentation", "Relation", "Tentation" };
         
         string jsonstring = File.ReadAllText(Application.dataPath + "/JSON/Save.json");
-
         save = JsonUtility.FromJson<Saving>(jsonstring);
 
         // If the player write something one day, we have to reload it the same day
@@ -74,7 +75,11 @@ public class Journal_DownBar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (MarkPage_journal.activeSelf)
+            return;
+
+        if(QuestManager.GetCurrentQuest() > (int)QUESTS.ReparationPhare)
+            MarkPage_journal.SetActive(true);
     }
 
     public void AddTheme()
@@ -107,7 +112,7 @@ public class Journal_DownBar : MonoBehaviour
 
         string theme = dropdown_Theme.options[valueDropdown].text;
 
-        Debug.Log("Thème : " + theme + "\n"
+        Debug.Log("Thï¿½me : " + theme + "\n"
             + "Emotion : " + emotion + "\n"
             + "Content : " + content);
 
@@ -119,9 +124,7 @@ public class Journal_DownBar : MonoBehaviour
 
         // Save DATA in JSON
         save.journal.journal[DateTime.Today.ToString("d")] = totalContent;
-        string jsonString = JsonUtility.ToJson(save);
-        string fileName = Application.dataPath + "/JSON/Save.json";
-        File.WriteAllText(fileName, jsonString);
+        JSON_Manager.SaveData<Saving>(Application.dataPath + "/JSON/Save.json",save);
 
         Debug.Log("Sauvegarde effectuer !");
     }

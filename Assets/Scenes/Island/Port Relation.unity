@@ -549,6 +549,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7167352824261831995, guid: ee4dd1e779d16ac47b718f4e4f91e101, type: 3}
       insertIndex: -1
       addedObject: {fileID: 279411618}
+    - targetCorrespondingSourceObject: {fileID: 7167352824261831995, guid: ee4dd1e779d16ac47b718f4e4f91e101, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 279411619}
   m_SourcePrefab: {fileID: 100100000, guid: ee4dd1e779d16ac47b718f4e4f91e101, type: 3}
 --- !u!4 &279411616 stripped
 Transform:
@@ -573,6 +576,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spaw: 4
+--- !u!114 &279411619
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 279411617}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a08b5cd36e94004190705571a5c03ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spaw: 14
 --- !u!1 &285988625
 GameObject:
   m_ObjectHideFlags: 0
@@ -707,7 +723,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _player: {fileID: 2041408012}
-  _dialogueBox: {fileID: 0}
   DialogueLineSkiped: 0
 --- !u!114 &309339600
 MonoBehaviour:
@@ -789,6 +804,7 @@ Transform:
   - {fileID: 54557570}
   - {fileID: 84546203}
   - {fileID: 1249628589}
+  - {fileID: 1649275677}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &978425027
@@ -1095,7 +1111,7 @@ SpriteRenderer:
   m_Size: {x: 21.550018, y: 24.099998}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!95 &1031244608
@@ -1240,7 +1256,6 @@ MonoBehaviour:
   loadNexScene: {fileID: 1913456855}
   port: {fileID: 11400000, guid: 1dceabcdcadb65a47851c3de35a989b9, type: 2}
   PersoToPosition: {fileID: 2041408012}
-  Test: 1
 --- !u!1 &1515436307
 GameObject:
   m_ObjectHideFlags: 0
@@ -1556,6 +1571,92 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &1649275676
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 978040961}
+    m_Modifications:
+    - target: {fileID: -31334991667796447, guid: 29ae1de120ecad9418ddf494741bca3a, type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: -31334991667796447, guid: 29ae1de120ecad9418ddf494741bca3a, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1712087800195022735, guid: 29ae1de120ecad9418ddf494741bca3a, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 597938267238691567, guid: 4e466aa062adce44f8bdca383aa38788, type: 3}
+    - target: {fileID: 7660051009266230268, guid: 29ae1de120ecad9418ddf494741bca3a, type: 3}
+      propertyPath: m_Name
+      value: Panneau Parc
+      objectReference: {fileID: 0}
+    - target: {fileID: 8557331510602295511, guid: 29ae1de120ecad9418ddf494741bca3a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -5.37
+      objectReference: {fileID: 0}
+    - target: {fileID: 8557331510602295511, guid: 29ae1de120ecad9418ddf494741bca3a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 6.28
+      objectReference: {fileID: 0}
+    - target: {fileID: 8557331510602295511, guid: 29ae1de120ecad9418ddf494741bca3a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8557331510602295511, guid: 29ae1de120ecad9418ddf494741bca3a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8557331510602295511, guid: 29ae1de120ecad9418ddf494741bca3a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8557331510602295511, guid: 29ae1de120ecad9418ddf494741bca3a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8557331510602295511, guid: 29ae1de120ecad9418ddf494741bca3a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8557331510602295511, guid: 29ae1de120ecad9418ddf494741bca3a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8557331510602295511, guid: 29ae1de120ecad9418ddf494741bca3a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8557331510602295511, guid: 29ae1de120ecad9418ddf494741bca3a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8728174674127034684, guid: 29ae1de120ecad9418ddf494741bca3a, type: 3}
+      propertyPath: Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8728174674127034684, guid: 29ae1de120ecad9418ddf494741bca3a, type: 3}
+      propertyPath: nexScene
+      value: 
+      objectReference: {fileID: 1913456855}
+    - target: {fileID: 8728174674127034684, guid: 29ae1de120ecad9418ddf494741bca3a, type: 3}
+      propertyPath: SceneName
+      value: Relation_Parc
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 29ae1de120ecad9418ddf494741bca3a, type: 3}
+--- !u!4 &1649275677 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8557331510602295511, guid: 29ae1de120ecad9418ddf494741bca3a, type: 3}
+  m_PrefabInstance: {fileID: 1649275676}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1748569400
 GameObject:
   m_ObjectHideFlags: 0
@@ -2057,11 +2158,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UI: {fileID: 1071217116996878445, guid: 831abd4b3ecd17443bfbb8678cdc0bb8, type: 3}
+  uiOpen: 0
   SceneName: 
   nexScene: {fileID: 1913456855}
   Type: 0
   activeUI: {fileID: 0}
   InPort: 1
+  capitainPort: {fileID: 0}
 --- !u!1 &1932588106
 GameObject:
   m_ObjectHideFlags: 0

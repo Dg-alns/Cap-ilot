@@ -29,6 +29,7 @@ public class Sauvegarde_Minigame : MonoBehaviour
         //Init();
         _statMinigame = _Sauvegarde.StatMinigame;
         Debug.Log("Nombre de stat : " + _statMinigame.Count);
+        sceneName = SceneManager.GetActiveScene().name;
         /*try
         {
             _statMinigame = JSON_Manager.LoadData<Dictionary<string, TemplateSaveMinigame>>(_jsonPath);

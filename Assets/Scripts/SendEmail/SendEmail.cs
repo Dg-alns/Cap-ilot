@@ -59,8 +59,9 @@ public class SendEmail : MonoBehaviour
 
     public void SendMentualMail()
     {
-        string jsonstring = File.ReadAllText("save.json");
-        Saving save = JsonUtility.FromJson<Saving>(jsonstring);
+        //string jsonstring = File.ReadAllText("save.json");
+        //Saving save = JsonUtility.FromJson<Saving>(jsonstring);
+        Saving save = JSON_Manager.LoadData<Saving>(Application.dataPath + "/Json/Save.json");
 
         string mailContent = File.ReadAllText(Application.dataPath + "/index.html");
 

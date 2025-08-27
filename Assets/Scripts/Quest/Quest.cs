@@ -16,7 +16,7 @@ public enum QUESTS
     DemandeCapitaine,
     Hopital,
     Phare,
-    Alimentation,
+    Alimentation, 
     A_Ressource,
     Ecole,
     E_Ressource,

@@ -4,6 +4,7 @@ using Dan.Main;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.SocialPlatforms.Impl;
 using UnityEngine.UI;
 
 public enum EnumMinigame
@@ -59,9 +60,7 @@ public class LeaderboardCapilot : MonoBehaviour
 
     private void Start()
     {
-        string jsonstring = File.ReadAllText("save.json");
-        Saving save = JsonUtility.FromJson<Saving>(jsonstring);
-
+        Saving save = JSON_Manager.LoadData<Saving>(Application.dataPath + "/Json/Save.json");
         _username = save.profile.Username;
 
         GetLeaderBoard(_publicKey);

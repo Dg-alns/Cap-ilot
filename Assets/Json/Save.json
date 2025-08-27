@@ -5,13 +5,17 @@
                 "17/08/2025"
             ],
             "m_values": [
-                "Th�mes : École Tentations \n<sprite index=0>\ntest​"
+                "École\n<sprite index=0>\ntest​"
             ]
         }
     },
     "profile": {
-        "Username": "Enzo​ *",
-        "Age": 20
+        "Username": "Cédric",
+        "Age": 83,
+        "DayBirth": 19,
+        "MonthBirth": 4,
+        "YearBirth": 43,
+        "EmailDoctor": ""
     },
     "questManager": {
         "statusDict": {

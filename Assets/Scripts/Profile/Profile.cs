@@ -9,6 +9,10 @@ public class Profile
 {
     public string Username;
     public int Age;
+    public int DayBirth;
+    public int MonthBirth;
+    public int YearBirth;
+    public string EmailDoctor;
     public TextMeshProUGUI Input {  get; set; }
     public TextMeshProUGUI Output { get; set; }
     public TMP_Dropdown Jour { get; set; }
@@ -28,6 +32,19 @@ public class Profile
             OutputDate.text = Age + " ans";
         }
     }
+
+    public void AssignAge(bool isDropdownValue = true)
+    {
+        DateTime dateTime = DateTime.Today;
+        DateTime birth;
+        if (isDropdownValue)
+            birth = DateTime.Parse(DayBirth + "/" + MonthBirth + "/" + (YearBirth+1899));
+        else
+            birth = DateTime.Parse(DayBirth + "/" + MonthBirth + "/" + YearBirth);
+        TimeSpan AgeT = dateTime - birth;
+        Age = AgeT.Days / 365;
+    }
+
     public void Save()
     {
         if (Input != null)

@@ -495,7 +495,7 @@ SpriteRenderer:
   m_SortingLayerID: 1689557907
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7267005391270413420, guid: 8c303d2db374c7a4a87cf58b56766399, type: 3}
+  m_Sprite: {fileID: 7777617935745417942, guid: 8857144efca73b444bb52cf15770cb4c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0
@@ -680,7 +680,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b26c27f3ac7d44d4ba761d023ce6d1a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _player: {fileID: 1423705738}
+  _player: {fileID: 0}
   DialogueLineSkiped: 0
 --- !u!114 &622135361
 MonoBehaviour:
@@ -1208,7 +1208,7 @@ SpriteRenderer:
   m_SortingLayerID: 1689557907
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2777255987565907183, guid: aafab9636b0a6ba4f8350aa41ba723f1, type: 3}
+  m_Sprite: {fileID: 6395605350564212090, guid: 09d6e536f3fd52444b7c88166f136df0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0
@@ -1479,7 +1479,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   test: {fileID: 745427892}
-  target: {fileID: 1423705738}
+  target: {fileID: 0}
 --- !u!1 &1226478366
 GameObject:
   m_ObjectHideFlags: 0
@@ -1925,7 +1925,7 @@ MonoBehaviour:
   m_BuildHeightMesh: 0
   m_MinRegionArea: 0
   m_HideEditorLogs: 0
-  m_NavMeshData: {fileID: 23800000, guid: 5b611e38f3e8e4d4ebfe0837cab3cc6c, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 703048a27ceed4943bf0433b6eef546b, type: 2}
 --- !u!4 &1361216315
 Transform:
   m_ObjectHideFlags: 0
@@ -1941,11 +1941,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 115235319}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!1 &1423705738 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5996476692092113503, guid: db719d02bdc5ceb4b8cd5e6ef99e4c86, type: 3}
-  m_PrefabInstance: {fileID: 1314983409}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1526315349
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2098,7 +2093,6 @@ GameObject:
   - component: {fileID: 1653498327}
   - component: {fileID: 1653498330}
   - component: {fileID: 1653498332}
-  - component: {fileID: 1653498331}
   - component: {fileID: 1653498325}
   m_Layer: 0
   m_Name: GerantTournoi36
@@ -2278,18 +2272,6 @@ MonoBehaviour:
     - "Bien mon tournoi ne commence pas avant un moment, je ferai mieux d'aller retrouver
       mon fr\xE8re, cela fait un moment que je ne l'ai pas vu !"
     - "On se retrouve sur l'\xEEle principal ci tu veux papoter un coup"
---- !u!114 &1653498331
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1653498324}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a7eb9ff90e99a1e479fae98d7b70ecef, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1653498332
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2423,7 +2405,7 @@ SpriteRenderer:
   m_SortingLayerID: 1689557907
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 4778487978208972821, guid: 12d1d8c821442ae41925f419377b1b66, type: 3}
+  m_Sprite: {fileID: -5948772496989953373, guid: d085851487c35e04f9fd3d76b457674b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0
