@@ -9,9 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dab4e8dbe29526346ac45f60788144ff, type: 3}
-  m_Name: Green
+  m_Script: {fileID: 11500000, guid: 0c1c6a1c6f0cb864c90dea833e0047d5, type: 3}
+  m_Name: Vert
   m_EditorClassIdentifier: 
-  part: 3
-  sprite: {fileID: 996878241690694512, guid: 4dd4a958e016b1f4eb137afe5c4a1baf, type: 3}
-  isDebloquer: 1
+  Animationlst:
+  - {fileID: 21300000, guid: 4dd4a958e016b1f4eb137afe5c4a1baf, type: 3}
+  - {fileID: 21300000, guid: cadcf8eb6ef9cfb498e74c3ec3987889, type: 3}

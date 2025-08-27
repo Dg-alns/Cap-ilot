@@ -6,8 +6,7 @@ using UnityEngine;
     {
         static public List<PersoPlayerData> TopSObj = new List<PersoPlayerData>();
         static public List<PersoPlayerData> BodySObj = new List<PersoPlayerData>();
-        static public List<PersoPlayerData> EyesLeftObj = new List<PersoPlayerData>();
-        static public List<PersoPlayerData> EyesRightObj = new List<PersoPlayerData>();
+        static public List<PersoPlayerData> EyesObj = new List<PersoPlayerData>();
         static public List<HairData> HairFrontSObj = new List<HairData>();
         static public List<PersoPlayerData> HairBackSObj = new List<PersoPlayerData>();
         static public List<PersoPlayerData> ShoesSObj = new List<PersoPlayerData>();
@@ -17,8 +16,7 @@ using UnityEngine;
         {
             LoadCategory("ScriptObj/Body", BodySObj);
             LoadCategory("ScriptObj/Top", TopSObj);
-            LoadCategory("ScriptObj/Eyes/Left", EyesLeftObj); 
-            LoadCategory("ScriptObj/Eyes/Right", EyesRightObj);
+            LoadCategory("ScriptObj/Eyes", EyesObj); 
             LoadHairCategory("ScriptObj/Hair/Hair", HairFrontSObj);
             LoadCategory("ScriptObj/Hair/Back", HairBackSObj);
             LoadCategory("ScriptObj/Shoes", ShoesSObj);
@@ -60,11 +58,8 @@ using UnityEngine;
                 case PartOfBody.Body:
                     return BodySObj;
 
-                case PartOfBody.EyesLeft:
-                    return EyesLeftObj;
-
-                case PartOfBody.EyesRight:
-                    return EyesRightObj;
+                case PartOfBody.Eyes:
+                    return EyesObj;
 
                 case PartOfBody.Top:
                     return TopSObj;

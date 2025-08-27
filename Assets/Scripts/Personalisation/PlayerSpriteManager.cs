@@ -14,8 +14,7 @@ public class PlayerSpriteManager : MonoBehaviour
     public GameObject Corps;
     public GameObject CheveuxFront;
     public GameObject CheveuxBack;
-    public GameObject EyeLeft;
-    public GameObject EyeRight;
+    public GameObject Eyes;
     public GameObject Haut;
     public GameObject Bas;
     public GameObject Chaussure;
@@ -39,7 +38,7 @@ public class PlayerSpriteManager : MonoBehaviour
         DetectionPlayerDataSprite(PartOfBody.Body, Corps);
         DetectionPlayerDataHairSprite(PartOfBody.Hair, CheveuxFront);
         DetectionPlayerDataHairSprite(PartOfBody.HairBack, CheveuxBack);
-        DetectionPlayerDataEyes(PartOfBody.EyesLeft, EyeLeft);
+        DetectionPlayerDataEyes(PartOfBody.Eyes, Eyes);
         DetectionPlayerDataSprite(PartOfBody.Top, Haut);
         DetectionPlayerDataSprite(PartOfBody.Bottom, Bas);
         DetectionPlayerDataSprite(PartOfBody.Shoes, Chaussure);
@@ -56,8 +55,9 @@ public class PlayerSpriteManager : MonoBehaviour
             SpriteRenderer Top = Haut.GetComponent<SpriteRenderer>();
             SpriteRenderer Bottom = Bas.GetComponent<SpriteRenderer>();
             SpriteRenderer Shoes = Chaussure.GetComponent<SpriteRenderer>();
+            SpriteRenderer eyes = Eyes.GetComponent<SpriteRenderer>();
 
-            GetComponent<AnimationAvatarManager>().Init(Body, Bottom, Top, Shoes);
+            GetComponent<AnimationAvatarManager>().Init(Body, Bottom, Top, Shoes, eyes);
         }
     }
 
@@ -82,7 +82,7 @@ public class PlayerSpriteManager : MonoBehaviour
         SavePart(PartOfBody.Body, Corps);
         SavePart(PartOfBody.Hair, CheveuxFront);
         SavePart(PartOfBody.HairBack, CheveuxBack);
-        SavePart(PartOfBody.EyesLeft, EyeLeft);
+        SavePart(PartOfBody.Eyes, Eyes);
         SavePart(PartOfBody.Top, Haut);
         SavePart(PartOfBody.Bottom, Bas);
         SavePart(PartOfBody.Shoes, Chaussure);
@@ -166,25 +166,16 @@ public class PlayerSpriteManager : MonoBehaviour
         TemplateSavePlayerData Part_Player = _statePlayer[partOfBody.ToString()];
 
         List<PersoPlayerData> AllPlayerPart = SearchScriptObj.GetLsitScriptObj(partOfBody);
-        List<PersoPlayerData> EyeRightLst = SearchScriptObj.GetLsitScriptObj(PartOfBody.EyesRight);
 
         playerData.SetPart_Body(partOfBody, Part_Player.GetSpriteName(), Part_Player.GetColor());
-
-        for(int i = 0; i < AllPlayerPart.Count; i++)
-        {
-            if (AllPlayerPart[i].sprite.name == Part_Player.Name_Part_Body)
-                playerData.SetPart_Body(PartOfBody.EyesRight, EyeRightLst[i].sprite.name, Part_Player.GetColor());
-        }
 
         if (go.GetComponent<SpriteRenderer>())
         {
             go.GetComponent<SpriteRenderer>().sprite = playerData.GetSprite(partOfBody);
-            EyeRight.GetComponent<SpriteRenderer>().sprite = playerData.GetSprite(PartOfBody.EyesRight);
         }
         else
         {
             go.GetComponent<Image>().sprite = playerData.GetSprite(partOfBody);
-            EyeRight.GetComponent<Image>().sprite = playerData.GetSprite(PartOfBody.EyesRight);
         }
     }
 
@@ -254,8 +245,7 @@ public class PlayerSpriteManager : MonoBehaviour
     {
         return playerData.GetSprite(PartOfBody.Body) != null ||
                 playerData.GetSprite(PartOfBody.HairBack) != null ||
-                playerData.GetSprite(PartOfBody.EyesLeft) != null ||
-                playerData.GetSprite(PartOfBody.EyesRight) != null ||
+                playerData.GetSprite(PartOfBody.Eyes) != null ||
                 playerData.GetSprite(PartOfBody.Top) != null ||
                 playerData.GetSprite(PartOfBody.Bottom) != null ||
                 playerData.GetSprite(PartOfBody.Shoes) != null;

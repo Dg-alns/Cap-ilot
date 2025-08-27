@@ -9,9 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dab4e8dbe29526346ac45f60788144ff, type: 3}
-  m_Name: Shoes 1
+  m_Script: {fileID: 11500000, guid: 0c1c6a1c6f0cb864c90dea833e0047d5, type: 3}
+  m_Name: Bleu
   m_EditorClassIdentifier: 
-  part: 6
-  sprite: {fileID: 1022016120387972011, guid: 9dcef1c8436b15046a12deaab259a323, type: 3}
-  isDebloquer: 1
+  Animationlst:
+  - {fileID: 21300000, guid: 802fdaba48cb9f34b9b1ac93549f7a50, type: 3}
+  - {fileID: 21300000, guid: 34883dab0bef2904ab5f436359f39ce4, type: 3}

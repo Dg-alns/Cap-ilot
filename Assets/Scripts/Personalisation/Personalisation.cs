@@ -399,27 +399,23 @@ public class Personalisation : MonoBehaviour
 
     public void NextEye()
     {
-        List<PersoPlayerData> AllEyesLeft =  SearchScriptObj.GetLsitScriptObj(PartOfBody.EyesLeft);
-        GameObject Left = Playerpart.GetPartOfPlayer(PartOfBody.EyesLeft.ToString());
+        List<PersoPlayerData> AllEyes =  SearchScriptObj.GetLsitScriptObj(PartOfBody.Eyes);
+        GameObject Eyes = Playerpart.GetPartOfPlayer(PartOfBody.Eyes.ToString());
 
-        List<PersoPlayerData> AllEyesRight =  SearchScriptObj.GetLsitScriptObj(PartOfBody.EyesRight);
-        GameObject Right = Playerpart.GetPartOfPlayer(PartOfBody.EyesRight.ToString());
-
-        for(int i = 0; i < AllEyesLeft.Count;i++)
+        for(int i = 0; i < AllEyes.Count;i++)
         {
-            if (AllEyesLeft[i].sprite == Left.GetComponent<SpriteRenderer>().sprite)
+            if (AllEyes[i].sprite == Eyes.GetComponent<SpriteRenderer>().sprite)
                 idxcurrentEyes = i;
         }
 
-        int nextBody = (idxcurrentEyes + 1) < AllEyesLeft.Count ? (idxcurrentEyes + 1) : 0;
+        int nextBody = (idxcurrentEyes + 1) < AllEyes.Count ? (idxcurrentEyes + 1) : 0;
 
-        PersoPlayerData dataLeft = AllEyesLeft[nextBody];
-        PersoPlayerData dataRight = AllEyesLeft[nextBody];
+        PersoPlayerData dataLeft = AllEyes[nextBody];
+        PersoPlayerData dataRight = AllEyes[nextBody];
 
-        if (Left.GetComponent<SpriteRenderer>().sprite != dataLeft.sprite)
+        if (Eyes.GetComponent<SpriteRenderer>().sprite != dataLeft.sprite)
         {
-            Left.GetComponent<SpriteRenderer>().sprite = dataLeft.sprite;
-            Right.GetComponent<SpriteRenderer>().sprite = dataRight.sprite;
+            Eyes.GetComponent<SpriteRenderer>().sprite = dataLeft.sprite;
             idxcurrentEyes = nextBody;
         }
     }

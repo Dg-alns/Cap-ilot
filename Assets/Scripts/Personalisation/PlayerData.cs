@@ -7,7 +7,7 @@ public class PlayerData : ScriptableObject
     [SerializeField] Sprite Corps;
     [SerializeField] Sprite CheveuxFront;
     [SerializeField] Sprite CheveuxBack;
-    [SerializeField] Sprite EyeLeft;
+    [SerializeField] Sprite Eyes;
     [SerializeField] Sprite EyeRight;
     [SerializeField] Sprite Haut;
     [SerializeField] Sprite Bas;
@@ -16,7 +16,7 @@ public class PlayerData : ScriptableObject
     [SerializeField] Color Color_Corps;
     [SerializeField] Color Color_CheveuxFront;
     [SerializeField] Color Color_CheveuxBack;
-    [SerializeField] Color Color_EyeLeft;
+    [SerializeField] Color Color_Eyes;
     [SerializeField] Color Color_EyeRight;
     [SerializeField] Color Color_Haut;
     [SerializeField] Color Color_Bas;
@@ -42,13 +42,9 @@ public class PlayerData : ScriptableObject
                 CheveuxFront = SearchScriptObj.GetSpriteHair(SearchScriptObj.HairFrontSObj, sprite);
                 Color_CheveuxFront = color;
                 break;
-            case PartOfBody.EyesLeft:
-                EyeLeft = SearchScriptObj.GetSprite(SearchScriptObj.EyesLeftObj, sprite);
-                Color_EyeLeft = color;
-                break;
-            case PartOfBody.EyesRight:
-                EyeRight = SearchScriptObj.GetSprite(SearchScriptObj.EyesRightObj, sprite);
-                Color_EyeRight = color;
+            case PartOfBody.Eyes:
+                Eyes = SearchScriptObj.GetSprite(SearchScriptObj.EyesObj, sprite);
+                Color_Eyes = color;
                 break;
             case PartOfBody.Top:
                 Haut = SearchScriptObj.GetSprite(SearchScriptObj.TopSObj, sprite);
@@ -75,10 +71,8 @@ public class PlayerData : ScriptableObject
                 return CheveuxFront;
             case PartOfBody.HairBack:
                 return CheveuxBack;
-            case PartOfBody.EyesLeft:
-                return EyeLeft;
-            case PartOfBody.EyesRight:
-                return EyeRight;
+            case PartOfBody.Eyes:
+                return Eyes;
             case PartOfBody.Top:
                 return Haut;
             case PartOfBody.Bottom:
@@ -100,10 +94,8 @@ public class PlayerData : ScriptableObject
                 return Color_CheveuxFront;
             case PartOfBody.HairBack:
                 return Color_CheveuxBack;
-            case PartOfBody.EyesLeft:
-                return Color_EyeLeft;
-            case PartOfBody.EyesRight:
-                return Color_EyeRight;
+            case PartOfBody.Eyes:
+                return Color_Eyes;
             case PartOfBody.Top:
                 return Color_Haut;
             case PartOfBody.Bottom:
