@@ -87,6 +87,7 @@ public class QuestManager
 
     public static void NextQuest(int CurrentQuest)
     {
+        Debug.Log("ValidateQuest : " + CurrentQuest);
         PlayerPrefs.SetInt(namePlayerPrefQuest, CurrentQuest + 1);
     }
 

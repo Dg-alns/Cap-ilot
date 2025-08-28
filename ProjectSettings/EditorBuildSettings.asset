@@ -24,6 +24,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Island/Chambre.unity
     guid: 98d6f99c86ff5194db860905793984f9
   - enabled: 1
+    path: Assets/Scenes/Island/Relation/Relation_Parc.unity
+    guid: 05fbfa0de76518f4b95417a9433f74ed
+  - enabled: 1
     path: Assets/Scenes/Island/Couloir.unity
     guid: 60a98aece59e8e144925603bd869644f
   - enabled: 1

@@ -15,5 +15,5 @@ MonoBehaviour:
   clientId: 
   scopeMask: 7
   useCustomDeepLinkUri: 0
-  customScheme: 
-  customHost: 
+  customScheme: <color=#FFFFFFFF>Cu<mark=#3169ACAB>s</mark>tom Scheme</color>
+  customHost: <color=#FFFFFFFF>Cu<mark=#3169ACAB>s</mark>tom Host</color>

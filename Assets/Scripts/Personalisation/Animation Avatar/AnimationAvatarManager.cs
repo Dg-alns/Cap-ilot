@@ -66,6 +66,7 @@ public class AnimationAvatarManager : MonoBehaviour
         SearchScriptObj.LoadCategory("ScriptObj/Animation/Eyes/Walk", Walk_Eyes_Animation);
 
 
+
         CurrentAnimation_Idle_Body = DetectionAnimationBodyAndEyes(Idle_Body_Animation, body.sprite.name);
         CurrentAnimation_Idle_Bottom = DetectionAnimationIdle(Idle_Bottom_Animation, bottom.sprite.name);
         CurrentAnimation_Idle_Top = DetectionAnimationIdle(Idle_Top_Animation, top.sprite.name);

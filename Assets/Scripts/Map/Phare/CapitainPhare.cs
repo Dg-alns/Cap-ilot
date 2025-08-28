@@ -17,8 +17,13 @@ public class CapitainPhare : MonoBehaviour
             PlayerPrefs.SetInt("ReparationPhare", 0);
         }
 
+        Debug.Log("aaaaa");
         if (PlayerPrefs.GetInt("ReparationPhare") == 1)
+        {
+
+            Debug.Log("ValidatePhare");
             QuestManager.ValidateQuest(QUESTS.ReparationPhare);
+        }
 
 
         ActiveCapitain();
@@ -29,7 +34,9 @@ public class CapitainPhare : MonoBehaviour
     {
         if (QuestManager.GetCurrentQuest() >= QuestManager.GetQUESTS(QUESTS.Maison) || PlayerPrefs.GetInt("ReparationPhare") == 1)
         {
+            Debug.Log("eeee");
             dialogueCapitain.SetActive(true);
+            QuestManager.ValidateQuest(QUESTS.ReparationPhare);
             return;
         }
 

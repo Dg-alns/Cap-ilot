@@ -187,6 +187,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c494cd52d0f7644d8b2ac1986045269, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &470672814 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6306277513862035737, guid: dc7ab4232cc66f947ac7f1114b4df43b, type: 3}
+  m_PrefabInstance: {fileID: 470672812}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70f9def023596bc4fb08399b5cf8adf8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &869085879
 GameObject:
   m_ObjectHideFlags: 0
@@ -1194,7 +1205,7 @@ PrefabInstance:
     - target: {fileID: 8443335512362319947, guid: 3a5e3017a39506f44add5b1db1da0060, type: 3}
       propertyPath: _Sauvegarde
       value: 
-      objectReference: {fileID: 2009551258}
+      objectReference: {fileID: 470672814}
     - target: {fileID: 8443335512362319947, guid: 3a5e3017a39506f44add5b1db1da0060, type: 3}
       propertyPath: positionementPartManager
       value: 
@@ -1202,61 +1213,13 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 5580803202734008852, guid: 3a5e3017a39506f44add5b1db1da0060, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2009551258}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3a5e3017a39506f44add5b1db1da0060, type: 3}
 --- !u!1 &2009551257 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5580803202734008852, guid: 3a5e3017a39506f44add5b1db1da0060, type: 3}
   m_PrefabInstance: {fileID: 2009551256}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2009551258
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2009551257}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70f9def023596bc4fb08399b5cf8adf8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  journal:
-    journal:
-      m_keys: []
-      m_values: []
-  profile:
-    Username: 
-    Age: 0
-  questManager:
-    statusDict:
-      m_keys: 000000000100000002000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c0000000d000000
-      m_values: 0000000000000000000000000000
-  Input: {fileID: 0}
-  Output: {fileID: 0}
-  OutputText: {fileID: 0}
-  EmotionWheel: {fileID: 0}
-  Hospital: {fileID: 0}
-  Food: {fileID: 0}
-  Sport: {fileID: 0}
-  School: {fileID: 0}
-  Relations: {fileID: 0}
-  Temptations: {fileID: 0}
-  InputName: {fileID: 0}
-  OutputName: {fileID: 0}
-  Jour: {fileID: 0}
-  Mois: {fileID: 0}
-  Annee: {fileID: 0}
-  OutputDate: {fileID: 0}
-  StatMinigame:
-    m_keys: []
-    m_values: []
-  StatPlayer:
-    m_keys: []
-    m_values: []
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

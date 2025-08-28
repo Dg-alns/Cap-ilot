@@ -9,9 +9,10 @@ public class Sport_Organisateur : Pnj_Ressource
     protected new void Start()
     {
         base.Start();
-        saving = JSON_Manager.LoadData<Saving>(Application.dataPath + "/Json/Save.json");
+        saving = JSON_Manager.LoadData<Saving>("Save");
         
-        QuestManager.SetQuest((int)QUESTS.S_Ressource);
+        if(QuestManager.GetCurrentQuest() <= QuestManager.GetQUESTS(QUESTS.S_Ressource))
+            QuestManager.SetQuest((int)QUESTS.S_Ressource);
 
         npc.SetPLayerPrefs(0);
         npc.idxOffSetDialogue = 0;

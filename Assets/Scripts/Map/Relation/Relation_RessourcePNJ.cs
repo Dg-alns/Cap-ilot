@@ -11,7 +11,8 @@ public class Relation_RessourcePNJ : Pnj_Ressource
 
     protected new void Start()
     {
-        QuestManager.SetQuest((int)QUESTS.R_Ressoucre);
+        if (QuestManager.GetCurrentQuest() <= QuestManager.GetQUESTS(QUESTS.R_Ressoucre))
+            QuestManager.SetQuest((int)QUESTS.R_Ressoucre);
         base.Start();
         Saving save = JSON_Manager.LoadData<Saving>("Save");
 

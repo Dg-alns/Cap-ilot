@@ -15830,7 +15830,6 @@ GameObject:
   - component: {fileID: 5839752340143059723}
   - component: {fileID: 5540961570497508800}
   - component: {fileID: 7902386969768291905}
-  - component: {fileID: 4088296821377243592}
   m_Layer: 5
   m_Name: DownBar
   m_TagString: Untagged
@@ -15960,56 +15959,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   score: {fileID: 0}
-  _Sauvegarde: {fileID: 4088296821377243592}
---- !u!114 &4088296821377243592
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4769635539238345227}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70f9def023596bc4fb08399b5cf8adf8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  journal:
-    journal:
-      m_keys: []
-      m_values: []
-  profile:
-    Username: 
-    Age: 0
-    DayBirth: 0
-    MonthBirth: 0
-    YearBirth: 0
-    EmailDoctor: 
-  questManager:
-    statusDict:
-      m_keys: 000000000100000002000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c0000000d000000
-      m_values: 0000000000000000000000000000
-  Input: {fileID: 0}
-  Output: {fileID: 0}
-  OutputText: {fileID: 0}
-  EmotionWheel: {fileID: 0}
-  Hospital: {fileID: 0}
-  Food: {fileID: 0}
-  Sport: {fileID: 0}
-  School: {fileID: 0}
-  Relations: {fileID: 0}
-  Temptations: {fileID: 0}
-  InputName: {fileID: 0}
-  OutputName: {fileID: 0}
-  Jour: {fileID: 0}
-  Mois: {fileID: 0}
-  Annee: {fileID: 0}
-  OutputDate: {fileID: 0}
-  StatMinigame:
-    m_keys: []
-    m_values: []
-  StatPlayer:
-    m_keys: []
-    m_values: []
+  _Sauvegarde: {fileID: 0}
 --- !u!1 &4777606938504721007
 GameObject:
   m_ObjectHideFlags: 0

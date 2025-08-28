@@ -142,7 +142,7 @@ PrefabInstance:
     - target: {fileID: 880684434788671923, guid: 194deb3502166994b9337affa1cc0ffc, type: 3}
       propertyPath: loadNexScene
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 864664397}
     - target: {fileID: 880684434788671923, guid: 194deb3502166994b9337affa1cc0ffc, type: 3}
       propertyPath: idxMiniGameSet
       value: 1
@@ -332,7 +332,6 @@ GameObject:
   m_Component:
   - component: {fileID: 115235319}
   - component: {fileID: 115235322}
-  - component: {fileID: 115235321}
   - component: {fileID: 115235320}
   m_Layer: 0
   m_Name: Scripts
@@ -373,56 +372,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   score: {fileID: 0}
-  _Sauvegarde: {fileID: 115235321}
---- !u!114 &115235321
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 115235318}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70f9def023596bc4fb08399b5cf8adf8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  journal:
-    journal:
-      m_keys: []
-      m_values: []
-  profile:
-    Username: 
-    Age: 0
-    DayBirth: 0
-    MonthBirth: 0
-    YearBirth: 0
-    EmailDoctor: 
-  questManager:
-    statusDict:
-      m_keys: 000000000100000002000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c0000000d000000
-      m_values: 0000000000000000000000000000
-  Input: {fileID: 0}
-  Output: {fileID: 0}
-  OutputText: {fileID: 0}
-  EmotionWheel: {fileID: 0}
-  Hospital: {fileID: 0}
-  Food: {fileID: 0}
-  Sport: {fileID: 0}
-  School: {fileID: 0}
-  Relations: {fileID: 0}
-  Temptations: {fileID: 0}
-  InputName: {fileID: 0}
-  OutputName: {fileID: 0}
-  Jour: {fileID: 0}
-  Mois: {fileID: 0}
-  Annee: {fileID: 0}
-  OutputDate: {fileID: 0}
-  StatMinigame:
-    m_keys: []
-    m_values: []
-  StatPlayer:
-    m_keys: []
-    m_values: []
+  _Sauvegarde: {fileID: 864664400}
 --- !u!114 &115235322
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -459,7 +409,7 @@ PrefabInstance:
     - target: {fileID: 880684434788671923, guid: 194deb3502166994b9337affa1cc0ffc, type: 3}
       propertyPath: loadNexScene
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 864664397}
     - target: {fileID: 880684434788671923, guid: 194deb3502166994b9337affa1cc0ffc, type: 3}
       propertyPath: idxMiniGameSet
       value: 1
@@ -1299,6 +1249,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2701590163818432038, guid: ee16d6995dc26a049ad80315b4c9b4e1, type: 3}
+      propertyPath: _npcManager
+      value: 
+      objectReference: {fileID: 915074301}
     - target: {fileID: 2782391249341076264, guid: ee16d6995dc26a049ad80315b4c9b4e1, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -1573,6 +1527,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5928695808054254091, guid: ee16d6995dc26a049ad80315b4c9b4e1, type: 3}
   m_PrefabInstance: {fileID: 864664396}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &864664400 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2484610775577637360, guid: ee16d6995dc26a049ad80315b4c9b4e1, type: 3}
+  m_PrefabInstance: {fileID: 864664396}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70f9def023596bc4fb08399b5cf8adf8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &892176014
 GameObject:
   m_ObjectHideFlags: 0

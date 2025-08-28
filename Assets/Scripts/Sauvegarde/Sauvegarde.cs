@@ -61,7 +61,10 @@ public class Sauvegarde : MonoBehaviour
                 if (save.questManager.statusDict[quest.id] == false)
                 {
                     if (QuestManager.GetCurrentQuest() != quest.id)
+                    {
                         QuestManager.SetQuest(quest.id);
+                        Debug.Log( "CurrentQuest : " + QuestManager.GetCurrentQuest());
+                    }
                     return;
                 }
             }
@@ -103,7 +106,6 @@ public class Sauvegarde : MonoBehaviour
             }
         }
     }
-
     public void Update()
     {
         Saving save = new Saving(journal, profile, questManager, StatMinigame, StatPlayer);
@@ -114,6 +116,7 @@ public class Sauvegarde : MonoBehaviour
             {
                 if (quest.CheckCondition(save))
                 {
+                    Debug.Log("ValidateQuest : " + quest.id);
                     questManager.statusDict[quest.id] = true;
                     QuestManager.NextQuest(quest.id);
                     Save(save);

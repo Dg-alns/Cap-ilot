@@ -12,11 +12,11 @@ using UnityEngine;
         static public List<PersoPlayerData> ShoesSObj = new List<PersoPlayerData>();
         static public List<PersoPlayerData> BottomSObj = new List<PersoPlayerData>();
 
-        void Awake()
+        public static void Init()
         {
             LoadCategory("ScriptObj/Body", BodySObj);
             LoadCategory("ScriptObj/Top", TopSObj);
-            LoadCategory("ScriptObj/Eyes", EyesObj); 
+            LoadCategory("ScriptObj/Eyes", EyesObj);
             LoadHairCategory("ScriptObj/Hair/Hair", HairFrontSObj);
             LoadCategory("ScriptObj/Hair/Back", HairBackSObj);
             LoadCategory("ScriptObj/Shoes", ShoesSObj);
@@ -37,7 +37,7 @@ using UnityEngine;
             }
         }
 
-        void LoadHairCategory(string Path, List<HairData> lst)
+        static void LoadHairCategory(string Path, List<HairData> lst)
         {
             lst.Clear();
             HairData[] alldataPerso = Resources.LoadAll<HairData>(Path);
@@ -82,9 +82,9 @@ using UnityEngine;
 
     public static Sprite GetSprite(List<PersoPlayerData> lst, string name)
     {
-        for(int i = 0; i < lst.Count; i++)
+        for (int i = 0; i < lst.Count; i++)
         {
-            if (lst[i].sprite.name == name)
+            if (lst[i].sprite.name.Equals(name)) 
                 return lst[i].sprite;
         }
 

@@ -965,7 +965,6 @@ GameObject:
   m_Component:
   - component: {fileID: 326379953}
   - component: {fileID: 326379954}
-  - component: {fileID: 326379955}
   m_Layer: 0
   m_Name: === Game ===
   m_TagString: Untagged
@@ -1007,49 +1006,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   score: {fileID: 801354800}
-  _Sauvegarde: {fileID: 326379955}
---- !u!114 &326379955
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 326379952}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70f9def023596bc4fb08399b5cf8adf8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  journal:
-    journal:
-      m_keys: []
-      m_values: []
-  profile:
-    Username: 
-    Age: 0
-  questManager:
-    statusDict:
-      m_keys: 000000000100000002000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c0000000d000000
-      m_values: 0000000000000000000000000000
-  Input: {fileID: 0}
-  Output: {fileID: 0}
-  OutputText: {fileID: 0}
-  EmotionWheel: {fileID: 0}
-  Hospital: {fileID: 0}
-  Food: {fileID: 0}
-  Sport: {fileID: 0}
-  School: {fileID: 0}
-  Relations: {fileID: 0}
-  Temptations: {fileID: 0}
-  InputName: {fileID: 0}
-  OutputName: {fileID: 0}
-  Jour: {fileID: 0}
-  Mois: {fileID: 0}
-  Annee: {fileID: 0}
-  OutputDate: {fileID: 0}
-  StatMinigame:
-    m_keys: []
-    m_values: []
+  _Sauvegarde: {fileID: 663053773}
 --- !u!1 &383115973
 GameObject:
   m_ObjectHideFlags: 0
@@ -1784,6 +1741,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2c494cd52d0f7644d8b2ac1986045269, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &663053773 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6306277513862035737, guid: dc7ab4232cc66f947ac7f1114b4df43b, type: 3}
+  m_PrefabInstance: {fileID: 663053770}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70f9def023596bc4fb08399b5cf8adf8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &687833304
