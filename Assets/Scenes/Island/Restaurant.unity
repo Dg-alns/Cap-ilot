@@ -231,6 +231,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: "Chef Sal\xE9e"
       objectReference: {fileID: 0}
+    - target: {fileID: 9067902587201038583, guid: 194deb3502166994b9337affa1cc0ffc, type: 3}
+      propertyPath: m_SortingLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9067902587201038583, guid: 194deb3502166994b9337affa1cc0ffc, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1689557907
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -502,6 +510,14 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 6077818848559738526, guid: d2432b8305a07704bb1895949649e610, type: 3}
+    - target: {fileID: 9067902587201038583, guid: 194deb3502166994b9337affa1cc0ffc, type: 3}
+      propertyPath: m_SortingLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9067902587201038583, guid: 194deb3502166994b9337affa1cc0ffc, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1689557907
+      objectReference: {fileID: 0}
     - target: {fileID: 9137774368580248677, guid: 194deb3502166994b9337affa1cc0ffc, type: 3}
       propertyPath: nexScene
       value: 
@@ -1645,8 +1661,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1689557907
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 1682057826497162294, guid: 143a37c8adeda2d4cae8078ed953ee01, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -3591,8 +3607,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1689557907
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 7239208652930232080, guid: 08bcfd1bd6c83de4e97457d3b631c419, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

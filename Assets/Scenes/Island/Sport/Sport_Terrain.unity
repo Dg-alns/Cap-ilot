@@ -827,6 +827,8 @@ MonoBehaviour:
       pas de l'affront\xE9 cela lui fera du bien et \xE0 toi aussi je pense."
   - dialogueLines:
     - "Tu es pr\xEAt pour affronter le monstre \xE0 la boxe ?"
+  - dialogueLines:
+    - Je passe mon tour pour la prochaine manche.
   idxMiniGameSet: 1
   MiniGameName: MiniGame_Boxe
   loadNexScene: {fileID: 182011767}
@@ -1272,6 +1274,8 @@ MonoBehaviour:
       temps de courir."
   - dialogueLines:
     - "Tu es pr\xEAt a courir un bon coup lors d'une s\xE9ance de marathon ?"
+  - dialogueLines:
+    - C'est une vrai point de vitesse que vous avez.
   idxMiniGameSet: 1
   MiniGameName: MiniGame_Marathon
   loadNexScene: {fileID: 182011767}
@@ -2063,6 +2067,8 @@ MonoBehaviour:
     - "Il c'est d\xE9j\xE0 plac\xE9 dans les cages, quel rapidit\xE9 !"
   - dialogueLines:
     - "Tu es pr\xEAt pour une petite s\xE9ance de tir au but ?"
+  - dialogueLines:
+    - "Alors tu as r\xE9ussi \xE0 cadrer."
   idxMiniGameSet: 1
   MiniGameName: MiniGame_TirBut
   loadNexScene: {fileID: 182011767}

@@ -1017,6 +1017,14 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -4590681313985684083, guid: 58d6c3b12dff8d644b9e0515fe6a857b, type: 3}
+    - target: {fileID: 3746565438359484362, guid: d400b78d53980d349bec9c8c27796ef6, type: 3}
+      propertyPath: m_SortingLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3746565438359484362, guid: d400b78d53980d349bec9c8c27796ef6, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1689557907
+      objectReference: {fileID: 0}
     - target: {fileID: 5097769627449528567, guid: d400b78d53980d349bec9c8c27796ef6, type: 3}
       propertyPath: m_Name
       value: PNJ_Dialogue
@@ -1406,6 +1414,14 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -4590681313985684083, guid: 58d6c3b12dff8d644b9e0515fe6a857b, type: 3}
+    - target: {fileID: 9067902587201038583, guid: 194deb3502166994b9337affa1cc0ffc, type: 3}
+      propertyPath: m_SortingLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9067902587201038583, guid: 194deb3502166994b9337affa1cc0ffc, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1689557907
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1750,6 +1766,7 @@ GameObject:
   - component: {fileID: 1226478367}
   - component: {fileID: 1226478368}
   - component: {fileID: 1226478369}
+  - component: {fileID: 1226478370}
   m_Layer: 0
   m_Name: TopPhare
   m_TagString: Untagged
@@ -1766,7 +1783,7 @@ Transform:
   m_GameObject: {fileID: 1226478366}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.95, y: 7.24, z: 0}
+  m_LocalPosition: {x: -2.5, y: 5.23, z: 0}
   m_LocalScale: {x: 0.55452, y: 0.55452, z: 0.55452}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1812,8 +1829,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1689557907
-  m_SortingLayer: 1
+  m_SortingLayerID: 578395661
+  m_SortingLayer: -1
   m_SortingOrder: 0
   m_Sprite: {fileID: -6444221449505153567, guid: 84427e52b965b5b4da78ec7954e5214e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1842,6 +1859,42 @@ MonoBehaviour:
   m_Area: 1
   m_IgnoreFromBuild: 0
   m_AffectedAgents: ffffffff
+--- !u!58 &1226478370
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1226478366}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0.11325871}
+  m_Radius: 7.1282587
 --- !u!1001 &1227685658
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2038,7 +2091,7 @@ MonoBehaviour:
   m_BuildHeightMesh: 0
   m_MinRegionArea: 0
   m_HideEditorLogs: 0
-  m_NavMeshData: {fileID: 23800000, guid: 5b611e38f3e8e4d4ebfe0837cab3cc6c, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 25767bce9a0758042817ab9b16f1fdc9, type: 2}
 --- !u!4 &1361216315
 Transform:
   m_ObjectHideFlags: 0

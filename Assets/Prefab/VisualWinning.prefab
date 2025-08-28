@@ -17,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &5469209247200287204
 RectTransform:
   m_ObjectHideFlags: 0
@@ -520,7 +520,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _NextSceneData: {fileID: 11400000, guid: 4f9d2ebe370453d43b934f62e2c5b6fc, type: 2}
+  _energy: {fileID: 0}
   animator: {fileID: 0}
+  tools: {fileID: 0}
+  Player: {fileID: 0}
 --- !u!1 &4740283100989275063
 GameObject:
   m_ObjectHideFlags: 0

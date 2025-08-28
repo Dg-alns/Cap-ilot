@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Relation
   m_EditorClassIdentifier: 
   IleName: Port Relation
-  isDiscover: 0
-  CanGoToIle: 0
+  isDiscover: 1
+  CanGoToIle: 1
   ile: 6

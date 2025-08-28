@@ -267,6 +267,14 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 55531119647216006, guid: 86f714f33a86c9047a767718f389ef2b, type: 3}
+    - target: {fileID: 3746565438359484362, guid: d400b78d53980d349bec9c8c27796ef6, type: 3}
+      propertyPath: m_SortingLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3746565438359484362, guid: d400b78d53980d349bec9c8c27796ef6, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1689557907
+      objectReference: {fileID: 0}
     - target: {fileID: 5097769627449528567, guid: d400b78d53980d349bec9c8c27796ef6, type: 3}
       propertyPath: m_Name
       value: PNJsport
@@ -1924,6 +1932,14 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 6304716181573441033, guid: 6858b4a4570d8b84097aa22ebda82ad7, type: 3}
+    - target: {fileID: 3746565438359484362, guid: d400b78d53980d349bec9c8c27796ef6, type: 3}
+      propertyPath: m_SortingLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3746565438359484362, guid: d400b78d53980d349bec9c8c27796ef6, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1689557907
+      objectReference: {fileID: 0}
     - target: {fileID: 5097769627449528567, guid: d400b78d53980d349bec9c8c27796ef6, type: 3}
       propertyPath: m_Name
       value: PNJalimentation
@@ -2284,6 +2300,14 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 4586106782577378561, guid: 9a94ed1d8df0d0c44adce039fdf55c88, type: 3}
+    - target: {fileID: 3746565438359484362, guid: d400b78d53980d349bec9c8c27796ef6, type: 3}
+      propertyPath: m_SortingLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3746565438359484362, guid: d400b78d53980d349bec9c8c27796ef6, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1689557907
+      objectReference: {fileID: 0}
     - target: {fileID: 5097769627449528567, guid: d400b78d53980d349bec9c8c27796ef6, type: 3}
       propertyPath: m_Name
       value: PNJecole
@@ -2500,6 +2524,14 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 55531119647216006, guid: 86f714f33a86c9047a767718f389ef2b, type: 3}
+    - target: {fileID: 3746565438359484362, guid: d400b78d53980d349bec9c8c27796ef6, type: 3}
+      propertyPath: m_SortingLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3746565438359484362, guid: d400b78d53980d349bec9c8c27796ef6, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1689557907
+      objectReference: {fileID: 0}
     - target: {fileID: 5097769627449528567, guid: d400b78d53980d349bec9c8c27796ef6, type: 3}
       propertyPath: m_Name
       value: PNJrelation
