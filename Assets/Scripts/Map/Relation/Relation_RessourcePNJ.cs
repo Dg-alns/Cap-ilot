@@ -7,14 +7,13 @@ public class Relation_RessourcePNJ : Pnj_Ressource
     [SerializeField] List<AlreadyTalkedNPC> npcTalked = new List<AlreadyTalkedNPC>(4);
     //private DialogueNPC npc;
     //private NPCManager npcManager;
-    Saving saving;
+    [SerializeField] Sauvegarde save;
 
     protected new void Start()
     {
         if (QuestManager.GetCurrentQuest() <= QuestManager.GetQUESTS(QUESTS.R_Ressoucre))
             QuestManager.SetQuest((int)QUESTS.R_Ressoucre);
         base.Start();
-        Saving save = JSON_Manager.LoadData<Saving>("Save");
 
 
         npcManager = FindFirstObjectByType<NPCManager>();
@@ -38,7 +37,7 @@ public class Relation_RessourcePNJ : Pnj_Ressource
 
     protected override bool TakeRessource()
     {
-        if (!saving.statMinigame.ContainsKey("MiniGame_Funambule"))
+        if (!save.StatMinigame.ContainsKey("MiniGame_Funambule"))
             return false;
 
         foreach (AlreadyTalkedNPC npcT in npcTalked)

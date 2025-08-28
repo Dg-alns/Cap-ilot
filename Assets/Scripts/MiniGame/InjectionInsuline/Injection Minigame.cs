@@ -24,7 +24,7 @@ public class InjectionMinigame : Minigame
 
     private float _defaultCircleSize;
 
-    private float _heightMenuButton = -(50 + 150); // Y position + height
+    public RectTransform Menu; // Y position + height
 
     private int _gameScore;
 
@@ -84,7 +84,7 @@ public class InjectionMinigame : Minigame
         GameObject timingCircle = GameObject.Instantiate(_prefab, _partentTimingCircle);
 
         // Set a random position
-        timingCircle.transform.position = new Vector2(UnityEngine.Random.Range(_defaultCircleSize, Screen.width - _defaultCircleSize), UnityEngine.Random.Range(_defaultCircleSize, Screen.height - _defaultCircleSize - _heightMenuButton));
+        timingCircle.transform.position = new Vector2(UnityEngine.Random.Range(_defaultCircleSize, Screen.width - _defaultCircleSize), UnityEngine.Random.Range(_defaultCircleSize, Screen.height - _defaultCircleSize - (Screen.height - Menu.position.y) - Menu.sizeDelta.y));
         
         // Put the instance behind the other create before
         timingCircle.transform.SetAsFirstSibling();

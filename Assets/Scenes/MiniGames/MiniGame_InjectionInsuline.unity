@@ -928,6 +928,11 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!224 &800298706 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 1848623145216376610, guid: d7c32b09755ccc34389e7bf4c273fa30, type: 3}
+  m_PrefabInstance: {fileID: 562023247}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &899542774
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1823,6 +1828,7 @@ MonoBehaviour:
   _spawnTiming: []
   _body: {fileID: 1582646423}
   _partentTimingCircle: {fileID: 718273778}
+  Menu: {fileID: 800298706}
 --- !u!1001 &2040657292
 PrefabInstance:
   m_ObjectHideFlags: 0

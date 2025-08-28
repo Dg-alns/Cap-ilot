@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: "H\xF4pital"
   m_EditorClassIdentifier: 
   IleName: Port Hopital
-  isDiscover: 1
-  CanGoToIle: 1
+  isDiscover: 0
+  CanGoToIle: 0
   ile: 2
