@@ -56,8 +56,22 @@
         }
     },
     "statMinigame": {
-        "m_keys": [],
-        "m_values": []
+        "m_keys": [
+            "MiniGame_ObjCachee",
+            "MiniGame_Balance"
+        ],
+        "m_values": [
+            {
+                "_nbStar": 3,
+                "_bestScore": 4,
+                "_showInfo": false
+            },
+            {
+                "_nbStar": 3,
+                "_bestScore": 19,
+                "_showInfo": true
+            }
+        ]
     },
     "statPlayer": {
         "m_keys": [

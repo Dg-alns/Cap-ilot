@@ -29,8 +29,6 @@ public class Accueil_Login : MonoBehaviour
      
     [SerializeField] TextMeshProUGUI _DebugText;
 
-    [Header("Destination")]
-    [SerializeField] LoadNexScene _loadNexScene;
 
     private List<string> _DebugList = new List<string>() { 
         "Le nom du joueur incorrect",
@@ -120,7 +118,8 @@ public class Accueil_Login : MonoBehaviour
     {
         if (CanGoInGame())
         {
-            _loadNexScene.StartGame();
+            LoadNexScene loadNexScene = FindAnyObjectByType<LoadNexScene>();
+            loadNexScene.StartGame();
         }
     }
 

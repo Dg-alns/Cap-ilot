@@ -47,8 +47,8 @@ public class InformationOfTheGame : MonoBehaviour
                 toggle.isOn = true;
 
         }
-        else { 
-
+        else
+        {
             myScore.text = "Meilleur score : " + score.save.GetBestScore(SceneManager.GetActiveScene().name).ToString();
 
             if (toggle != null)
@@ -146,5 +146,10 @@ public class InformationOfTheGame : MonoBehaviour
         gameObject.SetActive(false);
         GameObjectToStart.GetComponent<Funambule>().StartGame(); 
         timer.stop = false;
+    }
+    public void StartBalance()
+    {
+        gameObject.SetActive(false);
+        GameObjectToStart.GetComponent<GameController>().StartGame();
     }
 }
