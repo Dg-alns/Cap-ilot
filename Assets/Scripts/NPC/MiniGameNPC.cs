@@ -14,6 +14,7 @@ public class MiniGameNPC : NPC
         if (idxOffSetDialogue + 1 <= dialogueSet.Count - 1)
         {
             idxOffSetDialogue++;
+            PlayerPrefs.SetInt(NPCPLayerPrefsName, idxOffSetDialogue);
             return true;
         }
         else

@@ -70,7 +70,6 @@ public class SpawnManagement : MonoBehaviour
 
     void PositionPLayer()
     {
-        Debug.Log(PlayerPrefs.GetFloat("RotateY"));
         PersoToPosition.transform.position = new(PlayerPrefs.GetFloat("PosX"), PlayerPrefs.GetFloat("PosY"), 0);
         PersoToPosition.transform.rotation = new(0, (PlayerPrefs.GetFloat("RotateY") == 1 ? 180 : 0), 0, 1); //TODO a revoir
         PersoToPosition.SetActive(true);
