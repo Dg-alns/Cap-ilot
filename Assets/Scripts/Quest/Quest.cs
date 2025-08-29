@@ -174,12 +174,19 @@ public class RessourceQuest : Quest
     }
     override public bool CheckCondition(Saving Data)
     {
-        if (Data.profile.Username != "")
-        {
-            status = true;
-            reward.Obtain(Data);
+
+        if (QuestManager.GetCurrentQuest() == id && status)
             return true;
-        }
+
+
         return false;
+
+        //if (Data.profile.Username != "")
+        //{
+        //    status = true;
+        //    reward.Obtain(Data);
+        //    return true;
+        //}
+        //return false;
     }
 }

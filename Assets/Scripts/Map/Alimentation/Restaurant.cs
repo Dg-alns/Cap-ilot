@@ -10,7 +10,7 @@ public class Restaurant : MonoBehaviour
     {
         if(QuestManager.GetCurrentQuest() == QuestManager.GetQUESTS(QUESTS.Alimentation))
         {
-            if(/*sauvegarde.HaveMiniGame("MiniGame_Balance") &&*/ sauvegarde.HaveMiniGame("MiniGame_Card")) // TODO Adapter MiniGameBalance poru le jeu
+            if(sauvegarde.HaveMiniGame("MiniGame_Balance") && sauvegarde.HaveMiniGame("MiniGame_Card"))
             {
                 QuestManager.ValidateQuest(QUESTS.Alimentation);
             }

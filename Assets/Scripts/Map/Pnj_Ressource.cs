@@ -40,8 +40,8 @@ public class Pnj_Ressource : MonoBehaviour
                     return;
                 if (npcManager.dialogueNpc.npcId == npc.npcId)
                 {
-                    npc.idxOffSetDialogue = (int)OffSet_Dialogue_Ressource.WaitingForTest;
-                    npc.SetPLayerPrefs(npc.idxOffSetDialogue);
+                    //npc.idxOffSetDialogue = (int)OffSet_Dialogue_Ressource.WaitingForTest;
+                    npc.SetPLayerPrefs((int)OffSet_Dialogue_Ressource.WaitingForTest);
                     FirstTalk();
                 }
                 break;
@@ -49,8 +49,8 @@ public class Pnj_Ressource : MonoBehaviour
             case (int)OffSet_Dialogue_Ressource.WaitingForTest:
                 if(TakeRessource())
                 {
-                    npc.idxOffSetDialogue = (int)OffSet_Dialogue_Ressource.GiveRessources;
-                    npc.SetPLayerPrefs(npc.idxOffSetDialogue);
+                    //npc.idxOffSetDialogue = (int)OffSet_Dialogue_Ressource.GiveRessources;
+                    npc.SetPLayerPrefs((int)OffSet_Dialogue_Ressource.GiveRessources);
                 }
                 break;
 
@@ -59,8 +59,8 @@ public class Pnj_Ressource : MonoBehaviour
                     return;
                 if (npcManager.dialogueNpc.npcId == npc.npcId)
                 {
-                    npc.idxOffSetDialogue = (int)OffSet_Dialogue_Ressource.Destroy;
-                    npc.SetPLayerPrefs(npc.idxOffSetDialogue);
+                    //npc.idxOffSetDialogue = (int)OffSet_Dialogue_Ressource.Destroy;
+                    npc.SetPLayerPrefs((int)OffSet_Dialogue_Ressource.Destroy);
                 }
                 break;
 

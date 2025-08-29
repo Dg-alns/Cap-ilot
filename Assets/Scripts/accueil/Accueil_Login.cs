@@ -94,7 +94,7 @@ public class Accueil_Login : MonoBehaviour
         options.Clear();
         options.Add(firstOption);
         int Years = DateTime.Now.Year;
-        for (int i = 1900; i <= Years; i++)
+        for (int i = Years ; i > 1900; i--)
         {
             options.Add(i.ToString());
         }
