@@ -35,14 +35,16 @@ public class NPC : MonoBehaviour
 
     public List<string> GetLstDialogue() { return dialogueSet[idxOffSetDialogue].dialogueLines; }
    
-    public void NextSet() 
+    public bool NextSet() 
     {
         if (idxOffSetDialogue + 1 <= dialogueSet.Count -1)
         {
             idxOffSetDialogue++;
+            return true;
         }
         else
             idxOffSetDialogue += 0;
+            return false;
     }
     public void NextSetForCapitain() 
     {

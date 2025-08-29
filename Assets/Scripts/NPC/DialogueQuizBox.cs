@@ -18,8 +18,6 @@ public class DialogueQuizBox : DialogueBox
     {
         dialogStarted = false;
         _activeQuiz = false;
-        /*FindNPCManagerInActiveScene();
-        AssignTextAreas();*/
         dialogueGroup = GetComponent<CanvasGroup>();
 
         _npc = npcManager.dialogueNpc as QuizNPC;
@@ -46,6 +44,7 @@ public class DialogueQuizBox : DialogueBox
             _activeQuiz = true;
             _npc.FirstQuestion();
             PlayerPrefs.SetInt(_npc.GetNamePlayerPrefsNPC(), 1);
+            
             DestroiUI();
         }
     }
@@ -65,20 +64,22 @@ public class DialogueQuizBox : DialogueBox
     }
 
     public override void EndDialogue()
-    {       //DestroiUI();
-            npcManager.dialogueNpc.NextSet();
-            GetDialogueLines();
+    {
+        if (!npcManager.dialogueNpc.NextSet())
+        {
+            DestroiUI();
+        }
+        GetDialogueLines();
 
-            _lineIndex = 0;
-            _dialogueText.SetText(lineList[_lineIndex]);
-            dialogStarted = true;
-        
+        _lineIndex = 0;
+        _dialogueText.SetText(lineList[_lineIndex]);
+        dialogStarted = true;
     }
 
     public void DestroiUI()
     {
         Destroy(npcManager.dialogueNpc.GetComponent<Trigger>().activeUI);
         npcManager.dialogueNpc.GetComponent<Trigger>().activeUI = null;
-        //npcManager.dialogueNpc.GetComponent<Trigger>().uiOpen = false;
+        npcManager.dialogueNpc.GetComponent<Trigger>().uiOpen = false;
     }
 }

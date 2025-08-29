@@ -32,7 +32,7 @@ public class Movement : MonoBehaviour
     public GameObject activeDialogueUI;
 
     bool candebarque = false;
-
+    bool triggerQuiz = false;
     //[SerializeField] private TouchManager _touchManager;
 
     void Start()
@@ -135,8 +135,9 @@ public class Movement : MonoBehaviour
                         _clickedNpcId = clickedNpc.npcId;
                         _clickedNpc = _npcManager.GetComponent<NPCManager>().FindNpcById(_clickedNpcId);
 
-                        if (_clickedNpc != null)
+                        if (_clickedNpc != null && !triggerQuiz)
                         {
+                            triggerQuiz = true; 
                             dialogueNpc.GetComponent<Trigger>().IsTrigger();
                             activeDialogueUI = dialogueNpc.GetComponent<Trigger>().activeUI;
                             if (activeDialogueUI != null)
@@ -144,10 +145,10 @@ public class Movement : MonoBehaviour
                                 _dialogueStarted = activeDialogueUI.GetComponentInChildren<DialogueBox>().dialogStarted;
                             }
                         }
-                        else
+                        /*else
                         {
                             Debug.Log("ERROR : NPC not found");
-                        }
+                        }*/
                     }
                 }
                 else if (collision.gameObject.GetComponent<Trigger>().Type == TriggerType.PORT || collision.gameObject.GetComponent<Trigger>().Type == TriggerType.PANCARTE)
@@ -162,5 +163,6 @@ public class Movement : MonoBehaviour
     private void OnTriggerExit2D(Collider2D collision)
     {
         candebarque = true;
+        triggerQuiz = false;
     }
 }

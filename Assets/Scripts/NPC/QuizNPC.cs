@@ -10,6 +10,8 @@ public class QuizNPC : NPC
     [SerializeField] private Button _nextQuestion;
     public int idxQuizSet;
 
+
+
     public void AskQuestion()
     {
 
@@ -26,6 +28,14 @@ public class QuizNPC : NPC
         {
             _quizManager.npcName = npcName;
             _quizManager.CreateQuestion(_questionList[0]);
+        }
+        else
+        {
+            Debug.Log("test");
+            idxOffSetDialogue++;
+            FindAnyObjectByType<Movement>().dialogueNpc = gameObject;
+            GetComponent<Trigger>().IsTrigger();
+            FindAnyObjectByType<Movement>().activeDialogueUI = GetComponent<Trigger>().activeUI;
         }
 
 

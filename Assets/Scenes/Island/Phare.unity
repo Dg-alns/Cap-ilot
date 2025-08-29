@@ -2265,6 +2265,11 @@ MonoBehaviour:
 '
   - dialogueLines:
     - le quiz ?
+  - dialogueLines:
+    - juste pour test
+    - 13245679
+  - dialogueLines:
+    - apres le quiz
   _quizManager: {fileID: 2043885878}
   _nextQuestion: {fileID: 1055029024}
   idxQuizSet: 1
@@ -2861,6 +2866,7 @@ GameObject:
   - component: {fileID: 9137774367758063470}
   - component: {fileID: 5741948963461460159}
   - component: {fileID: 1460056845}
+  - component: {fileID: 9137774367758063471}
   m_Layer: 0
   m_Name: PNJ_Quiz
   m_TagString: Untagged
@@ -2942,6 +2948,33 @@ MonoBehaviour:
   activeUI: {fileID: 0}
   InPort: 0
   capitainPort: {fileID: 0}
+--- !u!50 &9137774367758063471
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6542426947727957544}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

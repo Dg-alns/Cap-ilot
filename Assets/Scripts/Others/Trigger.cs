@@ -36,7 +36,6 @@ public class Trigger : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        //collision.gameObject.GetComponent<Movement>().WTF();
 
 
     }
@@ -132,7 +131,6 @@ public class Trigger : MonoBehaviour
                 if (!uiOpen)
                 {
                     activeUI = Instantiate(UI);
-
                     activeUI.GetComponentInChildren<DialogueQuizBox>().dialogStarted = false;
                     activeUI.GetComponentInChildren<DialogueQuizBox>().lineList.Clear();
                     activeUI.GetComponentInChildren<DialogueQuizBox>().FindNPCManagerInActiveScene();

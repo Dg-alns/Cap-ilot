@@ -21,6 +21,7 @@ public class QuizManager : MonoBehaviour
 
     public void CreateQuestion(ScriptableQuestion _questionScriptable)
     {
+
         _uiQuiz = Instantiate(_questionUI);
         _uiQuiz.GetComponentInChildren<TextMeshProUGUI>().text = _questionScriptable.question;
         _uiQuiz.GetComponentsInChildren<TextMeshProUGUI>()[1].text = npcName;
@@ -88,6 +89,7 @@ public class QuizManager : MonoBehaviour
                 {
 
                     _panelNextQuestion.GetComponentsInChildren<Image>()[i].transform.SetAsLastSibling();
+                    
                 }
             }
         }
@@ -108,6 +110,7 @@ public class QuizManager : MonoBehaviour
         _panelNextQuestion.SetActive(false);
         if (_uiQuiz)
         {
+            //_npc.idxOffSetDialogue++;
             Destroy(_uiQuiz);
         }
     }
