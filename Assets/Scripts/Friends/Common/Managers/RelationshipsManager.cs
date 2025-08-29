@@ -33,6 +33,7 @@ namespace Unity.Services.Samples.Friends
         PlayerProfile m_LoggedPlayerProfile;
 
         private FriendsEventConnectionState m_current_state;
+        [SerializeField] private GameObject _uiButtonFriend;
 
         async void Start()
         {
@@ -264,6 +265,7 @@ namespace Unity.Services.Samples.Friends
         {
             try
             {
+                _uiButtonFriend.GetComponent<ButtonFriend>().ChangePanel();
                 await VivoxService.Instance.LeaveAllChannelsAsync();
                 var _channelName = ChatTextVivox.GetPrivateChannelName(playerId, AuthenticationService.Instance.PlayerId);
                 await VivoxService.Instance.JoinGroupChannelAsync(

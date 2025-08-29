@@ -16,7 +16,7 @@ MonoBehaviour:
   correctAnswer: jsp
   wrongAnswer:
   - ui
-  pnjId: 0
+  pnjId: 3
   isAnswered: 0
   afterCorrect: bravo
   afterWrong: et non

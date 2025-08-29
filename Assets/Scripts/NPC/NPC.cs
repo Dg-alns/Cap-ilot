@@ -36,17 +36,19 @@ public class NPC : MonoBehaviour
 
     public List<string> GetLstDialogue() { return dialogueSet[idxOffSetDialogue].dialogueLines; }
    
-    public virtual void NextSet() 
+    public virtual bool NextSet() 
     {
         if (idxOffSetDialogue + 1 <= dialogueSet.Count -1)
         {
             idxOffSetDialogue++;
+            return true;
         }
         else
             idxOffSetDialogue += 0;
 
 
         PlayerPrefs.SetInt(NPCPLayerPrefsName, idxOffSetDialogue);
+        return false;
     }
     public void NextSetForCapitain() 
     {

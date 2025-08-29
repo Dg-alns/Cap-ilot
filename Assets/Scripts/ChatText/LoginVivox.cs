@@ -14,7 +14,7 @@ public class LoginVivox : MonoBehaviour
     public TextMeshProUGUI textMeshProUGUI;
     public UnityEvent UnityEvent;
     // Start is called before the first frame update
-    bool invoke =false;
+    public bool invoke =false;
     void Start()
     {
 #if UNITY_ANDROID

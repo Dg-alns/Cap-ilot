@@ -14,17 +14,20 @@ public class QuizManager : MonoBehaviour
     [SerializeField] private GameObject _panelNextQuestion;
     //[SerializeField] private GameObject _canva;
 
+    public string npcName;
     private List<string> _answers = new List<string>();
 
     private GameObject _uiQuiz;
 
     public void CreateQuestion(ScriptableQuestion _questionScriptable)
     {
+
         _uiQuiz = Instantiate(_questionUI);
         _uiQuiz.GetComponentInChildren<TextMeshProUGUI>().text = _questionScriptable.question;
+        _uiQuiz.GetComponentsInChildren<TextMeshProUGUI>()[1].text = npcName;
 
 
-        for(int i=0; i< _questionScriptable.wrongAnswer.Count; i++)
+        for (int i=0; i< _questionScriptable.wrongAnswer.Count; i++)
         {
             Instantiate(_answerUI,_uiQuiz.GetComponentInChildren<VerticalLayoutGroup>().transform);
             _answers.Add(_questionScriptable.wrongAnswer[i]);
@@ -35,7 +38,7 @@ public class QuizManager : MonoBehaviour
         Instantiate(_answerUI, _uiQuiz.GetComponentInChildren<VerticalLayoutGroup>().transform);
         _answers.Add(_questionScriptable.correctAnswer);
 
-        for (int i = 1; i < _uiQuiz.GetComponentsInChildren<TextMeshProUGUI>().Length; i++)
+        for (int i = 2; i < _uiQuiz.GetComponentsInChildren<TextMeshProUGUI>().Length; i++)
         {
             int q = Random.Range(0, _answers.Count);
             _uiQuiz.GetComponentsInChildren<TextMeshProUGUI>()[i].text = _answers[q];
@@ -86,6 +89,7 @@ public class QuizManager : MonoBehaviour
                 {
 
                     _panelNextQuestion.GetComponentsInChildren<Image>()[i].transform.SetAsLastSibling();
+                    
                 }
             }
         }
@@ -106,6 +110,7 @@ public class QuizManager : MonoBehaviour
         _panelNextQuestion.SetActive(false);
         if (_uiQuiz)
         {
+            //_npc.idxOffSetDialogue++;
             Destroy(_uiQuiz);
         }
     }
