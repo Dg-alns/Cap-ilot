@@ -17,7 +17,7 @@ public class BoxSwitcher : MonoBehaviour
         redOriginalPos = redBox.position;
         blueOriginalPos = blueBox.position;
         deleteOriginalPos = delete.position;
-        StartCoroutine(SwitchBoxesRoutine());
+        //StartCoroutine(SwitchBoxesRoutine());
     }
 
     System.Collections.IEnumerator SwitchBoxesRoutine()

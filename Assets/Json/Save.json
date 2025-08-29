@@ -55,13 +55,19 @@
     },
     "statMinigame": {
         "m_keys": [
-            "MiniGame_ObjCachee"
+            "MiniGame_ObjCachee",
+            "MiniGame_Balance"
         ],
         "m_values": [
             {
                 "_nbStar": 3,
                 "_bestScore": 4,
                 "_showInfo": false
+            },
+            {
+                "_nbStar": 3,
+                "_bestScore": 19,
+                "_showInfo": true
             }
         ]
     },
@@ -79,7 +85,7 @@
         "m_values": [
             {
                 "Part_Body": {
-                    "instanceID": 57292
+                    "instanceID": 0
                 },
                 "Color_Part_Body": {
                     "r": 1.0,
@@ -156,7 +162,7 @@
             },
             {
                 "Part_Body": {
-                    "instanceID": 57244
+                    "instanceID": 0
                 },
                 "Color_Part_Body": {
                     "r": 1.0,
