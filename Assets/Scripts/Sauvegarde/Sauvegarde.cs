@@ -63,7 +63,6 @@ public class Sauvegarde : MonoBehaviour
                     if (QuestManager.GetCurrentQuest() != quest.id)
                     {
                         QuestManager.SetQuest(quest.id);
-                        Debug.Log( "CurrentQuest : " + QuestManager.GetCurrentQuest());
                     }
                     return;
                 }
@@ -114,10 +113,8 @@ public class Sauvegarde : MonoBehaviour
         {
             if (save.questManager.statusDict[quest.id] == false)
             {
-                Debug.Log("FirstQuest Fasle : " + quest.id);
                 if (quest.CheckCondition(save))
                 {
-                    Debug.Log("ValidateQuest : " + quest.id);
                     questManager.statusDict[quest.id] = true;
                     QuestManager.NextQuest(quest.id);
                     Save(save);

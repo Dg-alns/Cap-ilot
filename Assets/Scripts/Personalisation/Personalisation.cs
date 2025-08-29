@@ -365,7 +365,7 @@ public class Personalisation : MonoBehaviour
         AddColor(new Color(0.7056604f, 0.7056604f, 0.7056604f, 1)); //gray
         AddColor(new Color(0.7132075f, 0.5749689f, 0.1870487f, 1)); //yellow
         AddColor(new Color(0.5471698f, 0.04852258f, 0.5021859f, 1)); //magenta
-        AddColor(new Color(0.2352941f, 0.1568628f, 05098039, 1)); //brown
+        AddColor(new Color(0.2941177f, 0.1803922f, 0.045f, 1)); //brown
     }
 
     void InitColorPosition()

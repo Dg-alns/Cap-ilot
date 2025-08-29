@@ -27,6 +27,7 @@ public class Pnj_Ressource : MonoBehaviour
 
         }
 
+
     }
 
     // Start is called before the first frame update

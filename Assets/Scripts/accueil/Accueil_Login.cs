@@ -149,8 +149,8 @@ public class Accueil_Login : MonoBehaviour
 
         save.profile.EmailDoctor = _doctorMail.text ;
 
-        string fileName = Application.dataPath + "/JSON/Save.json";
-        JSON_Manager.SaveData<Saving>(fileName, save);
+
+        JSON_Manager.SaveData("Save", save);
     }
 
     private bool CanSaveData()

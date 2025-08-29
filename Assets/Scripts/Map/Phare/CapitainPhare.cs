@@ -17,14 +17,6 @@ public class CapitainPhare : MonoBehaviour
             PlayerPrefs.SetInt("ReparationPhare", 0);
         }
 
-        Debug.Log("aaaaa");
-        if (PlayerPrefs.GetInt("ReparationPhare") == 1)
-        {
-
-            Debug.Log("ValidatePhare");
-            QuestManager.ValidateQuest(QUESTS.ReparationPhare);
-        }
-
 
         ActiveCapitain();
         ActiveSetOffDialogue();
@@ -32,18 +24,14 @@ public class CapitainPhare : MonoBehaviour
 
     void ActiveCapitain()
     {
-        if (QuestManager.GetCurrentQuest() >= QuestManager.GetQUESTS(QUESTS.Maison) || PlayerPrefs.GetInt("ReparationPhare") == 1)
+        if (QuestManager.GetCurrentQuest() >= QuestManager.GetQUESTS(QUESTS.Maison))
         {
-            Debug.Log("eeee");
             dialogueCapitain.SetActive(true);
-            QuestManager.ValidateQuest(QUESTS.ReparationPhare);
             return;
         }
 
-        if (PlayerPrefs.GetInt("ReparationPhare") == 0)
-        {
-            MiniGameCapitain.SetActive(true);
-        }
+        MiniGameCapitain.SetActive(true);
+        
     }
 
     void ActiveSetOffDialogue()

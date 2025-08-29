@@ -11,7 +11,6 @@ public class Serveur : Pnj_Ressource
 
     protected override void ValidateQuestRessource()
     {
-        Debug.Log("Validate A_Ressource");
         QuestManager.ValidateQuest(quest);
     }
 

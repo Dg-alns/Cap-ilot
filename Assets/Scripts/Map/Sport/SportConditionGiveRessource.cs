@@ -20,7 +20,7 @@ public class SportConditionGiveRessource : MonoBehaviour // Todo passer avecn np
             bool conditionNextQuest = ConditionToGiveRessource();
             if (conditionNextQuest)
             {
-                //QuestManager.ValidateQuest(QUESTS.);
+                //QuestManager.ValidateQuest(QUESTS.Sport);
             }
         }
     }
