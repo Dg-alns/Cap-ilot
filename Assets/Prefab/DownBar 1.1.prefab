@@ -22061,6 +22061,7 @@ MonoBehaviour:
   _NbHours: {fileID: 0}
   _NbJournal: {fileID: 4307475281679576132}
   _NbQuest: {fileID: 8985917319525385037}
+  _CurrentQuest: {fileID: 7046788739793292630}
 --- !u!1 &5570239951922374247
 GameObject:
   m_ObjectHideFlags: 0

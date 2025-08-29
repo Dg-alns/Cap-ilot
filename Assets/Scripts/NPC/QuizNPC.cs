@@ -31,7 +31,7 @@ public class QuizNPC : NPC
         }
         else
         {
-            Debug.Log("test");
+            QuestManager.ValidateQuest(QUESTS.Ecole);
             idxOffSetDialogue++;
             FindAnyObjectByType<Movement>().dialogueNpc = gameObject;
             GetComponent<Trigger>().IsTrigger();

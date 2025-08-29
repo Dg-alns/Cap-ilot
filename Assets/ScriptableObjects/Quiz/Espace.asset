@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bee7465d0ea7c884391de6a414046683, type: 3}
+  m_Name: Espace
+  m_EditorClassIdentifier: 
+  question: "Quelle homme a \xE9t\xE9 le premier \xE0 marcher sur la Lune ?"
+  correctAnswer: Neil Armstrong
+  wrongAnswer:
+  - Buzz Aldrin
+  - Micheal Collins
+  - Thomas Pesquet
+  pnjId: 25
+  isAnswered: 0
+  afterCorrect: "Et oui, c'est bien Neil Armstrong qui a \xE9t\xE9 le premier \xE0
+    marcher sur la Lune lors de la mission Apollo 11 le 21 juillet 1969."
+  afterWrong: "Rat\xE9, vas discuter avec mes \xE9l\xE8ves, ils pourront t'aider."

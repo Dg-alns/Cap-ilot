@@ -9,16 +9,18 @@ public class MiniGameNPC : NPC
     public LoadNexScene loadNexScene;
 
 
-    public override void NextSet()
+    public override bool NextSet()
     {
         if (idxOffSetDialogue + 1 <= dialogueSet.Count - 1)
         {
             idxOffSetDialogue++;
+            return true;
         }
         else
             idxOffSetDialogue = idxMiniGameSet;
 
 
         PlayerPrefs.SetInt(NPCPLayerPrefsName, idxOffSetDialogue);
+        return false;
     }
 }

@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bee7465d0ea7c884391de6a414046683, type: 3}
+  m_Name: Histoire
+  m_EditorClassIdentifier: 
+  question: "Qui a \xE9t\xE9 le premier pr\xE9sident da la r\xE9publique fran\xE7aise
+    ?"
+  correctAnswer: "Louis-Napol\xE9on Bonaparte"
+  wrongAnswer:
+  - Charles de Gaulle
+  - "Raymond Poincar\xE9"
+  - Jacques Chirac
+  pnjId: 25
+  isAnswered: 0
+  afterCorrect: "Louis-Napol\xE9on Bonaparte est le premier pr\xE9sident de la r\xE9publique,
+    \xE9lu en 1848."
+  afterWrong: "Rat\xE9, vas discuter avec mes \xE9l\xE8ves, ils pourront t'aider."

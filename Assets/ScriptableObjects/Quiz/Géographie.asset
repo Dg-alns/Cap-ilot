@@ -10,13 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bee7465d0ea7c884391de6a414046683, type: 3}
-  m_Name: jsp
+  m_Name: "G\xE9ographie"
   m_EditorClassIdentifier: 
-  question: la je sais pas
-  correctAnswer: jsp
+  question: Quelle est le plus haut sommet du monde ?
+  correctAnswer: Everest
   wrongAnswer:
-  - ui
-  pnjId: 3
+  - Himalaya
+  - Mont Blanc
+  - Kilimandjaro
+  pnjId: 25
   isAnswered: 0
-  afterCorrect: bravo
-  afterWrong: et non
+  afterCorrect: "L'Everest est le plus haut sommet du monde, il fait partie de l'Himalaya
+    situ\xE9e \xE0 la fronti\xE8re du N\xE9pal et de la Chine."
+  afterWrong: "Rat\xE9, vas discuter avec mes \xE9l\xE8ves, ils pourront t'aider."

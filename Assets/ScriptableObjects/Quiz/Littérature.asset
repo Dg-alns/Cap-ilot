@@ -10,15 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bee7465d0ea7c884391de6a414046683, type: 3}
-  m_Name: 2+2
+  m_Name: "Litt\xE9rature"
   m_EditorClassIdentifier: 
-  question: Combien fait 2+2 ?
-  correctAnswer: 4
+  question: "Qui a \xE9crit le roman \"Les Mis\xE9rables\" ?"
+  correctAnswer: Victor Hugo
   wrongAnswer:
-  - 22
-  - 6
-  - 8
-  pnjId: 3
+  - Jean de La Fontaine
+  - "\xC9mile Zola"
+  - Guy de Maupassant
+  pnjId: 25
   isAnswered: 0
-  afterCorrect: "Eh oui la bonne r\xE9ponse est 4"
-  afterWrong: "Mince, reviens me voir quand tu auras la bonne r\xE9ponse"
+  afterCorrect: "Bien jou\xE9, \"Les Mis\xE9rables\" a \xE9t\xE9 \xE9crit en 1862
+    par Victor Hugo."
+  afterWrong: "Rat\xE9, vas discuter avec mes \xE9l\xE8ves, ils pourront t'aider."

@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bee7465d0ea7c884391de6a414046683, type: 3}
+  m_Name: "Jeux Vid\xE9o"
+  m_EditorClassIdentifier: 
+  question: "Quelle est le jeu vid\xE9o le plus vendu dans le monde ?"
+  correctAnswer: Minecraft
+  wrongAnswer:
+  - Roblox
+  - Fortnite
+  - Mario Kart 8 Deluxe
+  pnjId: 25
+  isAnswered: 0
+  afterCorrect: "Minecraft comptabilise plus de 300 millions d'exemplaire vendus,
+    ce qui fait de lui le jeu vid\xE9o le plus vendu dans le monde."
+  afterWrong: "Rat\xE9, vas discuter avec mes \xE9l\xE8ves, ils pourront t'aider."

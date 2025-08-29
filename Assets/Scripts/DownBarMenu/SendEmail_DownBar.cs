@@ -89,7 +89,7 @@ public class SendEmail_DownBar : MonoBehaviour
     public void OpenWindow()
     {
         gameObject.SetActive(true);
-        save = JSON_Manager.LoadData<Saving>(Application.dataPath + "/Json/Save.json");
+        save = JSON_Manager.LoadData<Saving>("Save");
 
         // Put 0 to 7 possibility to send nb journal
         int nbKey = save.journal.journal.Keys.Count >= 7 ? 7 : save.journal.journal.Keys.Count;
@@ -141,8 +141,11 @@ public class SendEmail_DownBar : MonoBehaviour
         }
 
         // Get data
-        save = JSON_Manager.LoadData<Saving>(Application.dataPath + "/Json/Save.json");
+        save = JSON_Manager.LoadData<Saving>("Save");
         string mailContent = File.ReadAllText(Application.dataPath + "/index.html");
+
+        //string mailpath = Path.Combine(Application.persistentDataPath, "/index.html");
+        //string mailContent = File.ReadAllText(mailpath)
 
         mailContent = mailContent.Replace("#NomPatient#", save.profile.Username);
 

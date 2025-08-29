@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bee7465d0ea7c884391de6a414046683, type: 3}
+  m_Name: "R\xE8gle"
+  m_EditorClassIdentifier: 
+  question: "Quelles r\xE8gle ne fait pas partie du r\xE9glement de l'\xE9cole ?"
+  correctAnswer: "La sortie de l'\xE9tablissement est possibles lors des heurs creuse."
+  wrongAnswer:
+  - Ne pas courrir dans les couloirs
+  - Ne pas manger de chewing-gun en cours.
+  - "\xC9teindre son t\xE9l\xE9phone lors des cours."
+  pnjId: 25
+  isAnswered: 0
+  afterCorrect: "Je te f\xE9licite tu n'as fait aucune erreur! Il est important d'avoir
+    des connaissances varier sur tout type de sujet, \xE7a fait travailler sa culture
+    g\xE9n\xE9ral et cela permet d'avoir des discussion sur des sujets parfois int\xE9ressant."
+  afterWrong: "Rat\xE9, vas discuter avec mes \xE9l\xE8ves, ils pourront t'aider."

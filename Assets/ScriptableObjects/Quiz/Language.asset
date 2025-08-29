@@ -10,15 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bee7465d0ea7c884391de6a414046683, type: 3}
-  m_Name: oui
+  m_Name: Language
   m_EditorClassIdentifier: 
-  question: dis oui
-  correctAnswer: oui
+  question: Quelle langue est le plus parler dans le monde ?
+  correctAnswer: Anglais
   wrongAnswer:
-  - non
-  - non
-  - non
-  pnjId: 4
+  - Mandarin
+  - Espagnol
+  - Hindi
+  pnjId: 25
   isAnswered: 0
-  afterCorrect: c ca
-  afterWrong: c pas ca
+  afterCorrect: L'anglais est la langue la plus parler dans le monde, avec plus de
+    1,452 milliards de personnes la parlant.
+  afterWrong: "Rat\xE9, vas discuter avec mes \xE9l\xE8ves, ils pourront t'aider."

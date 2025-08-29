@@ -1796,8 +1796,7 @@ MonoBehaviour:
   dialogueSet:
   - dialogueLines:
     - blabla
-    - diabete
-    - dialogue
+    - blabla
 --- !u!1 &1349440602
 GameObject:
   m_ObjectHideFlags: 0

@@ -42,8 +42,8 @@ public class MessageObject : MonoBehaviour
             //MessageText.alignment = TextAnchor.MiddleLeft;
             MessageText.alignment = TextAlignmentOptions.Left;
             MessageText.text = string.IsNullOrEmpty(message.ChannelName)
-                ? string.Format($"<color=purple>{message.SenderDisplayName} </color>: {message.SenderDisplayName} </color>\n<color=#5A5A5A><size=20>{editedText}{message.ReceivedTime.Hour}{editedText}{":"}{editedText}{message.ReceivedTime.Minute}</size></color>") // DM
-                : string.Format($"<color=green>{message.SenderDisplayName} </color>: {message.SenderDisplayName} </color>\n<color=#5A5A5A><size=20>{editedText}{message.ReceivedTime.Hour}{editedText}{":"}{editedText}{message.ReceivedTime.Minute}</size></color>"); // Channel Message
+                ? string.Format($"<color=purple>{message.SenderDisplayName} </color>: {message.MessageText} </color>\n<color=#5A5A5A><size=20>{editedText}{message.ReceivedTime.Hour}{editedText}{":"}{editedText}{message.ReceivedTime.Minute}</size></color>") // DM
+                : string.Format($"<color=green>{message.SenderDisplayName} </color>: {message.MessageText} </color>\n<color=#5A5A5A><size=20>{editedText}{message.ReceivedTime.Hour}{editedText}{":"}{editedText}{message.ReceivedTime.Minute}</size></color>"); // Channel Message
         }
 
     }

@@ -61,7 +61,7 @@ public class SendEmail : MonoBehaviour
     {
         //string jsonstring = File.ReadAllText("save.json");
         //Saving save = JsonUtility.FromJson<Saving>(jsonstring);
-        Saving save = JSON_Manager.LoadData<Saving>(Application.dataPath + "/Json/Save.json");
+        Saving save = JSON_Manager.LoadData<Saving>("Save");
 
         string mailContent = File.ReadAllText(Application.dataPath + "/index.html");
 

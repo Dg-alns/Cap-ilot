@@ -21,8 +21,6 @@ public class PlayerSpriteManager : MonoBehaviour
 
     public GameObject Diabete;
 
-    public TextMeshProUGUI TextQuestTMP; //TODO a modifier pour le mettre dans les scene
-
     public bool inProfil = false;
 
     private void Start()
@@ -63,9 +61,6 @@ public class PlayerSpriteManager : MonoBehaviour
 
     private void Update()
     {
-
-        UpdateTextQuest();
-
         if (Diabete == null)
             return;
 
@@ -252,58 +247,4 @@ public class PlayerSpriteManager : MonoBehaviour
     }
 
 
-    void UpdateTextQuest()
-    {
-        if (TextQuestTMP == null)
-            return;
-
-        switch(QuestManager.GetCurrentQuest())
-        {
-            case (int)QUESTS.Introduction:
-                TextQuestTMP.text = "Introduction";
-                break;
-            case (int)QUESTS.ReparationPhare:
-                TextQuestTMP.text = "ReparationPhare";
-                break;
-            case (int)QUESTS.R_Ressoucre:
-                TextQuestTMP.text = "R_Ressource";
-                break;
-            case (int)QUESTS.Relation:
-                TextQuestTMP.text = "Relation";
-                break;
-            case (int)QUESTS.Phare:
-                TextQuestTMP.text = "Phare";
-                break;
-            case (int)QUESTS.Maison:
-                TextQuestTMP.text = "Maison";
-                break;
-            case (int)QUESTS.Hopital:
-                TextQuestTMP.text = "Hopital";
-                break;
-            case (int)QUESTS.Sport:
-                TextQuestTMP.text = "Sport";
-                break;
-            case (int)QUESTS.Ecole:
-                TextQuestTMP.text = "Ecole";
-                break;
-            case (int)QUESTS.Alimentation:
-                TextQuestTMP.text = "Alimentation";
-                break;
-            case (int)QUESTS.S_Ressource:
-                TextQuestTMP.text = "S_Ressource";
-                break;
-            case (int)QUESTS.A_Ressource:
-                TextQuestTMP.text = "A_Ressource";
-                break;
-            case (int)QUESTS.E_Ressource:
-                TextQuestTMP.text = "E_Ressource";
-                break;
-            case (int)QUESTS.DemandeCapitaine:
-                TextQuestTMP.text = "DemandeCapitaine";
-                break;
-            case (int)QUESTS.Tentation:
-                TextQuestTMP.text = "Tentation";
-                break;
-        }
-    }
 }

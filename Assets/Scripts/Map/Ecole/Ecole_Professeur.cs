@@ -18,7 +18,7 @@ public class Ecole_Professeur : MonoBehaviour
     {
         // Get some data
         _professeurNPC = GetComponent<MiniGameNPC>();
-        string previousScene = _professeurNPC.loadNexScene.GetPreviousSceneName();
+        //string previousScene = _professeurNPC.loadNexScene.GetPreviousSceneName();
 
         // Check the condition to the valid the quest
         //if (!string.Equals(previousScene, "Quiz"))
@@ -27,17 +27,17 @@ public class Ecole_Professeur : MonoBehaviour
         //    return;
 
         // Process to force a dialogue
-        player.dialogueNpc = gameObject;
+        //player.dialogueNpc = gameObject;
 
-        NPCManager npcManager = Object.FindFirstObjectByType<NPCManager>(FindObjectsInactive.Include);
-        npcManager.GetComponent<NPCManager>().FindNpcById(_professeurNPC.npcId);
+        //NPCManager npcManager = Object.FindFirstObjectByType<NPCManager>(FindObjectsInactive.Include);
+        //npcManager.GetComponent<NPCManager>().FindNpcById(_professeurNPC.npcId);
 
-        _professeurNPC.SetPLayerPrefs((int)OffSet_Dialogue_Professeur.QuizDone);
-        _professeurNPC.idxOffSetDialogue = _professeurNPC.GetPlayerPrefs();
+        //_professeurNPC.SetPLayerPrefs((int)OffSet_Dialogue_Professeur.QuizDone);
+        //_professeurNPC.idxOffSetDialogue = _professeurNPC.GetPlayerPrefs();
 
-        ForceDialogueProf();
+        //ForceDialogueProf();
 
-        QuestManager.ValidateQuest(QUESTS.Ecole); // TODO Voir Merge
+        //QuestManager.ValidateQuest(QUESTS.Ecole); // TODO Voir Merge
         //QuestManager.SetQuest(QUESTS.E_Ressource);
     }
    
