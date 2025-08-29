@@ -11,6 +11,12 @@ public class Ecole_Map : MonoBehaviour
     void Awake()
     {
         Panneau_Etage2.SetActive(false);
+
+        if (QuestManager.GetCurrentQuest() == QuestManager.GetQUESTS(QUESTS.Ecole))
+        {
+            string text = "Explorer l'École.";
+            QuestManager.SetTextOffCurrentQuest(text);
+        }
     }
 
     // Update is called once per frame

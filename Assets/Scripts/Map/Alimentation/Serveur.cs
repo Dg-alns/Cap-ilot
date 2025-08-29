@@ -11,15 +11,11 @@ public class Serveur : Pnj_Ressource
 
     protected override void ValidateQuestRessource()
     {
-        Debug.Log("Alimentation Ressources Validate");
         QuestManager.ValidateQuest(quest);
     }
 
     protected override bool ToDestroy()
     {
-        if (QuestManager.GetCurrentQuest() > QuestManager.GetQUESTS(quest))
-            return true;
-
-        return false;
+        return QuestManager.GetCurrentQuest() > QuestManager.GetQUESTS(quest);
     }
 }

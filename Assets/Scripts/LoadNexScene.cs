@@ -112,10 +112,18 @@ public class LoadNexScene : MonoBehaviour
         {
             PlayerPrefs.SetInt("ReparationPhare", 1);
             QuestManager.ValidateQuest(QUESTS.ReparationPhare);
+
+            string text = "Explorer le Village.";
+            QuestManager.SetTextOffCurrentQuest(text);
         }
 
         if (_NextSceneData.GetNextSceneDestination().Equals("MiniGame_ObjCachee"))
+        {
             Chambre.SetStateChambre(1);
+
+            string text = "Naviguer vers votre île.";
+            QuestManager.SetTextOffCurrentQuest(text);
+        }
 
         if (_NextSceneData.GetNextSceneDestination().Equals("MiniGame_InjectionInsuline") && Couloir.GetStateCouloir() != 1)
         {

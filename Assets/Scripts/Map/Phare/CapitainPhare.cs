@@ -42,10 +42,15 @@ public class CapitainPhare : MonoBehaviour
         if(QuestManager.GetCurrentQuest() == QuestManager.GetQUESTS(QUESTS.DemandeCapitaine))
         {
             dialogueCapitain.GetComponent<NPC>().idxOffSetDialogue = 1;
+            string text = "Naviguer vers l'île de l'Hopital.";
+            QuestManager.SetTextOffCurrentQuest(text);
         }
         if(QuestManager.GetCurrentQuest() == QuestManager.GetQUESTS(QUESTS.Phare))
         {
             dialogueCapitain.GetComponent<NPC>().idxOffSetDialogue = 2;
+            string text = "Naviguer vers la prochaine île.";
+            QuestManager.SetTextOffCurrentQuest(text);
+
 
         }
         if(QuestManager.GetCurrentQuest() > QuestManager.GetQUESTS(QUESTS.Phare))

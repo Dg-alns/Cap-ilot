@@ -56,6 +56,9 @@ public class SpawnManagement : MonoBehaviour
         if (port != null)
         {
             port.IsDiscover();
+            string text = "Explorer cette nouvelle île.";
+
+            QuestManager.SetTextOffCurrentQuest(text);
         }
 
     }

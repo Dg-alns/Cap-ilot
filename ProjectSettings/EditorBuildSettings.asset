@@ -21,6 +21,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Island/Port Relation.unity
     guid: a9d5348facee019428e82589b00b99eb
   - enabled: 1
+    path: Assets/Scenes/MiniGames/MiniGame_Balance.unity
+    guid: f02b51ddf50aad74293ec205f180384f
+  - enabled: 1
     path: Assets/Scenes/Island/Chambre.unity
     guid: 98d6f99c86ff5194db860905793984f9
   - enabled: 1

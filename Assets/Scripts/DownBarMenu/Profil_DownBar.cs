@@ -18,6 +18,7 @@ public class Profil_DownBar : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _NbHours;
     [SerializeField] private TextMeshProUGUI _NbJournal;
     [SerializeField] private TextMeshProUGUI _NbQuest;
+    [SerializeField] private TextMeshProUGUI _CurrentQuest;
 
     private void Start()
     {
@@ -35,6 +36,6 @@ public class Profil_DownBar : MonoBehaviour
 
         _NbQuest.text = numQuest < 0 ? "0/" + totalQuest.ToString() : numQuest.ToString() + "/" + totalQuest.ToString();
 
-
+        _CurrentQuest.text = QuestManager.GetTextOffCurrentQuest();
     }
 }

@@ -107,6 +107,9 @@ public class Sauvegarde : MonoBehaviour
     }
     public void Update()
     {
+        if (QuestManager.GetCurrentQuest() == QuestManager.GetQUESTS(QUESTS.Tentation))
+            QuestManager.SetTextOffCurrentQuest("Work in progress");
+
         Saving save = new Saving(journal, profile, questManager, StatMinigame, StatPlayer);
 
         foreach (Quest quest in save.questManager.GetQuests())

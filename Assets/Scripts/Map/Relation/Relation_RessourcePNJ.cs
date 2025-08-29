@@ -11,20 +11,29 @@ public class Relation_RessourcePNJ : Pnj_Ressource
 
     protected new void Start()
     {
-        if (QuestManager.GetCurrentQuest() <= QuestManager.GetQUESTS(QUESTS.R_Ressoucre))
-            QuestManager.SetQuest((int)QUESTS.R_Ressoucre);
         base.Start();
 
+
+        if (QuestManager.GetCurrentQuest() <= QuestManager.GetQUESTS(QUESTS.R_Ressoucre))
+            QuestManager.SetQuest((int)QUESTS.R_Ressoucre);
+
+        if (QuestManager.GetCurrentQuest() == QuestManager.GetQUESTS(QUESTS.Relation))
+        {
+            string text = "Discuter à l'ensemble des personne présente dans le parc.";
+            QuestManager.SetTextOffCurrentQuest(text);
+        }
+
+        if (QuestManager.GetCurrentQuest() == QuestManager.GetQUESTS(QUESTS.R_Ressoucre))
+        {
+            string text = "Récupérer votre ressource.";
+            QuestManager.SetTextOffCurrentQuest(text);
+        }
 
         npcManager = FindFirstObjectByType<NPCManager>();
         npc = GetComponent<DialogueNPC>();
 
         if (ToDestroy())
             gameObject.SetActive(false);
-
-
-        npc.SetPLayerPrefs(0);
-        npc.idxOffSetDialogue = 0;
     }
 
     protected override void FirstTalk()

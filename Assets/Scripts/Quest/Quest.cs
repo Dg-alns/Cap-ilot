@@ -37,6 +37,7 @@ public class QuestManager
     private Saving SaveData { get; set; }
 
     static string namePlayerPrefQuest = "PlayerPrefsQuest";
+    static string TextPlayerPrefQuest = "PlayerPrefsQuestText";
 
     public QuestManager()
     {
@@ -116,6 +117,17 @@ public class QuestManager
     {
         quests[(int)quest].status = true;
     }
+
+    public static void SetTextOffCurrentQuest(string text)
+    {
+        if (text.Equals(PlayerPrefs.GetString(TextPlayerPrefQuest)))
+            return;
+
+
+        PlayerPrefs.SetString(TextPlayerPrefQuest, text);
+    }
+
+    public static string GetTextOffCurrentQuest() => PlayerPrefs.GetString(TextPlayerPrefQuest);
 }
 
 public class Quest

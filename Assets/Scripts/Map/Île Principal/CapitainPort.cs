@@ -25,6 +25,10 @@ public class CapitainPort : MonoBehaviour
             gameObject.SetActive(false);
         }
 
+
+        string text = "Discuter avec le Capitain.";
+        QuestManager.SetTextOffCurrentQuest(text);
+
         canTP = false;
 
         destination = spawnManagement.GetPosSpeCapitain("TutoPancarte");

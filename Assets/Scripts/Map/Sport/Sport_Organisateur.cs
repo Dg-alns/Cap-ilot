@@ -11,11 +11,17 @@ public class Sport_Organisateur : Pnj_Ressource
         base.Start();
         saving = JSON_Manager.LoadData<Saving>("Save");
         
-        if(QuestManager.GetCurrentQuest() <= QuestManager.GetQUESTS(QUESTS.S_Ressource))
-            QuestManager.SetQuest((int)QUESTS.S_Ressource);
-
-        npc.SetPLayerPrefs(0);
-        npc.idxOffSetDialogue = 0;
+        if(QuestManager.GetCurrentQuest() == QuestManager.GetQUESTS(QUESTS.Sport))
+        {
+            string text = "Participer au tournoi de sport.";
+            QuestManager.SetTextOffCurrentQuest(text);
+        }
+        
+        if(QuestManager.GetCurrentQuest() == QuestManager.GetQUESTS(QUESTS.S_Ressource))
+        {
+            string text = "Retourner voir le Gérant du tournoi pour récupérer votre ressource.";
+            QuestManager.SetTextOffCurrentQuest(text);
+        }
     }
 
     protected override bool TakeRessource()

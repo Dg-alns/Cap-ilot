@@ -131,6 +131,9 @@ public class DialogueBox : MonoBehaviour
             //QuestManager.NextQuest();
             QuestManager.ValidateQuest(QUESTS.Maison);
             npcManager.dialogueNpc.gameObject.GetComponent<BoxCollider2D>().enabled = false;
+
+            string text = "Confronter le Capitain au sujet du monstre.";
+            QuestManager.SetTextOffCurrentQuest(text);
         }
         npcManager.ResetDialogueNPC();
     }
