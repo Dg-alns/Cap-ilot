@@ -9,7 +9,7 @@ public class Sport_Organisateur : Pnj_Ressource
     protected new void Start()
     {
         base.Start();
-        saving = JSON_Manager.LoadData<Saving>("Save");
+        saving = JSON_Manager.LoadData("Save");
         
         if(QuestManager.GetCurrentQuest() == QuestManager.GetQUESTS(QUESTS.Sport))
         {

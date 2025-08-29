@@ -61,9 +61,12 @@ public class SendEmail : MonoBehaviour
     {
         //string jsonstring = File.ReadAllText("save.json");
         //Saving save = JsonUtility.FromJson<Saving>(jsonstring);
-        Saving save = JSON_Manager.LoadData<Saving>("Save");
+        Saving save = JSON_Manager.LoadData("Save");
 
-        string mailContent = File.ReadAllText(Application.dataPath + "/index.html");
+        //string mailContent = File.ReadAllText(Application.dataPath + "/index.html");
+
+        string mailpath = Path.Combine(Application.persistentDataPath, "/index.html");
+        string mailContent = File.ReadAllText(mailpath);
 
         mailContent = mailContent.Replace("#NomPatient#", save.profile.Username);
 
@@ -98,7 +101,7 @@ public class SendEmail : MonoBehaviour
         _mailMessage.Subject = "Cap'îlot → Compte rendu de " + save.profile.Username;
         _mailMessage.Body = mailContent;
 
-        _mailMessage.Attachments.Add(new Attachment(Application.dataPath + "/Art/img/db.png"));
+        //_mailMessage.Attachments.Add(new Attachment(Application.dataPath + "/Art/img/db.png"));
         //Debug.Log(mailContent);
         _smtpClient.Send(_mailMessage);
         Debug.Log("Message Send");

@@ -27,7 +27,7 @@ public class SportConditionGiveRessource : MonoBehaviour // Todo passer avecn np
 
     bool ConditionToGiveRessource()
     {
-        Saving save = JSON_Manager.LoadData<Saving>("Save");
+        Saving save = JSON_Manager.LoadData("Save");
         if (save.statMinigame.ContainsKey("MiniGame_TirBut"))
             return false;
         if (save.statMinigame.ContainsKey("MiniGame_Marathon"))

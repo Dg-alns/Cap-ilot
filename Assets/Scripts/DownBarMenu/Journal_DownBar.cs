@@ -30,9 +30,8 @@ public class Journal_DownBar : MonoBehaviour
     {
         MarkPage_journal.SetActive(false);
         listTheme = new List<string>() { "- Th�mes", "Hopital", "Sport", "Ecole", "Alimentation", "Relation", "Tentation" };
-        
-        string jsonstring = File.ReadAllText(Application.dataPath + "/JSON/Save.json");
-        save = JsonUtility.FromJson<Saving>(jsonstring);
+
+        save = JSON_Manager.LoadData("Save");
 
         // If the player write something one day, we have to reload it the same day
         if (save.journal.journal.ContainsKey(DateTime.Today.ToString("d")))

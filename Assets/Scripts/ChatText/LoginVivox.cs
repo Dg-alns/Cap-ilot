@@ -99,7 +99,7 @@ public class LoginVivox : MonoBehaviour
 
         // Initialiser Vivox correctement
 
-        Saving save = JSON_Manager.LoadData<Saving>("Save");
+        Saving save = JSON_Manager.LoadData("Save");
 
         //string jsonstring = File.ReadAllText("save.json");
         //Saving save = JsonUtility.FromJson<Saving>(jsonstring);

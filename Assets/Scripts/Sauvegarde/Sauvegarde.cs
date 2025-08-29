@@ -45,7 +45,7 @@ public class Sauvegarde : MonoBehaviour
         try
         {
             Debug.Log("Catch1");
-            Saving save = JSON_Manager.LoadData<Saving>("Save");
+            Saving save = JSON_Manager.LoadData("Save");
             if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("Profile"))
             {
                 SceneManager.LoadScene("Journal");

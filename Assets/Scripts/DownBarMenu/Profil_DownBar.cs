@@ -23,7 +23,7 @@ public class Profil_DownBar : MonoBehaviour
     private void Start()
     {
         
-        Saving save = JSON_Manager.LoadData<Saving>("Save");
+        Saving save = JSON_Manager.LoadData("Save");
 
         _NicknameText.text = save.profile.Username;
 

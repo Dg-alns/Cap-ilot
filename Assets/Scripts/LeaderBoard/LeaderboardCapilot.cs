@@ -60,7 +60,7 @@ public class LeaderboardCapilot : MonoBehaviour
 
     private void Start()
     {
-        Saving save = JSON_Manager.LoadData<Saving>("Save");
+        Saving save = JSON_Manager.LoadData("Save");
         _username = save.profile.Username;
 
         GetLeaderBoard(_publicKey);

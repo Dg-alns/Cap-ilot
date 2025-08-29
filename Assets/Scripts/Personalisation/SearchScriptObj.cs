@@ -1,5 +1,4 @@
-    using System.Collections.Generic;
-using Unity.Android.Gradle.Manifest;
+using System.Collections.Generic;
 using UnityEngine;
 
     public class SearchScriptObj : MonoBehaviour

@@ -38,7 +38,7 @@ public class Profile
         DateTime dateTime = DateTime.Today;
         DateTime birth;
         if (isDropdownValue)
-            birth = DateTime.Parse(DayBirth + "/" + MonthBirth + "/" + (YearBirth+1899));
+            birth = DateTime.Parse(DayBirth + "/" + MonthBirth + "/" + (YearBirth+1949));
         else
             birth = DateTime.Parse(DayBirth + "/" + MonthBirth + "/" + YearBirth);
         TimeSpan AgeT = dateTime - birth;

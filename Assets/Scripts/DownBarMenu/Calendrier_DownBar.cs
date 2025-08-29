@@ -63,8 +63,7 @@ public class Calendrier_DownBar : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        string jsonstring = File.ReadAllText(Application.dataPath + "/JSON/Save.json");
-        save = JsonUtility.FromJson<Saving>(jsonstring);
+        save = JSON_Manager.LoadData("Save");
 
         OrderSave();
 
