@@ -12,11 +12,6 @@ enum OffSet_Dialogue_Ressource
 }
 public class Pnj_Ressource : MonoBehaviour
 {
-    public GameObject BlockTmp1;
-    public GameObject BlockTmp2;
-    public NavMeshSurface NaveMesh;
-
-
     protected DialogueNPC npc;
     protected NPCManager npcManager;
     [SerializeField] protected QUESTS quest;
@@ -39,12 +34,6 @@ public class Pnj_Ressource : MonoBehaviour
     // Start is called before the first frame update
     void Update()
     {
-        if (BlockTmp1)
-        {
-            if (BlockTmp1.activeSelf != false)
-                ActivationOffBlock();
-        }
-
         switch (npc.idxOffSetDialogue)
         {
             case (int)OffSet_Dialogue_Ressource.StartDialogue:
@@ -108,17 +97,5 @@ public class Pnj_Ressource : MonoBehaviour
     virtual protected bool ToDestroy()
     {
         return false;
-    }
-
-    protected void ActivationOffBlock()
-    {
-        if(npc.idxOffSetDialogue >= (int)OffSet_Dialogue_Ressource.WaitingForTest)
-        {
-            BlockTmp1.SetActive(false);
-            if(BlockTmp2 != null)
-                BlockTmp2.SetActive(false);
-        }
-
-        NaveMesh.BuildNavMesh();
     }
 }

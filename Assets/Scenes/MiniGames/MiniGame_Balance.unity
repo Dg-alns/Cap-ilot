@@ -4126,6 +4126,10 @@ PrefabInstance:
       propertyPath: _minigame
       value: 
       objectReference: {fileID: 2083270544}
+    - target: {fileID: 6492512421698075769, guid: d7c32b09755ccc34389e7bf4c273fa30, type: 3}
+      propertyPath: _NextScene
+      value: 
+      objectReference: {fileID: 1654387935}
     - target: {fileID: 6547850072200003980, guid: d7c32b09755ccc34389e7bf4c273fa30, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -4849,6 +4853,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2558349360539431620, guid: dc7ab4232cc66f947ac7f1114b4df43b, type: 3}
   m_PrefabInstance: {fileID: 1654387933}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1654387935 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7370319303204381800, guid: dc7ab4232cc66f947ac7f1114b4df43b, type: 3}
+  m_PrefabInstance: {fileID: 1654387933}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c494cd52d0f7644d8b2ac1986045269, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1723426975
 GameObject:
   m_ObjectHideFlags: 0
