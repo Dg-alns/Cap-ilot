@@ -729,6 +729,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CanvasChatText
       objectReference: {fileID: 0}
+    - target: {fileID: 8024722489975688951, guid: c546a0e19d4cbbc41931e1ccb56dcb31, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

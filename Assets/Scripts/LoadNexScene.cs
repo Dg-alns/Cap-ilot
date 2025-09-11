@@ -25,7 +25,7 @@ public class LoadNexScene : MonoBehaviour
         {
             _NextSceneData.isLauch = true;
             animator.SetTrigger("Transition");
-            PlayerPrefs.DeleteAll();
+            //PlayerPrefs.DeleteAll();
             SearchScriptObj.Init();
 
             //DeletPos();
