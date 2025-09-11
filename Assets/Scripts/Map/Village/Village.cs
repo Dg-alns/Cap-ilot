@@ -47,10 +47,16 @@ public class Village : MonoBehaviour
         {
             Ecole.GetComponent<NPC>().SetPLayerPrefs(1);
         }
+    }
 
-        if(QuestManager.GetCurrentQuest() >= QuestManager.GetQUESTS(QUESTS.DemandeCapitaine))
+    private void Update()
+    {
+        if (QuestManager.GetCurrentQuest() == QuestManager.GetQUESTS(QUESTS.DemandeCapitaine))
         {
+            Debug.Log("Confrontation");
             MaisonDiabete.GetComponent<Collider2D>().enabled = false;
+            string text = "Confronter le Capitain au sujet du monstre.";
+            QuestManager.SetTextOffCurrentQuest(text);
         }
     }
 }

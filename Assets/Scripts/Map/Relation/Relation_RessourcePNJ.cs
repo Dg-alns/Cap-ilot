@@ -14,8 +14,8 @@ public class Relation_RessourcePNJ : Pnj_Ressource
         base.Start();
 
 
-        if (QuestManager.GetCurrentQuest() <= QuestManager.GetQUESTS(QUESTS.R_Ressoucre))
-            QuestManager.SetQuest((int)QUESTS.R_Ressoucre);
+        //if (QuestManager.GetCurrentQuest() <= QuestManager.GetQUESTS(QUESTS.R_Ressoucre))
+        //    QuestManager.SetQuest((int)QUESTS.R_Ressoucre);
 
         if (QuestManager.GetCurrentQuest() == QuestManager.GetQUESTS(QUESTS.Relation))
         {
@@ -54,6 +54,10 @@ public class Relation_RessourcePNJ : Pnj_Ressource
             if (!npcT.alreadyTalked)
                 return false;
         }
+
+        if (QuestManager.GetCurrentQuest() == QuestManager.GetQUESTS(QUESTS.Relation))
+            QuestManager.ValidateQuest(QUESTS.Relation);
+
         return QuestManager.GetCurrentQuest() == QuestManager.GetQUESTS(quest);
     }
 

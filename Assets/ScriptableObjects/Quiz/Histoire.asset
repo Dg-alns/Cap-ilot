@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bee7465d0ea7c884391de6a414046683, type: 3}
   m_Name: Histoire
   m_EditorClassIdentifier: 
-  question: "Qui a \xE9t\xE9 le premier pr\xE9sident da la r\xE9publique fran\xE7aise
+  question: "Qui a \xE9t\xE9 le premier pr\xE9sident de la r\xE9publique fran\xE7aise
     ?"
   correctAnswer: "Louis-Napol\xE9on Bonaparte"
   wrongAnswer:

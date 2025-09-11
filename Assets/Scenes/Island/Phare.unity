@@ -1153,8 +1153,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8185881588264402033, guid: d400b78d53980d349bec9c8c27796ef6, type: 3}
       propertyPath: 'dialogueSet.Array.data[3].dialogueLines.Array.data[0]'
-      value: "Mon phare a du v\xE9cu, il en a vu des vertes et des pas m\xFBres mais
-        tu ne t'es jamais retrouv\xE9 dans un si mauvais \xE9tat, mon pauvre."
+      value: "Mon phare a du v\xE9cu, il en a vu des vertes et des pas m\xFBres,
+        mais tu ne t'es jamais retrouv\xE9 dans un si mauvais \xE9tat, mon pauvre."
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2149,7 +2149,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3550881302164256427, guid: 3db41709d5a461944ac57f74b472a5ef, type: 3}
       propertyPath: m_Name
-      value: Canva
+      value: Phare
       objectReference: {fileID: 0}
     - target: {fileID: 5371956073704127805, guid: 3db41709d5a461944ac57f74b472a5ef, type: 3}
       propertyPath: m_AnchorMax.y
@@ -2480,6 +2480,8 @@ MonoBehaviour:
   _archivesList:
   - {fileID: 11400000, guid: 4023b08c9da2a60408f04676fe6fd2ae, type: 2}
   - {fileID: 11400000, guid: d2b67b959d9ec6b4aaca5b2a9e02e77c, type: 2}
+  - {fileID: 11400000, guid: e6636efc1e2eb094fbd862306f08225e, type: 2}
+  - {fileID: 11400000, guid: c1f26db732ccb334bb21d61e4aec4717, type: 2}
   _scrollView: {fileID: 272502441}
   _prefabTitle: {fileID: 287055388868218348, guid: 0fd527ba06fec6e4c91da263fef7c955, type: 3}
   _articlePage: {fileID: 1001657401}

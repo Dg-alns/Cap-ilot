@@ -824,6 +824,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TransitionBeetweenScene
       objectReference: {fileID: 0}
+    - target: {fileID: 6306277513862035737, guid: dc7ab4232cc66f947ac7f1114b4df43b, type: 3}
+      propertyPath: ee
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 7370319303204381800, guid: dc7ab4232cc66f947ac7f1114b4df43b, type: 3}
       propertyPath: tools
       value: 

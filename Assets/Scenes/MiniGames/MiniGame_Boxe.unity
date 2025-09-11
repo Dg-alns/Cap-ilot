@@ -564,15 +564,15 @@ PrefabInstance:
       objectReference: {fileID: 1359947639}
     - target: {fileID: 569796693142497412, guid: 869b14e2855a9f7479f4d1a7cd490d84, type: 3}
       propertyPath: MinOr
-      value: 25
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 569796693142497412, guid: 869b14e2855a9f7479f4d1a7cd490d84, type: 3}
       propertyPath: MinArgent
-      value: 18
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 569796693142497412, guid: 869b14e2855a9f7479f4d1a7cd490d84, type: 3}
       propertyPath: MinBronze
-      value: 12
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 569796693142497412, guid: 869b14e2855a9f7479f4d1a7cd490d84, type: 3}
       propertyPath: leaderboardCapilot
@@ -790,7 +790,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textRound: {fileID: 1950787264}
-  NumberOfRound: 5
+  NumberOfRound: 3
   StateOfRound: 0
   swipeManager: {fileID: 1359947635}
 --- !u!95 &1125450556

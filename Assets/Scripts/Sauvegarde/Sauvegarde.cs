@@ -118,7 +118,6 @@ public class Sauvegarde : MonoBehaviour
             {
                 if (quest.CheckCondition(save))
                 {
-                    Debug.Log("Quest Validate : " + quest.id);
                     questManager.statusDict[quest.id] = true;
                     QuestManager.NextQuest(quest.id);
                     Save(save);

@@ -58,12 +58,7 @@ public class Accueil_Login : MonoBehaviour
 
     private void Init()
     {
-        _DebugText.text = "haut";
-
         save = JSON_Manager.LoadData("Save");
-
-
-        _DebugText.text = "bas";
 
         _dropDowns = Tools.CreateList<TMP_Dropdown>(_birthDropDownsParent);
 

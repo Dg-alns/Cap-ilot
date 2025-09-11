@@ -36,6 +36,12 @@ public class Profil_DownBar : MonoBehaviour
 
         _NbQuest.text = numQuest < 0 ? "0/" + totalQuest.ToString() : numQuest.ToString() + "/" + totalQuest.ToString();
 
-        _CurrentQuest.text = QuestManager.GetTextOffCurrentQuest();
+        _CurrentQuest.text = QuestManager.GetTextOffCurrentQuest() + " " + QuestManager.GetCurrentQuest().ToString();
+    }
+
+    private void Update()
+    {
+        if(_CurrentQuest.text.Equals(QuestManager.GetTextOffCurrentQuest()) == false)
+            _CurrentQuest.text = QuestManager.GetTextOffCurrentQuest() + " " + QuestManager.GetCurrentQuest().ToString();
     }
 }

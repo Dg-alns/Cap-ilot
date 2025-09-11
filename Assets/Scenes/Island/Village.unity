@@ -341,7 +341,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8185881588264402033, guid: d400b78d53980d349bec9c8c27796ef6, type: 3}
       propertyPath: npcName
-      value: Sport
+      value: Gerant du tournoi
       objectReference: {fileID: 0}
     - target: {fileID: 8185881588264402033, guid: d400b78d53980d349bec9c8c27796ef6, type: 3}
       propertyPath: dialogueSet.Array.size
@@ -374,6 +374,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 246678836782235002, guid: ee16d6995dc26a049ad80315b4c9b4e1, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 246678836782235002, guid: ee16d6995dc26a049ad80315b4c9b4e1, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 246678836782235002, guid: ee16d6995dc26a049ad80315b4c9b4e1, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 246678836782235002, guid: ee16d6995dc26a049ad80315b4c9b4e1, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 246678836782235002, guid: ee16d6995dc26a049ad80315b4c9b4e1, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 826848398345154255, guid: ee16d6995dc26a049ad80315b4c9b4e1, type: 3}
       propertyPath: m_SortingLayer
       value: 0
@@ -544,6 +564,26 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3055188492551273015, guid: ee16d6995dc26a049ad80315b4c9b4e1, type: 3}
       propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3188183717568215294, guid: ee16d6995dc26a049ad80315b4c9b4e1, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3188183717568215294, guid: ee16d6995dc26a049ad80315b4c9b4e1, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3188183717568215294, guid: ee16d6995dc26a049ad80315b4c9b4e1, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3188183717568215294, guid: ee16d6995dc26a049ad80315b4c9b4e1, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3188183717568215294, guid: ee16d6995dc26a049ad80315b4c9b4e1, type: 3}
+      propertyPath: m_AnchoredPosition.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3387744830729097011, guid: ee16d6995dc26a049ad80315b4c9b4e1, type: 3}
@@ -1795,7 +1835,7 @@ MonoBehaviour:
   idxOffSetDialogue: 0
   dialogueSet:
   - dialogueLines:
-    - blabla
+    - diabete
     - blabla
 --- !u!1 &1349440602
 GameObject:
@@ -2165,7 +2205,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8185881588264402033, guid: d400b78d53980d349bec9c8c27796ef6, type: 3}
       propertyPath: npcName
-      value: Alimentation
+      value: Serveur
       objectReference: {fileID: 0}
     - target: {fileID: 8185881588264402033, guid: d400b78d53980d349bec9c8c27796ef6, type: 3}
       propertyPath: dialogueSet.Array.size
@@ -2757,7 +2797,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8185881588264402033, guid: d400b78d53980d349bec9c8c27796ef6, type: 3}
       propertyPath: npcName
-      value: Relation
+      value: Ressource
       objectReference: {fileID: 0}
     - target: {fileID: 8185881588264402033, guid: d400b78d53980d349bec9c8c27796ef6, type: 3}
       propertyPath: dialogueSet.Array.size

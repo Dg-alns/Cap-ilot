@@ -5933,6 +5933,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1086056025427081430, guid: d7c32b09755ccc34389e7bf4c273fa30, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LeaveMinigameBoat
+      objectReference: {fileID: 0}
     - target: {fileID: 1652005377950991281, guid: d7c32b09755ccc34389e7bf4c273fa30, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0

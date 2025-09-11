@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 017216144c0d2494fa64038fd861b281, type: 3}
+  m_Name: Permis
+  m_EditorClassIdentifier: 
+  _title: Le permis de conduire
+  _link: https://www.diab-ecare.fr/_files/ugd/f39fba_245bbe4ea1ee45a1a07d6077f9573ec6.pdf
+  _content: "Il est tout \xE0 fait possible d\u2019obtenir un permis de conduire,
+    \xE0 titre non professionnel, lorsque l\u2019on a un diab\xE8te.\r\n\r\nIl est
+    bien reconnu que l\u2019hypoglyc\xE9mie peut \xEAtre une cause d\u2019accident
+    majeur par ses r\xE9percussions sur la capacit\xE9 de concentration. Cela \xE9quivaut
+    \xE0 conduire en \xE9tat d\u2019ivresse.\r\nLes hyperglyc\xE9mies peuvent aussi
+    influencer la capacit\xE9 de concentration et donc la capacit\xE9 \xE0 conduire.\r\n\r\nLes
+    personnes atteintes de diab\xE8te, quand elles suivent un traitement par des
+    m\xE9dicaments les exposant \xE0 un risque d\u2019hypoglyc\xE9mie, sont soumises
+    aux restrictions de d\xE9livrance du permis de conduire et doivent passer un
+    contr\xF4le m\xE9dical d\u2019aptitude \xE0 la conduite. \r\nParlez-en avec votre
+    m\xE9decin traitant et/ou votre sp\xE9cialiste. Bien s\xFBr, il faut \xE9galement
+    v\xE9rifier qu\u2019aucun autre probl\xE8me de sant\xE9 n\u2019est de nature
+    \xE0 interdire ou limiter la conduite."

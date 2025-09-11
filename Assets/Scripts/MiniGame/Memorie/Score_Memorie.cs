@@ -17,6 +17,6 @@ public class Score_Memorie : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        mText.text = "Nombre de coups : " + mMemorie.GetNbAction();
+        mText.text = "Tirage : " + mMemorie.GetNbAction();
     }
 }

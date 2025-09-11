@@ -48,8 +48,10 @@ public class Pnj_Ressource : MonoBehaviour
                 break;
 
             case (int)OffSet_Dialogue_Ressource.WaitingForTest:
-                if(TakeRessource())
+                Debug.Log("Watting False");
+                if (TakeRessource())
                 {
+                    Debug.Log("Watting True");
                     //npc.idxOffSetDialogue = (int)OffSet_Dialogue_Ressource.GiveRessources;
                     npc.SetPLayerPrefs((int)OffSet_Dialogue_Ressource.GiveRessources);
                 }

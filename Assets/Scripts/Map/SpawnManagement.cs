@@ -55,10 +55,22 @@ public class SpawnManagement : MonoBehaviour
 
         if (port != null)
         {
-            port.IsDiscover();
-            string text = "Explorer cette nouvelle île.";
+            if (port.GetIsDiscover() == false)
+            {
+                port.IsDiscover();
+                string text = "Explorer cette nouvelle île.";
 
-            QuestManager.SetTextOffCurrentQuest(text);
+                QuestManager.SetTextOffCurrentQuest(text);
+            }
+
+            if(SceneManager.GetActiveScene().name == "Port Ile Principale")
+            {
+                if (QuestManager.GetCurrentQuest() == QuestManager.GetQUESTS(QUESTS.Phare))
+                {
+                    string text = "Aller voir le Capitain au Phare.";
+                    QuestManager.SetTextOffCurrentQuest(text);
+                }
+            }
         }
 
     }
@@ -71,7 +83,7 @@ public class SpawnManagement : MonoBehaviour
     void PositionPLayer()
     {
         PersoToPosition.transform.position = new(PlayerPrefs.GetFloat("PosX"), PlayerPrefs.GetFloat("PosY"), 0);
-        PersoToPosition.transform.rotation = new(0, (PlayerPrefs.GetFloat("RotateY") == 1 ? 180 : 0), 0, 1); //TODO a revoir
+        PersoToPosition.transform.rotation = new(0, (PlayerPrefs.GetFloat("RotateY") == 1 ? 180 : 0), 0, 1);
         PersoToPosition.SetActive(true);
         
     }

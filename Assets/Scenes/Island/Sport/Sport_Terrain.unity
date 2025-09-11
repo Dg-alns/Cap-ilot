@@ -548,6 +548,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5928695808054254091, guid: ee16d6995dc26a049ad80315b4c9b4e1, type: 3}
   m_PrefabInstance: {fileID: 182011766}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &182011770 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2484610775577637360, guid: ee16d6995dc26a049ad80315b4c9b4e1, type: 3}
+  m_PrefabInstance: {fileID: 182011766}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70f9def023596bc4fb08399b5cf8adf8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &296377392
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1860,38 +1871,37 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   npcId: 36
-  npcName: Gerant
+  npcName: Gerant du tournoi
   idxOffSetDialogue: 0
   dialogueSet:
   - dialogueLines:
     - "Bonjour et bienvenue \xE0 toi sur l'\xEEle du spo ..."
-    - "Mais je le reconnais cet affreux ! C'est celui qui a ravager l'\xEEle principal
-      ! "
-    - "Comment ? Ne me dis pas que tu l'as adopt\xE9 il est tr\xE8s dangereux. Enfin
-      bon il a l'air de se tenir tranquille avec toi donc \xE7a va mais garde le
-      \xE0 l'\u0153il."
-    - "J'imagine d'ailleurs que c'est toi dont mon fr\xE8re ma parl\xE9, il ne m'\xE9crit
-      pas beaucoup mais je suis heureux qu'il pense \xE0 moi."
-    - "Je vais donc t'expliquer la raison de ta venu dans les d\xE9tails."
-    - "Premi\xE8rement j'organisation sportif avec plusieurs activit\xE9 qui font
-      travailler plusieurs aspect: la force, l'endurance et la pr\xE9cision."
-    - "Deuxi\xE8mement j'ai besoin de quelqu'un pour test\xE9 les activit\xE9s, et
-      l\xE0 que tu entre en jeu."
-    - "Il y a trois activit\xE9 : Boxe, Marathon, Tir au but"
+    - "Mais je le reconnais cet affreux ! C'est celui qui a ravag\xE9 l'\xEEle principale
+      !"
+    - "J'imagine d'ailleurs que c'est toi dont mon fr\xE8re m\u2019a parl\xE9, il
+      ne m'\xE9crit pas beaucoup mais je suis heureux qu'il pense \xE0 moi."
+    - "J'imagine d'ailleurs que c'est toi dont mon fr\xE8re m\u2019a parl\xE9, il
+      ne m'\xE9crit pas beaucoup mais je suis heureux qu'il pense \xE0 moi."
+    - "Je vais donc t'expliquer la raison de ta venue dans les d\xE9tails."
+    - "Premi\xE8rement j'organise des activit\xE9s sportives avec plusieurs activit\xE9s
+      qui font travailler plusieurs aspects : la force, l'endurance et la pr\xE9cision."
+    - "Deuxi\xE8mement j'ai besoin de quelqu'un pour tester les activit\xE9s, et
+      l\xE0 que tu entres en jeu."
+    - "Il y a trois activit\xE9s : Boxe, Marathon, Tir au but"
     - "Je t'attendrai ici. Viens me voir d\xE8s que tu auras fini les diff\xE9rentes
       activit\xE9s et j'aurai quelque chose pour toi !"
   - dialogueLines:
     - "Je t'attendrai ici. Viens me voir d\xE8s que tu auras fini les diff\xE9rentes
       activit\xE9s et j'aurai quelque chose pour toi !"
   - dialogueLines:
-    - "Alors ces activit\xE9s pas mal hein !\n"
-    - "J'esp\xE8re que tu t'es bien amus\xE9 en tout cas j'ai pris plaisir \xE0 te
-      voir faire ces activit\xE9s."
-    - "Tiens, mon fr\xE8re m'avait parler de ton bateau alors, je re donne cette
-      corde \xE7a ne peut que t'\xEAtre utile !"
-    - "Bien mon tournoi ne commence pas avant un moment, je ferai mieux d'aller retrouver
-      mon fr\xE8re, cela fait un moment que je ne l'ai pas vu !"
-    - "On se retrouve sur l'\xEEle principal ci tu veux papoter un coup"
+    - "Alors, ces activit\xE9s, pas mal hein !"
+    - "J'esp\xE8re que tu t'es bien amus\xE9, en tout cas j'ai pris plaisir \xE0
+      te voir faire ces activit\xE9s."
+    - "Tiens, mon fr\xE8re m'avait parl\xE9 de ton bateau alors, je te donne cette
+      corde, \xE7a ne peut que t'\xEAtre utile !"
+    - "Bien, mon tournoi ne commence pas avant un moment, je ferai mieux d'aller
+      retrouver mon fr\xE8re, cela fait un moment que je ne l'ai pas vu !"
+    - "On se retrouve sur l'\xEEle principale si tu veux papoter un coup"
 --- !u!114 &1653498332
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1905,6 +1915,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   quest: 11
+  save: {fileID: 182011770}
 --- !u!1 &2023388801
 GameObject:
   m_ObjectHideFlags: 0

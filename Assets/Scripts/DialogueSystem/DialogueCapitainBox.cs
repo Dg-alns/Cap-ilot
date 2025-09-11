@@ -24,7 +24,7 @@ public class DialogueCapitainBox : DialogueBox
         if (npcManager.dialogueNpc.idxOffSetDialogue > npcManager.dialogueNpc.dialogueSet.Count - 1)
         {
             npcManager.dialogueNpc.UpInfoPLayerPrefs();
-            capitain.portIlePrincipale.ActivePhare(); ;
+            capitain.portIlePrincipale.ActivePhare();
 
             capitain.gameObject.SetActive(false);
             QuestManager.ValidateQuest(QUESTS.Introduction);

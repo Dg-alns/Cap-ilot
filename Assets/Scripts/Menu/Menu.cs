@@ -83,4 +83,13 @@ public class Menu : MonoBehaviour
         }
         Debug.LogWarning("NextScene is not Initiate in the menu");
     } 
+    public void LeaveMinigameBoat()
+    {
+        if (_NextScene)
+        {
+            _NextScene.LoadPreviousSceneWithMenuOffBoat();
+            return;
+        }
+        Debug.LogWarning("NextScene is not Initiate in the menu");
+    } 
 }

@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 017216144c0d2494fa64038fd861b281, type: 3}
+  m_Name: "Glyc\xE9mie"
+  m_EditorClassIdentifier: 
+  _title: "La glyc\xE9mie"
+  _link: https://www.federationdesdiabetiques.org/information/glycemie
+  _content: "La glyc\xE9mie, appel\xE9e aussi \"taux de sucre\" ou \"taux de glucose\"
+    dans le sang, peut varier aussi chez la personne diab\xE9tique pour plusieurs
+    raisons : alimentation, traitement, activit\xE9 physique intense, stress, \xE9motions\u2026\r\n\r\nCertaines
+    substances comme l\u2019insuline font diminuer la glyc\xE9mie, tandis que d'autres,
+    comme le glucagon, l\u2019adr\xE9naline ou l\u2019hormone de croissance, la font
+    augmenter. \r\nL'alimentation et l'activit\xE9 physique influent \xE9galement
+    sur la glyc\xE9mie.\r\n\r\nChez une personne non diab\xE9tique, le pancr\xE9as
+    produit de l'insuline en fonction des variations de la glyc\xE9mie. Il existe
+    ainsi un syst\xE8me de s\xE9curit\xE9 qui \xE9vite \xE0 la glyc\xE9mie de descendre
+    trop bas. \r\nPour une personne diab\xE9tique, ce syst\xE8me de s\xE9curit\xE9
+    doit \xEAtre ajust\xE9 en permanence, quel que soit son traitement.\r\nUne prise
+    trop importante d\u2019insuline peut provoquer une hypoglyc\xE9mie, et une quantit\xE9
+    insuffisante peut conduire \xE0 une hyperglyc\xE9mie\r\n\r\n\r\nHypoglyc\xE9mie
+    : Inf\xE9rieur \xE0 0.70 g/l\r\n\r\nGlyc\xE9mie normale : A jeun : entre 0.70
+    g/l et 1.10 g/l 1h30. Apr\xE8s un repas : inf\xE9rieur \xE0 1.40 g/l\r\n\r\nHyperglyc\xE9mie
+    \xE0 jeun : Sup\xE9rieur \xE0 1.10 g/l"

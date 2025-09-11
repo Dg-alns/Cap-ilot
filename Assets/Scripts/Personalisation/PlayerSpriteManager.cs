@@ -55,7 +55,8 @@ public class PlayerSpriteManager : MonoBehaviour
             SpriteRenderer Shoes = Chaussure.GetComponent<SpriteRenderer>();
             SpriteRenderer eyes = Eyes.GetComponent<SpriteRenderer>();
 
-            GetComponent<AnimationAvatarManager>().Init(Body, Bottom, Top, Shoes, eyes);
+            if(GetComponent<AnimationAvatarManager>() != null)
+                GetComponent<AnimationAvatarManager>().Init(Body, Bottom, Top, Shoes, eyes);
         }
     }
 

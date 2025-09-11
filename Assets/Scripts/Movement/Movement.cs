@@ -53,7 +53,7 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (_animationAvatarManager != null && _diabeteAnimator != null)
+        if (_animationAvatarManager != null || _diabeteAnimator != null)
         {
             if (_agent.destination != transform.position)
             {

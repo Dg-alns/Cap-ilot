@@ -28,8 +28,11 @@ public class PortIlePrincipale : MonoBehaviour
             PancartePhare.SetActive(true);
 
 
-        string text = "Retrouver le Capitaine au Phare.";
-        QuestManager.SetTextOffCurrentQuest(text);
+        if (QuestManager.GetCurrentQuest() == QuestManager.GetQUESTS(QUESTS.Introduction))
+        {
+            string text = "Retrouver le Capitaine au Phare.";
+            QuestManager.SetTextOffCurrentQuest(text);
+        }
     }
 
     public void ActiveVillage()
@@ -68,16 +71,16 @@ public class PortIlePrincipale : MonoBehaviour
         if (QuestManager.GetCurrentQuest() >= QuestManager.GetQUESTS(QUESTS.Relation))
         {
             Relation.CanGotoIle();
-            string text = "Naviguer vers la prochaine île.";
+            //string text = "Naviguer vers la prochaine île.";
 
-            QuestManager.SetTextOffCurrentQuest(text);
+            //QuestManager.SetTextOffCurrentQuest(text);
         }
         if (QuestManager.GetCurrentQuest() >= QuestManager.GetQUESTS(QUESTS.Sport))
         {
             Sport.CanGotoIle();
-            string text = "Naviguer vers la prochaine île.";
+            //string text = "Naviguer vers la prochaine île.";
 
-            QuestManager.SetTextOffCurrentQuest(text);
+            //QuestManager.SetTextOffCurrentQuest(text);
         }
         //if (QuestManager.GetCurrentQuest() >= QuestManager.GetQUESTS(QUESTS.Tentation))
         //{
@@ -89,9 +92,9 @@ public class PortIlePrincipale : MonoBehaviour
         if (QuestManager.GetCurrentQuest() >= QuestManager.GetQUESTS(QUESTS.Ecole))
         {
             Ecole.CanGotoIle();
-            string text = "Naviguer vers la prochaine île.";
+            //string text = "Naviguer vers la prochaine île.";
 
-            QuestManager.SetTextOffCurrentQuest(text);
+            //QuestManager.SetTextOffCurrentQuest(text);
         }
     }
 }

@@ -34,7 +34,6 @@ public class QuestManager
 {
     public static List<Quest> quests;
     public SerializableDictionary<int, bool> statusDict;
-    private Saving SaveData { get; set; }
 
     static string namePlayerPrefQuest = "PlayerPrefsQuest";
     static string TextPlayerPrefQuest = "PlayerPrefsQuestText";
@@ -58,19 +57,19 @@ public class QuestManager
 
         quests.Add(new GlobalQuest((int)QUESTS.Alimentation, new ExampleReward(null, QUESTS.Alimentation.ToString())));
 
-        quests.Add(new RessourceQuest((int)QUESTS.A_Ressource, new ExampleReward(null, QUESTS.A_Ressource.ToString())));  // Replace Null
+        quests.Add(new /*RessourceQuest*/GlobalQuest((int)QUESTS.A_Ressource, new ExampleReward(null, QUESTS.A_Ressource.ToString())));  // Replace Null
 
         quests.Add(new GlobalQuest((int)QUESTS.Ecole, new ExampleReward(null, QUESTS.Ecole.ToString())));
 
-        quests.Add(new RessourceQuest((int)QUESTS.E_Ressource, new ExampleReward(null, QUESTS.E_Ressource.ToString())));  // Replace Null
+        quests.Add(new GlobalQuest/*RessourceQuest*/((int)QUESTS.E_Ressource, new ExampleReward(null, QUESTS.E_Ressource.ToString())));  // Replace Null
 
         quests.Add(new GlobalQuest((int)QUESTS.Sport, new ExampleReward(null, QUESTS.Sport.ToString())));
 
-        quests.Add(new RessourceQuest((int)QUESTS.S_Ressource, new ExampleReward(null, QUESTS.S_Ressource.ToString())));  // Replace Null
+        quests.Add(new /*RessourceQuest*/GlobalQuest((int)QUESTS.S_Ressource, new ExampleReward(null, QUESTS.S_Ressource.ToString())));  // Replace Null
 
         quests.Add(new GlobalQuest((int)QUESTS.Relation, new ExampleReward(null, QUESTS.Relation.ToString())));
 
-        quests.Add(new RessourceQuest((int)QUESTS.R_Ressoucre, new ExampleReward(null, QUESTS.R_Ressoucre.ToString())));  // Replace Null
+        quests.Add(new /*RessourceQuest*/GlobalQuest((int)QUESTS.R_Ressoucre, new ExampleReward(null, QUESTS.R_Ressoucre.ToString())));  // Replace Null
 
         quests.Add(new GlobalQuest((int)QUESTS.Tentation, new ExampleReward(null, QUESTS.Tentation.ToString())));
 
@@ -84,6 +83,7 @@ public class QuestManager
             }
             
         }
+
     }    
 
     public static void NextQuest(int CurrentQuest)
@@ -115,6 +115,7 @@ public class QuestManager
 
     public static void ValidateQuest(QUESTS quest)
     {
+        Debug.Log(quest.ToString() + " = true");
         quests[(int)quest].status = true;
     }
 

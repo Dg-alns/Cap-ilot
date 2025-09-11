@@ -2949,15 +2949,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   npcId: 40
-  npcName: Gerant
+  npcName: Ressource
   idxOffSetDialogue: 0
   dialogueSet:
   - dialogueLines:
     - Euh ouais, salut.
   - dialogueLines:
-    - "Ne me parle pas tant que tu n'a pas parl\xE9 \xE0 tout le monde."
+    - "Ne me parle pas tant que tu n\u2019as pas parl\xE9 \xE0 tout le monde."
   - dialogueLines:
-    - "Merci d'avoir parl\xE9 a tout le monde"
+    - "Merci d'avoir parl\xE9 \xE0 tout le monde"
 --- !u!114 &1653498331
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3318,12 +3318,14 @@ MonoBehaviour:
   idxOffSetDialogue: 0
   dialogueSet:
   - dialogueLines:
-    - "Hey j'entraine mon \xE9quilibre en faisant de la slackline."
-    - "C'est moins haut que le funambule mais les sensations restes r\xE9el."
-    - "Il suffit juste d'aller d'un bout \xE0 l'autre en \xE9vitant de tomber bien
-      sur"
+    - "Hey, j'entra\xEEne mon \xE9quilibre en faisant de la slackline."
+    - "C'est moins haut que le funambule mais les sensations restent r\xE9elles."
+    - "Il suffit juste d'aller d'un bout \xE0 l'autre en \xE9vitant de tomber, bien
+      s\xFBr"
   - dialogueLines:
-    - "Alors \xE7a te tente de tester la slackline"
+    - "Alors, \xE7a te tente de tester la slackline ?"
+  - dialogueLines:
+    - "Bel \xE9quilibre, on dirait que tu en as fait toute ta vie."
   idxMiniGameSet: 1
   MiniGameName: MiniGame_Funambule
   loadNexScene: {fileID: 578007140}

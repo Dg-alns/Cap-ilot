@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 017216144c0d2494fa64038fd861b281, type: 3}
+  m_Name: Maladies
+  m_EditorClassIdentifier: 
+  _title: Les maladies
+  _link: https://www.diab-ecare.fr/_files/ugd/f39fba_7e05f80d399f445186dd9fb7b974924e.pdf
+  _content: "Les maladies et infections provoquent un stress pour l\u2019organisme.
+    Le corps r\xE9agit en produisant des hormones hyperglyc\xE9miantes\r\n\r\nEn
+    cas de maladie, les besoins en insuline augmentent et le risque d\u2019hyperglyc\xE9mie
+    avec ac\xE9tone est plus \xE9lev\xE9. Il faut donc faire des autocontr\xF4les
+    plus fr\xE9quemment.\r\nCertaines maladies (gastroent\xE9rite, angine, par exemple)
+    ont plus de risque d\u2019entra\xEEner des hypoglyc\xE9mies en raison des naus\xE9es,
+    vomissements et du manque d\u2019app\xE9tit qu\u2019elles occasionnent\r\n\r\n\r\nComme
+    pour toute hypoglyc\xE9mie, il faut remonter le taux de sucre sanguin, en prenant
+    par exemple des petites\r\nquantit\xE9s de boissons sucr\xE9es.\r\n\r\nLors de
+    l\u2019achat de m\xE9dicaments \xE0 la pharmacie, n\u2019oubliez pas de mentionner
+    que vous \xEAtes diab\xE9tique."

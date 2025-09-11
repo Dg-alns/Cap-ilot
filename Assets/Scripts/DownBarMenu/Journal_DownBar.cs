@@ -77,7 +77,7 @@ public class Journal_DownBar : MonoBehaviour
         if (MarkPage_journal.activeSelf)
             return;
 
-        if(QuestManager.GetCurrentQuest() > (int)QUESTS.ReparationPhare)
+        if(QuestManager.GetCurrentQuest() > QuestManager.GetQUESTS(QUESTS.DemandeCapitaine))
             MarkPage_journal.SetActive(true);
     }
 

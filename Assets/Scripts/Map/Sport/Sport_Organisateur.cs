@@ -4,12 +4,11 @@ using UnityEngine;
 
 public class Sport_Organisateur : Pnj_Ressource
 {
-    Saving saving;
+    [SerializeField] Sauvegarde save;
 
     protected new void Start()
     {
         base.Start();
-        saving = JSON_Manager.LoadData("Save");
         
         if(QuestManager.GetCurrentQuest() == QuestManager.GetQUESTS(QUESTS.Sport))
         {
@@ -26,12 +25,16 @@ public class Sport_Organisateur : Pnj_Ressource
 
     protected override bool TakeRessource()
     {
-        if (!saving.statMinigame.ContainsKey("MiniGame_TirBut"))
+        if (!save.StatMinigame.ContainsKey("MiniGame_TirBut"))
             return false;
-        if (!saving.statMinigame.ContainsKey("MiniGame_Marathon"))
+        if (!save.StatMinigame.ContainsKey("MiniGame_Marathon"))
             return false;
-        if (!saving.statMinigame.ContainsKey("MiniGame_Boxe"))
+        if (!save.StatMinigame.ContainsKey("MiniGame_Boxe"))
             return false;
+
+        if(QuestManager.GetCurrentQuest() == QuestManager.GetQUESTS(QUESTS.Sport))
+            QuestManager.ValidateQuest(QUESTS.Sport);
+
         //Debug.Log(QuestManager.GetCurrentQuest() + " " + QuestManager.GetQUESTS(quest));
         return QuestManager.GetCurrentQuest() == QuestManager.GetQUESTS(quest);
     }

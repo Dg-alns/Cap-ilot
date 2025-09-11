@@ -25,7 +25,7 @@ public class LoadNexScene : MonoBehaviour
         {
             _NextSceneData.isLauch = true;
             animator.SetTrigger("Transition");
-            //PlayerPrefs.DeleteAll();
+            PlayerPrefs.DeleteAll();
             SearchScriptObj.Init();
 
             //DeletPos();
@@ -113,19 +113,25 @@ public class LoadNexScene : MonoBehaviour
             _NextSceneData.isLauch = true;
             if (_NextSceneData.GetNextSceneDestination().Equals("MiniGame_LightHouse"))
             {
-                PlayerPrefs.SetInt("ReparationPhare", 1);
-                QuestManager.ValidateQuest(QUESTS.ReparationPhare);
+                if (QuestManager.GetCurrentQuest() == QuestManager.GetQUESTS(QUESTS.ReparationPhare))
+                {
+                    PlayerPrefs.SetInt("ReparationPhare", 1);
+                    QuestManager.ValidateQuest(QUESTS.ReparationPhare);
 
-                string text = "Explorer le Village.";
-                QuestManager.SetTextOffCurrentQuest(text);
+                    string text = "Explorer le Village.";
+                    QuestManager.SetTextOffCurrentQuest(text);
+                }
             }
 
             if (_NextSceneData.GetNextSceneDestination().Equals("MiniGame_ObjCachee"))
             {
-                Chambre.SetStateChambre(1);
+                if (QuestManager.GetCurrentQuest() == QuestManager.GetQUESTS(QUESTS.Hopital))
+                {
+                    Chambre.SetStateChambre(1);
 
-                string text = "Naviguer vers votre île.";
-                QuestManager.SetTextOffCurrentQuest(text);
+                    string text = "Naviguer vers votre île.";
+                    QuestManager.SetTextOffCurrentQuest(text);
+                }
             }
 
             if (_NextSceneData.GetNextSceneDestination().Equals("MiniGame_InjectionInsuline") && Couloir.GetStateCouloir() != 1)
@@ -145,6 +151,12 @@ public class LoadNexScene : MonoBehaviour
     {     
         animator.SetTrigger("Transition");
         StartCoroutine(_NextSceneData.SwitchScene(_NextSceneData.GetPreviousScene()));
+    }
+
+    public void LoadPreviousSceneWithMenuOffBoat()
+    {     
+        animator.SetTrigger("Transition");
+        StartCoroutine(_NextSceneData.SwitchScene(PlayerPrefs.GetString("SceneName")));
     }
 
     public void LoadNewIle(string scene)

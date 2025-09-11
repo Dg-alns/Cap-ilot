@@ -6,9 +6,9 @@ public class Restaurant : MonoBehaviour
 {
     public Sauvegarde_Minigame sauvegarde;
 
-    void Start()
+    void Update()
     {
-        if(QuestManager.GetCurrentQuest() == QuestManager.GetQUESTS(QUESTS.Alimentation))
+        if (QuestManager.GetCurrentQuest() == QuestManager.GetQUESTS(QUESTS.Alimentation))
         {
             if (sauvegarde.HaveMiniGame("MiniGame_Balance") && sauvegarde.HaveMiniGame("MiniGame_Card"))
             {
@@ -17,11 +17,11 @@ public class Restaurant : MonoBehaviour
                 string text = "Retourner voir le Serveur pour récupérer votre ressource.";
                 QuestManager.SetTextOffCurrentQuest(text);
             }
-        }
-        else
-        {
-            string text = "Explorer le Restaurant.";
-            QuestManager.SetTextOffCurrentQuest(text);
+            else
+            {
+                string text = "Explorer le Restaurant.";
+                QuestManager.SetTextOffCurrentQuest(text);
+            }
         }
     }
 }

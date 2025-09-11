@@ -25,9 +25,12 @@ public class CapitainPort : MonoBehaviour
             gameObject.SetActive(false);
         }
 
+        if (QuestManager.GetCurrentQuest() == QuestManager.GetQUESTS(QUESTS.Introduction))
+        {
 
-        string text = "Discuter avec le Capitain.";
-        QuestManager.SetTextOffCurrentQuest(text);
+            string text = "Discuter avec le Capitain.";
+            QuestManager.SetTextOffCurrentQuest(text);
+        }
 
         canTP = false;
 

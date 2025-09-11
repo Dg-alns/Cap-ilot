@@ -78,7 +78,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -4
   m_Sprite: {fileID: -6928855725049501527, guid: ef262191e937cc34abf93267095163a5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -103,11 +103,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UI: {fileID: 1071217116996878445, guid: 831abd4b3ecd17443bfbb8678cdc0bb8, type: 3}
+  uiOpen: 0
   SceneName: Ile Principale
   nexScene: {fileID: 0}
   Type: 0
   activeUI: {fileID: 0}
   InPort: 0
+  capitainPort: {fileID: 0}
 --- !u!114 &5271707461619151298
 MonoBehaviour:
   m_ObjectHideFlags: 0
