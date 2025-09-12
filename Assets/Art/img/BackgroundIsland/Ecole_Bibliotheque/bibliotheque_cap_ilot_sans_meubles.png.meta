@@ -143,7 +143,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      bibliotheque_cap_ilot_sans_meubles_0: -3668859874701963258
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
