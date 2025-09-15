@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Tentation
   m_EditorClassIdentifier: 
   IleName: Port Tentation
-  isDiscover: 1
-  CanGoToIle: 1
+  isDiscover: 0
+  CanGoToIle: 0
   ile: 7
