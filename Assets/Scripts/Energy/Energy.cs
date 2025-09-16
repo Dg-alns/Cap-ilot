@@ -10,7 +10,7 @@ public class Energy : MonoBehaviour
     private int _energy;
     private int _maxEnergy;
 
-    [SerializeField] private int _restoreDuration;
+    private int _restoreDuration = 900;
 
     private DateTime _currentTime;    
     private DateTime _nextEnergyTime;
@@ -65,10 +65,11 @@ public class Energy : MonoBehaviour
 
         // Get the DeltaTime
         _energyDT = _nextEnergyTime - _currentTime;
+        Debug.Log(_energyDT);
         string timeValue = String.Format("{0:D2}:{1:D2}", _energyDT.Minutes, _energyDT.Seconds);
         _textRemainingTime.text = timeValue;
 
-        if (_energyDT.Seconds <= 0)
+        if (_energyDT.Seconds <= 0 && _energyDT.Minutes <= 0)
         {
             _energy++;
             Debug.Log(_nextEnergyTime);
@@ -137,24 +138,24 @@ public class Energy : MonoBehaviour
         }
     }
 
-    public void AddEnergy()
-    {
-        _energy += 1;
-        if (_energy >= _maxEnergy)
-        {
-            _energy = _maxEnergy;
-            _nextEnergyTime = DateTime.MinValue;
-        }
-    }
+    //public void AddEnergy()
+    //{
+    //    _energy += 1;
+    //    if (_energy >= _maxEnergy)
+    //    {
+    //        _energy = _maxEnergy;
+    //        _nextEnergyTime = DateTime.MinValue;
+    //    }
+    //}
 
-    public void ForceAddEnergy()
-    {
-        _energy += 1;
-        if (_energy >= _maxEnergy)
-        {
-            _nextEnergyTime = DateTime.MinValue;
-        }
-    }
+    //public void ForceAddEnergy()
+    //{
+    //    _energy += 1;
+    //    if (_energy >= _maxEnergy)
+    //    {
+    //        _nextEnergyTime = DateTime.MinValue;
+    //    }
+    //}
 
     // Start the _nextEnergyTime with Date.Now value + the restoration duration
     void StartRestorationTime()

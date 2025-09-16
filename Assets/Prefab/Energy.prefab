@@ -53,7 +53,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29010f98c38834a43a4cab91aeb187f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _restoreDuration: 900
+  _restoreDuration: 60
   _textNbEnergy: {fileID: 6280497026553097769}
   _textRemainingTime: {fileID: 3623412360797764562}
   _energySlider: {fileID: 8652452961482896748}

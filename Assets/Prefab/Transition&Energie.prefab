@@ -213,6 +213,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Energy
       objectReference: {fileID: 0}
+    - target: {fileID: 511586144075150554, guid: 2ecb81ccd34666a489cca9414daf8d10, type: 3}
+      propertyPath: _restoreDuration
+      value: 900
+      objectReference: {fileID: 0}
     - target: {fileID: 1942382137340446100, guid: 2ecb81ccd34666a489cca9414daf8d10, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
