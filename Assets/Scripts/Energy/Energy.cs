@@ -65,7 +65,7 @@ public class Energy : MonoBehaviour
 
         // Get the DeltaTime
         _energyDT = _nextEnergyTime - _currentTime;
-        Debug.Log(_energyDT);
+        //Debug.Log(_energyDT);
         string timeValue = String.Format("{0:D2}:{1:D2}", _energyDT.Minutes, _energyDT.Seconds);
         _textRemainingTime.text = timeValue;
 
@@ -77,9 +77,9 @@ public class Energy : MonoBehaviour
             if (_energy < _maxEnergy)
             {
 
-                Debug.Log("Je le restart");
+                //Debug.Log("Je le restart");
                 RestartRestorationTime();
-                Debug.Log(_nextEnergyTime);
+                //Debug.Log(_nextEnergyTime);
             }
             // If you have full energy 
             else
