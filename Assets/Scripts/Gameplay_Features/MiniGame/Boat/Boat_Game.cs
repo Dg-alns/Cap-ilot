@@ -73,6 +73,7 @@ public class Boat_Game : Minigame
 
     public void StartGame()
     {
+        Debug.Log("Boat minigame started");
         _gameStart = true;
         _timer.Run();
     }

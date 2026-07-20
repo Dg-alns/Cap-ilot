@@ -81,9 +81,11 @@ public class Boat_Boat : MonoBehaviour
         }
 
         // If you press the screen
-        if (Input.GetMouseButton(0) && !_tools.IsPointerOverUIElement())
+        if (Input.GetMouseButton(0) && (_tools == null || !_tools.IsPointerOverUIElement()))
+        //if (Input.GetMouseButton(0) && !_tools.IsPointerOverUIElement())
         {
-            Debug.Log(_tools.IsPointerOverUIElement());
+            Debug.Log(_tools != null && _tools.IsPointerOverUIElement());
+            //Debug.Log(_tools.IsPointerOverUIElement());
             // Move right
             if (_widthResolution / 2 < Input.mousePosition.x){
                 float step = _speed * Time.deltaTime;
