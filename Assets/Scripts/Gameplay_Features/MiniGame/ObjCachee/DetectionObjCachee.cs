@@ -25,6 +25,15 @@ public class DetectionObjCachee : Minigame
         nameobjs = Tools.CreateList<TextMeshProUGUI>("Bot");
 
         _tools = FindAnyObjectByType<Tools>();
+        if (cam == null)
+        {
+            cam = Camera.main;
+        }
+        Debug.Log("Tools trouvé : " + _tools);
+        Debug.Log("Caméra configurée : " + cam);
+        Debug.Log("Camera.main : " + Camera.main);
+        Debug.Log("Nombre d'objets : " + objects.Count);
+        Debug.Log("Nombre de noms : " + nameobjs.Count);
 
         for (int i = 0; i < objects.Count; i++)
         {
@@ -36,6 +45,23 @@ public class DetectionObjCachee : Minigame
 
     bool Detection(GameObject obj)
     {
+        if (cam == null)
+        {
+            Debug.LogError("Aucune caméra pour détecter les objets.");
+            return false;
+        }
+
+        Renderer objectRenderer = obj.GetComponent<Renderer>();
+
+        if (objectRenderer == null)
+        {
+            Debug.LogError(
+                "L'objet " + obj.name +
+                " n'a pas de Renderer."
+            );
+
+            return false;
+        }
         Vector3 mouse = Input.mousePosition;
         Vector3 positionMin = cam.WorldToScreenPoint(obj.GetComponent<Renderer>().bounds.min);
         Vector3 positionMax = cam.WorldToScreenPoint(obj.GetComponent<Renderer>().bounds.max);
@@ -85,7 +111,7 @@ public class DetectionObjCachee : Minigame
         }
     }
 
-    void Update()
+    /*void Update()
     {
         if (FindActiveGameObject() == false)
         {
@@ -100,6 +126,38 @@ public class DetectionObjCachee : Minigame
             DetectionObject();
         }
         
+    }*/
+    private void Update()
+    {
+        if (FindActiveGameObject() == false)
+        {
+            if (infos != null &&
+                infos.gameObject.activeSelf == false)
+            {
+                score.LauchScore();
+            }
+
+            return;
+        }
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            Debug.Log("Clic détecté dans DetectionObjCachee");
+
+            bool pointerOverUI =
+                _tools != null &&
+                _tools.IsPointerOverUIElement();
+
+            Debug.Log(
+                "Tools présent : " + (_tools != null) +
+                " | Sur UI : " + pointerOverUI
+            );
+
+            if (!pointerOverUI)
+            {
+                DetectionObject();
+            }
+        }
     }
     public override void PauseMinigame()
     {

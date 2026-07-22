@@ -25,7 +25,7 @@ public class LoadNexScene : MonoBehaviour
         {
             _NextSceneData.isLauch = true;
             animator.SetTrigger("Transition");
-            //PlayerPrefs.DeleteAll();
+            PlayerPrefs.DeleteAll();// TODO enlever
             SearchScriptObj.Init();
 
             //DeletPos();
@@ -46,7 +46,8 @@ public class LoadNexScene : MonoBehaviour
             //_NextSceneData.SetCurrentScene("");//TODO enlever
 
 
-            string scene = _NextSceneData.GetPreviousScene().Length > 1 ? _NextSceneData.GetPreviousScene() : "Port Ile Principale";
+            //string scene = _NextSceneData.GetPreviousScene().Length > 1 ? _NextSceneData.GetPreviousScene() : "Chambre";
+            string scene = "Chambre";
             StartCoroutine(_NextSceneData.NextScene(scene));
         }
     }
