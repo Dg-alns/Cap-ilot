@@ -6,13 +6,15 @@ using UnityEngine.UI;
 
 public class DetectionObjCachee : Minigame
 {
-    public Camera cam;
     public Timer timer;
     public Score score;
     public Sauvegarde_Minigame minigame;
 
-    List<Objects> objects;
-    List<TextMeshProUGUI> nameobjs;
+    [SerializeField] Dictionary<Objects, TextMeshProUGUI> objects = new();
+    [SerializeField] Transform _objNamesParent;
+    [SerializeField] GameObject _textPrefab;
+    int _objCount;
+    
     public Infos_MiniJeux infos;
 
     public GameObject diabete;
@@ -21,143 +23,46 @@ public class DetectionObjCachee : Minigame
 
     private void Awake()
     {
-        objects = Tools.CreateList<Objects>("ToFind");
-        nameobjs = Tools.CreateList<TextMeshProUGUI>("Bot");
+        List<Objects> objs = Tools.CreateList<Objects>("ToFind");
+
+        foreach (var obj in objs)
+        {
+            obj.OnClick = FoundObject;
+            GameObject textObj = Instantiate(_textPrefab, _objNamesParent);;
+            TextMeshProUGUI text = textObj.GetComponent<TextMeshProUGUI>();
+            text.text = obj.name;
+            objects.Add(obj, text);
+        }
+        _objCount = objects.Count;
 
         _tools = FindAnyObjectByType<Tools>();
-        if (cam == null)
-        {
-            cam = Camera.main;
-        }
-        Debug.Log("Tools trouvé : " + _tools);
-        Debug.Log("Caméra configurée : " + cam);
-        Debug.Log("Camera.main : " + Camera.main);
-        Debug.Log("Nombre d'objets : " + objects.Count);
-        Debug.Log("Nombre de noms : " + nameobjs.Count);
 
-        for (int i = 0; i < objects.Count; i++)
-        {
-            nameobjs[i].text = objects[i].name;
-        }
+        Debug.Log("Tools trouvï¿½ : " + _tools);
+        Debug.Log("Nombre d'objets : " + objects.Count);
+        Debug.Log("Nombre de noms : " + objects.Count);
 
         timer.stop = true;
     }
 
-    bool Detection(GameObject obj)
+    void FoundObject(Objects obj)
     {
-        if (cam == null)
+        objects[obj].fontStyle = FontStyles.Strikethrough;
+        obj.PlayAnimation();
+        // obj.gameObject.SetActive(false);
+        if (minigame.GetCanShowInfo(SceneManager.GetActiveScene().name) == true)
         {
-            Debug.LogError("Aucune caméra pour détecter les objets.");
-            return false;
+            timer.stop = true;
+            infos.AssociateInfo(obj);
+            infos.gameObject.SetActive(true);
         }
-
-        Renderer objectRenderer = obj.GetComponent<Renderer>();
-
-        if (objectRenderer == null)
-        {
-            Debug.LogError(
-                "L'objet " + obj.name +
-                " n'a pas de Renderer."
-            );
-
-            return false;
-        }
-        Vector3 mouse = Input.mousePosition;
-        Vector3 positionMin = cam.WorldToScreenPoint(obj.GetComponent<Renderer>().bounds.min);
-        Vector3 positionMax = cam.WorldToScreenPoint(obj.GetComponent<Renderer>().bounds.max);
-
-        bool InY = positionMin.y <= mouse.y && positionMax.y >= mouse.y;
-        bool InX = positionMin.x <= mouse.x && positionMax.x >= mouse.x;
-
-        return InY && InX;
+        _objCount--;
     }
 
-    bool FindActiveGameObject()
-    {
-        for(int i = 0; i < objects.Count;i++)
-        {
-            if (objects[i].gameObject.activeSelf)
-                return true;
-        }
-
-        return false;
-    }
-
-    void DetectionObject()
-    {
-        if (objects.Count <= 0)
-            return;
-
-        for (int i = 0; i<objects.Count; i++)
-        {
-            if (objects[i].gameObject.activeSelf == false)
-                continue;
-
-            if (Detection(objects[i].gameObject))
-            {
-                if (Detection(diabete))
-                    break;
-
-
-                objects[i].gameObject.SetActive(false);
-                nameobjs[i].fontStyle = FontStyles.Strikethrough;
-                if (minigame.GetCanShowInfo(SceneManager.GetActiveScene().name) == true)
-                {
-                    timer.stop = true;
-                    infos.AssociateInfo(objects[i]);
-                    infos.gameObject.SetActive(true); }
-                break;
-            }
-        }
-    }
-
-    /*void Update()
-    {
-        if (FindActiveGameObject() == false)
-        {
-            if(infos.gameObject.activeSelf == false)
-                score.LauchScore();
-
-            return;
-        }
-
-        if (Input.GetMouseButtonDown(0) && !_tools.IsPointerOverUIElement())
-        {
-            DetectionObject();
-        }
-        
-    }*/
     private void Update()
     {
-        if (FindActiveGameObject() == false)
-        {
-            if (infos != null &&
-                infos.gameObject.activeSelf == false)
-            {
+        if (_objCount == 0)
+            if (infos != null && infos.gameObject.activeSelf == false)
                 score.LauchScore();
-            }
-
-            return;
-        }
-
-        if (Input.GetMouseButtonDown(0))
-        {
-            Debug.Log("Clic détecté dans DetectionObjCachee");
-
-            bool pointerOverUI =
-                _tools != null &&
-                _tools.IsPointerOverUIElement();
-
-            Debug.Log(
-                "Tools présent : " + (_tools != null) +
-                " | Sur UI : " + pointerOverUI
-            );
-
-            if (!pointerOverUI)
-            {
-                DetectionObject();
-            }
-        }
     }
     public override void PauseMinigame()
     {

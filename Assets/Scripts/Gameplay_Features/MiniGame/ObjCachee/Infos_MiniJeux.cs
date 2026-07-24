@@ -23,8 +23,8 @@ public class Infos_MiniJeux : MonoBehaviour
 
     public void AssociateInfo(Objects objects)
     {
-        text.text = objects.str;
-        if (objects.GetSprite() != null)
-            img.sprite = objects.GetSprite();
+        text.text = objects.Text;
+        if (objects.Sprite != null)
+            img.sprite = objects.Sprite;
     }
 }
