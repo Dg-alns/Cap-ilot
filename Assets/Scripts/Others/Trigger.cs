@@ -24,6 +24,7 @@ public class Trigger : MonoBehaviour
     public LoadNexScene nexScene;
     public TriggerType Type;
     public GameObject activeUI;
+    public bool LaunchMiniGame;
 
     public bool InPort = true;
 
@@ -69,7 +70,15 @@ public class Trigger : MonoBehaviour
                     no.onClick.AddListener(() => Destroy(ui));
                     no.onClick.AddListener(() => uiOpen = false);
                     Button yes = ui.GetComponentsInChildren<Button>()[1];
-                    yes.onClick.AddListener(() => nexScene.LoadNextScene(SceneName));      
+                    if (LaunchMiniGame)
+                    {
+                        yes.onClick.AddListener(() => nexScene.LoadMiniGame(SceneName));
+                    }
+                    else
+                    {
+                        yes.onClick.AddListener(() => nexScene.LoadNextScene(SceneName));
+                    }
+                    //yes.onClick.AddListener(() => nexScene.LoadNextScene(SceneName));      
                     uiOpen = true;
                 }
                 break;

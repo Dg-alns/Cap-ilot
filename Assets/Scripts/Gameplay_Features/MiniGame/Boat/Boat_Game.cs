@@ -15,9 +15,13 @@ public class Boat_Game : Minigame
 
     private int _targetTimeWin; 
     [SerializeField] private Boat_ProgressBar _timer;
+    [Header("Score")]
+    [SerializeField] private Score score;
+    [SerializeField] private Timer scoreTimer;
 
     private bool _gameFinish = false;
     private bool _gameStart = false;
+    private bool _scoreDisplayed = false;
 
     [SerializeField] List<BoatMer> _mer;
 
@@ -27,7 +31,7 @@ public class Boat_Game : Minigame
     void Start()
     {
         _targetTimeSpawn = Random.Range(2.0f, 3.0f);
-        _targetTimeWin = 20;
+        _targetTimeWin = 2; // 20
         _rocks = GameObject.Find("Rocks").transform;
     }
 
@@ -41,9 +45,48 @@ public class Boat_Game : Minigame
         // After 20 second without any hit
         if (_gameFinish)
         {
-            _boat.Winning();            
+            Debug.Log("Boat : animation de victoire en cours");
+
+            bool winAnimationFinished = _boat.Winning();
+
+            if (winAnimationFinished && !_scoreDisplayed)
+            {
+                Debug.Log("Boat : animation terminée, lancement du score");
+
+                _scoreDisplayed = true;
+                _gameStart = false;
+                _timer.isRunning = false;
+
+                if (scoreTimer != null)
+                {
+                    scoreTimer.stop = true;
+                    Debug.Log("Boat : Timer du score arrêté");
+                }
+                else
+                {
+                    Debug.LogWarning("Boat : scoreTimer n'est pas assigné");
+                }
+
+                if (score != null)
+                {
+                    Debug.Log("Boat : appel de Score.LauchScore()");
+                    score.LauchScore();
+                }
+                else
+                {
+                    Debug.LogError(
+                        "Boat : la référence Score n'est pas assignée dans Boat_Game"
+                    );
+                }
+            }
+
             return;
         }
+        /*if (_gameFinish)
+        {
+            _boat.Winning();            
+            return;
+        }*/
 
         // If Win
         if (_timer.GetTime() >= _targetTimeWin)
@@ -62,13 +105,13 @@ public class Boat_Game : Minigame
         }
 
         // Spawn Rock
-        _currentTimeSpawn += Time.deltaTime;
+        /*_currentTimeSpawn += Time.deltaTime;
         if( _currentTimeSpawn > _targetTimeSpawn)
         {
             _currentTimeSpawn = 0.0f;
             int r = Random.Range(0, prefab.Count);
             Instantiate(prefab[r],_rocks);
-        }
+        }*/
     }
 
     public void StartGame()
@@ -76,6 +119,10 @@ public class Boat_Game : Minigame
         Debug.Log("Boat minigame started");
         _gameStart = true;
         _timer.Run();
+        if (scoreTimer != null)
+        {
+            scoreTimer.stop = false;
+        }
     }
 
     public bool IsGameStart()

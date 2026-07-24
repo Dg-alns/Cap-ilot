@@ -71,7 +71,7 @@ public class Score : MonoBehaviour
         animator = GetComponent<Animator>();
 
         GetMedailles(animator);
-
+        LauchWin();// todo enlever plus tard
         if (leaderboardCapilot != null)
             leaderboardCapilot.AddScoreInLeaderboard(MiniGamePoint);
         else

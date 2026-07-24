@@ -127,7 +127,8 @@ public class InformationOfTheGame : MonoBehaviour
 
     public void StarBoat()
     {
-        gameObject.SetActive(false);
+        //gameObject.SetActive(false);
+        canvas.gameObject.SetActive(false);
         GameObjectToStart.GetComponent<Boat_Game>().StartGame();
     }
     public void StartInjecInsu()

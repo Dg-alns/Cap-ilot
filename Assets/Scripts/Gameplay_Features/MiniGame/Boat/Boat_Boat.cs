@@ -110,13 +110,15 @@ public class Boat_Boat : MonoBehaviour
         _animator.SetInteger("direction", (int)animationBoatState);
     }
 
-    public void Winning()
+    public bool Winning()
     {
         _currentWinAnimationTime += Time.deltaTime;
-        if(_currentWinAnimationTime > _winAnimationTime)
+
+        return _currentWinAnimationTime > _winAnimationTime;
+        /*if (_currentWinAnimationTime > _winAnimationTime)
         {
             _loadNexScene.LoadIle();
-        }
+        }*/
     }
     
     private void OnTriggerEnter2D(Collider2D collision)
