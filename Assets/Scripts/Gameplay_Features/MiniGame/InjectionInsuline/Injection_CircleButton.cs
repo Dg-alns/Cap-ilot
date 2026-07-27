@@ -11,33 +11,12 @@ public class Injection_CircleButton : MonoBehaviour
     [SerializeField] private GameObject _parent;
     [SerializeField] private InjectionMinigame _injectionMinigame;
 
-
-    public TMP_FontAsset TMProFont;
-    public Font TextMeshFont;
-    private TMP_Text m_textMeshPro;
-
-    private const string label01 = "Parfait!";
-    private const string label02 = "Bien";
-    private const string label03 = "Raté";
-
-    private Material m_material01;
-    private Material m_material02;
+    [SerializeField] private TextMeshProUGUI _textSFX;
 
     private void Start()
     {
         _injectionMinigame = GetComponentInParent<InjectionMinigame>();
-        m_textMeshPro = gameObject.AddComponent<TextMeshProUGUI>();
-
-
-        if (TMProFont != null)
-            m_textMeshPro.font = TMProFont;
-
-        m_textMeshPro.fontSize = 48;
-        m_textMeshPro.alignment = TextAlignmentOptions.Center;
-        m_textMeshPro.extraPadding = true;
-
-        m_material01 = m_textMeshPro.font.material;
-        m_material02 = Resources.Load<Material>("Fonts & Materials/LiberationSans SDF - BEVEL");
+        _textSFX.alpha = 0.0f;
     }
 
     public void ClickCircle()
@@ -46,12 +25,11 @@ public class Injection_CircleButton : MonoBehaviour
 
         float average = Mathf.Abs(stopScale - _scaleTarget);
 
-
         if (average < 0.5f)
         {
             Debug.Log("Parfait : " + average);
-            m_textMeshPro.color = Color.black;
-            //m_textMeshPro.text = label01;
+            _textSFX.alpha = 1.0f;
+            _textSFX.text = "Parfait!";
 
             // score : 700 -> 1000
             float sup = (1.0f-average / 0.5f) * 300;
@@ -60,15 +38,17 @@ public class Injection_CircleButton : MonoBehaviour
             _injectionMinigame.AddScore(score);
 
             Destroy(_parent);
-            //Destroy(m_textMeshPro);
+
+            new WaitForSeconds(1);
+            _textSFX.alpha = 0.0f;
             return;
         }
         
         if (average <= 3.0f)
         {
             Debug.Log("Bien : " + average);
-            //m_textMeshPro.color = Color.yellowGreen;
-            //m_textMeshPro.text = label02;
+            _textSFX.alpha = 1.0f;
+            _textSFX.text = "Bien!";
 
             // score : 400 -> 699
             float sup = 1.0f - (average - 0.5f) / 2.5f * 299;
@@ -76,22 +56,26 @@ public class Injection_CircleButton : MonoBehaviour
             _injectionMinigame.AddScore(score);
 
             Destroy(_parent);
-            //Destroy(m_textMeshPro);
+
+            new WaitForSeconds(1);
+            _textSFX.alpha = 0.0f;
             return;
         }
         
         if (average > 3.0f)
         {
             Debug.Log("RATE : " + average);
-            //m_textMeshPro.color = Color.red;
-            //m_textMeshPro.text = label03;
+            _textSFX.alpha = 1.0f;
+            _textSFX.text = "Raté!";
 
             // score : 0 -> 150
             int score = (int)(1.0f - (average - 3f) / 10f * 150);
             _injectionMinigame.AddScore(score);
 
             Destroy(_parent);
-            //Destroy(m_textMeshPro);
+
+            new WaitForSeconds(1);
+            _textSFX.alpha = 0.0f;
             return;
         }
         
