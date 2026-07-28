@@ -11,9 +11,11 @@ public class Objects : MonoBehaviour
     [SerializeField] Animator _animation;
 
     public Action<Objects> OnClick { get; set; }
+    public Action<Objects> EndAnim { get; set; }
     public Sprite Sprite { get => _sprite; }
     public string Text { get => _text; }
 
     public void PlayAnimation() => _animation.SetTrigger("PlayAnim");
-    public void ClickedObject() { Debug.Log("feur"); OnClick.Invoke(this); }
+    public void EndAnimation() => EndAnim.Invoke(this);
+    public void ClickedObject() => OnClick.Invoke(this);
 }

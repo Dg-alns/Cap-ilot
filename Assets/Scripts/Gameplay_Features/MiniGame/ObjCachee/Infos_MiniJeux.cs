@@ -1,30 +1,50 @@
+using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class Infos_MiniJeux : MonoBehaviour
 {
-    public Timer timer;
+    [SerializeField] GameObject _base;
+    [SerializeField] Timer _timer;
+    [SerializeField] TextMeshProUGUI _text;
+    [SerializeField] Image _img;
+    [SerializeField] Animator _panelAnimation;
 
-    public TextMeshProUGUI text;
-    public Image img;
+    Action _disAppearEvent = null;
 
-    public Image Back;
+    public GameObject Base { get => _base; }
+
 
     private void Start()
     {
-        gameObject.SetActive(false);
+        _base.SetActive(false);
     }
+
+    void OnEnable()
+    {
+        _panelAnimation.SetTrigger("Appear");
+    }
+
+    public void Disable()
+    {
+        _panelAnimation.SetTrigger("Disappear");
+        _disAppearEvent = DetectionBack;
+    }
+
+    public void EndDisable() => _disAppearEvent?.Invoke();
+
     public void DetectionBack()
     {
-        gameObject.SetActive(false);
-        timer.stop = false;        
+        _base.SetActive(false);
+        _timer.stop = false;
+        _disAppearEvent = null;
     }
 
     public void AssociateInfo(Objects objects)
     {
-        text.text = objects.Text;
+        _text.text = objects.Text;
         if (objects.Sprite != null)
-            img.sprite = objects.Sprite;
+            _img.sprite = objects.Sprite;
     }
 }
