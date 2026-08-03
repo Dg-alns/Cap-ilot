@@ -69,21 +69,22 @@ public class InjectionMinigame : Minigame
         if (IsRemaingCircle())
         {
             int diff = _gameScore - _lastGameScore;
+            _textSFX.alpha = 1.0f;
 
-            if (diff <= 150)
+            if (diff <= 0 || diff <= 150)
             {
                 _textSFX.text = label03;
-                _textSFX.alpha = 1.0f;
+                _textSFX.color = Color.red;
             }
             else if (diff <= 699)
             {
                 _textSFX.text = label02;
-                _textSFX.alpha = 1.0f;
+                _textSFX.color = Color.lawnGreen;
             }
             else if (diff <= 1000)
             {
                 _textSFX.text = label01;
-                _textSFX.alpha = 1.0f;
+                _textSFX.color = Color.forestGreen;
             }
         }
 
@@ -132,6 +133,10 @@ public class InjectionMinigame : Minigame
     {
         _lastGameScore = _gameScore;
         _gameScore += score;
+
+        if(_gameScore < 0)
+            _gameScore = 0;
+
         string visualScore = String.Format("{0:D5}", _gameScore);
         _textScore.text = "Score : " + visualScore;
     }
