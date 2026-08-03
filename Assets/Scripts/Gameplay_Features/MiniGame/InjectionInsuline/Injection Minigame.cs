@@ -11,6 +11,7 @@ public class InjectionMinigame : Minigame
     [SerializeField] private Score _score;
 
     [SerializeField] private TextMeshProUGUI _textScore;
+    [SerializeField] private TextMeshProUGUI _textSFX;
 
     [SerializeField] private List<float> _spawnTiming;
 
@@ -27,16 +28,24 @@ public class InjectionMinigame : Minigame
     public RectTransform Menu; // Y position + height
 
     private int _gameScore;
+    private int _lastGameScore;
 
     private bool isPause = false;
 
+    const string label01 = "Parfait!";
+    const string label02 = "Bien!";
+    const string label03 = "Raté!";
 
     private void Start()
     {
         _time = 0;
         _gameScore = 0;
+        _lastGameScore = _gameScore;
         string visualScore = String.Format("{0:D5}", _gameScore);
         _textScore.text = "Score : " + visualScore;
+        _textSFX.alpha = 0.0f;
+        _textSFX.text = "Null";
+
         _spawnTiming = new List<float>();
         GameObject circle = GameObject.Find("Reference_W_Circle");
         _defaultCircleSize = circle.GetComponent<RectTransform>().rect.width * circle.GetComponent<RectTransform>().localScale.x;
@@ -57,12 +66,33 @@ public class InjectionMinigame : Minigame
             return;
         }
 
+        if (IsRemaingCircle())
+        {
+            int diff = _gameScore - _lastGameScore;
+
+            if (diff <= 150)
+            {
+                _textSFX.text = label03;
+                _textSFX.alpha = 1.0f;
+            }
+            else if (diff <= 699)
+            {
+                _textSFX.text = label02;
+                _textSFX.alpha = 1.0f;
+            }
+            else if (diff <= 1000)
+            {
+                _textSFX.text = label01;
+                _textSFX.alpha = 1.0f;
+            }
+        }
+
         if (!IsRemaingCircle() && !_body.IsFinish())
         {
+            //_textSFX.alpha = 0.0f;
             StartCoroutine(SwapBodyPart());
             return;
         }
-
     }
 
     public void GenerateFuturCircle(int nbCircle = 3)
@@ -100,6 +130,7 @@ public class InjectionMinigame : Minigame
 
     public void AddScore(int score)
     {
+        _lastGameScore = _gameScore;
         _gameScore += score;
         string visualScore = String.Format("{0:D5}", _gameScore);
         _textScore.text = "Score : " + visualScore;
