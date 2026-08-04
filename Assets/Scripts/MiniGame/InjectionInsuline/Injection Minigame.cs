@@ -35,7 +35,8 @@ public class InjectionMinigame : Minigame
     {
         _time = 0;
         _gameScore = 0;
-        string visualScore = String.Format("{0:D5}", _gameScore);
+        //string visualScore = String.Format("{0:D5}", _gameScore);
+        string visualScore = String.Format("{0:0}", _gameScore);
         _textScore.text = "Score : " + visualScore;
         _spawnTiming = new List<float>();
         GameObject circle = GameObject.Find("Reference_W_Circle");
@@ -101,7 +102,8 @@ public class InjectionMinigame : Minigame
     public void AddScore(int score)
     {
         _gameScore += score;
-        string visualScore = String.Format("{0:D5}", _gameScore);
+        //string visualScore = String.Format("{0:D5}", _gameScore);
+        string visualScore = String.Format("{0:0}", _gameScore);
         _textScore.text = "Score : " + visualScore;
     }
 
@@ -111,7 +113,7 @@ public class InjectionMinigame : Minigame
         yield return new WaitForSeconds(1);
         _body.ReturnToIdle();
 
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(2);
         _body.NextBodyPart();
 
         yield return new WaitForSeconds(1);

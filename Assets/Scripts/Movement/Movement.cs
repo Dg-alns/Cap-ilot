@@ -1,9 +1,11 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 using static UnityEngine.GridBrushBase;
@@ -36,6 +38,11 @@ public class Movement : MonoBehaviour
     bool triggerQuiz = false;
     //[SerializeField] private TouchManager _touchManager;
 
+
+    public JoyStick joyStick; //ref Joystick
+    public float joyStickSpeed = 5f; //vitesse déplacement
+    public Boolean usingJoystick = false; // option
+
     void Start()
     {
         _tools = FindAnyObjectByType<Tools>();
@@ -53,10 +60,40 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (_animationAvatarManager != null || _diabeteAnimator != null)
+        if (!usingJoystick) //gère le déplacement et l'animation des personnages si déplacement par click utilisé
         {
-            if (_agent.destination != transform.position)
+            if (_animationAvatarManager != null || _diabeteAnimator != null)
             {
+                if (_agent.destination != transform.position)
+                {
+                    if (_animationAvatarManager.animator.GetBool("Walking") == false)
+                        _animationAvatarManager.SwitchAnimation();
+
+                    if (_diabeteAnimator != null && _diabeteAnimator.gameObject.activeSelf)
+                        _diabeteAnimator.SetBool("Walking", true);
+
+                    _animationAvatarManager.animator.SetBool("Walking", true);
+                }
+                else
+                {
+                    if (_animationAvatarManager.animator.GetBool("Walking") == true)
+                        _animationAvatarManager.SwitchAnimation();
+
+
+                    if (_diabeteAnimator != null && _diabeteAnimator.gameObject.activeSelf)
+                        _diabeteAnimator.SetBool("Walking", false);
+
+                    _animationAvatarManager.animator.SetBool("Walking", false);
+                }
+            }
+        }
+        else //gère le déplacement et l'animation des personnages si joystick utilisé
+        {
+            if (joyStick.isM)
+            {
+                Vector3 move = new Vector3(joyStick.dir.x, joyStick.dir.y, 0); //direction du joystick
+                transform.position += move * joyStickSpeed * Time.deltaTime;
+
                 if (_animationAvatarManager.animator.GetBool("Walking") == false)
                     _animationAvatarManager.SwitchAnimation();
 
@@ -77,17 +114,14 @@ public class Movement : MonoBehaviour
                 _animationAvatarManager.animator.SetBool("Walking", false);
             }
         }
-    
 
+        //Gère la partie flip flop du perso peu importe le type de déplacement utilisé
 
-
-        //Debug.Log(_target);
-        //_agent.SetDestination(_target);
         Vector3 movement = transform.position - _lastPosition;
 
         if (movement.x < 0 && _isRight)//deplacement  a gauche
         {
-            transform.eulerAngles = new Vector3(0,180,0);  
+            transform.eulerAngles = new Vector3(0, 180, 0);
             //transform.Rotate(new Vector3(0, 0, 0));
             _isRight = false;
             //_spriteRenderer.flipX = true;
@@ -101,18 +135,20 @@ public class Movement : MonoBehaviour
                 //_spriteRenderer.flipX = false;
             }
         }
-        
+
         _lastPosition = transform.position;
 
     }
     public void Move(Vector3 position)
     {
-        //Debug.Log(position);
-        if (!_tools.IsPointerOverUIElement())
-        {
-            position.z = transform.position.z;
-            
-            _agent.SetDestination(position);
+        if (!usingJoystick){
+            //Debug.Log(position);
+            if (!_tools.IsPointerOverUIElement())
+            {
+                position.z = transform.position.z;
+
+                _agent.SetDestination(position);
+            }
         }
     }
 /*    private void OnTriggerStay2D(Collider2D collision)

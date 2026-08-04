@@ -1,6 +1,7 @@
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class Injection_CircleButton : MonoBehaviour
@@ -9,6 +10,8 @@ public class Injection_CircleButton : MonoBehaviour
     [SerializeField] private GameObject _circle;
     [SerializeField] private GameObject _parent;
     [SerializeField] private InjectionMinigame _injectionMinigame;
+    [SerializeField] private TMP_Text _feedbackText; // assigner dans l'Inspector
+    [SerializeField] private float _feedbackDuration = 1f;
 
     private void Start()
     {
@@ -19,47 +22,63 @@ public class Injection_CircleButton : MonoBehaviour
     {
         float stopScale = _circle.GetComponent<RectTransform>().localScale.x;
 
-        float average = Mathf.Abs(stopScale - _scaleTarget);
+        float average = stopScale - _scaleTarget;
 
 
-        if (average < 0.5f)
+        if (average < 0.5f && average > 0)
         {
             Debug.Log("Parfait : " + average);
 
-            // score : 700 -> 1000
-            float sup = (1.0f-average / 0.5f) * 300;
-            int score = (int) (sup + 1.0f) + 700;
+            int score = 5;
 
+            ShowFeedbackThenDestroy("Parfait +5 !", Color.blue);
             _injectionMinigame.AddScore(score);
 
             Destroy(_parent);
             return;
         }
         
-        if (average <= 3.0f)
+        if (average <= 3.0f && average > 0)
         {
             Debug.Log("Bien : " + average);
 
-            // score : 400 -> 699
-            float sup = 1.0f - (average - 0.5f) / 2.5f * 299;
-            int score = (int) (sup+ 1.0f) + 400;
+            int score = 3;
+ 
+            ShowFeedbackThenDestroy("Très Bien +3 !", Color.green);
             _injectionMinigame.AddScore(score);
 
             Destroy(_parent);
             return;
         }
         
-        if (average > 3.0f)
+        if (average > 3.0f && average > 0)
         {
             Debug.Log("RATE : " + average);
 
-            // score : 0 -> 150
-            int score = (int)(1.0f - (average - 3f) / 10f * 150);
+            int score = 1;
+
+            ShowFeedbackThenDestroy("Bien +1 !", Color.yellow);
             _injectionMinigame.AddScore(score);
 
             Destroy(_parent);
             return;
         }
 
+        ShowFeedbackThenDestroy("Raté !", Color.red);
+
+    }
+    
+    private void ShowFeedbackThenDestroy(string message, Color color)
+    {
+        if (_feedbackText != null)
+        {
+            _feedbackText.transform.SetParent(_injectionMinigame.transform, true);
+            _feedbackText.text = message;
+            _feedbackText.color = color;
+            _feedbackText.gameObject.SetActive(true);
+            Destroy(_feedbackText.gameObject, _feedbackDuration); // se détruira tout seul après 1 seconde
+        }
+
+        Destroy(_parent); // le script est détruit ici, mais peu importe
     }
 }
